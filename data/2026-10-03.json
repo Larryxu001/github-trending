@@ -11,8 +11,8 @@
      "repo": "obra/superpowers",
      "url": "https://github.com/obra/superpowers",
      "owner": "obra",
-     "stars": 294521,
-     "updated": "2026-09-25",
+     "stars": 294619,
+     "updated": "2026-09-27",
      "lists": [
       "daily"
      ],
@@ -23,7 +23,7 @@
      "repo": "mattpocock/skills",
      "url": "https://github.com/mattpocock/skills",
      "owner": "mattpocock",
-     "stars": 274796,
+     "stars": 274929,
      "updated": "2026-09-29",
      "lists": [
       "daily"
@@ -35,8 +35,8 @@
      "repo": "tt-a1i/archify",
      "url": "https://github.com/tt-a1i/archify",
      "owner": "tt-a1i",
-     "stars": 76332,
-     "updated": "2026-09-30",
+     "stars": 76438,
+     "updated": "2026-10-02",
      "lists": [
       "monthly"
      ],
@@ -47,7 +47,7 @@
      "repo": "pbakaus/impeccable",
      "url": "https://github.com/pbakaus/impeccable",
      "owner": "pbakaus",
-     "stars": 74420,
+     "stars": 74557,
      "updated": "2026-10-03",
      "lists": [
       "daily",
@@ -60,7 +60,7 @@
      "repo": "ayghri/i-have-adhd",
      "url": "https://github.com/ayghri/i-have-adhd",
      "owner": "ayghri",
-     "stars": 52985,
+     "stars": 53028,
      "updated": "2026-09-19",
      "lists": [
       "monthly"
@@ -72,7 +72,7 @@
      "repo": "coreyhaines31/marketingskills",
      "url": "https://github.com/coreyhaines31/marketingskills",
      "owner": "coreyhaines31",
-     "stars": 52457,
+     "stars": 52533,
      "updated": "2026-10-03",
      "lists": [
       "daily"
@@ -84,7 +84,7 @@
      "repo": "anthropics/financial-services",
      "url": "https://github.com/anthropics/financial-services",
      "owner": "anthropics",
-     "stars": 38565,
+     "stars": 38590,
      "updated": "2026-09-21",
      "lists": [
       "weekly",
@@ -97,8 +97,8 @@
      "repo": "alirezarezvani/claude-skills",
      "url": "https://github.com/alirezarezvani/claude-skills",
      "owner": "alirezarezvani",
-     "stars": 27345,
-     "updated": "2026-08-26",
+     "stars": 27377,
+     "updated": "2026-08-30",
      "lists": [
       "weekly"
      ],
@@ -109,8 +109,8 @@
      "repo": "anthropics/knowledge-work-plugins",
      "url": "https://github.com/anthropics/knowledge-work-plugins",
      "owner": "anthropics",
-     "stars": 25991,
-     "updated": "2026-10-01",
+     "stars": 26003,
+     "updated": "2026-10-03",
      "lists": [
       "monthly"
      ],
@@ -121,7 +121,7 @@
      "repo": "google/skills",
      "url": "https://github.com/google/skills",
      "owner": "google",
-     "stars": 20789,
+     "stars": 20840,
      "updated": "2026-10-02",
      "lists": [
       "daily"
@@ -133,8 +133,8 @@
      "repo": "cursor/plugins",
      "url": "https://github.com/cursor/plugins",
      "owner": "cursor",
-     "stars": 9527,
-     "updated": "2026-10-02",
+     "stars": 9568,
+     "updated": "2026-10-03",
      "lists": [
       "daily",
       "monthly"
@@ -152,7 +152,7 @@
      "repo": "paperclipai/paperclip",
      "url": "https://github.com/paperclipai/paperclip",
      "owner": "paperclipai",
-     "stars": 96372,
+     "stars": 96448,
      "updated": "2026-10-03",
      "lists": [
       "weekly",
@@ -165,7 +165,7 @@
      "repo": "Panniantong/Agent-Reach",
      "url": "https://github.com/Panniantong/Agent-Reach",
      "owner": "Panniantong",
-     "stars": 88856,
+     "stars": 89174,
      "updated": "2026-09-15",
      "lists": [
       "daily"
@@ -177,7 +177,7 @@
      "repo": "vectorize-io/hindsight",
      "url": "https://github.com/vectorize-io/hindsight",
      "owner": "vectorize-io",
-     "stars": 44754,
+     "stars": 44831,
      "updated": "2026-10-02",
      "lists": [
       "weekly",
@@ -190,8 +190,8 @@
      "repo": "THU-MAIC/OpenMAIC",
      "url": "https://github.com/THU-MAIC/OpenMAIC",
      "owner": "THU-MAIC",
-     "stars": 39837,
-     "updated": "2026-10-02",
+     "stars": 39857,
+     "updated": "2026-10-03",
      "lists": [
       "monthly"
      ],
@@ -202,7 +202,7 @@
      "repo": "trycua/cua",
      "url": "https://github.com/trycua/cua",
      "owner": "trycua",
-     "stars": 27847,
+     "stars": 27867,
      "updated": "2026-10-03",
      "lists": [
       "monthly"
@@ -214,8 +214,8 @@
      "repo": "NVIDIA/OpenShell",
      "url": "https://github.com/NVIDIA/OpenShell",
      "owner": "NVIDIA",
-     "stars": 14476,
-     "updated": "2026-10-02",
+     "stars": 14549,
+     "updated": "2026-10-03",
      "lists": [
       "daily"
      ],
@@ -226,7 +226,7 @@
      "repo": "google/ax",
      "url": "https://github.com/google/ax",
      "owner": "google",
-     "stars": 12926,
+     "stars": 12950,
      "updated": "2026-09-27",
      "lists": [
       "weekly"
@@ -238,8 +238,8 @@
      "repo": "TencentCloud/Octop",
      "url": "https://github.com/TencentCloud/Octop",
      "owner": "TencentCloud",
-     "stars": 6417,
-     "updated": "2026-09-29",
+     "stars": 6467,
+     "updated": "2026-10-03",
      "lists": [
       "weekly",
       "monthly"
@@ -251,7 +251,7 @@
      "repo": "mvschwarz/openrig",
      "url": "https://github.com/mvschwarz/openrig",
      "owner": "mvschwarz",
-     "stars": 4400,
+     "stars": 4509,
      "updated": "2026-10-03",
      "lists": [
       "daily"
@@ -263,7 +263,7 @@
      "repo": "superdesigndev/treg",
      "url": "https://github.com/superdesigndev/treg",
      "owner": "superdesigndev",
-     "stars": 4056,
+     "stars": 4074,
      "updated": "2026-10-03",
      "lists": [
       "monthly"
@@ -281,7 +281,7 @@
      "repo": "affaan-m/ECC",
      "url": "https://github.com/affaan-m/ECC",
      "owner": "affaan-m",
-     "stars": 271444,
+     "stars": 271630,
      "updated": "2026-10-02",
      "lists": [
       "monthly"
@@ -293,7 +293,7 @@
      "repo": "DietrichGebert/ponytail",
      "url": "https://github.com/DietrichGebert/ponytail",
      "owner": "DietrichGebert",
-     "stars": 151955,
+     "stars": 152184,
      "updated": "2026-10-03",
      "lists": [
       "daily",
@@ -306,7 +306,7 @@
      "repo": "JuliusBrussee/caveman",
      "url": "https://github.com/JuliusBrussee/caveman",
      "owner": "JuliusBrussee",
-     "stars": 109164,
+     "stars": 109243,
      "updated": "2026-10-03",
      "lists": [
       "daily"
@@ -318,8 +318,8 @@
      "repo": "colbymchenry/codegraph",
      "url": "https://github.com/colbymchenry/codegraph",
      "owner": "colbymchenry",
-     "stars": 73004,
-     "updated": "2026-10-02",
+     "stars": 73060,
+     "updated": "2026-10-03",
      "lists": [
       "daily"
      ],
@@ -330,7 +330,7 @@
      "repo": "mksglu/context-mode",
      "url": "https://github.com/mksglu/context-mode",
      "owner": "mksglu",
-     "stars": 25076,
+     "stars": 25125,
      "updated": "2026-10-03",
      "lists": [
       "daily",
@@ -343,7 +343,7 @@
      "repo": "max-sixty/worktrunk",
      "url": "https://github.com/max-sixty/worktrunk",
      "owner": "max-sixty",
-     "stars": 8688,
+     "stars": 8699,
      "updated": "2026-10-03",
      "lists": [
       "monthly"
@@ -361,7 +361,7 @@
      "repo": "pytorch/pytorch",
      "url": "https://github.com/pytorch/pytorch",
      "owner": "pytorch",
-     "stars": 103631,
+     "stars": 103637,
      "updated": "2026-10-03",
      "lists": [
       "weekly"
@@ -373,8 +373,8 @@
      "repo": "Tencent/WeKnora",
      "url": "https://github.com/Tencent/WeKnora",
      "owner": "Tencent",
-     "stars": 31793,
-     "updated": "2026-09-30",
+     "stars": 31818,
+     "updated": "2026-10-01",
      "lists": [
       "monthly"
      ],
@@ -385,7 +385,7 @@
      "repo": "tashfeenahmed/freellmapi",
      "url": "https://github.com/tashfeenahmed/freellmapi",
      "owner": "tashfeenahmed",
-     "stars": 30204,
+     "stars": 30240,
      "updated": "2026-10-01",
      "lists": [
       "monthly"
@@ -397,7 +397,7 @@
      "repo": "tile-ai/tilelang",
      "url": "https://github.com/tile-ai/tilelang",
      "owner": "tile-ai",
-     "stars": 8255,
+     "stars": 8269,
      "updated": "2026-10-02",
      "lists": [
       "weekly"
@@ -415,7 +415,7 @@
      "repo": "harry0703/MoneyPrinterTurbo",
      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
      "owner": "harry0703",
-     "stars": 128112,
+     "stars": 128149,
      "updated": "2026-10-03",
      "lists": [
       "weekly"
@@ -427,7 +427,7 @@
      "repo": "heygen-com/hyperframes",
      "url": "https://github.com/heygen-com/hyperframes",
      "owner": "heygen-com",
-     "stars": 55963,
+     "stars": 56048,
      "updated": "2026-10-03",
      "lists": [
       "daily",
@@ -441,7 +441,7 @@
      "repo": "debpalash/VoiceStudio",
      "url": "https://github.com/debpalash/VoiceStudio",
      "owner": "debpalash",
-     "stars": 51990,
+     "stars": 52131,
      "updated": "2026-10-03",
      "lists": [
       "weekly"
@@ -453,7 +453,7 @@
      "repo": "bilawalsidhu/gods-eye-view",
      "url": "https://github.com/bilawalsidhu/gods-eye-view",
      "owner": "bilawalsidhu",
-     "stars": 46630,
+     "stars": 46737,
      "updated": "2026-10-03",
      "lists": [
       "monthly"
@@ -471,8 +471,8 @@
      "repo": "flutter/flutter",
      "url": "https://github.com/flutter/flutter",
      "owner": "flutter",
-     "stars": 179266,
-     "updated": "2026-10-02",
+     "stars": 179272,
+     "updated": "2026-10-03",
      "lists": [
       "weekly"
      ],
@@ -483,8 +483,8 @@
      "repo": "anthropics/claude-code",
      "url": "https://github.com/anthropics/claude-code",
      "owner": "anthropics",
-     "stars": 148996,
-     "updated": "2026-10-02",
+     "stars": 149020,
+     "updated": "2026-10-03",
      "lists": [
       "monthly"
      ],
@@ -495,7 +495,7 @@
      "repo": "vercel/next.js",
      "url": "https://github.com/vercel/next.js",
      "owner": "vercel",
-     "stars": 143017,
+     "stars": 143030,
      "updated": "2026-10-03",
      "lists": [
       "weekly"
@@ -507,7 +507,7 @@
      "repo": "getsentry/sentry",
      "url": "https://github.com/getsentry/sentry",
      "owner": "getsentry",
-     "stars": 45054,
+     "stars": 45094,
      "updated": "2026-10-03",
      "lists": [
       "daily"
@@ -519,8 +519,8 @@
      "repo": "alibaba/open-code-review",
      "url": "https://github.com/alibaba/open-code-review",
      "owner": "alibaba",
-     "stars": 43380,
-     "updated": "2026-09-29",
+     "stars": 43418,
+     "updated": "2026-10-01",
      "lists": [
       "monthly"
      ],
@@ -531,7 +531,7 @@
      "repo": "Effect-TS/effect",
      "url": "https://github.com/Effect-TS/effect",
      "owner": "Effect-TS",
-     "stars": 16591,
+     "stars": 16646,
      "updated": "2026-10-03",
      "lists": [
       "daily"
@@ -543,7 +543,7 @@
      "repo": "longbridge/gpui-kit",
      "url": "https://github.com/longbridge/gpui-kit",
      "owner": "longbridge",
-     "stars": 15725,
+     "stars": 15751,
      "updated": "2026-10-03",
      "lists": [
       "monthly"
@@ -555,7 +555,7 @@
      "repo": "anthropics/claude-code-action",
      "url": "https://github.com/anthropics/claude-code-action",
      "owner": "anthropics",
-     "stars": 9383,
+     "stars": 9395,
      "updated": "2026-10-02",
      "lists": [
       "weekly"
@@ -573,7 +573,7 @@
      "repo": "NVIDIA/SkillSpector",
      "url": "https://github.com/NVIDIA/SkillSpector",
      "owner": "NVIDIA",
-     "stars": 19139,
+     "stars": 19171,
      "updated": "2026-10-02",
      "lists": [
       "monthly"
@@ -591,7 +591,7 @@
      "repo": "rohitg00/ai-engineering-from-scratch",
      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
      "owner": "rohitg00",
-     "stars": 62725,
+     "stars": 62770,
      "updated": "2026-10-02",
      "lists": [
       "weekly"
@@ -609,7 +609,7 @@
      "repo": "pablostanley/yoinks",
      "url": "https://github.com/pablostanley/yoinks",
      "owner": "pablostanley",
-     "stars": 3569,
+     "stars": 3655,
      "updated": "2026-07-17",
      "lists": [
       "daily",
