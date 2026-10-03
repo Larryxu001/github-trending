@@ -21,19 +21,18 @@ jobs:
 
       - name: Check last day of month
         id: is_last_day
+        shell: bash
         run: |
-          python - <<'PY'
-          import datetime
-          today = datetime.date.today()
-          next_month = today.replace(day=28) + datetime.timedelta(days=4)
-          last_day = next_month - datetime.timedelta(days=next_month.day)
-          if today != last_day:
-              print(f"not last day ({today} != {last_day}), skip")
-              exit(1)
-          print(f"today is last day: {today}")
-          PY
+          is_last=$(python -c "import datetime; t=datetime.date.today(); n=t.replace(day=28)+datetime.timedelta(days=4); last=n-datetime.timedelta(days=n.day); print('true' if t==last else 'false')")
+          echo "is_last=$is_last" >> "$GITHUB_OUTPUT"
+          if [ "$is_last" = "true" ]; then
+            echo "today is the last day of the month, will build monthly report"
+          else
+            echo "not the last day of the month, skip monthly report"
+          fi
 
       - name: Build monthly report
+        if: steps.is_last_day.outputs.is_last == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -43,22 +42,23 @@ jobs:
           python render_md.py monthly-$(date +%Y-%m).json
 
       - name: Push to Feishu
+        if: steps.is_last_day.outputs.is_last == 'true'
         env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         run: |
           python push.py monthly-$(date +%Y-%m).json
 
       - name: Layout into repo (monthly archive + web)
+        if: steps.is_last_day.outputs.is_last == 'true'
         run: |
           python - <<'PY'
-          import json, os, shutil
+          import os, shutil
           month = __import__('datetime').date.today().strftime("%Y-%m")
           src = f"monthly-{month}.json"
-          rep = json.load(open(src))
           # 月报 Markdown 归档
           md = f"monthly-{month}.md"
           if os.path.exists(md):
-              os.makedirs(f"monthly", exist_ok=True)
+              os.makedirs("monthly", exist_ok=True)
               shutil.copy(md, f"monthly/{month}.md")
           # 网页版归档（含往期月报目录）
           os.makedirs(f"reports_web/{month}", exist_ok=True)
@@ -71,6 +71,7 @@ jobs:
           PY
 
       - name: Commit & push
+        if: steps.is_last_day.outputs.is_last == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
