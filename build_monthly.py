@@ -42,7 +42,9 @@ def main():
                 merged[it["repo"]] = it2  # later days overwrite -> latest desc/stars
 
     cfg = json.load(open(os.path.join(BASE, "config.json")))
-    token = cfg.get("github_token", "")
+    # token 优先取环境变量（GitHub Actions secrets），其次取 config.json
+    token = (os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+             or cfg.get("github_token") or "")
     if token:
         stars = refresh_stars(sorted(merged), token)
         for r, s in stars.items():

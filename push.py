@@ -16,7 +16,16 @@ FEISHU_COLOR = {"🧩": "violet", "🤖": "blue", "⚡": "yellow", "🧠": "carm
 def post(url, payload):
     req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=UA)
     with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode()
+        body = r.read().decode()
+    # 飞书 webhook 返回 {"code":0,"msg":"success"} 表示成功；code!=0 为业务失败
+    try:
+        resp = json.loads(body)
+        code = resp.get("code", resp.get("errcode", 0))
+        if code != 0:
+            raise RuntimeError(f"feishu error code={code}: {body}")
+    except json.JSONDecodeError:
+        pass  # 非 JSON 响应，按成功处理（如某些代理）
+    return body
 
 
 def stars_fmt(n):

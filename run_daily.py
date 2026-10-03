@@ -25,10 +25,11 @@ ARCHIVE = os.path.join(BASE, "archive")
 
 def sh(*args):
     import subprocess
-    r = subprocess.run(args, capture_output=True, text=True)
+    # 透传子进程 stdout/stderr，便于在 Actions 日志里排查；失败时抛出带输出的异常
+    r = subprocess.run(args)
     if r.returncode != 0:
-        raise RuntimeError(f"{' '.join(args)} failed:\n{r.stderr or r.stdout}")
-    return r.stdout.strip()
+        raise RuntimeError(f"{' '.join(args)} failed with exit code {r.returncode}")
+    return ""
 
 
 def main():
