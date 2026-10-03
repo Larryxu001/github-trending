@@ -86,9 +86,11 @@ def main():
     report = json.load(open(path))
     cfg = json.load(open(os.path.join(BASE, "config.json")))
     report_url = cfg.get("report_url", "")
-    if cfg.get("feishu_webhook"):
+    # webhook 优先取环境变量（GitHub Actions secrets），其次取 config.json
+    feishu = os.environ.get("FEISHU_WEBHOOK") or cfg.get("feishu_webhook") or ""
+    if feishu:
         print("pushing to feishu...", file=sys.stderr)
-        push_feishu(cfg["feishu_webhook"], report, report_url)
+        push_feishu(feishu, report, report_url)
     else:
         print("[error] no feishu webhook configured", file=sys.stderr)
         sys.exit(1)

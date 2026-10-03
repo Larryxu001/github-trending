@@ -7,6 +7,10 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 UA = {"User-Agent": "github-trending-bot/1.0"}
 
 def load_token():
+    # 优先环境变量（GitHub Actions secrets），其次 config.json
+    env = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if env:
+        return env
     try:
         cfg = json.load(open(os.path.join(BASE, "config.json")))
         return cfg.get("github_token") or ""

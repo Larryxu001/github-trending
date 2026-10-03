@@ -22,9 +22,8 @@ jobs:
       - name: Run daily pipeline
         env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          # 用 secrets 覆盖 config.json 里的飞书 webhook（避免明文入库）
-          python -c "import json,os;c=json.load(open('config.json'));c['feishu_webhook']=os.environ['FEISHU_WEBHOOK'];json.dump(c,open('config.json','w'),indent=2)"
           python run_daily.py
 
       - name: Commit & push
