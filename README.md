@@ -38,8 +38,10 @@ state/                 状态文件快照
 
 ## 配置
 
-- **飞书 webhook**：存 GitHub Secrets（`FEISHU_WEBHOOK`），运行时会覆盖 `config.json`
-- **GitHub token**：仓库内公开数据无需 token；如需提高 API 限额，可设 `GH_TOKEN` secret
+- **飞书 webhook**：存 GitHub Secrets（`FEISHU_WEBHOOK`），运行时通过环境变量注入，
+  **不会写入仓库**（`config.json` 里的 feishu_webhook 保持为空）
+- **GitHub token**：工作流用 `${{ github.token }}` 自动注入（`GH_TOKEN` 环境变量），
+  用于提高 GitHub API 限额；仓库内公开数据本身不需要额外 token
 - 本地开发把真实配置放在 `config.local.json`（已被 .gitignore 忽略）
 
 ## 手动触发
@@ -51,3 +53,5 @@ state/                 状态文件快照
 - 去重窗口 30 天；`pushed.json` 里超过 30 天的记录会自动清理。
 - 描述自动生成：内置精选表 + 按 topics/language 的启发式分类模板。若想提升某个项目的
   描述质量，直接编辑 `desc_auto.py` 里的 `DESC_MAP` 或 `desc_cache.json` 后提交即可。
+- 推送渠道：**仅飞书**（企业微信已移除）。
+- 每天 09:00（北京时间）自动运行，等价于 cron `0 1 * * *`（UTC）。
