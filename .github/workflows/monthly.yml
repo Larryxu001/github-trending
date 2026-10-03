@@ -1,0 +1,82 @@
+name: Monthly Trending Report
+
+on:
+  schedule:
+    # 每月 28-31 日 09:00 (北京时间 UTC+8 = 01:00 UTC)；程序内判断是否当月最后一天
+    - cron: "0 1 28-31 * *"
+  workflow_dispatch: {}   # 允许手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  monthly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check last day of month
+        id: is_last_day
+        run: |
+          python - <<'PY'
+          import datetime
+          today = datetime.date.today()
+          next_month = today.replace(day=28) + datetime.timedelta(days=4)
+          last_day = next_month - datetime.timedelta(days=next_month.day)
+          if today != last_day:
+              print(f"not last day ({today} != {last_day}), skip")
+              exit(1)
+          print(f"today is last day: {today}")
+          PY
+
+      - name: Build monthly report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python build_monthly.py
+          python render_html.py monthly-$(date +%Y-%m).json
+          python render_md.py monthly-$(date +%Y-%m).json
+
+      - name: Push to Feishu
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: |
+          python push.py monthly-$(date +%Y-%m).json
+
+      - name: Layout into repo (monthly archive + web)
+        run: |
+          python - <<'PY'
+          import json, os, shutil
+          month = __import__('datetime').date.today().strftime("%Y-%m")
+          src = f"monthly-{month}.json"
+          rep = json.load(open(src))
+          # 月报 Markdown 归档
+          md = f"monthly-{month}.md"
+          if os.path.exists(md):
+              os.makedirs(f"monthly", exist_ok=True)
+              shutil.copy(md, f"monthly/{month}.md")
+          # 网页版归档（含往期月报目录）
+          os.makedirs(f"reports_web/{month}", exist_ok=True)
+          if os.path.exists("site/index.html"):
+              shutil.copy("site/index.html", f"reports_web/{month}/index.html")
+          # 数据归档
+          os.makedirs("data", exist_ok=True)
+          shutil.copy(src, f"data/{month}.json")
+          print(f"laid out monthly {month}")
+          PY
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+          else
+            git commit -m "月报 $(date -u +%Y-%m) · 自动生成"
+            git push
+          fi

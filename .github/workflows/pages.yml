@@ -1,0 +1,43 @@
+name: Deploy GitHub Pages
+
+on:
+  # 每次推送到 main（日报/月报工作流提交归档后自动触发）
+  push:
+    branches: [main]
+  workflow_dispatch: {}   # 允许手动触发
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 允许同一时间只有一个部署，避免并发覆盖
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 托管 reports_web/（每日网页版归档 + 索引页）
+          path: reports_web
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
