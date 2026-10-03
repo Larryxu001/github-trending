@@ -36,22 +36,32 @@ archive/               当月日报归档（月报数据源）
 state/                 状态文件快照
 ```
 
+## 网页版
+
+GitHub Pages 免费托管：**https://larryxu001.github.io/github-trending/**
+
+每日/每月的网页版报告都会归档到 `reports_web/`，由 `pages.yml` 自动部署。
+
 ## 配置
 
 - **飞书 webhook**：存 GitHub Secrets（`FEISHU_WEBHOOK`），运行时通过环境变量注入，
   **不会写入仓库**（`config.json` 里的 feishu_webhook 保持为空）
 - **GitHub token**：工作流用 `${{ github.token }}` 自动注入（`GH_TOKEN` 环境变量），
   用于提高 GitHub API 限额；仓库内公开数据本身不需要额外 token
+- **DeepSeek API Key**（可选）：存 GitHub Secrets（`DEEPSEEK_API_KEY`），用于 AI 生成
+  项目的中文总结与归类。**未配置时自动降级**为内置规则 + 模板（零成本，描述质量较低）
 - 本地开发把真实配置放在 `config.local.json`（已被 .gitignore 忽略）
 
 ## 手动触发
 
-在仓库 **Actions** 标签页选 `Daily Trending Report` → **Run workflow**。
+在仓库 **Actions** 标签页选 `Daily Trending Report` / `Monthly Trending Report` → **Run workflow**。
 
 ## 说明
 
 - 去重窗口 30 天；`pushed.json` 里超过 30 天的记录会自动清理。
-- 描述自动生成：内置精选表 + 按 topics/language 的启发式分类模板。若想提升某个项目的
-  描述质量，直接编辑 `desc_auto.py` 里的 `DESC_MAP` 或 `desc_cache.json` 后提交即可。
+- 描述生成：配置了 `DEEPSEEK_API_KEY` 时用 AI 生成（推荐）；否则用内置精选表 +
+  按 topics/language 的启发式分类模板。若要手动提升某个项目的描述质量，直接编辑
+  `desc_auto.py` 里的 `DESC_MAP` 或 `desc_cache.json` 后提交即可。
 - 推送渠道：**仅飞书**（企业微信已移除）。
-- 每天 09:00（北京时间）自动运行，等价于 cron `0 1 * * *`（UTC）。
+- 日报每天 09:00（北京时间）自动运行，等价于 cron `0 1 * * *`（UTC）。
+- 月报每月最后一天 09:00 自动运行（cron `0 1 28-31 * *`，程序内判断是否月末）。

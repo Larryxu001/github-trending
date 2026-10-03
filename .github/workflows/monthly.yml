@@ -36,6 +36,7 @@ jobs:
       - name: Build monthly report
         env:
           GH_TOKEN: ${{ github.token }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
           python build_monthly.py
           python render_html.py monthly-$(date +%Y-%m).json
