@@ -1,67 +1,67 @@
 # github-trending
 
-GitHub Trending 日 / 周 / 月三榜，每日自动解读并推送飞书、归档到本仓库。
+Daily analysis of GitHub Trending's daily, weekly, and monthly lists, delivered to Feishu and archived in this repository.
 
-## 这是什么
+## What it does
 
-每天 09:00（北京时间），GitHub Actions 会自动：
+Every day at 09:00 Beijing time, GitHub Actions automatically:
 
-1. 抓取 GitHub Trending 的日榜、周榜、月榜
-2. 按 `pushed.json` 做 **30 天去重**（同一项目一个月内不重复推送）
-3. 分析每个新项目：开发者、星标数、官网、最近更新日期、项目用途、归类
-4. 复用 `desc_cache.json` 里已写过的描述（零重复工作）
-5. 渲染成中文 Markdown 日报 + 精美网页版
-6. 推送到飞书群机器人
-7. 归档到本仓库，自动重建索引
+1. Fetches GitHub Trending's daily, weekly, and monthly lists.
+2. Applies **30-day deduplication** using `pushed.json`, avoiding repeat delivery of the same project within a month.
+3. Analyzes each new project's developer, stars, website, latest update, purpose, and category.
+4. Reuses descriptions already in `desc_cache.json` to avoid duplicate work.
+5. Renders a Chinese Markdown daily report and a polished web edition.
+6. Sends the report to a Feishu group bot.
+7. Archives it in this repository and rebuilds the index.
 
-## 目录结构
+## Directory structure
 
 ```
-fetch_trending.py      抓榜 + 去重 → items.json
-prepare_report.py      骨架 + 描述复用 → report.json / pending.json
-desc_auto.py           自动生成中文描述（内置表 + 启发式模板）
-apply_desc.py          合并描述 → report.json + desc_cache.json
-render_html.py         report.json → 网页版（报纸编辑风）
+fetch_trending.py      Fetch lists and deduplicate → items.json
+prepare_report.py      Build skeleton and reuse descriptions → report.json / pending.json
+desc_auto.py           Generate Chinese descriptions (built-in map and heuristic templates)
+apply_desc.py          Merge descriptions → report.json + desc_cache.json
+render_html.py         report.json → newspaper-style web edition
 render_md.py           report.json → Markdown
-push.py                推送飞书（交互式卡片）
-run_daily.py           Actions 每日流水线入口
-pipeline.sh            本机两段式流水线（prepare / finalize）
-build_monthly.py       月报构建（合并当月归档）
-desc_cache.json        描述缓存（repo → 分类/emoji/描述/官网）
-pushed.json            30 天去重记录
-reports/YYYY/          日报 Markdown 归档
-reports_web/YYYY/      网页版归档 + 索引
-data/YYYY-MM-DD.json   结构化数据
-archive/               当月日报归档（月报数据源）
-state/                 状态文件快照
+push.py                Send Feishu interactive cards
+run_daily.py           Daily Actions pipeline entry point
+pipeline.sh            Local two-stage pipeline (prepare / finalize)
+build_monthly.py       Build monthly report from the month's archives
+desc_cache.json        Description cache (repo → category/emoji/description/website)
+pushed.json            30-day deduplication history
+reports/YYYY/          Daily Markdown archive
+reports_web/YYYY/      Web archive and index
+data/YYYY-MM-DD.json   Structured data
+archive/               Current month's daily archive, used by monthly reports
+state/                 State snapshots
 ```
 
-## 网页版
+## Web edition
 
-GitHub Pages 免费托管：**https://larryxu001.github.io/github-trending/**
+Hosted free on GitHub Pages: **https://larryxu001.github.io/github-trending/**
 
-每日/每月的网页版报告都会归档到 `reports_web/`，由 `pages.yml` 自动部署。
+Daily and monthly web reports are archived in `reports_web/` and deployed automatically by `pages.yml`.
 
-## 配置
+## Configuration
 
-- **飞书 webhook**：存 GitHub Secrets（`FEISHU_WEBHOOK`），运行时通过环境变量注入，
-  **不会写入仓库**（`config.json` 里的 feishu_webhook 保持为空）
-- **GitHub token**：工作流用 `${{ github.token }}` 自动注入（`GH_TOKEN` 环境变量），
-  用于提高 GitHub API 限额；仓库内公开数据本身不需要额外 token
-- **DeepSeek API Key**（可选）：存 GitHub Secrets（`DEEPSEEK_API_KEY`），用于 AI 生成
-  项目的中文总结与归类。**未配置时自动降级**为内置规则 + 模板（零成本，描述质量较低）
-- 本地开发把真实配置放在 `config.local.json`（已被 .gitignore 忽略）
+- **Feishu webhook**: store it in GitHub Secrets as `FEISHU_WEBHOOK`, injected through the runtime environment.
+  **Never commit it**; keep feishu_webhook empty in `config.json`.
+- **GitHub token**: the workflow injects `${{ github.token }}` as the `GH_TOKEN` environment variable
+  to increase GitHub API limits. Public repository data itself does not require an additional token.
+- **DeepSeek API key** (optional): store `DEEPSEEK_API_KEY` in GitHub Secrets for AI-generated Chinese summaries and categories.
+  **When absent, generation falls back automatically** to built-in rules and templates, at no cost but with lower description quality.
+- For local development, put actual configuration in `config.local.json`, which is ignored by .gitignore.
 
-## 手动触发
+## Manual execution
 
-在仓库 **Actions** 标签页选 `Daily Trending Report` / `Monthly Trending Report` → **Run workflow**。
+In the repository's **Actions** tab, select `Daily Trending Report` or `Monthly Trending Report`, then **Run workflow**.
 
-## 说明
+## Notes
 
-- 去重窗口 30 天；`pushed.json` 里超过 30 天的记录会自动清理。
-- 描述生成：配置了 `DEEPSEEK_API_KEY` 时用 AI 生成（推荐）；否则用内置精选表 +
-  按 topics/language 的启发式分类模板。若要手动提升某个项目的描述质量，直接编辑
-  `desc_auto.py` 里的 `DESC_MAP` 或 `desc_cache.json` 后提交即可。
-- 推送渠道：**仅飞书**（企业微信已移除）。
-- 日报每天 09:00（北京时间）自动运行，等价于 cron `0 1 * * *`（UTC）。
-- 月报每月最后一天 09:00 自动运行（cron `0 1 28-31 * *`，程序内判断是否月末）。
+- The deduplication window is 30 days; older entries in `pushed.json` are removed automatically.
+- Descriptions use AI when `DEEPSEEK_API_KEY` is configured (recommended); otherwise they use a curated built-in map and
+  heuristic classification templates based on topics/language. To improve a project's description manually,
+  edit `DESC_MAP` in `desc_auto.py` or `desc_cache.json`, then commit the change.
+- Delivery channel: **Feishu only**; WeCom has been removed.
+- Daily reports run at 09:00 Beijing time, equivalent to cron `0 1 * * *` in UTC.
+- Monthly reports run at 09:00 on the month's final day, using cron `0 1 28-31 * *` with an in-program month-end check.
