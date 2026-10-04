@@ -1,0 +1,162 @@
+#!/usr/bin/env python3
+"""渲染「我的精选」独立页 site/saved.html。
+静态页面，直接从 GitHub 仓库 saved.json 读取收藏列表展示（无登录、无后端）。
+Usage: render_saved.py"""
+import json, os
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+P = lambda n: os.path.join(BASE, n)
+
+RAW_URL = "https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json"
+
+
+CSS = """
+  :root { --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+          --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+          --serif:"Noto Serif SC","Songti SC","STSong",Georgia,serif;
+          --sans:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.7; }
+  a { color:inherit; }
+  .masthead { max-width:860px; margin:0 auto; padding:32px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em; color:var(--sub);
+             display:flex; justify-content:space-between; padding-bottom:12px;
+             border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(32px,6vw,46px); letter-spacing:.02em; padding:24px 0 8px; }
+  .stand { font-style:italic; color:var(--sub); font-size:15px; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink); height:5px; margin-top:18px; }
+  .wrap { max-width:860px; margin:0 auto; padding:28px 24px 60px; }
+  .bar { display:flex; align-items:center; gap:12px; font-family:var(--sans); font-size:13px;
+         color:var(--sub); margin-bottom:8px; flex-wrap:wrap; }
+  .bar .count { font-weight:700; color:var(--ink); }
+  .bar .spacer { flex:1; }
+  .bar button { font-family:var(--sans); font-size:12px; padding:6px 12px; border:1px solid var(--hair);
+                border-radius:4px; background:transparent; color:var(--ink); cursor:pointer; }
+  .bar button:hover { color:var(--red); border-color:var(--red); }
+  .bar button.active { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .item { padding:22px 0; border-bottom:1px solid var(--hair); display:flex; gap:16px; align-items:flex-start; }
+  .item .emoji { font-size:22px; width:32px; flex-shrink:0; text-align:center; }
+  .item .body { flex:1; min-width:0; }
+  .item .head { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  .item .title { font-size:19px; font-weight:700; }
+  .item .title a { text-decoration:none; border-bottom:2px solid transparent; }
+  .item .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .item .stars { font-family:var(--sans); font-weight:700; font-size:14px; color:var(--sub); }
+  .item .cat { font-family:var(--sans); font-size:11px; color:var(--red); letter-spacing:.06em; }
+  .item .desc { margin:6px 0 8px; color:#4A4234; font-size:15px; }
+  .item .meta { font-family:var(--sans); font-size:12px; color:var(--sub); display:flex;
+                gap:8px; flex-wrap:wrap; align-items:center; }
+  .item .meta i { font-style:normal; color:var(--hair); }
+  .item .site { color:var(--ink); font-weight:600; text-decoration:none; border-bottom:1px solid var(--ink); }
+  .item .site:hover { color:var(--red); border-bottom-color:var(--red); }
+  .item .date { font-family:var(--sans); font-size:11px; color:#C9BB93; }
+  .empty { text-align:center; padding:80px 0; color:var(--sub); font-style:italic; }
+  .empty .big { font-size:48px; margin-bottom:12px; }
+  .loading { text-align:center; padding:60px 0; color:var(--sub); font-style:italic; }
+"""
+
+JS = """
+const RAW_URL = {raw_url};
+
+function esc(s) {{ return String(s).replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c])); }}
+function starsFmt(n) {{ return (n && n > 0) ? '★ ' + Number(n).toLocaleString() : ''; }}
+
+let allRows = [];
+
+async function loadSaved() {{
+  const list = document.getElementById('list');
+  list.innerHTML = '<div class="loading">加载中…</div>';
+  try {{
+    const resp = await fetch(RAW_URL, {{ cache: 'no-store' }});
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    allRows = (data.items || []).slice().sort((a,b) => (b.stars||0) - (a.stars||0));
+    render(null);
+  }} catch(e) {{
+    list.innerHTML = '<div class="empty"><div class="big">★</div>加载失败，请稍后重试<br><span style="font-size:12px;">' + esc(e.message) + '</span></div>';
+  }}
+}}
+
+function render(filter) {{
+  const list = document.getElementById('list');
+  const count = document.getElementById('count');
+  const catBar = document.getElementById('catBar');
+  const rows = filter ? allRows.filter(r => (r.category || '其他') === filter) : allRows;
+  count.textContent = allRows.length;
+  const cats = [...new Set(allRows.map(r => r.category || '其他'))];
+  catBar.innerHTML = '<button class="' + (!filter ? 'active' : '') + '" onclick="filterCat(null)">全部</button>' +
+    cats.map(c => '<button class="' + (filter === c ? 'active' : '') + '" onclick="filterCat(\\'' + esc(c).replace(/'/g, "\\\\'") + '\\')">' + esc(c) + '</button>').join('');
+  if (allRows.length === 0) {{
+    list.innerHTML = '<div class="empty"><div class="big">★</div>还没有收藏，去日报里点击「☆ 收藏」标记对你有用的项目吧</div>';
+    return;
+  }}
+  list.innerHTML = rows.map(r => {{
+    const site = (r.site && r.site !== '无' && r.site !== '')
+      ? '<a class="site" href="' + esc(r.site) + '" target="_blank">' + esc(r.site) + '</a>' : '无官网';
+    const url = r.url || 'https://github.com/' + r.repo;
+    const date = r.saved_at ? '<span class="date">收藏于 ' + esc(String(r.saved_at).slice(0,10)) + '</span>' : '';
+    return '<div class="item">' +
+      '<div class="emoji">' + esc(r.emoji || '📦') + '</div>' +
+      '<div class="body">' +
+        '<div class="head"><span class="cat">' + esc(r.category || '其他') + '</span>' +
+        '<span class="title"><a href="' + esc(url) + '" target="_blank">' + esc(r.repo) + '</a></span>' +
+        '<span class="stars">' + starsFmt(r.stars) + '</span></div>' +
+        (r.desc ? '<p class="desc">' + esc(r.desc) + '</p>' : '') +
+        '<div class="meta"><span>' + esc(r.owner || '') + '</span><i>·</i><span>' + site + '</span><i>·</i>' + date + '</div>' +
+      '</div></div>';
+  }}).join('');
+}}
+
+window.filterCat = function(cat) {{ render(cat || null); }};
+
+document.addEventListener('DOMContentLoaded', loadSaved);
+"""
+
+
+def render():
+    js = JS.format(raw_url=json.dumps(RAW_URL))
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的精选 · Github开源趋势日报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>{CSS}</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="topline"><span>MY SAVED REPOS</span><span>我的精选</span></div>
+    <h1>我的精选</h1>
+    <div class="stand">从每日热榜中标记出的、对你真正有用的开源项目</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="wrap">
+    <div class="bar">
+      <span>共 <span class="count" id="count">0</span> 个收藏</span>
+      <span class="spacer"></span>
+      <button onclick="location.href='index.html'">返回日报</button>
+      <span id="catBar"></span>
+    </div>
+    <div id="list"></div>
+  </div>
+
+<script>{js}</script>
+</body>
+</html>"""
+
+
+def main():
+    site_dir = P("site")
+    os.makedirs(site_dir, exist_ok=True)
+    dest = os.path.join(site_dir, "saved.html")
+    open(dest, "w").write(render())
+    print(dest)
+
+
+if __name__ == "__main__":
+    main()

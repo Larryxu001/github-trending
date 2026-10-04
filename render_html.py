@@ -38,7 +38,7 @@ def masthead_info(report):
             f"本期新收录 <b>{report['new_count']}</b> 个项目　·　30 天去重跳过 {report['skipped']} 个")
     return title, stand, line, f"VOL.{issue:03d}"
 
-def render(report):
+def render(report, save_api="", saved_url="saved.html"):
     date = report["date"]
     title, stand, dateline, vol = masthead_info(report)
     monthly = len(date) == 7
@@ -61,12 +61,19 @@ def render(report):
             daily = "daily" in it["lists"]
             site = ("无官网" if it["site"] == "无"
                     else f'<a class="site" href="{esc(it["site"])}" target="_blank">{esc(it["site"])}</a>')
+            # 收藏按钮所需的项目元数据（JSON 序列化后放入 data 属性）
+            meta = json.dumps({
+                "repo": it["repo"], "url": it["url"], "owner": it["owner"],
+                "stars": it["stars"], "desc": it["desc"], "site": it["site"],
+                "category": cat["name"], "emoji": cat["emoji"],
+            }, ensure_ascii=False)
             items.append(f"""
         <article class="item" id="sec-{si}-{i}">
           <div class="item-head">
             <span class="no">{i:02d}</span>
             <h3 class="title"><a href="{esc(it['url'])}" target="_blank">{esc(it['repo'])}</a></h3>
             <span class="stars">★ {stars_fmt(it['stars'])}</span>
+            <button class="save-btn" data-meta='{esc(meta)}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">{esc(it['desc'])}</p>
           <div class="byline">
@@ -171,6 +178,12 @@ def render(report):
   .title a:hover {{ border-bottom-color:var(--red); color:var(--red); }}
   .stars {{ margin-left:auto; font-family:var(--serif); font-weight:700;
             font-size:16px; white-space:nowrap; padding-left:16px; }}
+  .save-btn {{ margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }}
+  .save-btn:hover {{ color:var(--red); border-color:var(--red); }}
+  .save-btn.saved {{ color:var(--red); border-color:var(--red); background:#FBE7E4; }}
   .desc {{ margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }}
   .byline {{ margin-left:50px; font-family:var(--sans); font-size:12px;
              color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }}
@@ -185,6 +198,13 @@ def render(report):
             border-top:1px solid var(--ink); font-family:var(--sans);
             font-size:11px; letter-spacing:.08em; color:var(--sub);
             display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }}
+
+  /* ---------- save toast ---------- */
+  .toast {{ position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }}
+  .toast.show {{ opacity:1; transform:translateX(-50%) translateY(0); }}
 
   @media (max-width:600px) {{
     .desc,.byline {{ margin-left:0; }}
@@ -214,18 +234,99 @@ def render(report):
 
   <footer>
     <span>GITHUB TRENDING {'MONTHLY' if monthly else 'DAILY'} · 自动生成</span>
-    <span>数据来源 github.com/trending · 30 天去重窗口</span>
+    <span><a href="{saved_url}" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · 数据来源 github.com/trending · 30 天去重窗口</span>
   </footer>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+(function(){{
+  const saveApi = {json.dumps(save_api)};
+
+  function toast(msg) {{
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }}
+
+  async function refreshSavedStates() {{
+    // 从 GitHub raw 读取已收藏的 repo 集合，用于高亮按钮
+    try {{
+      const resp = await fetch('https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json', {{ cache: 'no-store' }});
+      if (!resp.ok) return;
+      const data = await resp.json();
+      const savedSet = new Set((data.items || []).map(r => r.repo));
+      document.querySelectorAll('.save-btn').forEach(btn => {{
+        let meta; try {{ meta = JSON.parse(btn.dataset.meta); }} catch(_) {{ return; }}
+        const saved = savedSet.has(meta.repo);
+        btn.classList.toggle('saved', saved);
+        btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      }});
+    }} catch(_) {{ /* 忽略读取失败，不影响收藏动作 */ }}
+  }}
+
+  async function doSave(meta) {{
+    if (!saveApi) {{ toast('收藏服务未配置，请联系维护者'); return; }}
+    const btn = document.querySelector('.save-btn[data-meta]');
+    btn && (btn.disabled = true);
+    try {{
+      const resp = await fetch(saveApi, {{
+        method: 'POST',
+        headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify(meta),
+      }});
+      const result = await resp.json().catch(() => ({{}}));
+      if (!resp.ok || result.error) {{
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }}
+      toast(result.removed ? '已取消收藏' : '已收藏到「我的精选」');
+      refreshSavedStates();
+    }} catch(_) {{
+      toast('网络错误，收藏失败');
+    }} finally {{
+      btn && (btn.disabled = false);
+    }}
+  }}
+
+  // 绑定收藏按钮
+  document.addEventListener('click', async (e) => {{
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try {{ meta = JSON.parse(btn.dataset.meta); }} catch(_) {{ return; }}
+    await doSave(meta);
+  }});
+
+  document.addEventListener('DOMContentLoaded', refreshSavedStates);
+}})();
+</script>
 </body>
 </html>"""
 
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(BASE, "report.json")
     report = json.load(open(path))
+    # 收藏 API（CF Worker）地址 + 精选页 URL
+    save_api = ""
+    saved_url = "saved.html"
+    cp = os.path.join(BASE, "save_config.json")
+    if os.path.exists(cp):
+        try:
+            save_api = json.load(open(cp)).get("save_api", "")
+        except Exception:
+            pass
+    # 从 config.json 读 report_url 拼出精选页绝对地址
+    try:
+        cfg = json.load(open(os.path.join(BASE, "config.json")))
+        base = cfg.get("report_url", "")
+        if base:
+            saved_url = base.rstrip("/") + "/saved.html"
+    except Exception:
+        pass
     site_dir = os.path.join(BASE, "site")
     os.makedirs(site_dir, exist_ok=True)
     dest = os.path.join(site_dir, "index.html")
-    open(dest, "w").write(render(report))
+    open(dest, "w").write(render(report, save_api, saved_url))
     print(dest)
 
 if __name__ == "__main__":

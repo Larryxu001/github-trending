@@ -58,6 +58,7 @@ def main():
     # 4) 渲染 Markdown + HTML
     sh(sys.executable, P("render_md.py"), P("report.json"))
     sh(sys.executable, P("render_html.py"), P("report.json"))
+    sh(sys.executable, P("render_saved.py"))   # 「我的精选」页（读 saved.json）
 
     # 5) 推送飞书
     sh(sys.executable, P("push.py"), P("report.json"))
@@ -96,6 +97,11 @@ def main():
     if os.path.exists(idx):
         open(os.path.join(web_dir, "index.html"), "w", encoding="utf-8").write(
             open(idx, encoding="utf-8").read())
+    # 「我的精选」页放到 reports_web 根（全局唯一入口）
+    saved_src = os.path.join(SITE_DIR, "saved.html")
+    if os.path.exists(saved_src):
+        open(os.path.join(OUT_SITE, "saved.html"), "w", encoding="utf-8").write(
+            open(saved_src, encoding="utf-8").read())
 
     # 8) 重建网页版归档索引 reports_web/index.html
     build_web_index()
