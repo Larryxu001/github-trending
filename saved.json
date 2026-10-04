@@ -57,22 +57,6 @@
     "有趣"
    ],
    "saved_at": "2026-10-04"
-  },
-  {
-   "repo": "thedotmack/claude-mem",
-   "url": "https://github.com/thedotmack/claude-mem",
-   "owner": "thedotmack",
-   "stars": 95621,
-   "category": "Agent 基础设施与框架",
-   "emoji": "🤖",
-   "desc": "claude-mem 是一个给 AI 编程助手加「长期记忆」的工具。平时 AI 每次开新会话都会忘掉之前做过什么，它会把会话中的操作自动记录下来，用 AI 压缩成摘要，下次再对话时把相关记忆塞回上下文。比如你昨天让 Claude Code 修过一个 bug，今天它还能记得当时的思路。支持 Claude Code、Codex、Copilot 等多种 Agent。",
-   "site": "https://claude-mem.ai",
-   "note": "",
-   "tags": [
-    "安全",
-    "有趣"
-   ],
-   "saved_at": "2026-10-04"
   }
  ]
 }
