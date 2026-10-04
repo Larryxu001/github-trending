@@ -1,18 +1,16 @@
 {
  "items": [
   {
-   "repo": "obra/superpowers",
-   "url": "https://github.com/obra/superpowers",
-   "owner": "obra",
-   "stars": 294619,
+   "repo": "addyosmani/agent-skills",
+   "url": "https://github.com/addyosmani/agent-skills",
+   "owner": "addyosmani",
+   "stars": 100870,
    "category": "Agent 技能与插件",
    "emoji": "🧩",
-   "desc": "一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。",
-   "site": "无",
-   "note": "剪辑",
-   "tags": [
-    "做视频"
-   ],
+   "desc": "这是一个为 AI 编程助手（如 Claude Code、Cursor、Codex 等）提供生产级工程技能的开源项目。它把代码审查、测试编写、重构、调试等常见开发任务封装成可复用的「技能包」，让 AI Agent 在真实项目中表现得更专业可靠。比如你让 AI 帮你改一个 bug，它会按内置的调试技能一步步定位问题，而不是随意猜测。开发者可以直接安装这些技能，提升 AI 编程的准确率和效率。",
+   "site": "https://skills.addy.ie",
+   "note": "",
+   "tags": [],
    "saved_at": "2026-10-04"
   }
  ]
