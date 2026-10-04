@@ -1,0 +1,25 @@
+name: Keepalive
+
+# 说明：GitHub Actions 会在仓库 60 天无「提交活动」后自动禁用所有 scheduled workflows。
+# 定时任务自身的运行不算「活动」，所以需要一个周期性空提交来重置这个计时器，
+# 避免日报/月报的 schedule 静默失效。每周三 09:00 (北京时间) 跑一次。
+on:
+  schedule:
+    - cron: "0 1 * * 3"   # 每周三 01:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Keepalive empty commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: keepalive [skip ci]" || echo "nothing to commit"
+          git push || echo "push skipped"
