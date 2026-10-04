@@ -44,5 +44,17 @@
  "anthropics/claude-code-action": "2026-10-03",
  "NVIDIA/SkillSpector": "2026-10-03",
  "rohitg00/ai-engineering-from-scratch": "2026-10-03",
- "pablostanley/yoinks": "2026-10-03"
+ "pablostanley/yoinks": "2026-10-03",
+ "addyosmani/agent-skills": "2026-10-04",
+ "humanlayer/skills": "2026-10-04",
+ "earendil-works/pi": "2026-10-04",
+ "thedotmack/claude-mem": "2026-10-04",
+ "cloudflare/cloudflare-os": "2026-10-04",
+ "agent-substrate/substrate": "2026-10-04",
+ "meituan-longcat/LongCat-Video": "2026-10-04",
+ "pingdotgg/t3code": "2026-10-04",
+ "boykopovar/AnyPS5": "2026-10-04",
+ "HunxByts/GhostTrack": "2026-10-04",
+ "jamwithai/production-agentic-rag-course": "2026-10-04",
+ "OpenCut-app/OpenCut": "2026-10-04"
 }

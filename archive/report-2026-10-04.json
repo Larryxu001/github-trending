@@ -1,0 +1,193 @@
+{
+ "date": "2026-10-04",
+ "new_count": 12,
+ "skipped": 38,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "addyosmani/agent-skills",
+     "url": "https://github.com/addyosmani/agent-skills",
+     "owner": "addyosmani",
+     "stars": 100870,
+     "updated": "2026-10-03",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个为 AI 编程助手（如 Claude Code、Cursor、Codex 等）提供生产级工程技能的开源项目。它把代码审查、测试编写、重构、调试等常见开发任务封装成可复用的「技能包」，让 AI Agent 在真实项目中表现得更专业可靠。比如你让 AI 帮你改一个 bug，它会按内置的调试技能一步步定位问题，而不是随意猜测。开发者可以直接安装这些技能，提升 AI 编程的准确率和效率。",
+     "site": "https://skills.addy.ie"
+    },
+    {
+     "repo": "humanlayer/skills",
+     "url": "https://github.com/humanlayer/skills",
+     "owner": "humanlayer",
+     "stars": 4885,
+     "updated": "2026-09-17",
+     "lists": [
+      "monthly"
+     ],
+     "desc": "humanlayer/skills 是一个用 TypeScript 编写的开源项目，为 AI Agent 提供可复用的技能模块。它解决 Agent 在复杂任务中缺乏标准化能力的问题，开发者可以像搭积木一样把技能组合起来，让 Agent 完成搜索、文件操作、调用 API 等具体工作。例如，你可以给客服 Agent 装上「查询订单」和「发送邮件」两个技能，它就能自动处理用户退换货请求，无需从零编写代码。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "items": [
+    {
+     "repo": "earendil-works/pi",
+     "url": "https://github.com/earendil-works/pi",
+     "owner": "earendil-works",
+     "stars": 112176,
+     "updated": "2026-10-04",
+     "lists": [
+      "daily"
+     ],
+     "desc": "pi 是一个用 TypeScript 编写的 AI Agent 工具包，把调用大模型、驱动 Agent 循环、终端界面和编码助手 CLI 整合在一起。它解决的是开发者搭建 AI 应用时接口不统一、流程要自己拼的问题：你只需接入它提供的统一 LLM API，就能让 Agent 自动思考、调用工具、在终端里交互，甚至直接当作命令行编码助手使用，适合快速构建和调试自己的 AI 代理。",
+     "site": "无"
+    },
+    {
+     "repo": "thedotmack/claude-mem",
+     "url": "https://github.com/thedotmack/claude-mem",
+     "owner": "thedotmack",
+     "stars": 95621,
+     "updated": "2026-10-04",
+     "lists": [
+      "daily"
+     ],
+     "desc": "claude-mem 是一个给 AI 编程助手加「长期记忆」的工具。平时 AI 每次开新会话都会忘掉之前做过什么，它会把会话中的操作自动记录下来，用 AI 压缩成摘要，下次再对话时把相关记忆塞回上下文。比如你昨天让 Claude Code 修过一个 bug，今天它还能记得当时的思路。支持 Claude Code、Codex、Copilot 等多种 Agent。",
+     "site": "https://claude-mem.ai"
+    },
+    {
+     "repo": "cloudflare/cloudflare-os",
+     "url": "https://github.com/cloudflare/cloudflare-os",
+     "owner": "cloudflare",
+     "stars": 10586,
+     "updated": "2026-10-04",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Cloudflare OS 是运行在 Cloudflare Workers 上的智能体工作空间，让企业把内部文档、应用和业务系统接入 AI Agent。员工可以用自然语言让 Agent 查资料、写文档、搭小工具，甚至自动执行跨系统任务，比如根据公司知识库生成周报或调用内部 API 完成审批。它解决的是 Agent 缺乏企业上下文、难以落地的问题，适合想快速搭建私有 AI 助手的团队。",
+     "site": "https://os.cloudflare.app"
+    },
+    {
+     "repo": "agent-substrate/substrate",
+     "url": "https://github.com/agent-substrate/substrate",
+     "owner": "agent-substrate",
+     "stars": 4216,
+     "updated": "2026-10-03",
+     "lists": [
+      "monthly"
+     ],
+     "desc": "Agent Substrate 是一个用 Go 编写的核心系统，为构建和运行 AI 智能体（Agent）提供底层基础设施。它解决的是智能体开发中重复造轮子的问题，比如任务调度、状态管理、工具调用和通信等通用能力。开发者可以基于它快速搭建自己的智能体应用，而不用从零实现这些复杂机制。例如，想让一个 AI 助手自动查天气并订机票，Substrate 能帮你管理多步骤执行和外部工具集成。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "meituan-longcat/LongCat-Video",
+     "url": "https://github.com/meituan-longcat/LongCat-Video",
+     "owner": "meituan-longcat",
+     "stars": 8767,
+     "updated": "2026-05-27",
+     "lists": [
+      "daily"
+     ],
+     "desc": "LongCat-Video 是美团开源的一款视频生成大模型，用 Python 编写。它能把文字描述或图片直接变成连贯的视频，解决传统视频制作耗时耗力的问题。比如输入「一只猫在弹钢琴」，它就能生成一段猫弹琴的短视频，适合做创意短片、广告素材或社交内容，让没有剪辑经验的人也能快速产出视频。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "pingdotgg/t3code",
+     "url": "https://github.com/pingdotgg/t3code",
+     "owner": "pingdotgg",
+     "stars": 24720,
+     "updated": "2026-10-04",
+     "lists": [
+      "daily"
+     ],
+     "desc": "T3 Code 是一个基于 TypeScript 的全栈开发工具包，旨在帮助开发者快速搭建类型安全、端到端可靠的现代 Web 应用。它整合了 Next.js、tRPC、Prisma 等流行技术，解决了传统开发中前后端类型不一致、配置繁琐的问题。例如，你只需定义一次数据模型，就能自动获得前端调用和后端接口的类型提示，大幅减少调试时间，适合想快速启动高质量项目的团队和个人。",
+     "site": "https://t3.codes"
+    },
+    {
+     "repo": "boykopovar/AnyPS5",
+     "url": "https://github.com/boykopovar/AnyPS5",
+     "owner": "boykopovar",
+     "stars": 3271,
+     "updated": "2026-10-04",
+     "lists": [
+      "weekly"
+     ],
+     "desc": "AnyPS5 是一个用 C++ 编写的工具，能自动把 PS5 游戏的可执行文件移植到 Linux 和 Windows 上运行。它通过动态库和 SPIR-V、Vulkan 技术，把原本只认 PS5 主机的程序翻译成 PC 能懂的指令，省去人工逆向和重写的麻烦。比如你想在电脑上跑某款 PS5 独占游戏，它就能自动处理底层兼容问题，让游戏在 PC 上启动。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "安全",
+   "emoji": "🔐",
+   "items": [
+    {
+     "repo": "HunxByts/GhostTrack",
+     "url": "https://github.com/HunxByts/GhostTrack",
+     "owner": "HunxByts",
+     "stars": 16849,
+     "updated": "2024-01-11",
+     "lists": [
+      "weekly"
+     ],
+     "desc": "GhostTrack 是一款基于 Python 的开源情报（OSINT）工具，主要用于追踪 IP 地址或手机号码的归属地信息。它可以帮助安全研究人员、渗透测试人员或普通用户快速获取目标的大致地理位置、运营商等公开数据，常用于信息收集和网络安全调查。例如，输入一个手机号，它就能显示该号码可能所属的国家和地区，适合入门级 OSINT 学习与实战。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "学习资源",
+   "emoji": "📚",
+   "items": [
+    {
+     "repo": "jamwithai/production-agentic-rag-course",
+     "url": "https://github.com/jamwithai/production-agentic-rag-course",
+     "owner": "jamwithai",
+     "stars": 9412,
+     "updated": "2026-06-05",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个面向开发者的实战课程项目，教你从零搭建生产级的 Agentic RAG（检索增强生成）系统。它解决的是「知道 RAG 概念但不会落地」的问题，通过 Python 代码示例和分步讲解，带你实现文档检索、Agent 决策与生成回答的完整流程。例如，你可以跟着它做出一个能自动查阅内部知识库并回答员工问题的智能助手。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "其他",
+   "emoji": "📦",
+   "items": [
+    {
+     "repo": "OpenCut-app/OpenCut",
+     "url": "https://github.com/OpenCut-app/OpenCut",
+     "owner": "OpenCut-app",
+     "stars": 91645,
+     "updated": "2026-09-24",
+     "lists": [
+      "daily"
+     ],
+     "desc": "OpenCut 是一个开源的视频剪辑工具，定位是剪映（CapCut）的免费替代品。它让你在浏览器或桌面端直接完成剪辑，支持多轨道时间线、裁剪、拼接、字幕和导出等常用功能，不需要付费订阅，也不用担心素材被上传到别人的服务器。比如你想给短视频加字幕、剪掉多余片段，用它就能搞定，适合不想被商业软件限制的个人创作者和小团队。",
+     "site": "https://opencut.app"
+    }
+   ]
+  }
+ ]
+}

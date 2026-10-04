@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 日报 · 2026-10-04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.002</span></div>
+    <h1>Github开源趋势日报</h1>
+    <div class="standfirst">GitHub Trending 日 / 周 / 月三榜精选，人工解读每一个上榜项目</div>
+    <div class="dateline"><b>2026 年 10 月 4 日</b>　·　第 2 期　·　本期新收录 <b>12</b> 个项目　·　30 天去重跳过 38 个</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>Agent 技能与插件<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>agent-skills</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>skills</a></details><details><summary><span class="toc-no">02</span>Agent 基础设施与框架<span class="toc-n">4</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>pi</a><a class="toc-proj" href="#sec-2-2"><span class="toc-no">02</span>claude-mem</a><a class="toc-proj" href="#sec-2-3"><span class="toc-no">03</span>cloudflare-os</a><a class="toc-proj" href="#sec-2-4"><span class="toc-no">04</span>substrate</a></details><details><summary><span class="toc-no">03</span>AI / 大模型<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>LongCat-Video</a></details><details><summary><span class="toc-no">04</span>开发工具与框架<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>t3code</a><a class="toc-proj" href="#sec-4-2"><span class="toc-no">02</span>AnyPS5</a></details><details><summary><span class="toc-no">05</span>安全<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-5-1"><span class="toc-no">01</span>GhostTrack</a></details><details><summary><span class="toc-no">06</span>学习资源<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-6-1"><span class="toc-no">01</span>production-agentic-rag-course</a></details><details><summary><span class="toc-no">07</span>其他<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-7-1"><span class="toc-no">01</span>OpenCut</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></h3>
+            <span class="stars">★ 100,870</span>
+          </div>
+          <p class="desc">这是一个为 AI 编程助手（如 Claude Code、Cursor、Codex 等）提供生产级工程技能的开源项目。它把代码审查、测试编写、重构、调试等常见开发任务封装成可复用的「技能包」，让 AI Agent 在真实项目中表现得更专业可靠。比如你让 AI 帮你改一个 bug，它会按内置的调试技能一步步定位问题，而不是随意猜测。开发者可以直接安装这些技能，提升 AI 编程的准确率和效率。</p>
+          <div class="byline">
+            <span>addyosmani</span><i>·</i>
+            <span>更新于 2026-10-03</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://skills.addy.ie" target="_blank">https://skills.addy.ie</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/humanlayer/skills" target="_blank">humanlayer/skills</a></h3>
+            <span class="stars">★ 4,885</span>
+          </div>
+          <p class="desc">humanlayer/skills 是一个用 TypeScript 编写的开源项目，为 AI Agent 提供可复用的技能模块。它解决 Agent 在复杂任务中缺乏标准化能力的问题，开发者可以像搭积木一样把技能组合起来，让 Agent 完成搜索、文件操作、调用 API 等具体工作。例如，你可以给客服 Agent 装上「查询订单」和「发送邮件」两个技能，它就能自动处理用户退换货请求，无需从零编写代码。</p>
+          <div class="byline">
+            <span>humanlayer</span><i>·</i>
+            <span>更新于 2026-09-17</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">Agent 基础设施与框架</span><span class="sec-count">4 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/earendil-works/pi" target="_blank">earendil-works/pi</a></h3>
+            <span class="stars">★ 112,176</span>
+          </div>
+          <p class="desc">pi 是一个用 TypeScript 编写的 AI Agent 工具包，把调用大模型、驱动 Agent 循环、终端界面和编码助手 CLI 整合在一起。它解决的是开发者搭建 AI 应用时接口不统一、流程要自己拼的问题：你只需接入它提供的统一 LLM API，就能让 Agent 自动思考、调用工具、在终端里交互，甚至直接当作命令行编码助手使用，适合快速构建和调试自己的 AI 代理。</p>
+          <div class="byline">
+            <span>earendil-works</span><i>·</i>
+            <span>更新于 2026-10-04</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+        <article class="item" id="sec-2-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/thedotmack/claude-mem" target="_blank">thedotmack/claude-mem</a></h3>
+            <span class="stars">★ 95,621</span>
+          </div>
+          <p class="desc">claude-mem 是一个给 AI 编程助手加「长期记忆」的工具。平时 AI 每次开新会话都会忘掉之前做过什么，它会把会话中的操作自动记录下来，用 AI 压缩成摘要，下次再对话时把相关记忆塞回上下文。比如你昨天让 Claude Code 修过一个 bug，今天它还能记得当时的思路。支持 Claude Code、Codex、Copilot 等多种 Agent。</p>
+          <div class="byline">
+            <span>thedotmack</span><i>·</i>
+            <span>更新于 2026-10-04</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://claude-mem.ai" target="_blank">https://claude-mem.ai</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/cloudflare/cloudflare-os" target="_blank">cloudflare/cloudflare-os</a></h3>
+            <span class="stars">★ 10,586</span>
+          </div>
+          <p class="desc">Cloudflare OS 是运行在 Cloudflare Workers 上的智能体工作空间，让企业把内部文档、应用和业务系统接入 AI Agent。员工可以用自然语言让 Agent 查资料、写文档、搭小工具，甚至自动执行跨系统任务，比如根据公司知识库生成周报或调用内部 API 完成审批。它解决的是 Agent 缺乏企业上下文、难以落地的问题，适合想快速搭建私有 AI 助手的团队。</p>
+          <div class="byline">
+            <span>cloudflare</span><i>·</i>
+            <span>更新于 2026-10-04</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://os.cloudflare.app" target="_blank">https://os.cloudflare.app</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/agent-substrate/substrate" target="_blank">agent-substrate/substrate</a></h3>
+            <span class="stars">★ 4,216</span>
+          </div>
+          <p class="desc">Agent Substrate 是一个用 Go 编写的核心系统，为构建和运行 AI 智能体（Agent）提供底层基础设施。它解决的是智能体开发中重复造轮子的问题，比如任务调度、状态管理、工具调用和通信等通用能力。开发者可以基于它快速搭建自己的智能体应用，而不用从零实现这些复杂机制。例如，想让一个 AI 助手自动查天气并订机票，Substrate 能帮你管理多步骤执行和外部工具集成。</p>
+          <div class="byline">
+            <span>agent-substrate</span><i>·</i>
+            <span>更新于 2026-10-03</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">AI / 大模型</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/meituan-longcat/LongCat-Video" target="_blank">meituan-longcat/LongCat-Video</a></h3>
+            <span class="stars">★ 8,767</span>
+          </div>
+          <p class="desc">LongCat-Video 是美团开源的一款视频生成大模型，用 Python 编写。它能把文字描述或图片直接变成连贯的视频，解决传统视频制作耗时耗力的问题。比如输入「一只猫在弹钢琴」，它就能生成一段猫弹琴的短视频，适合做创意短片、广告素材或社交内容，让没有剪辑经验的人也能快速产出视频。</p>
+          <div class="byline">
+            <span>meituan-longcat</span><i>·</i>
+            <span>更新于 2026-05-27</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">开发工具与框架</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/pingdotgg/t3code" target="_blank">pingdotgg/t3code</a></h3>
+            <span class="stars">★ 24,720</span>
+          </div>
+          <p class="desc">T3 Code 是一个基于 TypeScript 的全栈开发工具包，旨在帮助开发者快速搭建类型安全、端到端可靠的现代 Web 应用。它整合了 Next.js、tRPC、Prisma 等流行技术，解决了传统开发中前后端类型不一致、配置繁琐的问题。例如，你只需定义一次数据模型，就能自动获得前端调用和后端接口的类型提示，大幅减少调试时间，适合想快速启动高质量项目的团队和个人。</p>
+          <div class="byline">
+            <span>pingdotgg</span><i>·</i>
+            <span>更新于 2026-10-04</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://t3.codes" target="_blank">https://t3.codes</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/boykopovar/AnyPS5" target="_blank">boykopovar/AnyPS5</a></h3>
+            <span class="stars">★ 3,271</span>
+          </div>
+          <p class="desc">AnyPS5 是一个用 C++ 编写的工具，能自动把 PS5 游戏的可执行文件移植到 Linux 和 Windows 上运行。它通过动态库和 SPIR-V、Vulkan 技术，把原本只认 PS5 主机的程序翻译成 PC 能懂的指令，省去人工逆向和重写的麻烦。比如你想在电脑上跑某款 PS5 独占游戏，它就能自动处理底层兼容问题，让游戏在 PC 上启动。</p>
+          <div class="byline">
+            <span>boykopovar</span><i>·</i>
+            <span>更新于 2026-10-04</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-5">
+        <div class="sec-kicker"><span class="sec-no">SECTION 05</span><span class="sec-name">安全</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-5-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/HunxByts/GhostTrack" target="_blank">HunxByts/GhostTrack</a></h3>
+            <span class="stars">★ 16,849</span>
+          </div>
+          <p class="desc">GhostTrack 是一款基于 Python 的开源情报（OSINT）工具，主要用于追踪 IP 地址或手机号码的归属地信息。它可以帮助安全研究人员、渗透测试人员或普通用户快速获取目标的大致地理位置、运营商等公开数据，常用于信息收集和网络安全调查。例如，输入一个手机号，它就能显示该号码可能所属的国家和地区，适合入门级 OSINT 学习与实战。</p>
+          <div class="byline">
+            <span>HunxByts</span><i>·</i>
+            <span>更新于 2024-01-11</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-6">
+        <div class="sec-kicker"><span class="sec-no">SECTION 06</span><span class="sec-name">学习资源</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-6-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/jamwithai/production-agentic-rag-course" target="_blank">jamwithai/production-agentic-rag-course</a></h3>
+            <span class="stars">★ 9,412</span>
+          </div>
+          <p class="desc">这是一个面向开发者的实战课程项目，教你从零搭建生产级的 Agentic RAG（检索增强生成）系统。它解决的是「知道 RAG 概念但不会落地」的问题，通过 Python 代码示例和分步讲解，带你实现文档检索、Agent 决策与生成回答的完整流程。例如，你可以跟着它做出一个能自动查阅内部知识库并回答员工问题的智能助手。</p>
+          <div class="byline">
+            <span>jamwithai</span><i>·</i>
+            <span>更新于 2026-06-05</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-7">
+        <div class="sec-kicker"><span class="sec-no">SECTION 07</span><span class="sec-name">其他</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-7-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/OpenCut-app/OpenCut" target="_blank">OpenCut-app/OpenCut</a></h3>
+            <span class="stars">★ 91,645</span>
+          </div>
+          <p class="desc">OpenCut 是一个开源的视频剪辑工具，定位是剪映（CapCut）的免费替代品。它让你在浏览器或桌面端直接完成剪辑，支持多轨道时间线、裁剪、拼接、字幕和导出等常用功能，不需要付费订阅，也不用担心素材被上传到别人的服务器。比如你想给短视频加字幕、剪掉多余片段，用它就能搞定，适合不想被商业软件限制的个人创作者和小团队。</p>
+          <div class="byline">
+            <span>OpenCut-app</span><i>·</i>
+            <span>更新于 2026-09-24</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://opencut.app" target="_blank">https://opencut.app</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span>数据来源 github.com/trending · 30 天去重窗口</span>
+  </footer>
+</body>
+</html>
