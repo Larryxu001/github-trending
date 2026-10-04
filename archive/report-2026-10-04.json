@@ -1,89 +1,47 @@
 {
  "date": "2026-10-04",
- "new_count": 12,
- "skipped": 38,
+ "new_count": 8,
+ "skipped": 40,
  "categories": [
   {
    "name": "Agent 技能与插件",
    "emoji": "🧩",
    "items": [
     {
-     "repo": "addyosmani/agent-skills",
-     "url": "https://github.com/addyosmani/agent-skills",
-     "owner": "addyosmani",
-     "stars": 100870,
+     "repo": "garrytan/gstack",
+     "url": "https://github.com/garrytan/gstack",
+     "owner": "garrytan",
+     "stars": 135040,
+     "updated": "2026-10-04",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是 Garry Tan 公开的一套 Claude Code 配置，包含 23 个预设工具，分别扮演 CEO、设计师、工程经理、发布经理、文档工程师和 QA 等角色。它解决的问题是：普通用户不知道如何把 Claude Code 调教成高效的多角色协作助手。装上后，你可以让 AI 自动完成需求评审、代码审查、发布检查和文档生成等任务，比如让「QA」工具自动跑测试并生成报告。",
+     "site": "无"
+    },
+    {
+     "repo": "calesthio/OpenMontage",
+     "url": "https://github.com/calesthio/OpenMontage",
+     "owner": "calesthio",
+     "stars": 62912,
      "updated": "2026-10-03",
      "lists": [
       "daily"
      ],
-     "desc": "这是一个为 AI 编程助手（如 Claude Code、Cursor、Codex 等）提供生产级工程技能的开源项目。它把代码审查、测试编写、重构、调试等常见开发任务封装成可复用的「技能包」，让 AI Agent 在真实项目中表现得更专业可靠。比如你让 AI 帮你改一个 bug，它会按内置的调试技能一步步定位问题，而不是随意猜测。开发者可以直接安装这些技能，提升 AI 编程的准确率和效率。",
-     "site": "https://skills.addy.ie"
+     "desc": "OpenMontage 是一个开源的智能体视频制作系统，它把 AI 编程助手变成完整的视频工作室。项目内置 12 条制作流水线和 100 多个工具，并附带 700 多份智能体技能与制作知识文件，覆盖脚本、配音、图像生成、剪辑合成等环节。你只需在 Claude、Cursor 等助手里下达指令，它就能调用 ElevenLabs、FLUX、FFmpeg 等工具自动完成一条视频，适合想低成本做视频又不想学复杂剪辑软件的人。",
+     "site": "https://www.openmontage.video/"
     },
     {
-     "repo": "humanlayer/skills",
-     "url": "https://github.com/humanlayer/skills",
-     "owner": "humanlayer",
-     "stars": 4885,
-     "updated": "2026-09-17",
-     "lists": [
-      "monthly"
-     ],
-     "desc": "humanlayer/skills 是一个用 TypeScript 编写的开源项目，为 AI Agent 提供可复用的技能模块。它解决 Agent 在复杂任务中缺乏标准化能力的问题，开发者可以像搭积木一样把技能组合起来，让 Agent 完成搜索、文件操作、调用 API 等具体工作。例如，你可以给客服 Agent 装上「查询订单」和「发送邮件」两个技能，它就能自动处理用户退换货请求，无需从零编写代码。",
-     "site": "无"
-    }
-   ]
-  },
-  {
-   "name": "Agent 基础设施与框架",
-   "emoji": "🤖",
-   "items": [
-    {
-     "repo": "earendil-works/pi",
-     "url": "https://github.com/earendil-works/pi",
-     "owner": "earendil-works",
-     "stars": 112176,
+     "repo": "earthtojake/text-to-cad",
+     "url": "https://github.com/earthtojake/text-to-cad",
+     "owner": "earthtojake",
+     "stars": 16705,
      "updated": "2026-10-04",
      "lists": [
       "daily"
      ],
-     "desc": "pi 是一个用 TypeScript 编写的 AI Agent 工具包，把调用大模型、驱动 Agent 循环、终端界面和编码助手 CLI 整合在一起。它解决的是开发者搭建 AI 应用时接口不统一、流程要自己拼的问题：你只需接入它提供的统一 LLM API，就能让 Agent 自动思考、调用工具、在终端里交互，甚至直接当作命令行编码助手使用，适合快速构建和调试自己的 AI 代理。",
-     "site": "无"
-    },
-    {
-     "repo": "thedotmack/claude-mem",
-     "url": "https://github.com/thedotmack/claude-mem",
-     "owner": "thedotmack",
-     "stars": 95621,
-     "updated": "2026-10-04",
-     "lists": [
-      "daily"
-     ],
-     "desc": "claude-mem 是一个给 AI 编程助手加「长期记忆」的工具。平时 AI 每次开新会话都会忘掉之前做过什么，它会把会话中的操作自动记录下来，用 AI 压缩成摘要，下次再对话时把相关记忆塞回上下文。比如你昨天让 Claude Code 修过一个 bug，今天它还能记得当时的思路。支持 Claude Code、Codex、Copilot 等多种 Agent。",
-     "site": "https://claude-mem.ai"
-    },
-    {
-     "repo": "cloudflare/cloudflare-os",
-     "url": "https://github.com/cloudflare/cloudflare-os",
-     "owner": "cloudflare",
-     "stars": 10586,
-     "updated": "2026-10-04",
-     "lists": [
-      "daily"
-     ],
-     "desc": "Cloudflare OS 是运行在 Cloudflare Workers 上的智能体工作空间，让企业把内部文档、应用和业务系统接入 AI Agent。员工可以用自然语言让 Agent 查资料、写文档、搭小工具，甚至自动执行跨系统任务，比如根据公司知识库生成周报或调用内部 API 完成审批。它解决的是 Agent 缺乏企业上下文、难以落地的问题，适合想快速搭建私有 AI 助手的团队。",
-     "site": "https://os.cloudflare.app"
-    },
-    {
-     "repo": "agent-substrate/substrate",
-     "url": "https://github.com/agent-substrate/substrate",
-     "owner": "agent-substrate",
-     "stars": 4216,
-     "updated": "2026-10-03",
-     "lists": [
-      "monthly"
-     ],
-     "desc": "Agent Substrate 是一个用 Go 编写的核心系统，为构建和运行 AI 智能体（Agent）提供底层基础设施。它解决的是智能体开发中重复造轮子的问题，比如任务调度、状态管理、工具调用和通信等通用能力。开发者可以基于它快速搭建自己的智能体应用，而不用从零实现这些复杂机制。例如，想让一个 AI 助手自动查天气并订机票，Substrate 能帮你管理多步骤执行和外部工具集成。",
-     "site": "无"
+     "desc": "这是一个给 AI 智能体加装 CAD 能力的工具包，让智能体能够通过文字描述直接生成三维机械模型。它解决了传统 CAD 建模需要人工操作、门槛高的问题，用户只需说「画一个带四个安装孔的方形法兰」，智能体就能自动输出 STEP、STL 等标准格式文件，可直接用于 3D 打印或机械加工，适合机器人、机械工程等场景快速原型设计。",
+     "site": "https://www.texttocad.dev"
     }
    ]
   },
@@ -92,15 +50,15 @@
    "emoji": "🧠",
    "items": [
     {
-     "repo": "meituan-longcat/LongCat-Video",
-     "url": "https://github.com/meituan-longcat/LongCat-Video",
-     "owner": "meituan-longcat",
-     "stars": 8767,
-     "updated": "2026-05-27",
+     "repo": "antirez/ds4",
+     "url": "https://github.com/antirez/ds4",
+     "owner": "antirez",
+     "stars": 23305,
+     "updated": "2026-09-20",
      "lists": [
       "daily"
      ],
-     "desc": "LongCat-Video 是美团开源的一款视频生成大模型，用 Python 编写。它能把文字描述或图片直接变成连贯的视频，解决传统视频制作耗时耗力的问题。比如输入「一只猫在弹钢琴」，它就能生成一段猫弹琴的短视频，适合做创意短片、广告素材或社交内容，让没有剪辑经验的人也能快速产出视频。",
+     "desc": "这是 Redis 作者 antirez 开发的一个本地大模型推理引擎，专门用来在个人电脑上跑 DeepSeek 4 Flash 和 PRO 模型。它支持 Metal、CUDA 和 ROCm 三种显卡加速方案，意味着苹果电脑、NVIDIA 和 AMD 显卡都能用。解决了不想把数据发给云端、又想低成本使用大模型的问题。比如你可以直接在自己的 Mac 或游戏本上加载模型，离线完成代码生成或问答，不用联网也不花 API 费用。",
      "site": "无"
     }
    ]
@@ -110,28 +68,28 @@
    "emoji": "🛠",
    "items": [
     {
-     "repo": "pingdotgg/t3code",
-     "url": "https://github.com/pingdotgg/t3code",
-     "owner": "pingdotgg",
-     "stars": 24720,
+     "repo": "caddyserver/caddy",
+     "url": "https://github.com/caddyserver/caddy",
+     "owner": "caddyserver",
+     "stars": 76338,
      "updated": "2026-10-04",
      "lists": [
       "daily"
      ],
-     "desc": "T3 Code 是一个基于 TypeScript 的全栈开发工具包，旨在帮助开发者快速搭建类型安全、端到端可靠的现代 Web 应用。它整合了 Next.js、tRPC、Prisma 等流行技术，解决了传统开发中前后端类型不一致、配置繁琐的问题。例如，你只需定义一次数据模型，就能自动获得前端调用和后端接口的类型提示，大幅减少调试时间，适合想快速启动高质量项目的团队和个人。",
-     "site": "https://t3.codes"
+     "desc": "Caddy 是一个用 Go 编写的开源 Web 服务器和反向代理，最大亮点是自动为网站配置和续期 HTTPS 证书，无需手动折腾 Let's Encrypt。它支持 HTTP/1、HTTP/2 和 HTTP/3，配置简单，一个 Caddyfile 就能搞定。比如你写一行「example.com」启动 Caddy，它就会自动申请证书、开启 HTTPS 并托管网站，非常适合个人博客、API 网关和内部服务。",
+     "site": "https://caddyserver.com"
     },
     {
-     "repo": "boykopovar/AnyPS5",
-     "url": "https://github.com/boykopovar/AnyPS5",
-     "owner": "boykopovar",
-     "stars": 3271,
+     "repo": "tester-army/e2e",
+     "url": "https://github.com/tester-army/e2e",
+     "owner": "tester-army",
+     "stars": 2575,
      "updated": "2026-10-04",
      "lists": [
-      "weekly"
+      "daily"
      ],
-     "desc": "AnyPS5 是一个用 C++ 编写的工具，能自动把 PS5 游戏的可执行文件移植到 Linux 和 Windows 上运行。它通过动态库和 SPIR-V、Vulkan 技术，把原本只认 PS5 主机的程序翻译成 PC 能懂的指令，省去人工逆向和重写的麻烦。比如你想在电脑上跑某款 PS5 独占游戏，它就能自动处理底层兼容问题，让游戏在 PC 上启动。",
-     "site": "无"
+     "desc": "这是一个面向 Web 和移动应用的下一代端到端（E2E）测试框架，用 TypeScript 编写。它解决的是传统 E2E 测试配置繁琐、跨平台（网页和手机 App）难以统一的问题。开发者可以用一套工具同时测试网页和移动端，比如模拟用户点击按钮、填写表单并验证结果，确保整个应用流程正常。它基于 Playwright 等现代技术，让测试更稳定、更易维护，适合需要保证产品质量的团队。",
+     "site": "https://tester.army/e2e"
     }
    ]
   },
@@ -140,15 +98,15 @@
    "emoji": "🔐",
    "items": [
     {
-     "repo": "HunxByts/GhostTrack",
-     "url": "https://github.com/HunxByts/GhostTrack",
-     "owner": "HunxByts",
-     "stars": 16849,
-     "updated": "2024-01-11",
+     "repo": "NationalSecurityAgency/ghidra",
+     "url": "https://github.com/NationalSecurityAgency/ghidra",
+     "owner": "NationalSecurityAgency",
+     "stars": 80513,
+     "updated": "2026-09-30",
      "lists": [
-      "weekly"
+      "monthly"
      ],
-     "desc": "GhostTrack 是一款基于 Python 的开源情报（OSINT）工具，主要用于追踪 IP 地址或手机号码的归属地信息。它可以帮助安全研究人员、渗透测试人员或普通用户快速获取目标的大致地理位置、运营商等公开数据，常用于信息收集和网络安全调查。例如，输入一个手机号，它就能显示该号码可能所属的国家和地区，适合入门级 OSINT 学习与实战。",
+     "desc": "Ghidra 是美国国家安全局开源的软件逆向工程框架，用于把编译后的程序（如 exe、so 文件）反汇编成汇编代码，并反编译成可读的类 C 伪代码，帮助分析人员理解程序内部逻辑。它常用于恶意软件分析、漏洞挖掘、固件研究和软件兼容性调试。例如安全人员拿到一个可疑病毒样本，可用 Ghidra 查看它调用了哪些系统 API、如何加密通信，从而判断其行为并制定防御策略。",
      "site": "无"
     }
    ]
@@ -158,34 +116,16 @@
    "emoji": "📚",
    "items": [
     {
-     "repo": "jamwithai/production-agentic-rag-course",
-     "url": "https://github.com/jamwithai/production-agentic-rag-course",
-     "owner": "jamwithai",
-     "stars": 9412,
-     "updated": "2026-06-05",
+     "repo": "cs341-illinois/coursebook",
+     "url": "https://github.com/cs341-illinois/coursebook",
+     "owner": "cs341-illinois",
+     "stars": 3655,
+     "updated": "2026-10-02",
      "lists": [
-      "daily"
+      "weekly"
      ],
-     "desc": "这是一个面向开发者的实战课程项目，教你从零搭建生产级的 Agentic RAG（检索增强生成）系统。它解决的是「知道 RAG 概念但不会落地」的问题，通过 Python 代码示例和分步讲解，带你实现文档检索、Agent 决策与生成回答的完整流程。例如，你可以跟着它做出一个能自动查阅内部知识库并回答员工问题的智能助手。",
-     "site": "无"
-    }
-   ]
-  },
-  {
-   "name": "其他",
-   "emoji": "📦",
-   "items": [
-    {
-     "repo": "OpenCut-app/OpenCut",
-     "url": "https://github.com/OpenCut-app/OpenCut",
-     "owner": "OpenCut-app",
-     "stars": 91645,
-     "updated": "2026-09-24",
-     "lists": [
-      "daily"
-     ],
-     "desc": "OpenCut 是一个开源的视频剪辑工具，定位是剪映（CapCut）的免费替代品。它让你在浏览器或桌面端直接完成剪辑，支持多轨道时间线、裁剪、拼接、字幕和导出等常用功能，不需要付费订阅，也不用担心素材被上传到别人的服务器。比如你想给短视频加字幕、剪掉多余片段，用它就能搞定，适合不想被商业软件限制的个人创作者和小团队。",
-     "site": "https://opencut.app"
+     "desc": "这是伊利诺伊大学 CS341 系统编程课的官方开源教材，用 LaTeX 编写，讲解 C 语言、Linux、POSIX 接口和底层系统编程。它解决的是学生缺少系统化、免费且紧跟课程的中文/英文教材的问题，适合自学或课堂配套使用。例如读者可以边读边动手写 shell、内存分配器，真正理解进程、文件描述符和并发。",
+     "site": "https://cs341.cs.illinois.edu/coursebook"
     }
    ]
   }
