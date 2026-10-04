@@ -86,6 +86,12 @@
   .title a:hover { border-bottom-color:var(--red); color:var(--red); }
   .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
             font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
   .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
   .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
              color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
@@ -100,6 +106,13 @@
             border-top:1px solid var(--ink); font-family:var(--sans);
             font-size:11px; letter-spacing:.08em; color:var(--sub);
             display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
 
   @media (max-width:600px) {
     .desc,.byline { margin-left:0; }
@@ -133,6 +146,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></h3>
             <span class="stars">★ 294,619</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;obra/superpowers&quot;, &quot;url&quot;: &quot;https://github.com/obra/superpowers&quot;, &quot;owner&quot;: &quot;obra&quot;, &quot;stars&quot;: 294619, &quot;desc&quot;: &quot;一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。</p>
           <div class="byline">
@@ -147,6 +161,7 @@
             <span class="no">02</span>
             <h3 class="title"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></h3>
             <span class="stars">★ 274,929</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;mattpocock/skills&quot;, &quot;url&quot;: &quot;https://github.com/mattpocock/skills&quot;, &quot;owner&quot;: &quot;mattpocock&quot;, &quot;stars&quot;: 274929, &quot;desc&quot;: &quot;TypeScript 教育圈顶流作者 Matt Pocock 公开的自己每天在用的 AI 技能库。相当于把一位顶级工程师调教 AI 助手的私房配置全盘托出，你拷到自己项目里就能用，省去几个月摸索提示词的时间。&quot;, &quot;site&quot;: &quot;https://aihero.dev/skills&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">TypeScript 教育圈顶流作者 Matt Pocock 公开的自己每天在用的 AI 技能库。相当于把一位顶级工程师调教 AI 助手的私房配置全盘托出，你拷到自己项目里就能用，省去几个月摸索提示词的时间。</p>
           <div class="byline">
@@ -161,6 +176,7 @@
             <span class="no">03</span>
             <h3 class="title"><a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i/archify</a></h3>
             <span class="stars">★ 76,438</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;tt-a1i/archify&quot;, &quot;url&quot;: &quot;https://github.com/tt-a1i/archify&quot;, &quot;owner&quot;: &quot;tt-a1i&quot;, &quot;stars&quot;: 76438, &quot;desc&quot;: &quot;让 AI 助手帮你画专业图表的技能。你说一句「画一个用户下单的系统架构图」，它就生成带动画、可导出高清图片的精美网页图表，比 Mermaid 那种朴素线条好看一个档次——写技术文档、做汇报直接就能用。&quot;, &quot;site&quot;: &quot;https://tt-a1i.github.io/archify/&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">让 AI 助手帮你画专业图表的技能。你说一句「画一个用户下单的系统架构图」，它就生成带动画、可导出高清图片的精美网页图表，比 Mermaid 那种朴素线条好看一个档次——写技术文档、做汇报直接就能用。</p>
           <div class="byline">
@@ -175,6 +191,7 @@
             <span class="no">04</span>
             <h3 class="title"><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a></h3>
             <span class="stars">★ 74,557</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;pbakaus/impeccable&quot;, &quot;url&quot;: &quot;https://github.com/pbakaus/impeccable&quot;, &quot;owner&quot;: &quot;pbakaus&quot;, &quot;stars&quot;: 74557, &quot;desc&quot;: &quot;专治「AI 生成的网页丑」。它是一套喂给 AI 的设计语言规范，教 AI 什么是好的间距、字体层级和配色。装上之后 AI 做的界面明显更像专业设计师出品，而不是千篇一律的模板风。&quot;, &quot;site&quot;: &quot;https://impeccable.style&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">专治「AI 生成的网页丑」。它是一套喂给 AI 的设计语言规范，教 AI 什么是好的间距、字体层级和配色。装上之后 AI 做的界面明显更像专业设计师出品，而不是千篇一律的模板风。</p>
           <div class="byline">
@@ -189,6 +206,7 @@
             <span class="no">05</span>
             <h3 class="title"><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></h3>
             <span class="stars">★ 53,028</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;ayghri/i-have-adhd&quot;, &quot;url&quot;: &quot;https://github.com/ayghri/i-have-adhd&quot;, &quot;owner&quot;: &quot;ayghri&quot;, &quot;stars&quot;: 53028, &quot;desc&quot;: &quot;一个让 AI「说重点」的技能。默认情况下 AI 喜欢先铺垫一大段背景再给答案，这个技能强制它结论先行、短句输出、拒绝废话——对 ADHD 人群和没耐心的工程师都特别友好。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">一个让 AI「说重点」的技能。默认情况下 AI 喜欢先铺垫一大段背景再给答案，这个技能强制它结论先行、短句输出、拒绝废话——对 ADHD 人群和没耐心的工程师都特别友好。</p>
           <div class="byline">
@@ -203,6 +221,7 @@
             <span class="no">06</span>
             <h3 class="title"><a href="https://github.com/coreyhaines31/marketingskills" target="_blank">coreyhaines31/marketingskills</a></h3>
             <span class="stars">★ 52,533</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;coreyhaines31/marketingskills&quot;, &quot;url&quot;: &quot;https://github.com/coreyhaines31/marketingskills&quot;, &quot;owner&quot;: &quot;coreyhaines31&quot;, &quot;stars&quot;: 52533, &quot;desc&quot;: &quot;给 AI 助手装上「营销大脑」。包含转化率优化、文案写作、SEO、数据分析等一整套营销技能。比如让它帮你写落地页文案、诊断注册转化率为什么低——相当于请了个 7x24 的免费增长顾问。&quot;, &quot;site&quot;: &quot;https://marketing-skills.com&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">给 AI 助手装上「营销大脑」。包含转化率优化、文案写作、SEO、数据分析等一整套营销技能。比如让它帮你写落地页文案、诊断注册转化率为什么低——相当于请了个 7x24 的免费增长顾问。</p>
           <div class="byline">
@@ -217,6 +236,7 @@
             <span class="no">07</span>
             <h3 class="title"><a href="https://github.com/anthropics/financial-services" target="_blank">anthropics/financial-services</a></h3>
             <span class="stars">★ 38,590</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;anthropics/financial-services&quot;, &quot;url&quot;: &quot;https://github.com/anthropics/financial-services&quot;, &quot;owner&quot;: &quot;anthropics&quot;, &quot;stars&quot;: 38590, &quot;desc&quot;: &quot;Anthropic 官方出品的金融行业技能包，教 Claude 干金融人的活：读财报、做尽职调查、写投研备忘录等。相当于把金融分析师的标准工作流程固化成了 AI 技能，金融机构落地 AI 的捷径。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Anthropic 官方出品的金融行业技能包，教 Claude 干金融人的活：读财报、做尽职调查、写投研备忘录等。相当于把金融分析师的标准工作流程固化成了 AI 技能，金融机构落地 AI 的捷径。</p>
           <div class="byline">
@@ -231,6 +251,7 @@
             <span class="no">08</span>
             <h3 class="title"><a href="https://github.com/alirezarezvani/claude-skills" target="_blank">alirezarezvani/claude-skills</a></h3>
             <span class="stars">★ 27,377</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;alirezarezvani/claude-skills&quot;, &quot;url&quot;: &quot;https://github.com/alirezarezvani/claude-skills&quot;, &quot;owner&quot;: &quot;alirezarezvani&quot;, &quot;stars&quot;: 27377, &quot;desc&quot;: &quot;「全家桶」式 AI 技能合集：380+ 技能、70+ 快捷命令、30+ 专业子 Agent，覆盖编程、营销、产品、合规甚至高管顾问。不想一个个挑技能的话，装这一套基本够日常用了。&quot;, &quot;site&quot;: &quot;https://alirezarezvani.medium.com/&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">「全家桶」式 AI 技能合集：380+ 技能、70+ 快捷命令、30+ 专业子 Agent，覆盖编程、营销、产品、合规甚至高管顾问。不想一个个挑技能的话，装这一套基本够日常用了。</p>
           <div class="byline">
@@ -245,6 +266,7 @@
             <span class="no">09</span>
             <h3 class="title"><a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank">anthropics/knowledge-work-plugins</a></h3>
             <span class="stars">★ 26,003</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;anthropics/knowledge-work-plugins&quot;, &quot;url&quot;: &quot;https://github.com/anthropics/knowledge-work-plugins&quot;, &quot;owner&quot;: &quot;anthropics&quot;, &quot;stars&quot;: 26003, &quot;desc&quot;: &quot;Anthropic 官方为白领知识工作者做的插件库，配合 Claude Cowork 使用，覆盖写文档、做表格、整理调研资料等日常办公场景——让 AI 真正接手办公室里的重复杂活。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Anthropic 官方为白领知识工作者做的插件库，配合 Claude Cowork 使用，覆盖写文档、做表格、整理调研资料等日常办公场景——让 AI 真正接手办公室里的重复杂活。</p>
           <div class="byline">
@@ -259,6 +281,7 @@
             <span class="no">10</span>
             <h3 class="title"><a href="https://github.com/google/skills" target="_blank">google/skills</a></h3>
             <span class="stars">★ 20,840</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;google/skills&quot;, &quot;url&quot;: &quot;https://github.com/google/skills&quot;, &quot;owner&quot;: &quot;google&quot;, &quot;stars&quot;: 20840, &quot;desc&quot;: &quot;Google 官方技能集，教 AI 助手熟练使用 Google 家的产品和技术（Google Cloud 等）。技术栈在 Google 生态里的团队直接用，省去自己写集成说明的功夫。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Google 官方技能集，教 AI 助手熟练使用 Google 家的产品和技术（Google Cloud 等）。技术栈在 Google 生态里的团队直接用，省去自己写集成说明的功夫。</p>
           <div class="byline">
@@ -273,6 +296,7 @@
             <span class="no">11</span>
             <h3 class="title"><a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a></h3>
             <span class="stars">★ 9,568</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;cursor/plugins&quot;, &quot;url&quot;: &quot;https://github.com/cursor/plugins&quot;, &quot;owner&quot;: &quot;cursor&quot;, &quot;stars&quot;: 9568, &quot;desc&quot;: &quot;Cursor 编辑器的官方插件规范与官方插件集。想知道 Cursor 插件怎么写、官方都提供了哪些能力，看这一个仓库就够了——Cursor 插件开发的「官方说明书」。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 技能与插件&quot;, &quot;emoji&quot;: &quot;🧩&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Cursor 编辑器的官方插件规范与官方插件集。想知道 Cursor 插件怎么写、官方都提供了哪些能力，看这一个仓库就够了——Cursor 插件开发的「官方说明书」。</p>
           <div class="byline">
@@ -292,6 +316,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></h3>
             <span class="stars">★ 96,448</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;paperclipai/paperclip&quot;, &quot;url&quot;: &quot;https://github.com/paperclipai/paperclip&quot;, &quot;owner&quot;: &quot;paperclipai&quot;, &quot;stars&quot;: 96448, &quot;desc&quot;: &quot;当公司里同时跑着好几个 AI Agent，这个开源应用就是它们的「人事部+项目管理台」：分配任务、查看进度、管理权限。相当于给你的 AI 员工们请了一位项目经理。&quot;, &quot;site&quot;: &quot;https://paperclip.ing&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">当公司里同时跑着好几个 AI Agent，这个开源应用就是它们的「人事部+项目管理台」：分配任务、查看进度、管理权限。相当于给你的 AI 员工们请了一位项目经理。</p>
           <div class="byline">
@@ -306,6 +331,7 @@
             <span class="no">02</span>
             <h3 class="title"><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a></h3>
             <span class="stars">★ 89,174</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;Panniantong/Agent-Reach&quot;, &quot;url&quot;: &quot;https://github.com/Panniantong/Agent-Reach&quot;, &quot;owner&quot;: &quot;Panniantong&quot;, &quot;stars&quot;: 89174, &quot;desc&quot;: &quot;AI 助手自己不会刷网页？这个工具一条命令行就让它能读 Twitter、Reddit、YouTube、B站、小红书的内容，而且不用花钱买各家的 API。比如跟 AI 说「总结一下今天 Reddit 上关于某话题的讨论」，它就能自己去抓、自己读、自己写摘要。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">AI 助手自己不会刷网页？这个工具一条命令行就让它能读 Twitter、Reddit、YouTube、B站、小红书的内容，而且不用花钱买各家的 API。比如跟 AI 说「总结一下今天 Reddit 上关于某话题的讨论」，它就能自己去抓、自己读、自己写摘要。</p>
           <div class="byline">
@@ -320,6 +346,7 @@
             <span class="no">03</span>
             <h3 class="title"><a href="https://github.com/vectorize-io/hindsight" target="_blank">vectorize-io/hindsight</a></h3>
             <span class="stars">★ 44,831</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;vectorize-io/hindsight&quot;, &quot;url&quot;: &quot;https://github.com/vectorize-io/hindsight&quot;, &quot;owner&quot;: &quot;vectorize-io&quot;, &quot;stars&quot;: 44831, &quot;desc&quot;: &quot;给 AI Agent 装的「会成长的记忆」。普通记忆只是存聊天记录，Hindsight 会从过去的成功和失败里总结规律，下次遇到类似任务做得更好——让 AI 像新人一样逐渐变成老手。&quot;, &quot;site&quot;: &quot;https://hindsight.vectorize.io/&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">给 AI Agent 装的「会成长的记忆」。普通记忆只是存聊天记录，Hindsight 会从过去的成功和失败里总结规律，下次遇到类似任务做得更好——让 AI 像新人一样逐渐变成老手。</p>
           <div class="byline">
@@ -334,6 +361,7 @@
             <span class="no">04</span>
             <h3 class="title"><a href="https://github.com/THU-MAIC/OpenMAIC" target="_blank">THU-MAIC/OpenMAIC</a></h3>
             <span class="stars">★ 39,857</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;THU-MAIC/OpenMAIC&quot;, &quot;url&quot;: &quot;https://github.com/THU-MAIC/OpenMAIC&quot;, &quot;owner&quot;: &quot;THU-MAIC&quot;, &quot;stars&quot;: 39857, &quot;desc&quot;: &quot;清华团队做的开源「AI 互动课堂」：多个 AI 分别扮演老师、助教、同学陪你一起学，一键就能开课。比看录播课有互动感得多，适合搭企业内训或在线教育产品。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">清华团队做的开源「AI 互动课堂」：多个 AI 分别扮演老师、助教、同学陪你一起学，一键就能开课。比看录播课有互动感得多，适合搭企业内训或在线教育产品。</p>
           <div class="byline">
@@ -348,6 +376,7 @@
             <span class="no">05</span>
             <h3 class="title"><a href="https://github.com/trycua/cua" target="_blank">trycua/cua</a></h3>
             <span class="stars">★ 27,867</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;trycua/cua&quot;, &quot;url&quot;: &quot;https://github.com/trycua/cua&quot;, &quot;owner&quot;: &quot;trycua&quot;, &quot;stars&quot;: 27867, &quot;desc&quot;: &quot;让 AI 像人一样操作电脑的基础设施：模拟鼠标键盘、跨 Mac/Windows/Linux 批量部署，还附带训练和评测工具。想做「会操作电脑的 AI」（类似 Claude Computer Use）的团队可以拿它打底。&quot;, &quot;site&quot;: &quot;https://cua.ai&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">让 AI 像人一样操作电脑的基础设施：模拟鼠标键盘、跨 Mac/Windows/Linux 批量部署，还附带训练和评测工具。想做「会操作电脑的 AI」（类似 Claude Computer Use）的团队可以拿它打底。</p>
           <div class="byline">
@@ -362,6 +391,7 @@
             <span class="no">06</span>
             <h3 class="title"><a href="https://github.com/NVIDIA/OpenShell" target="_blank">NVIDIA/OpenShell</a></h3>
             <span class="stars">★ 14,549</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;NVIDIA/OpenShell&quot;, &quot;url&quot;: &quot;https://github.com/NVIDIA/OpenShell&quot;, &quot;owner&quot;: &quot;NVIDIA&quot;, &quot;stars&quot;: 14549, &quot;desc&quot;: &quot;英伟达出的 AI Agent「安全屋」。自主运行的 Agent 可能误删文件、乱发请求，OpenShell 给它们一个隔离的运行环境——既能放开手脚干活，又闯不了祸，企业才敢真正放心用。&quot;, &quot;site&quot;: &quot;https://docs.nvidia.com/openshell/latest/&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">英伟达出的 AI Agent「安全屋」。自主运行的 Agent 可能误删文件、乱发请求，OpenShell 给它们一个隔离的运行环境——既能放开手脚干活，又闯不了祸，企业才敢真正放心用。</p>
           <div class="byline">
@@ -376,6 +406,7 @@
             <span class="no">07</span>
             <h3 class="title"><a href="https://github.com/google/ax" target="_blank">google/ax</a></h3>
             <span class="stars">★ 12,950</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;google/ax&quot;, &quot;url&quot;: &quot;https://github.com/google/ax&quot;, &quot;owner&quot;: &quot;google&quot;, &quot;stars&quot;: 12950, &quot;desc&quot;: &quot;Google 开源的 Agent 编排引擎。当一个任务需要多个 AI 协作（一个查资料、一个写代码、一个验收），它负责调度谁干什么、按什么顺序来——多 Agent 系统的「交通指挥中心」。&quot;, &quot;site&quot;: &quot;https://agentexecutor.io&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Google 开源的 Agent 编排引擎。当一个任务需要多个 AI 协作（一个查资料、一个写代码、一个验收），它负责调度谁干什么、按什么顺序来——多 Agent 系统的「交通指挥中心」。</p>
           <div class="byline">
@@ -390,6 +421,7 @@
             <span class="no">08</span>
             <h3 class="title"><a href="https://github.com/TencentCloud/Octop" target="_blank">TencentCloud/Octop</a></h3>
             <span class="stars">★ 6,467</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;TencentCloud/Octop&quot;, &quot;url&quot;: &quot;https://github.com/TencentCloud/Octop&quot;, &quot;owner&quot;: &quot;TencentCloud&quot;, &quot;stars&quot;: 6467, &quot;desc&quot;: &quot;腾讯云出的自托管 AI 助手平台：支持多人同时使用、多个 Agent 协作、长期记忆。适合想在自己服务器上搭团队共享 AI 助手、又不想让数据出门的公司。&quot;, &quot;site&quot;: &quot;https://octop.cloud&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">腾讯云出的自托管 AI 助手平台：支持多人同时使用、多个 Agent 协作、长期记忆。适合想在自己服务器上搭团队共享 AI 助手、又不想让数据出门的公司。</p>
           <div class="byline">
@@ -404,6 +436,7 @@
             <span class="no">09</span>
             <h3 class="title"><a href="https://github.com/mvschwarz/openrig" target="_blank">mvschwarz/openrig</a></h3>
             <span class="stars">★ 4,509</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;mvschwarz/openrig&quot;, &quot;url&quot;: &quot;https://github.com/mvschwarz/openrig&quot;, &quot;owner&quot;: &quot;mvschwarz&quot;, &quot;stars&quot;: 4509, &quot;desc&quot;: &quot;把 Claude Code、Codex 这些编程 AI 组建成「常驻开发团队」：给每个 AI 分配角色、共享项目上下文、各自认领任务。像用 tmux 管理终端窗口一样管理一支 AI 开发小队。&quot;, &quot;site&quot;: &quot;https://openrig.dev&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">把 Claude Code、Codex 这些编程 AI 组建成「常驻开发团队」：给每个 AI 分配角色、共享项目上下文、各自认领任务。像用 tmux 管理终端窗口一样管理一支 AI 开发小队。</p>
           <div class="byline">
@@ -418,6 +451,7 @@
             <span class="no">10</span>
             <h3 class="title"><a href="https://github.com/superdesigndev/treg" target="_blank">superdesigndev/treg</a></h3>
             <span class="stars">★ 4,074</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;superdesigndev/treg&quot;, &quot;url&quot;: &quot;https://github.com/superdesigndev/treg&quot;, &quot;owner&quot;: &quot;superdesigndev&quot;, &quot;stars&quot;: 4074, &quot;desc&quot;: &quot;AI Agent 调用各种外部工具需要一堆 API key，treg 做统一的密钥管理和分发，号称「Agent 工具界的 OpenRouter」：一处配好凭证，所有 Agent 都能用，还能细粒度控制权限。&quot;, &quot;site&quot;: &quot;https://treg.to&quot;, &quot;category&quot;: &quot;Agent 基础设施与框架&quot;, &quot;emoji&quot;: &quot;🤖&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">AI Agent 调用各种外部工具需要一堆 API key，treg 做统一的密钥管理和分发，号称「Agent 工具界的 OpenRouter」：一处配好凭证，所有 Agent 都能用，还能细粒度控制权限。</p>
           <div class="byline">
@@ -437,6 +471,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></h3>
             <span class="stars">★ 271,630</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;affaan-m/ECC&quot;, &quot;url&quot;: &quot;https://github.com/affaan-m/ECC&quot;, &quot;owner&quot;: &quot;affaan-m&quot;, &quot;stars&quot;: 271630, &quot;desc&quot;: &quot;一套给编程 Agent 做「性能调优」的系统：技能管理、记忆、安全检查、先调研再动手的工作流，适配 Claude Code/Codex/Cursor 等主流工具。目标是让 AI 写代码更快、更稳、更少返工。&quot;, &quot;site&quot;: &quot;https://ecc.tools&quot;, &quot;category&quot;: &quot;Agent 效率优化&quot;, &quot;emoji&quot;: &quot;⚡&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">一套给编程 Agent 做「性能调优」的系统：技能管理、记忆、安全检查、先调研再动手的工作流，适配 Claude Code/Codex/Cursor 等主流工具。目标是让 AI 写代码更快、更稳、更少返工。</p>
           <div class="byline">
@@ -451,6 +486,7 @@
             <span class="no">02</span>
             <h3 class="title"><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail</a></h3>
             <span class="stars">★ 152,184</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;DietrichGebert/ponytail&quot;, &quot;url&quot;: &quot;https://github.com/DietrichGebert/ponytail&quot;, &quot;owner&quot;: &quot;DietrichGebert&quot;, &quot;stars&quot;: 152184, &quot;desc&quot;: &quot;专治 AI「过度设计」的毛病。它让 AI 像房间里最懒的资深工程师一样思考：能复用就不新写，能简单就不复杂——最好的代码是你没写的代码。被 AI 动不动搞出三层抽象折磨过的人，会懂它的价值。&quot;, &quot;site&quot;: &quot;https://ponytail.dev&quot;, &quot;category&quot;: &quot;Agent 效率优化&quot;, &quot;emoji&quot;: &quot;⚡&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">专治 AI「过度设计」的毛病。它让 AI 像房间里最懒的资深工程师一样思考：能复用就不新写，能简单就不复杂——最好的代码是你没写的代码。被 AI 动不动搞出三层抽象折磨过的人，会懂它的价值。</p>
           <div class="byline">
@@ -465,6 +501,7 @@
             <span class="no">03</span>
             <h3 class="title"><a href="https://github.com/JuliusBrussee/caveman" target="_blank">JuliusBrussee/caveman</a></h3>
             <span class="stars">★ 109,243</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;JuliusBrussee/caveman&quot;, &quot;url&quot;: &quot;https://github.com/JuliusBrussee/caveman&quot;, &quot;owner&quot;: &quot;JuliusBrussee&quot;, &quot;stars&quot;: 109243, &quot;desc&quot;: &quot;一个爆火的省钱技巧：让 AI 用「穴居人式」极简英语思考和工作（说 make login work 而不是长篇大论），实测省 65% 的 token 消耗。表面是个梗，实际是真金白银地降 API 账单。&quot;, &quot;site&quot;: &quot;https://docs.caveman.so/docs/quickstart&quot;, &quot;category&quot;: &quot;Agent 效率优化&quot;, &quot;emoji&quot;: &quot;⚡&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">一个爆火的省钱技巧：让 AI 用「穴居人式」极简英语思考和工作（说 make login work 而不是长篇大论），实测省 65% 的 token 消耗。表面是个梗，实际是真金白银地降 API 账单。</p>
           <div class="byline">
@@ -479,6 +516,7 @@
             <span class="no">04</span>
             <h3 class="title"><a href="https://github.com/colbymchenry/codegraph" target="_blank">colbymchenry/codegraph</a></h3>
             <span class="stars">★ 73,060</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;colbymchenry/codegraph&quot;, &quot;url&quot;: &quot;https://github.com/colbymchenry/codegraph&quot;, &quot;owner&quot;: &quot;colbymchenry&quot;, &quot;stars&quot;: 73060, &quot;desc&quot;: &quot;提前把你的代码库索引成「知识图谱」，代码一改自动更新。AI 助手查代码时不用反复翻文件，直接查图谱——省 token、响应快、全程本地不上传。大型项目配 AI 编程的刚需基建。&quot;, &quot;site&quot;: &quot;https://colbymchenry.github.io/codegraph/&quot;, &quot;category&quot;: &quot;Agent 效率优化&quot;, &quot;emoji&quot;: &quot;⚡&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">提前把你的代码库索引成「知识图谱」，代码一改自动更新。AI 助手查代码时不用反复翻文件，直接查图谱——省 token、响应快、全程本地不上传。大型项目配 AI 编程的刚需基建。</p>
           <div class="byline">
@@ -493,6 +531,7 @@
             <span class="no">05</span>
             <h3 class="title"><a href="https://github.com/mksglu/context-mode" target="_blank">mksglu/context-mode</a></h3>
             <span class="stars">★ 25,125</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;mksglu/context-mode&quot;, &quot;url&quot;: &quot;https://github.com/mksglu/context-mode&quot;, &quot;owner&quot;: &quot;mksglu&quot;, &quot;stars&quot;: 25125, &quot;desc&quot;: &quot;AI 编程助手的「上下文瘦身师」：把工具输出里的废话砍掉 98%，只留精华进上下文窗口，还能跨 17 个平台持久保存会话记忆。上下文窗口就那么大，省出来的都是钱和智商。&quot;, &quot;site&quot;: &quot;https://context-mode.com&quot;, &quot;category&quot;: &quot;Agent 效率优化&quot;, &quot;emoji&quot;: &quot;⚡&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">AI 编程助手的「上下文瘦身师」：把工具输出里的废话砍掉 98%，只留精华进上下文窗口，还能跨 17 个平台持久保存会话记忆。上下文窗口就那么大，省出来的都是钱和智商。</p>
           <div class="byline">
@@ -507,6 +546,7 @@
             <span class="no">06</span>
             <h3 class="title"><a href="https://github.com/max-sixty/worktrunk" target="_blank">max-sixty/worktrunk</a></h3>
             <span class="stars">★ 8,699</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;max-sixty/worktrunk&quot;, &quot;url&quot;: &quot;https://github.com/max-sixty/worktrunk&quot;, &quot;owner&quot;: &quot;max-sixty&quot;, &quot;stars&quot;: 8699, &quot;desc&quot;: &quot;Git worktree 管理工具，专为「多个 AI 同时改同一个项目」设计：每个 AI 在独立工作区干活互不干扰，最后再合并。多 Agent 并行开发的必备基础设施。&quot;, &quot;site&quot;: &quot;https://worktrunk.dev&quot;, &quot;category&quot;: &quot;Agent 效率优化&quot;, &quot;emoji&quot;: &quot;⚡&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Git worktree 管理工具，专为「多个 AI 同时改同一个项目」设计：每个 AI 在独立工作区干活互不干扰，最后再合并。多 Agent 并行开发的必备基础设施。</p>
           <div class="byline">
@@ -526,6 +566,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/pytorch/pytorch" target="_blank">pytorch/pytorch</a></h3>
             <span class="stars">★ 103,637</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;pytorch/pytorch&quot;, &quot;url&quot;: &quot;https://github.com/pytorch/pytorch&quot;, &quot;owner&quot;: &quot;pytorch&quot;, &quot;stars&quot;: 103637, &quot;desc&quot;: &quot;深度学习领域的事实标准框架，全球几乎所有 AI 研究和大量工业界模型都建立在它上面。从 GPT 类大模型的训练到你手机里的 AI 功能，背后大概率都有 PyTorch。&quot;, &quot;site&quot;: &quot;https://pytorch.org&quot;, &quot;category&quot;: &quot;AI / 大模型&quot;, &quot;emoji&quot;: &quot;🧠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">深度学习领域的事实标准框架，全球几乎所有 AI 研究和大量工业界模型都建立在它上面。从 GPT 类大模型的训练到你手机里的 AI 功能，背后大概率都有 PyTorch。</p>
           <div class="byline">
@@ -540,6 +581,7 @@
             <span class="no">02</span>
             <h3 class="title"><a href="https://github.com/Tencent/WeKnora" target="_blank">Tencent/WeKnora</a></h3>
             <span class="stars">★ 31,818</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;Tencent/WeKnora&quot;, &quot;url&quot;: &quot;https://github.com/Tencent/WeKnora&quot;, &quot;owner&quot;: &quot;Tencent&quot;, &quot;stars&quot;: 31818, &quot;desc&quot;: &quot;腾讯开源的知识库平台：把公司一堆散落的文档丢进去，就能变成可问答的智能知识库，还能自动整理成 Wiki。典型的 RAG 应用，适合搭企业内部「问啥都知道」的 AI 知识助手。&quot;, &quot;site&quot;: &quot;https://weknora.weixin.qq.com&quot;, &quot;category&quot;: &quot;AI / 大模型&quot;, &quot;emoji&quot;: &quot;🧠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">腾讯开源的知识库平台：把公司一堆散落的文档丢进去，就能变成可问答的智能知识库，还能自动整理成 Wiki。典型的 RAG 应用，适合搭企业内部「问啥都知道」的 AI 知识助手。</p>
           <div class="byline">
@@ -554,6 +596,7 @@
             <span class="no">03</span>
             <h3 class="title"><a href="https://github.com/tashfeenahmed/freellmapi" target="_blank">tashfeenahmed/freellmapi</a></h3>
             <span class="stars">★ 30,240</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;tashfeenahmed/freellmapi&quot;, &quot;url&quot;: &quot;https://github.com/tashfeenahmed/freellmapi&quot;, &quot;owner&quot;: &quot;tashfeenahmed&quot;, &quot;stars&quot;: 30240, &quot;desc&quot;: &quot;把 34 家厂商的免费大模型聚合到一个接口：635 个免费模型端点、每月 74 亿 token 额度，自动选路、失败自动切换。个人开发者玩 AI 应用的省钱神器——一个 key 用遍全网免费模型。&quot;, &quot;site&quot;: &quot;https://freellmapi.co&quot;, &quot;category&quot;: &quot;AI / 大模型&quot;, &quot;emoji&quot;: &quot;🧠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">把 34 家厂商的免费大模型聚合到一个接口：635 个免费模型端点、每月 74 亿 token 额度，自动选路、失败自动切换。个人开发者玩 AI 应用的省钱神器——一个 key 用遍全网免费模型。</p>
           <div class="byline">
@@ -568,6 +611,7 @@
             <span class="no">04</span>
             <h3 class="title"><a href="https://github.com/tile-ai/tilelang" target="_blank">tile-ai/tilelang</a></h3>
             <span class="stars">★ 8,269</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;tile-ai/tilelang&quot;, &quot;url&quot;: &quot;https://github.com/tile-ai/tilelang&quot;, &quot;owner&quot;: &quot;tile-ai&quot;, &quot;stars&quot;: 8269, &quot;desc&quot;: &quot;写 GPU 算子（AI 模型提速的关键环节）门槛很高，这门专用语言让你用接近 Python 的语法写出高性能 kernel，大幅缩短模型推理优化周期。做模型部署加速的团队会很需要。&quot;, &quot;site&quot;: &quot;https://tilelang.com/&quot;, &quot;category&quot;: &quot;AI / 大模型&quot;, &quot;emoji&quot;: &quot;🧠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">写 GPU 算子（AI 模型提速的关键环节）门槛很高，这门专用语言让你用接近 Python 的语法写出高性能 kernel，大幅缩短模型推理优化周期。做模型部署加速的团队会很需要。</p>
           <div class="byline">
@@ -587,6 +631,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a></h3>
             <span class="stars">★ 128,149</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;harry0703/MoneyPrinterTurbo&quot;, &quot;url&quot;: &quot;https://github.com/harry0703/MoneyPrinterTurbo&quot;, &quot;owner&quot;: &quot;harry0703&quot;, &quot;stars&quot;: 128149, &quot;desc&quot;: &quot;短视频「印钞机」：输入一个主题（比如「10 个提高工作效率的方法」），AI 自动写稿、找素材、配音、加字幕，输出一条可以直接发抖音/YouTube Shorts 的高清视频。自媒体矩阵号的效率利器。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;AI 应用与内容生成&quot;, &quot;emoji&quot;: &quot;🎨&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">短视频「印钞机」：输入一个主题（比如「10 个提高工作效率的方法」），AI 自动写稿、找素材、配音、加字幕，输出一条可以直接发抖音/YouTube Shorts 的高清视频。自媒体矩阵号的效率利器。</p>
           <div class="byline">
@@ -601,6 +646,7 @@
             <span class="no">02</span>
             <h3 class="title"><a href="https://github.com/heygen-com/hyperframes" target="_blank">heygen-com/hyperframes</a></h3>
             <span class="stars">★ 56,048</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;heygen-com/hyperframes&quot;, &quot;url&quot;: &quot;https://github.com/heygen-com/hyperframes&quot;, &quot;owner&quot;: &quot;heygen-com&quot;, &quot;stars&quot;: 56048, &quot;desc&quot;: &quot;HeyGen 出的「用 HTML 做视频」框架：写网页代码，渲染出来就是视频。对 AI 特别友好——AI 本来就会写 HTML，现在等于直接会做视频了。批量生成营销视频、动态数据视频都很合适。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;AI 应用与内容生成&quot;, &quot;emoji&quot;: &quot;🎨&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">HeyGen 出的「用 HTML 做视频」框架：写网页代码，渲染出来就是视频。对 AI 特别友好——AI 本来就会写 HTML，现在等于直接会做视频了。批量生成营销视频、动态数据视频都很合适。</p>
           <div class="byline">
@@ -615,6 +661,7 @@
             <span class="no">03</span>
             <h3 class="title"><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a></h3>
             <span class="stars">★ 52,131</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;debpalash/VoiceStudio&quot;, &quot;url&quot;: &quot;https://github.com/debpalash/VoiceStudio&quot;, &quot;owner&quot;: &quot;debpalash&quot;, &quot;stars&quot;: 52131, &quot;desc&quot;: &quot;开源、完全本地运行的 ElevenLabs 平替：声音克隆、视频配音、听写转写、制作有声书，支持 646 种语言。不想付订阅费、又要求语音数据不出本机的首选方案。&quot;, &quot;site&quot;: &quot;https://voicestudio.sh&quot;, &quot;category&quot;: &quot;AI 应用与内容生成&quot;, &quot;emoji&quot;: &quot;🎨&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">开源、完全本地运行的 ElevenLabs 平替：声音克隆、视频配音、听写转写、制作有声书，支持 646 种语言。不想付订阅费、又要求语音数据不出本机的首选方案。</p>
           <div class="byline">
@@ -629,6 +676,7 @@
             <span class="no">04</span>
             <h3 class="title"><a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank">bilawalsidhu/gods-eye-view</a></h3>
             <span class="stars">★ 46,737</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;bilawalsidhu/gods-eye-view&quot;, &quot;url&quot;: &quot;https://github.com/bilawalsidhu/gods-eye-view&quot;, &quot;owner&quot;: &quot;bilawalsidhu&quot;, &quot;stars&quot;: 46737, &quot;desc&quot;: &quot;浏览器里的「上帝视角」：把公开的卫星、航班等真实空间情报数据投射到一个照片级 3D 地球上，像情报指挥中心的大屏。GIS 爱好者和开源情报（OSINT）玩家的玩具兼工具。&quot;, &quot;site&quot;: &quot;https://maptheworld.ai/&quot;, &quot;category&quot;: &quot;AI 应用与内容生成&quot;, &quot;emoji&quot;: &quot;🎨&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">浏览器里的「上帝视角」：把公开的卫星、航班等真实空间情报数据投射到一个照片级 3D 地球上，像情报指挥中心的大屏。GIS 爱好者和开源情报（OSINT）玩家的玩具兼工具。</p>
           <div class="byline">
@@ -648,6 +696,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/flutter/flutter" target="_blank">flutter/flutter</a></h3>
             <span class="stars">★ 179,272</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;flutter/flutter&quot;, &quot;url&quot;: &quot;https://github.com/flutter/flutter&quot;, &quot;owner&quot;: &quot;flutter&quot;, &quot;stars&quot;: 179272, &quot;desc&quot;: &quot;Google 的跨平台 UI 框架：写一套代码，同时产出 iOS、Android、Web 和桌面应用。闲鱼、Google Pay 等知名 App 都是 Flutter 做的，目前跨平台开发最主流的选择之一。&quot;, &quot;site&quot;: &quot;https://flutter.dev&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Google 的跨平台 UI 框架：写一套代码，同时产出 iOS、Android、Web 和桌面应用。闲鱼、Google Pay 等知名 App 都是 Flutter 做的，目前跨平台开发最主流的选择之一。</p>
           <div class="byline">
@@ -662,6 +711,7 @@
             <span class="no">02</span>
             <h3 class="title"><a href="https://github.com/anthropics/claude-code" target="_blank">anthropics/claude-code</a></h3>
             <span class="stars">★ 149,020</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;anthropics/claude-code&quot;, &quot;url&quot;: &quot;https://github.com/anthropics/claude-code&quot;, &quot;owner&quot;: &quot;anthropics&quot;, &quot;stars&quot;: 149020, &quot;desc&quot;: &quot;Anthropic 官方的 AI 编程工具，住在你的终端里：能读懂整个代码库、自己执行命令、处理 git 工作流，用自然语言吩咐它干活就行。当前最火的 Agent 编程工具之一。&quot;, &quot;site&quot;: &quot;https://code.claude.com/docs/en/overview&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">Anthropic 官方的 AI 编程工具，住在你的终端里：能读懂整个代码库、自己执行命令、处理 git 工作流，用自然语言吩咐它干活就行。当前最火的 Agent 编程工具之一。</p>
           <div class="byline">
@@ -676,6 +726,7 @@
             <span class="no">03</span>
             <h3 class="title"><a href="https://github.com/vercel/next.js" target="_blank">vercel/next.js</a></h3>
             <span class="stars">★ 143,030</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;vercel/next.js&quot;, &quot;url&quot;: &quot;https://github.com/vercel/next.js&quot;, &quot;owner&quot;: &quot;vercel&quot;, &quot;stars&quot;: 143030, &quot;desc&quot;: &quot;React 生态最主流的全栈框架：服务端渲染、静态生成、路由方案一把抓。从个人博客到大厂官网都在用，也是前端简历上的必备技能。&quot;, &quot;site&quot;: &quot;https://nextjs.org&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">React 生态最主流的全栈框架：服务端渲染、静态生成、路由方案一把抓。从个人博客到大厂官网都在用，也是前端简历上的必备技能。</p>
           <div class="byline">
@@ -690,6 +741,7 @@
             <span class="no">04</span>
             <h3 class="title"><a href="https://github.com/getsentry/sentry" target="_blank">getsentry/sentry</a></h3>
             <span class="stars">★ 45,094</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;getsentry/sentry&quot;, &quot;url&quot;: &quot;https://github.com/getsentry/sentry&quot;, &quot;owner&quot;: &quot;getsentry&quot;, &quot;stars&quot;: 45094, &quot;desc&quot;: &quot;线上应用出错了谁第一个知道？Sentry。它自动收集报错堆栈、监控性能瓶颈，让用户还没投诉你就把问题修好了——几乎所有正经互联网公司的标配。&quot;, &quot;site&quot;: &quot;https://sentry.io&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">线上应用出错了谁第一个知道？Sentry。它自动收集报错堆栈、监控性能瓶颈，让用户还没投诉你就把问题修好了——几乎所有正经互联网公司的标配。</p>
           <div class="byline">
@@ -704,6 +756,7 @@
             <span class="no">05</span>
             <h3 class="title"><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a></h3>
             <span class="stars">★ 43,418</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;alibaba/open-code-review&quot;, &quot;url&quot;: &quot;https://github.com/alibaba/open-code-review&quot;, &quot;owner&quot;: &quot;alibaba&quot;, &quot;stars&quot;: 43418, &quot;desc&quot;: &quot;阿里开源的 AI 代码评审工具：规则引擎+大模型双保险，能精确到行级指出空指针、线程安全、SQL 注入等问题，经过阿里海量代码的实战检验。相当于给团队请了一位不知疲倦的 reviewer。&quot;, &quot;site&quot;: &quot;https://open-codereview.ai&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">阿里开源的 AI 代码评审工具：规则引擎+大模型双保险，能精确到行级指出空指针、线程安全、SQL 注入等问题，经过阿里海量代码的实战检验。相当于给团队请了一位不知疲倦的 reviewer。</p>
           <div class="byline">
@@ -718,6 +771,7 @@
             <span class="no">06</span>
             <h3 class="title"><a href="https://github.com/Effect-TS/effect" target="_blank">Effect-TS/effect</a></h3>
             <span class="stars">★ 16,646</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;Effect-TS/effect&quot;, &quot;url&quot;: &quot;https://github.com/Effect-TS/effect&quot;, &quot;owner&quot;: &quot;Effect-TS&quot;, &quot;stars&quot;: 16646, &quot;desc&quot;: &quot;让 TypeScript 写出「壮如牛」的生产级应用：把并发、错误处理、依赖注入这些最容易出幺蛾子的地方全部类型化、标准化。被 JS 异步地狱折磨过的团队会感受到救赎。&quot;, &quot;site&quot;: &quot;https://effect.website&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">让 TypeScript 写出「壮如牛」的生产级应用：把并发、错误处理、依赖注入这些最容易出幺蛾子的地方全部类型化、标准化。被 JS 异步地狱折磨过的团队会感受到救赎。</p>
           <div class="byline">
@@ -732,6 +786,7 @@
             <span class="no">07</span>
             <h3 class="title"><a href="https://github.com/longbridge/gpui-kit" target="_blank">longbridge/gpui-kit</a></h3>
             <span class="stars">★ 15,751</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;longbridge/gpui-kit&quot;, &quot;url&quot;: &quot;https://github.com/longbridge/gpui-kit&quot;, &quot;owner&quot;: &quot;longbridge&quot;, &quot;stars&quot;: 15751, &quot;desc&quot;: &quot;长桥开源的 Rust 桌面 UI 组件库，基于 GPUI（Zed 编辑器同款引擎），性能极好。想做 Rust 跨平台桌面应用——尤其是行情、交易这类实时界面——可以直接用这套现成组件。&quot;, &quot;site&quot;: &quot;http://gpui-kit.com&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">长桥开源的 Rust 桌面 UI 组件库，基于 GPUI（Zed 编辑器同款引擎），性能极好。想做 Rust 跨平台桌面应用——尤其是行情、交易这类实时界面——可以直接用这套现成组件。</p>
           <div class="byline">
@@ -746,6 +801,7 @@
             <span class="no">08</span>
             <h3 class="title"><a href="https://github.com/anthropics/claude-code-action" target="_blank">anthropics/claude-code-action</a></h3>
             <span class="stars">★ 9,395</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;anthropics/claude-code-action&quot;, &quot;url&quot;: &quot;https://github.com/anthropics/claude-code-action&quot;, &quot;owner&quot;: &quot;anthropics&quot;, &quot;stars&quot;: 9395, &quot;desc&quot;: &quot;把 Claude Code 接进 GitHub 工作流：在 issue 里 @ 它一下，就能自动分析问题、修改代码、提交 PR。相当于仓库里常驻了一位 7x24 待命的 AI 工程师。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;开发工具与框架&quot;, &quot;emoji&quot;: &quot;🛠&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">把 Claude Code 接进 GitHub 工作流：在 issue 里 @ 它一下，就能自动分析问题、修改代码、提交 PR。相当于仓库里常驻了一位 7x24 待命的 AI 工程师。</p>
           <div class="byline">
@@ -765,6 +821,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/NVIDIA/SkillSpector" target="_blank">NVIDIA/SkillSpector</a></h3>
             <span class="stars">★ 19,171</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;NVIDIA/SkillSpector&quot;, &quot;url&quot;: &quot;https://github.com/NVIDIA/SkillSpector&quot;, &quot;owner&quot;: &quot;NVIDIA&quot;, &quot;stars&quot;: 19171, &quot;desc&quot;: &quot;现在人人都在装 AI 技能包，但技能里可能藏着提示注入、偷数据的恶意代码。这个扫描器在安装前检查 17 类共 71 种风险模式——AI 技能界的「杀毒软件」。&quot;, &quot;site&quot;: &quot;https://docs.nvidia.com/skills/&quot;, &quot;category&quot;: &quot;安全&quot;, &quot;emoji&quot;: &quot;🔐&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">现在人人都在装 AI 技能包，但技能里可能藏着提示注入、偷数据的恶意代码。这个扫描器在安装前检查 17 类共 71 种风险模式——AI 技能界的「杀毒软件」。</p>
           <div class="byline">
@@ -784,6 +841,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></h3>
             <span class="stars">★ 62,770</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;rohitg00/ai-engineering-from-scratch&quot;, &quot;url&quot;: &quot;https://github.com/rohitg00/ai-engineering-from-scratch&quot;, &quot;owner&quot;: &quot;rohitg00&quot;, &quot;stars&quot;: 62770, &quot;desc&quot;: &quot;从零学 AI 工程的完整教程：深度学习、LLM、Agent、强化学习一路讲到实战部署。适合想系统转行或进阶 AI 工程师的人——一个仓库顶一套课。&quot;, &quot;site&quot;: &quot;https://aiengineeringfromscratch.com&quot;, &quot;category&quot;: &quot;学习资源&quot;, &quot;emoji&quot;: &quot;📚&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">从零学 AI 工程的完整教程：深度学习、LLM、Agent、强化学习一路讲到实战部署。适合想系统转行或进阶 AI 工程师的人——一个仓库顶一套课。</p>
           <div class="byline">
@@ -803,6 +861,7 @@
             <span class="no">01</span>
             <h3 class="title"><a href="https://github.com/pablostanley/yoinks" target="_blank">pablostanley/yoinks</a></h3>
             <span class="stars">★ 3,655</span>
+            <button class="save-btn" data-meta='{&quot;repo&quot;: &quot;pablostanley/yoinks&quot;, &quot;url&quot;: &quot;https://github.com/pablostanley/yoinks&quot;, &quot;owner&quot;: &quot;pablostanley&quot;, &quot;stars&quot;: 3655, &quot;desc&quot;: &quot;终端里的视频下载器：一条命令把网页视频拉到本地，没有垃圾广告和套路。同类工具里界面最清爽的一个。&quot;, &quot;site&quot;: &quot;无&quot;, &quot;category&quot;: &quot;其他&quot;, &quot;emoji&quot;: &quot;📦&quot;}' aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">终端里的视频下载器：一条命令把网页视频拉到本地，没有垃圾广告和套路。同类工具里界面最清爽的一个。</p>
           <div class="byline">
@@ -818,7 +877,71 @@
 
   <footer>
     <span>GITHUB TRENDING DAILY · 自动生成</span>
-    <span>数据来源 github.com/trending · 30 天去重窗口</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · 数据来源 github.com/trending · 30 天去重窗口</span>
   </footer>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  const saveApi = "";
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  async function refreshSavedStates() {
+    // 从 GitHub raw 读取已收藏的 repo 集合，用于高亮按钮
+    try {
+      const resp = await fetch('https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json', { cache: 'no-store' });
+      if (!resp.ok) return;
+      const data = await resp.json();
+      const savedSet = new Set((data.items || []).map(r => r.repo));
+      document.querySelectorAll('.save-btn').forEach(btn => {
+        let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+        const saved = savedSet.has(meta.repo);
+        btn.classList.toggle('saved', saved);
+        btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      });
+    } catch(_) { /* 忽略读取失败，不影响收藏动作 */ }
+  }
+
+  async function doSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const btn = document.querySelector('.save-btn[data-meta]');
+    btn && (btn.disabled = true);
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(meta),
+      });
+      const result = await resp.json().catch(() => ({}));
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      toast(result.removed ? '已取消收藏' : '已收藏到「我的精选」');
+      refreshSavedStates();
+    } catch(_) {
+      toast('网络错误，收藏失败');
+    } finally {
+      btn && (btn.disabled = false);
+    }
+  }
+
+  // 绑定收藏按钮
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    await doSave(meta);
+  });
+
+  document.addEventListener('DOMContentLoaded', refreshSavedStates);
+})();
+</script>
 </body>
 </html>
