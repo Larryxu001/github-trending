@@ -1097,7 +1097,11 @@
       // 乐观更新：立刻本地移除，按钮立即还原
       savedSet.delete(meta.repo);
       refreshSavedStates();
-    } catch(err) { toast('网络错误，取消失败：' + (err && err.message ? err.message : '请检查网络')); }
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
   }
 
   // 绑定收藏按钮：点击弹出对话框
