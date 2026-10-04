@@ -35,6 +35,16 @@ CSS = """
                 border-radius:4px; background:transparent; color:var(--ink); cursor:pointer; }
   .bar button:hover { color:var(--red); border-color:var(--red); }
   .bar button.active { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .search-row { display:flex; gap:10px; margin:14px 0 6px; }
+  .search-row input { flex:1; padding:9px 14px; font-size:14px; border:1px solid var(--hair);
+                      border-radius:6px; background:#fff; color:var(--ink); font-family:var(--sans); }
+  .search-row input:focus { outline:none; border-color:var(--red); }
+  .search-row select { padding:9px 10px; font-size:13px; border:1px solid var(--hair);
+                       border-radius:6px; background:#fff; color:var(--ink); font-family:var(--sans); cursor:pointer; }
+  .tagbar { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 4px; }
+  .tagbar .tag { font-size:12px; padding:3px 10px; border:1px solid var(--hair); border-radius:13px;
+                 cursor:pointer; user-select:none; color:var(--ink); font-family:var(--sans); }
+  .tagbar .tag.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
   .item { padding:22px 0; border-bottom:1px solid var(--hair); display:flex; gap:16px; align-items:flex-start; }
   .item .emoji { font-size:22px; width:32px; flex-shrink:0; text-align:center; }
   .item .body { flex:1; min-width:0; }
@@ -45,12 +55,22 @@ CSS = """
   .item .stars { font-family:var(--sans); font-weight:700; font-size:14px; color:var(--sub); }
   .item .cat { font-family:var(--sans); font-size:11px; color:var(--red); letter-spacing:.06em; }
   .item .desc { margin:6px 0 8px; color:#4A4234; font-size:15px; }
+  .item .note { margin:0 0 8px; padding:8px 12px; background:var(--soft); border-left:3px solid var(--red);
+                color:#5A4E3A; font-size:14px; border-radius:0 4px 4px 0; }
+  .item .note b { color:var(--ink); font-family:var(--sans); font-size:12px; font-weight:600; }
+  .item .tags { display:flex; flex-wrap:wrap; gap:5px; margin:0 0 8px; }
+  .item .tags span { font-family:var(--sans); font-size:11px; padding:2px 8px; border:1px solid var(--hair);
+                     border-radius:11px; color:var(--sub); }
   .item .meta { font-family:var(--sans); font-size:12px; color:var(--sub); display:flex;
                 gap:8px; flex-wrap:wrap; align-items:center; }
   .item .meta i { font-style:normal; color:var(--hair); }
   .item .site { color:var(--ink); font-weight:600; text-decoration:none; border-bottom:1px solid var(--ink); }
   .item .site:hover { color:var(--red); border-bottom-color:var(--red); }
   .item .date { font-family:var(--sans); font-size:11px; color:#C9BB93; }
+  .item .unsave { margin-left:auto; font-family:var(--sans); font-size:12px; color:var(--sub);
+                  background:transparent; border:1px solid var(--hair); border-radius:4px;
+                  padding:3px 10px; cursor:pointer; }
+  .item .unsave:hover { color:var(--red); border-color:var(--red); }
   .empty { text-align:center; padding:80px 0; color:var(--sub); font-style:italic; }
   .empty .big { font-size:48px; margin-bottom:12px; }
   .loading { text-align:center; padding:60px 0; color:var(--sub); font-style:italic; }
@@ -58,11 +78,13 @@ CSS = """
 
 JS = """
 const RAW_URL = {raw_url};
+const SAVE_API = {save_api};
 
 function esc(s) {{ return String(s).replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c])); }}
 function starsFmt(n) {{ return (n && n > 0) ? '★ ' + Number(n).toLocaleString() : ''; }}
 
 let allRows = [];
+let activeTags = new Set();
 
 async function loadSaved() {{
   const list = document.getElementById('list');
@@ -71,24 +93,59 @@ async function loadSaved() {{
     const resp = await fetch(RAW_URL, {{ cache: 'no-store' }});
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const data = await resp.json();
-    allRows = (data.items || []).slice().sort((a,b) => (b.stars||0) - (a.stars||0));
-    render(null);
+    allRows = (data.items || []);
+    renderTagBar();
+    render();
   }} catch(e) {{
     list.innerHTML = '<div class="empty"><div class="big">★</div>加载失败，请稍后重试<br><span style="font-size:12px;">' + esc(e.message) + '</span></div>';
   }}
 }}
 
-function render(filter) {{
+function renderTagBar() {{
+  const bar = document.getElementById('tagBar');
+  const counts = {{}};
+  allRows.forEach(r => (r.tags || []).forEach(t => counts[t] = (counts[t] || 0) + 1));
+  const tags = Object.keys(counts).sort((a,b) => counts[b] - counts[a]);
+  bar.innerHTML = tags.map(t =>
+    '<span class="tag' + (activeTags.has(t) ? ' on' : '') + '" data-tag="' + esc(t) + '" onclick="toggleTag(this)">' +
+    esc(t) + ' <span style="opacity:.6">' + counts[t] + '</span></span>').join('');
+}}
+
+window.toggleTag = function(el) {{
+  const t = el.dataset.tag;
+  if (activeTags.has(t)) activeTags.delete(t); else activeTags.add(t);
+  renderTagBar();
+  render();
+}};
+
+window.sortChanged = function() {{
+  render();
+}};
+
+function getFiltered() {{
+  const q = (document.getElementById('search').value || '').trim().toLowerCase();
+  let rows = allRows.slice();
+  if (activeTags.size > 0) rows = rows.filter(r => (r.tags || []).some(t => activeTags.has(t)));
+  if (q) rows = rows.filter(r =>
+    (r.repo + ' ' + (r.desc || '') + ' ' + (r.note || '') + ' ' + (r.category || '') + ' ' + (r.tags || []).join(' ')).toLowerCase().includes(q));
+  const sort = document.getElementById('sort').value;
+  if (sort === 'stars') rows.sort((a,b) => (b.stars||0) - (a.stars||0));
+  else if (sort === 'time') rows.sort((a,b) => (b.saved_at||'').localeCompare(a.saved_at||''));
+  else if (sort === 'name') rows.sort((a,b) => a.repo.localeCompare(b.repo));
+  return rows;
+}}
+
+function render() {{
   const list = document.getElementById('list');
   const count = document.getElementById('count');
-  const catBar = document.getElementById('catBar');
-  const rows = filter ? allRows.filter(r => (r.category || '其他') === filter) : allRows;
-  count.textContent = allRows.length;
-  const cats = [...new Set(allRows.map(r => r.category || '其他'))];
-  catBar.innerHTML = '<button class="' + (!filter ? 'active' : '') + '" onclick="filterCat(null)">全部</button>' +
-    cats.map(c => '<button class="' + (filter === c ? 'active' : '') + '" onclick="filterCat(\\'' + esc(c).replace(/'/g, "\\\\'") + '\\')">' + esc(c) + '</button>').join('');
+  const rows = getFiltered();
+  count.textContent = allRows.length + (rows.length !== allRows.length ? ' / 筛出 ' + rows.length : '');
   if (allRows.length === 0) {{
     list.innerHTML = '<div class="empty"><div class="big">★</div>还没有收藏，去日报里点击「☆ 收藏」标记对你有用的项目吧</div>';
+    return;
+  }}
+  if (rows.length === 0) {{
+    list.innerHTML = '<div class="empty"><div class="big">∅</div>没有匹配的收藏，换个关键词或标签试试</div>';
     return;
   }}
   list.innerHTML = rows.map(r => {{
@@ -96,26 +153,44 @@ function render(filter) {{
       ? '<a class="site" href="' + esc(r.site) + '" target="_blank">' + esc(r.site) + '</a>' : '无官网';
     const url = r.url || 'https://github.com/' + r.repo;
     const date = r.saved_at ? '<span class="date">收藏于 ' + esc(String(r.saved_at).slice(0,10)) + '</span>' : '';
-    return '<div class="item">' +
+    const tags = (r.tags && r.tags.length) ? '<div class="tags">' + r.tags.map(t => '<span>' + esc(t) + '</span>').join('') + '</div>' : '';
+    const note = r.note ? '<div class="note"><b>我的备注</b><br>' + esc(r.note) + '</div>' : '';
+    return '<div class="item" data-repo="' + esc(r.repo) + '">' +
       '<div class="emoji">' + esc(r.emoji || '📦') + '</div>' +
       '<div class="body">' +
         '<div class="head"><span class="cat">' + esc(r.category || '其他') + '</span>' +
         '<span class="title"><a href="' + esc(url) + '" target="_blank">' + esc(r.repo) + '</a></span>' +
-        '<span class="stars">' + starsFmt(r.stars) + '</span></div>' +
+        '<span class="stars">' + starsFmt(r.stars) + '</span>' +
+        '<button class="unsave" onclick="unsave(this)">取消收藏</button></div>' +
         (r.desc ? '<p class="desc">' + esc(r.desc) + '</p>' : '') +
+        note + tags +
         '<div class="meta"><span>' + esc(r.owner || '') + '</span><i>·</i><span>' + site + '</span><i>·</i>' + date + '</div>' +
       '</div></div>';
   }}).join('');
 }}
 
-window.filterCat = function(cat) {{ render(cat || null); }};
+window.unsave = async function(btn) {{
+  if (!SAVE_API) {{ alert('收藏服务未配置'); return; }}
+  const repo = btn.closest('.item').dataset.repo;
+  if (!confirm('确定取消收藏「' + repo + '」？')) return;
+  try {{
+    const resp = await fetch(SAVE_API, {{
+      method: 'POST',
+      headers: {{ 'Content-Type': 'application/json' }},
+      body: JSON.stringify({{ repo: repo, _remove: true }}),
+    }});
+    const result = await resp.json().catch(() => ({{}}));
+    if (!resp.ok || result.error) {{ alert(result.error || '取消失败'); return; }}
+    await loadSaved();
+  }} catch(_) {{ alert('网络错误，取消失败'); }}
+}};
 
 document.addEventListener('DOMContentLoaded', loadSaved);
 """
 
 
-def render():
-    js = JS.format(raw_url=json.dumps(RAW_URL))
+def render(save_api=""):
+    js = JS.format(raw_url=json.dumps(RAW_URL), save_api=json.dumps(save_api))
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -140,8 +215,18 @@ def render():
       <span>共 <span class="count" id="count">0</span> 个收藏</span>
       <span class="spacer"></span>
       <button onclick="location.href='index.html'">返回日报</button>
-      <span id="catBar"></span>
     </div>
+
+    <div class="search-row">
+      <input type="text" id="search" placeholder="搜索项目名 / 描述 / 备注 / 标签…" oninput="render()">
+      <select id="sort" onchange="sortChanged()">
+        <option value="stars">按星数排序</option>
+        <option value="time">按收藏时间</option>
+        <option value="name">按名称</option>
+      </select>
+    </div>
+    <div class="tagbar" id="tagBar"></div>
+
     <div id="list"></div>
   </div>
 
@@ -154,7 +239,15 @@ def main():
     site_dir = P("site")
     os.makedirs(site_dir, exist_ok=True)
     dest = os.path.join(site_dir, "saved.html")
-    open(dest, "w").write(render())
+    # 读取 save_api（CF Worker 地址），用于精选页取消收藏
+    save_api = ""
+    cp = P("save_config.json")
+    if os.path.exists(cp):
+        try:
+            save_api = json.load(open(cp, encoding="utf-8")).get("save_api", "")
+        except Exception:
+            pass
+    open(dest, "w").write(render(save_api))
     print(dest)
 
 

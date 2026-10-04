@@ -38,7 +38,7 @@ def masthead_info(report):
             f"本期新收录 <b>{report['new_count']}</b> 个项目　·　30 天去重跳过 {report['skipped']} 个")
     return title, stand, line, f"VOL.{issue:03d}"
 
-def render(report, save_api="", saved_url="saved.html"):
+def render(report, save_api="", saved_url="saved.html", archive_url="index.html"):
     date = report["date"]
     title, stand, dateline, vol = masthead_info(report)
     monthly = len(date) == 7
@@ -206,6 +206,36 @@ def render(report, save_api="", saved_url="saved.html"):
             z-index:1100; pointer-events:none; }}
   .toast.show {{ opacity:1; transform:translateX(-50%) translateY(0); }}
 
+  /* ---------- save dialog ---------- */
+  .dlg-mask {{ display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }}
+  .dlg-mask.open {{ display:flex; }}
+  .dlg {{ background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }}
+  .dlg h2 {{ font-family:var(--serif); font-size:20px; margin:0 0 2px; }}
+  .dlg .repo-name {{ font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }}
+  .dlg label {{ display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }}
+  .dlg textarea {{ width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }}
+  .dlg input[type=text] {{ width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }}
+  .dlg textarea:focus, .dlg input:focus {{ outline:none; border-color:var(--red); }}
+  .dlg .tag-chips {{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }}
+  .dlg .tag-chip {{ font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }}
+  .dlg .tag-chip.on {{ color:var(--red); border-color:var(--red); background:#FBE7E4; }}
+  .dlg .btn-row {{ display:flex; gap:10px; margin-top:20px; }}
+  .dlg .btn-row button {{ flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }}
+  .dlg .btn-row button.primary {{ background:var(--red); color:#fff; border-color:var(--red); }}
+  .dlg .btn-row button.primary:disabled {{ opacity:.5; cursor:not-allowed; }}
+  .dlg .hint {{ font-size:11px; color:#C9BB93; margin-top:4px; }}
+
   @media (max-width:600px) {{
     .desc,.byline {{ margin-left:0; }}
     .item-head {{ flex-wrap:wrap; }}
@@ -234,14 +264,37 @@ def render(report, save_api="", saved_url="saved.html"):
 
   <footer>
     <span>GITHUB TRENDING {'MONTHLY' if monthly else 'DAILY'} · 自动生成</span>
-    <span><a href="{saved_url}" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · 数据来源 github.com/trending · 30 天去重窗口</span>
+    <span><a href="{saved_url}" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="{archive_url}" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
   </footer>
 
   <div class="toast" id="toast"></div>
 
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
 <script>
 (function(){{
   const saveApi = {json.dumps(save_api)};
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
 
   function toast(msg) {{
     const t = document.getElementById('toast');
@@ -249,31 +302,72 @@ def render(report, save_api="", saved_url="saved.html"):
     clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
   }}
 
-  async function refreshSavedStates() {{
-    // 从 GitHub raw 读取已收藏的 repo 集合，用于高亮按钮
+  async function loadSavedData() {{
     try {{
-      const resp = await fetch('https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json', {{ cache: 'no-store' }});
+      const resp = await fetch(rawSavedUrl, {{ cache: 'no-store' }});
       if (!resp.ok) return;
       const data = await resp.json();
-      const savedSet = new Set((data.items || []).map(r => r.repo));
-      document.querySelectorAll('.save-btn').forEach(btn => {{
-        let meta; try {{ meta = JSON.parse(btn.dataset.meta); }} catch(_) {{ return; }}
-        const saved = savedSet.has(meta.repo);
-        btn.classList.toggle('saved', saved);
-        btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
-      }});
-    }} catch(_) {{ /* 忽略读取失败，不影响收藏动作 */ }}
+      savedSet = new Set((data.items || []).map(r => r.repo));
+      const allTags = new Set(PRESET_TAGS);
+      (data.items || []).forEach(r => (r.tags || []).forEach(t => allTags.add(t)));
+      knownTags = [...allTags];
+    }} catch(_) {{}}
   }}
 
-  async function doSave(meta) {{
+  async function refreshSavedStates() {{
+    document.querySelectorAll('.save-btn').forEach(btn => {{
+      let meta; try {{ meta = JSON.parse(btn.dataset.meta); }} catch(_) {{ return; }}
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    }});
+  }}
+
+  function renderTagChips() {{
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {{
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    }});
+    box.innerHTML = chips.join('');
+  }}
+
+  function escHtml(s) {{ return String(s).replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c])); }}
+  function escAttr(s) {{ return String(s).replace(/["&<>]/g, c => ({{'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}}[c])); }}
+
+  window.toggleTag = function(chip) {{
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  }};
+
+  window.closeDlg = function() {{
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  }};
+
+  window.openSaveDlg = function(meta) {{
+    pendingMeta = {{ ...meta, tags: [], note: '' }};
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  }};
+
+  window.confirmSave = async function() {{
+    if (!pendingMeta) return;
     if (!saveApi) {{ toast('收藏服务未配置，请联系维护者'); return; }}
-    const btn = document.querySelector('.save-btn[data-meta]');
-    btn && (btn.disabled = true);
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    btn.disabled = true;
     try {{
       const resp = await fetch(saveApi, {{
         method: 'POST',
         headers: {{ 'Content-Type': 'application/json' }},
-        body: JSON.stringify(meta),
+        body: JSON.stringify(pendingMeta),
       }});
       const result = await resp.json().catch(() => ({{}}));
       if (!resp.ok || result.error) {{
@@ -281,23 +375,67 @@ def render(report, save_api="", saved_url="saved.html"):
         return;
       }}
       toast(result.removed ? '已取消收藏' : '已收藏到「我的精选」');
-      refreshSavedStates();
+      closeDlg();
+      await loadSavedData();
+      await refreshSavedStates();
     }} catch(_) {{
       toast('网络错误，收藏失败');
     }} finally {{
-      btn && (btn.disabled = false);
+      btn.disabled = false;
     }}
+  }};
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {{
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  }});
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {{
+    if (!saveApi) {{ toast('收藏服务未配置'); return; }}
+    try {{
+      const resp = await fetch(saveApi, {{
+        method: 'POST',
+        headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{ repo: meta.repo, _remove: true }}),
+      }});
+      const result = await resp.json().catch(() => ({{}}));
+      if (!resp.ok || result.error) {{ toast(result.error || '取消失败'); return; }}
+      toast('已取消收藏');
+      await loadSavedData();
+      await refreshSavedStates();
+    }} catch(_) {{ toast('网络错误，取消失败'); }}
   }}
 
-  // 绑定收藏按钮
-  document.addEventListener('click', async (e) => {{
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {{
     const btn = e.target.closest('.save-btn');
     if (!btn) return;
     let meta; try {{ meta = JSON.parse(btn.dataset.meta); }} catch(_) {{ return; }}
-    await doSave(meta);
+    if (savedSet.has(meta.repo)) {{
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }}
+    openSaveDlg(meta);
   }});
 
-  document.addEventListener('DOMContentLoaded', refreshSavedStates);
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {{
+    if (e.target === this) closeDlg();
+  }});
+
+  (async function init() {{
+    await loadSavedData();
+    refreshSavedStates();
+  }})();
 }})();
 </script>
 </body>
@@ -306,27 +444,30 @@ def render(report, save_api="", saved_url="saved.html"):
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(BASE, "report.json")
     report = json.load(open(path))
-    # 收藏 API（CF Worker）地址 + 精选页 URL
+    # 收藏 API（CF Worker）地址 + 精选页 URL + 归档 URL
     save_api = ""
     saved_url = "saved.html"
+    archive_url = "index.html"
     cp = os.path.join(BASE, "save_config.json")
     if os.path.exists(cp):
         try:
             save_api = json.load(open(cp)).get("save_api", "")
         except Exception:
             pass
-    # 从 config.json 读 report_url 拼出精选页绝对地址
+    # 从 config.json 读 report_url 拼出精选页/归档绝对地址
     try:
         cfg = json.load(open(os.path.join(BASE, "config.json")))
         base = cfg.get("report_url", "")
         if base:
-            saved_url = base.rstrip("/") + "/saved.html"
+            base = base.rstrip("/")
+            saved_url = base + "/saved.html"
+            archive_url = base + "/index.html"
     except Exception:
         pass
     site_dir = os.path.join(BASE, "site")
     os.makedirs(site_dir, exist_ok=True)
     dest = os.path.join(site_dir, "index.html")
-    open(dest, "w").write(render(report, save_api, saved_url))
+    open(dest, "w").write(render(report, save_api, saved_url, archive_url))
     print(dest)
 
 if __name__ == "__main__":
