@@ -90,12 +90,26 @@ async function loadSaved() {{
   const list = document.getElementById('list');
   list.innerHTML = '<div class="loading">加载中…</div>';
   try {{
-    // 加时间戳参数穿透 GitHub raw 的 CDN 缓存，避免收藏后精选页短暂读到旧数据
-    const sep = RAW_URL.indexOf('?') >= 0 ? '&' : '?';
-    const resp = await fetch(RAW_URL + sep + 'cb=' + Date.now(), {{ cache: 'no-store' }});
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    const data = await resp.json();
-    allRows = (data.items || []);
+    let items = null;
+    // 优先走 Worker GET（GitHub API，无 CDN 缓存）
+    if (SAVE_API) {{
+      try {{
+        const r = await fetch(SAVE_API, {{ cache: 'no-store' }});
+        if (r.ok) {{
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }}
+      }} catch(_) {{}}
+    }}
+    // 降级：raw + 时间戳穿透
+    if (items === null) {{
+      const sep = RAW_URL.indexOf('?') >= 0 ? '&' : '?';
+      const resp = await fetch(RAW_URL + sep + 'cb=' + Date.now(), {{ cache: 'no-store' }});
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      items = (data.items || []);
+    }}
+    allRows = items;
     renderTagBar();
     render();
   }} catch(e) {{
@@ -183,7 +197,10 @@ window.unsave = async function(btn) {{
     }});
     const result = await resp.json().catch(() => ({{}}));
     if (!resp.ok || result.error) {{ alert(result.error || '取消失败'); return; }}
-    await loadSaved();
+    // 乐观更新：立刻从本地移除并重绘，不等 raw 回读
+    allRows = allRows.filter(r => r.repo !== repo);
+    renderTagBar();
+    render();
   }} catch(_) {{ alert('网络错误，取消失败'); }}
 }};
 

@@ -315,16 +315,32 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
     clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
   }}
 
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
   async function loadSavedData() {{
-    try {{
-      const resp = await fetch(rawSavedUrl, {{ cache: 'no-store' }});
-      if (!resp.ok) return;
-      const data = await resp.json();
-      savedSet = new Set((data.items || []).map(r => r.repo));
-      const allTags = new Set(PRESET_TAGS);
-      (data.items || []).forEach(r => (r.tags || []).forEach(t => allTags.add(t)));
-      knownTags = [...allTags];
-    }} catch(_) {{}}
+    let items = [];
+    if (saveApi) {{
+      try {{
+        const r = await fetch(saveApi, {{ cache: 'no-store' }});
+        if (r.ok) {{
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }}
+      }} catch(_) {{}}
+    }}
+    if (items.length === 0) {{
+      try {{
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), {{ cache: 'no-store' }});
+        if (r.ok) {{
+          const d = await r.json();
+          items = (d.items || []);
+        }}
+      }} catch(_) {{}}
+    }}
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
   }}
 
   async function refreshSavedStates() {{
@@ -389,8 +405,9 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
       }}
       toast(result.removed ? '已取消收藏' : '已收藏到「我的精选」');
       closeDlg();
-      await loadSavedData();
-      await refreshSavedStates();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (result.removed) savedSet.delete(pendingMeta.repo); else savedSet.add(pendingMeta.repo);
+      refreshSavedStates();
     }} catch(_) {{
       toast('网络错误，收藏失败');
     }} finally {{
@@ -423,8 +440,9 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
       const result = await resp.json().catch(() => ({{}}));
       if (!resp.ok || result.error) {{ toast(result.error || '取消失败'); return; }}
       toast('已取消收藏');
-      await loadSavedData();
-      await refreshSavedStates();
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
     }} catch(_) {{ toast('网络错误，取消失败'); }}
   }}
 
