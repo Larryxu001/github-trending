@@ -69,7 +69,8 @@ def main():
     # load dedup record, prune >30 days
     pushed_path = os.path.join(BASE, "pushed.json")
     pushed = json.load(open(pushed_path)) if os.path.exists(pushed_path) else {}
-    today = datetime.date.today()
+    # 用北京时间（UTC+8）日期，避免 Actions 的 UTC 时区导致日报日期在边缘时段偏移一天
+    today = datetime.date.fromtimestamp(time.time() + 8 * 3600)
     cutoff = today - datetime.timedelta(days=30)
     pushed = {k: v for k, v in pushed.items()
               if datetime.date.fromisoformat(v) > cutoff}

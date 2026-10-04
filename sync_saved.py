@@ -114,7 +114,10 @@ def main():
     all_items = json.load(open(saved_path, encoding="utf-8")).get("items", [])
 
     # 每周精选回顾 = 只推「最近 7 天」新收藏的项目，避免重复推送历史收藏、卡片无限膨胀
-    today = datetime.date.today()
+    # 注意：GitHub Actions 的 ubuntu 默认 UTC 时区，这里显式用北京时间（UTC+8），
+    # 避免周一边缘时段（北京 00:00~08:00）的收藏被 UTC 日期误判为「上周」而漏推。
+    today = datetime.date.fromtimestamp(
+        time.time() + 8 * 3600)  # 北京时间日期
     cutoff = today - datetime.timedelta(days=7)
     items = []
     for it in all_items:

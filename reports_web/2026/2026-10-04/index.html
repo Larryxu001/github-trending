@@ -440,7 +440,7 @@
 
   // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
   async function loadSavedData() {
-    let items = [];
+    let items = null;
     if (saveApi) {
       try {
         const r = await fetch(saveApi, { cache: 'no-store' });
@@ -450,7 +450,10 @@
         }
       } catch(_) {}
     }
-    if (items.length === 0) {
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
       try {
         const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
         const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
@@ -460,6 +463,7 @@
         }
       } catch(_) {}
     }
+    if (items === null) items = [];
     savedSet = new Set(items.map(x => x.repo));
     const allTags = new Set(PRESET_TAGS);
     items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));

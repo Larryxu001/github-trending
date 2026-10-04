@@ -233,7 +233,7 @@ def render(save_api=""):
     <div class="bar">
       <span>共 <span class="count" id="count">0</span> 个收藏</span>
       <span class="spacer"></span>
-      <button onclick="location.href='index.html'">返回日报</button>
+      <button onclick="location.href='index.html'">返回归档</button>
     </div>
 
     <div class="search-row">
