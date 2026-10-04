@@ -25,6 +25,22 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-04"
+  },
+  {
+   "repo": "humanlayer/skills",
+   "url": "https://github.com/humanlayer/skills",
+   "owner": "humanlayer",
+   "stars": 4885,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "humanlayer/skills 是一个用 TypeScript 编写的开源项目，为 AI Agent 提供可复用的技能模块。它解决 Agent 在复杂任务中缺乏标准化能力的问题，开发者可以像搭积木一样把技能组合起来，让 Agent 完成搜索、文件操作、调用 API 等具体工作。例如，你可以给客服 Agent 装上「查询订单」和「发送邮件」两个技能，它就能自动处理用户退换货请求，无需从零编写代码。",
+   "site": "无",
+   "note": "",
+   "tags": [
+    "RAG",
+    "前端"
+   ],
+   "saved_at": "2026-10-04"
   }
  ]
 }
