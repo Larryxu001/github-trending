@@ -2,8 +2,10 @@ name: Daily Trending Report
 
 on:
   schedule:
-    # 每天 09:00 (北京时间，UTC+8 = 01:00 UTC)
-    - cron: "0 1 * * *"
+    # 每小时运行一次（UTC 整点），确保当天日报一定推送成功：
+    # - 早上 9 点首次尝试（北京时间，UTC+8 = 01:00 UTC）
+    # - 若推送失败（网络/飞书异常），下一小时自动重试，最多覆盖全天 24 次机会
+    - cron: "0 * * * *"
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:
