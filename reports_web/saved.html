@@ -226,7 +226,11 @@ window.unsave = async function(btn) {
     allRows = allRows.filter(r => r.repo !== repo);
     renderTagBar();
     render();
-  } catch(_) { alert('网络错误，取消失败'); }
+  } catch(err) {
+    const msg = (err && err.message) ? err.message : '请检查网络';
+    const isNet = /fetch|network/i.test(msg);
+    alert((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+  }
 };
 
 document.addEventListener('DOMContentLoaded', loadSaved);

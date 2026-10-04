@@ -66,6 +66,8 @@ def build_report(items):
             "lists": [],
             "desc": it.get("desc") or "",
             "site": it.get("site") or "无",
+            "note": it.get("note") or "",
+            "tags": it.get("tags") or [],
         })
     for c in cats.values():
         c["items"].sort(key=lambda x: -(x["stars"] or 0))
@@ -91,6 +93,14 @@ def feishu_cat_card(cat):
         site = "无" if it["site"] == "无" else f"[{it['site']}]({it['site']})"
         els.append({"tag": "div", "text": {"tag": "lark_md", "content":
             f"**{i}. [{it['repo']}]({it['url']})**　⭐ {stars_fmt(it['stars'])}\n{it['desc']}"}})
+        # 用户收藏时写的备注和标签：周报的核心价值，必须带上
+        if it.get("note"):
+            els.append({"tag": "div", "text": {"tag": "lark_md", "content":
+                f"📝 **我的备注**：{it['note']}"}})
+        if it.get("tags"):
+            tag_line = " ".join(f"`#{t}`" for t in it["tags"])
+            els.append({"tag": "div", "text": {"tag": "lark_md", "content":
+                f"🏷 {tag_line}"}})
         els.append({"tag": "div", "text": {"tag": "lark_md", "content":
             f"👤 {it['owner']} ｜ 🔗 {site}"}})
         els.append({"tag": "hr"})

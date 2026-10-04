@@ -409,13 +409,20 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
         toast(result.error || '收藏失败，请重试');
         return;
       }}
-      toast(result.removed ? '已取消收藏' : '已收藏到「我的精选」');
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = pendingMeta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
       closeDlg();
       // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
-      if (result.removed) savedSet.delete(pendingMeta.repo); else savedSet.add(pendingMeta.repo);
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
       refreshSavedStates();
     }} catch(err) {{
-      toast('网络错误，收藏失败：' + (err && err.message ? err.message : '请检查网络'));
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
     }} finally {{
       btn.disabled = false;
     }}
