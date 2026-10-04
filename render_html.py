@@ -62,18 +62,20 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
             site = ("无官网" if it["site"] == "无"
                     else f'<a class="site" href="{esc(it["site"])}" target="_blank">{esc(it["site"])}</a>')
             # 收藏按钮所需的项目元数据（JSON 序列化后放入 data 属性）
+            # 关键：用 ensure_ascii=True 保证纯 ASCII，避免中文/单引号破坏 HTML 属性；
+            # 前端 JSON.parse 会自动还原中文。属性用双引号包裹，配合 esc 转义双引号。
             meta = json.dumps({
                 "repo": it["repo"], "url": it["url"], "owner": it["owner"],
                 "stars": it["stars"], "desc": it["desc"], "site": it["site"],
                 "category": cat["name"], "emoji": cat["emoji"],
-            }, ensure_ascii=False)
+            }, ensure_ascii=True)
             items.append(f"""
         <article class="item" id="sec-{si}-{i}">
           <div class="item-head">
             <span class="no">{i:02d}</span>
             <h3 class="title"><a href="{esc(it['url'])}" target="_blank">{esc(it['repo'])}</a></h3>
             <span class="stars">★ {stars_fmt(it['stars'])}</span>
-            <button class="save-btn" data-meta='{esc(meta)}' aria-label="收藏项目">☆ 收藏</button>
+            <button class="save-btn" data-meta="{esc(meta)}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">{esc(it['desc'])}</p>
           <div class="byline">
