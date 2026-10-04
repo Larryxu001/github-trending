@@ -5,6 +5,7 @@ new_desc.json
 report.json
 report-*.md
 monthly-*.json
+saved_report.json
 *.pyc
 __pycache__/
 

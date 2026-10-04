@@ -8,7 +8,7 @@ Usage:
   python sync_saved.py            # 读 saved.json，推飞书
   python sync_saved.py --no-push  # 仅生成 saved_report.json 不推送
 """
-import json, os, sys, time, urllib.request
+import json, os, sys, time, urllib.request, datetime
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 UA = {"User-Agent": "github-trending-bot/1.0", "Content-Type": "application/json"}
@@ -111,16 +111,29 @@ def push_feishu(url, report):
 def main():
     no_push = "--no-push" in sys.argv
     saved_path = os.path.join(BASE, "saved.json")
-    items = json.load(open(saved_path, encoding="utf-8")).get("items", [])
+    all_items = json.load(open(saved_path, encoding="utf-8")).get("items", [])
+
+    # 每周精选回顾 = 只推「最近 7 天」新收藏的项目，避免重复推送历史收藏、卡片无限膨胀
+    today = datetime.date.today()
+    cutoff = today - datetime.timedelta(days=7)
+    items = []
+    for it in all_items:
+        d = (it.get("saved_at") or "")[:10]
+        try:
+            if d and datetime.date.fromisoformat(d) >= cutoff:
+                items.append(it)
+        except ValueError:
+            items.append(it)  # 无有效日期则纳入，保守起见不丢
 
     if not items:
-        print("[done] no saved items, nothing to push", file=sys.stderr)
+        print("[done] no new saved items in last 7 days, nothing to push", file=sys.stderr)
         return
 
     report = build_report(items)
     json.dump(report, open(os.path.join(BASE, "saved_report.json"), "w"),
               ensure_ascii=False, indent=1)
-    print(f"[done] saved_report.json built: {report['new_count']} items in {len(report['categories'])} categories")
+    print(f"[done] saved_report.json built: {report['new_count']} items (last 7d) in "
+          f"{len(report['categories'])} categories")
 
     if no_push:
         return
