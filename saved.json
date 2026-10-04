@@ -25,6 +25,19 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-04"
+  },
+  {
+   "repo": "test/diag-check",
+   "url": "https://github.com/test/diag-check",
+   "owner": "test",
+   "stars": 1,
+   "category": "测试",
+   "emoji": "🧪",
+   "desc": "诊断测试",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-04"
   }
  ]
 }
