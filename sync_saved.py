@@ -19,17 +19,31 @@ FEISHU_COLOR = {"🧩": "violet", "🤖": "blue", "⚡": "yellow", "🧠": "carm
 
 
 def post(url, payload):
-    req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=UA)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        body = r.read().decode()
-    try:
-        resp = json.loads(body)
-        code = resp.get("code", resp.get("errcode", 0))
-        if code != 0:
-            raise RuntimeError(f"feishu error code={code}: {body}")
-    except json.JSONDecodeError:
-        pass
-    return body
+    # 带重试：飞书 webhook 偶发 429/网络抖动时自动重试，避免丢卡片
+    last_err = None
+    for attempt in range(4):
+        try:
+            req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=UA)
+            with urllib.request.urlopen(req, timeout=30) as r:
+                body = r.read().decode()
+            try:
+                resp = json.loads(body)
+                code = resp.get("code", resp.get("errcode", 0))
+                if code == 9499 or code == 125404:  # 频率限制，等待后重试
+                    last_err = f"feishu rate limit code={code}"
+                    time.sleep(3 * (attempt + 1))
+                    continue
+                if code != 0:
+                    raise RuntimeError(f"feishu error code={code}: {body}")
+            except json.JSONDecodeError:
+                pass
+            return body
+        except RuntimeError:
+            raise
+        except Exception as e:
+            last_err = e
+            time.sleep(2 * (attempt + 1))
+    raise RuntimeError(f"feishu post failed after retries: {last_err}")
 
 
 def stars_fmt(n):

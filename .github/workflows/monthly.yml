@@ -80,5 +80,6 @@ jobs:
             echo "no changes to commit"
           else
             git commit -m "月报 $(date -u +%Y-%m) · 自动生成"
+            git pull --rebase origin main || git pull --rebase origin main
             git push
           fi

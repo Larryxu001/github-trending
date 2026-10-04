@@ -38,5 +38,7 @@ jobs:
             echo "no changes to commit"
           else
             git commit -m "日报 $(date -u +%F) · 自动生成"
+            # 并发保护：push 前先 rebase 拉取远程最新，避免与其他工作流冲突
+            git pull --rebase origin main || git pull --rebase origin main
             git push
           fi
