@@ -87,31 +87,48 @@ def feishu_cover(report):
 
 
 def feishu_cat_card(cat):
+    """单分类生成一张或多张飞书卡片。
+
+    飞书卡片元素上限约 50 个，单项目约占 3~4 个元素（标题+备注+标签+元信息+hr）。
+    为避免分类内项目过多导致超限被飞书拒收、整卡丢失，这里按每卡最多 12 个项目
+    拆分（约 48 元素上限，留安全余量），保证周报任何情况下都能完整送达。
+    """
     color = FEISHU_COLOR.get(cat["emoji"], "blue")
-    els = []
-    for i, it in enumerate(cat["items"], 1):
-        site = "无" if it["site"] == "无" else f"[{it['site']}]({it['site']})"
-        els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-            f"**{i}. [{it['repo']}]({it['url']})**　⭐ {stars_fmt(it['stars'])}\n{it['desc']}"}})
-        # 用户收藏时写的备注和标签：周报的核心价值，必须带上
-        if it.get("note"):
+    MAX_PER_CARD = 12
+    items = cat["items"]
+    cards = []
+    for chunk_start in range(0, len(items), MAX_PER_CARD):
+        chunk = items[chunk_start:chunk_start + MAX_PER_CARD]
+        els = []
+        for i, it in enumerate(chunk, chunk_start + 1):
+            site = "无" if it["site"] == "无" else f"[{it['site']}]({it['site']})"
             els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-                f"📝 **我的备注**：{it['note']}"}})
-        if it.get("tags"):
-            tag_line = " ".join(f"`#{t}`" for t in it["tags"])
+                f"**{i}. [{it['repo']}]({it['url']})**　⭐ {stars_fmt(it['stars'])}\n{it['desc']}"}})
+            # 用户收藏时写的备注和标签：周报的核心价值，必须带上
+            if it.get("note"):
+                els.append({"tag": "div", "text": {"tag": "lark_md", "content":
+                    f"📝 **我的备注**：{it['note']}"}})
+            if it.get("tags"):
+                tag_line = " ".join(f"`#{t}`" for t in it["tags"])
+                els.append({"tag": "div", "text": {"tag": "lark_md", "content":
+                    f"🏷 {tag_line}"}})
             els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-                f"🏷 {tag_line}"}})
-        els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-            f"👤 {it['owner']} ｜ 🔗 {site}"}})
-        els.append({"tag": "hr"})
-    return {"config": {"wide_screen_mode": True},
-            "header": {"template": color, "title": {"tag": "plain_text",
-                       "content": f"{cat['emoji']} {cat['name']} · {len(cat['items'])} 个项目"}},
-            "elements": els[:-1]}
+                f"👤 {it['owner']} ｜ 🔗 {site}"}})
+            els.append({"tag": "hr"})
+        title = f"{cat['emoji']} {cat['name']} · {len(cat['items'])} 个项目"
+        if len(items) > MAX_PER_CARD:
+            title += f"（{chunk_start + 1}-{min(chunk_start + len(chunk), len(items))}）"
+        cards.append({"config": {"wide_screen_mode": True},
+                      "header": {"template": color, "title": {"tag": "plain_text",
+                                 "content": title}},
+                      "elements": els[:-1]})
+    return cards
 
 
 def push_feishu(url, report):
-    cards = [feishu_cover(report)] + [feishu_cat_card(c) for c in report["categories"]]
+    cards = [feishu_cover(report)]
+    for c in report["categories"]:
+        cards.extend(feishu_cat_card(c))
     for i, card in enumerate(cards):
         resp = post(url, {"msg_type": "interactive", "card": card})
         print(f"  feishu card {i+1}/{len(cards)}: {resp}", file=sys.stderr)
