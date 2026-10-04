@@ -44,6 +44,22 @@
     "有趣"
    ],
    "saved_at": "2026-10-04"
+  },
+  {
+   "repo": "obra/superpowers",
+   "url": "https://github.com/obra/superpowers",
+   "owner": "obra",
+   "stars": 294521,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。",
+   "site": "无",
+   "note": "",
+   "tags": [
+    "做视频",
+    "效率"
+   ],
+   "saved_at": "2026-10-04"
   }
  ]
 }
