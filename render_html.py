@@ -414,8 +414,8 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
       // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
       if (result.removed) savedSet.delete(pendingMeta.repo); else savedSet.add(pendingMeta.repo);
       refreshSavedStates();
-    }} catch(_) {{
-      toast('网络错误，收藏失败');
+    }} catch(err) {{
+      toast('网络错误，收藏失败：' + (err && err.message ? err.message : '请检查网络'));
     }} finally {{
       btn.disabled = false;
     }}
@@ -449,7 +449,7 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
       // 乐观更新：立刻本地移除，按钮立即还原
       savedSet.delete(meta.repo);
       refreshSavedStates();
-    }} catch(_) {{ toast('网络错误，取消失败'); }}
+    }} catch(err) {{ toast('网络错误，取消失败：' + (err && err.message ? err.message : '请检查网络')); }}
   }}
 
   // 绑定收藏按钮：点击弹出对话框
