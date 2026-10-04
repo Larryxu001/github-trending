@@ -25,6 +25,21 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-04"
+  },
+  {
+   "repo": "test/中文验证",
+   "url": "https://github.com/test/x",
+   "owner": "test",
+   "stars": 1,
+   "category": "测试分类",
+   "emoji": "🧪",
+   "desc": "中文描述测试",
+   "site": "无",
+   "note": "中文备注",
+   "tags": [
+    "测试标签"
+   ],
+   "saved_at": "2026-10-04"
   }
  ]
 }
