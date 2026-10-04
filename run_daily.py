@@ -127,8 +127,11 @@ def build_web_index():
         items.append('<div class="months">')
         for d in dates:
             # d 形如 YYYY-MM-DD（日报）或 YYYY-MM（月报）
-            label = d[5:] + ("（月报）" if len(d) == 7 else "")
-            items.append(f'<a class="day" href="{y}/{d}/index.html">{label}</a>')
+            if len(d) == 7:
+                label, tail = f"{int(d[5:7])} 月", "月报"
+            else:
+                label, tail = f"{int(d[5:7])} 月 {int(d[8:10])} 日", "日报"
+            items.append(f'<a class="day" href="{y}/{d}/index.html">{label}<span class="tail">{tail}</span></a>')
         items.append('</div>')
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
@@ -148,10 +151,14 @@ def build_web_index():
  .nav a:hover {{ text-decoration:underline; }}
  .year {{ font-family:Georgia,"Songti SC",serif; font-size:20px; font-weight:700;
          margin:28px 0 6px; padding-bottom:4px; border-bottom:3px double #2B2419; }}
- .months {{ display:flex; flex-wrap:wrap; gap:8px; }}
- .day {{ display:inline-block; padding:8px 14px; border:1px solid #E6DDC6; border-radius:4px;
-        color:#2B2419; text-decoration:none; font-size:15px; background:#fff; }}
- .day:hover {{ color:#C02B1F; border-color:#C02B1F; }}
+ .months {{ display:block; }}
+ .day {{ display:flex; align-items:baseline; padding:11px 2px;
+        border-bottom:1px dashed #E6DDC6; color:#2B2419; text-decoration:none;
+        font-size:16px; background:transparent; font-family:Georgia,"Songti SC",serif; }}
+ .day .tail {{ margin-left:auto; font-family:-apple-system,"PingFang SC",sans-serif;
+               font-size:11px; color:#8a7f66; letter-spacing:.08em; }}
+ .day:hover {{ color:#C02B1F; border-bottom-color:#C02B1F; }}
+ .day:hover .tail {{ color:#C02B1F; }}
  .empty {{ color:#8a7f66; font-style:italic; padding:40px 0; }}
 </style></head><body><div class="wrap">
 <div class="topline"><span>GITHUB TRENDING ARCHIVE</span><span>往期归档</span></div>

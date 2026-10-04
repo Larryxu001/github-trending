@@ -16,15 +16,19 @@
  .nav a:hover { text-decoration:underline; }
  .year { font-family:Georgia,"Songti SC",serif; font-size:20px; font-weight:700;
          margin:28px 0 6px; padding-bottom:4px; border-bottom:3px double #2B2419; }
- .months { display:flex; flex-wrap:wrap; gap:8px; }
- .day { display:inline-block; padding:8px 14px; border:1px solid #E6DDC6; border-radius:4px;
-        color:#2B2419; text-decoration:none; font-size:15px; background:#fff; }
- .day:hover { color:#C02B1F; border-color:#C02B1F; }
+ .months { display:block; }
+ .day { display:flex; align-items:baseline; padding:11px 2px;
+        border-bottom:1px dashed #E6DDC6; color:#2B2419; text-decoration:none;
+        font-size:16px; background:transparent; font-family:Georgia,"Songti SC",serif; }
+ .day .tail { margin-left:auto; font-family:-apple-system,"PingFang SC",sans-serif;
+               font-size:11px; color:#8a7f66; letter-spacing:.08em; }
+ .day:hover { color:#C02B1F; border-bottom-color:#C02B1F; }
+ .day:hover .tail { color:#C02B1F; }
  .empty { color:#8a7f66; font-style:italic; padding:40px 0; }
 </style></head><body><div class="wrap">
 <div class="topline"><span>GITHUB TRENDING ARCHIVE</span><span>往期归档</span></div>
 <h1>Github开源趋势日报</h1>
 <div class="sub">往期归档 · 由 GitHub Actions 每日自动生成</div>
 <div class="nav"><a href="saved.html">★ 我的精选</a></div>
-<div class="year">2026</div><div class="months"><a class="day" href="2026/2026-10-04/index.html">10-04</a><a class="day" href="2026/2026-10-03/index.html">10-03</a></div>
+<div class="year">2026</div><div class="months"><a class="day" href="2026/2026-10-04/index.html">10 月 4 日<span class="tail">日报</span></a><a class="day" href="2026/2026-10-03/index.html">10 月 3 日<span class="tail">日报</span></a></div>
 </div></body></html>
