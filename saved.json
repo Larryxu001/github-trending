@@ -14,16 +14,18 @@
    "saved_at": "2026-10-04"
   },
   {
-   "repo": "humanlayer/skills",
-   "url": "https://github.com/humanlayer/skills",
-   "owner": "humanlayer",
-   "stars": 4885,
+   "repo": "obra/superpowers",
+   "url": "https://github.com/obra/superpowers",
+   "owner": "obra",
+   "stars": 294619,
    "category": "Agent 技能与插件",
    "emoji": "🧩",
-   "desc": "humanlayer/skills 是一个用 TypeScript 编写的开源项目，为 AI Agent 提供可复用的技能模块。它解决 Agent 在复杂任务中缺乏标准化能力的问题，开发者可以像搭积木一样把技能组合起来，让 Agent 完成搜索、文件操作、调用 API 等具体工作。例如，你可以给客服 Agent 装上「查询订单」和「发送邮件」两个技能，它就能自动处理用户退换货请求，无需从零编写代码。",
+   "desc": "一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。",
    "site": "无",
-   "note": "",
-   "tags": [],
+   "note": "学习",
+   "tags": [
+    "学习"
+   ],
    "saved_at": "2026-10-04"
   }
  ]
