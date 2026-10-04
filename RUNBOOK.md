@@ -57,3 +57,26 @@ $PY pipeline.sh finalize   # 合并 + 渲染 + 推送 + 归档
 4. 报告一律中文，星数千分位，官网缺失统一写「无」。
 5. **密钥绝不入库**：webhook/token 只走环境变量或 config.local.json。
 
+## 六、收藏功能维护（CF Worker + saved.json）
+
+- **真源**：仓库根 `saved.json`（Worker 经 GitHub API 实时读写，无 CDN 缓存延迟）。
+- **Worker 目录**：`~/.workbuddy/github-trending-save-worker/`（worker.js + wrangler.toml）。
+- **部署命令**（wrangler 不在 PATH，npx 直跑会被 SIGTERM，必须用 npx 缓存里的完整路径）：
+  ```
+  cd ~/.workbuddy/github-trending-save-worker
+  ~/.npm/_npx/32026684e21afda6/node_modules/.bin/wrangler deploy
+  ```
+- **改前端收藏 JS 后必须**：重新 `render_html.py` / `render_saved.py`，并把
+  `site/index.html` 同步到 `reports_web/<年>/<日期>/index.html`、`site/saved.html`
+  同步到 `reports_web/saved.html`，再 commit push（Pages 自动部署）。
+- **线上自检命令**：
+  ```
+  curl -s https://github-trending-save.larryxu-4e5.workers.dev          # GET 应返回 {ok:true,items:[...]}
+  curl -s https://larryxu001.github.io/github-trending/saved.html | grep -c "程序错误"  # ≥1 说明新版已部署
+  ```
+- **周报**：`weekly.yml` 每周一 09:00 北京时间跑 `sync_saved.py`，只推近 7 天
+  （按 `saved_at`，北京时间口径，与 Worker 写入口径一致）。
+- **已知坑**：前端 catch 里把 JS 异常报成「网络错误」会严重误导排查；错误提示必须
+  带 `err.message` 并区分网络/程序错误（已实现）。
+
+
