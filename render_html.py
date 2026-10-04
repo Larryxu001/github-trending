@@ -125,6 +125,15 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
   .doublerule {{ border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
                  height:5px; }}
 
+  /* ---------- top nav ---------- */
+  .topnav {{ max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }}
+  .topnav a {{ color:var(--ink); text-decoration:none; }}
+  .topnav a:hover {{ color:var(--red); }}
+  .topnav .back {{ color:var(--sub); }}
+  .topnav .back::before {{ content:"← "; color:var(--red); }}
+
   /* ---------- sections ---------- */
   .layout {{ max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }}
   main {{ flex:1; min-width:0; max-width:800px; margin:0 auto; }}
@@ -244,6 +253,10 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
 </style>
 </head>
 <body>
+  <nav class="topnav">
+    <a class="back" href="{archive_url}">返回归档</a>
+    <a href="{saved_url}">★ 我的精选</a>
+  </nav>
   <header class="masthead">
     <div class="topline"><span>GITHUB TRENDING {'MONTHLY' if monthly else 'DAILY'}</span><span>{vol}</span></div>
     <h1>{title}</h1>

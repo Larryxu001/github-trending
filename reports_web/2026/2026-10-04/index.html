@@ -33,6 +33,15 @@
   .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
                  height:5px; }
 
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
   /* ---------- sections ---------- */
   .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
   main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
@@ -152,6 +161,10 @@
 </style>
 </head>
 <body>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
   <header class="masthead">
     <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.002</span></div>
     <h1>Github开源趋势日报</h1>

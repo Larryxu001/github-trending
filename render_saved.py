@@ -90,7 +90,9 @@ async function loadSaved() {{
   const list = document.getElementById('list');
   list.innerHTML = '<div class="loading">加载中…</div>';
   try {{
-    const resp = await fetch(RAW_URL, {{ cache: 'no-store' }});
+    // 加时间戳参数穿透 GitHub raw 的 CDN 缓存，避免收藏后精选页短暂读到旧数据
+    const sep = RAW_URL.indexOf('?') >= 0 ? '&' : '?';
+    const resp = await fetch(RAW_URL + sep + 'cb=' + Date.now(), {{ cache: 'no-store' }});
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const data = await resp.json();
     allRows = (data.items || []);
