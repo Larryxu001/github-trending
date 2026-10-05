@@ -1,0 +1,25 @@
+{
+ "date": "2026-10-05",
+ "new_count": 1,
+ "skipped": 48,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "michael-denyer/pstack-claude",
+     "url": "https://github.com/michael-denyer/pstack-claude",
+     "owner": "michael-denyer",
+     "stars": 1141,
+     "updated": "2026-10-04",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是把 Poteto 的 pstack 工作流移植到 Claude Code、Codex、Gemini 等多个 AI 编程助手上的插件集合。它提供一套严谨的智能体工作流程，把原本为 Cursor 设计的操作原语翻译成各平台可用的技能，让开发者无论用哪个助手都能获得一致的代码审查、任务拆解等能力。例如在 Claude Code 里装上后，就能按固定步骤自动完成代码评审，减少手动提示的随意性。",
+     "site": "无"
+    }
+   ]
+  }
+ ]
+}

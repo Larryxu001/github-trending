@@ -64,5 +64,6 @@
  "caddyserver/caddy": "2026-10-04",
  "tester-army/e2e": "2026-10-04",
  "NationalSecurityAgency/ghidra": "2026-10-04",
- "cs341-illinois/coursebook": "2026-10-04"
+ "cs341-illinois/coursebook": "2026-10-04",
+ "michael-denyer/pstack-claude": "2026-10-05"
 }
