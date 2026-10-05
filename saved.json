@@ -1,19 +1,6 @@
 {
  "items": [
   {
-   "repo": "addyosmani/agent-skills",
-   "url": "https://github.com/addyosmani/agent-skills",
-   "owner": "addyosmani",
-   "stars": 100870,
-   "category": "Agent 技能与插件",
-   "emoji": "🧩",
-   "desc": "这是一个为 AI 编程助手（如 Claude Code、Cursor、Codex 等）提供生产级工程技能的开源项目。它把代码审查、测试编写、重构、调试等常见开发任务封装成可复用的「技能包」，让 AI Agent 在真实项目中表现得更专业可靠。比如你让 AI 帮你改一个 bug，它会按内置的调试技能一步步定位问题，而不是随意猜测。开发者可以直接安装这些技能，提升 AI 编程的准确率和效率。",
-   "site": "https://skills.addy.ie",
-   "note": "",
-   "tags": [],
-   "saved_at": "2026-10-05"
-  },
-  {
    "repo": "mattpocock/skills",
    "url": "https://github.com/mattpocock/skills",
    "owner": "mattpocock",
