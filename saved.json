@@ -1,3 +1,17 @@
 {
- "items": []
+ "items": [
+  {
+   "repo": "test/foo",
+   "url": "https://github.com/test/foo",
+   "owner": "test",
+   "stars": 1,
+   "category": "测试",
+   "emoji": "📦",
+   "desc": "test",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-05"
+  }
+ ]
 }
