@@ -37,3 +37,10 @@ jobs:
             git pull --rebase origin main || git pull --rebase origin main
             git push
           fi
+
+      - name: Trigger Pages deploy
+        # GITHUB_TOKEN 的 push 不会触发 pages.yml 的 on:push，需显式触发
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run pages.yml --ref main || echo "pages trigger skipped (already queued)"

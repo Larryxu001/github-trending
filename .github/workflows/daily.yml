@@ -42,3 +42,11 @@ jobs:
             git pull --rebase origin main || git pull --rebase origin main
             git push
           fi
+
+      - name: Trigger Pages deploy
+        # 关键：GITHUB_TOKEN 的 push 不会触发其他 workflow 的 on:push，
+        # 所以这里显式调用 GitHub API 触发 pages.yml，确保网页版归档一定更新。
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run pages.yml --ref main || echo "pages trigger skipped (already queued)"
