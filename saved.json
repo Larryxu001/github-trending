@@ -42,6 +42,21 @@
     "前端"
    ],
    "saved_at": "2026-10-05"
+  },
+  {
+   "repo": "JuliusBrussee/caveman",
+   "url": "https://github.com/JuliusBrussee/caveman",
+   "owner": "JuliusBrussee",
+   "stars": 109243,
+   "category": "Agent 效率优化",
+   "emoji": "⚡",
+   "desc": "一个爆火的省钱技巧：让 AI 用「穴居人式」极简英语思考和工作（说 make login work 而不是长篇大论），实测省 65% 的 token 消耗。表面是个梗，实际是真金白银地降 API 账单。",
+   "site": "https://docs.caveman.so/docs/quickstart",
+   "note": "省大模型 token",
+   "tags": [
+    "做 Agent"
+   ],
+   "saved_at": "2026-10-05"
   }
  ]
 }
