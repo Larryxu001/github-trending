@@ -57,6 +57,19 @@
     "有趣"
    ],
    "saved_at": "2026-10-05"
+  },
+  {
+   "repo": "e2e-test/probe",
+   "url": "https://github.com/e2e-test/probe",
+   "owner": "e2e-test",
+   "stars": 1,
+   "category": "测试",
+   "emoji": "📦",
+   "desc": "端到端验证",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-05"
   }
  ]
 }
