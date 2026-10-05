@@ -76,6 +76,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
+          git restore --staged saved.json || true
           if git diff --cached --quiet; then
             echo "no changes to commit"
           else

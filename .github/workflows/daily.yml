@@ -33,7 +33,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # 关键：saved.json 的真源是 CF Worker 用 PAT 管理的，Actions 绝不能提交它，
+          # 否则会用自己的旧 checkout 版本覆盖 Worker 刚写入的新收藏（数据丢失根因）。
           git add -A
+          git restore --staged saved.json || true
           if git diff --cached --quiet; then
             echo "no changes to commit"
           else
