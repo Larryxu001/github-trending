@@ -57,6 +57,19 @@
     "做 Agent"
    ],
    "saved_at": "2026-10-05"
+  },
+  {
+   "repo": "Tencent/WeKnora",
+   "url": "https://github.com/Tencent/WeKnora",
+   "owner": "Tencent",
+   "stars": 31818,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "腾讯开源的知识库平台：把公司一堆散落的文档丢进去，就能变成可问答的智能知识库，还能自动整理成 Wiki。典型的 RAG 应用，适合搭企业内部「问啥都知道」的 AI 知识助手。",
+   "site": "https://weknora.weixin.qq.com",
+   "note": "知识库",
+   "tags": [],
+   "saved_at": "2026-10-05"
   }
  ]
 }
