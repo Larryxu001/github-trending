@@ -14,6 +14,19 @@
     "前端"
    ],
    "saved_at": "2026-10-05"
+  },
+  {
+   "repo": "pablostanley/yoinks",
+   "url": "https://github.com/pablostanley/yoinks",
+   "owner": "pablostanley",
+   "stars": 3655,
+   "category": "其他",
+   "emoji": "📦",
+   "desc": "终端里的视频下载器：一条命令把网页视频拉到本地，没有垃圾广告和套路。同类工具里界面最清爽的一个。",
+   "site": "无",
+   "note": "利用 yp-tlp 工具下载网站视频",
+   "tags": [],
+   "saved_at": "2026-10-05"
   }
  ]
 }
