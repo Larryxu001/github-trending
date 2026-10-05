@@ -1,3 +1,19 @@
 {
- "items": []
+ "items": [
+  {
+   "repo": "pbakaus/impeccable",
+   "url": "https://github.com/pbakaus/impeccable",
+   "owner": "pbakaus",
+   "stars": 74557,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "专治「AI 生成的网页丑」。它是一套喂给 AI 的设计语言规范，教 AI 什么是好的间距、字体层级和配色。装上之后 AI 做的界面明显更像专业设计师出品，而不是千篇一律的模板风。",
+   "site": "https://impeccable.style",
+   "note": "网站 UI 设计美化",
+   "tags": [
+    "前端"
+   ],
+   "saved_at": "2026-10-05"
+  }
+ ]
 }
