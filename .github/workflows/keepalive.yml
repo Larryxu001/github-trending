@@ -21,5 +21,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # 并发保护：push 前先 rebase 拉取远程最新，避免与日报/周报同时运行时冲突失败
+          git pull --rebase origin main || git pull --rebase origin main
           git commit --allow-empty -m "chore: keepalive [skip ci]" || echo "nothing to commit"
           git push || echo "push skipped"
