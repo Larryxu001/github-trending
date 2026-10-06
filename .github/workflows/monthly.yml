@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # 必需：gh workflow run 触发 pages 部署需要 actions 写权限
 
 jobs:
   monthly:
