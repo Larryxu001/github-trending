@@ -2,11 +2,11 @@ name: Daily Trending Report
 
 on:
   schedule:
-    # 每天固定推一次（北京时间 09:00 = UTC 01:00）。
-    # 10:00、11:00（UTC 02:00、03:00）为「失败重试」兜底：
-    #   - 若 09:00 推送失败，last_push.json 未写入，10:00/11:00 会重新推送（保证成功）。
-    #   - 若 09:00 已成功，run_daily.py 开头检查 last_push.json 会直接跳过，绝不重复推送。
-    - cron: "0 1,2,3 * * *"
+    # 每天 09:00（北京时间 = UTC 01:00）起每小时抓一次，直到当天成功推送为止：
+    #   - 09:00 首次抓榜推送；若失败，last_push.json 未写入，下一小时继续重试（保证最终成功）。
+    #   - 一旦成功，run_daily.py 开头检查 last_push.json 会直接跳过，当天绝不再推第二次。
+    #   即「每天最多成功推一次，失败则持续重试直到成功」。
+    - cron: "0 * * * *"
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:

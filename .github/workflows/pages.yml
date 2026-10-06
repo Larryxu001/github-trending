@@ -4,6 +4,10 @@ on:
   # 每次推送到 main（日报/月报工作流提交归档后自动触发）
   push:
     branches: [main]
+    # saved.json 是真源数据（CF Worker 用 PAT 独占管理），精选页是前端动态 fetch Worker，
+    # 不依赖静态部署。忽略它可避免「每次收藏都触发一次 pages 部署」的无谓排队。
+    paths-ignore:
+      - 'saved.json'
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:
@@ -11,10 +15,10 @@ permissions:
   pages: write
   id-token: write
 
-# 允许同一时间只有一个部署，避免并发覆盖
+# 允许同一时间只有一个部署；新部署进来时直接取消旧的在途部署（而非排队累积一堆 cancelled）
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
