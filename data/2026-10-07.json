@@ -1,0 +1,103 @@
+{
+ "date": "2026-10-07",
+ "new_count": 6,
+ "skipped": 34,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "cathrynlavery/diagram-design",
+     "url": "https://github.com/cathrynlavery/diagram-design",
+     "owner": "cathrynlavery",
+     "stars": 43947,
+     "updated": "2026-10-06",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个为 Claude Code、Codex、GitHub Copilot 等 AI 编程助手准备的图表设计技能包，内置 42 种图表类型，用自包含的 HTML + SVG 生成干净、无阴影的编辑级图表，避免 Mermaid 默认样式的粗糙感。比如你让 AI 画一张系统架构图，它会直接输出可嵌入网页的 SVG，而不是千篇一律的流程图。适合需要高质量可视化、又不想手动调格式的开发者。",
+     "site": "https://cathrynlavery.github.io/diagram-design/"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "JustVugg/colibri",
+     "url": "https://github.com/JustVugg/colibri",
+     "owner": "JustVugg",
+     "stars": 39990,
+     "updated": "2026-10-06",
+     "lists": [
+      "monthly"
+     ],
+     "desc": "Colibri 是一个用纯 C 语言编写的轻量级推理引擎，专门用来在普通个人电脑上运行超大规模的 MoE（混合专家）模型。它没有任何第三方依赖，通过把专家权重按需从硬盘流式加载，绕开了显存和内存不足的限制，让原本需要服务器级硬件才能跑的前沿模型，在你已有的笔记本或台式机上也能运行。适合想低成本本地体验大模型、又不想折腾复杂环境的开发者。",
+     "site": "https://justvugg.github.io/colibri"
+    },
+    {
+     "repo": "VectifyAI/PageIndex",
+     "url": "https://github.com/VectifyAI/PageIndex",
+     "owner": "VectifyAI",
+     "stars": 38772,
+     "updated": "2026-10-06",
+     "lists": [
+      "weekly"
+     ],
+     "desc": "PageIndex 是一个面向 RAG（检索增强生成）的文档索引工具，它不依赖传统的向量数据库，而是通过推理来定位文档内容。传统 RAG 需要把文本切块并转成向量，容易丢失上下文或匹配不准；PageIndex 则让 AI 像人一样先理解文档结构，再根据问题推理出该看哪一段。例如问「合同里违约金怎么算」，它能直接定位到相关条款，而不是靠关键词相似度碰运气。适合需要高精度检索的 AI 应用。",
+     "site": "https://pageindex.ai"
+    },
+    {
+     "repo": "deepseek-ai/DeepGEMM",
+     "url": "https://github.com/deepseek-ai/DeepGEMM",
+     "owner": "deepseek-ai",
+     "stars": 8657,
+     "updated": "2026-09-30",
+     "lists": [
+      "daily"
+     ],
+     "desc": "DeepGEMM 是 DeepSeek 开源的高性能 GPU 矩阵计算库，专门为大模型训练和推理中的核心运算（如矩阵乘法）提供高效实现。它用 CUDA 编写，针对 NVIDIA Hopper 等架构深度优化，能在保持代码简洁的同时达到接近硬件极限的速度。例如，在训练千亿参数大模型时，它能显著加速前向和反向传播中的矩阵运算，从而缩短训练时间、降低算力成本。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "安全",
+   "emoji": "🔐",
+   "items": [
+    {
+     "repo": "morluto/rea",
+     "url": "https://github.com/morluto/rea",
+     "owner": "morluto",
+     "stars": 8647,
+     "updated": "2026-10-06",
+     "lists": [
+      "daily"
+     ],
+     "desc": "rea 是一个用 TypeScript 编写的命令行工具，让 AI 智能体帮你做逆向工程，从观察应用行为一直深入到分析原生二进制文件。它内置反编译、反汇编等能力，并可作为插件接入编码智能体，解决逆向分析门槛高、手工操作繁琐的问题。例如在 CTF 比赛中，你可以让智能体自动分析一个可疑二进制文件，快速定位关键逻辑和漏洞点。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "学习资源",
+   "emoji": "📚",
+   "items": [
+    {
+     "repo": "byoungd/up",
+     "url": "https://github.com/byoungd/up",
+     "owner": "byoungd",
+     "stars": 67496,
+     "updated": "2026-10-06",
+     "lists": [
+      "weekly"
+     ],
+     "desc": "这是一个中英双语的终身学习指南，教你怎么学英语、怎么和 AI 协作、怎么用真实项目积累成长证据。它解决的是「想自学但不知道从哪下手、学了没成果」的问题，把英语学习、AI 工具使用和项目实践串成一条可执行的路径。比如你想提升英语又怕坚持不下去，可以照着里面的方法边做项目边练，把学习过程变成看得见的作品。",
+     "site": "https://byoungd.github.io/up/"
+    }
+   ]
+  }
+ ]
+}
