@@ -33,6 +33,21 @@ def sh(*args):
 
 
 def main():
+    # 0) 「每天只推一次」守卫：若今天已成功推送过，直接静默退出，不再抓榜、不再推送。
+    #    （retry 场景：上次推送失败时 last_push.json 不会更新，本次会正常重试；
+    #     上次成功后，当天后续所有运行都会在此跳过，避免一天多波打扰。）
+    import datetime as _dt
+    _today = _dt.date.fromtimestamp(_dt.datetime.now().timestamp() + 8 * 3600).isoformat()
+    _last = P("last_push.json")
+    if os.path.exists(_last):
+        try:
+            _last_date = json.load(open(_last, encoding="utf-8")).get("date")
+            if _last_date == _today:
+                print(f"[skip] {_today}: already pushed today, nothing to do")
+                return
+        except Exception:
+            pass
+
     # 1) 抓榜 + 去重 + 骨架
     sh(sys.executable, P("fetch_trending.py"))
     sh(sys.executable, P("prepare_report.py"))
@@ -62,6 +77,9 @@ def main():
 
     # 5) 推送飞书
     sh(sys.executable, P("push.py"), P("report.json"))
+
+    # 5.5) 标记「今天已成功推送」——用于「每天只推一次」守卫，失败重试不会走到这里
+    json.dump({"date": date}, open(P("last_push.json"), "w", encoding="utf-8"))
 
     # 6) 归档 + 更新去重记录（推送已成功，才会走到这里）
     os.makedirs(ARCHIVE, exist_ok=True)
