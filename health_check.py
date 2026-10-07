@@ -21,7 +21,8 @@ def problems():
         errors.append("存在未完成的报告，需要查看日志或核对飞书后恢复")
     worker = load(BASE / "save_config.json", {}).get("save_api", "")
     try:
-        request = urllib.request.Request(worker.rstrip("/") + "/health", headers={"User-Agent":"github-trending-health"})
+        request = urllib.request.Request(worker.rstrip("/") + "/health?check=" + str(int(current.timestamp())),
+                                         headers={"User-Agent":"github-trending-health", "Cache-Control":"no-cache"})
         with urllib.request.urlopen(request, timeout=30) as response:
             result = json.load(response)
         if result.get("ok") is not True or result.get("version") != "hardened-v1":
