@@ -159,8 +159,24 @@
     .stars { padding-left:0; }
   }
 </style>
-</head>
-<body>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
   <nav class="topnav">
     <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
     <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
@@ -193,7 +209,6 @@
           </div>
           <p class="desc">这是 Garry Tan 公开的一套 Claude Code 配置，包含 23 个预设工具，分别扮演 CEO、设计师、工程经理、发布经理、文档工程师和 QA 等角色。它解决的问题是：普通用户不知道如何把 Claude Code 调教成高效的多角色协作助手。装上后，你可以让 AI 自动完成需求评审、代码审查、发布检查和文档生成等任务，比如让「QA」工具自动跑测试并生成报告。</p>
 
-
           <div class="byline">
             <span>garrytan</span><i>·</i>
             <span>更新于 2026-10-04</span><i>·</i>
@@ -210,7 +225,6 @@
           </div>
           <p class="desc">OpenMontage 是一个开源的智能体视频制作系统，它把 AI 编程助手变成完整的视频工作室。项目内置 12 条制作流水线和 100 多个工具，并附带 700 多份智能体技能与制作知识文件，覆盖脚本、配音、图像生成、剪辑合成等环节。你只需在 Claude、Cursor 等助手里下达指令，它就能调用 ElevenLabs、FLUX、FFmpeg 等工具自动完成一条视频，适合想低成本做视频又不想学复杂剪辑软件的人。</p>
 
-
           <div class="byline">
             <span>calesthio</span><i>·</i>
             <span>更新于 2026-10-03</span><i>·</i>
@@ -226,7 +240,6 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;earthtojake/text-to-cad&quot;, &quot;url&quot;: &quot;https://github.com/earthtojake/text-to-cad&quot;, &quot;owner&quot;: &quot;earthtojake&quot;, &quot;stars&quot;: 16705, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u7ed9 AI \u667a\u80fd\u4f53\u52a0\u88c5 CAD \u80fd\u529b\u7684\u5de5\u5177\u5305\uff0c\u8ba9\u667a\u80fd\u4f53\u80fd\u591f\u901a\u8fc7\u6587\u5b57\u63cf\u8ff0\u76f4\u63a5\u751f\u6210\u4e09\u7ef4\u673a\u68b0\u6a21\u578b\u3002\u5b83\u89e3\u51b3\u4e86\u4f20\u7edf CAD \u5efa\u6a21\u9700\u8981\u4eba\u5de5\u64cd\u4f5c\u3001\u95e8\u69db\u9ad8\u7684\u95ee\u9898\uff0c\u7528\u6237\u53ea\u9700\u8bf4\u300c\u753b\u4e00\u4e2a\u5e26\u56db\u4e2a\u5b89\u88c5\u5b54\u7684\u65b9\u5f62\u6cd5\u5170\u300d\uff0c\u667a\u80fd\u4f53\u5c31\u80fd\u81ea\u52a8\u8f93\u51fa STEP\u3001STL \u7b49\u6807\u51c6\u683c\u5f0f\u6587\u4ef6\uff0c\u53ef\u76f4\u63a5\u7528\u4e8e 3D \u6253\u5370\u6216\u673a\u68b0\u52a0\u5de5\uff0c\u9002\u5408\u673a\u5668\u4eba\u3001\u673a\u68b0\u5de5\u7a0b\u7b49\u573a\u666f\u5feb\u901f\u539f\u578b\u8bbe\u8ba1\u3002&quot;, &quot;site&quot;: &quot;https://www.texttocad.dev&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">这是一个给 AI 智能体加装 CAD 能力的工具包，让智能体能够通过文字描述直接生成三维机械模型。它解决了传统 CAD 建模需要人工操作、门槛高的问题，用户只需说「画一个带四个安装孔的方形法兰」，智能体就能自动输出 STEP、STL 等标准格式文件，可直接用于 3D 打印或机械加工，适合机器人、机械工程等场景快速原型设计。</p>
-
 
           <div class="byline">
             <span>earthtojake</span><i>·</i>
@@ -249,7 +262,6 @@
           </div>
           <p class="desc">这是 Redis 作者 antirez 开发的一个本地大模型推理引擎，专门用来在个人电脑上跑 DeepSeek 4 Flash 和 PRO 模型。它支持 Metal、CUDA 和 ROCm 三种显卡加速方案，意味着苹果电脑、NVIDIA 和 AMD 显卡都能用。解决了不想把数据发给云端、又想低成本使用大模型的问题。比如你可以直接在自己的 Mac 或游戏本上加载模型，离线完成代码生成或问答，不用联网也不花 API 费用。</p>
 
-
           <div class="byline">
             <span>antirez</span><i>·</i>
             <span>更新于 2026-09-20</span><i>·</i>
@@ -271,7 +283,6 @@
           </div>
           <p class="desc">Caddy 是一个用 Go 编写的开源 Web 服务器和反向代理，最大亮点是自动为网站配置和续期 HTTPS 证书，无需手动折腾 Let&#x27;s Encrypt。它支持 HTTP/1、HTTP/2 和 HTTP/3，配置简单，一个 Caddyfile 就能搞定。比如你写一行「example.com」启动 Caddy，它就会自动申请证书、开启 HTTPS 并托管网站，非常适合个人博客、API 网关和内部服务。</p>
 
-
           <div class="byline">
             <span>caddyserver</span><i>·</i>
             <span>更新于 2026-10-04</span><i>·</i>
@@ -287,7 +298,6 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tester-army/e2e&quot;, &quot;url&quot;: &quot;https://github.com/tester-army/e2e&quot;, &quot;owner&quot;: &quot;tester-army&quot;, &quot;stars&quot;: 2575, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u9762\u5411 Web \u548c\u79fb\u52a8\u5e94\u7528\u7684\u4e0b\u4e00\u4ee3\u7aef\u5230\u7aef\uff08E2E\uff09\u6d4b\u8bd5\u6846\u67b6\uff0c\u7528 TypeScript \u7f16\u5199\u3002\u5b83\u89e3\u51b3\u7684\u662f\u4f20\u7edf E2E \u6d4b\u8bd5\u914d\u7f6e\u7e41\u7410\u3001\u8de8\u5e73\u53f0\uff08\u7f51\u9875\u548c\u624b\u673a App\uff09\u96be\u4ee5\u7edf\u4e00\u7684\u95ee\u9898\u3002\u5f00\u53d1\u8005\u53ef\u4ee5\u7528\u4e00\u5957\u5de5\u5177\u540c\u65f6\u6d4b\u8bd5\u7f51\u9875\u548c\u79fb\u52a8\u7aef\uff0c\u6bd4\u5982\u6a21\u62df\u7528\u6237\u70b9\u51fb\u6309\u94ae\u3001\u586b\u5199\u8868\u5355\u5e76\u9a8c\u8bc1\u7ed3\u679c\uff0c\u786e\u4fdd\u6574\u4e2a\u5e94\u7528\u6d41\u7a0b\u6b63\u5e38\u3002\u5b83\u57fa\u4e8e Playwright \u7b49\u73b0\u4ee3\u6280\u672f\uff0c\u8ba9\u6d4b\u8bd5\u66f4\u7a33\u5b9a\u3001\u66f4\u6613\u7ef4\u62a4\uff0c\u9002\u5408\u9700\u8981\u4fdd\u8bc1\u4ea7\u54c1\u8d28\u91cf\u7684\u56e2\u961f\u3002&quot;, &quot;site&quot;: &quot;https://tester.army/e2e&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">这是一个面向 Web 和移动应用的下一代端到端（E2E）测试框架，用 TypeScript 编写。它解决的是传统 E2E 测试配置繁琐、跨平台（网页和手机 App）难以统一的问题。开发者可以用一套工具同时测试网页和移动端，比如模拟用户点击按钮、填写表单并验证结果，确保整个应用流程正常。它基于 Playwright 等现代技术，让测试更稳定、更易维护，适合需要保证产品质量的团队。</p>
-
 
           <div class="byline">
             <span>tester-army</span><i>·</i>
@@ -310,7 +320,6 @@
           </div>
           <p class="desc">Ghidra 是美国国家安全局开源的软件逆向工程框架，用于把编译后的程序（如 exe、so 文件）反汇编成汇编代码，并反编译成可读的类 C 伪代码，帮助分析人员理解程序内部逻辑。它常用于恶意软件分析、漏洞挖掘、固件研究和软件兼容性调试。例如安全人员拿到一个可疑病毒样本，可用 Ghidra 查看它调用了哪些系统 API、如何加密通信，从而判断其行为并制定防御策略。</p>
 
-
           <div class="byline">
             <span>NationalSecurityAgency</span><i>·</i>
             <span>更新于 2026-09-30</span><i>·</i>
@@ -331,7 +340,6 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;cs341-illinois/coursebook&quot;, &quot;url&quot;: &quot;https://github.com/cs341-illinois/coursebook&quot;, &quot;owner&quot;: &quot;cs341-illinois&quot;, &quot;stars&quot;: 3655, &quot;desc&quot;: &quot;\u8fd9\u662f\u4f0a\u5229\u8bfa\u4f0a\u5927\u5b66 CS341 \u7cfb\u7edf\u7f16\u7a0b\u8bfe\u7684\u5b98\u65b9\u5f00\u6e90\u6559\u6750\uff0c\u7528 LaTeX \u7f16\u5199\uff0c\u8bb2\u89e3 C \u8bed\u8a00\u3001Linux\u3001POSIX \u63a5\u53e3\u548c\u5e95\u5c42\u7cfb\u7edf\u7f16\u7a0b\u3002\u5b83\u89e3\u51b3\u7684\u662f\u5b66\u751f\u7f3a\u5c11\u7cfb\u7edf\u5316\u3001\u514d\u8d39\u4e14\u7d27\u8ddf\u8bfe\u7a0b\u7684\u4e2d\u6587/\u82f1\u6587\u6559\u6750\u7684\u95ee\u9898\uff0c\u9002\u5408\u81ea\u5b66\u6216\u8bfe\u5802\u914d\u5957\u4f7f\u7528\u3002\u4f8b\u5982\u8bfb\u8005\u53ef\u4ee5\u8fb9\u8bfb\u8fb9\u52a8\u624b\u5199 shell\u3001\u5185\u5b58\u5206\u914d\u5668\uff0c\u771f\u6b63\u7406\u89e3\u8fdb\u7a0b\u3001\u6587\u4ef6\u63cf\u8ff0\u7b26\u548c\u5e76\u53d1\u3002&quot;, &quot;site&quot;: &quot;https://cs341.cs.illinois.edu/coursebook&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">这是伊利诺伊大学 CS341 系统编程课的官方开源教材，用 LaTeX 编写，讲解 C 语言、Linux、POSIX 接口和底层系统编程。它解决的是学生缺少系统化、免费且紧跟课程的中文/英文教材的问题，适合自学或课堂配套使用。例如读者可以边读边动手写 shell、内存分配器，真正理解进程、文件描述符和并发。</p>
-
 
           <div class="byline">
             <span>cs341-illinois</span><i>·</i>
@@ -376,12 +384,8 @@
 
 
 function saveHeaders() {
-  let key = sessionStorage.getItem('trending-save-key');
-  if (!key) {
-    key = prompt('请输入收藏密码（本次浏览会话内记住）');
-    if (!key) return null;
-    sessionStorage.setItem('trending-save-key', key.trim());
-  }
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
   return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
 }
 function safeUrl(value) {
@@ -568,11 +572,55 @@ function safeUrl(value) {
     if (e.target === this) closeDlg();
   });
 
-  (async function init() {
+  window.addEventListener('trending-unlocked', async function() {
     await loadSavedData();
     refreshSavedStates();
-  })();
+  });
 })();
 </script>
-</body>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
 </html>

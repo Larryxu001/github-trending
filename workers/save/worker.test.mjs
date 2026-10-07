@@ -39,3 +39,11 @@ test('health catches missing credentials and validates readable saved data',asyn
  assert.equal((await worker.fetch(new Request('https://example.invalid/health'),env)).status,200);
  assert.equal((await worker.fetch(new Request('https://example.invalid/health'),{GH_PAT:'fake'})).status,503);
 });
+test('page entrance validates password without account or upstream writes',async()=>{
+ globalThis.fetch=()=>{throw new Error('upstream must not be called')};
+ for(const [password,status] of [['',401],['wrong',401],['test-password',200]]){
+  const response=await worker.fetch(new Request('https://example.invalid/auth',{headers:{Authorization:'Bearer '+password}}),env);
+  assert.equal(response.status,status);if(status===200)assert.deepEqual(await response.json(),{ok:true});
+ }
+ assert.equal((await worker.fetch(new Request('https://example.invalid/auth'),{})).status,503);
+});

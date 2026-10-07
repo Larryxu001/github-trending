@@ -37,8 +37,8 @@
 ## 配置与外部依赖
 
 `FEISHU_WEBHOOK` 和 `DEEPSEEK_API_KEY` 放 GitHub Secrets；不要把真实凭证写入 `config.json`。
-收藏 Worker 真源是 `workers/save/`，生产部署仍为原 Worker。SAVE_KEY 保护写入口，GH_PAT 保持原凭证。损坏数据绝不当成空列表覆盖；saved.json 不做迁移。
-本机密码在 `.local/save-password.txt`（仅本机、不入库）；浏览器首次收藏/取消时输入。以前生成的网页已同步更新鉴权与 URL 校验。
+收藏 Worker 真源是 `workers/save/`，生产部署仍为原 Worker。SAVE_KEY 同时用于页面入口验证与写入口鉴权，GH_PAT 保持原凭证。损坏数据绝不当成空列表覆盖；saved.json 不做迁移。
+本机密码在 `.local/save-password.txt`（仅本机、不入库）；页面首次访问时输入，日报、归档与精选页共用会话，收藏/取消无需另输密码。以前生成的网页已同步更新鉴权与 URL 校验。
 Worker 可额外触发 daily.yml，但不能绕过 daily.yml 的并发锁、9 点前守卫和每期发送状态。
 GitHub schedule 可能延迟。health.yml 在失败及每天 11:20 检查采集/日报/未完成报告/Worker/PAT，health_state.json 去重通知；超时的提醒也不会自动重发。Cloudflare 11:20 独立触发健康检查，GitHub 无法触发时走独立飞书故障提醒。
 Webhook 失效时飞书自身无法收到提醒，Actions/Worker 日志仍明确报错；不要将此情况视为正常。
@@ -46,3 +46,5 @@ Webhook 失效时飞书自身无法收到提醒，Actions/Worker 日志仍明确
 验证命令：`python3 -m unittest discover -s tests -v`。
 
 Worker 检查：`node --test workers/save/worker.test.mjs`；部署说明见 `workers/save/README.md`。
+
+页面入口只需要访问密码，无账号。同一标签页会话内自动验证，关闭后下次需重新输入。Pages 与仓库仍公开；入口不等同于私密托管，源代码及历史静态内容不具备保密性。密码由 Worker 验证，不写入 HTML。

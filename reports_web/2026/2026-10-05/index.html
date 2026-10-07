@@ -159,8 +159,24 @@
     .stars { padding-left:0; }
   }
 </style>
-</head>
-<body>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
   <nav class="topnav">
     <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
     <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
@@ -192,7 +208,6 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;michael-denyer/pstack-claude&quot;, &quot;url&quot;: &quot;https://github.com/michael-denyer/pstack-claude&quot;, &quot;owner&quot;: &quot;michael-denyer&quot;, &quot;stars&quot;: 1141, &quot;desc&quot;: &quot;\u8fd9\u662f\u628a Poteto \u7684 pstack \u5de5\u4f5c\u6d41\u79fb\u690d\u5230 Claude Code\u3001Codex\u3001Gemini \u7b49\u591a\u4e2a AI \u7f16\u7a0b\u52a9\u624b\u4e0a\u7684\u63d2\u4ef6\u96c6\u5408\u3002\u5b83\u63d0\u4f9b\u4e00\u5957\u4e25\u8c28\u7684\u667a\u80fd\u4f53\u5de5\u4f5c\u6d41\u7a0b\uff0c\u628a\u539f\u672c\u4e3a Cursor \u8bbe\u8ba1\u7684\u64cd\u4f5c\u539f\u8bed\u7ffb\u8bd1\u6210\u5404\u5e73\u53f0\u53ef\u7528\u7684\u6280\u80fd\uff0c\u8ba9\u5f00\u53d1\u8005\u65e0\u8bba\u7528\u54ea\u4e2a\u52a9\u624b\u90fd\u80fd\u83b7\u5f97\u4e00\u81f4\u7684\u4ee3\u7801\u5ba1\u67e5\u3001\u4efb\u52a1\u62c6\u89e3\u7b49\u80fd\u529b\u3002\u4f8b\u5982\u5728 Claude Code \u91cc\u88c5\u4e0a\u540e\uff0c\u5c31\u80fd\u6309\u56fa\u5b9a\u6b65\u9aa4\u81ea\u52a8\u5b8c\u6210\u4ee3\u7801\u8bc4\u5ba1\uff0c\u51cf\u5c11\u624b\u52a8\u63d0\u793a\u7684\u968f\u610f\u6027\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">这是把 Poteto 的 pstack 工作流移植到 Claude Code、Codex、Gemini 等多个 AI 编程助手上的插件集合。它提供一套严谨的智能体工作流程，把原本为 Cursor 设计的操作原语翻译成各平台可用的技能，让开发者无论用哪个助手都能获得一致的代码审查、任务拆解等能力。例如在 Claude Code 里装上后，就能按固定步骤自动完成代码评审，减少手动提示的随意性。</p>
-
 
           <div class="byline">
             <span>michael-denyer</span><i>·</i>
@@ -237,12 +252,8 @@
 
 
 function saveHeaders() {
-  let key = sessionStorage.getItem('trending-save-key');
-  if (!key) {
-    key = prompt('请输入收藏密码（本次浏览会话内记住）');
-    if (!key) return null;
-    sessionStorage.setItem('trending-save-key', key.trim());
-  }
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
   return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
 }
 function safeUrl(value) {
@@ -429,11 +440,55 @@ function safeUrl(value) {
     if (e.target === this) closeDlg();
   });
 
-  (async function init() {
+  window.addEventListener('trending-unlocked', async function() {
     await loadSavedData();
     refreshSavedStates();
-  })();
+  });
 })();
 </script>
-</body>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
 </html>

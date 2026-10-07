@@ -3,6 +3,7 @@
 Design recipe: nyt-the-daily (web-design-engineer skill) — serif voice, hairlines, no cards.
 Usage: render_html.py [report_json]"""
 import json, os, sys, html, datetime
+from page_access import protect_page
 from urllib.parse import urlparse
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -95,7 +96,7 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
         {''.join(items)}
       </section>""")
 
-    return f"""<!DOCTYPE html>
+    return protect_page(f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -312,12 +313,8 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
 
 
 function saveHeaders() {{
-  let key = sessionStorage.getItem('trending-save-key');
-  if (!key) {{
-    key = prompt('请输入收藏密码（本次浏览会话内记住）');
-    if (!key) return null;
-    sessionStorage.setItem('trending-save-key', key.trim());
-  }}
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) {{ location.reload(); return null; }}
   return {{'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()}};
 }}
 function safeUrl(value) {{
@@ -504,14 +501,14 @@ function safeUrl(value) {{
     if (e.target === this) closeDlg();
   }});
 
-  (async function init() {{
+  window.addEventListener('trending-unlocked', async function() {{
     await loadSavedData();
     refreshSavedStates();
-  }})();
+  }});
 }})();
 </script>
 </body>
-</html>"""
+</html>""", save_api)
 
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(BASE, "report.json")

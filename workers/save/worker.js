@@ -18,6 +18,15 @@
 const DEFAULT_REPO = "Larryxu001/github-trending";
 const SAVED_PATH = "saved.json";
 
+async function authorized(request, key) {
+  const supplied = (request.headers.get("Authorization") || "").replace(/^Bearer /, "");
+  const digest = async value => new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value)));
+  const a = await digest(supplied), b = await digest(key);
+  let difference = 0;
+  for (let i = 0; i < a.length; i++) difference |= a[i] ^ b[i];
+  return difference === 0;
+}
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -124,6 +133,12 @@ export default {
 
     const origin = request.headers.get("Origin");
     if (origin && origin !== "https://larryxu001.github.io") return json({error:"Origin forbidden"},403);
+    if (new URL(request.url).pathname === "/auth") {
+      if (request.method !== "GET") return json({error:"仅支持 GET"},405);
+      if (!env.SAVE_KEY) return json({error:"访问密码未配置"},503);
+      const valid = await authorized(request, env.SAVE_KEY);
+      return json(valid ? {ok:true} : {error:"密码不正确"}, valid ? 200 : 401);
+    }
     const token = env.GH_PAT;
     const repo = env.GH_REPO || DEFAULT_REPO;
     const branch = env.GH_BRANCH || "main";
@@ -154,12 +169,7 @@ export default {
     }
 
     if (!env.SAVE_KEY) return json({error:"收藏写入密码未配置"},503);
-    const supplied = (request.headers.get("Authorization") || "").replace(/^Bearer /, "");
-    const digest = async (value) => new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value)));
-    const a = await digest(supplied), b = await digest(env.SAVE_KEY);
-    let difference = 0;
-    for (let i=0; i<a.length; i++) difference |= a[i] ^ b[i];
-    if (difference) return json({error:"收藏密码不正确"},401);
+    if (!await authorized(request, env.SAVE_KEY)) return json({error:"访问密码不正确"},401);
     if (Number(request.headers.get("Content-Length") || 0) > 20000) return json({error:"请求过大"},413);
     let meta;
     try {

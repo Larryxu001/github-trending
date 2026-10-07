@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Compatibility entry point for the daily job; also builds the archive index."""
-import os
+import os, json
+from page_access import protect_page
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 OUT_SITE = os.path.join(BASE, "reports_web")   # 仓库内网页版归档根
@@ -69,8 +70,10 @@ def build_web_index():
 <div class="nav"><a href="saved.html">★ 我的精选</a></div>
 {''.join(items) if items else '<div class="empty">暂无归档，敬请期待</div>'}
 </div></body></html>"""
+    with open(os.path.join(BASE, "save_config.json"), encoding="utf-8") as config:
+        api = json.load(config).get("save_api", "")
     with open(os.path.join(root, "index.html"), "w", encoding="utf-8") as out:
-        out.write(html)
+        out.write(protect_page(html, api))
 
 
 if __name__ == "__main__":

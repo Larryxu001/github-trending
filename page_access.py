@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Github开源趋势日报 · 往期归档</title>
-<style>
- body { margin:0; background:#FBF7EC; color:#2B2419;
-        font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
- .wrap { max-width:760px; margin:0 auto; padding:48px 24px 72px; }
- .topline { font-size:11px; letter-spacing:.22em; color:#7A7263;
-            display:flex; justify-content:space-between; padding-bottom:12px;
-            border-bottom:1px solid #2B2419; }
- h1 { font-family:Georgia,"Songti SC",serif; font-size:34px; margin:24px 0 4px; }
- .sub { color:#8a7f66; font-size:14px; margin-bottom:8px; font-style:italic; }
- .nav { margin:16px 0 8px; font-size:13px; }
- .nav a { color:#C02B1F; text-decoration:none; }
- .nav a:hover { text-decoration:underline; }
- .year { font-family:Georgia,"Songti SC",serif; font-size:20px; font-weight:700;
-         margin:28px 0 6px; padding-bottom:4px; border-bottom:3px double #2B2419; }
- .months { display:block; }
- .day { display:flex; align-items:baseline; padding:11px 2px;
-        border-bottom:1px dashed #E6DDC6; color:#2B2419; text-decoration:none;
-        font-size:16px; background:transparent; font-family:Georgia,"Songti SC",serif; }
- .day .tail { margin-left:auto; font-family:-apple-system,"PingFang SC",sans-serif;
-               font-size:11px; color:#8a7f66; letter-spacing:.08em; }
- .day:hover { color:#C02B1F; border-bottom-color:#C02B1F; }
- .day:hover .tail { color:#C02B1F; }
- .empty { color:#8a7f66; font-style:italic; padding:40px 0; }
-</style><style>
+"""Shared password entrance for public Pages (not confidential hosting)."""
+import json
+
+
+def protect_page(page, api):
+    head = '''<style>
 #page-content[hidden],#page-access[hidden]{display:none!important}
 #page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
 #page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
@@ -37,19 +15,15 @@
 #page-access button:disabled{opacity:.6;cursor:wait}
 #page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
 #page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
-</style></head><body><section id="page-access" aria-label="页面访问验证">
+</style>'''
+    entrance = '''<section id="page-access" aria-label="页面访问验证">
 <form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
 <label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
 <button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
-<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert><div class="wrap">
-<div class="topline"><span>GITHUB TRENDING ARCHIVE</span><span>往期归档</span></div>
-<h1>Github开源趋势日报</h1>
-<div class="sub">往期归档 · 由 GitHub Actions 每日自动生成</div>
-<div class="nav"><a href="saved.html">★ 我的精选</a></div>
-<div class="year">2026</div><div class="months"><a class="day" href="2026/2026-10-07/index.html">10 月 7 日<span class="tail">日报</span></a><a class="day" href="2026/2026-10-06/index.html">10 月 6 日<span class="tail">日报</span></a><a class="day" href="2026/2026-10-05/index.html">10 月 5 日<span class="tail">日报</span></a><a class="day" href="2026/2026-10-04/index.html">10 月 4 日<span class="tail">日报</span></a><a class="day" href="2026/2026-10-03/index.html">10 月 3 日<span class="tail">日报</span></a></div>
-</div></div><script>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>'''
+    script = '''<script>
 (() => {
-const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const api = __API__;
 const storageKey = 'trending-save-key';
 const gate = document.getElementById('page-access');
 const content = document.getElementById('page-content');
@@ -91,4 +65,5 @@ form.addEventListener('submit', event => {event.preventDefault(); unlock(passwor
 const saved = sessionStorage.getItem(storageKey);
 if (saved) unlock(saved);
 })();
-</script></body></html>
+</script>'''.replace('__API__', json.dumps(api))
+    return page.replace('</head>', head + '</head>', 1).replace('<body>', '<body>' + entrance, 1).replace('</body>', '</div>' + script + '</body>', 1)

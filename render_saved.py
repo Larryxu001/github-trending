@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """渲染「我的精选」独立页 site/saved.html。
-静态页面，直接从 GitHub 仓库 saved.json 读取收藏列表展示（无登录、无后端）。
+页面访问验证后，从收藏服务读取最新列表。
 Usage: render_saved.py"""
 import json, os
+from page_access import protect_page
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 P = lambda n: os.path.join(BASE, n)
@@ -85,12 +86,8 @@ function starsFmt(n) {{ return (n && n > 0) ? '★ ' + Number(n).toLocaleString(
 
 
 function saveHeaders() {{
-  let key = sessionStorage.getItem('trending-save-key');
-  if (!key) {{
-    key = prompt('请输入收藏密码（本次浏览会话内记住）');
-    if (!key) return null;
-    sessionStorage.setItem('trending-save-key', key.trim());
-  }}
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) {{ location.reload(); return null; }}
   return {{'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()}};
 }}
 function safeUrl(value) {{
@@ -226,13 +223,13 @@ window.unsave = async function(btn) {{
   }}
 }};
 
-document.addEventListener('DOMContentLoaded', loadSaved);
+window.addEventListener('trending-unlocked', loadSaved);
 """
 
 
 def render(save_api=""):
     js = JS.format(raw_url=json.dumps(RAW_URL), save_api=json.dumps(save_api))
-    return f"""<!DOCTYPE html>
+    return protect_page(f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -273,7 +270,7 @@ def render(save_api=""):
 
 <script>{js}</script>
 </body>
-</html>"""
+</html>""", save_api)
 
 
 def main():

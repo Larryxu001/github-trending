@@ -1,7 +1,7 @@
 name: Report regression tests
 on:
   push:
-    paths: ['**/*.py', 'workers/**', '.github/workflows/**']
+    paths: ['**/*.py', 'workers/**', 'tests/**', '.github/workflows/**']
   pull_request:
 permissions:
   contents: read
@@ -17,4 +17,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test workers/save/worker.test.mjs
+      - run: node --test workers/save/worker.test.mjs tests/page_access.test.mjs

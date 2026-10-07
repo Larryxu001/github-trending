@@ -159,8 +159,24 @@
     .stars { padding-left:0; }
   }
 </style>
-</head>
-<body>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
   <nav class="topnav">
     <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
     <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
@@ -193,7 +209,6 @@
           </div>
           <p class="desc">这是一个为 Claude Code、Codex、GitHub Copilot 等 AI 编程助手准备的图表设计技能包，内置 42 种图表类型，用自包含的 HTML + SVG 生成干净、无阴影的编辑级图表，避免 Mermaid 默认样式的粗糙感。比如你让 AI 画一张系统架构图，它会直接输出可嵌入网页的 SVG，而不是千篇一律的流程图。适合需要高质量可视化、又不想手动调格式的开发者。</p>
 
-
           <div class="byline">
             <span>cathrynlavery</span><i>·</i>
             <span>更新于 2026-10-06</span><i>·</i>
@@ -215,7 +230,6 @@
           </div>
           <p class="desc">Colibri 是一个用纯 C 语言编写的轻量级推理引擎，专门用来在普通个人电脑上运行超大规模的 MoE（混合专家）模型。它没有任何第三方依赖，通过把专家权重按需从硬盘流式加载，绕开了显存和内存不足的限制，让原本需要服务器级硬件才能跑的前沿模型，在你已有的笔记本或台式机上也能运行。适合想低成本本地体验大模型、又不想折腾复杂环境的开发者。</p>
 
-
           <div class="byline">
             <span>JustVugg</span><i>·</i>
             <span>更新于 2026-10-06</span><i>·</i>
@@ -232,7 +246,6 @@
           </div>
           <p class="desc">PageIndex 是一个面向 RAG（检索增强生成）的文档索引工具，它不依赖传统的向量数据库，而是通过推理来定位文档内容。传统 RAG 需要把文本切块并转成向量，容易丢失上下文或匹配不准；PageIndex 则让 AI 像人一样先理解文档结构，再根据问题推理出该看哪一段。例如问「合同里违约金怎么算」，它能直接定位到相关条款，而不是靠关键词相似度碰运气。适合需要高精度检索的 AI 应用。</p>
 
-
           <div class="byline">
             <span>VectifyAI</span><i>·</i>
             <span>更新于 2026-10-06</span><i>·</i>
@@ -248,7 +261,6 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;deepseek-ai/DeepGEMM&quot;, &quot;url&quot;: &quot;https://github.com/deepseek-ai/DeepGEMM&quot;, &quot;owner&quot;: &quot;deepseek-ai&quot;, &quot;stars&quot;: 8657, &quot;desc&quot;: &quot;DeepGEMM \u662f DeepSeek \u5f00\u6e90\u7684\u9ad8\u6027\u80fd GPU \u77e9\u9635\u8ba1\u7b97\u5e93\uff0c\u4e13\u95e8\u4e3a\u5927\u6a21\u578b\u8bad\u7ec3\u548c\u63a8\u7406\u4e2d\u7684\u6838\u5fc3\u8fd0\u7b97\uff08\u5982\u77e9\u9635\u4e58\u6cd5\uff09\u63d0\u4f9b\u9ad8\u6548\u5b9e\u73b0\u3002\u5b83\u7528 CUDA \u7f16\u5199\uff0c\u9488\u5bf9 NVIDIA Hopper \u7b49\u67b6\u6784\u6df1\u5ea6\u4f18\u5316\uff0c\u80fd\u5728\u4fdd\u6301\u4ee3\u7801\u7b80\u6d01\u7684\u540c\u65f6\u8fbe\u5230\u63a5\u8fd1\u786c\u4ef6\u6781\u9650\u7684\u901f\u5ea6\u3002\u4f8b\u5982\uff0c\u5728\u8bad\u7ec3\u5343\u4ebf\u53c2\u6570\u5927\u6a21\u578b\u65f6\uff0c\u5b83\u80fd\u663e\u8457\u52a0\u901f\u524d\u5411\u548c\u53cd\u5411\u4f20\u64ad\u4e2d\u7684\u77e9\u9635\u8fd0\u7b97\uff0c\u4ece\u800c\u7f29\u77ed\u8bad\u7ec3\u65f6\u95f4\u3001\u964d\u4f4e\u7b97\u529b\u6210\u672c\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">DeepGEMM 是 DeepSeek 开源的高性能 GPU 矩阵计算库，专门为大模型训练和推理中的核心运算（如矩阵乘法）提供高效实现。它用 CUDA 编写，针对 NVIDIA Hopper 等架构深度优化，能在保持代码简洁的同时达到接近硬件极限的速度。例如，在训练千亿参数大模型时，它能显著加速前向和反向传播中的矩阵运算，从而缩短训练时间、降低算力成本。</p>
-
 
           <div class="byline">
             <span>deepseek-ai</span><i>·</i>
@@ -271,7 +283,6 @@
           </div>
           <p class="desc">rea 是一个用 TypeScript 编写的命令行工具，让 AI 智能体帮你做逆向工程，从观察应用行为一直深入到分析原生二进制文件。它内置反编译、反汇编等能力，并可作为插件接入编码智能体，解决逆向分析门槛高、手工操作繁琐的问题。例如在 CTF 比赛中，你可以让智能体自动分析一个可疑二进制文件，快速定位关键逻辑和漏洞点。</p>
 
-
           <div class="byline">
             <span>morluto</span><i>·</i>
             <span>更新于 2026-10-06</span><i>·</i>
@@ -292,7 +303,6 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;byoungd/up&quot;, &quot;url&quot;: &quot;https://github.com/byoungd/up&quot;, &quot;owner&quot;: &quot;byoungd&quot;, &quot;stars&quot;: 67496, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u4e2d\u82f1\u53cc\u8bed\u7684\u7ec8\u8eab\u5b66\u4e60\u6307\u5357\uff0c\u6559\u4f60\u600e\u4e48\u5b66\u82f1\u8bed\u3001\u600e\u4e48\u548c AI \u534f\u4f5c\u3001\u600e\u4e48\u7528\u771f\u5b9e\u9879\u76ee\u79ef\u7d2f\u6210\u957f\u8bc1\u636e\u3002\u5b83\u89e3\u51b3\u7684\u662f\u300c\u60f3\u81ea\u5b66\u4f46\u4e0d\u77e5\u9053\u4ece\u54ea\u4e0b\u624b\u3001\u5b66\u4e86\u6ca1\u6210\u679c\u300d\u7684\u95ee\u9898\uff0c\u628a\u82f1\u8bed\u5b66\u4e60\u3001AI \u5de5\u5177\u4f7f\u7528\u548c\u9879\u76ee\u5b9e\u8df5\u4e32\u6210\u4e00\u6761\u53ef\u6267\u884c\u7684\u8def\u5f84\u3002\u6bd4\u5982\u4f60\u60f3\u63d0\u5347\u82f1\u8bed\u53c8\u6015\u575a\u6301\u4e0d\u4e0b\u53bb\uff0c\u53ef\u4ee5\u7167\u7740\u91cc\u9762\u7684\u65b9\u6cd5\u8fb9\u505a\u9879\u76ee\u8fb9\u7ec3\uff0c\u628a\u5b66\u4e60\u8fc7\u7a0b\u53d8\u6210\u770b\u5f97\u89c1\u7684\u4f5c\u54c1\u3002&quot;, &quot;site&quot;: &quot;https://byoungd.github.io/up/&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">这是一个中英双语的终身学习指南，教你怎么学英语、怎么和 AI 协作、怎么用真实项目积累成长证据。它解决的是「想自学但不知道从哪下手、学了没成果」的问题，把英语学习、AI 工具使用和项目实践串成一条可执行的路径。比如你想提升英语又怕坚持不下去，可以照着里面的方法边做项目边练，把学习过程变成看得见的作品。</p>
-
 
           <div class="byline">
             <span>byoungd</span><i>·</i>
@@ -337,12 +347,8 @@
 
 
 function saveHeaders() {
-  let key = sessionStorage.getItem('trending-save-key');
-  if (!key) {
-    key = prompt('请输入收藏密码（本次浏览会话内记住）');
-    if (!key) return null;
-    sessionStorage.setItem('trending-save-key', key.trim());
-  }
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
   return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
 }
 function safeUrl(value) {
@@ -529,11 +535,55 @@ function safeUrl(value) {
     if (e.target === this) closeDlg();
   });
 
-  (async function init() {
+  window.addEventListener('trending-unlocked', async function() {
     await loadSavedData();
     refreshSavedStates();
-  })();
+  });
 })();
 </script>
-</body>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
 </html>
