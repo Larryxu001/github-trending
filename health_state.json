@@ -1,5 +1,7 @@
 {
- "errors": [],
- "checked_at": "2026-10-07T10:37:07.702335+08:00",
- "notification": "sent"
+ "errors": [
+  "采集超过 7 小时未更新"
+ ],
+ "checked_at": "2026-10-07T18:17:57.228457+08:00",
+ "notification": "sending"
 }
