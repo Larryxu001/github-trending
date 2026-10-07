@@ -14,31 +14,9 @@ FEISHU_COLOR = {"🧩": "violet", "🤖": "blue", "⚡": "yellow", "🧠": "carm
 
 
 def post(url, payload):
-    # 带重试：飞书 webhook 偶发 429/网络抖动时自动重试，避免丢卡片
-    last_err = None
-    for attempt in range(4):
-        try:
-            req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=UA)
-            with urllib.request.urlopen(req, timeout=30) as r:
-                body = r.read().decode()
-            try:
-                resp = json.loads(body)
-                code = resp.get("code", resp.get("errcode", 0))
-                if code == 9499 or code == 125404:  # 频率限制，等待后重试
-                    last_err = f"feishu rate limit code={code}"
-                    time.sleep(3 * (attempt + 1))
-                    continue
-                if code != 0:
-                    raise RuntimeError(f"feishu error code={code}: {body}")
-            except json.JSONDecodeError:
-                pass  # 非 JSON 响应，按成功处理（如某些代理）
-            return body
-        except RuntimeError:
-            raise
-        except Exception as e:
-            last_err = e
-            time.sleep(2 * (attempt + 1))
-    raise RuntimeError(f"feishu post failed after retries: {last_err}")
+    # The shared sender requires an explicit success receipt; ambiguous sends never retry.
+    from report_jobs import send_once
+    return send_once(payload, url=url)
 
 
 def stars_fmt(n):
@@ -84,6 +62,10 @@ def feishu_cat_card(cat):
             site = f"[{it['site']}]({it['site']})"
         els.append({"tag": "div", "text": {"tag": "lark_md", "content":
             f"**{i}. [{it['repo']}]({it['url']})**　⭐ {stars_fmt(it['stars'])}\n{it['desc']}"}})
+        if it.get("note"):
+            els.append({"tag": "div", "text": {"tag": "lark_md", "content": f"📝 **我的备注**：{it['note']}"}})
+        if it.get("tags"):
+            els.append({"tag": "div", "text": {"tag": "lark_md", "content": "🏷 " + " ".join(f"`#{t}`" for t in it["tags"])}})
         # 元信息用 div + lark_md（而非 note），这样其中的链接才能被点击
         els.append({"tag": "div", "text": {"tag": "lark_md", "content":
             f"👤 {it['owner']} ｜ 📅 更新 {it['updated']} ｜ 🏷 {lists_fmt(it['lists'])} ｜ 🔗 {site}"}})
@@ -104,18 +86,10 @@ def push_feishu(url, report, report_url=""):
 
 
 def main():
-    path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(BASE, "report.json")
-    report = json.load(open(path))
-    cfg = json.load(open(os.path.join(BASE, "config.json")))
-    report_url = cfg.get("report_url", "")
-    # webhook 优先取环境变量（GitHub Actions secrets），其次取 config.json
-    feishu = os.environ.get("FEISHU_WEBHOOK") or cfg.get("feishu_webhook") or ""
-    if feishu:
-        print("pushing to feishu...", file=sys.stderr)
-        push_feishu(feishu, report, report_url)
-    else:
-        print("[error] no feishu webhook configured", file=sys.stderr)
-        sys.exit(1)
+    if len(sys.argv) > 1:
+        raise SystemExit("Direct report sends are disabled; use report_jobs.py daily/weekly/monthly")
+    from report_jobs import run
+    run("daily")
 
 
 if __name__ == "__main__":

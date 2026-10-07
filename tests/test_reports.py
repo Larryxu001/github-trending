@@ -23,10 +23,17 @@ def item(repo, saved_at="2026-10-06", **extra):
 
 
 class ReportsTest(unittest.TestCase):
+    def setUp(self):
+        sleeper = patch.object(jobs.time, "sleep")
+        sleeper.start()
+        self.addCleanup(sleeper.stop)
+
     def test_feishu_message_includes_every_project_description_and_metadata(self):
         report = jobs.weekly_report({"items": [item("a/first"), item("b/second")]}, datetime.date(2026, 10, 12))
-        message = jobs.payload(report)
-        content = "\n".join(e.get("text", {}).get("content", "") for e in message["card"]["elements"])
+        messages = jobs.payloads(report)
+        self.assertEqual(len(messages), 2)
+        self.assertEqual(messages[1]["card"]["header"]["template"], "grey")
+        content = "\n".join(e.get("text", {}).get("content", "") for message in messages for e in message["card"]["elements"])
         for cat in report["categories"]:
             for it in cat["items"]:
                 self.assertIn(f"[{it['repo']}]({it['url']})", content)
@@ -135,11 +142,11 @@ class ReportsTest(unittest.TestCase):
             self.assertEqual(snapshots[-1]["weekly:2026-10-12"]["status"], "sending")
             messages.append(message)
         jobs.deliver("weekly:2026-10-12", report, state, persist, send)
-        self.assertEqual(len(messages), 1)
+        self.assertEqual(len(messages), 2)
         self.assertEqual(state["weekly:2026-10-12"]["status"], "sent")
         with self.assertRaises(RuntimeError):
             jobs.deliver("weekly:2026-10-12", report, state, persist, send)
-        self.assertEqual(len(messages), 1)
+        self.assertEqual(len(messages), 2)
 
     def test_timeout_is_not_automatically_resent(self):
         report = jobs.weekly_report({"items": []}, datetime.date(2026, 10, 12))
@@ -156,6 +163,35 @@ class ReportsTest(unittest.TestCase):
         with self.assertRaises(OSError):
             jobs.deliver("weekly:test", report, {}, lambda: (_ for _ in ()).throw(OSError("push failed")),
                          lambda _: self.fail("sent before durable reservation"))
+
+    def test_rejected_category_resumes_without_resending_cover(self):
+        report = jobs.weekly_report({"items": [item("a/project")]}, datetime.date(2026, 10, 12))
+        state, sent = {}, []
+        def sender(message):
+            sent.append(message)
+            if len(sent) == 2:
+                raise jobs.DeliveryRejected("rate limited")
+            return {"code": 0}
+        with self.assertRaises(jobs.DeliveryRejected):
+            jobs.deliver("weekly:test", report, state, lambda: None, sender)
+        self.assertEqual(state["weekly:test"]["cards"][0]["status"], "sent")
+        self.assertEqual(state["weekly:test"]["status"], "prepared")
+        jobs.deliver("weekly:test", report, state, lambda: None, sender)
+        self.assertEqual(len(sent), 3)
+        self.assertEqual(sent[1], sent[2])
+
+    def test_large_categories_split_without_dropping_projects_or_notes(self):
+        items = [dict(item(f"test/project-{i}"), note="备注" * 1000) for i in range(30)]
+        report = jobs.weekly_report({"items": items}, datetime.date(2026, 10, 12))
+        messages = jobs.payloads(report)
+        self.assertGreater(len(messages), 2)
+        content = "\n".join(e.get("text", {}).get("content", "") for m in messages for e in m["card"]["elements"])
+        for it in items:
+            self.assertEqual(content.count(f"[{it['repo']}]"), 1)
+            self.assertIn(it["note"], content)
+        for message in messages:
+            self.assertLessEqual(len(message["card"]["elements"]), 45)
+            self.assertLessEqual(len(json.dumps(message, ensure_ascii=False).encode()), 20000)
 
     def test_feishu_requires_explicit_success(self):
         for body in (b'<html>error</html>', b'{}', b'{"code":1}', b'{"code":false}'):

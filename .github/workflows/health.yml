@@ -1,0 +1,36 @@
+name: Automation Health
+on:
+  schedule:
+    - cron: '20 3 * * *'
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ['Collect Trending', 'Daily Trending Report', 'Weekly Saved Report', 'Monthly Trending Report', 'Deploy GitHub Pages']
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: trending-state
+  queue: max
+  cancel-in-progress: false
+jobs:
+  health:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git pull --ff-only origin main
+      - name: Check and notify only on health changes
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FAILED_WORKFLOW: ${{ github.event.workflow_run.name }}
+        run: python health_check.py

@@ -12,6 +12,7 @@ on:
       - 'deliveries.json'
       - 'last_push.json'
       - 'pushed.json'
+      - 'health_state.json'
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:

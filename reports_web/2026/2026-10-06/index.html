@@ -168,7 +168,7 @@
   <header class="masthead">
     <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.004</span></div>
     <h1>Github开源趋势日报</h1>
-    <div class="standfirst">GitHub Trending 日 / 周 / 月三榜精选，人工解读每一个上榜项目</div>
+    <div class="standfirst">每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目</div>
     <div class="dateline"><b>2026 年 10 月 6 日</b>　·　第 4 期　·　本期新收录 <b>1</b> 个项目　·　30 天去重跳过 44 个</div>
     <div class="doublerule"></div>
   </header>
@@ -179,11 +179,11 @@
       <details><summary><span class="toc-no">01</span>安全<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>esp32-c3-adblock</a></details>
     </aside>
     <main>
-    
+
       <section id="sec-1">
         <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">安全</span><span class="sec-count">1 个项目</span></div>
         <hr class="rule">
-        
+
         <article class="item" id="sec-1-1">
           <div class="item-head">
             <span class="no">01</span>
@@ -192,6 +192,8 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;M-Abozaid/esp32-c3-adblock&quot;, &quot;url&quot;: &quot;https://github.com/M-Abozaid/esp32-c3-adblock&quot;, &quot;owner&quot;: &quot;M-Abozaid&quot;, &quot;stars&quot;: 1313, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u8dd1\u5728\u4ec5\u552e2\u7f8e\u5143\u7684ESP32-C3\u5f00\u53d1\u677f\u4e0a\u7684DNS\u5e7f\u544a\u62e6\u622a\u5668\uff0c\u529f\u80fd\u7c7b\u4f3c\u6811\u8393\u6d3e\u4e0a\u7684Pi-hole\u3002\u5b83\u628a53.7\u4e07\u4e2a\u5e7f\u544a\u57df\u540d\u538b\u7f29\u621040\u4f4d\u54c8\u5e0c\u5b58\u8fdb\u95ea\u5b58\uff0c\u7528\u4e8c\u5206\u67e5\u627e\u5feb\u901f\u5339\u914d\uff0c\u6536\u5230DNS\u8bf7\u6c42\u65f6\u628a\u5e7f\u544a\u57df\u540d\u89e3\u6790\u5230\u9ed1\u6d1e\u5730\u5740\uff0c\u4ece\u800c\u8ba9\u5168\u5c4b\u8bbe\u5907\u514d\u5e7f\u544a\u3002\u8fd8\u5e26\u7f51\u9875\u63a7\u5236\u9762\u677f\uff0c\u65e0\u9700PSRAM\uff0c\u9002\u5408\u60f3\u4f4e\u6210\u672c\u7ed9\u5bb6\u5ead\u7f51\u7edc\u53bb\u5e7f\u544a\u7684DIY\u73a9\u5bb6\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5b89\u5168&quot;, &quot;emoji&quot;: &quot;\ud83d\udd10&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">这是一个跑在仅售2美元的ESP32-C3开发板上的DNS广告拦截器，功能类似树莓派上的Pi-hole。它把53.7万个广告域名压缩成40位哈希存进闪存，用二分查找快速匹配，收到DNS请求时把广告域名解析到黑洞地址，从而让全屋设备免广告。还带网页控制面板，无需PSRAM，适合想低成本给家庭网络去广告的DIY玩家。</p>
+
+
           <div class="byline">
             <span>M-Abozaid</span><i>·</i>
             <span>更新于 2026-10-04</span><i>·</i>
@@ -232,6 +234,21 @@
   const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
   const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
   const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  let key = sessionStorage.getItem('trending-save-key');
+  if (!key) {
+    key = prompt('请输入收藏密码（本次浏览会话内记住）');
+    if (!key) return null;
+    sessionStorage.setItem('trending-save-key', key.trim());
+  }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
 
   let pendingMeta = null;      // 待收藏的项目 meta
   let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
@@ -321,16 +338,19 @@
   window.confirmSave = async function() {
     if (!pendingMeta) return;
     if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
     pendingMeta.note = document.getElementById('dlgNote').value.trim();
     const btn = document.getElementById('dlgOk');
     btn.disabled = true;
     try {
       const resp = await fetch(saveApi, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders,
         body: JSON.stringify(pendingMeta),
       });
-      const result = await resp.json().catch(() => ({}));
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
       if (!resp.ok || result.error) {
         toast(result.error || '收藏失败，请重试');
         return;
@@ -370,13 +390,16 @@
   // 已收藏时直接取消（走 Worker toggle）
   async function removeSave(meta) {
     if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
     try {
       const resp = await fetch(saveApi, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders,
         body: JSON.stringify({ repo: meta.repo, _remove: true }),
       });
-      const result = await resp.json().catch(() => ({}));
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
       if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
       toast('已取消收藏');
       // 乐观更新：立刻本地移除，按钮立即还原

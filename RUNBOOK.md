@@ -3,7 +3,7 @@
 ## 调度与层次
 
 全部使用北京时间。每 3 小时采集三榜，不发消息、不调用 AI。
-每天 09:00 发一条包含全部项目介绍的日报；每周一 09:00 发一条精选周报；月末 09:00 发一条精选月报。
+每天 09:00 发一轮日报；每周一 09:00 发一轮精选周报；月末 09:00 发一轮精选月报。每轮是一张封面和按分类配色的独立卡片，恢复原有信息流。
 周报只取上一个完整星期新增、仍在 `saved.json` 中的精选；月报取最近 4 期已经发送的周报快照，按 repo 去重。
 没有新项目时仍发一条明确的空期消息，避免无法区分“没项目”和“任务失败”。
 新规则从部署后开始积累周报；启动不足 4 期会注明实际期数。历史日报不用于凑数。
@@ -15,7 +15,8 @@
 
 所有采集/报告/keepalive 工作流共享 `trending-state` 并发组，不取消正在发送的任务。
 工作流拿到锁之后重新拉取 main，读取最新状态。Worker 的额外 workflow_dispatch 也受同一守卫约束。
-每期流程：生成完整报告并归档 → 提交 prepared → Pages 部署成功 → 提交 sending → 调用一次飞书 → 提交 sent。
+每期流程：生成完整报告并归档 → 提交 prepared → Pages 部署与公开内容验收成功 → 为每张卡片提交 sending → 飞书明确回执 → 提交该卡片 sent → 全部完成后提交报告 sent。
+消息超过大小/元素限额时拆分分类卡片，不删除介绍。明确拒收可重试未发送卡片，已经收到的封面/分类不再重复。
 日报 sent 后更新 `pushed.json` 与 `last_push.json`；已有历史 `last_push.json` 标记继续生效。
 日报同时避开最近 30 天处于 sent/sending/unknown 的报告项目，防止发送后回执提交失败造成次日重复。
 
@@ -26,7 +27,7 @@
 - 抓榜有一榜失败/解析为空：任务失败，保留上次采集数据；下一次采集再试。
 - 缺描述、状态 JSON 损坏：任务失败，不假装为空报告继续发送。
 - prepared：还未尝试发送，可以手动重跑同一工作流；复用已生成的报告，不重新消耗 AI token。
-- sending/unknown：可能已经发到飞书，工作流会报错并停止重发。先检查对应日期的飞书消息；确认收到则把该期状态改为 sent，确认未收到才改回 prepared，再提交并重跑。
+- sending/unknown：可能已经发到飞书，工作流会报错并停止重发。先检查对应日期的飞书消息；逐张核对 `cards`：确认收到的卡片改为 sent，确认未收到的改为 pending；报告改为 prepared，提交后重跑，只发送剩余卡片。不要把未完成整期直接标为 sent。
 - sent：重复触发直接跳过。
 - Pages 失败：不发消息，修复部署后重跑。
 - 飞书 secret 缺失/回执不是明确成功：任务失败，检查 Actions 日志和对应消息；按 sending/unknown 处理。
@@ -36,8 +37,12 @@
 ## 配置与外部依赖
 
 `FEISHU_WEBHOOK` 和 `DEEPSEEK_API_KEY` 放 GitHub Secrets；不要把真实凭证写入 `config.json`。
-收藏 Worker 仍位于 `~/.workbuddy/github-trending-save-worker/`，本次没有更改它的部署、鉴权或收藏数据。
+收藏 Worker 真源是 `workers/save/`，生产部署仍为原 Worker。SAVE_KEY 保护写入口，GH_PAT 保持原凭证。损坏数据绝不当成空列表覆盖；saved.json 不做迁移。
+本机密码在 `.local/save-password.txt`（仅本机、不入库）；浏览器首次收藏/取消时输入。以前生成的网页已同步更新鉴权与 URL 校验。
 Worker 可额外触发 daily.yml，但不能绕过 daily.yml 的并发锁、9 点前守卫和每期发送状态。
-GitHub schedule 是尽力调度，可能延迟；本项目未添加新的外部告警渠道。
+GitHub schedule 可能延迟。health.yml 在失败及每天 11:20 检查采集/日报/未完成报告/Worker/PAT，health_state.json 去重通知；超时的提醒也不会自动重发。Cloudflare 11:20 独立触发健康检查，GitHub 无法触发时走独立飞书故障提醒。
+Webhook 失效时飞书自身无法收到提醒，Actions/Worker 日志仍明确报错；不要将此情况视为正常。
 
 验证命令：`python3 -m unittest discover -s tests -v`。
+
+Worker 检查：`node --test workers/save/worker.test.mjs`；部署说明见 `workers/save/README.md`。

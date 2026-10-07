@@ -3,6 +3,7 @@
 Design recipe: nyt-the-daily (web-design-engineer skill) — serif voice, hairlines, no cards.
 Usage: render_html.py [report_json]"""
 import json, os, sys, html, datetime
+from urllib.parse import urlparse
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 LIST_LABEL = {"daily": "日榜", "weekly": "周榜", "monthly": "月榜"}
@@ -86,7 +87,7 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
             <span class="{'hot' if daily else ''}">{lists}</span><i>·</i>
             {site}
           </div>
-        </article>""")
+        </article>""".replace("\n          \n", "\n"))
         sections.append(f"""
       <section id="sec-{si}">
         <div class="sec-kicker"><span class="sec-no">SECTION {si:02d}</span><span class="sec-name">{esc(cat['name'])}</span><span class="sec-count">{len(cat['items'])} 个项目</span></div>
@@ -309,6 +310,21 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
   const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
   const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
 
+
+function saveHeaders() {{
+  let key = sessionStorage.getItem('trending-save-key');
+  if (!key) {{
+    key = prompt('请输入收藏密码（本次浏览会话内记住）');
+    if (!key) return null;
+    sessionStorage.setItem('trending-save-key', key.trim());
+  }}
+  return {{'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()}};
+}}
+function safeUrl(value) {{
+  try {{ const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }}
+  catch(_) {{ return ''; }}
+}}
+
   let pendingMeta = null;      // 待收藏的项目 meta
   let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
   let savedSet = new Set();    // 已收藏 repo 集合
@@ -397,16 +413,19 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
   window.confirmSave = async function() {{
     if (!pendingMeta) return;
     if (!saveApi) {{ toast('收藏服务未配置，请联系维护者'); return; }}
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
     pendingMeta.note = document.getElementById('dlgNote').value.trim();
     const btn = document.getElementById('dlgOk');
     btn.disabled = true;
     try {{
       const resp = await fetch(saveApi, {{
         method: 'POST',
-        headers: {{ 'Content-Type': 'application/json' }},
+        headers: authHeaders,
         body: JSON.stringify(pendingMeta),
       }});
-      const result = await resp.json().catch(() => ({{}}));
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
       if (!resp.ok || result.error) {{
         toast(result.error || '收藏失败，请重试');
         return;
@@ -446,13 +465,16 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
   // 已收藏时直接取消（走 Worker toggle）
   async function removeSave(meta) {{
     if (!saveApi) {{ toast('收藏服务未配置'); return; }}
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
     try {{
       const resp = await fetch(saveApi, {{
         method: 'POST',
-        headers: {{ 'Content-Type': 'application/json' }},
+        headers: authHeaders,
         body: JSON.stringify({{ repo: meta.repo, _remove: true }}),
       }});
-      const result = await resp.json().catch(() => ({{}}));
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
       if (!resp.ok || result.error) {{ toast(result.error || '取消失败'); return; }}
       toast('已取消收藏');
       // 乐观更新：立刻本地移除，按钮立即还原

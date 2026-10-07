@@ -16,3 +16,10 @@ state/
 
 # 敏感信息绝不入库
 config.local.json
+
+# Local credentials and Worker build output
+.local/
+node_modules/
+.wrangler/
+.dev.vars*
+*.tmp

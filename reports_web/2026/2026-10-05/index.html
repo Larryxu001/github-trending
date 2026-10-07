@@ -168,7 +168,7 @@
   <header class="masthead">
     <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.003</span></div>
     <h1>Github开源趋势日报</h1>
-    <div class="standfirst">GitHub Trending 日 / 周 / 月三榜精选，人工解读每一个上榜项目</div>
+    <div class="standfirst">每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目</div>
     <div class="dateline"><b>2026 年 10 月 5 日</b>　·　第 3 期　·　本期新收录 <b>1</b> 个项目　·　30 天去重跳过 48 个</div>
     <div class="doublerule"></div>
   </header>
@@ -179,11 +179,11 @@
       <details><summary><span class="toc-no">01</span>Agent 技能与插件<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>pstack-claude</a></details>
     </aside>
     <main>
-    
+
       <section id="sec-1">
         <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">1 个项目</span></div>
         <hr class="rule">
-        
+
         <article class="item" id="sec-1-1">
           <div class="item-head">
             <span class="no">01</span>
@@ -192,6 +192,8 @@
             <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;michael-denyer/pstack-claude&quot;, &quot;url&quot;: &quot;https://github.com/michael-denyer/pstack-claude&quot;, &quot;owner&quot;: &quot;michael-denyer&quot;, &quot;stars&quot;: 1141, &quot;desc&quot;: &quot;\u8fd9\u662f\u628a Poteto \u7684 pstack \u5de5\u4f5c\u6d41\u79fb\u690d\u5230 Claude Code\u3001Codex\u3001Gemini \u7b49\u591a\u4e2a AI \u7f16\u7a0b\u52a9\u624b\u4e0a\u7684\u63d2\u4ef6\u96c6\u5408\u3002\u5b83\u63d0\u4f9b\u4e00\u5957\u4e25\u8c28\u7684\u667a\u80fd\u4f53\u5de5\u4f5c\u6d41\u7a0b\uff0c\u628a\u539f\u672c\u4e3a Cursor \u8bbe\u8ba1\u7684\u64cd\u4f5c\u539f\u8bed\u7ffb\u8bd1\u6210\u5404\u5e73\u53f0\u53ef\u7528\u7684\u6280\u80fd\uff0c\u8ba9\u5f00\u53d1\u8005\u65e0\u8bba\u7528\u54ea\u4e2a\u52a9\u624b\u90fd\u80fd\u83b7\u5f97\u4e00\u81f4\u7684\u4ee3\u7801\u5ba1\u67e5\u3001\u4efb\u52a1\u62c6\u89e3\u7b49\u80fd\u529b\u3002\u4f8b\u5982\u5728 Claude Code \u91cc\u88c5\u4e0a\u540e\uff0c\u5c31\u80fd\u6309\u56fa\u5b9a\u6b65\u9aa4\u81ea\u52a8\u5b8c\u6210\u4ee3\u7801\u8bc4\u5ba1\uff0c\u51cf\u5c11\u624b\u52a8\u63d0\u793a\u7684\u968f\u610f\u6027\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">这是把 Poteto 的 pstack 工作流移植到 Claude Code、Codex、Gemini 等多个 AI 编程助手上的插件集合。它提供一套严谨的智能体工作流程，把原本为 Cursor 设计的操作原语翻译成各平台可用的技能，让开发者无论用哪个助手都能获得一致的代码审查、任务拆解等能力。例如在 Claude Code 里装上后，就能按固定步骤自动完成代码评审，减少手动提示的随意性。</p>
+
+
           <div class="byline">
             <span>michael-denyer</span><i>·</i>
             <span>更新于 2026-10-04</span><i>·</i>
@@ -232,6 +234,21 @@
   const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
   const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
   const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  let key = sessionStorage.getItem('trending-save-key');
+  if (!key) {
+    key = prompt('请输入收藏密码（本次浏览会话内记住）');
+    if (!key) return null;
+    sessionStorage.setItem('trending-save-key', key.trim());
+  }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
 
   let pendingMeta = null;      // 待收藏的项目 meta
   let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
@@ -321,16 +338,19 @@
   window.confirmSave = async function() {
     if (!pendingMeta) return;
     if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
     pendingMeta.note = document.getElementById('dlgNote').value.trim();
     const btn = document.getElementById('dlgOk');
     btn.disabled = true;
     try {
       const resp = await fetch(saveApi, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders,
         body: JSON.stringify(pendingMeta),
       });
-      const result = await resp.json().catch(() => ({}));
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
       if (!resp.ok || result.error) {
         toast(result.error || '收藏失败，请重试');
         return;
@@ -370,13 +390,16 @@
   // 已收藏时直接取消（走 Worker toggle）
   async function removeSave(meta) {
     if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
     try {
       const resp = await fetch(saveApi, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders,
         body: JSON.stringify({ repo: meta.repo, _remove: true }),
       });
-      const result = await resp.json().catch(() => ({}));
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
       if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
       toast('已取消收藏');
       // 乐观更新：立刻本地移除，按钮立即还原

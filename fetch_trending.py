@@ -2,6 +2,7 @@
 """Fetch GitHub Trending (daily/weekly/monthly), enrich via GitHub API,
 dedupe against pushed.json (30-day window), output items.json with NEW items only."""
 import json, re, os, sys, time, urllib.request, datetime
+import urllib.error
 from report_state import now, load, write
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -25,8 +26,17 @@ def get(url, api=False):
     if api and TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
     req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8", "replace")
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.read().decode("utf-8", "replace")
+        except urllib.error.HTTPError as error:
+            if error.code not in (429, 500, 502, 503, 504) or attempt == 3:
+                raise
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == 3:
+                raise
+        time.sleep(2 ** attempt)
 
 def last_update_via_atom(path):
     """Fallback: read latest commit date from the repo's atom feed (no API quota)."""

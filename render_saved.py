@@ -83,6 +83,21 @@ const SAVE_API = {save_api};
 function esc(s) {{ return String(s).replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c])); }}
 function starsFmt(n) {{ return (n && n > 0) ? '★ ' + Number(n).toLocaleString() : ''; }}
 
+
+function saveHeaders() {{
+  let key = sessionStorage.getItem('trending-save-key');
+  if (!key) {{
+    key = prompt('请输入收藏密码（本次浏览会话内记住）');
+    if (!key) return null;
+    sessionStorage.setItem('trending-save-key', key.trim());
+  }}
+  return {{'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()}};
+}}
+function safeUrl(value) {{
+  try {{ const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }}
+  catch(_) {{ return ''; }}
+}}
+
 let allRows = [];
 let activeTags = new Set();
 
@@ -166,8 +181,8 @@ function render() {{
   }}
   list.innerHTML = rows.map(r => {{
     const site = (r.site && r.site !== '无' && r.site !== '')
-      ? '<a class="site" href="' + esc(r.site) + '" target="_blank">' + esc(r.site) + '</a>' : '无官网';
-    const url = r.url || 'https://github.com/' + r.repo;
+      ? '<a class="site" href="' + esc(safeUrl(r.site)) + '" target="_blank">' + esc(r.site) + '</a>' : '无官网';
+    const url = safeUrl(r.url) || 'https://github.com/' + r.repo;
     const date = r.saved_at ? '<span class="date">收藏于 ' + esc(String(r.saved_at).slice(0,10)) + '</span>' : '';
     const tags = (r.tags && r.tags.length) ? '<div class="tags">' + r.tags.map(t => '<span>' + esc(t) + '</span>').join('') + '</div>' : '';
     const note = r.note ? '<div class="note"><b>我的备注</b><br>' + esc(r.note) + '</div>' : '';
@@ -189,13 +204,16 @@ window.unsave = async function(btn) {{
   if (!SAVE_API) {{ alert('收藏服务未配置'); return; }}
   const repo = btn.closest('.item').dataset.repo;
   if (!confirm('确定取消收藏「' + repo + '」？')) return;
+  const authHeaders = saveHeaders();
+  if (!authHeaders) return;
   try {{
     const resp = await fetch(SAVE_API, {{
       method: 'POST',
-      headers: {{ 'Content-Type': 'application/json' }},
+      headers: authHeaders,
       body: JSON.stringify({{ repo: repo, _remove: true }}),
     }});
-    const result = await resp.json().catch(() => ({{}}));
+    const result = await resp.json();
+    if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
     if (!resp.ok || result.error) {{ alert(result.error || '取消失败'); return; }}
     // 乐观更新：立刻从本地移除并重绘，不等 raw 回读
     allRows = allRows.filter(r => r.repo !== repo);

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect without AI; prepare immutable reports; publish one Feishu message per issue."""
+"""Collect without AI; prepare immutable reports; publish one Feishu card batch per issue."""
 import calendar
 import datetime
 import json
@@ -10,13 +10,15 @@ import subprocess
 import sys
 import time
 import urllib.request
+import urllib.error
 from html.parser import HTMLParser
+from html import escape
 
 from report_state import BASE, now, load, write
 from sync_saved import build_report
 from render_html import render
 from run_daily import build_web_index
-from push import stars_fmt, lists_fmt
+from push import feishu_cover, feishu_cat_card
 
 
 def sh(*args):
@@ -27,7 +29,7 @@ def checkpoint(message):
     # saved.json belongs to the collection Worker; never stage it here.
     paths = [p for p in ("collected.json", "deliveries.json", "pushed.json", "desc_cache.json",
                          "last_push.json", "reports", "reports_web", "data", "archive",
-                         "weekly", "monthly") if (BASE / p).exists()]
+                         "weekly", "monthly", "health_state.json") if (BASE / p).exists()]
     sh("git", "add", "--", *paths)
     if not sh("git", "diff", "--cached", "--name-only"):
         return
@@ -47,7 +49,8 @@ def daily_items(catalog, pushed, today, deliveries=None):
     # An accepted message followed by a failed receipt commit must not reappear tomorrow.
     # Uncertain messages also require manual resolution instead of blind resending.
     for key, delivery in (deliveries or {}).items():
-        if key.startswith("daily:") and delivery["status"] in ("sent", "sending", "unknown"):
+        if key.startswith("daily:") and (delivery["status"] in ("sent", "sending", "unknown") or
+                any(c["status"] in ("sent", "sending", "unknown") for c in delivery.get("cards", []))):
             for cat in delivery["report"]["categories"]:
                 for it in cat["items"]:
                     pushed[it["repo"]] = max(pushed.get(it["repo"], ""), delivery["report"]["date"])
@@ -163,62 +166,70 @@ def deploy_pages():
     raise RuntimeError("Pages deployment timed out; no message sent")
 
 
-def payload(report):
-    kind, date = report["kind"], report["date"]
-    label = {"daily": "日报", "weekly": "精选周报", "monthly": "精选月报"}[kind]
-    stem = date + ("-weekly" if kind == "weekly" else "")
-    root = load(BASE / "config.json", {})["report_url"].rstrip("/")
-    lines = [f"{date} ｜ 共 **{report['new_count']}** 个项目"]
-    if kind == "monthly":
-        lines.append(f"合并最近 {len(report['source_weeks'])} 期精选周报，项目去重。")
-        lines.append("来源：" + ("、".join(report["source_weeks"]) or "暂无已发送周报"))
-    elif kind == "weekly":
-        lines.append(f"收藏范围：{report['period_start']} 至 {report['period_end']}（不含结束日）")
-    lines.extend(f"{c['emoji']} {c['name']}：{len(c['items'])} 个" for c in report["categories"])
-    if not report["new_count"]:
-        lines.append("本期没有新增项目。")
-    elements = [{"tag": "div", "text": {"tag": "lark_md", "content": "\n".join(lines)}}]
+def report_url(report):
+    date = report["date"]
+    stem = date + ("-weekly" if report["kind"] == "weekly" else "")
+    return load(BASE / "config.json", {})["report_url"].rstrip("/") + f"/{date[:4]}/{stem}/index.html"
+
+
+def payloads(report):
+    """Original colored cover + separate category cards, split without dropping items."""
+    category_cards = []
     for cat in report["categories"]:
-        elements.append({"tag": "div", "text": {"tag": "lark_md", "content":
-            f"**{cat['emoji']} {cat['name']} · {len(cat['items'])} 个项目**"}})
-        for i, it in enumerate(cat["items"], 1):
-            site = "无" if it["site"] == "无" else f"[{it['site']}]({it['site']})"
-            content = (f"**{i}. [{it['repo']}]({it['url']})**　⭐ {stars_fmt(it['stars'])}\n"
-                       f"{it['desc']}\n"
-                       f"👤 {it['owner']} ｜ 📅 更新 {it['updated']} ｜ 🏷 {lists_fmt(it['lists'])} ｜ 🔗 {site}")
-            if it.get("note"):
-                content += f"\n📝 **我的备注**：{it['note']}"
-            if it.get("tags"):
-                content += "\n🏷 " + " ".join(f"`#{tag}`" for tag in it["tags"])
-            elements.append({"tag": "div", "text": {"tag": "lark_md", "content": content}})
-    elements.append({"tag": "action", "actions": [{"tag": "button", "type": "primary",
-        "text": {"tag": "plain_text", "content": "查看完整报告"},
-        "url": f"{root}/{date[:4]}/{stem}/index.html"}]})
-    return {"msg_type": "interactive", "card": {
-        "config": {"wide_screen_mode": True},
-        "header": {"template": "indigo", "title": {"tag": "plain_text", "content": f"GitHub Trending · {label}"}},
-        "elements": elements}}
+        chunk = []
+        for it in cat["items"]:
+            trial = feishu_cat_card(dict(cat, items=chunk + [it]))
+            size = len(json.dumps({"msg_type": "interactive", "card": trial}, ensure_ascii=False).encode())
+            if chunk and (len(trial["elements"]) > 45 or size > 18000):
+                category_cards.append(feishu_cat_card(dict(cat, items=chunk)))
+                chunk = []
+            chunk.append(it)
+        if chunk:
+            category_cards.append(feishu_cat_card(dict(cat, items=chunk)))
+    cover = feishu_cover(report, report_url(report), len(category_cards))
+    label = {"daily": "日报", "weekly": "精选周报", "monthly": "精选月报"}[report["kind"]]
+    cover["header"]["title"]["content"] = f"📊 GitHub Trending {label}"
+    if report["kind"] == "weekly":
+        cover["elements"][0]["text"]["content"] = f"{report['date']} ｜ 精选 {report['new_count']} 个项目 ｜ 收藏范围 {report['period_start']} 至 {report['period_end']}（不含结束日）"
+    elif report["kind"] == "monthly":
+        cover["elements"][0]["text"]["content"] = f"{report['date']} ｜ 精选 {report['new_count']} 个项目 ｜ 最近 {len(report['source_weeks'])} 期周报：" + "、".join(report['source_weeks'])
+    cover["elements"][-1]["elements"][0]["content"] = f"共 {1 + len(category_cards)} 张卡片，按分类浏览"
+    messages = [{"msg_type": "interactive", "card": card} for card in [cover] + category_cards]
+    for message in messages:
+        if len(json.dumps(message, ensure_ascii=False).encode()) > 20000:
+            raise RuntimeError("A single project's card exceeds Feishu size limits; nothing truncated")
+    return messages
 
 
 def verify_public_report(report):
-    url = payload(report)["card"]["elements"][-1]["actions"][0]["url"]
+    url = report_url(report)
     expected = sorted(it["repo"] for cat in report["categories"] for it in cat["items"])
+    fields = ("repo", "url", "owner", "stars", "desc", "site")
+    expected_meta = {it["repo"]: {key: it[key] for key in fields}
+                     for cat in report["categories"] for it in cat["items"]}
     class Projects(HTMLParser):
         def __init__(self):
             super().__init__()
             self.repos = []
+            self.metadata = {}
         def handle_starttag(self, tag, attrs):
             attrs = dict(attrs)
             if tag == "button" and attrs.get("class") == "save-btn":
-                self.repos.append(json.loads(attrs["data-meta"])["repo"])
+                meta = json.loads(attrs["data-meta"])
+                self.repos.append(meta["repo"])
+                self.metadata[meta["repo"]] = {key: meta[key] for key in fields}
     for attempt in range(12):
         try:
             with urllib.request.urlopen(url, timeout=20) as response:
                 page = response.read().decode("utf-8")
             parser = Projects()
             parser.feed(page)
-            if report["date"] not in page or sorted(parser.repos) != expected:
+            if report["date"] not in page or sorted(parser.repos) != expected or parser.metadata != expected_meta:
                 raise RuntimeError("Published report does not match archived projects")
+            for cat in report["categories"]:
+                for it in cat["items"]:
+                    if it.get("note") and escape(it["note"]) not in page:
+                        raise RuntimeError("Published report is missing selected-project notes")
             return
         except Exception:
             if attempt == 11:
@@ -226,31 +237,59 @@ def verify_public_report(report):
             time.sleep(10)
 
 
-def send_once(message):
-    url = os.environ.get("FEISHU_WEBHOOK") or load(BASE / "config.json", {}).get("feishu_webhook")
+class DeliveryRejected(RuntimeError):
+    """The server explicitly rejected the message, so retry is safe."""
+
+
+def send_once(message, url=None):
+    url = url or os.environ.get("FEISHU_WEBHOOK") or load(BASE / "config.json", {}).get("feishu_webhook")
     if not url:
         raise RuntimeError("FEISHU_WEBHOOK is missing")
-    req = urllib.request.Request(url, data=json.dumps(message).encode(),
+    req = urllib.request.Request(url, data=json.dumps(message, ensure_ascii=False).encode(),
                                  headers={"Content-Type": "application/json"}, method="POST")
     # A timeout may occur after receipt. Never automatically resend an ambiguous request.
-    with urllib.request.urlopen(req, timeout=30) as response:
-        result = json.loads(response.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            result = json.loads(response.read())
+    except urllib.error.HTTPError as error:
+        if 400 <= error.code < 500 and error.code != 408:
+            raise DeliveryRejected(f"Feishu HTTP {error.code}") from None
+        raise RuntimeError(f"Feishu HTTP {error.code}; delivery uncertain") from None
     code = result.get("code", result.get("StatusCode"))
-    if type(code) is not int or code != 0:
-        raise RuntimeError(f"Feishu did not confirm delivery: {result}")
+    if type(code) is not int:
+        raise RuntimeError("Feishu returned no valid receipt")
+    if code != 0:
+        raise DeliveryRejected(f"Feishu rejected message, code={code}")
+    return {"code": code, "confirmed_at": now().isoformat()}
 
 
 def deliver(key, report, state, persist, send):
     if state.get(key, {}).get("status") in ("sending", "unknown", "sent"):
         raise RuntimeError(f"{key}: already sent or delivery requires manual verification; will not resend")
-    state[key] = {"status": "sending", "report": report}
-    persist()
-    try:
-        send(payload(report))
-    except Exception:
-        state[key]["status"] = "unknown"
+    entry = state.setdefault(key, {"status": "prepared", "report": report})
+    if "cards" not in entry:
+        entry["cards"] = [{"message": message, "status": "pending"} for message in payloads(report)]
+    for index, card in enumerate(entry["cards"]):
+        if card["status"] == "sent":
+            continue
+        if card["status"] in ("sending", "unknown"):
+            raise RuntimeError("Card delivery uncertain; manual verification required")
+        card["status"] = entry["status"] = "sending"
         persist()
-        raise
+        try:
+            receipt = send(card["message"])
+        except Exception as error:
+            rejected = isinstance(error, DeliveryRejected)
+            card["status"] = "pending" if rejected else "unknown"
+            entry["status"] = "prepared" if rejected else "unknown"
+            persist()
+            raise
+        card["status"] = "sent"
+        card["receipt"] = receipt
+        entry["status"] = "prepared"
+        persist()
+        print(f"[sent] {key}: card {index + 1}/{len(entry['cards'])}")
+        time.sleep(1)
     state[key]["status"] = "sent"
     if report["kind"] == "daily":
         pushed = load(BASE / "pushed.json", {})
@@ -307,7 +346,7 @@ def run(kind):
     if state.get(key, {}).get("status") in ("sending", "unknown"):
         raise RuntimeError(f"{key}: delivery uncertain; check Feishu before any retry")
     report = state.get(key, {}).get("report") or prepare(kind, today)
-    state[key] = {"status": "prepared", "report": report}
+    state.setdefault(key, {"status": "prepared", "report": report})
     def persist():
         write(BASE / "deliveries.json", state)
         checkpoint(f"{key} · {state[key]['status']}")
