@@ -163,6 +163,22 @@ class ReportsTest(unittest.TestCase):
                     with self.assertRaises(RuntimeError):
                         jobs.verify_public_report(report)
 
+    def test_pages_waits_for_dispatched_run_and_rejects_failed_deployment(self):
+        for conclusion in ("success", "failure"):
+            commands = []
+            def sh(*args):
+                commands.append(args)
+                if args[:3] == ("gh", "workflow", "run"):
+                    return "https://github.com/example/repo/actions/runs/123"
+                return json.dumps({"status": "completed", "conclusion": conclusion})
+            with patch.object(jobs, "sh", side_effect=sh):
+                if conclusion == "success":
+                    jobs.deploy_pages()
+                else:
+                    with self.assertRaises(RuntimeError):
+                        jobs.deploy_pages()
+            self.assertEqual(commands[-1][:4], ("gh", "run", "view", "123"))
+
     def test_archive_monthly_and_weekly_links_notes_and_counts(self):
         with tempfile.TemporaryDirectory() as td:
             base = Path(td)

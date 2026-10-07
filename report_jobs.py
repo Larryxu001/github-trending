@@ -4,6 +4,7 @@ import calendar
 import datetime
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -141,12 +142,18 @@ def archive_report(report):
 
 
 def deploy_pages():
-    sha = sh("git", "rev-parse", "HEAD")
-    sh("gh", "workflow", "run", "pages.yml", "--ref", "main")
+    requested_at = now() - datetime.timedelta(seconds=2)
+    dispatched = sh("gh", "workflow", "run", "pages.yml", "--ref", "main")
+    match = re.search(r"/actions/runs/(\d+)", dispatched)
     for _ in range(80):
-        runs = json.loads(sh("gh", "run", "list", "--workflow", "pages.yml", "--commit", sha,
-                             "--limit", "5", "--json", "status,conclusion,event"))
-        matches = [r for r in runs if r["event"] == "workflow_dispatch"]
+        if match:
+            matches = [json.loads(sh("gh", "run", "view", match[1], "--json", "status,conclusion"))]
+        else:
+            # Older gh versions return no run URL. A concurrent collection commit
+            # can change main between dispatch and checkout, so do not filter by SHA.
+            runs = json.loads(sh("gh", "run", "list", "--workflow", "pages.yml", "--event", "workflow_dispatch",
+                                 "--limit", "5", "--json", "status,conclusion,createdAt"))
+            matches = [r for r in runs if datetime.datetime.fromisoformat(r["createdAt"].replace("Z", "+00:00")) >= requested_at]
         if matches and matches[0]["status"] == "completed":
             if matches[0]["conclusion"] != "success":
                 raise RuntimeError("Pages deployment failed; no message sent")
