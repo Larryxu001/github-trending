@@ -1,130 +1,14 @@
 #!/usr/bin/env python3
-"""
-GitHub Actions 版每日流水线（完全离线、无 LLM 依赖）。
-
-等价于本机 pipeline.sh 的 prepare + finalize，但「写描述」这一步用 desc_auto.py
-（内置表 + 启发式模板）替代人工/模型撰写。
-
-产出（全部写入仓库工作区，由 workflow 提交）：
-  - reports/YYYY/YYYY-MM-DD.md        日报 Markdown
-  - reports_web/YYYY/YYYY-MM-DD/index.html 网页版（含往期归档站 index）
-  - data/YYYY-MM-DD.json               结构化数据
-  - pushed.json / desc_cache.json      状态文件（随仓库版本演进）
-"""
-import json
+"""Compatibility entry point for the daily job; also builds the archive index."""
 import os
-import sys
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-P = lambda n: os.path.join(BASE, n)
-
-SITE_DIR = os.path.join(BASE, "site")          # 每日网页版源
 OUT_SITE = os.path.join(BASE, "reports_web")   # 仓库内网页版归档根
-ARCHIVE = os.path.join(BASE, "archive")
-
-
-def sh(*args):
-    import subprocess
-    # 透传子进程 stdout/stderr，便于在 Actions 日志里排查；失败时抛出带输出的异常
-    r = subprocess.run(args)
-    if r.returncode != 0:
-        raise RuntimeError(f"{' '.join(args)} failed with exit code {r.returncode}")
-    return ""
 
 
 def main():
-    # 0) 「每天只推一次」守卫：若今天已成功推送过，直接静默退出，不再抓榜、不再推送。
-    #    （retry 场景：上次推送失败时 last_push.json 不会更新，本次会正常重试；
-    #     上次成功后，当天后续所有运行都会在此跳过，避免一天多波打扰。）
-    import datetime as _dt
-    _today = _dt.date.fromtimestamp(_dt.datetime.now().timestamp() + 8 * 3600).isoformat()
-    _last = P("last_push.json")
-    if os.path.exists(_last):
-        try:
-            _last_date = json.load(open(_last, encoding="utf-8")).get("date")
-            if _last_date == _today:
-                print(f"[skip] {_today}: already pushed today, nothing to do")
-                return
-        except Exception:
-            pass
-
-    # 1) 抓榜 + 去重 + 骨架
-    sh(sys.executable, P("fetch_trending.py"))
-    sh(sys.executable, P("prepare_report.py"))
-
-    # 2) 自动写描述（无需模型）
-    if os.path.exists(P("pending.json")) and json.load(open(P("pending.json"), encoding="utf-8")):
-        sh(sys.executable, P("desc_auto.py"))
-    else:
-        open(P("new_desc.json"), "w", encoding="utf-8").write("{}")
-
-    # 3) 合并描述 -> report.json
-    sh(sys.executable, P("apply_desc.py"))
-
-    report = json.load(open(P("report.json"), encoding="utf-8"))
-    date = report["date"]
-    total = sum(len(c["items"]) for c in report["categories"])
-
-    # 无新项目：不推送、不归档，直接结束（根目录状态文件由 workflow 提交）
-    if total == 0:
-        print(f"[done] {date}: no new items (all within 30-day window), nothing to push")
-        return
-
-    # 4) 渲染 Markdown + HTML
-    sh(sys.executable, P("render_md.py"), P("report.json"))
-    sh(sys.executable, P("render_html.py"), P("report.json"))
-    sh(sys.executable, P("render_saved.py"))   # 「我的精选」页（读 saved.json）
-
-    # 5) 推送飞书
-    sh(sys.executable, P("push.py"), P("report.json"))
-
-    # 5.5) 标记「今天已成功推送」——用于「每天只推一次」守卫，失败重试不会走到这里
-    json.dump({"date": date}, open(P("last_push.json"), "w", encoding="utf-8"))
-
-    # 6) 归档 + 更新去重记录（推送已成功，才会走到这里）
-    os.makedirs(ARCHIVE, exist_ok=True)
-    sh("cp", P("report.json"), os.path.join(ARCHIVE, f"report-{date}.json"))
-    today = date
-    pushed_path = P("pushed.json")
-    pushed = json.load(open(pushed_path)) if os.path.exists(pushed_path) else {}
-    import datetime
-    cutoff = (datetime.date.fromisoformat(today) - datetime.timedelta(days=30)).isoformat()
-    pushed = {k: v for k, v in pushed.items() if v >= cutoff}
-    for c in report["categories"]:
-        for it in c["items"]:
-            pushed[it["repo"]] = today
-    json.dump(pushed, open(pushed_path, "w"), ensure_ascii=False, indent=1)
-
-    # 7) 布置到仓库工作区（workflow 负责 git add/commit/push）
-    os.makedirs(OUT_SITE, exist_ok=True)
-    # 日报 md
-    md_src = P(f"report-{date}.md")
-    ymd_dir = os.path.join(BASE, "reports", date[:4])
-    os.makedirs(ymd_dir, exist_ok=True)
-    if os.path.exists(md_src):
-        open(os.path.join(ymd_dir, f"{date}.md"), "w", encoding="utf-8").write(
-            open(md_src, encoding="utf-8").read())
-    # 数据 json
-    os.makedirs(os.path.join(BASE, "data"), exist_ok=True)
-    open(os.path.join(BASE, "data", f"{date}.json"), "w", encoding="utf-8").write(
-        json.dumps(report, ensure_ascii=False, indent=1))
-    # 网页版归档
-    web_dir = os.path.join(OUT_SITE, date[:4], date)
-    os.makedirs(web_dir, exist_ok=True)
-    idx = os.path.join(SITE_DIR, "index.html")
-    if os.path.exists(idx):
-        open(os.path.join(web_dir, "index.html"), "w", encoding="utf-8").write(
-            open(idx, encoding="utf-8").read())
-    # 「我的精选」页放到 reports_web 根（全局唯一入口）
-    saved_src = os.path.join(SITE_DIR, "saved.html")
-    if os.path.exists(saved_src):
-        open(os.path.join(OUT_SITE, "saved.html"), "w", encoding="utf-8").write(
-            open(saved_src, encoding="utf-8").read())
-
-    # 8) 重建网页版归档索引 reports_web/index.html
-    build_web_index()
-
-    print(f"[done] daily run {date}: {total} items in {len(report['categories'])} categories")
+    from report_jobs import run
+    run("daily")
 
 
 def build_web_index():
@@ -148,7 +32,7 @@ def build_web_index():
             if len(d) == 7:
                 label, tail = f"{int(d[5:7])} 月", "月报"
             else:
-                label, tail = f"{int(d[5:7])} 月 {int(d[8:10])} 日", "日报"
+                label, tail = f"{int(d[5:7])} 月 {int(d[8:10])} 日", "精选周报" if d.endswith("-weekly") else "日报"
             items.append(f'<a class="day" href="{y}/{d}/index.html">{label}<span class="tail">{tail}</span></a>')
         items.append('</div>')
     html = f"""<!DOCTYPE html>
@@ -185,7 +69,8 @@ def build_web_index():
 <div class="nav"><a href="saved.html">★ 我的精选</a></div>
 {''.join(items) if items else '<div class="empty">暂无归档，敬请期待</div>'}
 </div></body></html>"""
-    open(os.path.join(root, "index.html"), "w", encoding="utf-8").write(html)
+    with open(os.path.join(root, "index.html"), "w", encoding="utf-8") as out:
+        out.write(html)
 
 
 if __name__ == "__main__":

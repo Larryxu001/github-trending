@@ -8,6 +8,10 @@ on:
     # 不依赖静态部署。忽略它可避免「每次收藏都触发一次 pages 部署」的无谓排队。
     paths-ignore:
       - 'saved.json'
+      - 'collected.json'
+      - 'deliveries.json'
+      - 'last_push.json'
+      - 'pushed.json'
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:

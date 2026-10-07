@@ -2,6 +2,7 @@
 """Fetch GitHub Trending (daily/weekly/monthly), enrich via GitHub API,
 dedupe against pushed.json (30-day window), output items.json with NEW items only."""
 import json, re, os, sys, time, urllib.request, datetime
+from report_state import now, load, write
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 UA = {"User-Agent": "github-trending-bot/1.0"}
@@ -52,10 +53,12 @@ def main():
     for since in ("daily", "weekly", "monthly"):
         try:
             lists[since] = parse_trending(since)
+            if not lists[since]:
+                raise RuntimeError(f"{since}: empty or unrecognized Trending page")
             print(f"[ok] {since}: {len(lists[since])} repos", file=sys.stderr)
         except Exception as e:
             print(f"[warn] {since} fetch failed: {e}", file=sys.stderr)
-            lists[since] = []
+            raise RuntimeError(f"Incomplete Trending collection: {since}") from e
         time.sleep(1)
 
     # merge, keep best (lowest) rank, record which lists
@@ -70,17 +73,28 @@ def main():
     pushed_path = os.path.join(BASE, "pushed.json")
     pushed = json.load(open(pushed_path)) if os.path.exists(pushed_path) else {}
     # 用北京时间（UTC+8）日期，避免 Actions 的 UTC 时区导致日报日期在边缘时段偏移一天
-    today = datetime.date.fromtimestamp(time.time() + 8 * 3600)
+    today = now().date()
     cutoff = today - datetime.timedelta(days=30)
     pushed = {k: v for k, v in pushed.items()
               if datetime.date.fromisoformat(v) > cutoff}
-    json.dump(pushed, open(pushed_path, "w"), indent=1)
+    collect = "--collect" in sys.argv
+    catalog_path = os.path.join(BASE, "collected.json")
+    catalog = load(catalog_path, {"items": {}}) if collect else {"items": {}}
 
     new_items = []
+    discoveries = 0
     for path, meta in sorted(merged.items(), key=lambda kv: kv[1]["best_rank"]):
-        if path in pushed:
+        if not collect and path in pushed:
             continue
-        info = {"repo": path, "lists": meta["lists"], "stars": None,
+        if path in catalog["items"]:
+            info = catalog["items"][path]
+            info["lists"] = sorted(set(info["lists"] + meta["lists"]))
+            info["last_seen"] = now().isoformat()
+            if info.get("metadata_date") == str(today):
+                continue
+        else:
+            discoveries += 1
+            info = {"repo": path, "lists": meta["lists"], "stars": None,
                 "owner": path.split("/")[0], "homepage": "", "description": "",
                 "language": "", "topics": [], "updated": ""}
         try:
@@ -92,13 +106,24 @@ def main():
             info["topics"] = d.get("topics") or []
             info["owner"] = d.get("owner", {}).get("login", info["owner"])
             info["updated"] = (d.get("pushed_at") or "")[:10]
+            info["metadata_date"] = str(today)
         except Exception as e:
             print(f"[warn] api {path}: {e}", file=sys.stderr)
         if not info["updated"]:
             info["updated"] = last_update_via_atom(path)
         new_items.append(info)
+        if collect:
+            info.setdefault("first_seen", now().isoformat())
+            info["last_seen"] = now().isoformat()
+            catalog["items"][path] = info
         time.sleep(0.5)
 
+    if collect:
+        catalog["last_collected"] = now().isoformat()
+        catalog["list_counts"] = {k: len(v) for k, v in lists.items()}
+        write(catalog_path, catalog)
+        print(f"[done] collected {len(merged)} repos; {discoveries} first discoveries")
+        return
     out = os.path.join(BASE, "items.json")
     json.dump({"date": str(today), "items": new_items,
                "skipped_already_pushed": len(merged) - len(new_items)},

@@ -1,95 +1,37 @@
 name: Monthly Trending Report
 
 on:
-  schedule:
-    # 每月 28-31 日 09:00 (北京时间 UTC+8 = 01:00 UTC)；程序内判断是否当月最后一天
-    - cron: "0 1 28-31 * *"
-  workflow_dispatch: {}   # 允许手动触发
+  workflow_dispatch: {}
 
 permissions:
   contents: write
-  actions: write   # 必需：gh workflow run 触发 pages 部署需要 actions 写权限
+  actions: write
+
+# All report/state writers use the same lock; never cancel a running sender.
+concurrency:
+  group: trending-state
+  queue: max
+  cancel-in-progress: false
 
 jobs:
   monthly:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Check last day of month
-        id: is_last_day
-        shell: bash
-        run: |
-          is_last=$(python -c "import datetime; t=datetime.date.today(); n=t.replace(day=28)+datetime.timedelta(days=4); last=n-datetime.timedelta(days=n.day); print('true' if t==last else 'false')")
-          echo "is_last=$is_last" >> "$GITHUB_OUTPUT"
-          if [ "$is_last" = "true" ]; then
-            echo "today is the last day of the month, will build monthly report"
-          else
-            echo "not the last day of the month, skip monthly report"
-          fi
-
-      - name: Build monthly report
-        if: steps.is_last_day.outputs.is_last == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: |
-          python build_monthly.py
-          python render_html.py monthly-$(date +%Y-%m).json
-          python render_md.py monthly-$(date +%Y-%m).json
-
-      - name: Push to Feishu
-        if: steps.is_last_day.outputs.is_last == 'true'
-        env:
-          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-        run: |
-          python push.py monthly-$(date +%Y-%m).json
-
-      - name: Layout into repo (monthly archive + web)
-        if: steps.is_last_day.outputs.is_last == 'true'
-        run: |
-          python - <<'PY'
-          import os, shutil
-          month = __import__('datetime').date.today().strftime("%Y-%m")
-          src = f"monthly-{month}.json"
-          # 月报 Markdown 归档
-          md = f"monthly-{month}.md"
-          if os.path.exists(md):
-              os.makedirs("monthly", exist_ok=True)
-              shutil.copy(md, f"monthly/{month}.md")
-          # 网页版归档（含往期月报目录）
-          os.makedirs(f"reports_web/{month}", exist_ok=True)
-          if os.path.exists("site/index.html"):
-              shutil.copy("site/index.html", f"reports_web/{month}/index.html")
-          # 数据归档
-          os.makedirs("data", exist_ok=True)
-          shutil.copy(src, f"data/{month}.json")
-          print(f"laid out monthly {month}")
-          PY
-
-      - name: Commit & push
-        if: steps.is_last_day.outputs.is_last == 'true'
+      - name: Configure Git and refresh state after acquiring lock
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git restore --staged saved.json || true
-          if git diff --cached --quiet; then
-            echo "no changes to commit"
-          else
-            git commit -m "月报 $(date -u +%Y-%m) · 自动生成"
-            git pull --rebase origin main || git pull --rebase origin main
-            git push
-          fi
-
-      - name: Trigger Pages deploy
-        if: steps.is_last_day.outputs.is_last == 'true'
-        # GITHUB_TOKEN 的 push 不会触发 pages.yml 的 on:push，需显式触发
+          git pull --ff-only origin main
+      - name: Run monthly
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          gh workflow run pages.yml --ref main || echo "pages trigger skipped (already queued)"
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: python report_jobs.py monthly

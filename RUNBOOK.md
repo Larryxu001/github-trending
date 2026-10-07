@@ -1,82 +1,43 @@
-# GitHub Trending 每日分析推送 — 运行说明
+# GitHub Trending 运行与恢复
 
-> **当前主流程已迁移到 GitHub Actions**（仓库 `Larryxu001/github-trending`），
-> 每天 09:00（北京时间）由 GitHub 服务器自动运行，**不再消耗 WorkBuddy 积分**。
+## 调度与层次
 
-## 一、线上自动运行（GitHub Actions，主流程）
+全部使用北京时间。每 3 小时采集三榜，不发消息、不调用 AI。
+每天 09:00 发一条日报摘要；每周一 09:00 发一条精选周报；月末 09:00 发一条精选月报。
+周报只取上一个完整星期新增、仍在 `saved.json` 中的精选；月报取最近 4 期已经发送的周报快照，按 repo 去重。
+没有新项目时仍发一条明确的空期摘要，避免无法区分“没项目”和“任务失败”。
+新规则从部署后开始积累周报；启动不足 4 期会注明实际期数。历史日报不用于凑数。
 
-- **触发**：每天 09:00（`cron: 0 1 * * *` UTC），也可在仓库 Actions 页手动 Run workflow。
-- **入口**：`.github/workflows/daily.yml` → `python run_daily.py`
-- **流程**：抓榜 → 去重 → 复用/自动生成描述 → 渲染 → 推送飞书 → 归档 → 提交回仓库
-- **密钥**：飞书 webhook 存 `FEISHU_WEBHOOK` secret，经环境变量注入；token 用 `${{ github.token }}`
-- **归档**：`reports/`（Markdown）、`reports_web/`（网页版）、`data/`（JSON）、`archive/`（当月）
+## 一次发送的保护
 
-## 二、本地手动运行（开发/调试用）
+唯一周期工作流是 collect.yml，每次采集后按日期运行到期日报、周报、月报，避免同一时间多个定时任务相互挤掉。日/周/月工作流保留手动入口；收藏 Worker 的 9 点触发继续作为日报兜底。
+09:00 前只采集；09:00 后如果本期报告已经成功发送则跳过。准备或部署失败可在之后的采集周期恢复；不确定的发送仍禁止自动重发。
 
-```
-PY=/Users/larryxu/.workbuddy/binaries/python/versions/3.13.12/bin/python3
-cd ~/.workbuddy/github-trending-bot
-cp config.local.json config.json   # 本地填真实 webhook/token
-$PY run_daily.py
-```
+所有采集/报告/keepalive 工作流共享 `trending-state` 并发组，不取消正在发送的任务。
+工作流拿到锁之后重新拉取 main，读取最新状态。Worker 的额外 workflow_dispatch 也受同一守卫约束。
+每期流程：生成完整报告并归档 → 提交 prepared → Pages 部署成功 → 提交 sending → 调用一次飞书 → 提交 sent。
+日报 sent 后更新 `pushed.json` 与 `last_push.json`；已有历史 `last_push.json` 标记继续生效。
+日报同时避开最近 30 天处于 sent/sending/unknown 的报告项目，防止发送后回执提交失败造成次日重复。
 
-或两段式（可中途人工介入写描述）：
-```
-$PY pipeline.sh prepare    # 抓榜 + 去重 + 骨架
-# （可选）人工编辑 new_desc.json
-$PY pipeline.sh finalize   # 合并 + 渲染 + 推送 + 归档
-```
+飞书 webhook 没有本项目可用的服务端幂等键。网络超时可能发生在消息已被接收之后，所以不能保证“绝不重复”和“任何故障都自动补发”同时成立。本项目优先避免重复：不自动重试不确定的发送。
 
-## 三、脚本职责
+## 故障恢复
 
-| 脚本 | 作用 |
-|---|---|
-| `run_daily.py` | Actions 每日流水线入口（无 LLM 依赖） |
-| `pipeline.sh` | 本地两段式流水线（prepare / finalize） |
-| `fetch_trending.py` | 抓日/周/月三榜 + API 补全 + 30 天去重 → items.json |
-| `prepare_report.py` | 骨架 + 描述复用 → report.json / pending.json |
-| `desc_auto.py` | 自动生成中文描述（内置表 + 启发式模板） |
-| `apply_desc.py` | 合并描述 → report.json + desc_cache.json |
-| `render_html.py` / `render_md.py` | report.json → 网页版 / Markdown |
-| `push.py` | 推送飞书（交互式卡片，官网可点击） |
-| `build_monthly.py` | 月报构建（合并当月归档） |
+- 抓榜有一榜失败/解析为空：任务失败，保留上次采集数据；下一次采集再试。
+- 缺描述、状态 JSON 损坏：任务失败，不假装为空报告继续发送。
+- prepared：还未尝试发送，可以手动重跑同一工作流；复用已生成的报告，不重新消耗 AI token。
+- sending/unknown：可能已经发到飞书，工作流会报错并停止重发。先检查对应日期的飞书消息；确认收到则把该期状态改为 sent，确认未收到才改回 prepared，再提交并重跑。
+- sent：重复触发直接跳过。
+- Pages 失败：不发消息，修复部署后重跑。
+- 飞书 secret 缺失/回执不是明确成功：任务失败，检查 Actions 日志和对应消息；按 sending/unknown 处理。
 
-## 四、状态文件
+`deliveries.json` 是持久化发送状态和冻结报告，勿随意删除。不要直接运行历史 `push.py` 或旧两阶段流水线绕过去重。
 
-| 文件 | 作用 |
-|---|---|
-| `pushed.json` | 去重唯一依据（30 天窗口，自动清理过期） |
-| `desc_cache.json` | 描述唯一依据（复用即零成本） |
-| `config.json` | 仓库内无密钥模板；本地密钥放 config.local.json（gitignored） |
+## 配置与外部依赖
 
-## 五、硬规则
+`FEISHU_WEBHOOK` 和 `DEEPSEEK_API_KEY` 放 GitHub Secrets；不要把真实凭证写入 `config.json`。
+收藏 Worker 仍位于 `~/.workbuddy/github-trending-save-worker/`，本次没有更改它的部署、鉴权或收藏数据。
+Worker 可额外触发 daily.yml，但不能绕过 daily.yml 的并发锁、9 点前守卫和每期发送状态。
+GitHub schedule 是尽力调度，可能延迟；本项目未添加新的外部告警渠道。
 
-1. 30 天内已推送的项目**绝不重复推送**。
-2. `desc_cache.json` 里已有描述的项目**绝不重写**。
-3. 推送失败时**绝不**写 pushed.json、绝不归档。
-4. 报告一律中文，星数千分位，官网缺失统一写「无」。
-5. **密钥绝不入库**：webhook/token 只走环境变量或 config.local.json。
-
-## 六、收藏功能维护（CF Worker + saved.json）
-
-- **真源**：仓库根 `saved.json`（Worker 经 GitHub API 实时读写，无 CDN 缓存延迟）。
-- **Worker 目录**：`~/.workbuddy/github-trending-save-worker/`（worker.js + wrangler.toml）。
-- **部署命令**（wrangler 不在 PATH，npx 直跑会被 SIGTERM，必须用 npx 缓存里的完整路径）：
-  ```
-  cd ~/.workbuddy/github-trending-save-worker
-  ~/.npm/_npx/32026684e21afda6/node_modules/.bin/wrangler deploy
-  ```
-- **改前端收藏 JS 后必须**：重新 `render_html.py` / `render_saved.py`，并把
-  `site/index.html` 同步到 `reports_web/<年>/<日期>/index.html`、`site/saved.html`
-  同步到 `reports_web/saved.html`，再 commit push（Pages 自动部署）。
-- **线上自检命令**：
-  ```
-  curl -s https://github-trending-save.larryxu-4e5.workers.dev          # GET 应返回 {ok:true,items:[...]}
-  curl -s https://larryxu001.github.io/github-trending/saved.html | grep -c "程序错误"  # ≥1 说明新版已部署
-  ```
-- **周报**：`weekly.yml` 每周一 09:00 北京时间跑 `sync_saved.py`，只推近 7 天
-  （按 `saved_at`，北京时间口径，与 Worker 写入口径一致）。
-- **已知坑**：前端 catch 里把 JS 异常报成「网络错误」会严重误导排查；错误提示必须
-  带 `err.message` 并区分网络/程序错误（已实现）。
-
-
+验证命令：`python3 -m unittest discover -s tests -v`。

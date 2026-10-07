@@ -24,7 +24,7 @@ CAT_ORDER = ["Agent 技能与插件", "Agent 基础设施与框架", "Agent 效�
 def load(name, default):
     try:
         return json.load(open(P(name), encoding="utf-8"))
-    except Exception:
+    except FileNotFoundError:
         return default
 
 

@@ -1,54 +1,5 @@
 #!/usr/bin/env python3
-"""每周「精选回顾」推送。
-
-读取仓库 saved.json（收藏真源），生成飞书「我的精选」回顾卡片并推送。
-由 GitHub Actions weekly.yml 每周调用，零积分、自动。
-
-Usage:
-  python sync_saved.py            # 读 saved.json，推飞书
-  python sync_saved.py --no-push  # 仅生成 saved_report.json 不推送
-"""
-import json, os, sys, time, urllib.request, datetime
-
-BASE = os.path.dirname(os.path.abspath(__file__))
-UA = {"User-Agent": "github-trending-bot/1.0", "Content-Type": "application/json"}
-
-FEISHU_COLOR = {"🧩": "violet", "🤖": "blue", "⚡": "yellow", "🧠": "carmine",
-                "🎨": "green", "🛠": "indigo", "🔐": "red", "📚": "orange",
-                "📦": "grey", "💾": "wathet", "📱": "turquoise", "⛓": "purple"}
-
-
-def post(url, payload):
-    # 带重试：飞书 webhook 偶发 429/网络抖动时自动重试，避免丢卡片
-    last_err = None
-    for attempt in range(4):
-        try:
-            req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=UA)
-            with urllib.request.urlopen(req, timeout=30) as r:
-                body = r.read().decode()
-            try:
-                resp = json.loads(body)
-                code = resp.get("code", resp.get("errcode", 0))
-                if code == 9499 or code == 125404:  # 频率限制，等待后重试
-                    last_err = f"feishu rate limit code={code}"
-                    time.sleep(3 * (attempt + 1))
-                    continue
-                if code != 0:
-                    raise RuntimeError(f"feishu error code={code}: {body}")
-            except json.JSONDecodeError:
-                pass
-            return body
-        except RuntimeError:
-            raise
-        except Exception as e:
-            last_err = e
-            time.sleep(2 * (attempt + 1))
-    raise RuntimeError(f"feishu post failed after retries: {last_err}")
-
-
-def stars_fmt(n):
-    return f"{n:,}" if isinstance(n, int) else "—"
-
+"""Build selected-project data; compatibility entry point for the weekly job."""
 
 def build_report(items):
     """把扁平收藏列表整理成 {date, new_count, skipped, categories} 结构。"""
@@ -75,106 +26,10 @@ def build_report(items):
     return {"date": "精选", "new_count": len(items), "skipped": 0, "categories": categories}
 
 
-def feishu_cover(report):
-    els = [{"tag": "div", "text": {"tag": "lark_md", "content":
-            f"我的精选 ｜ 共收藏 **{report['new_count']}** 个项目 ｜ {len(report['categories'])} 个分类"}}]
-    els.append({"tag": "note", "elements": [{"tag": "plain_text",
-                "content": f"共 {len(report['categories'])} 张卡片 · 按分类浏览"}]})
-    return {"config": {"wide_screen_mode": True},
-            "header": {"template": "red",
-                       "title": {"tag": "plain_text", "content": "★ 我的精选 · GitHub 项目收藏"}},
-            "elements": els}
-
-
-def feishu_cat_card(cat):
-    """单分类生成一张或多张飞书卡片。
-
-    飞书卡片元素上限约 50 个，单项目约占 3~4 个元素（标题+备注+标签+元信息+hr）。
-    为避免分类内项目过多导致超限被飞书拒收、整卡丢失，这里按每卡最多 12 个项目
-    拆分（约 48 元素上限，留安全余量），保证周报任何情况下都能完整送达。
-    """
-    color = FEISHU_COLOR.get(cat["emoji"], "blue")
-    MAX_PER_CARD = 12
-    items = cat["items"]
-    cards = []
-    for chunk_start in range(0, len(items), MAX_PER_CARD):
-        chunk = items[chunk_start:chunk_start + MAX_PER_CARD]
-        els = []
-        for i, it in enumerate(chunk, chunk_start + 1):
-            site = "无" if it["site"] == "无" else f"[{it['site']}]({it['site']})"
-            els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-                f"**{i}. [{it['repo']}]({it['url']})**　⭐ {stars_fmt(it['stars'])}\n{it['desc']}"}})
-            # 用户收藏时写的备注和标签：周报的核心价值，必须带上
-            if it.get("note"):
-                els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-                    f"📝 **我的备注**：{it['note']}"}})
-            if it.get("tags"):
-                tag_line = " ".join(f"`#{t}`" for t in it["tags"])
-                els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-                    f"🏷 {tag_line}"}})
-            els.append({"tag": "div", "text": {"tag": "lark_md", "content":
-                f"👤 {it['owner']} ｜ 🔗 {site}"}})
-            els.append({"tag": "hr"})
-        title = f"{cat['emoji']} {cat['name']} · {len(cat['items'])} 个项目"
-        if len(items) > MAX_PER_CARD:
-            title += f"（{chunk_start + 1}-{min(chunk_start + len(chunk), len(items))}）"
-        cards.append({"config": {"wide_screen_mode": True},
-                      "header": {"template": color, "title": {"tag": "plain_text",
-                                 "content": title}},
-                      "elements": els[:-1]})
-    return cards
-
-
-def push_feishu(url, report):
-    cards = [feishu_cover(report)]
-    for c in report["categories"]:
-        cards.extend(feishu_cat_card(c))
-    for i, card in enumerate(cards):
-        resp = post(url, {"msg_type": "interactive", "card": card})
-        print(f"  feishu card {i+1}/{len(cards)}: {resp}", file=sys.stderr)
-        time.sleep(1)
-
 
 def main():
-    no_push = "--no-push" in sys.argv
-    saved_path = os.path.join(BASE, "saved.json")
-    all_items = json.load(open(saved_path, encoding="utf-8")).get("items", [])
-
-    # 每周精选回顾 = 只推「最近 7 天」新收藏的项目，避免重复推送历史收藏、卡片无限膨胀
-    # 注意：GitHub Actions 的 ubuntu 默认 UTC 时区，这里显式用北京时间（UTC+8），
-    # 避免周一边缘时段（北京 00:00~08:00）的收藏被 UTC 日期误判为「上周」而漏推。
-    today = datetime.date.fromtimestamp(
-        time.time() + 8 * 3600)  # 北京时间日期
-    cutoff = today - datetime.timedelta(days=7)
-    items = []
-    for it in all_items:
-        d = (it.get("saved_at") or "")[:10]
-        try:
-            if d and datetime.date.fromisoformat(d) >= cutoff:
-                items.append(it)
-        except ValueError:
-            items.append(it)  # 无有效日期则纳入，保守起见不丢
-
-    if not items:
-        print("[done] no new saved items in last 7 days, nothing to push", file=sys.stderr)
-        return
-
-    report = build_report(items)
-    json.dump(report, open(os.path.join(BASE, "saved_report.json"), "w"),
-              ensure_ascii=False, indent=1)
-    print(f"[done] saved_report.json built: {report['new_count']} items (last 7d) in "
-          f"{len(report['categories'])} categories")
-
-    if no_push:
-        return
-
-    cfg = json.load(open(os.path.join(BASE, "config.json")))
-    feishu = os.environ.get("FEISHU_WEBHOOK") or cfg.get("feishu_webhook") or ""
-    if feishu:
-        print("pushing to feishu...", file=sys.stderr)
-        push_feishu(feishu, report)
-    else:
-        print("[warn] no feishu webhook configured, skip push", file=sys.stderr)
+    from report_jobs import run
+    run("weekly")
 
 
 if __name__ == "__main__":

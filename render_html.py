@@ -27,13 +27,13 @@ def masthead_info(report):
         y, m = int(date[:4]), int(date[5:7])
         issue = (y - 2026) * 12 + (m - 10) + 1
         title = "Github开源趋势月报"
-        stand = "本月 GitHub Trending 上榜项目全景总结，一期读懂开源风向标"
+        stand = f"最近 {len(report.get('source_weeks', []))} 期精选周报汇总，按项目去重" if report.get("kind") == "monthly" else "本月 GitHub Trending 上榜项目全景总结，一期读懂开源风向标"
         line = (f"<b>{y} 年 {m} 月</b>　·　第 {issue} 期（月刊）　·　"
                 f"本月共收录 <b>{report['new_count']}</b> 个项目")
         return title, stand, line, f"VOL.M{issue:02d}"
     issue = (datetime.date.fromisoformat(date) - EPOCH).days + 1
-    title = "Github开源趋势日报"
-    stand = "GitHub Trending 日 / 周 / 月三榜精选，人工解读每一个上榜项目"
+    title = "Github开源趋势精选周报" if report.get("kind") == "weekly" else "Github开源趋势日报"
+    stand = "本期收藏精选，保留备注与标签" if report.get("kind") == "weekly" else "每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目"
     line = (f"<b>{cn_date(date)}</b>　·　第 {issue} 期　·　"
             f"本期新收录 <b>{report['new_count']}</b> 个项目　·　30 天去重跳过 {report['skipped']} 个")
     return title, stand, line, f"VOL.{issue:03d}"
@@ -42,7 +42,7 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
     date = report["date"]
     title, stand, dateline, vol = masthead_info(report)
     monthly = len(date) == 7
-    doc_title = f"GitHub Trending {'月报' if monthly else '日报'} · {date}"
+    doc_title = f"GitHub Trending {'月报' if monthly else '精选周报' if report.get('kind') == 'weekly' else '日报'} · {date}"
     sections = []
     toc_items = []
     for si, cat in enumerate(report["categories"], 1):
@@ -78,6 +78,8 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
             <button class="save-btn" data-meta="{esc(meta)}" aria-label="收藏项目">☆ 收藏</button>
           </div>
           <p class="desc">{esc(it['desc'])}</p>
+          {('<p class="desc"><b>我的备注：</b>' + esc(it['note']) + '</p>') if it.get('note') else ''}
+          {('<p class="desc">标签：' + esc(' · '.join(it['tags'])) + '</p>') if it.get('tags') else ''}
           <div class="byline">
             <span>{esc(it['owner'])}</span><i>·</i>
             <span>更新于 {esc(it['updated'])}</span><i>·</i>

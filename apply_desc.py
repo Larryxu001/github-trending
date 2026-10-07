@@ -31,8 +31,9 @@ CAT_ORDER = ["Agent 技能与插件", "Agent 基础设施与框架", "Agent 效�
 
 def load(name, default):
     try:
-        return json.load(open(P(name), encoding="utf-8"))
-    except Exception:
+        with open(P(name), encoding="utf-8") as src:
+            return json.load(src)
+    except FileNotFoundError:
         return default
 
 
@@ -69,6 +70,9 @@ def main():
     if sys.argv[1:] == ["--check"]:
         print(f"missing descriptions: {len(still)} -> {still}")
         return
+
+    if still:
+        raise RuntimeError(f"Missing descriptions; report not published: {still}")
 
     cats = {}
     for repo, it in flat.items():

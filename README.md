@@ -1,67 +1,46 @@
 # github-trending
 
-Daily analysis of GitHub Trending's daily, weekly, and monthly lists, delivered to Feishu and archived in this repository.
+GitHub Trending 持续收录与精选分层日报。主流程由 GitHub Actions 自动运行，不需要 Codex 或 WorkBuddy 在线。
 
-## What it does
+## 运行规则（北京时间 UTC+8）
 
-Every day at 09:00 Beijing time, GitHub Actions automatically:
+| 流程 | 时间 | 内容 | AI token |
+|---|---|---|---|
+| 采集 | 每 3 小时，00/03/06/09/12/15/18/21 点 | 保存日、周、月三榜出现的项目，不发飞书 | 不消耗 |
+| 日报 | 每天 09:00 | 累计采集、尚未推送的新项目，30 天项目去重 | 仅新项目描述使用 DeepSeek，缓存复用 |
+| 精选周报 | 每周一 09:00 | 上周一至本周一（不含本周一）新增且仍在收藏里的项目 | 不消耗 |
+| 精选月报 | 月末 09:00 | 当时最近 4 期已发送精选周报的项目并集，同项目去重 | 不消耗 |
 
-1. Fetches GitHub Trending's daily, weekly, and monthly lists.
-2. Applies **30-day deduplication** using `pushed.json`, avoiding repeat delivery of the same project within a month.
-3. Analyzes each new project's developer, stars, website, latest update, purpose, and category.
-4. Reuses descriptions already in `desc_cache.json` to avoid duplicate work.
-5. Renders a Chinese Markdown daily report and a polished web edition.
-6. Sends the report to a Feishu group bot.
-7. Archives it in this repository and rebuilds the index.
+每期只发送 **一条飞书摘要消息 + 完整网页链接**。详细描述、备注、标签保存在网页和 Markdown 中。
+月报可能跨月；不足 4 期时标明实际来源期数，不把旧日报混入精选月报。
+GitHub Actions 定时执行可能延迟，09:00 是计划时间。
 
-## Directory structure
+## 主流程
 
+- `report_jobs.py`：统一采集、报告构建、归档、部署、发送入口。
+- `fetch_trending.py --collect`：采集并累计保存到 `collected.json`，每天刷新一次项目元数据。
+- `prepare_report.py / desc_auto.py / apply_desc.py`：生成日报描述，缓存复用，缺描述时停止发布。
+- `report_state.py`：显式北京时间与原子 JSON 写入。
+- `deliveries.json`：持久化每期报告和发送状态，发送前必须提交到远程。
+- `weekly/YYYY-MM-DD.json`：周报快照，是月报来源；`monthly/YYYY-MM.json`：月报快照。
+- `reports/`、`data/`、`archive/`、`reports_web/`：完整报告及公开网页。
+- `saved.json`：收藏真源，由收藏 Worker 管理，Actions 不提交此文件。
+
+网页版：[往期归档](https://larryxu001.github.io/github-trending/)。
+
+## 密钥与运行
+
+GitHub Secrets：`FEISHU_WEBHOOK`、可选 `DEEPSEEK_API_KEY`。工作流注入 `GH_TOKEN=${{ github.token }}`。
+`config.json` 只保留无密钥模板。没有 DeepSeek key 时使用规则描述。
+
+在 Actions 手动运行 `Collect Trending` 只采集，不发送消息。
+手动运行日报、周报或月报使用同一去重守卫；北京时间 09:00 前跳过发送，月报非月末跳过。
+旧入口 `run_daily.py / sync_saved.py / build_monthly.py` 转到统一流程；旧 `push.py` 为历史底层脚本，不应直接调用。
+
+## 验证
+
+```bash
+python3 -m unittest discover -s tests -v
 ```
-fetch_trending.py      Fetch lists and deduplicate → items.json
-prepare_report.py      Build skeleton and reuse descriptions → report.json / pending.json
-desc_auto.py           Generate Chinese descriptions (built-in map and heuristic templates)
-apply_desc.py          Merge descriptions → report.json + desc_cache.json
-render_html.py         report.json → newspaper-style web edition
-render_md.py           report.json → Markdown
-push.py                Send Feishu interactive cards
-run_daily.py           Daily Actions pipeline entry point
-pipeline.sh            Local two-stage pipeline (prepare / finalize)
-build_monthly.py       Build monthly report from the month's archives
-desc_cache.json        Description cache (repo → category/emoji/description/website)
-pushed.json            30-day deduplication history
-reports/YYYY/          Daily Markdown archive
-reports_web/YYYY/      Web archive and index
-data/YYYY-MM-DD.json   Structured data
-archive/               Current month's daily archive, used by monthly reports
-state/                 State snapshots
-```
 
-## Web edition
-
-Hosted free on GitHub Pages: **https://larryxu001.github.io/github-trending/**
-
-Daily and monthly web reports are archived in `reports_web/` and deployed automatically by `pages.yml`.
-
-## Configuration
-
-- **Feishu webhook**: store it in GitHub Secrets as `FEISHU_WEBHOOK`, injected through the runtime environment.
-  **Never commit it**; keep feishu_webhook empty in `config.json`.
-- **GitHub token**: the workflow injects `${{ github.token }}` as the `GH_TOKEN` environment variable
-  to increase GitHub API limits. Public repository data itself does not require an additional token.
-- **DeepSeek API key** (optional): store `DEEPSEEK_API_KEY` in GitHub Secrets for AI-generated Chinese summaries and categories.
-  **When absent, generation falls back automatically** to built-in rules and templates, at no cost but with lower description quality.
-- For local development, put actual configuration in `config.local.json`, which is ignored by .gitignore.
-
-## Manual execution
-
-In the repository's **Actions** tab, select `Daily Trending Report` or `Monthly Trending Report`, then **Run workflow**.
-
-## Notes
-
-- The deduplication window is 30 days; older entries in `pushed.json` are removed automatically.
-- Descriptions use AI when `DEEPSEEK_API_KEY` is configured (recommended); otherwise they use a curated built-in map and
-  heuristic classification templates based on topics/language. To improve a project's description manually,
-  edit `DESC_MAP` in `desc_auto.py` or `desc_cache.json`, then commit the change.
-- Delivery channel: **Feishu only**; WeCom has been removed.
-- Daily reports run at 09:00 Beijing time, equivalent to cron `0 1 * * *` in UTC.
-- Monthly reports run at 09:00 on the month's final day, using cron `0 1 28-31 * *` with an in-program month-end check.
+故障恢复、重复发送保护与限制见 [RUNBOOK.md](RUNBOOK.md)。
