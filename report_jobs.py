@@ -16,6 +16,7 @@ from report_state import BASE, now, load, write
 from sync_saved import build_report
 from render_html import render
 from run_daily import build_web_index
+from push import stars_fmt, lists_fmt
 
 
 def sh(*args):
@@ -176,14 +177,27 @@ def payload(report):
     lines.extend(f"{c['emoji']} {c['name']}：{len(c['items'])} 个" for c in report["categories"])
     if not report["new_count"]:
         lines.append("本期没有新增项目。")
+    elements = [{"tag": "div", "text": {"tag": "lark_md", "content": "\n".join(lines)}}]
+    for cat in report["categories"]:
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content":
+            f"**{cat['emoji']} {cat['name']} · {len(cat['items'])} 个项目**"}})
+        for i, it in enumerate(cat["items"], 1):
+            site = "无" if it["site"] == "无" else f"[{it['site']}]({it['site']})"
+            content = (f"**{i}. [{it['repo']}]({it['url']})**　⭐ {stars_fmt(it['stars'])}\n"
+                       f"{it['desc']}\n"
+                       f"👤 {it['owner']} ｜ 📅 更新 {it['updated']} ｜ 🏷 {lists_fmt(it['lists'])} ｜ 🔗 {site}")
+            if it.get("note"):
+                content += f"\n📝 **我的备注**：{it['note']}"
+            if it.get("tags"):
+                content += "\n🏷 " + " ".join(f"`#{tag}`" for tag in it["tags"])
+            elements.append({"tag": "div", "text": {"tag": "lark_md", "content": content}})
+    elements.append({"tag": "action", "actions": [{"tag": "button", "type": "primary",
+        "text": {"tag": "plain_text", "content": "查看完整报告"},
+        "url": f"{root}/{date[:4]}/{stem}/index.html"}]})
     return {"msg_type": "interactive", "card": {
         "config": {"wide_screen_mode": True},
         "header": {"template": "indigo", "title": {"tag": "plain_text", "content": f"GitHub Trending · {label}"}},
-        "elements": [
-            {"tag": "div", "text": {"tag": "lark_md", "content": "\n".join(lines)}},
-            {"tag": "action", "actions": [{"tag": "button", "type": "primary",
-                "text": {"tag": "plain_text", "content": "查看完整报告"},
-                "url": f"{root}/{date[:4]}/{stem}/index.html"}]}]}}
+        "elements": elements}}
 
 
 def verify_public_report(report):

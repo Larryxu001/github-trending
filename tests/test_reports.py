@@ -23,6 +23,20 @@ def item(repo, saved_at="2026-10-06", **extra):
 
 
 class ReportsTest(unittest.TestCase):
+    def test_feishu_message_includes_every_project_description_and_metadata(self):
+        report = jobs.weekly_report({"items": [item("a/first"), item("b/second")]}, datetime.date(2026, 10, 12))
+        message = jobs.payload(report)
+        content = "\n".join(e.get("text", {}).get("content", "") for e in message["card"]["elements"])
+        for cat in report["categories"]:
+            for it in cat["items"]:
+                self.assertIn(f"[{it['repo']}]({it['url']})", content)
+                self.assertIn(it["desc"], content)
+                self.assertIn(it["owner"], content)
+                self.assertIn(it["updated"], content)
+                self.assertIn(it["note"], content)
+                self.assertIn("#工具", content)
+        self.assertEqual(content.count("项目说明"), 2)
+
     def test_collection_preserves_repos_that_leave_the_board_and_never_sends(self):
         with tempfile.TemporaryDirectory() as td:
             fixed = datetime.datetime(2026, 10, 7, 12, tzinfo=report_state.BJ)
