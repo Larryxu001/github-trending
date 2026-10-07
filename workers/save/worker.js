@@ -90,7 +90,7 @@ async function writeSaved(repo, branch, token, items, sha) {
 
 export default {
   // Cloudflare Cron 定时触发：每天调 GitHub workflow_dispatch 触发日报 pipeline，
-  // 作为 GitHub 自身 schedule（best-effort、可能延迟）的免费兜底，确保「当天一定推送」。
+  // 作为 GitHub 自身 schedule（best-effort、可能延迟）的免费兜底。
   async scheduled(event, env, ctx) {
     const health = event.cron === "20 3 * * *";
     const workflow = health ? "health.yml" : "daily.yml";
@@ -181,6 +181,7 @@ export default {
     }
     if (!meta || typeof meta.repo !== "string" || !/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(meta.repo)) return json({error:"repo 格式不正确"},400);
     for (const key of ["url","site"]) {
+      if (meta[key] !== undefined && (typeof meta[key] !== "string" || meta[key].length > 4000)) return json({error:"链接字段不合法"},400);
       if (meta[key] && meta[key] !== "无") {
         try { if (!["https:","http:"].includes(new URL(meta[key]).protocol)) throw new Error(); }
         catch (_) { return json({error:"仅允许 HTTP/HTTPS 链接"},400); }
@@ -190,6 +191,7 @@ export default {
       if (meta[key] !== undefined && (typeof meta[key] !== "string" || meta[key].length > 4000)) return json({error:"字段不合法"},400);
     }
     if (meta.stars !== undefined && (!Number.isSafeInteger(meta.stars) || meta.stars < 0)) return json({error:"stars 不合法"},400);
+    if (meta._remove !== undefined && typeof meta._remove !== "boolean") return json({error:"删除标志不合法"},400);
     if (meta.tags !== undefined && (!Array.isArray(meta.tags) || meta.tags.length > 30 || meta.tags.some(t=>typeof t !== "string" || t.length > 100))) return json({error:"tags 不合法"},400);
 
     try {
@@ -212,7 +214,7 @@ export default {
             ...cur,
             url: meta.url || cur.url,
             owner: meta.owner || cur.owner,
-            stars: meta.stars || cur.stars,
+            stars: meta.stars ?? cur.stars,
             category: meta.category || cur.category,
             emoji: meta.emoji || cur.emoji,
             desc: meta.desc || cur.desc,
