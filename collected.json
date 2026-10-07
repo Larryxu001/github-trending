@@ -22,7 +22,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:08.700289+08:00",
-   "last_seen": "2026-10-07T10:00:08.700303+08:00"
+   "last_seen": "2026-10-07T18:50:19.786174+08:00"
   },
   "mvschwarz/openrig": {
    "repo": "mvschwarz/openrig",
@@ -50,7 +50,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:09.411508+08:00",
-   "last_seen": "2026-10-07T10:00:09.411519+08:00"
+   "last_seen": "2026-10-07T18:50:19.786190+08:00"
   },
   "alibaba/open-code-review": {
    "repo": "alibaba/open-code-review",
@@ -73,7 +73,7 @@
    "updated": "2026-10-05",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:10.164331+08:00",
-   "last_seen": "2026-10-07T10:00:10.164343+08:00"
+   "last_seen": "2026-10-07T18:50:19.786196+08:00"
   },
   "mattpocock/skills": {
    "repo": "mattpocock/skills",
@@ -89,13 +89,13 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-10-07T10:00:10.890904+08:00"
+   "last_seen": "2026-10-07T18:50:19.786200+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
    "lists": [
-    "weekly",
-    "monthly"
+    "monthly",
+    "weekly"
    ],
    "stars": 57979,
    "owner": "heygen-com",
@@ -118,7 +118,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-10-07T10:00:11.640345+08:00"
+   "last_seen": "2026-10-07T18:50:19.786204+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -147,7 +147,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:12.397668+08:00",
-   "last_seen": "2026-10-07T10:00:12.397680+08:00"
+   "last_seen": "2026-10-07T18:50:19.786207+08:00"
   },
   "earthtojake/text-to-cad": {
    "repo": "earthtojake/text-to-cad",
@@ -173,13 +173,13 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-10-07T10:00:13.191263+08:00"
+   "last_seen": "2026-10-07T18:50:19.786210+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
    "lists": [
-    "weekly",
-    "monthly"
+    "monthly",
+    "weekly"
    ],
    "stars": 10117,
    "owner": "cursor",
@@ -190,7 +190,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-10-07T10:00:13.945492+08:00"
+   "last_seen": "2026-10-07T18:50:19.786214+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
@@ -215,7 +215,7 @@
    "updated": "2026-10-05",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-10-07T10:00:14.676974+08:00"
+   "last_seen": "2026-10-07T18:50:19.786217+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -240,7 +240,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-10-07T10:00:15.394829+08:00"
+   "last_seen": "2026-10-07T18:50:19.786220+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -264,13 +264,13 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:16.158074+08:00",
-   "last_seen": "2026-10-07T10:00:16.158085+08:00"
+   "last_seen": "2026-10-07T18:50:19.786223+08:00"
   },
   "NVIDIA/OpenShell": {
    "repo": "NVIDIA/OpenShell",
    "lists": [
-    "weekly",
-    "monthly"
+    "monthly",
+    "weekly"
    ],
    "stars": 15150,
    "owner": "NVIDIA",
@@ -281,7 +281,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:16.915683+08:00",
-   "last_seen": "2026-10-07T10:00:16.915694+08:00"
+   "last_seen": "2026-10-07T18:50:19.786226+08:00"
   },
   "pbakaus/impeccable": {
    "repo": "pbakaus/impeccable",
@@ -297,7 +297,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-10-07T10:00:17.640769+08:00"
+   "last_seen": "2026-10-07T18:50:19.786229+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -326,7 +326,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:18.372902+08:00",
-   "last_seen": "2026-10-07T10:00:18.372912+08:00"
+   "last_seen": "2026-10-07T18:50:19.786232+08:00"
   },
   "anthropics/financial-services": {
    "repo": "anthropics/financial-services",
@@ -342,7 +342,7 @@
    "updated": "2026-09-21",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:19.194644+08:00",
-   "last_seen": "2026-10-07T10:00:19.194654+08:00"
+   "last_seen": "2026-10-07T18:50:19.786235+08:00"
   },
   "thedotmack/claude-mem": {
    "repo": "thedotmack/claude-mem",
@@ -380,7 +380,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-10-07T10:00:19.909337+08:00"
+   "last_seen": "2026-10-07T18:50:19.786238+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -396,7 +396,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:20.630895+08:00",
-   "last_seen": "2026-10-07T10:00:20.630906+08:00"
+   "last_seen": "2026-10-07T18:50:19.786241+08:00"
   },
   "pablostanley/yoinks": {
    "repo": "pablostanley/yoinks",
@@ -412,7 +412,7 @@
    "updated": "2026-07-17",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:21.343830+08:00",
-   "last_seen": "2026-10-07T10:00:21.343840+08:00"
+   "last_seen": "2026-10-07T18:50:19.786244+08:00"
   },
   "Tencent/WeKnora": {
    "repo": "Tencent/WeKnora",
@@ -449,7 +449,7 @@
    "updated": "2026-10-01",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:22.107384+08:00",
-   "last_seen": "2026-10-07T10:00:22.107395+08:00"
+   "last_seen": "2026-10-07T18:50:19.786247+08:00"
   },
   "morluto/rea": {
    "repo": "morluto/rea",
@@ -486,7 +486,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-10-07T10:00:22.823793+08:00"
+   "last_seen": "2026-10-07T18:50:19.786250+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -522,7 +522,7 @@
    "updated": "2024-01-11",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:23.543497+08:00",
-   "last_seen": "2026-10-07T10:00:23.543508+08:00"
+   "last_seen": "2026-10-07T18:50:19.786253+08:00"
   },
   "vectorize-io/hindsight": {
    "repo": "vectorize-io/hindsight",
@@ -543,7 +543,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:24.294659+08:00",
-   "last_seen": "2026-10-07T10:00:24.294670+08:00"
+   "last_seen": "2026-10-07T18:50:19.786256+08:00"
   },
   "deepseek-ai/DeepGEMM": {
    "repo": "deepseek-ai/DeepGEMM",
@@ -559,7 +559,7 @@
    "updated": "2026-09-30",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:25.058504+08:00",
-   "last_seen": "2026-10-07T10:00:25.058516+08:00"
+   "last_seen": "2026-10-07T18:50:19.786259+08:00"
   },
   "DuarteSantos8/openGym": {
    "repo": "DuarteSantos8/openGym",
@@ -595,7 +595,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:25.783589+08:00",
-   "last_seen": "2026-10-07T10:00:25.783603+08:00"
+   "last_seen": "2026-10-07T18:50:19.786262+08:00"
   },
   "anthropics/claude-code": {
    "repo": "anthropics/claude-code",
@@ -611,7 +611,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:26.492313+08:00",
-   "last_seen": "2026-10-07T10:00:26.492324+08:00"
+   "last_seen": "2026-10-07T18:50:19.786265+08:00"
   },
   "msitarzewski/agency-agents": {
    "repo": "msitarzewski/agency-agents",
@@ -627,7 +627,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:27.162818+08:00",
-   "last_seen": "2026-10-07T10:00:27.162829+08:00"
+   "last_seen": "2026-10-07T18:50:19.786268+08:00"
   },
   "mksglu/context-mode": {
    "repo": "mksglu/context-mode",
@@ -664,7 +664,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-10-07T10:00:27.897383+08:00"
+   "last_seen": "2026-10-07T18:50:19.786271+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -698,7 +698,7 @@
    "updated": "2026-09-15",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:28.633812+08:00",
-   "last_seen": "2026-10-07T10:00:28.633824+08:00"
+   "last_seen": "2026-10-07T18:50:19.786274+08:00"
   },
   "cathrynlavery/diagram-design": {
    "repo": "cathrynlavery/diagram-design",
@@ -723,7 +723,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:29.400998+08:00",
-   "last_seen": "2026-10-07T10:00:29.401009+08:00"
+   "last_seen": "2026-10-07T18:50:19.786277+08:00"
   },
   "byoungd/up": {
    "repo": "byoungd/up",
@@ -747,7 +747,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:30.167022+08:00",
-   "last_seen": "2026-10-07T10:00:30.167033+08:00"
+   "last_seen": "2026-10-07T18:50:19.786280+08:00"
   },
   "TencentCloud/Octop": {
    "repo": "TencentCloud/Octop",
@@ -771,7 +771,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:30.899722+08:00",
-   "last_seen": "2026-10-07T10:00:30.899733+08:00"
+   "last_seen": "2026-10-07T18:50:19.786283+08:00"
   },
   "tt-a1i/archify": {
    "repo": "tt-a1i/archify",
@@ -808,7 +808,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:31.628992+08:00",
-   "last_seen": "2026-10-07T10:00:31.629003+08:00"
+   "last_seen": "2026-10-07T18:50:19.786286+08:00"
   },
   "agent-substrate/substrate": {
    "repo": "agent-substrate/substrate",
@@ -824,7 +824,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:32.365141+08:00",
-   "last_seen": "2026-10-07T10:00:32.365153+08:00"
+   "last_seen": "2026-10-07T18:50:19.786289+08:00"
   },
   "DietrichGebert/ponytail": {
    "repo": "DietrichGebert/ponytail",
@@ -851,7 +851,7 @@
    "updated": "2026-10-05",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:33.111988+08:00",
-   "last_seen": "2026-10-07T10:00:33.111998+08:00"
+   "last_seen": "2026-10-07T18:50:19.786291+08:00"
   },
   "trycua/cua": {
    "repo": "trycua/cua",
@@ -886,7 +886,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:33.883679+08:00",
-   "last_seen": "2026-10-07T10:00:33.883690+08:00"
+   "last_seen": "2026-10-07T18:50:19.786295+08:00"
   },
   "anthropics/knowledge-work-plugins": {
    "repo": "anthropics/knowledge-work-plugins",
@@ -902,7 +902,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-10-07T10:00:34.604452+08:00"
+   "last_seen": "2026-10-07T18:50:19.786297+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -918,7 +918,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-10-07T10:00:35.278409+08:00"
+   "last_seen": "2026-10-07T18:50:19.786300+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -934,7 +934,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:35.970620+08:00",
-   "last_seen": "2026-10-07T10:00:35.970631+08:00"
+   "last_seen": "2026-10-07T18:50:19.786303+08:00"
   },
   "max-sixty/worktrunk": {
    "repo": "max-sixty/worktrunk",
@@ -957,7 +957,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-10-07T10:00:36.652949+08:00"
+   "last_seen": "2026-10-07T18:50:19.786306+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -977,10 +977,10 @@
    "updated": "2026-10-05",
    "metadata_date": "2026-10-07",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-10-07T10:00:37.360918+08:00"
+   "last_seen": "2026-10-07T18:50:19.786309+08:00"
   }
  },
- "last_collected": "2026-10-07T10:00:37.861053+08:00",
+ "last_collected": "2026-10-07T18:50:19.786313+08:00",
  "list_counts": {
   "daily": 12,
   "weekly": 12,
