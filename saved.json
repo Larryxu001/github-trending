@@ -96,6 +96,19 @@
    "note": "画图表",
    "tags": [],
    "saved_at": "2026-10-08"
+  },
+  {
+   "repo": "paperclipai/paperclip",
+   "url": "https://github.com/paperclipai/paperclip",
+   "owner": "paperclipai",
+   "stars": 96448,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "当公司里同时跑着好几个 AI Agent，这个开源应用就是它们的「人事部+项目管理台」：分配任务、查看进度、管理权限。相当于给你的 AI 员工们请了一位项目经理。",
+   "site": "https://paperclip.ing",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08"
   }
  ]
 }
