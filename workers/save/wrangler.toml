@@ -1,6 +1,8 @@
 name = "github-trending-save"
 main = "worker.js"
 compatibility_date = "2025-01-01"
+workers_dev = true
+routes = [{ pattern = "github-trending.51vipai.com", custom_domain = true }]
 
 # Cloudflare Cron 定时触发（每天北京时间 09:00 = UTC 01:00）：
 # 作为 GitHub 自身 schedule（best-effort、可能延迟）的免费兜底，

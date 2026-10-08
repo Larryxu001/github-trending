@@ -6,7 +6,7 @@
 
 1. 在飞书开放平台创建企业自建应用，启用机器人能力并加入当前日报群。
 2. 申请接收群内 @机器人 消息权限 `im:message.group_at_msg:readonly`，订阅「接收消息」`im.message.receive_v1`。已选择只接收 @消息：请在群里 **@新机器人 + GitHub 项目首页链接**。仅开通 `im:message.group_at_msg:readonly`，不申请全部群消息或机器人消息读取权限。后端同时拒绝没有 @信息的消息。
-3. 事件接收方式选择开发者服务器，URL：`https://github-trending-save.larryxu-4e5.workers.dev/feishu/events`。本实现使用 HTTPS 明文事件；不要启用 Encrypt Key 加密。先配置 Worker Verification Token，再完成 URL challenge 验证。
+3. 事件接收方式选择开发者服务器，URL：`https://github-trending.51vipai.com/feishu/events`。本实现使用 HTTPS 明文事件；不要启用 Encrypt Key 加密。先配置 Worker Verification Token，再完成 URL challenge 验证。
 4. 在 Cloudflare Worker 设置 `FEISHU_VERIFICATION_TOKEN`（密钥，不写入 GitHub），以及 `FEISHU_IMPORT_CHAT_ID`（该群 chat_id）、`FEISHU_IMPORT_USER_ID`（你的 open_id，必须属于此自建应用）。这三项不能用推送 webhook 中的字段代替。
 5. 发布应用版本并完成权限审批，确认机器人已在原群。只有配置的用户在配置的群发出的文本/富文本消息可触发导入，每条最多 5 个公开 GitHub 项目首页链接。
 
