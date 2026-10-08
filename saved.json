@@ -205,6 +205,20 @@
    "tags": [],
    "saved_at": "2026-10-08",
    "source": "feishu"
+  },
+  {
+   "repo": "jackyzha0/quartz",
+   "url": "https://github.com/jackyzha0/quartz",
+   "owner": "jackyzha0",
+   "stars": 13350,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "Quartz 是一个静态网站生成器，能把用 Markdown 写的笔记自动变成功能完整的网站，特别适合发布「数字花园」——也就是像 Obsidian 那样互相链接的笔记网络。它内置了搜索、反向链接、图谱视图等功能，你只需专注写作，它负责生成网页并免费部署。比如你有一堆 Obsidian 笔记，用 Quartz 就能一键发布成个人知识网站，读者可以像浏览维基百科一样在笔记间跳转。",
+   "site": "https://quartz.jzhao.xyz",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08",
+   "source": "feishu"
   }
  ]
 }
