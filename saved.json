@@ -122,6 +122,19 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-08"
+  },
+  {
+   "repo": "affaan-m/ECC",
+   "url": "https://github.com/affaan-m/ECC",
+   "owner": "affaan-m",
+   "stars": 271630,
+   "category": "Agent 效率优化",
+   "emoji": "⚡",
+   "desc": "一套给编程 Agent 做「性能调优」的系统：技能管理、记忆、安全检查、先调研再动手的工作流，适配 Claude Code/Codex/Cursor 等主流工具。目标是让 AI 写代码更快、更稳、更少返工。",
+   "site": "https://ecc.tools",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08"
   }
  ]
 }
