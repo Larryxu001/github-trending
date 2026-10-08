@@ -135,6 +135,20 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-08"
+  },
+  {
+   "repo": "newsnext/newsnow",
+   "url": "https://github.com/newsnext/newsnow",
+   "owner": "newsnext",
+   "stars": 21979,
+   "category": "其他",
+   "emoji": "📦",
+   "desc": "NewsNow 是一个优雅的实时热点新闻聚合阅读器，把各大平台的热榜和最新资讯集中到一个干净清爽的界面里，解决用户在不同 App 之间来回切换看新闻的麻烦。它支持 GitHub 登录同步、智能缓存与自适应抓取频率，还能通过 MCP 接入 AI 工具。例如你想快速了解今天全网热点，打开它就能一屏看完，无需逐个平台翻找。",
+   "site": "https://newsnow.busiyi.world",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08",
+   "source": "feishu"
   }
  ]
 }
