@@ -21,3 +21,10 @@
 - 分析使用 GitHub 介绍和最多 12,000 字符 README，没有执行仓库代码，AI 生成的介绍仍可能需要人工核对。
 
 官方参考：[消息接收事件](https://open.feishu.cn/document/server-docs/im-v1/message/events/receive)、[事件订阅](https://open.feishu.cn/document/server-docs/event-subscription-guide/event-subscription-configure-/request-url-configuration-case)。
+
+## 当前部署验收（2026-10-08）
+
+- 接收机器人：**GitHub 精选助手**，版本 1.0.1；已加入原「GitHub热榜」群，支持外部群，关闭外部用户单聊。
+- Worker 已绑定该群和群主用户，只处理该用户在该群的 @消息。
+- NewsNow 首次 AI 分析入库成功；真实群 @链接测试任务 [37726721880](https://github.com/Larryxu001/github-trending/actions/runs/37726721880) 成功，群内收到重复项目回执，原介绍和备注保留。
+- 新导入项目加入同一精选库，按现有规则进入周报；月报汇总最近四份已发送周报的精选。
