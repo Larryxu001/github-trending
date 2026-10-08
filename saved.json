@@ -191,6 +191,20 @@
    "tags": [],
    "saved_at": "2026-10-08",
    "source": "feishu"
+  },
+  {
+   "repo": "opendatalab/MinerU",
+   "url": "https://github.com/opendatalab/MinerU",
+   "owner": "opendatalab",
+   "stars": 81265,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "MinerU 是 OpenDataLab 开源的高质量文档解析工具，能把 PDF、扫描件、Word、PPT、Excel、EPUB、HTML 等复杂文档转换成大模型可直接使用的 Markdown 或 JSON。它擅长处理表格、公式、多栏排版和扫描 OCR，并保留页码与块级定位，方便引用和检索。例如把一篇带公式和表格的学术论文 PDF 转成 Markdown 后，就能直接喂给 AI Agent 做问答或 RAG 检索，省去自己写解析器的麻烦。",
+   "site": "https://opendatalab.github.io/MinerU/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08",
+   "source": "feishu"
   }
  ]
 }
