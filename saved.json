@@ -149,6 +149,20 @@
    "tags": [],
    "saved_at": "2026-10-08",
    "source": "feishu"
+  },
+  {
+   "repo": "nashsu/llm_wiki",
+   "url": "https://github.com/nashsu/llm_wiki",
+   "owner": "nashsu",
+   "stars": 20285,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "LLM Wiki 是一款跨平台桌面应用，能把你的文档自动变成互相链接的知识库。它不像传统 RAG 每次提问都从头检索，而是让大模型增量地阅读、整理并持续维护一个持久化的 Wiki，知识只编译一次并保持更新。比如你导入一批 PDF 论文，它会自动生成摘要、实体和概念页面并建立交叉引用，还支持知识图谱、语义搜索和网页剪藏，适合做个人或团队的知识管理。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08",
+   "source": "feishu"
   }
  ]
 }
