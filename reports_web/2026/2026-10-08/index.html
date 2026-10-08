@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 日报 · 2026-10-08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.006</span></div>
+    <h1>Github开源趋势日报</h1>
+    <div class="standfirst">每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目</div>
+    <div class="dateline"><b>2026 年 10 月 8 日</b>　·　第 6 期　·　本期新收录 <b>5</b> 个项目　·　30 天去重跳过 42 个</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>Agent 技能与插件<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>security-audit-skill</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>portal-ai-plugins</a></details><details><summary><span class="toc-no">02</span>AI / 大模型<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>UniMate</a></details><details><summary><span class="toc-no">03</span>开发工具与框架<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>cmux</a><a class="toc-proj" href="#sec-3-2"><span class="toc-no">02</span>raddebugger</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank">cloudflare/security-audit-skill</a></h3>
+            <span class="stars">★ 25,869</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;cloudflare/security-audit-skill&quot;, &quot;url&quot;: &quot;https://github.com/cloudflare/security-audit-skill&quot;, &quot;owner&quot;: &quot;cloudflare&quot;, &quot;stars&quot;: 25869, &quot;desc&quot;: &quot;\u8fd9\u662f Cloudflare \u63a8\u51fa\u7684\u4e00\u4e2a\u7f16\u7801\u4ee3\u7406\u6280\u80fd\uff0c\u4e13\u95e8\u7528\u6765\u505a\u591a\u9636\u6bb5\u5b89\u5168\u5ba1\u8ba1\u3002\u5b83\u628a\u5ba1\u8ba1\u62c6\u6210\u591a\u4e2a\u9636\u6bb5\uff0c\u8ba9 AI \u4ee3\u7406\u9010\u6b65\u6392\u67e5\u4ee3\u7801\u4e2d\u7684\u5b89\u5168\u95ee\u9898\uff0c\u5e76\u4e14\u6bcf\u4e2a\u53d1\u73b0\u90fd\u8981\u7ecf\u8fc7\u72ec\u7acb\u9a8c\u8bc1\uff0c\u6700\u7ec8\u8f93\u51fa\u673a\u5668\u53ef\u8bfb\u7684\u7ed3\u679c\uff0c\u65b9\u4fbf\u96c6\u6210\u5230\u81ea\u52a8\u5316\u6d41\u7a0b\u91cc\u3002\u6bd4\u5982\u4f60\u8ba9 AI \u5ba1\u67e5\u4e00\u4e2a Web \u9879\u76ee\uff0c\u5b83\u80fd\u6309\u9636\u6bb5\u68c0\u67e5\u6ce8\u5165\u3001\u6743\u9650\u3001\u4f9d\u8d56\u6f0f\u6d1e\u7b49\uff0c\u5e76\u7ed9\u51fa\u53ef\u9a8c\u8bc1\u7684\u7ed3\u8bba\uff0c\u907f\u514d\u8bef\u62a5\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是 Cloudflare 推出的一个编码代理技能，专门用来做多阶段安全审计。它把审计拆成多个阶段，让 AI 代理逐步排查代码中的安全问题，并且每个发现都要经过独立验证，最终输出机器可读的结果，方便集成到自动化流程里。比如你让 AI 审查一个 Web 项目，它能按阶段检查注入、权限、依赖漏洞等，并给出可验证的结论，避免误报。</p>
+          
+          <div class="byline">
+            <span>cloudflare</span><i>·</i>
+            <span>更新于 2026-09-14</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/spotify/portal-ai-plugins" target="_blank">spotify/portal-ai-plugins</a></h3>
+            <span class="stars">★ 2,411</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;spotify/portal-ai-plugins&quot;, &quot;url&quot;: &quot;https://github.com/spotify/portal-ai-plugins&quot;, &quot;owner&quot;: &quot;spotify&quot;, &quot;stars&quot;: 2411, &quot;desc&quot;: &quot;\u8fd9\u662f Spotify \u5b98\u65b9\u5f00\u6e90\u7684 AI \u63d2\u4ef6\u96c6\u5408\uff0c\u7528 TypeScript \u7f16\u5199\uff0c\u4e3a AI \u52a9\u624b\u63d0\u4f9b\u63a5\u5165 Spotify \u97f3\u4e50\u670d\u52a1\u7684\u80fd\u529b\u3002\u5b83\u89e3\u51b3\u7684\u662f AI \u65e0\u6cd5\u76f4\u63a5\u64cd\u4f5c\u7528\u6237\u97f3\u4e50\u8d26\u53f7\u7684\u95ee\u9898\uff0c\u8ba9\u667a\u80fd\u4f53\u53ef\u4ee5\u641c\u7d22\u6b4c\u66f2\u3001\u67e5\u770b\u64ad\u653e\u5217\u8868\u3001\u63a7\u5236\u64ad\u653e\u7b49\u3002\u6bd4\u5982\u4f60\u95ee AI\u300c\u5e2e\u6211\u653e\u4e00\u9996\u5468\u6770\u4f26\u7684\u6b4c\u300d\uff0c\u5b83\u5c31\u80fd\u901a\u8fc7\u8fd9\u4e2a\u63d2\u4ef6\u8c03\u7528 Spotify \u63a5\u53e3\u5b8c\u6210\u64cd\u4f5c\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是 Spotify 官方开源的 AI 插件集合，用 TypeScript 编写，为 AI 助手提供接入 Spotify 音乐服务的能力。它解决的是 AI 无法直接操作用户音乐账号的问题，让智能体可以搜索歌曲、查看播放列表、控制播放等。比如你问 AI「帮我放一首周杰伦的歌」，它就能通过这个插件调用 Spotify 接口完成操作。</p>
+          
+          <div class="byline">
+            <span>spotify</span><i>·</i>
+            <span>更新于 2026-10-06</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">AI / 大模型</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/Friedrich-M/UniMate" target="_blank">Friedrich-M/UniMate</a></h3>
+            <span class="stars">★ 1,568</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Friedrich-M/UniMate&quot;, &quot;url&quot;: &quot;https://github.com/Friedrich-M/UniMate&quot;, &quot;owner&quot;: &quot;Friedrich-M&quot;, &quot;stars&quot;: 1568, &quot;desc&quot;: &quot;UniMate \u662f SIGGRAPH Asia 2026 \u7684\u8bba\u6587\u9879\u76ee\uff0c\u63d0\u51fa\u4e00\u4e2a\u7edf\u4e00\u6a21\u578b\uff0c\u80fd\u628a\u540c\u4e00\u5957\u52a8\u4f5c\u8fc1\u79fb\u5230\u5404\u79cd\u4e0d\u540c\u7ed3\u6784\u7684\u9aa8\u67b6\u4e0a\uff0c\u6bd4\u5982\u4eba\u5f62\u3001\u56db\u8db3\u6216\u673a\u5668\u4eba\u3002\u4f20\u7edf\u65b9\u6cd5\u901a\u5e38\u8981\u4e3a\u6bcf\u79cd\u9aa8\u67b6\u5355\u72ec\u8bad\u7ec3\uff0c\u8d39\u65f6\u8d39\u529b\uff1bUniMate \u7528\u4e00\u4e2a\u6a21\u578b\u7edf\u4e00\u5904\u7406\uff0c\u8ba9\u52a8\u753b\u5236\u4f5c\u548c\u89d2\u8272\u9a71\u52a8\u66f4\u7701\u4e8b\u3002\u4f8b\u5982\u6e38\u620f\u91cc\u7ed9\u4e0d\u540c\u4f53\u578b\u7684\u89d2\u8272\u5957\u7528\u540c\u4e00\u6bb5\u8dd1\u6b65\u52a8\u753b\uff0c\u65e0\u9700\u9010\u4e2a\u91cd\u505a\u3002&quot;, &quot;site&quot;: &quot;https://linzhanmou.com/unimate/&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">UniMate 是 SIGGRAPH Asia 2026 的论文项目，提出一个统一模型，能把同一套动作迁移到各种不同结构的骨架上，比如人形、四足或机器人。传统方法通常要为每种骨架单独训练，费时费力；UniMate 用一个模型统一处理，让动画制作和角色驱动更省事。例如游戏里给不同体型的角色套用同一段跑步动画，无需逐个重做。</p>
+          
+          <div class="byline">
+            <span>Friedrich-M</span><i>·</i>
+            <span>更新于 2026-10-05</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            <a class="site" href="https://linzhanmou.com/unimate/" target="_blank">https://linzhanmou.com/unimate/</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">开发工具与框架</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/manaflow-ai/cmux" target="_blank">manaflow-ai/cmux</a></h3>
+            <span class="stars">★ 27,785</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;manaflow-ai/cmux&quot;, &quot;url&quot;: &quot;https://github.com/manaflow-ai/cmux&quot;, &quot;owner&quot;: &quot;manaflow-ai&quot;, &quot;stars&quot;: 27785, &quot;desc&quot;: &quot;cmux \u662f\u4e00\u6b3e\u57fa\u4e8e Ghostty \u7684\u5f00\u6e90 macOS \u7ec8\u7aef\uff0c\u4e13\u4e3a\u540c\u65f6\u4f7f\u7528\u591a\u4e2a AI \u7f16\u7a0b\u52a9\u624b\uff08\u5982 Claude Code\u3001Codex\u3001Gemini \u7b49\uff09\u7684\u5f00\u53d1\u8005\u8bbe\u8ba1\u3002\u5b83\u7528\u5782\u76f4\u6807\u7b7e\u9875\u628a\u6bcf\u4e2a AI \u4f1a\u8bdd\u5206\u680f\u7ba1\u7406\uff0c\u5e76\u5728\u4efb\u52a1\u5b8c\u6210\u65f6\u5f39\u51fa\u901a\u77e5\uff0c\u907f\u514d\u5728\u591a\u4e2a\u7a97\u53e3\u95f4\u6765\u56de\u5207\u6362\u3002\u6bd4\u5982\u4f60\u4e00\u8fb9\u8ba9 Claude \u6539\u4ee3\u7801\u3001\u4e00\u8fb9\u8ba9 Codex \u5199\u6d4b\u8bd5\uff0ccmux \u80fd\u8ba9\u4f60\u4e00\u773c\u770b\u6e05\u5404\u81ea\u8fdb\u5ea6\uff0c\u9002\u5408\u9700\u8981\u591a\u4efb\u52a1\u5e76\u884c\u7684\u7f16\u7a0b\u573a\u666f\u3002&quot;, &quot;site&quot;: &quot;https://cmux.com&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">cmux 是一款基于 Ghostty 的开源 macOS 终端，专为同时使用多个 AI 编程助手（如 Claude Code、Codex、Gemini 等）的开发者设计。它用垂直标签页把每个 AI 会话分栏管理，并在任务完成时弹出通知，避免在多个窗口间来回切换。比如你一边让 Claude 改代码、一边让 Codex 写测试，cmux 能让你一眼看清各自进度，适合需要多任务并行的编程场景。</p>
+          
+          <div class="byline">
+            <span>manaflow-ai</span><i>·</i>
+            <span>更新于 2026-10-07</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://cmux.com" target="_blank">https://cmux.com</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/EpicGames/raddebugger" target="_blank">EpicGames/raddebugger</a></h3>
+            <span class="stars">★ 7,798</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;EpicGames/raddebugger&quot;, &quot;url&quot;: &quot;https://github.com/EpicGames/raddebugger&quot;, &quot;owner&quot;: &quot;EpicGames&quot;, &quot;stars&quot;: 7798, &quot;desc&quot;: &quot;raddebugger \u662f Epic Games \u5f00\u6e90\u7684\u4e00\u6b3e\u539f\u751f\u56fe\u5f62\u5316\u8c03\u8bd5\u5668\uff0c\u4e13\u95e8\u7528\u4e8e Windows \u7528\u6237\u6001\u4e0b\u7684\u591a\u8fdb\u7a0b\u8c03\u8bd5\u3002\u5b83\u89e3\u51b3\u4e86\u4f20\u7edf\u8c03\u8bd5\u5668\u5728\u540c\u65f6\u8c03\u8bd5\u591a\u4e2a\u8fdb\u7a0b\u65f6\u64cd\u4f5c\u7e41\u7410\u3001\u4fe1\u606f\u5206\u6563\u7684\u95ee\u9898\uff0c\u8ba9\u5f00\u53d1\u8005\u80fd\u5728\u4e00\u4e2a\u754c\u9762\u91cc\u7edf\u4e00\u67e5\u770b\u548c\u7ba1\u7406\u6240\u6709\u88ab\u8c03\u8bd5\u8fdb\u7a0b\u7684\u7ebf\u7a0b\u3001\u8c03\u7528\u6808\u548c\u65ad\u70b9\u3002\u4f8b\u5982\u5728\u5f00\u53d1\u6e38\u620f\u65f6\uff0c\u4e3b\u8fdb\u7a0b\u548c\u6e32\u67d3\u8fdb\u7a0b\u9700\u8981\u534f\u540c\u6392\u67e5\u5d29\u6e83\uff0c\u7528\u5b83\u5c31\u80fd\u540c\u65f6\u6302\u8f7d\u5e76\u5207\u6362\u89c2\u5bdf\uff0c\u5927\u5e45\u63d0\u5347\u5b9a\u4f4d\u6548\u7387\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">raddebugger 是 Epic Games 开源的一款原生图形化调试器，专门用于 Windows 用户态下的多进程调试。它解决了传统调试器在同时调试多个进程时操作繁琐、信息分散的问题，让开发者能在一个界面里统一查看和管理所有被调试进程的线程、调用栈和断点。例如在开发游戏时，主进程和渲染进程需要协同排查崩溃，用它就能同时挂载并切换观察，大幅提升定位效率。</p>
+          
+          <div class="byline">
+            <span>EpicGames</span><i>·</i>
+            <span>更新于 2026-10-07</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    btn.disabled = true;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(pendingMeta),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = pendingMeta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>
