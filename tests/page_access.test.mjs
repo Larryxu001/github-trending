@@ -50,7 +50,7 @@ test('manual import shows queued state, blocks duplicate clicks, and confirms on
  const savedPage=fs.readFileSync(new URL('../reports_web/saved.html',import.meta.url),'utf8');
  const scripts=[...savedPage.matchAll(/<script>([\s\S]*?)<\/script>/g)];
  const importScript=scripts.find(match=>match[1].includes('window.submitImport'))[1];
- const elements=Object.fromEntries(['import-status','import-submit','import-url','list','count','tagBar','search','sort'].map(id=>[id,{textContent:'',innerHTML:'',value:id==='import-url'?'https://github.com/a/b':id==='sort'?'stars':'',appendChild(){}}]));
+ const elements=Object.fromEntries(['import-status','import-submit','import-url','list','count','tagBar','search','sort','toc-items'].map(id=>[id,{textContent:'',innerHTML:'',value:id==='import-url'?'https://github.com/a/b':id==='sort'?'stars':'',appendChild(){}}]));
  const storage=new Map([['trending-save-key','password']]);let calls=0,finishSubmit,timer;
  const context={window:{addEventListener(){}},document:{getElementById:id=>elements[id],createElement:()=>({})},sessionStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},location:{reload(){}},AbortSignal,URL,JSON,setTimeout:fn=>timer=fn,
  fetch:async(url,options)=>{
@@ -68,4 +68,21 @@ test('manual import shows queued state, blocks duplicate clicks, and confirms on
  context.fetch=async(url)=>({ok:true,json:async()=>url.includes('/imports/')?{status:'completed',conclusion:'success'}:{ok:true,items:[{repo:'a/b',desc:'中文介绍',saved_at:'2026-10-08'}]}});
  await timer();assert.equal(storage.has('trending-import-id'),false);assert.equal(elements['import-submit'].disabled,false);
  assert.match(elements['import-status'].textContent,/已处理完成/);assert.match(elements.list.innerHTML,/中文介绍/);
+});
+
+
+test('saved projects group by category and rebuild matching directory after filtering',()=>{
+ const savedPage=fs.readFileSync(new URL('../reports_web/saved.html',import.meta.url),'utf8');
+ const script=[...savedPage.matchAll(/<script>([\s\S]*?)<\/script>/g)].find(m=>m[1].includes('window.submitImport'))[1];
+ const elements=Object.fromEntries(['list','count','toc-items','search','sort'].map(id=>[id,{innerHTML:'',value:id==='sort'?'stars':''}]));
+ const context={window:{addEventListener(){}},document:{getElementById:id=>elements[id]},URL};
+ vm.runInNewContext(script,context);
+ vm.runInNewContext(`allRows=[{repo:'a/one',category:'开发工具',stars:100},{repo:'b/two',category:'AI',stars:80},{repo:'c/three',category:'开发工具',stars:50}];render()`,context);
+ assert.equal((elements.list.innerHTML.match(/<section /g)||[]).length,2);
+ assert.match(elements.list.innerHTML,/a\/one[\s\S]*c\/three/);
+ for(const m of elements['toc-items'].innerHTML.matchAll(/href="#([^"]+)"/g)) assert.ok(elements.list.innerHTML.includes('id="'+m[1]+'"'));
+ elements.search.value='two';vm.runInNewContext('render()',context);
+ assert.match(elements['toc-items'].innerHTML,/AI/);assert.doesNotMatch(elements['toc-items'].innerHTML,/开发工具/);
+ elements.search.value='missing';vm.runInNewContext('render()',context);
+ assert.equal(elements['toc-items'].innerHTML,'');assert.match(elements.list.innerHTML,/没有匹配/);
 });
