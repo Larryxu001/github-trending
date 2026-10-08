@@ -107,7 +107,7 @@
   }
  },
  "daily:2026-10-08": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-08",
    "new_count": 5,
@@ -193,6 +193,194 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-08 ｜ 今日新项目 5 个 ｜ 3 个分类 ｜ 30 天去重跳过 42 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-08/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 4 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)**　⭐ 25,869\n这是 Cloudflare 推出的一个编码代理技能，专门用来做多阶段安全审计。它把审计拆成多个阶段，让 AI 代理逐步排查代码中的安全问题，并且每个发现都要经过独立验证，最终输出机器可读的结果，方便集成到自动化流程里。比如你让 AI 审查一个 Web 项目，它能按阶段检查注入、权限、依赖漏洞等，并给出可验证的结论，避免误报。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 cloudflare ｜ 📅 更新 2026-09-14 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [spotify/portal-ai-plugins](https://github.com/spotify/portal-ai-plugins)**　⭐ 2,411\n这是 Spotify 官方开源的 AI 插件集合，用 TypeScript 编写，为 AI 助手提供接入 Spotify 音乐服务的能力。它解决的是 AI 无法直接操作用户音乐账号的问题，让智能体可以搜索歌曲、查看播放列表、控制播放等。比如你问 AI「帮我放一首周杰伦的歌」，它就能通过这个插件调用 Spotify 接口完成操作。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 spotify ｜ 📅 更新 2026-10-06 ｜ 🏷 月榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Friedrich-M/UniMate](https://github.com/Friedrich-M/UniMate)**　⭐ 1,568\nUniMate 是 SIGGRAPH Asia 2026 的论文项目，提出一个统一模型，能把同一套动作迁移到各种不同结构的骨架上，比如人形、四足或机器人。传统方法通常要为每种骨架单独训练，费时费力；UniMate 用一个模型统一处理，让动画制作和角色驱动更省事。例如游戏里给不同体型的角色套用同一段跑步动画，无需逐个重做。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Friedrich-M ｜ 📅 更新 2026-10-05 ｜ 🏷 周榜 ｜ 🔗 [https://linzhanmou.com/unimate/](https://linzhanmou.com/unimate/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [manaflow-ai/cmux](https://github.com/manaflow-ai/cmux)**　⭐ 27,785\ncmux 是一款基于 Ghostty 的开源 macOS 终端，专为同时使用多个 AI 编程助手（如 Claude Code、Codex、Gemini 等）的开发者设计。它用垂直标签页把每个 AI 会话分栏管理，并在任务完成时弹出通知，避免在多个窗口间来回切换。比如你一边让 Claude 改代码、一边让 Codex 写测试，cmux 能让你一眼看清各自进度，适合需要多任务并行的编程场景。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 manaflow-ai ｜ 📅 更新 2026-10-07 ｜ 🏷 日榜 ｜ 🔗 [https://cmux.com](https://cmux.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [EpicGames/raddebugger](https://github.com/EpicGames/raddebugger)**　⭐ 7,798\nraddebugger 是 Epic Games 开源的一款原生图形化调试器，专门用于 Windows 用户态下的多进程调试。它解决了传统调试器在同时调试多个进程时操作繁琐、信息分散的问题，让开发者能在一个界面里统一查看和管理所有被调试进程的线程、调用栈和断点。例如在开发游戏时，主进程和渲染进程需要协同排查崩溃，用它就能同时挂载并切换观察，大幅提升定位效率。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 EpicGames ｜ 📅 更新 2026-10-07 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
