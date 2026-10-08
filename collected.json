@@ -50,7 +50,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:09.411508+08:00",
-   "last_seen": "2026-10-08T18:02:28.126362+08:00"
+   "last_seen": "2026-10-08T19:08:02.249935+08:00"
   },
   "alibaba/open-code-review": {
    "repo": "alibaba/open-code-review",
@@ -73,12 +73,13 @@
    "updated": "2026-10-05",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:10.164331+08:00",
-   "last_seen": "2026-10-08T18:02:28.126367+08:00"
+   "last_seen": "2026-10-08T19:08:02.249926+08:00"
   },
   "mattpocock/skills": {
    "repo": "mattpocock/skills",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 279322,
    "owner": "mattpocock",
@@ -89,7 +90,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-10-08T18:02:28.126371+08:00"
+   "last_seen": "2026-10-08T19:08:03.037698+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -118,7 +119,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-10-08T18:02:28.126381+08:00"
+   "last_seen": "2026-10-08T19:08:03.037686+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -147,14 +148,15 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:12.397668+08:00",
-   "last_seen": "2026-10-08T18:02:28.126378+08:00"
+   "last_seen": "2026-10-08T19:08:03.037693+08:00"
   },
   "earthtojake/text-to-cad": {
    "repo": "earthtojake/text-to-cad",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 18011,
+   "stars": 18351,
    "owner": "earthtojake",
    "homepage": "https://www.texttocad.dev",
    "description": "Give your agent CAD superpowers.",
@@ -170,10 +172,10 @@
     "stp",
     "text-to-cad"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-07",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-10-07T18:50:19.786210+08:00"
+   "last_seen": "2026-10-08T19:08:04.919399+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -190,7 +192,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-10-08T18:02:28.126389+08:00"
+   "last_seen": "2026-10-08T19:08:03.037720+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
@@ -215,7 +217,7 @@
    "updated": "2026-10-05",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-10-08T18:02:28.126384+08:00"
+   "last_seen": "2026-10-08T19:08:03.037729+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -240,7 +242,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-10-08T18:02:28.126374+08:00"
+   "last_seen": "2026-10-08T19:08:02.249910+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -264,7 +266,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:16.158074+08:00",
-   "last_seen": "2026-10-08T18:02:28.126387+08:00"
+   "last_seen": "2026-10-08T19:08:05.419580+08:00"
   },
   "NVIDIA/OpenShell": {
    "repo": "NVIDIA/OpenShell",
@@ -281,7 +283,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:16.915683+08:00",
-   "last_seen": "2026-10-08T18:02:28.126398+08:00"
+   "last_seen": "2026-10-08T19:08:05.419563+08:00"
   },
   "pbakaus/impeccable": {
    "repo": "pbakaus/impeccable",
@@ -342,7 +344,7 @@
    "updated": "2026-09-21",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:19.194644+08:00",
-   "last_seen": "2026-10-08T18:02:28.126392+08:00"
+   "last_seen": "2026-10-08T19:08:03.037710+08:00"
   },
   "thedotmack/claude-mem": {
    "repo": "thedotmack/claude-mem",
@@ -380,7 +382,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-10-08T18:02:28.126415+08:00"
+   "last_seen": "2026-10-08T19:08:03.037714+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -396,7 +398,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:20.630895+08:00",
-   "last_seen": "2026-10-08T18:02:28.126401+08:00"
+   "last_seen": "2026-10-08T19:08:03.037725+08:00"
   },
   "pablostanley/yoinks": {
    "repo": "pablostanley/yoinks",
@@ -412,7 +414,7 @@
    "updated": "2026-07-17",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:21.343830+08:00",
-   "last_seen": "2026-10-08T18:02:28.126421+08:00"
+   "last_seen": "2026-10-08T19:08:05.419554+08:00"
   },
   "Tencent/WeKnora": {
    "repo": "Tencent/WeKnora",
@@ -449,7 +451,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:22.107384+08:00",
-   "last_seen": "2026-10-08T18:02:28.126431+08:00"
+   "last_seen": "2026-10-08T19:08:03.835740+08:00"
   },
   "morluto/rea": {
    "repo": "morluto/rea",
@@ -486,7 +488,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-10-08T18:02:28.126346+08:00"
+   "last_seen": "2026-10-08T19:08:03.037657+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -543,7 +545,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:24.294659+08:00",
-   "last_seen": "2026-10-08T18:02:28.126418+08:00"
+   "last_seen": "2026-10-08T19:08:03.037739+08:00"
   },
   "deepseek-ai/DeepGEMM": {
    "repo": "deepseek-ai/DeepGEMM",
@@ -595,7 +597,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:25.783589+08:00",
-   "last_seen": "2026-10-08T18:02:28.126429+08:00"
+   "last_seen": "2026-10-08T19:08:05.419543+08:00"
   },
   "anthropics/claude-code": {
    "repo": "anthropics/claude-code",
@@ -611,7 +613,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:26.492313+08:00",
-   "last_seen": "2026-10-08T18:02:28.126440+08:00"
+   "last_seen": "2026-10-08T19:08:05.419516+08:00"
   },
   "msitarzewski/agency-agents": {
    "repo": "msitarzewski/agency-agents",
@@ -664,7 +666,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-10-08T18:02:28.126484+08:00"
+   "last_seen": "2026-10-08T19:08:05.419567+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -698,7 +700,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:28.633812+08:00",
-   "last_seen": "2026-10-08T18:02:28.126407+08:00"
+   "last_seen": "2026-10-08T19:08:03.835712+08:00"
   },
   "cathrynlavery/diagram-design": {
    "repo": "cathrynlavery/diagram-design",
@@ -723,7 +725,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:29.400998+08:00",
-   "last_seen": "2026-10-08T18:02:28.126395+08:00"
+   "last_seen": "2026-10-08T19:08:02.249931+08:00"
   },
   "byoungd/up": {
    "repo": "byoungd/up",
@@ -771,7 +773,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:30.899722+08:00",
-   "last_seen": "2026-10-08T18:02:28.126449+08:00"
+   "last_seen": "2026-10-08T19:08:05.419549+08:00"
   },
   "tt-a1i/archify": {
    "repo": "tt-a1i/archify",
@@ -824,7 +826,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:32.365141+08:00",
-   "last_seen": "2026-10-08T18:02:28.126487+08:00"
+   "last_seen": "2026-10-08T19:08:05.419558+08:00"
   },
   "DietrichGebert/ponytail": {
    "repo": "DietrichGebert/ponytail",
@@ -851,7 +853,7 @@
    "updated": "2026-10-05",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:33.111988+08:00",
-   "last_seen": "2026-10-08T18:02:28.126489+08:00"
+   "last_seen": "2026-10-08T19:08:05.419592+08:00"
   },
   "trycua/cua": {
    "repo": "trycua/cua",
@@ -887,11 +889,12 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:33.883679+08:00",
-   "last_seen": "2026-10-08T18:02:28.126434+08:00"
+   "last_seen": "2026-10-08T19:08:05.419584+08:00"
   },
   "anthropics/knowledge-work-plugins": {
    "repo": "anthropics/knowledge-work-plugins",
    "lists": [
+    "daily",
     "monthly"
    ],
    "stars": 27091,
@@ -903,7 +906,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-10-08T18:02:28.126501+08:00"
+   "last_seen": "2026-10-08T19:08:03.037734+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -919,7 +922,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-10-08T18:02:28.126495+08:00"
+   "last_seen": "2026-10-08T19:08:05.419589+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -935,7 +938,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:35.970620+08:00",
-   "last_seen": "2026-10-08T18:02:28.126492+08:00"
+   "last_seen": "2026-10-08T19:08:05.419576+08:00"
   },
   "max-sixty/worktrunk": {
    "repo": "max-sixty/worktrunk",
@@ -958,7 +961,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-10-08T18:02:28.126504+08:00"
+   "last_seen": "2026-10-08T19:08:05.419599+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1002,12 +1005,13 @@
    "updated": "2026-10-03",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-10-08T18:02:28.126404+08:00"
+   "last_seen": "2026-10-08T19:08:05.419596+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 7798,
    "owner": "EpicGames",
@@ -1018,7 +1022,7 @@
    "updated": "2026-10-07",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-08T03:12:25.444043+08:00",
-   "last_seen": "2026-10-08T18:02:28.126412+08:00"
+   "last_seen": "2026-10-08T19:08:03.037705+08:00"
   },
   "spotify/portal-ai-plugins": {
    "repo": "spotify/portal-ai-plugins",
@@ -1034,7 +1038,7 @@
    "updated": "2026-10-06",
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-08T03:12:28.609870+08:00",
-   "last_seen": "2026-10-08T18:02:28.126423+08:00"
+   "last_seen": "2026-10-08T19:08:05.419572+08:00"
   },
   "manaflow-ai/cmux": {
    "repo": "manaflow-ai/cmux",
@@ -1118,12 +1122,87 @@
    "metadata_date": "2026-10-08",
    "first_seen": "2026-10-08T09:01:42.721357+08:00",
    "last_seen": "2026-10-08T09:59:24.486879+08:00"
+  },
+  "debpalash/VoiceStudio": {
+   "repo": "debpalash/VoiceStudio",
+   "lists": [
+    "monthly"
+   ],
+   "stars": 54923,
+   "owner": "debpalash",
+   "homepage": "https://voicestudio.sh",
+   "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+   "language": "Python",
+   "topics": [
+    "ai",
+    "audiobook",
+    "cuda",
+    "dubbing",
+    "elevenlabs-alternative",
+    "huggingface",
+    "local-first",
+    "mlx",
+    "omnivoice-studio",
+    "speech-to-text",
+    "tauri",
+    "text-to-speech",
+    "transcription",
+    "translate",
+    "tts",
+    "voice-ai",
+    "voice-cloning",
+    "voice-generation",
+    "voicestudio",
+    "workflow"
+   ],
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-08",
+   "first_seen": "2026-10-08T19:08:02.537479+08:00",
+   "last_seen": "2026-10-08T19:08:02.537496+08:00"
+  },
+  "storytold/artcraft": {
+   "repo": "storytold/artcraft",
+   "lists": [
+    "daily"
+   ],
+   "stars": 5875,
+   "owner": "storytold",
+   "homepage": "https://getartcraft.com",
+   "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+   "language": "Rust",
+   "topics": [
+    "3d-graphics",
+    "ai",
+    "aivideo",
+    "filmmaking",
+    "imagegeneration"
+   ],
+   "updated": "2026-10-07",
+   "metadata_date": "2026-10-08",
+   "first_seen": "2026-10-08T19:08:03.335575+08:00",
+   "last_seen": "2026-10-08T19:08:03.335587+08:00"
+  },
+  "liquidslr/system-design-notes": {
+   "repo": "liquidslr/system-design-notes",
+   "lists": [
+    "daily"
+   ],
+   "stars": 24161,
+   "owner": "liquidslr",
+   "homepage": "https://pagefy-blush.vercel.app/system-design/system-design-interview-by-alex-xu",
+   "description": "Notes of the book System Desgin Interview - An Insider's Guide",
+   "language": "",
+   "topics": [],
+   "updated": "2026-08-12",
+   "metadata_date": "2026-10-08",
+   "first_seen": "2026-10-08T19:08:04.129429+08:00",
+   "last_seen": "2026-10-08T19:08:04.129439+08:00"
   }
  },
- "last_collected": "2026-10-08T18:02:28.126510+08:00",
+ "last_collected": "2026-10-08T19:08:05.419607+08:00",
  "list_counts": {
-  "daily": 13,
+  "daily": 9,
   "weekly": 11,
-  "monthly": 25
+  "monthly": 24
  }
 }
