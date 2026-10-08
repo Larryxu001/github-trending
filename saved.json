@@ -83,6 +83,19 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-08"
+  },
+  {
+   "repo": "tt-a1i/archify",
+   "url": "https://github.com/tt-a1i/archify",
+   "owner": "tt-a1i",
+   "stars": 76438,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "让 AI 助手帮你画专业图表的技能。你说一句「画一个用户下单的系统架构图」，它就生成带动画、可导出高清图片的精美网页图表，比 Mermaid 那种朴素线条好看一个档次——写技术文档、做汇报直接就能用。",
+   "site": "https://tt-a1i.github.io/archify/",
+   "note": "画图表",
+   "tags": [],
+   "saved_at": "2026-10-08"
   }
  ]
 }
