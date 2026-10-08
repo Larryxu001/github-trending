@@ -21,3 +21,8 @@ wrangler deploy --config workers/save/wrangler.toml --keep-vars --secrets-file .
 本机收藏密码保存在仓库 `.local/save-password.txt`，目录不入 Git。
 网页首次写入时输入密码，当前浏览会话内保留；输入错误后清除缓存。
 Workers Logs 与 Traces 已开启。网络/接口错误可在日志中定位，日志不记录凭证或收藏备注。
+
+
+主动导入接口：`POST /imports`（现有密码鉴权，`{"url":"https://github.com/owner/repo"}`），返回 `202` 和任务 ID；`GET /imports/<id>` 查询 Actions 状态。分析复用 GitHub Secrets，不向 Worker 复制 AI 密钥。`POST /feishu/events` 为飞书事件接收入口，仅接收配置的群与用户，验证 Verification Token，支持 HTTPS 明文事件。部署时保留现有 Secrets。
+
+新增飞书配置：`FEISHU_VERIFICATION_TOKEN`（Secret）、`FEISHU_IMPORT_CHAT_ID`、`FEISHU_IMPORT_USER_ID`；未配置时关闭飞书接收入口，不影响网页入口、采集或推送。详见 `docs/feishu-import.md`。

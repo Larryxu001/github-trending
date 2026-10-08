@@ -90,3 +90,39 @@ test('cache failure falls back to GitHub and never rejects a confirmed save',asy
  globalThis.fetch=async(url,options)=>options?.method==='PUT'?new Response(JSON.stringify({content:{sha:'new'}})):stored([]);
  try{assert.equal((await worker.fetch(request({repo:'my/project'}),env)).status,200)}finally{delete globalThis.caches}
 });
+
+const importRequest=(body,auth=true)=>new Request('https://example.invalid/imports',{method:'POST',headers:{'Content-Type':'application/json',...(auth?{Authorization:'Bearer test-password'}:{})},body:JSON.stringify(body)});
+test('manual import authenticates, validates URL and dispatches without exposing AI secrets',async()=>{
+ let calls=[];globalThis.fetch=async(url,options)=>{calls.push({url,body:JSON.parse(options.body)});return new Response(null,{status:204})};
+ assert.equal((await worker.fetch(importRequest({url:'https://github.com/a/b'},false),env)).status,401);
+ for(const url of ['https://evil.invalid/a/b','https://github.com/a/b/issues','https://user@github.com/a/b']) assert.equal((await worker.fetch(importRequest({url}),env)).status,400);
+ assert.equal(calls.length,0);
+ const response=await worker.fetch(importRequest({url:'https://github.com/a/b.git'}),env);
+ assert.equal(response.status,202);const result=await response.json();
+ assert.equal(calls[0].body.inputs.urls,'["https://github.com/a/b"]');assert.equal(calls[0].body.inputs.source,'pages');assert.equal(calls[0].body.inputs.request_id,result.id);
+});
+test('import dispatch failure never reports accepted and status resolves the matching job',async()=>{
+ globalThis.fetch=async()=>new Response('{}',{status:403});assert.equal((await worker.fetch(importRequest({url:'https://github.com/a/b'}),env)).status,502);
+ globalThis.fetch=async()=>new Response(JSON.stringify({workflow_runs:[{display_title:'import-other',status:'completed',conclusion:'success'},{display_title:'import-my-id',status:'completed',conclusion:'failure',html_url:'https://github.com/job'}]}));
+ const response=await worker.fetch(new Request('https://example.invalid/imports/my-id',{headers:{Authorization:'Bearer test-password'}}),env);
+ assert.deepEqual(await response.json(),{ok:true,status:'completed',conclusion:'failure',url:'https://github.com/job'});
+});
+const feishuEnv={...env,FEISHU_VERIFICATION_TOKEN:'event-secret',FEISHU_IMPORT_CHAT_ID:'allowed-chat',FEISHU_IMPORT_USER_ID:'allowed-user'};
+function eventBody(overrides={}){return {header:{token:'event-secret',event_type:'im.message.receive_v1',event_id:'event-1'},event:{sender:{sender_type:'user',sender_id:{open_id:'allowed-user'}},message:{chat_id:'allowed-chat',message_type:'text',create_time:String(Date.now()),content:JSON.stringify({text:'https://github.com/a/b'})}},...overrides}}
+const eventRequest=body=>new Request('https://example.invalid/feishu/events',{method:'POST',body:JSON.stringify(body)});
+test('Feishu verifies challenge and rejects missing or incorrect event token',async()=>{
+ globalThis.fetch=()=>{throw Error('must not dispatch')};
+ assert.equal((await worker.fetch(eventRequest({type:'url_verification',token:'wrong',challenge:'abc'}),feishuEnv)).status,401);
+ const response=await worker.fetch(eventRequest({type:'url_verification',token:'event-secret',challenge:'abc'}),feishuEnv);
+ assert.deepEqual(await response.json(),{challenge:'abc'});
+ assert.equal((await worker.fetch(eventRequest(eventBody()),env)).status,503);
+});
+test('Feishu only imports permitted user/group, fresh human messages and repository home links',async()=>{
+ let calls=[];globalThis.fetch=async(url,options)=>{calls.push(JSON.parse(options.body));return new Response(null,{status:204})};
+ for(const change of [b=>b.event.message.chat_id='other',b=>b.event.sender.sender_id.open_id='other',b=>b.event.sender.sender_type='app',b=>b.event.message.create_time='0',b=>b.event.message.content='https://github.com/a/b/issues/1',b=>b.event.message.message_type='interactive']){
+  const body=eventBody();change(body);assert.equal((await worker.fetch(eventRequest(body),feishuEnv)).status,200);
+ }
+ assert.equal(calls.length,0);
+ assert.equal((await worker.fetch(eventRequest(eventBody()),feishuEnv)).status,200);
+ assert.equal(calls.length,1);assert.deepEqual(calls[0].inputs,{urls:'["https://github.com/a/b"]',request_id:'event-1',source:'feishu'});
+});

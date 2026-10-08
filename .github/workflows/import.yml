@@ -1,0 +1,43 @@
+name: Import Selected Projects
+run-name: import-${{ inputs.request_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: JSON array of GitHub repository URLs
+        required: true
+        type: string
+      request_id:
+        description: Request identifier
+        required: true
+        type: string
+      source:
+        description: Submission channel
+        type: choice
+        options: [pages, feishu]
+        default: pages
+permissions:
+  contents: write
+concurrency:
+  group: trending-state
+  queue: max
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Analyse and save selections
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          IMPORT_URLS: ${{ inputs.urls }}
+          IMPORT_SOURCE: ${{ inputs.source }}
+        run: python import_project.py

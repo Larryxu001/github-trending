@@ -45,3 +45,27 @@ test('save immediately shows progress, rejects double click, and survives closin
  resolveRequest({ok:true,status:200,json:async()=>({ok:true,removed:false})});await saving;
  assert.equal(context.savedSet.has('test/project'),true);assert.equal(button.disabled,false);assert.equal(button.textContent,'确认收藏');assert.deepEqual(messages,['已收藏到「我的精选」']);
 });
+
+test('manual import shows queued state, blocks duplicate clicks, and confirms only completed success',async()=>{
+ const savedPage=fs.readFileSync(new URL('../reports_web/saved.html',import.meta.url),'utf8');
+ const scripts=[...savedPage.matchAll(/<script>([\s\S]*?)<\/script>/g)];
+ const importScript=scripts.find(match=>match[1].includes('window.submitImport'))[1];
+ const elements=Object.fromEntries(['import-status','import-submit','import-url','list','count','tagBar','search','sort'].map(id=>[id,{textContent:'',innerHTML:'',value:id==='import-url'?'https://github.com/a/b':id==='sort'?'stars':'',appendChild(){}}]));
+ const storage=new Map([['trending-save-key','password']]);let calls=0,finishSubmit,timer;
+ const context={window:{addEventListener(){}},document:{getElementById:id=>elements[id],createElement:()=>({})},sessionStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},location:{reload(){}},AbortSignal,URL,JSON,setTimeout:fn=>timer=fn,
+ fetch:async(url,options)=>{
+  if(options?.method==='POST'){calls++;return new Promise(resolve=>finishSubmit=resolve)}
+  if(url.includes('/imports/'))return{ok:true,json:async()=>({status:'queued',url:'https://github.com/job'})};
+  return{ok:true,json:async()=>({ok:true,items:[{repo:'a/b',desc:'中文介绍',saved_at:'2026-10-08'}]})};
+ }};
+ vm.runInNewContext(importScript,context);
+ const pending=context.window.submitImport({preventDefault(){}});
+ assert.equal(elements['import-submit'].disabled,true);
+ await context.window.submitImport({preventDefault(){}});assert.equal(calls,1);
+ finishSubmit({ok:true,json:async()=>({id:'job-id'})});await pending;
+ assert.equal(storage.get('trending-import-id'),'job-id');assert.match(elements['import-status'].textContent,/排队/);
+ assert.doesNotMatch(elements['import-status'].textContent,/已处理完成/);
+ context.fetch=async(url)=>({ok:true,json:async()=>url.includes('/imports/')?{status:'completed',conclusion:'success'}:{ok:true,items:[{repo:'a/b',desc:'中文介绍',saved_at:'2026-10-08'}]}});
+ await timer();assert.equal(storage.has('trending-import-id'),false);assert.equal(elements['import-submit'].disabled,false);
+ assert.match(elements['import-status'].textContent,/已处理完成/);assert.match(elements.list.innerHTML,/中文介绍/);
+});

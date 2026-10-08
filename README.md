@@ -52,3 +52,12 @@ python3 -m unittest discover -s tests -v
 收藏 Worker 已纳入 `workers/save/`。收藏/取消收藏需输入本机 `.local/save-password.txt` 中的密码（不入库），公开浏览不需要密码。
 任一主要工作流失败会触发健康检查；每天 11:20 同时检查采集、日报与 Worker/GitHub PAT。仅状态变化时提醒，不重复刷屏。
 Cloudflare 独立定时器可在 GitHub 凭证失效或健康工作流无法触发时，通过飞书提醒。
+
+
+## 主动发现的项目
+
+在「我的精选」粘贴公开 GitHub 项目首页链接，点击「AI 分析并加入」。后台读取 GitHub 元数据及 README，调用现有 DeepSeek 生成中文介绍、分类，写入同一个 `saved.json`。页面显示任务进度，关闭页面不会取消任务；重复项目保留原有备注、标签和收藏时间。AI 失败不会当成分析成功加入，失败可查看 Actions 后重试。
+
+这类新增精选与日报收藏使用同一规则：下周一周报收录上周新增精选；月末月报取最近 4 期已发送周报并集。不会补改已经发出的日报、周报和月报，也不要求项目上过 Trending。
+
+飞书群接收入口需要另建自建应用机器人，加入现有推送群，配置见 [飞书接收配置](docs/feishu-import.md)。分析由 GitHub Actions 执行，使用已有 `DEEPSEEK_API_KEY`，会消耗少量模型 token；普通收藏和采集不新增模型调用。

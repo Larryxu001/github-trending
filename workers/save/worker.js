@@ -1,3 +1,5 @@
+import { handleImport } from "./imports.js";
+
 /**
  * GitHub Trending 收藏 Worker
  *
@@ -159,6 +161,8 @@ export default {
 
     const origin = request.headers.get("Origin");
     if (origin && origin !== "https://larryxu001.github.io") return json({error:"Origin forbidden"},403);
+    const imported = await handleImport(request, env, authorized, json);
+    if (imported) return imported;
     if (new URL(request.url).pathname === "/auth") {
       if (request.method !== "GET") return json({error:"仅支持 GET"},405);
       if (!env.SAVE_KEY) return json({error:"访问密码未配置"},503);

@@ -42,6 +42,14 @@ CSS = """
   .search-row input:focus { outline:none; border-color:var(--red); }
   .search-row select { padding:9px 10px; font-size:13px; border:1px solid var(--hair);
                        border-radius:6px; background:#fff; color:var(--ink); font-family:var(--sans); cursor:pointer; }
+  .import-box { padding:16px 0 20px; border-bottom:1px solid var(--hair); margin-bottom:18px; font-family:var(--sans); }
+  .import-box label { display:block; font-size:15px; font-weight:600; }
+  .import-row { display:flex; gap:10px; margin:10px 0 6px; }
+  .import-row input { flex:1; min-width:0; padding:10px 12px; font:14px var(--sans); border:1px solid var(--hair); border-radius:6px; }
+  .import-row button { padding:10px 14px; background:var(--ink); color:var(--paper); border:0; border-radius:6px; cursor:pointer; }
+  .import-row button:disabled { opacity:.6; cursor:wait; }
+  .import-box p { font-size:12px; color:var(--sub); }
+  .import-box :focus-visible { outline:2px solid var(--red); outline-offset:3px; }
   .tagbar { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 4px; }
   .tagbar .tag { font-size:12px; padding:3px 10px; border:1px solid var(--hair); border-radius:13px;
                  cursor:pointer; user-select:none; color:var(--ink); font-family:var(--sans); }
@@ -169,7 +177,7 @@ function render() {{
   const rows = getFiltered();
   count.textContent = allRows.length + (rows.length !== allRows.length ? ' / 筛出 ' + rows.length : '');
   if (allRows.length === 0) {{
-    list.innerHTML = '<div class="empty"><div class="big">★</div>还没有收藏，去日报里点击「☆ 收藏」标记对你有用的项目吧</div>';
+    list.innerHTML = '<div class="empty"><div class="big">★</div>还没有收藏。粘贴 GitHub 项目链接，或去日报里点击「☆ 收藏」。</div>';
     return;
   }}
   if (rows.length === 0) {{
@@ -223,6 +231,70 @@ window.unsave = async function(btn) {{
   }}
 }};
 
+
+let importPending = false;
+let importPollCount = 0;
+function importMessage(message, url) {{
+  const status = document.getElementById('import-status');
+  status.textContent = message;
+  if (url) {{
+    const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = ' 查看任务'; status.appendChild(a);
+  }}
+}}
+function importBusy(value) {{
+  importPending = value;
+  document.getElementById('import-submit').disabled = value;
+  document.getElementById('import-submit').textContent = value ? '处理中…' : 'AI 分析并加入';
+}}
+async function pollImport(id) {{
+  const headers = saveHeaders(); if (!headers) return;
+  try {{
+    const response = await fetch(SAVE_API + '/imports/' + encodeURIComponent(id), {{headers, signal:AbortSignal.timeout(15000)}});
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || '任务状态暂时无法读取');
+    if (result.status === 'completed') {{
+      sessionStorage.removeItem('trending-import-id'); importBusy(false);
+      if (result.conclusion === 'success') {{
+        importMessage('已处理完成，项目已在精选库中。将按收藏时间纳入周报和月报。');
+        document.getElementById('import-url').value = ''; await loadSaved();
+      }} else {{
+        importMessage('任务未成功完成，请查看任务详情；修复后可以重新提交。', result.url);
+      }}
+      return;
+    }}
+    importMessage(result.status === 'in_progress' ? '正在读取项目信息并进行 AI 分析…' : '已提交，正在排队。你可以离开页面，任务会继续处理。', result.url);
+    if (++importPollCount >= 40) {{
+      importMessage('任务仍在处理中，可查看任务进度；刷新此页面可继续查询。', result.url);
+      importBusy(false); return;
+    }}
+    setTimeout(() => pollImport(id), 15000);
+  }} catch (error) {{
+    importMessage(error.message + '；刷新页面可继续查询任务。'); importBusy(false);
+  }}
+}}
+window.submitImport = async function(event) {{
+  event.preventDefault(); if (importPending) return;
+  const headers = saveHeaders(); if (!headers) return;
+  const url = document.getElementById('import-url').value.trim();
+  importBusy(true); importMessage('正在提交项目…');
+  try {{
+    const response = await fetch(SAVE_API + '/imports', {{method:'POST',headers,
+      body:JSON.stringify({{url}}),signal:AbortSignal.timeout(15000)}});
+    const result = await response.json();
+    if (response.status === 401) sessionStorage.removeItem('trending-save-key');
+    if (!response.ok) throw new Error(result.error || '提交失败');
+    sessionStorage.setItem('trending-import-id', result.id); importPollCount = 0;
+    await pollImport(result.id);
+  }} catch (error) {{
+    importMessage(error.message + '；请确认任务状态后再重试。'); importBusy(false);
+  }}
+}};
+window.addEventListener('trending-unlocked', () => {{
+  const id = sessionStorage.getItem('trending-import-id');
+  if (id) {{ importBusy(true); pollImport(id); }}
+}});
+
 window.addEventListener('trending-unlocked', loadSaved);
 """
 
@@ -244,7 +316,7 @@ def render(save_api=""):
   <header class="masthead">
     <div class="topline"><span>MY SAVED REPOS</span><span>我的精选</span></div>
     <h1>我的精选</h1>
-    <div class="stand">从每日热榜中标记出的、对你真正有用的开源项目</div>
+    <div class="stand">收藏热榜项目，也收录你主动发现的好工具</div>
     <div class="doublerule"></div>
   </header>
 
@@ -255,6 +327,14 @@ def render(save_api=""):
       <button onclick="location.href='index.html'">返回归档</button>
     </div>
 
+    <form class="import-box" onsubmit="submitImport(event)">
+      <label for="import-url">添加你发现的 GitHub 项目</label>
+      <div class="import-row">
+        <input type="url" id="import-url" placeholder="https://github.com/owner/repo" required autocomplete="off">
+        <button id="import-submit" type="submit">AI 分析并加入</button>
+      </div>
+      <p id="import-status" role="status" aria-live="polite">自动生成中文介绍和分类，加入精选后纳入周报、月报。</p>
+    </form>
     <div class="search-row">
       <input type="text" id="search" placeholder="搜索项目名 / 描述 / 备注 / 标签…" oninput="render()">
       <select id="sort" onchange="sortChanged()">
