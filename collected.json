@@ -29,7 +29,7 @@
    "lists": [
     "weekly"
    ],
-   "stars": 5697,
+   "stars": 6041,
    "owner": "mvschwarz",
    "homepage": "https://openrig.dev",
    "description": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
@@ -47,17 +47,17 @@
     "tmux",
     "typescript"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:09.411508+08:00",
-   "last_seen": "2026-10-08T21:01:52.503684+08:00"
+   "last_seen": "2026-10-09T00:02:03.149788+08:00"
   },
   "alibaba/open-code-review": {
    "repo": "alibaba/open-code-review",
    "lists": [
     "monthly"
    ],
-   "stars": 44211,
+   "stars": 44526,
    "owner": "alibaba",
    "homepage": "https://open-codereview.ai",
    "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
@@ -70,10 +70,10 @@
     "harness",
     "repository-level-context"
    ],
-   "updated": "2026-10-05",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:10.164331+08:00",
-   "last_seen": "2026-10-08T21:01:52.503672+08:00"
+   "last_seen": "2026-10-09T00:02:00.478140+08:00"
   },
   "mattpocock/skills": {
    "repo": "mattpocock/skills",
@@ -81,16 +81,16 @@
     "daily",
     "weekly"
    ],
-   "stars": 279322,
+   "stars": 280856,
    "owner": "mattpocock",
    "homepage": "https://aihero.dev/skills",
    "description": "Skills for Real Engineers. Straight from my .agents directory.",
    "language": "Shell",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-10-08T21:01:52.503710+08:00"
+   "last_seen": "2026-10-09T00:02:07.457335+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -98,7 +98,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 58419,
+   "stars": 59011,
    "owner": "heygen-com",
    "homepage": "https://hyperframes.dev",
    "description": "Write HTML. Render video. Built for agents.",
@@ -116,17 +116,17 @@
     "typescript",
     "video"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-10-08T21:01:52.503702+08:00"
+   "last_seen": "2026-10-09T00:02:05.777750+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
    "lists": [
     "monthly"
    ],
-   "stars": 48682,
+   "stars": 49065,
    "owner": "bilawalsidhu",
    "homepage": "https://maptheworld.ai/",
    "description": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
@@ -145,10 +145,10 @@
     "webgl",
     "worldview"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:12.397668+08:00",
-   "last_seen": "2026-10-08T21:01:52.503706+08:00"
+   "last_seen": "2026-10-09T00:02:06.624672+08:00"
   },
   "earthtojake/text-to-cad": {
    "repo": "earthtojake/text-to-cad",
@@ -156,7 +156,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 18351,
+   "stars": 18398,
    "owner": "earthtojake",
    "homepage": "https://www.texttocad.dev",
    "description": "Give your agent CAD superpowers.",
@@ -173,9 +173,9 @@
     "text-to-cad"
    ],
    "updated": "2026-10-08",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-10-08T21:01:52.503763+08:00"
+   "last_seen": "2026-10-09T00:02:18.399998+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -183,23 +183,23 @@
     "monthly",
     "weekly"
    ],
-   "stars": 10232,
+   "stars": 10346,
    "owner": "cursor",
    "homepage": "",
    "description": "Cursor plugin specification and official plugins",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-10-08T21:01:52.503727+08:00"
+   "last_seen": "2026-10-09T00:02:10.931153+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
    "lists": [
     "monthly"
    ],
-   "stars": 274798,
+   "stars": 275355,
    "owner": "affaan-m",
    "homepage": "https://ecc.tools",
    "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
@@ -215,9 +215,9 @@
     "productivity"
    ],
    "updated": "2026-10-05",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-10-08T21:01:52.503735+08:00"
+   "last_seen": "2026-10-09T00:02:12.599765+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -225,7 +225,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 9655,
+   "stars": 13965,
    "owner": "boykopovar",
    "homepage": "https://discord.gg/BHFztBPUe",
    "description": "Tool for automatic PS5 executables porting to Linux and Windows",
@@ -239,10 +239,10 @@
     "spir-v",
     "vulkan"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-10-08T21:01:52.503654+08:00"
+   "last_seen": "2026-10-09T00:01:59.635416+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -250,7 +250,7 @@
     "daily",
     "monthly"
    ],
-   "stars": 54963,
+   "stars": 55683,
    "owner": "ayghri",
    "homepage": "",
    "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
@@ -264,9 +264,9 @@
     "productivity"
    ],
    "updated": "2026-10-06",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:16.158074+08:00",
-   "last_seen": "2026-10-08T21:01:52.503801+08:00"
+   "last_seen": "2026-10-09T00:02:26.852169+08:00"
   },
   "NVIDIA/OpenShell": {
    "repo": "NVIDIA/OpenShell",
@@ -274,16 +274,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 15264,
+   "stars": 15442,
    "owner": "NVIDIA",
    "homepage": "https://docs.nvidia.com/openshell/latest/",
    "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
    "language": "Rust",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:16.915683+08:00",
-   "last_seen": "2026-10-08T21:01:52.503786+08:00"
+   "last_seen": "2026-10-09T00:02:23.453767+08:00"
   },
   "pbakaus/impeccable": {
    "repo": "pbakaus/impeccable",
@@ -335,16 +335,16 @@
    "lists": [
     "monthly"
    ],
-   "stars": 38923,
+   "stars": 39019,
    "owner": "anthropics",
    "homepage": "",
    "description": "",
    "language": "Python",
    "topics": [],
    "updated": "2026-09-21",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:19.194644+08:00",
-   "last_seen": "2026-10-08T21:01:52.503719+08:00"
+   "last_seen": "2026-10-09T00:02:09.242593+08:00"
   },
   "thedotmack/claude-mem": {
    "repo": "thedotmack/claude-mem",
@@ -352,7 +352,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 97592,
+   "stars": 98207,
    "owner": "thedotmack",
    "homepage": "https://claude-mem.ai",
    "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
@@ -380,48 +380,48 @@
     "supermemory"
    ],
    "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-10-08T21:01:52.503723+08:00"
+   "last_seen": "2026-10-09T00:02:10.065636+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
    "lists": [
     "monthly"
    ],
-   "stars": 98374,
+   "stars": 98738,
    "owner": "paperclipai",
    "homepage": "https://paperclip.ing",
    "description": "The open-source app everyone uses to manage agents at work",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:20.630895+08:00",
-   "last_seen": "2026-10-08T21:01:52.503731+08:00"
+   "last_seen": "2026-10-09T00:02:11.788911+08:00"
   },
   "pablostanley/yoinks": {
    "repo": "pablostanley/yoinks",
    "lists": [
     "weekly"
    ],
-   "stars": 5051,
+   "stars": 5310,
    "owner": "pablostanley",
    "homepage": "",
    "description": "yoink any video from your terminal. no shady ads.",
    "language": "TypeScript",
    "topics": [],
    "updated": "2026-07-17",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:21.343830+08:00",
-   "last_seen": "2026-10-08T21:01:52.503779+08:00"
+   "last_seen": "2026-10-09T00:02:21.735736+08:00"
   },
   "Tencent/WeKnora": {
    "repo": "Tencent/WeKnora",
    "lists": [
     "monthly"
    ],
-   "stars": 32416,
+   "stars": 32593,
    "owner": "Tencent",
    "homepage": "https://weknora.weixin.qq.com",
    "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
@@ -448,47 +448,47 @@
     "vector-search",
     "wiki"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:22.107384+08:00",
-   "last_seen": "2026-10-08T21:01:52.503755+08:00"
+   "last_seen": "2026-10-09T00:02:16.753888+08:00"
   },
   "morluto/rea": {
    "repo": "morluto/rea",
    "lists": [
     "daily"
    ],
-   "stars": 13785,
+   "stars": 20612,
    "owner": "morluto",
    "homepage": "https://morluto.github.io/rea/",
    "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
    "language": "TypeScript",
    "topics": [
     "agent-skills",
-    "ai-agent-tools",
     "ai-agents",
     "binary-analysis",
+    "claude-code",
     "cli",
-    "coding-agents",
+    "codex",
     "cordis",
     "ctf",
     "decompiler",
+    "developer-tools",
     "disassembler",
     "dsh",
     "dsh-plugin",
     "ghidra",
     "hopper",
+    "llm",
     "mcp",
-    "mcp-server",
     "model-context-protocol",
     "reverse-engineering",
-    "reverse-engineering-tools",
     "static-analysis"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-10-08T21:01:52.503697+08:00"
+   "last_seen": "2026-10-09T00:02:04.902001+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -531,7 +531,7 @@
    "lists": [
     "monthly"
    ],
-   "stars": 46736,
+   "stars": 47178,
    "owner": "vectorize-io",
    "homepage": "https://hindsight.vectorize.io/",
    "description": "Hindsight: Agent Memory That Learns",
@@ -542,10 +542,10 @@
     "ai-memory",
     "memory"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:24.294659+08:00",
-   "last_seen": "2026-10-08T21:01:52.503743+08:00"
+   "last_seen": "2026-10-09T00:02:14.290507+08:00"
   },
   "deepseek-ai/DeepGEMM": {
    "repo": "deepseek-ai/DeepGEMM",
@@ -569,7 +569,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 6682,
+   "stars": 7764,
    "owner": "DuarteSantos8",
    "homepage": "https://opengym.duarte-santos.ch",
    "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
@@ -594,26 +594,26 @@
     "weightlifting",
     "workout-tracker"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:25.783589+08:00",
-   "last_seen": "2026-10-08T21:01:52.503771+08:00"
+   "last_seen": "2026-10-09T00:02:20.080673+08:00"
   },
   "anthropics/claude-code": {
    "repo": "anthropics/claude-code",
    "lists": [
     "monthly"
    ],
-   "stars": 149746,
+   "stars": 149870,
    "owner": "anthropics",
    "homepage": "https://code.claude.com/docs/en/overview",
    "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:26.492313+08:00",
-   "last_seen": "2026-10-08T21:01:52.503767+08:00"
+   "last_seen": "2026-10-09T00:02:19.235252+08:00"
   },
   "msitarzewski/agency-agents": {
    "repo": "msitarzewski/agency-agents",
@@ -636,7 +636,7 @@
    "lists": [
     "monthly"
    ],
-   "stars": 25610,
+   "stars": 25691,
    "owner": "mksglu",
    "homepage": "https://context-mode.com",
    "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
@@ -663,17 +663,17 @@
     "skills",
     "zed-extension"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-10-08T21:01:52.503790+08:00"
+   "last_seen": "2026-10-09T00:02:24.344952+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
    "lists": [
     "weekly"
    ],
-   "stars": 93116,
+   "stars": 93955,
    "owner": "Panniantong",
    "homepage": "",
    "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
@@ -697,17 +697,17 @@
     "xiaohongshu",
     "youtube-transcript"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:28.633812+08:00",
-   "last_seen": "2026-10-08T21:01:52.503751+08:00"
+   "last_seen": "2026-10-09T00:02:15.947618+08:00"
   },
   "cathrynlavery/diagram-design": {
    "repo": "cathrynlavery/diagram-design",
    "lists": [
     "daily"
    ],
-   "stars": 44794,
+   "stars": 45860,
    "owner": "cathrynlavery",
    "homepage": "https://cathrynlavery.github.io/diagram-design/",
    "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Factory Droid, and Pi. 42 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
@@ -722,10 +722,10 @@
     "mermaid",
     "svg"
    ],
-   "updated": "2026-10-06",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:29.400998+08:00",
-   "last_seen": "2026-10-08T21:01:52.503680+08:00"
+   "last_seen": "2026-10-09T00:02:01.312728+08:00"
   },
   "byoungd/up": {
    "repo": "byoungd/up",
@@ -756,7 +756,7 @@
    "lists": [
     "monthly"
    ],
-   "stars": 7686,
+   "stars": 7959,
    "owner": "TencentCloud",
    "homepage": "https://octop.cloud",
    "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
@@ -770,10 +770,10 @@
     "local-first",
     "long-term-memory"
    ],
-   "updated": "2026-10-06",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:30.899722+08:00",
-   "last_seen": "2026-10-08T21:01:52.503775+08:00"
+   "last_seen": "2026-10-09T00:02:20.895648+08:00"
   },
   "tt-a1i/archify": {
    "repo": "tt-a1i/archify",
@@ -817,23 +817,23 @@
    "lists": [
     "monthly"
    ],
-   "stars": 4501,
+   "stars": 4577,
    "owner": "agent-substrate",
    "homepage": "",
    "description": "Agent Substrate: the core system",
    "language": "Go",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:32.365141+08:00",
-   "last_seen": "2026-10-08T21:01:52.503782+08:00"
+   "last_seen": "2026-10-09T00:02:22.618069+08:00"
   },
   "DietrichGebert/ponytail": {
    "repo": "DietrichGebert/ponytail",
    "lists": [
     "monthly"
    ],
-   "stars": 157463,
+   "stars": 158310,
    "owner": "DietrichGebert",
    "homepage": "https://ponytail.dev",
    "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
@@ -850,10 +850,10 @@
     "prompt-engineering",
     "yagni"
    ],
-   "updated": "2026-10-05",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:33.111988+08:00",
-   "last_seen": "2026-10-08T21:01:52.503813+08:00"
+   "last_seen": "2026-10-09T00:02:29.396192+08:00"
   },
   "trycua/cua": {
    "repo": "trycua/cua",
@@ -861,7 +861,7 @@
     "daily",
     "monthly"
    ],
-   "stars": 28681,
+   "stars": 29002,
    "owner": "trycua",
    "homepage": "https://cua.ai",
    "description": "Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.",
@@ -886,10 +886,10 @@
     "windows",
     "windows-sandbox"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:33.883679+08:00",
-   "last_seen": "2026-10-08T21:01:52.503805+08:00"
+   "last_seen": "2026-10-09T00:02:27.749270+08:00"
   },
   "anthropics/knowledge-work-plugins": {
    "repo": "anthropics/knowledge-work-plugins",
@@ -897,55 +897,55 @@
     "daily",
     "monthly"
    ],
-   "stars": 27091,
+   "stars": 27345,
    "owner": "anthropics",
    "homepage": "",
    "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
    "language": "Python",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-10-08T21:01:52.503739+08:00"
+   "last_seen": "2026-10-09T00:02:13.426775+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
    "lists": [
     "monthly"
    ],
-   "stars": 31565,
+   "stars": 32022,
    "owner": "tashfeenahmed",
    "homepage": "https://freellmapi.co",
    "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-10-08T21:01:52.503809+08:00"
+   "last_seen": "2026-10-09T00:02:28.558680+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
    "lists": [
     "monthly"
    ],
-   "stars": 40272,
+   "stars": 40484,
    "owner": "JustVugg",
    "homepage": "https://justvugg.github.io/colibri",
    "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
    "language": "C",
    "topics": [],
-   "updated": "2026-10-06",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:35.970620+08:00",
-   "last_seen": "2026-10-08T21:01:52.503798+08:00"
+   "last_seen": "2026-10-09T00:02:26.054180+08:00"
   },
   "max-sixty/worktrunk": {
    "repo": "max-sixty/worktrunk",
    "lists": [
     "monthly"
    ],
-   "stars": 8955,
+   "stars": 9004,
    "owner": "max-sixty",
    "homepage": "https://worktrunk.dev",
    "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
@@ -958,10 +958,10 @@
     "git",
     "worktrees"
    ],
-   "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-10-08T21:01:52.503821+08:00"
+   "last_seen": "2026-10-09T00:02:30.997126+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -989,7 +989,7 @@
     "daily",
     "monthly"
    ],
-   "stars": 102642,
+   "stars": 103258,
    "owner": "addyosmani",
    "homepage": "https://skills.addy.ie",
    "description": "Production-grade engineering skills for AI coding agents.",
@@ -1003,9 +1003,9 @@
     "skills"
    ],
    "updated": "2026-10-03",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-10-08T21:01:52.503817+08:00"
+   "last_seen": "2026-10-09T00:02:30.239956+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
@@ -1013,32 +1013,32 @@
     "daily",
     "weekly"
    ],
-   "stars": 7798,
+   "stars": 8021,
    "owner": "EpicGames",
    "homepage": "",
    "description": "A native, user-mode, multi-process, graphical debugger.",
    "language": "C",
    "topics": [],
    "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-08T03:12:25.444043+08:00",
-   "last_seen": "2026-10-08T21:01:52.503715+08:00"
+   "last_seen": "2026-10-09T00:02:08.304568+08:00"
   },
   "spotify/portal-ai-plugins": {
    "repo": "spotify/portal-ai-plugins",
    "lists": [
     "monthly"
    ],
-   "stars": 2411,
+   "stars": 2435,
    "owner": "spotify",
    "homepage": "",
    "description": "",
    "language": "TypeScript",
    "topics": [],
    "updated": "2026-10-06",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-08T03:12:28.609870+08:00",
-   "last_seen": "2026-10-08T21:01:52.503794+08:00"
+   "last_seen": "2026-10-09T00:02:25.235659+08:00"
   },
   "manaflow-ai/cmux": {
    "repo": "manaflow-ai/cmux",
@@ -1128,7 +1128,7 @@
    "lists": [
     "monthly"
    ],
-   "stars": 54923,
+   "stars": 55068,
    "owner": "debpalash",
    "homepage": "https://voicestudio.sh",
    "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
@@ -1156,16 +1156,16 @@
     "workflow"
    ],
    "updated": "2026-10-08",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-10-08T21:01:52.503692+08:00"
+   "last_seen": "2026-10-09T00:02:04.033544+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
    "lists": [
     "daily"
    ],
-   "stars": 5875,
+   "stars": 6677,
    "owner": "storytold",
    "homepage": "https://getartcraft.com",
    "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
@@ -1178,28 +1178,28 @@
     "imagegeneration"
    ],
    "updated": "2026-10-07",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-08T19:08:03.335575+08:00",
-   "last_seen": "2026-10-08T21:01:52.503747+08:00"
+   "last_seen": "2026-10-09T00:02:15.123705+08:00"
   },
   "liquidslr/system-design-notes": {
    "repo": "liquidslr/system-design-notes",
    "lists": [
     "daily"
    ],
-   "stars": 24161,
+   "stars": 24346,
    "owner": "liquidslr",
    "homepage": "https://pagefy-blush.vercel.app/system-design/system-design-interview-by-alex-xu",
    "description": "Notes of the book System Desgin Interview - An Insider's Guide",
    "language": "",
    "topics": [],
    "updated": "2026-08-12",
-   "metadata_date": "2026-10-08",
+   "metadata_date": "2026-10-09",
    "first_seen": "2026-10-08T19:08:04.129429+08:00",
-   "last_seen": "2026-10-08T21:01:52.503759+08:00"
+   "last_seen": "2026-10-09T00:02:17.584678+08:00"
   }
  },
- "last_collected": "2026-10-08T21:01:52.503825+08:00",
+ "last_collected": "2026-10-09T00:02:31.497292+08:00",
  "list_counts": {
   "daily": 9,
   "weekly": 11,
