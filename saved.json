@@ -163,6 +163,20 @@
    "tags": [],
    "saved_at": "2026-10-08",
    "source": "feishu"
+  },
+  {
+   "repo": "sansan0/TrendRadar",
+   "url": "https://github.com/sansan0/TrendRadar",
+   "owner": "sansan0",
+   "stars": 62725,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "TrendRadar 是一个 AI 驱动的舆情与热点监控工具，帮你告别信息过载。它聚合微博、知乎等多平台热榜和 RSS 订阅，用 AI 智能筛选、翻译并生成分析简报，再通过微信、飞书、钉钉、Telegram、邮件等渠道推送到手机。比如你只关心「AI 芯片」相关新闻，它就能自动过滤无关内容并定时提醒你。支持 Docker 一键部署，数据可本地或云端自持，还能接入 MCP 让 AI 对话分析趋势。",
+   "site": "https://trendradar.sandev.cc",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08",
+   "source": "feishu"
   }
  ]
 }
