@@ -109,6 +109,19 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-08"
+  },
+  {
+   "repo": "vectorize-io/hindsight",
+   "url": "https://github.com/vectorize-io/hindsight",
+   "owner": "vectorize-io",
+   "stars": 44831,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "给 AI Agent 装的「会成长的记忆」。普通记忆只是存聊天记录，Hindsight 会从过去的成功和失败里总结规律，下次遇到类似任务做得更好——让 AI 像新人一样逐渐变成老手。",
+   "site": "https://hindsight.vectorize.io/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08"
   }
  ]
 }
