@@ -108,7 +108,7 @@ test('import dispatch failure never reports accepted and status resolves the mat
  assert.deepEqual(await response.json(),{ok:true,status:'completed',conclusion:'failure',url:'https://github.com/job'});
 });
 const feishuEnv={...env,FEISHU_VERIFICATION_TOKEN:'event-secret',FEISHU_IMPORT_CHAT_ID:'allowed-chat',FEISHU_IMPORT_USER_ID:'allowed-user'};
-function eventBody(overrides={}){return {header:{token:'event-secret',event_type:'im.message.receive_v1',event_id:'event-1'},event:{sender:{sender_type:'user',sender_id:{open_id:'allowed-user'}},message:{chat_id:'allowed-chat',message_type:'text',create_time:String(Date.now()),content:JSON.stringify({text:'https://github.com/a/b'})}},...overrides}}
+function eventBody(overrides={}){return {header:{token:'event-secret',event_type:'im.message.receive_v1',event_id:'event-1'},event:{sender:{sender_type:'user',sender_id:{open_id:'allowed-user'}},message:{chat_id:'allowed-chat',chat_type:'group',mentions:[{key:'@_user_1',id:{open_id:'bot-user'}}],message_type:'text',create_time:String(Date.now()),content:JSON.stringify({text:'https://github.com/a/b'})}},...overrides}}
 const eventRequest=body=>new Request('https://example.invalid/feishu/events',{method:'POST',body:JSON.stringify(body)});
 test('Feishu verifies challenge and rejects missing or incorrect event token',async()=>{
  globalThis.fetch=()=>{throw Error('must not dispatch')};
@@ -119,7 +119,7 @@ test('Feishu verifies challenge and rejects missing or incorrect event token',as
 });
 test('Feishu only imports permitted user/group, fresh human messages and repository home links',async()=>{
  let calls=[];globalThis.fetch=async(url,options)=>{calls.push(JSON.parse(options.body));return new Response(null,{status:204})};
- for(const change of [b=>b.event.message.chat_id='other',b=>b.event.sender.sender_id.open_id='other',b=>b.event.sender.sender_type='app',b=>b.event.message.create_time='0',b=>b.event.message.content='https://github.com/a/b/issues/1',b=>b.event.message.message_type='interactive']){
+ for(const change of [b=>b.event.message.chat_id='other',b=>b.event.sender.sender_id.open_id='other',b=>b.event.sender.sender_type='app',b=>b.event.message.create_time='0',b=>b.event.message.content='https://github.com/a/b/issues/1',b=>b.event.message.message_type='interactive',b=>b.event.message.mentions=[],b=>b.event.message.chat_type='p2p']){
   const body=eventBody();change(body);assert.equal((await worker.fetch(eventRequest(body),feishuEnv)).status,200);
  }
  assert.equal(calls.length,0);

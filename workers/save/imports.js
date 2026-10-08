@@ -67,6 +67,8 @@ export async function handleImport(request, env, authorized, json) {
       if (!env.FEISHU_IMPORT_CHAT_ID || !env.FEISHU_IMPORT_USER_ID) return json({error:'请配置允许导入的群和用户'},503);
       const message = body.event?.message, sender = body.event?.sender;
       if (message?.chat_id !== env.FEISHU_IMPORT_CHAT_ID || sender?.sender_id?.open_id !== env.FEISHU_IMPORT_USER_ID || sender?.sender_type !== 'user') return json({ok:true});
+      // Require an explicit mention as well as the platform's @message permission.
+      if (message.chat_type !== 'group' || !Array.isArray(message.mentions) || !message.mentions.length) return json({ok:true});
       // Accept text and rich-text posts only; bot cards and old/replayed events never import.
       if (!['text','post'].includes(message.message_type)) return json({ok:true});
       const age = Date.now() - Number(message.create_time);
