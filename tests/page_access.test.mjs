@@ -32,3 +32,16 @@ test('navigation revalidates existing session without another password prompt',a
 test('service failure never unlocks the page',async()=>{
  const state=await entrance('test-password',503);assert.equal(state.elements['page-content'].hidden,true);assert.match(state.elements['access-error'].textContent,/暂时不可用/);
 });
+test('save immediately shows progress, rejects double click, and survives closing the dialog',async()=>{
+ const report=fs.readFileSync(new URL('../reports_web/2026/2026-10-08/index.html',import.meta.url),'utf8');
+ const handler=report.slice(report.indexOf('window.confirmSave ='),report.indexOf('// 新标签输入'));
+ const button={disabled:false,textContent:'确认收藏',setAttribute(){},removeAttribute(){}};
+ let resolveRequest,calls=0,messages=[];
+ const context={window:{},pendingMeta:{repo:'test/project'},saveApi:'https://example.invalid',saveHeaders:()=>({}),document:{getElementById:id=>id==='dlgOk'?button:{value:'keep note'}},fetch:()=>{calls++;return new Promise(resolve=>resolveRequest=resolve)},AbortSignal,sessionStorage:{removeItem(){}},toast:message=>messages.push(message),closeDlg(){context.pendingMeta=null},savedSet:new Set(),refreshSavedStates(){}};
+ vm.runInNewContext(handler,context);
+ const saving=context.window.confirmSave();assert.equal(button.textContent,'保存中…');assert.equal(button.disabled,true);
+ await context.window.confirmSave();assert.equal(calls,1);
+ context.pendingMeta=null;
+ resolveRequest({ok:true,status:200,json:async()=>({ok:true,removed:false})});await saving;
+ assert.equal(context.savedSet.has('test/project'),true);assert.equal(button.disabled,false);assert.equal(button.textContent,'确认收藏');assert.deepEqual(messages,['已收藏到「我的精选」']);
+});
