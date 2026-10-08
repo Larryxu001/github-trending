@@ -55,3 +55,38 @@ test('collection cron dispatches scheduled collection, health cron stays separat
   assert.deepEqual(dispatched.body,cron==='20 3 * * *'?{ref:'main'}:{ref:'main',inputs:{mode:'scheduled'}});
  }
 });
+function memoryCache(){
+ const entries=new Map();
+ return{async match(key){return entries.get(key)?.clone()},async put(key,response){entries.set(key,response.clone())},async delete(key){entries.delete(key)}};
+}
+test('recent page read removes the extra GitHub read and subsequent saves keep new SHA',async()=>{
+ globalThis.caches={default:memoryCache()};let reads=0,writes=[];
+ globalThis.fetch=async(url,options)=>{
+  if(options?.method==='PUT'){writes.push(JSON.parse(options.body));return new Response(JSON.stringify({content:{sha:'updated-'+writes.length}}))}
+  reads++;return stored([],'initial');
+ };
+ try{
+  await worker.fetch(new Request('https://example.invalid'),env);
+  assert.equal((await worker.fetch(request({repo:'first/project'}),env)).status,200);
+  assert.equal((await worker.fetch(request({repo:'second/project'}),env)).status,200);
+  assert.equal(reads,1);assert.equal(writes.length,2);assert.equal(writes[1].sha,'updated-1');
+  assert.equal(JSON.parse(Buffer.from(writes[1].content,'base64')).items.length,2);
+ }finally{delete globalThis.caches}
+});
+test('stale cached SHA falls back to fresh read and preserves concurrently saved project',async()=>{
+ globalThis.caches={default:memoryCache()};let reads=0,writes=[];
+ globalThis.fetch=async(url,options)=>{
+  if(options?.method==='PUT'){writes.push(JSON.parse(options.body));return writes.length===1?new Response('{"message":"conflict"}',{status:409}):new Response(JSON.stringify({content:{sha:'latest'}}))}
+  reads++;return stored(reads===1?[]:[{repo:'other/project'}],reads===1?'old':'fresh');
+ };
+ try{
+  await worker.fetch(new Request('https://example.invalid'),env);
+  assert.equal((await worker.fetch(request({repo:'my/project'}),env)).status,200);
+  assert.equal(reads,2);assert.equal(writes[1].sha,'fresh');assert.equal(JSON.parse(Buffer.from(writes[1].content,'base64')).items.length,2);
+ }finally{delete globalThis.caches}
+});
+test('cache failure falls back to GitHub and never rejects a confirmed save',async()=>{
+ globalThis.caches={default:{async match(){throw Error('cache unavailable')},async put(){throw Error('cache unavailable')}}};
+ globalThis.fetch=async(url,options)=>options?.method==='PUT'?new Response(JSON.stringify({content:{sha:'new'}})):stored([]);
+ try{assert.equal((await worker.fetch(request({repo:'my/project'}),env)).status,200)}finally{delete globalThis.caches}
+});

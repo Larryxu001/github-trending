@@ -27,6 +27,31 @@ async function authorized(request, key) {
   return difference === 0;
 }
 
+// Only an optimization: GitHub's SHA check remains the authority for every write.
+async function snapshotCache(request, repo, branch, token) {
+  if (typeof caches === "undefined") return null;
+  const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(token)));
+  const identity = Array.from(digest, byte => byte.toString(16).padStart(2, "0")).join("");
+  const key = new URL(`/__saved_snapshot/v1/${encodeURIComponent(repo)}/${encodeURIComponent(branch)}/${identity}`, request.url).href;
+  return {
+    async read() {
+      try {
+        const response = await caches.default.match(key);
+        const value = response && await response.json();
+        return value && Array.isArray(value.items) && typeof value.sha === "string" ? value : null;
+      } catch (_) { return null; }
+    },
+    async write(value) {
+      try {
+        if (!value.sha) { await caches.default.delete(key); return; }
+        await caches.default.put(key, new Response(JSON.stringify(value), {
+          headers:{"Content-Type":"application/json", "Cache-Control":"max-age=600"}
+        }));
+      } catch (_) { console.warn(JSON.stringify({event:"snapshot_cache_unavailable"})); }
+    }
+  };
+}
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -126,6 +151,7 @@ export default {
   },
 
   async fetch(request, env) {
+    const started = performance.now();
     // CORS 预检
     if (request.method === "OPTIONS") {
       return json({ ok: true });
@@ -157,8 +183,10 @@ export default {
     // GET：直接读最新收藏列表（走 GitHub API，无 CDN 缓存），供精选页/日报页使用
     if (request.method === "GET") {
       try {
-        const { items } = await fetchSaved(repo, branch, token);
-        return json({ ok: true, items });
+        const current = await fetchSaved(repo, branch, token);
+        const cache = await snapshotCache(request, repo, branch, token);
+        if (cache) await cache.write(current);
+        return json({ ok: true, items: current.items });
       } catch (e) {
         return json({ error: e.message || "内部错误" }, 500);
       }
@@ -251,14 +279,19 @@ export default {
 
       // 带冲突重试的写入：并发收藏时可能拿到旧 sha，写入 409/422，此时重读最新再写
       let items, removed, sha;
+      const cache = await snapshotCache(request, repo, branch, token);
+      const snapshot = cache && await cache.read();
       for (let attempt = 0; attempt < 3; attempt++) {
-        const cur = await fetchSaved(repo, branch, token);
+        const cur = attempt === 0 && snapshot ? snapshot : await fetchSaved(repo, branch, token);
         items = cur.items;
         sha = cur.sha;
         const change = applyChange(items);
         removed = change.removed;
         try {
-          await writeSaved(repo, branch, token, items, sha);
+          const written = await writeSaved(repo, branch, token, items, sha);
+          if (cache) await cache.write({items, sha:written.content?.sha});
+          console.log(JSON.stringify({event:"favorite_write", snapshot_hit:!!snapshot, attempts:attempt + 1,
+                                      duration_ms:Math.round(performance.now() - started)}));
           break; // 写入成功
         } catch (e) {
           const conflict = /409|422/.test(String(e.message));

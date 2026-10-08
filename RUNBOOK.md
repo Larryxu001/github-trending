@@ -47,4 +47,6 @@ Webhook 失效时飞书自身无法收到提醒，Actions/Worker 日志仍明确
 
 Worker 检查：`node --test workers/save/worker.test.mjs`；部署说明见 `workers/save/README.md`。
 
+收藏提速：页面 GET 仍读 GitHub 最新数据，同时缓存带 SHA 的快照 10 分钟。POST 优先复用快照，命中时只执行一次 GitHub 写入；SHA 冲突时重新读最新数据合并。缓存失效或不可用退回原流程，成功必须得到 GitHub 写入回执。Worker 日志 favorite_write 记录 snapshot_hit、attempts 与 duration_ms，不记录密码或备注。
+
 页面入口只需要访问密码，无账号。同一标签页会话内自动验证，关闭后下次需重新输入。Pages 与仓库仍公开；入口不等同于私密托管，源代码及历史静态内容不具备保密性。密码由 Worker 验证，不写入 HTML。
