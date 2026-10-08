@@ -44,3 +44,11 @@ class ImportTests(unittest.TestCase):
         monthly=monthly_report([weekly],'2026-10')
         self.assertEqual(monthly['new_count'],1)
         self.assertEqual(monthly['categories'][0]['items'][0]['desc'],'中文 AI 分析')
+
+    def test_feishu_notification_uses_content_text(self):
+        import io
+        response=io.BytesIO(b'{"code":0}')
+        with patch.dict(importer.os.environ,{'FEISHU_WEBHOOK':'https://example.invalid'}), patch.object(importer.urllib.request,'urlopen',return_value=response) as send:
+            importer.notify('已加入精选')
+            body=json.loads(send.call_args.args[0].data)
+            self.assertEqual(body,{'msg_type':'text','content':{'text':'已加入精选'}})

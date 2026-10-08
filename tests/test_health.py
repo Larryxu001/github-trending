@@ -8,7 +8,10 @@ class HealthTest(unittest.TestCase):
             health_check.run()
     def test_changed_failure_persists_before_alert(self):
         events=[]
-        with patch.object(health_check,'problems',return_value=['Worker PAT invalid']), patch.object(health_check,'load',return_value={}), patch.object(health_check,'write',side_effect=lambda *a:events.append(('write',a[1]['notification']))), patch('report_jobs.checkpoint',side_effect=lambda *a:events.append(('persist',None))), patch('report_jobs.send_once',side_effect=lambda *a:events.append(('send',None))):
+        with patch.object(health_check,'problems',return_value=['Worker PAT invalid']), patch.object(health_check,'load',return_value={}), patch.object(health_check,'write',side_effect=lambda *a:events.append(('write',a[1]['notification']))), patch('report_jobs.checkpoint',side_effect=lambda *a:events.append(('persist',None))), patch('report_jobs.send_once',side_effect=lambda *a:events.append(('send',a[0]))):
             health_check.run()
-        self.assertLess(events.index(('persist',None)),events.index(('send',None)))
+        sent = next(event for event in events if event[0] == 'send')
+        self.assertLess(events.index(('persist',None)),events.index(sent))
+        self.assertEqual(sent[1]['msg_type'], 'text')
+        self.assertIn('Worker PAT invalid', sent[1]['content']['text'])
         self.assertIn(('write','sent'),events)

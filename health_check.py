@@ -55,7 +55,7 @@ def run():
     if errors or previous.get("errors"):
         text = "GitHub Trending 故障提醒\n" + "\n".join(errors) if errors else "GitHub Trending 已恢复正常。"
         text += "\n查看：https://github.com/Larryxu001/github-trending/actions"
-        send_once({"msg_type":"text", "text":{"content":text}})
+        send_once({"msg_type":"text", "content":{"text":text}})
     write(BASE / "health_state.json", {"errors":errors, "checked_at":now().isoformat(), "notification":"sent"})
     checkpoint("健康状态变化 · 通知完成")
     print("[health]", "failed" if errors else "healthy")

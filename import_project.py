@@ -101,7 +101,7 @@ def notify(text):
     if not url:
         raise RuntimeError('未配置飞书结果通知')
     request = urllib.request.Request(url, data=json.dumps({
-        'msg_type': 'text', 'text': {'content': text}}, ensure_ascii=False).encode(),
+        'msg_type': 'text', 'content': {'text': text}}, ensure_ascii=False).encode(),
         headers={'Content-Type': 'application/json'})
     with urllib.request.urlopen(request, timeout=20) as response:
         result = json.load(response)

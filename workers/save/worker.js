@@ -144,7 +144,7 @@ export default {
       // Independent daily fallback when GitHub credentials/schedules cannot trigger monitoring.
       if (health && env.FEISHU_WEBHOOK) {
         const resp = await fetch(env.FEISHU_WEBHOOK, {method:"POST", signal:AbortSignal.timeout(20000),
-          headers:{"Content-Type":"application/json"}, body:JSON.stringify({msg_type:"text",text:{content:`GitHub Trending 自动化故障：${error.message}。请检查 Worker GH_PAT、GitHub Actions 与 health.yml。`}})});
+          headers:{"Content-Type":"application/json"}, body:JSON.stringify({msg_type:"text",content:{text:`GitHub Trending 自动化故障：${error.message}。请检查 Worker GH_PAT、GitHub Actions 与 health.yml。`}})});
         const result = await resp.json();
         if (!resp.ok || (result.code ?? result.StatusCode) !== 0) throw new Error("Failure alert was not confirmed");
       }
