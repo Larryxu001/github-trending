@@ -47,3 +47,11 @@ test('page entrance validates password without account or upstream writes',async
  }
  assert.equal((await worker.fetch(new Request('https://example.invalid/auth'),{})).status,503);
 });
+test('collection cron dispatches scheduled collection, health cron stays separate',async()=>{
+ for(const [cron,workflow] of [['0 1-23/3 * * *','collect.yml'],['20 3 * * *','health.yml']]){
+  let dispatched;
+  globalThis.fetch=async(url,options)=>{dispatched={url,body:JSON.parse(options.body)};return new Response(null,{status:204})};
+  await worker.scheduled({cron},env,{});assert.ok(dispatched.url.endsWith('/'+workflow+'/dispatches'));
+  assert.deepEqual(dispatched.body,cron==='20 3 * * *'?{ref:'main'}:{ref:'main',inputs:{mode:'scheduled'}});
+ }
+});

@@ -448,12 +448,17 @@ function safeUrl(value) {
     if (!authHeaders) return;
     pendingMeta.note = document.getElementById('dlgNote').value.trim();
     const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
     btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
     try {
       const resp = await fetch(saveApi, {
         method: 'POST',
         headers: authHeaders,
-        body: JSON.stringify(pendingMeta),
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
       });
       const result = await resp.json();
       if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
@@ -463,7 +468,7 @@ function safeUrl(value) {
       }
       // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
       // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
-      const repo = pendingMeta.repo;
+      const repo = meta.repo;
       const removed = !!result.removed;
       toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
       closeDlg();
@@ -477,6 +482,8 @@ function safeUrl(value) {
       toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
     } finally {
       btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
     }
   };
 

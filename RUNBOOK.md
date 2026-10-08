@@ -10,7 +10,7 @@
 
 ## 一次发送的保护
 
-唯一周期工作流是 collect.yml，每次采集后按日期运行到期日报、周报、月报，避免同一时间多个定时任务相互挤掉。日/周/月工作流保留手动入口；收藏 Worker 的 9 点触发继续作为日报兜底。
+唯一周期工作流是 collect.yml，每次采集后按日期运行到期日报、周报、月报，避免同一时间多个定时任务相互挤掉。日/周/月工作流保留手动入口；收藏 Worker 每 3 小时触发采集与到期报告，作为调度兜底。
 09:00 前只采集；09:00 后如果本期报告已经成功发送则跳过。准备或部署失败可在之后的采集周期恢复；不确定的发送仍禁止自动重发。
 
 所有采集/报告/keepalive 工作流共享 `trending-state` 并发组，不取消正在发送的任务。
@@ -39,7 +39,7 @@
 `FEISHU_WEBHOOK` 和 `DEEPSEEK_API_KEY` 放 GitHub Secrets；不要把真实凭证写入 `config.json`。
 收藏 Worker 真源是 `workers/save/`，生产部署仍为原 Worker。SAVE_KEY 同时用于页面入口验证与写入口鉴权，GH_PAT 保持原凭证。损坏数据绝不当成空列表覆盖；saved.json 不做迁移。
 本机密码在 `.local/save-password.txt`（仅本机、不入库）；页面首次访问时输入，日报、归档与精选页共用会话，收藏/取消无需另输密码。以前生成的网页已同步更新鉴权与 URL 校验。
-Worker 可额外触发 daily.yml，但不能绕过 daily.yml 的并发锁、9 点前守卫和每期发送状态。
+Worker 每 3 小时额外触发 collect.yml（mode=scheduled），但不能绕过 daily.yml 的并发锁、9 点前守卫和每期发送状态。
 GitHub schedule 可能延迟。health.yml 在失败及每天 11:20 检查采集/日报/未完成报告/Worker/PAT，health_state.json 去重通知；超时的提醒也不会自动重发。Cloudflare 11:20 独立触发健康检查，GitHub 无法触发时走独立飞书故障提醒。
 Webhook 失效时飞书自身无法收到提醒，Actions/Worker 日志仍明确报错；不要将此情况视为正常。
 

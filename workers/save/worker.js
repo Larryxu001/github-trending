@@ -102,13 +102,13 @@ export default {
   // 作为 GitHub 自身 schedule（best-effort、可能延迟）的免费兜底。
   async scheduled(event, env, ctx) {
     const health = event.cron === "20 3 * * *";
-    const workflow = health ? "health.yml" : "daily.yml";
+    const workflow = health ? "health.yml" : "collect.yml";
     try {
       if (!env.GH_PAT) throw new Error("GH_PAT is missing");
       const resp = await fetch(`https://api.github.com/repos/${env.GH_REPO || DEFAULT_REPO}/actions/workflows/${workflow}/dispatches`, {
         method: "POST", signal: AbortSignal.timeout(20000),
         headers: {Authorization: `Bearer ${env.GH_PAT}`, "Content-Type": "application/json", "User-Agent": "github-trending-save-worker"},
-        body: JSON.stringify({ref: env.GH_BRANCH || "main"}),
+        body: JSON.stringify({ref: env.GH_BRANCH || "main", ...(health ? {} : {inputs:{mode:"scheduled"}})}),
       });
       if (!resp.ok) throw new Error(`GitHub dispatch HTTP ${resp.status}`);
       console.log(JSON.stringify({event:"cron_dispatch", workflow, status:resp.status}));
