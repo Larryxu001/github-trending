@@ -177,6 +177,20 @@
    "tags": [],
    "saved_at": "2026-10-08",
    "source": "feishu"
+  },
+  {
+   "repo": "Infisical/infisical",
+   "url": "https://github.com/Infisical/infisical",
+   "owner": "Infisical",
+   "stars": 29657,
+   "category": "安全",
+   "emoji": "🔐",
+   "desc": "Infisical 是一个开源的密钥与证书管理平台，帮团队集中存放和同步应用密码、API Key、数据库凭据等敏感信息，防止它们被硬编码或泄露到 Git 仓库。它支持密钥版本回滚、定期轮换、动态生成临时凭据，还能签发和管理内部证书、控制特权访问并记录审计日志。例如开发时可用它的 CLI 把生产密钥自动注入本地环境，无需手动复制粘贴。",
+   "site": "https://infisical.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-08",
+   "source": "feishu"
   }
  ]
 }
