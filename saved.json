@@ -219,6 +219,21 @@
    "tags": [],
    "saved_at": "2026-10-08",
    "source": "feishu"
+  },
+  {
+   "repo": "cathrynlavery/diagram-design",
+   "url": "https://github.com/cathrynlavery/diagram-design",
+   "owner": "cathrynlavery",
+   "stars": 43947,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "这是一个为 Claude Code、Codex、GitHub Copilot 等 AI 编程助手准备的图表设计技能包，内置 42 种图表类型，用自包含的 HTML + SVG 生成干净、无阴影的编辑级图表，避免 Mermaid 默认样式的粗糙感。比如你让 AI 画一张系统架构图，它会直接输出可嵌入网页的 SVG，而不是千篇一律的流程图。适合需要高质量可视化、又不想手动调格式的开发者。",
+   "site": "https://cathrynlavery.github.io/diagram-design/",
+   "note": "画图",
+   "tags": [
+    "前端"
+   ],
+   "saved_at": "2026-10-09"
   }
  ]
 }
