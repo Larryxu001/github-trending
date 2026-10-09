@@ -400,7 +400,7 @@
   ]
  },
  "daily:2026-10-09": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-09",
    "new_count": 2,
@@ -444,6 +444,126 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-09 ｜ 今日新项目 2 个 ｜ 2 个分类 ｜ 30 天去重跳过 48 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-09/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [storytold/artcraft](https://github.com/storytold/artcraft)**　⭐ 6,677\nArtCraft 是一款面向艺术家、设计师和电影制作人的创意引擎，用 Rust 编写。它把 AI 图像生成与 3D 图形、视频制作流程结合起来，帮助创作者在同一个工具里完成从概念设计到动态画面的创作。比如电影分镜师可以先用文字描述生成场景图，再直接调整三维构图和镜头运动，省去在多个软件间来回切换的麻烦，让 AI 真正服务于有意图的艺术表达。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 storytold ｜ 📅 更新 2026-10-07 ｜ 🏷 日榜 ｜ 🔗 [https://getartcraft.com](https://getartcraft.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "orange",
+       "title": {
+        "tag": "plain_text",
+        "content": "📚 学习资源 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [liquidslr/system-design-notes](https://github.com/liquidslr/system-design-notes)**　⭐ 24,346\n这是《System Design Interview - An Insider's Guide》一书的中文学习笔记，把系统设计面试的核心知识点整理成通俗易懂的文档。它解决的是面试者不知道如何准备系统设计题、缺乏结构化思路的问题，比如面对“设计一个短链接系统”时，可以按书中步骤从需求分析、容量估算到数据库和缓存设计一步步推导。适合准备后端或架构岗面试的人快速复习和查漏补缺。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 liquidslr ｜ 📅 更新 2026-08-12 ｜ 🏷 日榜 ｜ 🔗 [https://pagefy-blush.vercel.app/system-design/system-design-interview-by-alex-xu](https://pagefy-blush.vercel.app/system-design/system-design-interview-by-alex-xu)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
