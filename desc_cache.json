@@ -496,5 +496,17 @@
   "emoji": "🧠",
   "desc": "UniMate 是 SIGGRAPH Asia 2026 的论文项目，提出一个统一模型，能把同一套动作迁移到各种不同结构的骨架上，比如人形、四足或机器人。传统方法通常要为每种骨架单独训练，费时费力；UniMate 用一个模型统一处理，让动画制作和角色驱动更省事。例如游戏里给不同体型的角色套用同一段跑步动画，无需逐个重做。",
   "site": "https://linzhanmou.com/unimate/"
+ },
+ "storytold/artcraft": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "ArtCraft 是一款面向艺术家、设计师和电影制作人的创意引擎，用 Rust 编写。它把 AI 图像生成与 3D 图形、视频制作流程结合起来，帮助创作者在同一个工具里完成从概念设计到动态画面的创作。比如电影分镜师可以先用文字描述生成场景图，再直接调整三维构图和镜头运动，省去在多个软件间来回切换的麻烦，让 AI 真正服务于有意图的艺术表达。",
+  "site": "https://getartcraft.com"
+ },
+ "liquidslr/system-design-notes": {
+  "cat": "学习资源",
+  "emoji": "📚",
+  "desc": "这是《System Design Interview - An Insider's Guide》一书的中文学习笔记，把系统设计面试的核心知识点整理成通俗易懂的文档。它解决的是面试者不知道如何准备系统设计题、缺乏结构化思路的问题，比如面对“设计一个短链接系统”时，可以按书中步骤从需求分析、容量估算到数据库和缓存设计一步步推导。适合准备后端或架构岗面试的人快速复习和查漏补缺。",
+  "site": "https://pagefy-blush.vercel.app/system-design/system-design-interview-by-alex-xu"
  }
 }
