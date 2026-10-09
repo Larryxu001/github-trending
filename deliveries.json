@@ -400,7 +400,7 @@
   ]
  },
  "daily:2026-10-09": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-09",
    "new_count": 2,
@@ -570,7 +570,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    }
   ]
  }
