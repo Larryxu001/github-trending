@@ -508,5 +508,23 @@
   "emoji": "📚",
   "desc": "这是《System Design Interview - An Insider's Guide》一书的中文学习笔记，把系统设计面试的核心知识点整理成通俗易懂的文档。它解决的是面试者不知道如何准备系统设计题、缺乏结构化思路的问题，比如面对“设计一个短链接系统”时，可以按书中步骤从需求分析、容量估算到数据库和缓存设计一步步推导。适合准备后端或架构岗面试的人快速复习和查漏补缺。",
   "site": "https://pagefy-blush.vercel.app/system-design/system-design-interview-by-alex-xu"
+ },
+ "BerriAI/litellm": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "LiteLLM 是一个统一调用各家大模型的 AI 网关，让你用 OpenAI 的接口格式去访问 100 多种模型服务，比如 OpenAI、Anthropic、Azure、Bedrock、VertexAI 等。它解决了多平台接口不统一、密钥管理混乱的问题，还自带成本统计、限流、负载均衡和日志记录。例如你只需改一行 base_url，就能把 GPT 请求切换到 Claude 或本地 vLLM 模型。",
+  "site": "https://docs.litellm.ai/docs/"
+ },
+ "Robbyant/lingbot-map": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "LingBot-Map 是一个用于流式三维重建的几何上下文 Transformer，属于 ECCV 2026 最佳论文候选项目。它解决的问题是：传统三维重建方法通常需要一次性拿到全部图像才能建模，而它能在视频或图像持续输入的过程中实时、增量地构建三维地图。例如机器人边移动边拍摄时，它能同步生成环境的三维结构，可用于自动驾驶、AR/VR 和机器人导航等场景。",
+  "site": "无"
+ },
+ "twostraws/SwiftUI-Agent-Skill": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是给 Claude Code、Codex 等 AI 编程工具用的 SwiftUI 技能包，相当于给 AI 装上一本苹果界面开发的“参考手册”。它让 AI 在写 SwiftUI 代码时更懂布局、状态管理和常见坑，减少瞎编 API 的情况。比如你让 AI 做一个带列表和导航的 iOS 页面，它会按 SwiftUI 的正确写法生成，而不是套用 React 或 UIKit 的思路。",
+  "site": "无"
  }
 }
