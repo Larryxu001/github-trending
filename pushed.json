@@ -83,5 +83,8 @@
  "manaflow-ai/cmux": "2026-10-08",
  "EpicGames/raddebugger": "2026-10-08",
  "storytold/artcraft": "2026-10-09",
- "liquidslr/system-design-notes": "2026-10-09"
+ "liquidslr/system-design-notes": "2026-10-09",
+ "twostraws/SwiftUI-Agent-Skill": "2026-10-10",
+ "BerriAI/litellm": "2026-10-10",
+ "Robbyant/lingbot-map": "2026-10-10"
 }

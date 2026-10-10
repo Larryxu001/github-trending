@@ -579,7 +579,7 @@
   ]
  },
  "daily:2026-10-10": {
-  "status": "prepared",
+  "status": "sent",
   "report": {
    "date": "2026-10-10",
    "new_count": 3,
