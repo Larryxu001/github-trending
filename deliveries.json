@@ -579,7 +579,7 @@
   ]
  },
  "daily:2026-10-10": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-10",
    "new_count": 3,
@@ -635,6 +635,143 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-10 ｜ 今日新项目 3 个 ｜ 2 个分类 ｜ 30 天去重跳过 51 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-10/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [twostraws/SwiftUI-Agent-Skill](https://github.com/twostraws/SwiftUI-Agent-Skill)**　⭐ 5,297\n这是给 Claude Code、Codex 等 AI 编程工具用的 SwiftUI 技能包，相当于给 AI 装上一本苹果界面开发的“参考手册”。它让 AI 在写 SwiftUI 代码时更懂布局、状态管理和常见坑，减少瞎编 API 的情况。比如你让 AI 做一个带列表和导航的 iOS 页面，它会按 SwiftUI 的正确写法生成，而不是套用 React 或 UIKit 的思路。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 twostraws ｜ 📅 更新 2026-10-07 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [BerriAI/litellm](https://github.com/BerriAI/litellm)**　⭐ 60,516\nLiteLLM 是一个统一调用各家大模型的 AI 网关，让你用 OpenAI 的接口格式去访问 100 多种模型服务，比如 OpenAI、Anthropic、Azure、Bedrock、VertexAI 等。它解决了多平台接口不统一、密钥管理混乱的问题，还自带成本统计、限流、负载均衡和日志记录。例如你只需改一行 base_url，就能把 GPT 请求切换到 Claude 或本地 vLLM 模型。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 BerriAI ｜ 📅 更新 2026-10-09 ｜ 🏷 日榜 ｜ 🔗 [https://docs.litellm.ai/docs/](https://docs.litellm.ai/docs/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [Robbyant/lingbot-map](https://github.com/Robbyant/lingbot-map)**　⭐ 17,597\nLingBot-Map 是一个用于流式三维重建的几何上下文 Transformer，属于 ECCV 2026 最佳论文候选项目。它解决的问题是：传统三维重建方法通常需要一次性拿到全部图像才能建模，而它能在视频或图像持续输入的过程中实时、增量地构建三维地图。例如机器人边移动边拍摄时，它能同步生成环境的三维结构，可用于自动驾驶、AR/VR 和机器人导航等场景。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Robbyant ｜ 📅 更新 2026-10-06 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
