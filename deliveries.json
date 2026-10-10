@@ -579,7 +579,7 @@
   ]
  },
  "daily:2026-10-10": {
-  "status": "sending",
+  "status": "prepared",
   "report": {
    "date": "2026-10-10",
    "new_count": 3,
@@ -723,7 +723,11 @@
       ]
      }
     },
-    "status": "sending"
+    "status": "sent",
+    "receipt": {
+     "code": 0,
+     "confirmed_at": "2026-10-10T09:02:35.149192+08:00"
+    }
    },
    {
     "message": {
