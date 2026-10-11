@@ -787,7 +787,7 @@
   ]
  },
  "daily:2026-10-11": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-11",
    "new_count": 5,
@@ -879,6 +879,211 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-11 ｜ 今日新项目 5 个 ｜ 4 个分类 ｜ 30 天去重跳过 57 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-11/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)**　⭐ 217,987\n这是一个给 Claude Code 用的单文件配置（CLAUDE.md），内容来自 Andrej Karpathy 对 LLM 写代码常见毛病的观察总结。把它放进项目里，Claude Code 就会按这些经验来干活，少犯低级错误。比如它可能提醒模型别乱猜 API、别写没用的抽象、改完代码要验证。适合想让 AI 编程助手更靠谱的开发者，直接复制文件即可，不用装任何东西。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 multica-ai ｜ 📅 更新 2026-04-20 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)**　⭐ 59,156\nppt-master 是一个 AI 驱动的 PPT 生成工具，能把文档或主题直接变成真正的原生 PowerPoint 文件，而不是图片拼凑。它支持原生形状、转场动画、数据图表和表格，还能根据演讲者备注生成语音旁白，并兼容你自己的 .pptx 模板。比如你丢给它一份产品需求文档，它就能自动产出一套带图表和动画的汇报幻灯片，省去手动排版的时间。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 hugohe3 ｜ 📅 更新 2026-10-08 ｜ 🏷 日榜 ｜ 🔗 [https://hugohe3.github.io/ppt-master-examples/](https://hugohe3.github.io/ppt-master-examples/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "yellow",
+       "title": {
+        "tag": "plain_text",
+        "content": "⚡ Agent 效率优化 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context)**　⭐ 755\nbillion-context 是一个上下文压缩插件，专门解决 AI 对话中上下文窗口太小、token 消耗太快、会话无法长期持续的问题。它能把上下文压缩到原来的五分之一，让 100K 窗口就够用，并支持单次会话持续数月、累计处理几十亿 token。比如你每天和 AI 助手聊工作，几个月后历史记录依然连贯，而费用和内存占用都大幅降低。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ranxianglei ｜ 📅 更新 2026-10-10 ｜ 🏷 周榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [huggingface/transformers](https://github.com/huggingface/transformers)**　⭐ 167,075\nTransformers 是 Hugging Face 推出的开源模型框架，把文本、图像、语音和多模态的顶尖 AI 模型统一成一套简单接口。你只需几行代码就能加载 BERT、Llama、Whisper 等预训练模型，直接做翻译、问答、语音识别或微调训练，无需从零实现复杂网络。它解决了模型复用难、切换成本高的问题，是当今 AI 开发的事实标准工具。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 huggingface ｜ 📅 更新 2026-10-10 ｜ 🏷 日榜 ｜ 🔗 [https://huggingface.co/transformers](https://huggingface.co/transformers)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)**　⭐ 200,631\nTensorFlow 是谷歌开源的机器学习框架，用 C++ 编写并支持 Python 等语言，帮助开发者搭建和训练神经网络。它解决了从研究到生产部署的难题，既能做图像识别、语音处理，也能跑在手机和服务器上。比如你可以用它训练一个识别猫狗照片的模型，再部署到 App 里自动分类。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 tensorflow ｜ 📅 更新 2026-10-10 ｜ 🏷 日榜 ｜ 🔗 [https://tensorflow.org](https://tensorflow.org)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
