@@ -1107,7 +1107,7 @@
   ]
  },
  "daily:2026-10-12": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-12",
    "new_count": 3,
@@ -1169,6 +1169,160 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-12 ｜ 今日新项目 3 个 ｜ 3 个分类 ｜ 30 天去重跳过 62 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-12/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 4 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)**　⭐ 4,388\n这个项目把航空业使用的 ASD-STE100 简化技术英语规则做成了 Claude Code 技能，用来改写那些含糊不清、容易让 AI 代理误解的英文指令。比如把「尽快处理一下这个」改成「请在 24 小时内完成并回复」，让代理准确执行。它解决的是人写给 AI 的提示词歧义大、执行结果不稳定的问题，适合需要让 AI 代理可靠工作的开发者使用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 danyuchn ｜ 📅 更新 2026-10-04 ｜ 🏷 周榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [lyogavin/airllm](https://github.com/lyogavin/airllm)**　⭐ 36,235\nAirLLM 是一个让大语言模型在低显存设备上运行的开源项目。它通过分层加载和推理优化，让原本需要几十 GB 显存的 70B 模型，仅用单张 4GB 显卡就能跑起来。比如你只有一张普通游戏显卡，也能本地体验 Llama 等大模型，无需昂贵硬件。适合想低成本部署、研究大模型推理的开发者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 lyogavin ｜ 📅 更新 2026-10-11 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "orange",
+       "title": {
+        "tag": "plain_text",
+        "content": "📚 学习资源 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11)**　⭐ 73,990\n这是阿波罗11号制导计算机（AGC）的原始汇编源代码，包含指令舱和登月舱两套程序。它解决了历史代码难以获取的问题，让普通人也能一窥50多年前登月软件的真容。你可以用它学习早期航天软件的设计思路，比如如何用极有限的存储完成登月导航，也是计算机史和航天爱好者的珍贵资料。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 chrislgarry ｜ 📅 更新 2026-07-15 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
