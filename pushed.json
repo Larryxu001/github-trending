@@ -91,5 +91,8 @@
  "hugohe3/ppt-master": "2026-10-11",
  "ranxianglei/billion-context": "2026-10-11",
  "huggingface/transformers": "2026-10-11",
- "tensorflow/tensorflow": "2026-10-11"
+ "tensorflow/tensorflow": "2026-10-11",
+ "danyuchn/asd-ste100-skill": "2026-10-12",
+ "lyogavin/airllm": "2026-10-12",
+ "chrislgarry/Apollo-11": "2026-10-12"
 }
