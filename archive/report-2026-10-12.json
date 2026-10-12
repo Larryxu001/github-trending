@@ -1,0 +1,62 @@
+{
+ "date": "2026-10-12",
+ "new_count": 3,
+ "skipped": 62,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "danyuchn/asd-ste100-skill",
+     "url": "https://github.com/danyuchn/asd-ste100-skill",
+     "owner": "danyuchn",
+     "stars": 4388,
+     "updated": "2026-10-04",
+     "lists": [
+      "weekly"
+     ],
+     "desc": "这个项目把航空业使用的 ASD-STE100 简化技术英语规则做成了 Claude Code 技能，用来改写那些含糊不清、容易让 AI 代理误解的英文指令。比如把「尽快处理一下这个」改成「请在 24 小时内完成并回复」，让代理准确执行。它解决的是人写给 AI 的提示词歧义大、执行结果不稳定的问题，适合需要让 AI 代理可靠工作的开发者使用。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "lyogavin/airllm",
+     "url": "https://github.com/lyogavin/airllm",
+     "owner": "lyogavin",
+     "stars": 36235,
+     "updated": "2026-10-11",
+     "lists": [
+      "daily"
+     ],
+     "desc": "AirLLM 是一个让大语言模型在低显存设备上运行的开源项目。它通过分层加载和推理优化，让原本需要几十 GB 显存的 70B 模型，仅用单张 4GB 显卡就能跑起来。比如你只有一张普通游戏显卡，也能本地体验 Llama 等大模型，无需昂贵硬件。适合想低成本部署、研究大模型推理的开发者。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "学习资源",
+   "emoji": "📚",
+   "items": [
+    {
+     "repo": "chrislgarry/Apollo-11",
+     "url": "https://github.com/chrislgarry/Apollo-11",
+     "owner": "chrislgarry",
+     "stars": 73990,
+     "updated": "2026-07-15",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是阿波罗11号制导计算机（AGC）的原始汇编源代码，包含指令舱和登月舱两套程序。它解决了历史代码难以获取的问题，让普通人也能一窥50多年前登月软件的真容。你可以用它学习早期航天软件的设计思路，比如如何用极有限的存储完成登月导航，也是计算机史和航天爱好者的珍贵资料。",
+     "site": "无"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
