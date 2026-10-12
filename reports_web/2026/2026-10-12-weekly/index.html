@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 精选周报 · 2026-10-12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.010</span></div>
+    <h1>Github开源趋势精选周报</h1>
+    <div class="standfirst">本期收藏精选，保留备注与标签</div>
+    <div class="dateline"><b>2026 年 10 月 12 日</b>　·　第 10 期　·　本期新收录 <b>18</b> 个项目　·　30 天去重跳过 0 个</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>Agent 技能与插件<span class="toc-n">5</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>superpowers</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>archify</a><a class="toc-proj" href="#sec-1-3"><span class="toc-no">03</span>impeccable</a><a class="toc-proj" href="#sec-1-4"><span class="toc-no">04</span>TrendRadar</a><a class="toc-proj" href="#sec-1-5"><span class="toc-no">05</span>diagram-design</a></details><details><summary><span class="toc-no">02</span>Agent 效率优化<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>ECC</a><a class="toc-proj" href="#sec-2-2"><span class="toc-no">02</span>caveman</a></details><details><summary><span class="toc-no">03</span>Agent 基础设施与框架<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>paperclip</a><a class="toc-proj" href="#sec-3-2"><span class="toc-no">02</span>MinerU</a><a class="toc-proj" href="#sec-3-3"><span class="toc-no">03</span>hindsight</a></details><details><summary><span class="toc-no">04</span>学习资源<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>up</a></details><details><summary><span class="toc-no">05</span>AI / 大模型<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-5-1"><span class="toc-no">01</span>WeKnora</a><a class="toc-proj" href="#sec-5-2"><span class="toc-no">02</span>llm_wiki</a></details><details><summary><span class="toc-no">06</span>安全<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-6-1"><span class="toc-no">01</span>infisical</a></details><details><summary><span class="toc-no">07</span>开发工具与框架<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-7-1"><span class="toc-no">01</span>gpui-kit</a><a class="toc-proj" href="#sec-7-2"><span class="toc-no">02</span>quartz</a></details><details><summary><span class="toc-no">08</span>其他<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-8-1"><span class="toc-no">01</span>newsnow</a><a class="toc-proj" href="#sec-8-2"><span class="toc-no">02</span>yoinks</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">5 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></h3>
+            <span class="stars">★ 294,619</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;obra/superpowers&quot;, &quot;url&quot;: &quot;https://github.com/obra/superpowers&quot;, &quot;owner&quot;: &quot;obra&quot;, &quot;stars&quot;: 294619, &quot;desc&quot;: &quot;\u4e00\u5957\u7ed9 AI \u7f16\u7a0b\u52a9\u624b\u7528\u7684\u300c\u6280\u80fd\u6846\u67b6+\u5f00\u53d1\u65b9\u6cd5\u8bba\u300d\u3002\u5b83\u628a\u8d44\u6df1\u5de5\u7a0b\u5e08\u7684\u5de5\u4f5c\u4e60\u60ef\uff08\u5148\u60f3\u6e05\u695a\u518d\u52a8\u624b\u3001\u5c0f\u6b65\u63d0\u4ea4\u3001\u5199\u6d4b\u8bd5\uff09\u56fa\u5316\u6210\u53ef\u5b89\u88c5\u7684\u6280\u80fd\u5305\uff0c\u8ba9 Claude Code \u8fd9\u7c7b\u5de5\u5177\u4e0d\u518d\u4e0a\u6765\u5c31\u4e71\u5199\u4ee3\u7801\u3002\u6bd4\u5982\u4f60\u8bf4\u300c\u505a\u4e2a\u767b\u5f55\u529f\u80fd\u300d\uff0c\u5b83\u4f1a\u5148\u51fa\u65b9\u6848\u3001\u62c6\u4efb\u52a1\uff0c\u518d\u9010\u6b65\u5b9e\u73b0\u5e76\u81ea\u6d4b\u2014\u2014\u50cf\u6b63\u89c4\u519b\uff0c\u4e0d\u50cf\u6e38\u51fb\u961f\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。</p>
+          
+          <div class="byline">
+            <span>obra</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i/archify</a></h3>
+            <span class="stars">★ 76,438</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tt-a1i/archify&quot;, &quot;url&quot;: &quot;https://github.com/tt-a1i/archify&quot;, &quot;owner&quot;: &quot;tt-a1i&quot;, &quot;stars&quot;: 76438, &quot;desc&quot;: &quot;\u8ba9 AI \u52a9\u624b\u5e2e\u4f60\u753b\u4e13\u4e1a\u56fe\u8868\u7684\u6280\u80fd\u3002\u4f60\u8bf4\u4e00\u53e5\u300c\u753b\u4e00\u4e2a\u7528\u6237\u4e0b\u5355\u7684\u7cfb\u7edf\u67b6\u6784\u56fe\u300d\uff0c\u5b83\u5c31\u751f\u6210\u5e26\u52a8\u753b\u3001\u53ef\u5bfc\u51fa\u9ad8\u6e05\u56fe\u7247\u7684\u7cbe\u7f8e\u7f51\u9875\u56fe\u8868\uff0c\u6bd4 Mermaid \u90a3\u79cd\u6734\u7d20\u7ebf\u6761\u597d\u770b\u4e00\u4e2a\u6863\u6b21\u2014\u2014\u5199\u6280\u672f\u6587\u6863\u3001\u505a\u6c47\u62a5\u76f4\u63a5\u5c31\u80fd\u7528\u3002&quot;, &quot;site&quot;: &quot;https://tt-a1i.github.io/archify/&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">让 AI 助手帮你画专业图表的技能。你说一句「画一个用户下单的系统架构图」，它就生成带动画、可导出高清图片的精美网页图表，比 Mermaid 那种朴素线条好看一个档次——写技术文档、做汇报直接就能用。</p>
+          <p class="desc"><b>我的备注：</b>画图表</p>
+          <div class="byline">
+            <span>tt-a1i</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://tt-a1i.github.io/archify/" target="_blank">https://tt-a1i.github.io/archify/</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a></h3>
+            <span class="stars">★ 74,557</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;pbakaus/impeccable&quot;, &quot;url&quot;: &quot;https://github.com/pbakaus/impeccable&quot;, &quot;owner&quot;: &quot;pbakaus&quot;, &quot;stars&quot;: 74557, &quot;desc&quot;: &quot;\u4e13\u6cbb\u300cAI \u751f\u6210\u7684\u7f51\u9875\u4e11\u300d\u3002\u5b83\u662f\u4e00\u5957\u5582\u7ed9 AI \u7684\u8bbe\u8ba1\u8bed\u8a00\u89c4\u8303\uff0c\u6559 AI \u4ec0\u4e48\u662f\u597d\u7684\u95f4\u8ddd\u3001\u5b57\u4f53\u5c42\u7ea7\u548c\u914d\u8272\u3002\u88c5\u4e0a\u4e4b\u540e AI \u505a\u7684\u754c\u9762\u660e\u663e\u66f4\u50cf\u4e13\u4e1a\u8bbe\u8ba1\u5e08\u51fa\u54c1\uff0c\u800c\u4e0d\u662f\u5343\u7bc7\u4e00\u5f8b\u7684\u6a21\u677f\u98ce\u3002&quot;, &quot;site&quot;: &quot;https://impeccable.style&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">专治「AI 生成的网页丑」。它是一套喂给 AI 的设计语言规范，教 AI 什么是好的间距、字体层级和配色。装上之后 AI 做的界面明显更像专业设计师出品，而不是千篇一律的模板风。</p>
+          <p class="desc"><b>我的备注：</b>网站 UI 设计美化</p>
+          <p class="desc">标签：前端</p>
+          <div class="byline">
+            <span>pbakaus</span><i>·</i>
+            <span>更新于 2026-10-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://impeccable.style" target="_blank">https://impeccable.style</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/sansan0/TrendRadar" target="_blank">sansan0/TrendRadar</a></h3>
+            <span class="stars">★ 62,725</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;sansan0/TrendRadar&quot;, &quot;url&quot;: &quot;https://github.com/sansan0/TrendRadar&quot;, &quot;owner&quot;: &quot;sansan0&quot;, &quot;stars&quot;: 62725, &quot;desc&quot;: &quot;TrendRadar \u662f\u4e00\u4e2a AI \u9a71\u52a8\u7684\u8206\u60c5\u4e0e\u70ed\u70b9\u76d1\u63a7\u5de5\u5177\uff0c\u5e2e\u4f60\u544a\u522b\u4fe1\u606f\u8fc7\u8f7d\u3002\u5b83\u805a\u5408\u5fae\u535a\u3001\u77e5\u4e4e\u7b49\u591a\u5e73\u53f0\u70ed\u699c\u548c RSS \u8ba2\u9605\uff0c\u7528 AI \u667a\u80fd\u7b5b\u9009\u3001\u7ffb\u8bd1\u5e76\u751f\u6210\u5206\u6790\u7b80\u62a5\uff0c\u518d\u901a\u8fc7\u5fae\u4fe1\u3001\u98de\u4e66\u3001\u9489\u9489\u3001Telegram\u3001\u90ae\u4ef6\u7b49\u6e20\u9053\u63a8\u9001\u5230\u624b\u673a\u3002\u6bd4\u5982\u4f60\u53ea\u5173\u5fc3\u300cAI \u82af\u7247\u300d\u76f8\u5173\u65b0\u95fb\uff0c\u5b83\u5c31\u80fd\u81ea\u52a8\u8fc7\u6ee4\u65e0\u5173\u5185\u5bb9\u5e76\u5b9a\u65f6\u63d0\u9192\u4f60\u3002\u652f\u6301 Docker \u4e00\u952e\u90e8\u7f72\uff0c\u6570\u636e\u53ef\u672c\u5730\u6216\u4e91\u7aef\u81ea\u6301\uff0c\u8fd8\u80fd\u63a5\u5165 MCP \u8ba9 AI \u5bf9\u8bdd\u5206\u6790\u8d8b\u52bf\u3002&quot;, &quot;site&quot;: &quot;https://trendradar.sandev.cc&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">TrendRadar 是一个 AI 驱动的舆情与热点监控工具，帮你告别信息过载。它聚合微博、知乎等多平台热榜和 RSS 订阅，用 AI 智能筛选、翻译并生成分析简报，再通过微信、飞书、钉钉、Telegram、邮件等渠道推送到手机。比如你只关心「AI 芯片」相关新闻，它就能自动过滤无关内容并定时提醒你。支持 Docker 一键部署，数据可本地或云端自持，还能接入 MCP 让 AI 对话分析趋势。</p>
+          
+          <div class="byline">
+            <span>sansan0</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://trendradar.sandev.cc" target="_blank">https://trendradar.sandev.cc</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/cathrynlavery/diagram-design" target="_blank">cathrynlavery/diagram-design</a></h3>
+            <span class="stars">★ 43,947</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;cathrynlavery/diagram-design&quot;, &quot;url&quot;: &quot;https://github.com/cathrynlavery/diagram-design&quot;, &quot;owner&quot;: &quot;cathrynlavery&quot;, &quot;stars&quot;: 43947, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u4e3a Claude Code\u3001Codex\u3001GitHub Copilot \u7b49 AI \u7f16\u7a0b\u52a9\u624b\u51c6\u5907\u7684\u56fe\u8868\u8bbe\u8ba1\u6280\u80fd\u5305\uff0c\u5185\u7f6e 42 \u79cd\u56fe\u8868\u7c7b\u578b\uff0c\u7528\u81ea\u5305\u542b\u7684 HTML + SVG \u751f\u6210\u5e72\u51c0\u3001\u65e0\u9634\u5f71\u7684\u7f16\u8f91\u7ea7\u56fe\u8868\uff0c\u907f\u514d Mermaid \u9ed8\u8ba4\u6837\u5f0f\u7684\u7c97\u7cd9\u611f\u3002\u6bd4\u5982\u4f60\u8ba9 AI \u753b\u4e00\u5f20\u7cfb\u7edf\u67b6\u6784\u56fe\uff0c\u5b83\u4f1a\u76f4\u63a5\u8f93\u51fa\u53ef\u5d4c\u5165\u7f51\u9875\u7684 SVG\uff0c\u800c\u4e0d\u662f\u5343\u7bc7\u4e00\u5f8b\u7684\u6d41\u7a0b\u56fe\u3002\u9002\u5408\u9700\u8981\u9ad8\u8d28\u91cf\u53ef\u89c6\u5316\u3001\u53c8\u4e0d\u60f3\u624b\u52a8\u8c03\u683c\u5f0f\u7684\u5f00\u53d1\u8005\u3002&quot;, &quot;site&quot;: &quot;https://cathrynlavery.github.io/diagram-design/&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个为 Claude Code、Codex、GitHub Copilot 等 AI 编程助手准备的图表设计技能包，内置 42 种图表类型，用自包含的 HTML + SVG 生成干净、无阴影的编辑级图表，避免 Mermaid 默认样式的粗糙感。比如你让 AI 画一张系统架构图，它会直接输出可嵌入网页的 SVG，而不是千篇一律的流程图。适合需要高质量可视化、又不想手动调格式的开发者。</p>
+          <p class="desc"><b>我的备注：</b>画图</p>
+          <p class="desc">标签：前端</p>
+          <div class="byline">
+            <span>cathrynlavery</span><i>·</i>
+            <span>更新于 2026-10-09</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://cathrynlavery.github.io/diagram-design/" target="_blank">https://cathrynlavery.github.io/diagram-design/</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">Agent 效率优化</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></h3>
+            <span class="stars">★ 271,630</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;affaan-m/ECC&quot;, &quot;url&quot;: &quot;https://github.com/affaan-m/ECC&quot;, &quot;owner&quot;: &quot;affaan-m&quot;, &quot;stars&quot;: 271630, &quot;desc&quot;: &quot;\u4e00\u5957\u7ed9\u7f16\u7a0b Agent \u505a\u300c\u6027\u80fd\u8c03\u4f18\u300d\u7684\u7cfb\u7edf\uff1a\u6280\u80fd\u7ba1\u7406\u3001\u8bb0\u5fc6\u3001\u5b89\u5168\u68c0\u67e5\u3001\u5148\u8c03\u7814\u518d\u52a8\u624b\u7684\u5de5\u4f5c\u6d41\uff0c\u9002\u914d Claude Code/Codex/Cursor \u7b49\u4e3b\u6d41\u5de5\u5177\u3002\u76ee\u6807\u662f\u8ba9 AI \u5199\u4ee3\u7801\u66f4\u5feb\u3001\u66f4\u7a33\u3001\u66f4\u5c11\u8fd4\u5de5\u3002&quot;, &quot;site&quot;: &quot;https://ecc.tools&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一套给编程 Agent 做「性能调优」的系统：技能管理、记忆、安全检查、先调研再动手的工作流，适配 Claude Code/Codex/Cursor 等主流工具。目标是让 AI 写代码更快、更稳、更少返工。</p>
+          
+          <div class="byline">
+            <span>affaan-m</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://ecc.tools" target="_blank">https://ecc.tools</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/JuliusBrussee/caveman" target="_blank">JuliusBrussee/caveman</a></h3>
+            <span class="stars">★ 109,243</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;JuliusBrussee/caveman&quot;, &quot;url&quot;: &quot;https://github.com/JuliusBrussee/caveman&quot;, &quot;owner&quot;: &quot;JuliusBrussee&quot;, &quot;stars&quot;: 109243, &quot;desc&quot;: &quot;\u4e00\u4e2a\u7206\u706b\u7684\u7701\u94b1\u6280\u5de7\uff1a\u8ba9 AI \u7528\u300c\u7a74\u5c45\u4eba\u5f0f\u300d\u6781\u7b80\u82f1\u8bed\u601d\u8003\u548c\u5de5\u4f5c\uff08\u8bf4 make login work \u800c\u4e0d\u662f\u957f\u7bc7\u5927\u8bba\uff09\uff0c\u5b9e\u6d4b\u7701 65% \u7684 token \u6d88\u8017\u3002\u8868\u9762\u662f\u4e2a\u6897\uff0c\u5b9e\u9645\u662f\u771f\u91d1\u767d\u94f6\u5730\u964d API \u8d26\u5355\u3002&quot;, &quot;site&quot;: &quot;https://docs.caveman.so/docs/quickstart&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一个爆火的省钱技巧：让 AI 用「穴居人式」极简英语思考和工作（说 make login work 而不是长篇大论），实测省 65% 的 token 消耗。表面是个梗，实际是真金白银地降 API 账单。</p>
+          <p class="desc"><b>我的备注：</b>省大模型 token</p>
+          <p class="desc">标签：做 Agent</p>
+          <div class="byline">
+            <span>JuliusBrussee</span><i>·</i>
+            <span>更新于 2026-10-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://docs.caveman.so/docs/quickstart" target="_blank">https://docs.caveman.so/docs/quickstart</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">Agent 基础设施与框架</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></h3>
+            <span class="stars">★ 96,448</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;paperclipai/paperclip&quot;, &quot;url&quot;: &quot;https://github.com/paperclipai/paperclip&quot;, &quot;owner&quot;: &quot;paperclipai&quot;, &quot;stars&quot;: 96448, &quot;desc&quot;: &quot;\u5f53\u516c\u53f8\u91cc\u540c\u65f6\u8dd1\u7740\u597d\u51e0\u4e2a AI Agent\uff0c\u8fd9\u4e2a\u5f00\u6e90\u5e94\u7528\u5c31\u662f\u5b83\u4eec\u7684\u300c\u4eba\u4e8b\u90e8+\u9879\u76ee\u7ba1\u7406\u53f0\u300d\uff1a\u5206\u914d\u4efb\u52a1\u3001\u67e5\u770b\u8fdb\u5ea6\u3001\u7ba1\u7406\u6743\u9650\u3002\u76f8\u5f53\u4e8e\u7ed9\u4f60\u7684 AI \u5458\u5de5\u4eec\u8bf7\u4e86\u4e00\u4f4d\u9879\u76ee\u7ecf\u7406\u3002&quot;, &quot;site&quot;: &quot;https://paperclip.ing&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">当公司里同时跑着好几个 AI Agent，这个开源应用就是它们的「人事部+项目管理台」：分配任务、查看进度、管理权限。相当于给你的 AI 员工们请了一位项目经理。</p>
+          
+          <div class="byline">
+            <span>paperclipai</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://paperclip.ing" target="_blank">https://paperclip.ing</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/opendatalab/MinerU" target="_blank">opendatalab/MinerU</a></h3>
+            <span class="stars">★ 81,265</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;opendatalab/MinerU&quot;, &quot;url&quot;: &quot;https://github.com/opendatalab/MinerU&quot;, &quot;owner&quot;: &quot;opendatalab&quot;, &quot;stars&quot;: 81265, &quot;desc&quot;: &quot;MinerU \u662f OpenDataLab \u5f00\u6e90\u7684\u9ad8\u8d28\u91cf\u6587\u6863\u89e3\u6790\u5de5\u5177\uff0c\u80fd\u628a PDF\u3001\u626b\u63cf\u4ef6\u3001Word\u3001PPT\u3001Excel\u3001EPUB\u3001HTML \u7b49\u590d\u6742\u6587\u6863\u8f6c\u6362\u6210\u5927\u6a21\u578b\u53ef\u76f4\u63a5\u4f7f\u7528\u7684 Markdown \u6216 JSON\u3002\u5b83\u64c5\u957f\u5904\u7406\u8868\u683c\u3001\u516c\u5f0f\u3001\u591a\u680f\u6392\u7248\u548c\u626b\u63cf OCR\uff0c\u5e76\u4fdd\u7559\u9875\u7801\u4e0e\u5757\u7ea7\u5b9a\u4f4d\uff0c\u65b9\u4fbf\u5f15\u7528\u548c\u68c0\u7d22\u3002\u4f8b\u5982\u628a\u4e00\u7bc7\u5e26\u516c\u5f0f\u548c\u8868\u683c\u7684\u5b66\u672f\u8bba\u6587 PDF \u8f6c\u6210 Markdown \u540e\uff0c\u5c31\u80fd\u76f4\u63a5\u5582\u7ed9 AI Agent \u505a\u95ee\u7b54\u6216 RAG \u68c0\u7d22\uff0c\u7701\u53bb\u81ea\u5df1\u5199\u89e3\u6790\u5668\u7684\u9ebb\u70e6\u3002&quot;, &quot;site&quot;: &quot;https://opendatalab.github.io/MinerU/&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">MinerU 是 OpenDataLab 开源的高质量文档解析工具，能把 PDF、扫描件、Word、PPT、Excel、EPUB、HTML 等复杂文档转换成大模型可直接使用的 Markdown 或 JSON。它擅长处理表格、公式、多栏排版和扫描 OCR，并保留页码与块级定位，方便引用和检索。例如把一篇带公式和表格的学术论文 PDF 转成 Markdown 后，就能直接喂给 AI Agent 做问答或 RAG 检索，省去自己写解析器的麻烦。</p>
+          
+          <div class="byline">
+            <span>opendatalab</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://opendatalab.github.io/MinerU/" target="_blank">https://opendatalab.github.io/MinerU/</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/vectorize-io/hindsight" target="_blank">vectorize-io/hindsight</a></h3>
+            <span class="stars">★ 44,831</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;vectorize-io/hindsight&quot;, &quot;url&quot;: &quot;https://github.com/vectorize-io/hindsight&quot;, &quot;owner&quot;: &quot;vectorize-io&quot;, &quot;stars&quot;: 44831, &quot;desc&quot;: &quot;\u7ed9 AI Agent \u88c5\u7684\u300c\u4f1a\u6210\u957f\u7684\u8bb0\u5fc6\u300d\u3002\u666e\u901a\u8bb0\u5fc6\u53ea\u662f\u5b58\u804a\u5929\u8bb0\u5f55\uff0cHindsight \u4f1a\u4ece\u8fc7\u53bb\u7684\u6210\u529f\u548c\u5931\u8d25\u91cc\u603b\u7ed3\u89c4\u5f8b\uff0c\u4e0b\u6b21\u9047\u5230\u7c7b\u4f3c\u4efb\u52a1\u505a\u5f97\u66f4\u597d\u2014\u2014\u8ba9 AI \u50cf\u65b0\u4eba\u4e00\u6837\u9010\u6e10\u53d8\u6210\u8001\u624b\u3002&quot;, &quot;site&quot;: &quot;https://hindsight.vectorize.io/&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">给 AI Agent 装的「会成长的记忆」。普通记忆只是存聊天记录，Hindsight 会从过去的成功和失败里总结规律，下次遇到类似任务做得更好——让 AI 像新人一样逐渐变成老手。</p>
+          
+          <div class="byline">
+            <span>vectorize-io</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://hindsight.vectorize.io/" target="_blank">https://hindsight.vectorize.io/</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">学习资源</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/byoungd/up" target="_blank">byoungd/up</a></h3>
+            <span class="stars">★ 67,496</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;byoungd/up&quot;, &quot;url&quot;: &quot;https://github.com/byoungd/up&quot;, &quot;owner&quot;: &quot;byoungd&quot;, &quot;stars&quot;: 67496, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u4e2d\u82f1\u53cc\u8bed\u7684\u7ec8\u8eab\u5b66\u4e60\u6307\u5357\uff0c\u6559\u4f60\u600e\u4e48\u5b66\u82f1\u8bed\u3001\u600e\u4e48\u548c AI \u534f\u4f5c\u3001\u600e\u4e48\u7528\u771f\u5b9e\u9879\u76ee\u79ef\u7d2f\u6210\u957f\u8bc1\u636e\u3002\u5b83\u89e3\u51b3\u7684\u662f\u300c\u60f3\u81ea\u5b66\u4f46\u4e0d\u77e5\u9053\u4ece\u54ea\u4e0b\u624b\u3001\u5b66\u4e86\u6ca1\u6210\u679c\u300d\u7684\u95ee\u9898\uff0c\u628a\u82f1\u8bed\u5b66\u4e60\u3001AI \u5de5\u5177\u4f7f\u7528\u548c\u9879\u76ee\u5b9e\u8df5\u4e32\u6210\u4e00\u6761\u53ef\u6267\u884c\u7684\u8def\u5f84\u3002\u6bd4\u5982\u4f60\u60f3\u63d0\u5347\u82f1\u8bed\u53c8\u6015\u575a\u6301\u4e0d\u4e0b\u53bb\uff0c\u53ef\u4ee5\u7167\u7740\u91cc\u9762\u7684\u65b9\u6cd5\u8fb9\u505a\u9879\u76ee\u8fb9\u7ec3\uff0c\u628a\u5b66\u4e60\u8fc7\u7a0b\u53d8\u6210\u770b\u5f97\u89c1\u7684\u4f5c\u54c1\u3002&quot;, &quot;site&quot;: &quot;https://byoungd.github.io/up/&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个中英双语的终身学习指南，教你怎么学英语、怎么和 AI 协作、怎么用真实项目积累成长证据。它解决的是「想自学但不知道从哪下手、学了没成果」的问题，把英语学习、AI 工具使用和项目实践串成一条可执行的路径。比如你想提升英语又怕坚持不下去，可以照着里面的方法边做项目边练，把学习过程变成看得见的作品。</p>
+          <p class="desc">标签：学习</p>
+          <div class="byline">
+            <span>byoungd</span><i>·</i>
+            <span>更新于 2026-10-09</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://byoungd.github.io/up/" target="_blank">https://byoungd.github.io/up/</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-5">
+        <div class="sec-kicker"><span class="sec-no">SECTION 05</span><span class="sec-name">AI / 大模型</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-5-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/Tencent/WeKnora" target="_blank">Tencent/WeKnora</a></h3>
+            <span class="stars">★ 31,818</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Tencent/WeKnora&quot;, &quot;url&quot;: &quot;https://github.com/Tencent/WeKnora&quot;, &quot;owner&quot;: &quot;Tencent&quot;, &quot;stars&quot;: 31818, &quot;desc&quot;: &quot;\u817e\u8baf\u5f00\u6e90\u7684\u77e5\u8bc6\u5e93\u5e73\u53f0\uff1a\u628a\u516c\u53f8\u4e00\u5806\u6563\u843d\u7684\u6587\u6863\u4e22\u8fdb\u53bb\uff0c\u5c31\u80fd\u53d8\u6210\u53ef\u95ee\u7b54\u7684\u667a\u80fd\u77e5\u8bc6\u5e93\uff0c\u8fd8\u80fd\u81ea\u52a8\u6574\u7406\u6210 Wiki\u3002\u5178\u578b\u7684 RAG \u5e94\u7528\uff0c\u9002\u5408\u642d\u4f01\u4e1a\u5185\u90e8\u300c\u95ee\u5565\u90fd\u77e5\u9053\u300d\u7684 AI \u77e5\u8bc6\u52a9\u624b\u3002&quot;, &quot;site&quot;: &quot;https://weknora.weixin.qq.com&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">腾讯开源的知识库平台：把公司一堆散落的文档丢进去，就能变成可问答的智能知识库，还能自动整理成 Wiki。典型的 RAG 应用，适合搭企业内部「问啥都知道」的 AI 知识助手。</p>
+          <p class="desc"><b>我的备注：</b>知识库</p>
+          <div class="byline">
+            <span>Tencent</span><i>·</i>
+            <span>更新于 2026-10-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://weknora.weixin.qq.com" target="_blank">https://weknora.weixin.qq.com</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/nashsu/llm_wiki" target="_blank">nashsu/llm_wiki</a></h3>
+            <span class="stars">★ 20,285</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;nashsu/llm_wiki&quot;, &quot;url&quot;: &quot;https://github.com/nashsu/llm_wiki&quot;, &quot;owner&quot;: &quot;nashsu&quot;, &quot;stars&quot;: 20285, &quot;desc&quot;: &quot;LLM Wiki \u662f\u4e00\u6b3e\u8de8\u5e73\u53f0\u684c\u9762\u5e94\u7528\uff0c\u80fd\u628a\u4f60\u7684\u6587\u6863\u81ea\u52a8\u53d8\u6210\u4e92\u76f8\u94fe\u63a5\u7684\u77e5\u8bc6\u5e93\u3002\u5b83\u4e0d\u50cf\u4f20\u7edf RAG \u6bcf\u6b21\u63d0\u95ee\u90fd\u4ece\u5934\u68c0\u7d22\uff0c\u800c\u662f\u8ba9\u5927\u6a21\u578b\u589e\u91cf\u5730\u9605\u8bfb\u3001\u6574\u7406\u5e76\u6301\u7eed\u7ef4\u62a4\u4e00\u4e2a\u6301\u4e45\u5316\u7684 Wiki\uff0c\u77e5\u8bc6\u53ea\u7f16\u8bd1\u4e00\u6b21\u5e76\u4fdd\u6301\u66f4\u65b0\u3002\u6bd4\u5982\u4f60\u5bfc\u5165\u4e00\u6279 PDF \u8bba\u6587\uff0c\u5b83\u4f1a\u81ea\u52a8\u751f\u6210\u6458\u8981\u3001\u5b9e\u4f53\u548c\u6982\u5ff5\u9875\u9762\u5e76\u5efa\u7acb\u4ea4\u53c9\u5f15\u7528\uff0c\u8fd8\u652f\u6301\u77e5\u8bc6\u56fe\u8c31\u3001\u8bed\u4e49\u641c\u7d22\u548c\u7f51\u9875\u526a\u85cf\uff0c\u9002\u5408\u505a\u4e2a\u4eba\u6216\u56e2\u961f\u7684\u77e5\u8bc6\u7ba1\u7406\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">LLM Wiki 是一款跨平台桌面应用，能把你的文档自动变成互相链接的知识库。它不像传统 RAG 每次提问都从头检索，而是让大模型增量地阅读、整理并持续维护一个持久化的 Wiki，知识只编译一次并保持更新。比如你导入一批 PDF 论文，它会自动生成摘要、实体和概念页面并建立交叉引用，还支持知识图谱、语义搜索和网页剪藏，适合做个人或团队的知识管理。</p>
+          
+          <div class="byline">
+            <span>nashsu</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+      <section id="sec-6">
+        <div class="sec-kicker"><span class="sec-no">SECTION 06</span><span class="sec-name">安全</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-6-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/Infisical/infisical" target="_blank">Infisical/infisical</a></h3>
+            <span class="stars">★ 29,657</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Infisical/infisical&quot;, &quot;url&quot;: &quot;https://github.com/Infisical/infisical&quot;, &quot;owner&quot;: &quot;Infisical&quot;, &quot;stars&quot;: 29657, &quot;desc&quot;: &quot;Infisical \u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5bc6\u94a5\u4e0e\u8bc1\u4e66\u7ba1\u7406\u5e73\u53f0\uff0c\u5e2e\u56e2\u961f\u96c6\u4e2d\u5b58\u653e\u548c\u540c\u6b65\u5e94\u7528\u5bc6\u7801\u3001API Key\u3001\u6570\u636e\u5e93\u51ed\u636e\u7b49\u654f\u611f\u4fe1\u606f\uff0c\u9632\u6b62\u5b83\u4eec\u88ab\u786c\u7f16\u7801\u6216\u6cc4\u9732\u5230 Git \u4ed3\u5e93\u3002\u5b83\u652f\u6301\u5bc6\u94a5\u7248\u672c\u56de\u6eda\u3001\u5b9a\u671f\u8f6e\u6362\u3001\u52a8\u6001\u751f\u6210\u4e34\u65f6\u51ed\u636e\uff0c\u8fd8\u80fd\u7b7e\u53d1\u548c\u7ba1\u7406\u5185\u90e8\u8bc1\u4e66\u3001\u63a7\u5236\u7279\u6743\u8bbf\u95ee\u5e76\u8bb0\u5f55\u5ba1\u8ba1\u65e5\u5fd7\u3002\u4f8b\u5982\u5f00\u53d1\u65f6\u53ef\u7528\u5b83\u7684 CLI \u628a\u751f\u4ea7\u5bc6\u94a5\u81ea\u52a8\u6ce8\u5165\u672c\u5730\u73af\u5883\uff0c\u65e0\u9700\u624b\u52a8\u590d\u5236\u7c98\u8d34\u3002&quot;, &quot;site&quot;: &quot;https://infisical.com&quot;, &quot;category&quot;: &quot;\u5b89\u5168&quot;, &quot;emoji&quot;: &quot;\ud83d\udd10&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Infisical 是一个开源的密钥与证书管理平台，帮团队集中存放和同步应用密码、API Key、数据库凭据等敏感信息，防止它们被硬编码或泄露到 Git 仓库。它支持密钥版本回滚、定期轮换、动态生成临时凭据，还能签发和管理内部证书、控制特权访问并记录审计日志。例如开发时可用它的 CLI 把生产密钥自动注入本地环境，无需手动复制粘贴。</p>
+          
+          <div class="byline">
+            <span>Infisical</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://infisical.com" target="_blank">https://infisical.com</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-7">
+        <div class="sec-kicker"><span class="sec-no">SECTION 07</span><span class="sec-name">开发工具与框架</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-7-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/longbridge/gpui-kit" target="_blank">longbridge/gpui-kit</a></h3>
+            <span class="stars">★ 15,751</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;longbridge/gpui-kit&quot;, &quot;url&quot;: &quot;https://github.com/longbridge/gpui-kit&quot;, &quot;owner&quot;: &quot;longbridge&quot;, &quot;stars&quot;: 15751, &quot;desc&quot;: &quot;\u957f\u6865\u5f00\u6e90\u7684 Rust \u684c\u9762 UI \u7ec4\u4ef6\u5e93\uff0c\u57fa\u4e8e GPUI\uff08Zed \u7f16\u8f91\u5668\u540c\u6b3e\u5f15\u64ce\uff09\uff0c\u6027\u80fd\u6781\u597d\u3002\u60f3\u505a Rust \u8de8\u5e73\u53f0\u684c\u9762\u5e94\u7528\u2014\u2014\u5c24\u5176\u662f\u884c\u60c5\u3001\u4ea4\u6613\u8fd9\u7c7b\u5b9e\u65f6\u754c\u9762\u2014\u2014\u53ef\u4ee5\u76f4\u63a5\u7528\u8fd9\u5957\u73b0\u6210\u7ec4\u4ef6\u3002&quot;, &quot;site&quot;: &quot;http://gpui-kit.com&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">长桥开源的 Rust 桌面 UI 组件库，基于 GPUI（Zed 编辑器同款引擎），性能极好。想做 Rust 跨平台桌面应用——尤其是行情、交易这类实时界面——可以直接用这套现成组件。</p>
+          <p class="desc"><b>我的备注：</b>网站 UI 设计工具箱</p>
+          <p class="desc">标签：前端</p>
+          <div class="byline">
+            <span>longbridge</span><i>·</i>
+            <span>更新于 2026-10-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="http://gpui-kit.com" target="_blank">http://gpui-kit.com</a>
+          </div>
+        </article>
+        <article class="item" id="sec-7-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/jackyzha0/quartz" target="_blank">jackyzha0/quartz</a></h3>
+            <span class="stars">★ 13,350</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;jackyzha0/quartz&quot;, &quot;url&quot;: &quot;https://github.com/jackyzha0/quartz&quot;, &quot;owner&quot;: &quot;jackyzha0&quot;, &quot;stars&quot;: 13350, &quot;desc&quot;: &quot;Quartz \u662f\u4e00\u4e2a\u9759\u6001\u7f51\u7ad9\u751f\u6210\u5668\uff0c\u80fd\u628a\u7528 Markdown \u5199\u7684\u7b14\u8bb0\u81ea\u52a8\u53d8\u6210\u529f\u80fd\u5b8c\u6574\u7684\u7f51\u7ad9\uff0c\u7279\u522b\u9002\u5408\u53d1\u5e03\u300c\u6570\u5b57\u82b1\u56ed\u300d\u2014\u2014\u4e5f\u5c31\u662f\u50cf Obsidian \u90a3\u6837\u4e92\u76f8\u94fe\u63a5\u7684\u7b14\u8bb0\u7f51\u7edc\u3002\u5b83\u5185\u7f6e\u4e86\u641c\u7d22\u3001\u53cd\u5411\u94fe\u63a5\u3001\u56fe\u8c31\u89c6\u56fe\u7b49\u529f\u80fd\uff0c\u4f60\u53ea\u9700\u4e13\u6ce8\u5199\u4f5c\uff0c\u5b83\u8d1f\u8d23\u751f\u6210\u7f51\u9875\u5e76\u514d\u8d39\u90e8\u7f72\u3002\u6bd4\u5982\u4f60\u6709\u4e00\u5806 Obsidian \u7b14\u8bb0\uff0c\u7528 Quartz \u5c31\u80fd\u4e00\u952e\u53d1\u5e03\u6210\u4e2a\u4eba\u77e5\u8bc6\u7f51\u7ad9\uff0c\u8bfb\u8005\u53ef\u4ee5\u50cf\u6d4f\u89c8\u7ef4\u57fa\u767e\u79d1\u4e00\u6837\u5728\u7b14\u8bb0\u95f4\u8df3\u8f6c\u3002&quot;, &quot;site&quot;: &quot;https://quartz.jzhao.xyz&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Quartz 是一个静态网站生成器，能把用 Markdown 写的笔记自动变成功能完整的网站，特别适合发布「数字花园」——也就是像 Obsidian 那样互相链接的笔记网络。它内置了搜索、反向链接、图谱视图等功能，你只需专注写作，它负责生成网页并免费部署。比如你有一堆 Obsidian 笔记，用 Quartz 就能一键发布成个人知识网站，读者可以像浏览维基百科一样在笔记间跳转。</p>
+          
+          <div class="byline">
+            <span>jackyzha0</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://quartz.jzhao.xyz" target="_blank">https://quartz.jzhao.xyz</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-8">
+        <div class="sec-kicker"><span class="sec-no">SECTION 08</span><span class="sec-name">其他</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-8-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/newsnext/newsnow" target="_blank">newsnext/newsnow</a></h3>
+            <span class="stars">★ 21,979</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;newsnext/newsnow&quot;, &quot;url&quot;: &quot;https://github.com/newsnext/newsnow&quot;, &quot;owner&quot;: &quot;newsnext&quot;, &quot;stars&quot;: 21979, &quot;desc&quot;: &quot;NewsNow \u662f\u4e00\u4e2a\u4f18\u96c5\u7684\u5b9e\u65f6\u70ed\u70b9\u65b0\u95fb\u805a\u5408\u9605\u8bfb\u5668\uff0c\u628a\u5404\u5927\u5e73\u53f0\u7684\u70ed\u699c\u548c\u6700\u65b0\u8d44\u8baf\u96c6\u4e2d\u5230\u4e00\u4e2a\u5e72\u51c0\u6e05\u723d\u7684\u754c\u9762\u91cc\uff0c\u89e3\u51b3\u7528\u6237\u5728\u4e0d\u540c App \u4e4b\u95f4\u6765\u56de\u5207\u6362\u770b\u65b0\u95fb\u7684\u9ebb\u70e6\u3002\u5b83\u652f\u6301 GitHub \u767b\u5f55\u540c\u6b65\u3001\u667a\u80fd\u7f13\u5b58\u4e0e\u81ea\u9002\u5e94\u6293\u53d6\u9891\u7387\uff0c\u8fd8\u80fd\u901a\u8fc7 MCP \u63a5\u5165 AI \u5de5\u5177\u3002\u4f8b\u5982\u4f60\u60f3\u5feb\u901f\u4e86\u89e3\u4eca\u5929\u5168\u7f51\u70ed\u70b9\uff0c\u6253\u5f00\u5b83\u5c31\u80fd\u4e00\u5c4f\u770b\u5b8c\uff0c\u65e0\u9700\u9010\u4e2a\u5e73\u53f0\u7ffb\u627e\u3002&quot;, &quot;site&quot;: &quot;https://newsnow.busiyi.world&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">NewsNow 是一个优雅的实时热点新闻聚合阅读器，把各大平台的热榜和最新资讯集中到一个干净清爽的界面里，解决用户在不同 App 之间来回切换看新闻的麻烦。它支持 GitHub 登录同步、智能缓存与自适应抓取频率，还能通过 MCP 接入 AI 工具。例如你想快速了解今天全网热点，打开它就能一屏看完，无需逐个平台翻找。</p>
+          
+          <div class="byline">
+            <span>newsnext</span><i>·</i>
+            <span>更新于 2026-10-08</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://newsnow.busiyi.world" target="_blank">https://newsnow.busiyi.world</a>
+          </div>
+        </article>
+        <article class="item" id="sec-8-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/pablostanley/yoinks" target="_blank">pablostanley/yoinks</a></h3>
+            <span class="stars">★ 3,655</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;pablostanley/yoinks&quot;, &quot;url&quot;: &quot;https://github.com/pablostanley/yoinks&quot;, &quot;owner&quot;: &quot;pablostanley&quot;, &quot;stars&quot;: 3655, &quot;desc&quot;: &quot;\u7ec8\u7aef\u91cc\u7684\u89c6\u9891\u4e0b\u8f7d\u5668\uff1a\u4e00\u6761\u547d\u4ee4\u628a\u7f51\u9875\u89c6\u9891\u62c9\u5230\u672c\u5730\uff0c\u6ca1\u6709\u5783\u573e\u5e7f\u544a\u548c\u5957\u8def\u3002\u540c\u7c7b\u5de5\u5177\u91cc\u754c\u9762\u6700\u6e05\u723d\u7684\u4e00\u4e2a\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">终端里的视频下载器：一条命令把网页视频拉到本地，没有垃圾广告和套路。同类工具里界面最清爽的一个。</p>
+          <p class="desc"><b>我的备注：</b>利用 yp-tlp 工具下载网站视频</p>
+          <div class="byline">
+            <span>pablostanley</span><i>·</i>
+            <span>更新于 2026-10-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
+    btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = meta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>
