@@ -1107,7 +1107,7 @@
   ]
  },
  "daily:2026-10-12": {
-  "status": "sending",
+  "status": "prepared",
   "report": {
    "date": "2026-10-12",
    "new_count": 3,
@@ -1219,7 +1219,11 @@
       ]
      }
     },
-    "status": "sending"
+    "status": "sent",
+    "receipt": {
+     "code": 0,
+     "confirmed_at": "2026-10-12T09:02:55.210088+08:00"
+    }
    },
    {
     "message": {
