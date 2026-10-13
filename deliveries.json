@@ -2243,7 +2243,7 @@
   ]
  },
  "daily:2026-10-13": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-13",
    "new_count": 3,
@@ -2293,6 +2293,126 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-13 ｜ 今日新项目 3 个 ｜ 1 个分类 ｜ 30 天去重跳过 66 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-13/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 2 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 3 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [open-webui/open-webui](https://github.com/open-webui/open-webui)**　⭐ 154,634\nOpen WebUI 是一个开源的、用户友好的人工智能聊天界面，让你像使用 ChatGPT 一样与各种大模型对话，但完全在本地或自己的服务器上运行。它支持 Ollama、OpenAI API 等多种后端，还内置了 RAG 文档问答、模型切换、多用户管理等功能。比如你可以把公司内部文档上传，让 AI 基于这些资料回答问题，既保护隐私又方便。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 open-webui ｜ 📅 更新 2026-10-12 ｜ 🏷 日榜 ｜ 🔗 [https://openwebui.com](https://openwebui.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [Alishahryar1/free-claude-code](https://github.com/Alishahryar1/free-claude-code)**　⭐ 58,583\n这个项目让你免费使用 Claude Code、Codex、VSCode、Pi、OpenCode 等十多个 AI 编程工具，累计提供超过 13 亿免费 token。它解决的是 AI 编程助手价格贵、额度少的问题，支持在终端、App、IDE、手机甚至浏览器里直接调用，还能多工具、多模型混用并支持语音。比如你写代码时想用 Claude Code 但没订阅，就可以通过它免费接入，在浏览器里直接对话写代码。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Alishahryar1 ｜ 📅 更新 2026-10-12 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [microsoft/BitNet](https://github.com/microsoft/BitNet)**　⭐ 40,796\nBitNet 是微软推出的 1-bit 大语言模型推理框架，专门用来高效运行权重只有 1 比特的 LLM。传统模型动辄需要几十 GB 显存，而它通过极低比特量化大幅压缩模型体积和计算量，让普通电脑甚至 CPU 也能跑起大模型。比如你可以在笔记本上本地部署一个 1-bit 模型做对话或文本生成，无需昂贵 GPU，适合想低成本体验或研究超低比特推理的开发者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 microsoft ｜ 📅 更新 2026-07-27 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
