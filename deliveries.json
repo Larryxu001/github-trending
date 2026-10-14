@@ -2424,7 +2424,7 @@
   ]
  },
  "daily:2026-10-14": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-14",
    "new_count": 3,
@@ -2486,6 +2486,160 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-14 ｜ 今日新项目 3 个 ｜ 3 个分类 ｜ 30 天去重跳过 70 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-14/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 4 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [vercel-labs/skills](https://github.com/vercel-labs/skills)**　⭐ 34,266\n这是 Vercel 推出的开源 Agent 技能工具，通过 npx skills 命令即可为 AI 编程助手安装和管理可复用的技能包。它解决的问题是：不同 AI Agent 各自为战，能力无法共享。有了它，开发者可以把常用能力（如生成组件、写测试）打包成技能，一条命令装到 Claude Code、Cursor 等工具里，让 Agent 快速获得新本领，无需重复配置。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 vercel-labs ｜ 📅 更新 2026-10-09 ｜ 🏷 日榜 ｜ 🔗 [https://skills.sh](https://skills.sh)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [google/artemis](https://github.com/google/artemis)**　⭐ 11,501\nARTEMIS 是谷歌开源的 Android 自动化工具，能把自然语言指令变成可靠的手机操作。它自动完成端到端测试流程、抓取日志，还能接入 Antigravity、Codex、Claude Code 等 AI 编程助手。比如你说“打开设置并检查 Wi-Fi 是否开启”，它就能自动执行并给出结果，在 AndroidWorld 基准上成功率超过 99%，适合做 App 测试和自动化验证。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 google ｜ 📅 更新 2026-10-01 ｜ 🏷 月榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [xtool-org/xtool](https://github.com/xtool-org/xtool)**　⭐ 8,857\nxtool 是一个跨平台的 Xcode 替代工具，让你不用 Mac 也能开发和部署 iOS 应用。它基于 Swift Package Manager，支持在 Linux、Windows 和 macOS 上构建 iOS 项目，解决了传统 iOS 开发必须依赖 Xcode 和苹果电脑的痛点。比如你在 Linux 服务器上想编译一个 Swift 写的 iOS 应用，用 xtool 就能直接完成构建和部署，无需再买一台 Mac。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 xtool-org ｜ 📅 更新 2026-10-06 ｜ 🏷 日榜 ｜ 🔗 [https://xtool.sh](https://xtool.sh)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
