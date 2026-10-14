@@ -1,7 +1,5 @@
 {
- "errors": [
-  "工作流失败：Collect Trending"
- ],
- "checked_at": "2026-10-14T03:44:47.727997+08:00",
- "notification": "sent"
+ "errors": [],
+ "checked_at": "2026-10-14T11:20:21.536133+08:00",
+ "notification": "sending"
 }
