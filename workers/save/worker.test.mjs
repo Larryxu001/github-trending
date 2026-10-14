@@ -126,3 +126,15 @@ test('Feishu only imports permitted user/group, fresh human messages and reposit
  assert.equal((await worker.fetch(eventRequest(eventBody()),feishuEnv)).status,200);
  assert.equal(calls.length,1);assert.deepEqual(calls[0].inputs,{urls:'["https://github.com/a/b"]',request_id:'event-1',source:'feishu'});
 });
+
+test('custom website keeps navigation and API on its own domain without forwarding credentials',async()=>{
+ let target,options;
+ globalThis.fetch=async(u,o)=>{target=u;options=o;return new Response('<a href="https://larryxu001.github.io/github-trending/saved.html">Saved</a><script>const api="https://github-trending-save.larryxu-4e5.workers.dev";</script>')};
+ const response=await worker.fetch(new Request('https://github.51vipai.com/',{headers:{Authorization:'Bearer private'}}),env);
+ const html=await response.text();
+ assert.equal(target,'https://raw.githubusercontent.com/Larryxu001/github-trending/main/reports_web/index.html');assert.equal(options.headers,undefined);
+ assert.match(html,/https:\/\/github.51vipai.com\/saved.html/);assert.match(html,/https:\/\/github.51vipai.com\/api/);
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/api/auth',{headers:{Origin:'https://github.51vipai.com',Authorization:'Bearer test-password'}}),env)).status,200);
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/api/auth',{headers:{Authorization:'Bearer wrong'}}),env)).status,401);
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/https://evil.invalid'),env)).status,404);
+});

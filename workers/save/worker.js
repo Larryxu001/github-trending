@@ -153,6 +153,15 @@ export default {
   },
 
   async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.hostname === "github.51vipai.com") {
+      if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
+        url.pathname = url.pathname.slice(4) || "/";
+        request = new Request(url, request);
+      } else {
+        return serveWebsite(request);
+      }
+    }
     const started = performance.now();
     // CORS 预检
     if (request.method === "OPTIONS") {
@@ -160,7 +169,7 @@ export default {
     }
 
     const origin = request.headers.get("Origin");
-    if (origin && origin !== "https://larryxu001.github.io") return json({error:"Origin forbidden"},403);
+    if (origin && ! ["https://larryxu001.github.io", "https://github.51vipai.com"].includes(origin)) return json({error:"Origin forbidden"},403);
     const imported = await handleImport(request, env, authorized, json);
     if (imported) return imported;
     if (new URL(request.url).pathname === "/auth") {
@@ -312,3 +321,27 @@ export default {
     }
   },
 };
+
+
+// Fetch only this site's published HTML; never forward visitor credentials upstream.
+async function serveWebsite(request) {
+  const url = new URL(request.url);
+  if (!["GET", "HEAD"].includes(request.method)) return new Response("Method not allowed", {status:405});
+  if (!/^\/(?:[\w-]+\/)*(?:[\w-]+\.html)?$/.test(url.pathname)) return new Response("Not found", {status:404});
+  const path = url.pathname.endsWith("/") ? url.pathname + "index.html" : url.pathname;
+  try {
+    const response = await fetch("https://raw.githubusercontent.com/Larryxu001/github-trending/main/reports_web" + path, {
+      signal:AbortSignal.timeout(15000), redirect:"manual",
+    });
+    if (!response.ok) return new Response("页面暂不可用，请稍后刷新", {status:response.status});
+    const html = (await response.text())
+      .replaceAll("https://larryxu001.github.io/github-trending", url.origin)
+      .replaceAll("https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json", url.origin + "/api")
+      .replaceAll("https://github-trending-save.larryxu-4e5.workers.dev", url.origin + "/api")
+      .replaceAll("https://github-trending.51vipai.com", url.origin + "/api");
+    return new Response(request.method === "HEAD" ? null : html, {headers:{
+      "Content-Type":"text/html; charset=utf-8", "Cache-Control":"no-cache",
+      "X-Content-Type-Options":"nosniff",
+    }});
+  } catch (error) { console.error("website_fetch_failed", error.message); return new Response("页面暂不可用，请稍后刷新", {status:502}); }
+}
