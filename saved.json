@@ -249,6 +249,20 @@
     "学习"
    ],
    "saved_at": "2026-10-09"
+  },
+  {
+   "repo": "harry0703/MoneyPrinterTurbo",
+   "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+   "owner": "harry0703",
+   "stars": 130531,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "MoneyPrinterTurbo 是一个开源的 AI 短视频一键生成工具。你只需输入一个主题或关键词，它就会自动调用大模型写视频脚本、匹配素材、生成配音字幕和背景音乐，最后用 ffmpeg 合成高清短视频，适合批量制作抖音、TikTok、YouTube Shorts 等平台内容。它提供 WebUI、API、CLI 和 AI Agent 四种用法，支持 Kimi、OpenAI、Claude、Gemini、DeepSeek 等多种模型，也能在每一步手动替换自定义内容。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-14",
+   "source": "feishu"
   }
  ]
 }
