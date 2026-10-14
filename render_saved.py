@@ -269,7 +269,7 @@ function render() {{
         '<button class="unsave" onclick="unsave(this)">取消收藏</button></div>' +
         (r.desc ? '<p class="desc">' + esc(r.desc) + '</p>' : '') +
         note + tags +
-        '<div class="meta"><span>' + esc(r.owner || '') + '</span><i>·</i><span>' + site + '</span><i>·</i>' + date + '</div>' +
+        '<div class="meta"><span>' + esc(r.owner || '') + '</span><i>·</i><span>' + site + '</span><i>·</i><a class="site source-download" href="https://github.51vipai.com/download/' + esc(r.repo) + '.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>' + date + '</div>' +
       '</div></div>';
     }}).join('') + '</section>';
   }}).join('');

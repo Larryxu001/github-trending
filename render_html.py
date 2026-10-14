@@ -86,7 +86,8 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
             <span>{esc(it['owner'])}</span><i>·</i>
             <span>更新于 {esc(it['updated'])}</span><i>·</i>
             <span class="{'hot' if daily else ''}">{lists}</span><i>·</i>
-            {site}
+            {site}<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/{esc(it['repo'])}.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a>
           </div>
         </article>""".replace("\n          \n", "\n"))
         sections.append(f"""

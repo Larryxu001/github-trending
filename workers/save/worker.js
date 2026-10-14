@@ -155,6 +155,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.hostname === "github.51vipai.com") {
+      if (url.pathname.startsWith("/download/")) return downloadSource(request);
       if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
         url.pathname = url.pathname.slice(4) || "/";
         request = new Request(url, request);
@@ -344,4 +345,26 @@ async function serveWebsite(request) {
       "X-Content-Type-Options":"nosniff",
     }});
   } catch (error) { console.error("website_fetch_failed", error.message); return new Response("页面暂不可用，请稍后刷新", {status:502}); }
+}
+
+
+async function downloadSource(request) {
+  if (!["GET", "HEAD"].includes(request.method)) return new Response("仅支持 GET / HEAD", {status:405});
+  const match = new URL(request.url).pathname.match(/^\/download\/([A-Za-z0-9][A-Za-z0-9-]*)\/([A-Za-z0-9_.-]+)\.zip$/);
+  if (!match || [".", ".."].includes(match[2])) return new Response("项目地址不正确", {status:400});
+  const [, owner, repo] = match;
+  try {
+    // HEAD follows the default branch. Public codeload only: no user or Worker credentials.
+    const upstream = await fetch(`https://codeload.github.com/${owner}/${repo}/zip/HEAD`, {
+      method:request.method, redirect:"manual", signal:AbortSignal.timeout(120000),
+    });
+    if (!upstream.ok) return new Response("源码包暂不可用：项目可能已删除、改名或不是公开项目，请稍后重试。", {
+      status:upstream.status === 404 ? 404 : 502,
+    });
+    return new Response(upstream.body, {headers:{
+      "Content-Type":"application/zip",
+      "Content-Disposition":`attachment; filename="${owner}-${repo}-source.zip"`,
+      "Cache-Control":"no-store", "X-Content-Type-Options":"nosniff",
+    }});
+  } catch (_) { return new Response("源码下载超时或上游不可用，请稍后重试。", {status:502}); }
 }

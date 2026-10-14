@@ -138,3 +138,25 @@ test('custom website keeps navigation and API on its own domain without forwardi
  assert.equal((await worker.fetch(new Request('https://github.51vipai.com/api/auth',{headers:{Authorization:'Bearer wrong'}}),env)).status,401);
  assert.equal((await worker.fetch(new Request('https://github.51vipai.com/https://evil.invalid'),env)).status,404);
 });
+
+test('source ZIP stays on custom domain, streams public default branch and sends no credentials',async()=>{
+ let call;
+ globalThis.fetch=async(url,options)=>{call={url,options};return new Response(new Uint8Array([80,75,3,4]))};
+ const response=await worker.fetch(new Request('https://github.51vipai.com/download/newsnext/newsnow.zip',{headers:{Authorization:'Bearer private',Cookie:'session=private'}}),env);
+ assert.equal(response.status,200);assert.equal(response.headers.get('Content-Type'),'application/zip');
+ assert.match(response.headers.get('Content-Disposition'),/newsnext-newsnow-source.zip/);
+ assert.equal(response.headers.get('Location'),null);
+ assert.equal(call.url,'https://codeload.github.com/newsnext/newsnow/zip/HEAD');
+ assert.equal(call.options.headers,undefined);assert.equal(call.options.redirect,'manual');
+ assert.deepEqual([...new Uint8Array(await response.arrayBuffer())],[80,75,3,4]);
+});
+test('source download rejects invalid targets and does not redirect browsers to GitHub',async()=>{
+ globalThis.fetch=()=>{throw new Error('must not fetch')};
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/download/a/b/c.zip'),env)).status,400);
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/download/a/b.zip',{method:'POST'}),env)).status,405);
+ for(const status of [302,404,500]){
+  globalThis.fetch=async()=>new Response(null,{status,headers:{Location:'https://github.com/private'}});
+  const response=await worker.fetch(new Request('https://github.51vipai.com/download/a/b.zip'),env);
+  assert.equal(response.status,status===404?404:502);assert.equal(response.headers.get('Location'),null);
+ }
+});
