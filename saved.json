@@ -263,6 +263,20 @@
    "tags": [],
    "saved_at": "2026-10-14",
    "source": "feishu"
+  },
+  {
+   "repo": "hugohe3/ppt-master",
+   "url": "https://github.com/hugohe3/ppt-master",
+   "owner": "hugohe3",
+   "stars": 61657,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "PPT Master 是一个运行在各类 AI 工具里的「技能」，你只要把 PDF、Word 或一个主题丢给 AI，它就能在你本机生成真正可编辑的 PowerPoint 文件——带原生形状、图表、表格、切换动画和语音旁白，还能套用你自己的 .pptx 模板。它解决的是 AI 做 PPT 只能生成图片或死板模板的问题，让生成结果能像手工做的一样在 PowerPoint 里继续改，数据也不用上传平台。",
+   "site": "https://hugohe3.github.io/ppt-master-examples/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-14",
+   "source": "feishu"
   }
  ]
 }
