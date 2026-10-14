@@ -277,6 +277,20 @@
    "tags": [],
    "saved_at": "2026-10-14",
    "source": "feishu"
+  },
+  {
+   "repo": "harry0703/MangoDisk",
+   "url": "https://github.com/harry0703/MangoDisk",
+   "owner": "harry0703",
+   "stars": 4075,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "MangoDisk 是一款用 Rust 和 Tauri 打造的跨平台磁盘清理与空间分析工具，支持 macOS、Windows 和 Linux。它能一键扫描系统缓存、浏览器数据、开发工具缓存（如 Xcode、Docker、Node.js 构建产物）和 AI 模型等占空间的内容，还提供大文件查找、重复文件清理、磁盘空间可视化（矩形树图/旭日图）、应用卸载、开机启动项管理和系统优化等功能。它坚持安全优先，默认只读扫描，清理前可逐项确认，并记录操作历史，适合想快速释放硬盘空间又怕误删的用户。",
+   "site": "https://mangodisk.app/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-14",
+   "source": "feishu"
   }
  ]
 }
