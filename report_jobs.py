@@ -304,11 +304,12 @@ def deliver(key, report, state, persist, send):
 def run(kind):
     current = now()
     today = current.date()
+    delivery_hour = 8 if today >= datetime.date(2026, 10, 16) else 9
     if kind == "scheduled":
         # A single schedule prevents daily/weekly/monthly jobs from replacing each
         # other in GitHub's one-pending-run concurrency queue at the same hour.
         kinds = ["collect"]
-        if current.hour >= 9:
+        if current.hour >= delivery_hour:
             kinds.append("daily")
             if today.weekday() == 0:
                 kinds.append("weekly")
@@ -328,8 +329,8 @@ def run(kind):
         sh(sys.executable, "fetch_trending.py", "--collect")
         checkpoint("采集 GitHub Trending · " + current.isoformat())
         return
-    if current.hour < 9:
-        print("[skip] report delivery starts at 09:00 Beijing time")
+    if current.hour < delivery_hour:
+        print(f"[skip] report delivery starts at {delivery_hour:02d}:00 Beijing time")
         return
     if kind == "monthly" and today.day != calendar.monthrange(today.year, today.month)[1]:
         print("[skip] not month end")

@@ -100,6 +100,16 @@ class ReportsTest(unittest.TestCase):
                 original("scheduled")
             self.assertEqual(calls, expected)
 
+    def test_eight_am_delivery_starts_on_october_16(self):
+        original = jobs.run
+        for day, hour, expected in ((15, 8, ["collect"]), (15, 9, ["collect", "daily"]),
+                                    (16, 7, ["collect"]), (16, 8, ["collect", "daily"])):
+            calls = []
+            with patch.object(jobs, "now", return_value=datetime.datetime(2026, 10, day, hour, tzinfo=report_state.BJ)), \
+                 patch.object(jobs, "run", side_effect=lambda kind: calls.append(kind)):
+                original("scheduled")
+            self.assertEqual(calls, expected)
+
     def test_scheduler_report_failure_does_not_skip_other_due_reports(self):
         original = jobs.run
         calls = []

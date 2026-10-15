@@ -4,11 +4,11 @@ compatibility_date = "2025-01-01"
 workers_dev = true
 routes = [{ pattern = "github-trending.51vipai.com", custom_domain = true }, { pattern = "github.51vipai.com", custom_domain = true }]
 
-# Cloudflare Cron 定时触发（每天北京时间 09:00 = UTC 01:00）：
+# Cloudflare Cron 定时触发（从 2026-10-16 起每天北京时间 08:00 = UTC 00:00）：
 # 作为 GitHub 自身 schedule（best-effort、可能延迟）的免费兜底，
 # 降低 GitHub schedule 延迟或漏触发的风险，仍受上游服务可用性影响。
 [triggers]
-crons = ["0 1-23/3 * * *", "20 3 * * *"]
+crons = ["0 */3 * * *", "20 3 * * *"]
 
 # 部署后需在 Cloudflare Dashboard 设置 secrets：
 #   GH_PAT    = 你的 GitHub Personal Access Token（需要 repo 写权限 + workflow 触发权限）
