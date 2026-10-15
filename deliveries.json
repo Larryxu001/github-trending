@@ -2659,7 +2659,7 @@
   ]
  },
  "daily:2026-10-15": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-15",
    "new_count": 7,
@@ -2775,6 +2775,245 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-15 ｜ 今日新项目 7 个 ｜ 4 个分类 ｜ 30 天去重跳过 74 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-15/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 3 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)**　⭐ 52,294\n一个面向 AI Agent 的基础设施/框架类项目，简介：\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 HKUDS ｜ 📅 更新 2026-09-22 ｜ 🏷 日榜 ｜ 🔗 [https://clianything.cc/](https://clianything.cc/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)**　⭐ 49,061\n一个面向 AI Agent 的基础设施/框架类项目，简介：Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. …"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 K-Dense-AI ｜ 📅 更新 2026-10-12 ｜ 🏷 日榜 ｜ 🔗 [https://arxiv.org/abs/2609.00065](https://arxiv.org/abs/2609.00065)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi)**　⭐ 28,986\n一个面向 AI Agent 的基础设施/框架类项目，简介：Fully autonomous AI Agents system capable of performing complex penetration testing tasks"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 vxcontrol ｜ 📅 更新 2026-10-09 ｜ 🏷 日榜 ｜ 🔗 [https://pentagi.com](https://pentagi.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ifixai-ai/iFixAi](https://github.com/ifixai-ai/iFixAi)**　⭐ 26,878\n一个与 AI / 大模型相关的开源项目，简介：Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent…"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ifixai-ai ｜ 📅 更新 2026-10-14 ｜ 🏷 日榜 ｜ 🔗 [https://www.ifixai.ai](https://www.ifixai.ai)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [rust-lang/rust](https://github.com/rust-lang/rust)**　⭐ 119,844\n一个开发工具/框架类项目，简介：Empowering everyone to build reliable and efficient software"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 rust-lang ｜ 📅 更新 2026-10-14 ｜ 🏷 日榜 ｜ 🔗 [https://www.rust-lang.org](https://www.rust-lang.org)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "grey",
+       "title": {
+        "tag": "plain_text",
+        "content": "📦 其他 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [nvm-sh/nvm](https://github.com/nvm-sh/nvm)**　⭐ 95,398\n一个开源项目，简介：Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 nvm-sh ｜ 📅 更新 2026-10-10 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [ntdevlabs/tiny11builder](https://github.com/ntdevlabs/tiny11builder)**　⭐ 20,099\n一个开源项目，简介：WinUI app for building smaller, customized Windows 11 images"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ntdevlabs ｜ 📅 更新 2026-10-12 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
