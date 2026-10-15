@@ -291,6 +291,20 @@
    "tags": [],
    "saved_at": "2026-10-14",
    "source": "feishu"
+  },
+  {
+   "repo": "morluto/rea",
+   "url": "https://github.com/morluto/rea",
+   "owner": "morluto",
+   "stars": 254168,
+   "category": "安全",
+   "emoji": "🔐",
+   "desc": "REA 是一个面向逆向工程的开源工具，通过 MCP 协议把 AI 智能体接入 Hopper、Ghidra、IDA 等分析引擎，让智能体自动拆解原生二进制、Electron 应用、.NET 程序、APK 和网站。比如你想复刻某个 App 的搜索功能，只需让智能体用 REA 检查目标程序，它就能给出伪代码、调用关系和证据，并帮你实现类似功能。分析在本地完成，结论附带依据与局限。",
+   "site": "https://rea.tools",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-15",
+   "source": "feishu"
   }
  ]
 }
