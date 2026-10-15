@@ -18,6 +18,8 @@ import json
 import os
 import re
 import sys
+import signal
+import time
 import urllib.request
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -137,8 +139,16 @@ def _llm_one(p):
 def run_llm(pending, items):
     """批量调用 DeepSeek，逐个项目生成描述，失败的降级到规则模板。"""
     out = {}
+    deadline = time.monotonic() + 120
+    def expired(signum, frame):
+        raise TimeoutError("AI description wall-clock deadline exceeded")
     for p in pending:
+        previous_handler = signal.signal(signal.SIGALRM, expired)
         try:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise TimeoutError("AI description batch deadline exceeded")
+            signal.setitimer(signal.ITIMER_REAL, min(60, remaining))
             r = _llm_one(p)
             # 官网优先用 GitHub API 里的 homepage（更可靠）
             if r["site"] == "无" and (p.get("homepage")):
@@ -151,7 +161,10 @@ def run_llm(pending, items):
             desc = build_desc(cat, p.get("language"), p.get("readme_hint"))
             out[p["repo"]] = {"cat": cat, "emoji": emoji, "desc": desc,
                               "site": p.get("homepage") or "无"}
-        import time
+        finally:
+            signal.setitimer(signal.ITIMER_REAL, 0)
+            signal.signal(signal.SIGALRM, previous_handler)
+        print(f"[done] description {p['repo']}", file=sys.stderr, flush=True)
         time.sleep(0.3)
     return out
 
