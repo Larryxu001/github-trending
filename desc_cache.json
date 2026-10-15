@@ -610,5 +610,47 @@
   "emoji": "🤖",
   "desc": "ARTEMIS 是谷歌开源的 Android 自动化工具，能把自然语言指令变成可靠的手机操作。它自动完成端到端测试流程、抓取日志，还能接入 Antigravity、Codex、Claude Code 等 AI 编程助手。比如你说“打开设置并检查 Wi-Fi 是否开启”，它就能自动执行并给出结果，在 AndroidWorld 基准上成功率超过 99%，适合做 App 测试和自动化验证。",
   "site": "无"
+ },
+ "nvm-sh/nvm": {
+  "cat": "其他",
+  "emoji": "📦",
+  "desc": "一个开源项目，简介：Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
+  "site": "无"
+ },
+ "K-Dense-AI/scientific-agent-skills": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. …",
+  "site": "https://arxiv.org/abs/2609.00065"
+ },
+ "HKUDS/CLI-Anything": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+  "site": "https://clianything.cc/"
+ },
+ "ifixai-ai/iFixAi": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "一个与 AI / 大模型相关的开源项目，简介：Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent…",
+  "site": "https://www.ifixai.ai"
+ },
+ "vxcontrol/pentagi": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+  "site": "https://pentagi.com"
+ },
+ "rust-lang/rust": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "一个开发工具/框架类项目，简介：Empowering everyone to build reliable and efficient software",
+  "site": "https://www.rust-lang.org"
+ },
+ "ntdevlabs/tiny11builder": {
+  "cat": "其他",
+  "emoji": "📦",
+  "desc": "一个开源项目，简介：WinUI app for building smaller, customized Windows 11 images",
+  "site": "无"
  }
 }

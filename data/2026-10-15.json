@@ -1,0 +1,116 @@
+{
+ "date": "2026-10-15",
+ "new_count": 7,
+ "skipped": 74,
+ "categories": [
+  {
+   "name": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "items": [
+    {
+     "repo": "HKUDS/CLI-Anything",
+     "url": "https://github.com/HKUDS/CLI-Anything",
+     "owner": "HKUDS",
+     "stars": 52294,
+     "updated": "2026-09-22",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+     "site": "https://clianything.cc/"
+    },
+    {
+     "repo": "K-Dense-AI/scientific-agent-skills",
+     "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+     "owner": "K-Dense-AI",
+     "stars": 49061,
+     "updated": "2026-10-12",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. …",
+     "site": "https://arxiv.org/abs/2609.00065"
+    },
+    {
+     "repo": "vxcontrol/pentagi",
+     "url": "https://github.com/vxcontrol/pentagi",
+     "owner": "vxcontrol",
+     "stars": 28986,
+     "updated": "2026-10-09",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+     "site": "https://pentagi.com"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "ifixai-ai/iFixAi",
+     "url": "https://github.com/ifixai-ai/iFixAi",
+     "owner": "ifixai-ai",
+     "stars": 26878,
+     "updated": "2026-10-14",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个与 AI / 大模型相关的开源项目，简介：Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent…",
+     "site": "https://www.ifixai.ai"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "rust-lang/rust",
+     "url": "https://github.com/rust-lang/rust",
+     "owner": "rust-lang",
+     "stars": 119844,
+     "updated": "2026-10-14",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个开发工具/框架类项目，简介：Empowering everyone to build reliable and efficient software",
+     "site": "https://www.rust-lang.org"
+    }
+   ]
+  },
+  {
+   "name": "其他",
+   "emoji": "📦",
+   "items": [
+    {
+     "repo": "nvm-sh/nvm",
+     "url": "https://github.com/nvm-sh/nvm",
+     "owner": "nvm-sh",
+     "stars": 95398,
+     "updated": "2026-10-10",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个开源项目，简介：Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
+     "site": "无"
+    },
+    {
+     "repo": "ntdevlabs/tiny11builder",
+     "url": "https://github.com/ntdevlabs/tiny11builder",
+     "owner": "ntdevlabs",
+     "stars": 20099,
+     "updated": "2026-10-12",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个开源项目，简介：WinUI app for building smaller, customized Windows 11 images",
+     "site": "无"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
