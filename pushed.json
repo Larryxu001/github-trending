@@ -100,5 +100,12 @@
  "microsoft/BitNet": "2026-10-13",
  "vercel-labs/skills": "2026-10-14",
  "google/artemis": "2026-10-14",
- "xtool-org/xtool": "2026-10-14"
+ "xtool-org/xtool": "2026-10-14",
+ "HKUDS/CLI-Anything": "2026-10-15",
+ "K-Dense-AI/scientific-agent-skills": "2026-10-15",
+ "vxcontrol/pentagi": "2026-10-15",
+ "ifixai-ai/iFixAi": "2026-10-15",
+ "rust-lang/rust": "2026-10-15",
+ "nvm-sh/nvm": "2026-10-15",
+ "ntdevlabs/tiny11builder": "2026-10-15"
 }
