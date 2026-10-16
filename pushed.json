@@ -107,5 +107,9 @@
  "ifixai-ai/iFixAi": "2026-10-15",
  "rust-lang/rust": "2026-10-15",
  "nvm-sh/nvm": "2026-10-15",
- "ntdevlabs/tiny11builder": "2026-10-15"
+ "ntdevlabs/tiny11builder": "2026-10-15",
+ "anthropics/claude-plugins-official": "2026-10-16",
+ "ruvnet/ruflo": "2026-10-16",
+ "xerj-org/xerj": "2026-10-16",
+ "lightseekorg/tokenspeed": "2026-10-16"
 }
