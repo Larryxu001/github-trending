@@ -3037,7 +3037,7 @@
   ]
  },
  "daily:2026-10-16": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-16",
    "new_count": 4,
@@ -3254,7 +3254,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    },
    {
     "message": {
