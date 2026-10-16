@@ -652,5 +652,29 @@
   "emoji": "📦",
   "desc": "一个开源项目，简介：WinUI app for building smaller, customized Windows 11 images",
   "site": "无"
+ },
+ "anthropics/claude-plugins-official": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是 Anthropic 官方维护的 Claude Code 插件目录，汇集了一批经过筛选的高质量插件，涵盖 MCP 连接器和技能扩展。它解决的是用户不知道去哪找可靠插件、以及插件质量参差不齐的问题。比如你想让 Claude Code 直接操作数据库或调用外部 API，就可以在这里找到对应的 MCP 插件，按文档安装后即可使用，省去自己摸索和踩坑的时间。",
+  "site": "https://code.claude.com/docs/en/plugins"
+ },
+ "ruvnet/ruflo": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "ruflo 是一个用于构建和运行 AI 智能体（Agent）的底层框架，主打多智能体协作与自主工作流编排。它让开发者能部署多个 AI 智能体像团队一样分工合作，并内置自适应记忆、自我学习和向量检索能力，方便搭建对话式 AI 系统。例如，你可以用它让一组智能体自动完成代码审查、资料检索和报告生成，而无需自己处理调度与记忆管理。",
+  "site": "https://Cognitum.One"
+ },
+ "lightseekorg/tokenspeed": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "TokenSpeed 是一个追求极致速度的大模型推理引擎，目标是把生成 token 的速度推到硬件极限。它针对 DeepSeek、Kimi、GLM、GPT-OSS 等主流模型，以及 Blackwell 架构的 B200、GB200 等新硬件做了深度优化，解决部署大模型时响应慢、吞吐低的问题。比如线上客服机器人接入后，同样显卡能同时服务更多用户，回答也更快。",
+  "site": "https://lightseek.org/blog/lightseek-tokenspeed.html"
+ },
+ "xerj-org/xerj": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "XERJ 是一个用 Rust 编写的 AI 搜索基础设施，让 AI 代理无需用 grep、sed 逐行扫描就能直接“知道”你的数据。它一条命令即可索引代码、文档、日志和 PDF，支持搜索、RAG、安全审计和代理记忆，且比 grep 节省约 40 倍 token。由于兼容 Elasticsearch，现有客户端可直接使用。例如代理要查某个函数定义时，直接查询索引即可，不必反复读取整个代码库。",
+  "site": "https://xerj.org"
  }
 }
