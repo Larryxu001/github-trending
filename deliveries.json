@@ -3299,5 +3299,88 @@
     }
    }
   ]
+ },
+ "daily:2026-10-17": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-10-17",
+   "new_count": 4,
+   "skipped": 87,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "MadsLorentzen/ai-job-search",
+       "url": "https://github.com/MadsLorentzen/ai-job-search",
+       "owner": "MadsLorentzen",
+       "stars": 48030,
+       "updated": "2026-10-15",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个基于 Claude Code 的求职辅助框架，把 AI 代理用在找工作全流程上。你只需提供职位描述，它就能帮你评估岗位匹配度、按岗位定制简历、生成求职信，甚至准备面试问答。所有内容都在本地运行，数据自己掌控。比如投递一个后端岗位时，它会分析你的经历与 JD 的差距，自动调整 LaTeX 简历并写出一封针对性求职信，适合想高效海投又不想泄露隐私的求职者。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "hmjz100/LinkSwift",
+       "url": "https://github.com/hmjz100/LinkSwift",
+       "owner": "hmjz100",
+       "stars": 23488,
+       "updated": "2026-09-10",
+       "lists": [
+        "daily"
+       ],
+       "desc": "LinkSwift 是一个基于 JavaScript 的网盘直链下载工具，能帮你把百度网盘、阿里云盘、夸克网盘等八大网盘的文件，解析出可直接下载的直链地址，再配合 Aria2、Motrix 等下载器使用，从而绕过官方客户端的限速。比如你想下载百度网盘里的大文件，用它获取直链后就能用下载工具高速下载，不用再忍受几十 KB/s 的龟速。",
+       "site": "https://github.com/hmjz100/LinkSwift"
+      }
+     ]
+    },
+    {
+     "name": "移动 / 桌面应用",
+     "emoji": "📱",
+     "items": [
+      {
+       "repo": "android/skills",
+       "url": "https://github.com/android/skills",
+       "owner": "android",
+       "stars": 7933,
+       "updated": "2026-10-16",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个面向 Android 平台的技能示例项目，使用 Kotlin 编写，主要用来演示如何在 Android 应用中集成和调用 AI 技能（skills）。它解决的是开发者在移动端快速接入技能能力时缺少参考代码的问题，可以直接参考其中的结构、调用方式和界面实现。例如，想给 App 加一个“翻译”或“总结”按钮，就能照着它把技能接进来。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "其他",
+     "emoji": "📦",
+     "items": [
+      {
+       "repo": "LibreSpark/LibreTV",
+       "url": "https://github.com/LibreSpark/LibreTV",
+       "owner": "LibreSpark",
+       "stars": 18264,
+       "updated": "2026-10-02",
+       "lists": [
+        "daily"
+       ],
+       "desc": "LibreTV 是一个开源影视聚合站项目，用 TypeScript 和 Next.js 开发，主打一分钟快速搭建自己的在线影视网站。它支持 Docker 等多种部署方式，内置响应式界面，适合个人或小团队搭建电影、电视剧观看入口。比如你想给朋友做一个干净的追剧站，只需拉取镜像运行，就能拥有带搜索和播放功能的影视页面，省去从零开发前端的麻烦。",
+       "site": "https://libretv.is-an.org"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
