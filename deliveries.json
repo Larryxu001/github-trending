@@ -3301,7 +3301,7 @@
   ]
  },
  "daily:2026-10-17": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-17",
    "new_count": 4,
@@ -3381,6 +3381,194 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-17 ｜ 今日新项目 4 个 ｜ 4 个分类 ｜ 30 天去重跳过 87 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-17/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search)**　⭐ 48,030\n这是一个基于 Claude Code 的求职辅助框架，把 AI 代理用在找工作全流程上。你只需提供职位描述，它就能帮你评估岗位匹配度、按岗位定制简历、生成求职信，甚至准备面试问答。所有内容都在本地运行，数据自己掌控。比如投递一个后端岗位时，它会分析你的经历与 JD 的差距，自动调整 LaTeX 简历并写出一封针对性求职信，适合想高效海投又不想泄露隐私的求职者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 MadsLorentzen ｜ 📅 更新 2026-10-15 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)**　⭐ 23,488\nLinkSwift 是一个基于 JavaScript 的网盘直链下载工具，能帮你把百度网盘、阿里云盘、夸克网盘等八大网盘的文件，解析出可直接下载的直链地址，再配合 Aria2、Motrix 等下载器使用，从而绕过官方客户端的限速。比如你想下载百度网盘里的大文件，用它获取直链后就能用下载工具高速下载，不用再忍受几十 KB/s 的龟速。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 hmjz100 ｜ 📅 更新 2026-09-10 ｜ 🏷 日榜 ｜ 🔗 [https://github.com/hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "turquoise",
+       "title": {
+        "tag": "plain_text",
+        "content": "📱 移动 / 桌面应用 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [android/skills](https://github.com/android/skills)**　⭐ 7,933\n这是一个面向 Android 平台的技能示例项目，使用 Kotlin 编写，主要用来演示如何在 Android 应用中集成和调用 AI 技能（skills）。它解决的是开发者在移动端快速接入技能能力时缺少参考代码的问题，可以直接参考其中的结构、调用方式和界面实现。例如，想给 App 加一个“翻译”或“总结”按钮，就能照着它把技能接进来。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 android ｜ 📅 更新 2026-10-16 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "grey",
+       "title": {
+        "tag": "plain_text",
+        "content": "📦 其他 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [LibreSpark/LibreTV](https://github.com/LibreSpark/LibreTV)**　⭐ 18,264\nLibreTV 是一个开源影视聚合站项目，用 TypeScript 和 Next.js 开发，主打一分钟快速搭建自己的在线影视网站。它支持 Docker 等多种部署方式，内置响应式界面，适合个人或小团队搭建电影、电视剧观看入口。比如你想给朋友做一个干净的追剧站，只需拉取镜像运行，就能拥有带搜索和播放功能的影视页面，省去从零开发前端的麻烦。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 LibreSpark ｜ 📅 更新 2026-10-02 ｜ 🏷 日榜 ｜ 🔗 [https://libretv.is-an.org](https://libretv.is-an.org)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
