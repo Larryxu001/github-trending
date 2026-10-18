@@ -3592,7 +3592,7 @@
   ]
  },
  "daily:2026-10-18": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-18",
    "new_count": 3,
@@ -3648,6 +3648,143 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-18 ｜ 今日新项目 3 个 ｜ 2 个分类 ｜ 30 天去重跳过 91 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-18/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [stablyai/orca](https://github.com/stablyai/orca)**　⭐ 95,141\nOrca 是一个统一管理多个 AI 编程代理的工作台，让你用自己的订阅同时运行 Grok Bot、Claude Code 等代理，而不用在多个工具间来回切换。它支持桌面、手机和远程运行环境，适合需要批量调度代理完成编码、自动化任务的开发者。比如你可以同时派几个代理分别修 bug、写测试、改文档，在 Orca 里统一查看进度和结果。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 stablyai ｜ 📅 更新 2026-10-17 ｜ 🏷 日榜 ｜ 🔗 [https://orca.dev](https://orca.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory)**　⭐ 9,807\n这是一个用 Rust 编写的长期记忆方案，专门给写代码的 AI 代理（如 Claude Code、Cursor 等）使用。它解决的是代理每次对话都「失忆」、换个厂商就得从头解释项目背景的问题。它把关键上下文持久保存下来，还能在不同代理工具之间交接工作。比如你用 A 代理调试了半天，换到 B 代理时它能直接读到之前的进展和结论，不用重新交代一遍。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 akitaonrails ｜ 📅 更新 2026-10-17 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [anomalyco/opencode](https://github.com/anomalyco/opencode)**　⭐ 214,929\nopencode 是一个开源的 AI 编程助手，直接在你的终端里运行，帮你写代码、改 bug、理解项目。它把大模型能力接入开发流程，能根据自然语言指令自动编辑文件、执行命令、搜索代码库，省去在编辑器和聊天窗口间来回切换的麻烦。比如你让它「给这个函数加上参数校验并补测试」，它就会定位文件、修改代码并运行测试验证。适合想用 AI 加速日常开发、又希望掌控数据和工具的开发者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 anomalyco ｜ 📅 更新 2026-10-17 ｜ 🏷 日榜 ｜ 🔗 [https://opencode.ai](https://opencode.ai)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
