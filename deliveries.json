@@ -4035,7 +4035,7 @@
   ]
  },
  "weekly:2026-10-19": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-19",
    "new_count": 5,
@@ -4129,6 +4129,211 @@
    "kind": "weekly",
    "period_start": "2026-10-12",
    "period_end": "2026-10-19"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 精选周报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-19 ｜ 精选 5 个项目 ｜ 收藏范围 2026-10-12 至 2026-10-19（不含结束日）"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-19-weekly/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "red",
+       "title": {
+        "tag": "plain_text",
+        "content": "🔐 安全 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [morluto/rea](https://github.com/morluto/rea)**　⭐ 254,168\nREA 是一个面向逆向工程的开源工具，通过 MCP 协议把 AI 智能体接入 Hopper、Ghidra、IDA 等分析引擎，让智能体自动拆解原生二进制、Electron 应用、.NET 程序、APK 和网站。比如你想复刻某个 App 的搜索功能，只需让智能体用 REA 检查目标程序，它就能给出伪代码、调用关系和证据，并帮你实现类似功能。分析在本地完成，结论附带依据与局限。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 morluto ｜ 📅 更新 2026-10-15 ｜ 🏷 榜 ｜ 🔗 [https://rea.tools](https://rea.tools)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)**　⭐ 88,797\nGhidra 是美国国家安全局（NSA）开源的一款软件逆向工程框架，用来分析编译后的程序。它能把二进制机器码反汇编、反编译成接近源代码的形式，还支持函数调用图、脚本扩展等功能，帮助安全人员理解恶意软件或寻找软件漏洞。比如拿到一个可疑的可执行文件，可以用它看清程序内部逻辑，判断是否有后门。它支持 Windows、macOS、Linux，也能用 Java 或 Python 写插件。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 NationalSecurityAgency ｜ 📅 更新 2026-10-16 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)**　⭐ 130,531\nMoneyPrinterTurbo 是一个开源的 AI 短视频一键生成工具。你只需输入一个主题或关键词，它就会自动调用大模型写视频脚本、匹配素材、生成配音字幕和背景音乐，最后用 ffmpeg 合成高清短视频，适合批量制作抖音、TikTok、YouTube Shorts 等平台内容。它提供 WebUI、API、CLI 和 AI Agent 四种用法，支持 Kimi、OpenAI、Claude、Gemini、DeepSeek 等多种模型，也能在每一步手动替换自定义内容。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 harry0703 ｜ 📅 更新 2026-10-14 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)**　⭐ 61,657\nPPT Master 是一个运行在各类 AI 工具里的「技能」，你只要把 PDF、Word 或一个主题丢给 AI，它就能在你本机生成真正可编辑的 PowerPoint 文件——带原生形状、图表、表格、切换动画和语音旁白，还能套用你自己的 .pptx 模板。它解决的是 AI 做 PPT 只能生成图片或死板模板的问题，让生成结果能像手工做的一样在 PowerPoint 里继续改，数据也不用上传平台。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 hugohe3 ｜ 📅 更新 2026-10-14 ｜ 🏷 榜 ｜ 🔗 [https://hugohe3.github.io/ppt-master-examples/](https://hugohe3.github.io/ppt-master-examples/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "turquoise",
+       "title": {
+        "tag": "plain_text",
+        "content": "📱 移动 / 桌面应用 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [harry0703/MangoDisk](https://github.com/harry0703/MangoDisk)**　⭐ 4,075\nMangoDisk 是一款用 Rust 和 Tauri 打造的跨平台磁盘清理与空间分析工具，支持 macOS、Windows 和 Linux。它能一键扫描系统缓存、浏览器数据、开发工具缓存（如 Xcode、Docker、Node.js 构建产物）和 AI 模型等占空间的内容，还提供大文件查找、重复文件清理、磁盘空间可视化（矩形树图/旭日图）、应用卸载、开机启动项管理和系统优化等功能。它坚持安全优先，默认只读扫描，清理前可逐项确认，并记录操作历史，适合想快速释放硬盘空间又怕误删的用户。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 harry0703 ｜ 📅 更新 2026-10-14 ｜ 🏷 榜 ｜ 🔗 [https://mangodisk.app/](https://mangodisk.app/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
