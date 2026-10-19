@@ -3798,5 +3798,70 @@
     }
    }
   ]
+ },
+ "daily:2026-10-19": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-10-19",
+   "new_count": 3,
+   "skipped": 94,
+   "categories": [
+    {
+     "name": "AI / 大模型",
+     "emoji": "🧠",
+     "items": [
+      {
+       "repo": "Comfy-Org/ComfyUI",
+       "url": "https://github.com/Comfy-Org/ComfyUI",
+       "owner": "Comfy-Org",
+       "stars": 138435,
+       "updated": "2026-10-18",
+       "lists": [
+        "daily"
+       ],
+       "desc": "ComfyUI 是一个基于节点图界面的扩散模型（如 Stable Diffusion）本地运行工具，用户通过拖拽连接节点来搭建图像生成流程，比如把提示词、采样器、模型加载等模块自由组合，从而精确控制出图效果。它解决了传统界面灵活性不足的问题，既提供可视化操作，也开放 API 和后端，方便开发者集成和自动化，适合从新手到研究者的各类用户快速实验和部署。",
+       "site": "https://www.comfy.org/"
+      }
+     ]
+    },
+    {
+     "name": "学习资源",
+     "emoji": "📚",
+     "items": [
+      {
+       "repo": "mlabonne/llm-course",
+       "url": "https://github.com/mlabonne/llm-course",
+       "owner": "mlabonne",
+       "stars": 83904,
+       "updated": "2026-02-05",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个面向想入门大语言模型（LLM）的学习路线图与课程仓库，提供分阶段的学习路径和可直接运行的 Colab 笔记本。它解决初学者不知从何学起、资料零散的问题，把数学基础、Transformer 原理、微调与部署等串成一条线，并配有代码示例。例如你可以按路线先学注意力机制，再用 Colab 动手微调一个小模型，适合自学或教学参考。",
+       "site": "https://mlabonne.github.io/blog/"
+      }
+     ]
+    },
+    {
+     "name": "其他",
+     "emoji": "📦",
+     "items": [
+      {
+       "repo": "Kruk2/jasna",
+       "url": "https://github.com/Kruk2/jasna",
+       "owner": "Kruk2",
+       "stars": 2322,
+       "updated": "2026-10-18",
+       "lists": [
+        "daily"
+       ],
+       "desc": "jasna 是一个用 Python 编写的视频修复工具，专门用来清理视频中的瑕疵，比如去除噪点、划痕、闪烁或压缩失真。它适合处理老片翻新或低质量素材，让画面更干净稳定。例如，你可以用它修复一段充满噪点的家庭录像，输出更清晰的版本。",
+       "site": "无"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
