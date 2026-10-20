@@ -25,19 +25,22 @@ def cn_date(iso):
 def masthead_info(report):
     """Return (title, standfirst, dateline, vol_label) for daily (YYYY-MM-DD) or monthly (YYYY-MM)."""
     date = report["date"]
+    total = sum(len(cat["items"]) for cat in report["categories"])
     if len(date) == 7:  # 月报
         y, m = int(date[:4]), int(date[5:7])
         issue = (y - 2026) * 12 + (m - 10) + 1
         title = "Github开源趋势月报"
         stand = f"最近 {len(report.get('source_weeks', []))} 期精选周报汇总，按项目去重" if report.get("kind") == "monthly" else "本月 GitHub Trending 上榜项目全景总结，一期读懂开源风向标"
         line = (f"<b>{y} 年 {m} 月</b>　·　第 {issue} 期（月刊）　·　"
-                f"本月共收录 <b>{report['new_count']}</b> 个项目")
+                f"本月共收录 <b>{total}</b> 个项目")
         return title, stand, line, f"VOL.M{issue:02d}"
     issue = (datetime.date.fromisoformat(date) - EPOCH).days + 1
     title = "Github开源趋势精选周报" if report.get("kind") == "weekly" else "Github开源趋势日报"
     stand = "本期收藏精选，保留备注与标签" if report.get("kind") == "weekly" else "每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目"
     line = (f"<b>{cn_date(date)}</b>　·　第 {issue} 期　·　"
-            f"本期新收录 <b>{report['new_count']}</b> 个项目　·　30 天去重跳过 {report['skipped']} 个")
+            f"本期共收录 <b>{total}</b> 个项目　·　30 天去重跳过 {report['skipped']} 个")
+    if report.get("kind") == "weekly":
+        line = line.split("　·　30 天")[0]
     return title, stand, line, f"VOL.{issue:03d}"
 
 def render(report, save_api="", saved_url="saved.html", archive_url="index.html"):
@@ -87,7 +90,8 @@ def render(report, save_api="", saved_url="saved.html", archive_url="index.html"
             <span>更新于 {esc(it['updated'])}</span><i>·</i>
             <span class="{'hot' if daily else ''}">{lists}</span><i>·</i>
             {site}<i>·</i>
-            <a class="site source-download" href="https://github.51vipai.com/download/{esc(it['repo'])}.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a>
+            <a class="site source-download" href="https://github.51vipai.com/download/{esc(it['repo'])}.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/{esc(it['repo'])}">最新 Release 下载</a>
           </div>
         </article>""".replace("\n          \n", "\n"))
         sections.append(f"""

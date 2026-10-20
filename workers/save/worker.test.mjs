@@ -160,3 +160,34 @@ test('source download rejects invalid targets and does not redirect browsers to 
   assert.equal(response.status,status===404?404:502);assert.equal(response.headers.get('Location'),null);
  }
 });
+
+test('latest release lists escaped assets and downloads through the site without credentials', async()=>{
+ const metadata={tag_name:'v1',published_at:'2026-10-20',assets:[{id:12,name:'test<arm>.zip',size:1024,browser_download_url:'https://github.com/test/project/releases/download/v1/test.zip'}]};
+ const calls=[];
+ globalThis.fetch=async(url,options)=>{calls.push([String(url),options]);return String(url).includes('api.github.com')?Response.json(metadata):new Response('zip bytes')};
+ const page=await worker.fetch(new Request('https://github.51vipai.com/release/test/project'),env);
+ assert.equal(page.status,200);const html=await page.text();assert.match(html,/test&lt;arm&gt;.zip/);assert.match(html,/\/release\/test\/project\?asset=12/);
+ const file=await worker.fetch(new Request('https://github.51vipai.com/release/test/project?asset=12',{headers:{Authorization:'secret',Cookie:'secret'}}),env);
+ assert.equal(await file.text(),'zip bytes');assert.match(file.headers.get('Content-Disposition'),/attachment/);
+ for(const [,options] of calls){assert.equal(new Headers(options.headers).get('Authorization'),null);assert.equal(new Headers(options.headers).get('Cookie'),null)}
+});
+test('release handles no release, no assets, rate limits, stale ids and unsafe upstream links',async()=>{
+ for(const [status,expected] of [[404,404],[403,503],[500,503]]){
+  globalThis.fetch=async()=>new Response('',{status});assert.equal((await worker.fetch(new Request('https://github.51vipai.com/release/test/project'),env)).status,expected);
+ }
+ globalThis.fetch=async()=>Response.json({tag_name:'v1',assets:[]});
+ assert.match(await (await worker.fetch(new Request('https://github.51vipai.com/release/test/project'),env)).text(),/未上传安装包/);
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/release/test/project?asset=1'),env)).status,404);
+ globalThis.fetch=async()=>Response.json({assets:[{id:1,browser_download_url:'https://evil.invalid/file'}]});
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/release/test/project?asset=1'),env)).status,502);
+ globalThis.fetch=()=>{throw new Error('must not fetch')};
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/release/test/project',{method:'POST'}),env)).status,405);
+ assert.equal((await worker.fetch(new Request('https://github.51vipai.com/release/test/project/extra'),env)).status,400);
+});
+test('release source pins the published tag and streams ZIP',async()=>{
+ const calls=[];
+ globalThis.fetch=async(url,options)=>{calls.push([String(url),options]);return String(url).includes('api.github.com')?Response.json({tag_name:'v1.2',assets:[]}):new Response('tagged zip')};
+ const response=await worker.fetch(new Request('https://github.51vipai.com/release/test/project?source=1'),env);
+ assert.equal(await response.text(),'tagged zip');assert.equal(response.headers.get('Content-Type'),'application/zip');
+ assert.equal(calls[1][0],'https://codeload.github.com/test/project/zip/refs/tags/v1.2');assert.equal(calls[1][1].redirect,'manual');
+});

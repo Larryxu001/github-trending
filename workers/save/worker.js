@@ -1,3 +1,4 @@
+import { releaseDownload } from "./releases.js";
 import { handleImport } from "./imports.js";
 
 /**
@@ -155,6 +156,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.hostname === "github.51vipai.com") {
+      if (url.pathname.startsWith("/release/")) return releaseDownload(request);
       if (url.pathname.startsWith("/download/")) return downloadSource(request);
       if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
         url.pathname = url.pathname.slice(4) || "/";

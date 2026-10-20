@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Compatibility entry point for the daily job; also builds the archive index."""
-import os, json
+import os, json, re
 from page_access import protect_page
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -25,17 +25,24 @@ def build_web_index():
         if dates:
             groups.append((y, dates))
     items = []
-    for y, dates in groups:
-        items.append(f'<div class="year">{y}</div>')
-        items.append('<div class="months">')
-        for d in dates:
-            # d 形如 YYYY-MM-DD（日报）或 YYYY-MM（月报）
-            if len(d) == 7:
-                label, tail = f"{int(d[5:7])} 月", "月报"
-            else:
-                label, tail = f"{int(d[5:7])} 月 {int(d[8:10])} 日", "精选周报" if d.endswith("-weekly") else "日报"
-            items.append(f'<a class="day" href="{y}/{d}/index.html">{label}<span class="tail">{tail}</span></a>')
-        items.append('</div>')
+    for kind, title in (("daily", "日报"), ("weekly", "精选周报"), ("monthly", "精选月报")):
+        items.append(f'<section aria-label="{title}"><h2>{title}</h2>')
+        found = False
+        for y, dates in groups:
+            selected = [d for d in dates if ("weekly" if d.endswith("-weekly") else "monthly" if len(d) == 7 else "daily") == kind]
+            if not selected:
+                continue
+            found = True
+            items.append(f'<div class="year">{y}</div><div class="months">')
+            for d in selected:
+                label = f"{int(d[5:7])} 月" if kind == "monthly" else f"{int(d[5:7])} 月 {int(d[8:10])} 日"
+                with open(os.path.join(root, y, d, "index.html"), encoding="utf-8") as report_page:
+                    count = len(re.findall(r'<article class="item"', report_page.read()))
+                items.append(f'<a class="day" href="{y}/{d}/index.html">{label}<span class="tail">共 {count} 个项目</span></a>')
+            items.append('</div>')
+        if not found:
+            items.append('<p class="empty">暂无归档</p>')
+        items.append('</section>')
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -52,6 +59,7 @@ def build_web_index():
  .nav {{ margin:16px 0 8px; font-size:13px; }}
  .nav a {{ color:#C02B1F; text-decoration:none; }}
  .nav a:hover {{ text-decoration:underline; }}
+ h2 {{ font-family:Georgia,"Songti SC",serif; font-size:24px; margin:40px 0 8px; }}
  .year {{ font-family:Georgia,"Songti SC",serif; font-size:20px; font-weight:700;
          margin:28px 0 6px; padding-bottom:4px; border-bottom:3px double #2B2419; }}
  .months {{ display:block; }}
