@@ -319,6 +319,20 @@
    "tags": [],
    "saved_at": "2026-10-16",
    "source": "feishu"
+  },
+  {
+   "repo": "KnifeLemon/Filee",
+   "url": "https://github.com/KnifeLemon/Filee",
+   "owner": "KnifeLemon",
+   "stars": 7397,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Filee 是一款免费开源的离线文件转换工具，用「拖拽」代替繁琐的菜单操作：按住 Ctrl 把文件拖到光标处弹出的格式圆环上，就能完成转换。它支持图片、PDF、Word、Excel、PPT、HWP、视频、音频、电子书、压缩包等 244 种以上格式，无需安装 Office 或上传云端，文件始终留在本机。例如把 iPhone 的 HEIC 照片拖到 JPG 上即可秒转，还支持批量转换、文件夹监控和命令行调用。",
+   "site": "https://filee.sh",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-20",
+   "source": "feishu"
   }
  ]
 }
