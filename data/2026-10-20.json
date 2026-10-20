@@ -1,0 +1,81 @@
+{
+ "date": "2026-10-20",
+ "new_count": 4,
+ "skipped": 97,
+ "categories": [
+  {
+   "name": "Agent 效率优化",
+   "emoji": "⚡",
+   "items": [
+    {
+     "repo": "headroomlabs-ai/headroom",
+     "url": "https://github.com/headroomlabs-ai/headroom",
+     "owner": "headroomlabs-ai",
+     "stars": 76129,
+     "updated": "2026-10-17",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Headroom 是一个在内容送入大模型之前先做压缩的工具，专门处理工具输出、日志、文件和 RAG 片段，能在答案基本不变的前提下大幅减少 token 消耗——编码智能体省约 20%，JSON 数据可省 60% 到 95%。它提供库、代理和 MCP 服务器三种用法，适合接入 Claude Code、Cursor、LangChain 等场景，帮助开发者降低调用成本、缓解上下文窗口压力。",
+     "site": "https://docs.headroomlabs.ai/docs"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "shiyu-coder/Kronos",
+     "url": "https://github.com/shiyu-coder/Kronos",
+     "owner": "shiyu-coder",
+     "stars": 41457,
+     "updated": "2026-04-13",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Kronos 是一个专门面向金融市场的基座大模型，把行情、财报、新闻等金融数据当作一种「语言」来理解和生成。它解决的是通用大模型缺乏金融领域知识、难以直接用于量化分析和投研的问题。比如输入一段历史价格走势和财报文本，模型可辅助预测趋势或生成分析摘要，供研究员和量化团队参考。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "withmarbleapp/os-taxonomy",
+     "url": "https://github.com/withmarbleapp/os-taxonomy",
+     "owner": "withmarbleapp",
+     "stars": 5997,
+     "updated": "2026-10-19",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个用于定义和管理「操作系统风格」分类体系的 JavaScript 工具库，帮助开发者用统一的结构描述软件、项目或内容的层级分类。它解决的是分类标准混乱、难以复用的问题，比如你可以用它为应用商店里的 App 打上「工具/效率/笔记」这样的多级标签，并保证前后端和不同项目间分类一致。适合需要构建可维护分类系统的团队使用。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "安全",
+   "emoji": "🔐",
+   "items": [
+    {
+     "repo": "YuJunZhiXue/dsh-purge",
+     "url": "https://github.com/YuJunZhiXue/dsh-purge",
+     "owner": "YuJunZhiXue",
+     "stars": 8487,
+     "updated": "2026-10-19",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "这是一个面向 DeepSeek Harness 的越狱（破甲）插件，用 JavaScript 编写。它通过可替换的提示词绕过模型的安全限制，让用户能对不同模型使用不同的越狱提示词，默认提示词针对国产模型「小码酱」。简单说，就是给大模型「松绑」，让原本被拒绝回答的问题能答出来，适合研究模型安全边界或做红队测试的人使用，但需注意合规风险。",
+     "site": "无"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
