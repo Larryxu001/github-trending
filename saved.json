@@ -333,6 +333,20 @@
    "tags": [],
    "saved_at": "2026-10-20",
    "source": "feishu"
+  },
+  {
+   "repo": "NanmiCoder/MediaCrawler",
+   "url": "https://github.com/NanmiCoder/MediaCrawler",
+   "owner": "NanmiCoder",
+   "stars": 67591,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "MediaCrawler 是一个多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎等主流平台，可抓取帖子、视频信息和评论。它基于 Playwright 浏览器自动化，通过保留登录态直接获取签名参数，无需逆向复杂加密算法，大幅降低爬虫门槛。例如输入关键词即可批量采集小红书笔记及评论，并支持导出 CSV、JSON、Excel、MySQL 等多种格式，适合学习爬虫技术和进行公开数据分析。",
+   "site": "https://nanmicoder.github.io/MediaCrawler/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-21",
+   "source": "feishu"
   }
  ]
 }
