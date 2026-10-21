@@ -4649,7 +4649,7 @@
   ]
  },
  "daily:2026-10-21": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-21",
    "new_count": 3,
@@ -4705,6 +4705,143 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-21 ｜ 今日新项目 3 个 ｜ 2 个分类 ｜ 30 天去重跳过 101 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-21/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)**　⭐ 129,921\nGraphify 能把任意代码库连同文档、SQL 表结构、配置和 PDF 一起，转成可查询的知识图谱。它作为 Claude Code、Cursor、Codex 和 Gemini CLI 的 /graphify 技能使用，靠本地确定性的 AST 解析建图，每条边都有解释，不需要向量数据库。比如你接手一个陌生项目，可以直接问「哪些函数会写这张表」，它顺着图谱给出答案和依据，适合代码理解、检索和 AI 编程助手增强。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Graphify-Labs ｜ 📅 更新 2026-10-20 ｜ 🏷 日榜 ｜ 🔗 [https://www.graphify.com](https://www.graphify.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills)**　⭐ 48,005\nAAS Core 是一个面向 AI 智能体的本地控制中心，内置 2600 多个现成技能，帮开发者快速发现、挑选和组合智能体能力。它解决的是智能体技能分散、难以管理和验证的问题，提供命令行工具、本地 MCP 服务、技能目录和插件系统。比如你想让 Claude Code 或 Codex CLI 具备某项新能力，可以直接从目录中检索并安装对应技能，再验证整套技能栈能否协同工作，省去手动拼凑的麻烦。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 sickn33 ｜ 📅 更新 2026-10-19 ｜ 🏷 日榜 ｜ 🔗 [https://aaskills.tech/](https://aaskills.tech/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [vllm-project/vllm](https://github.com/vllm-project/vllm)**　⭐ 94,353\nvLLM 是一个专为大语言模型设计的高吞吐、省显存的推理与服务引擎。它解决了部署 LLM 时速度慢、显存浪费严重的问题，通过 PagedAttention 等优化技术让同一块 GPU 能同时服务更多请求。开发者可以用它快速搭建类似 ChatGPT 的在线服务，例如把 Llama、DeepSeek 等模型部署成 API，支撑大量用户并发访问而不卡顿。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 vllm-project ｜ 📅 更新 2026-10-20 ｜ 🏷 日榜 ｜ 🔗 [https://vllm.ai](https://vllm.ai)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
