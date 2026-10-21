@@ -347,6 +347,20 @@
    "tags": [],
    "saved_at": "2026-10-21",
    "source": "feishu"
+  },
+  {
+   "repo": "23Star/xianyu-super-butler",
+   "url": "https://github.com/23Star/xianyu-super-butler",
+   "owner": "23Star",
+   "stars": 1316,
+   "category": "其他",
+   "emoji": "📦",
+   "desc": "闲鱼超级管家是一款面向闲鱼卖家的自动化管理后台，用 Python 开发，可把多个闲鱼账号统一托管。它能自动发货（发卡密）、关键词加 AI 自动回复、自动评价、求小红花、定时擦亮商品，并同步订单和商品数据。卖家不用再盯着手机逐条回复，打开网页就能看成交额、库存和会话，适合做虚拟商品或多账号经营的个人卖家。",
+   "site": "https://xy.corleom.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-21",
+   "source": "feishu"
   }
  ]
 }
