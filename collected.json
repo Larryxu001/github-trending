@@ -125,7 +125,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-10-22T17:00:46.950436+08:00"
+   "last_seen": "2026-10-22T19:25:54.042077+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -183,7 +183,7 @@
    "updated": "2026-10-20",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-10-22T17:00:46.950501+08:00"
+   "last_seen": "2026-10-22T19:25:56.345709+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -201,7 +201,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-10-22T17:00:46.950474+08:00"
+   "last_seen": "2026-10-22T19:25:55.557826+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
@@ -227,7 +227,7 @@
    "updated": "2026-10-20",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-10-22T17:00:46.950504+08:00"
+   "last_seen": "2026-10-22T19:25:56.345724+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -293,7 +293,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:16.915683+08:00",
-   "last_seen": "2026-10-22T17:00:46.950445+08:00"
+   "last_seen": "2026-10-22T19:25:54.042112+08:00"
   },
   "pbakaus/impeccable": {
    "repo": "pbakaus/impeccable",
@@ -310,7 +310,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-10-22T17:00:47.760962+08:00"
+   "last_seen": "2026-10-22T19:25:56.345743+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -318,7 +318,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 39353,
+   "stars": 39451,
    "owner": "VectifyAI",
    "homepage": "https://pageindex.ai",
    "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
@@ -337,10 +337,10 @@
     "retrieval-augmented-generation",
     "vector-database"
    ],
-   "updated": "2026-10-20",
-   "metadata_date": "2026-10-21",
+   "updated": "2026-10-22",
+   "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:18.372902+08:00",
-   "last_seen": "2026-10-21T17:00:41.037677+08:00"
+   "last_seen": "2026-10-22T19:25:56.622083+08:00"
   },
   "anthropics/financial-services": {
    "repo": "anthropics/financial-services",
@@ -432,7 +432,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:20.630895+08:00",
-   "last_seen": "2026-10-22T17:00:46.950407+08:00"
+   "last_seen": "2026-10-22T19:25:54.042037+08:00"
   },
   "pablostanley/yoinks": {
    "repo": "pablostanley/yoinks",
@@ -523,7 +523,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-10-22T17:00:46.950401+08:00"
+   "last_seen": "2026-10-22T19:25:54.042006+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -580,7 +580,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:24.294659+08:00",
-   "last_seen": "2026-10-22T17:00:46.950427+08:00"
+   "last_seen": "2026-10-22T19:25:54.042094+08:00"
   },
   "deepseek-ai/DeepGEMM": {
    "repo": "deepseek-ai/DeepGEMM",
@@ -704,7 +704,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-10-22T17:00:46.950457+08:00"
+   "last_seen": "2026-10-22T19:25:54.816840+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -813,7 +813,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:30.899722+08:00",
-   "last_seen": "2026-10-22T17:00:47.760944+08:00"
+   "last_seen": "2026-10-22T19:25:56.345738+08:00"
   },
   "tt-a1i/archify": {
    "repo": "tt-a1i/archify",
@@ -894,7 +894,7 @@
    "updated": "2026-10-18",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:33.111988+08:00",
-   "last_seen": "2026-10-22T17:00:46.950439+08:00"
+   "last_seen": "2026-10-22T19:25:54.042065+08:00"
   },
   "trycua/cua": {
    "repo": "trycua/cua",
@@ -947,7 +947,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-10-22T17:00:46.950477+08:00"
+   "last_seen": "2026-10-22T19:25:54.042046+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -963,7 +963,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-10-22T17:00:46.950469+08:00"
+   "last_seen": "2026-10-22T19:25:56.345699+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -1024,7 +1024,7 @@
    "updated": "2026-10-20",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-10-22T17:00:46.950451+08:00"
+   "last_seen": "2026-10-22T19:25:56.345693+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1149,7 +1149,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-10-22T17:00:46.950386+08:00"
+   "last_seen": "2026-10-22T19:25:54.042083+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1203,7 +1203,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-10-22T17:00:46.950418+08:00"
+   "last_seen": "2026-10-22T19:25:54.042059+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1292,7 +1292,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-10-22T17:00:47.760968+08:00"
+   "last_seen": "2026-10-22T19:25:56.345733+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1415,7 +1415,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-10T21:02:37.733391+08:00",
-   "last_seen": "2026-10-22T17:00:47.260813+08:00"
+   "last_seen": "2026-10-22T19:25:56.345729+08:00"
   },
   "pytorch/pytorch": {
    "repo": "pytorch/pytorch",
@@ -1699,7 +1699,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-12T21:01:45.699604+08:00",
-   "last_seen": "2026-10-22T17:00:46.950498+08:00"
+   "last_seen": "2026-10-22T19:25:56.345719+08:00"
   },
   "michael-denyer/pstack-claude": {
    "repo": "michael-denyer/pstack-claude",
@@ -1862,7 +1862,7 @@
    "updated": "2026-10-19",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-14T20:38:19.756627+08:00",
-   "last_seen": "2026-10-22T17:00:46.950424+08:00"
+   "last_seen": "2026-10-22T19:25:54.042106+08:00"
   },
   "HKUDS/CLI-Anything": {
    "repo": "HKUDS/CLI-Anything",
@@ -1880,7 +1880,7 @@
    "updated": "2026-09-22",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-14T20:38:20.599871+08:00",
-   "last_seen": "2026-10-22T17:00:46.950483+08:00"
+   "last_seen": "2026-10-22T19:25:54.816811+08:00"
   },
   "ifixai-ai/iFixAi": {
    "repo": "ifixai-ai/iFixAi",
@@ -2047,7 +2047,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-10-22T17:00:46.950414+08:00"
+   "last_seen": "2026-10-22T19:25:54.042052+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2137,7 +2137,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-15T20:00:44.030304+08:00",
-   "last_seen": "2026-10-22T17:00:46.950433+08:00"
+   "last_seen": "2026-10-22T19:25:54.042071+08:00"
   },
   "lightseekorg/tokenspeed": {
    "repo": "lightseekorg/tokenspeed",
@@ -2254,7 +2254,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-16T19:00:19.574046+08:00",
-   "last_seen": "2026-10-22T17:00:46.950442+08:00"
+   "last_seen": "2026-10-22T19:25:54.042089+08:00"
   },
   "MadsLorentzen/ai-job-search": {
    "repo": "MadsLorentzen/ai-job-search",
@@ -2339,7 +2339,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-17T20:00:40.597318+08:00",
-   "last_seen": "2026-10-22T17:00:46.950480+08:00"
+   "last_seen": "2026-10-22T19:25:56.345670+08:00"
   },
   "stablyai/orca": {
    "repo": "stablyai/orca",
@@ -2377,7 +2377,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-17T20:00:41.381272+08:00",
-   "last_seen": "2026-10-22T17:00:46.950421+08:00"
+   "last_seen": "2026-10-22T19:25:56.345704+08:00"
   },
   "anomalyco/opencode": {
    "repo": "anomalyco/opencode",
@@ -2394,7 +2394,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-17T20:00:42.147007+08:00",
-   "last_seen": "2026-10-22T17:00:46.950489+08:00"
+   "last_seen": "2026-10-22T19:25:54.042148+08:00"
   },
   "mlabonne/llm-course": {
    "repo": "mlabonne/llm-course",
@@ -2437,7 +2437,8 @@
   "Comfy-Org/ComfyUI": {
    "repo": "Comfy-Org/ComfyUI",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 141330,
    "owner": "Comfy-Org",
@@ -2455,7 +2456,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-18T20:00:44.193615+08:00",
-   "last_seen": "2026-10-22T17:00:46.950448+08:00"
+   "last_seen": "2026-10-22T19:25:56.345714+08:00"
   },
   "YuJunZhiXue/dsh-purge": {
    "repo": "YuJunZhiXue/dsh-purge",
@@ -2586,7 +2587,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-20T20:00:43.509334+08:00",
-   "last_seen": "2026-10-22T17:00:46.950486+08:00"
+   "last_seen": "2026-10-22T19:25:54.042100+08:00"
   },
   "sickn33/agentic-awesome-skills": {
    "repo": "sickn33/agentic-awesome-skills",
@@ -2734,7 +2735,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-21T19:25:46.066873+08:00",
-   "last_seen": "2026-10-22T17:00:46.950460+08:00"
+   "last_seen": "2026-10-22T19:25:54.042142+08:00"
   },
   "twentyhq/twenty": {
    "repo": "twentyhq/twenty",
@@ -2806,12 +2807,105 @@
    "metadata_date": "2026-10-22",
    "first_seen": "2026-10-21T19:25:47.701487+08:00",
    "last_seen": "2026-10-22T17:00:46.950471+08:00"
+  },
+  "php/php-src": {
+   "repo": "php/php-src",
+   "lists": [
+    "daily"
+   ],
+   "stars": 40761,
+   "owner": "php",
+   "homepage": "https://www.php.net",
+   "description": "The PHP Interpreter",
+   "language": "C",
+   "topics": [],
+   "updated": "2026-10-22",
+   "metadata_date": "2026-10-22",
+   "first_seen": "2026-10-22T19:25:53.541836+08:00",
+   "last_seen": "2026-10-22T19:25:53.541852+08:00"
+  },
+  "fastapi/fastapi": {
+   "repo": "fastapi/fastapi",
+   "lists": [
+    "daily"
+   ],
+   "stars": 103382,
+   "owner": "fastapi",
+   "homepage": "https://fastapi.tiangolo.com/",
+   "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+   "language": "Python",
+   "topics": [
+    "api",
+    "async",
+    "asyncio",
+    "fastapi",
+    "framework",
+    "json",
+    "json-schema",
+    "openapi",
+    "openapi3",
+    "pydantic",
+    "python",
+    "python-types",
+    "python3",
+    "redoc",
+    "rest",
+    "starlette",
+    "swagger",
+    "swagger-ui",
+    "uvicorn",
+    "web"
+   ],
+   "updated": "2026-10-22",
+   "metadata_date": "2026-10-22",
+   "first_seen": "2026-10-22T19:25:54.316647+08:00",
+   "last_seen": "2026-10-22T19:25:54.316657+08:00"
+  },
+  "luongnv89/claude-howto": {
+   "repo": "luongnv89/claude-howto",
+   "lists": [
+    "daily"
+   ],
+   "stars": 42598,
+   "owner": "luongnv89",
+   "homepage": "http://luongnv.com/claude-howto/",
+   "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
+   "language": "Python",
+   "topics": [
+    "claude-code",
+    "guide",
+    "tutorial"
+   ],
+   "updated": "2026-10-20",
+   "metadata_date": "2026-10-22",
+   "first_seen": "2026-10-22T19:25:55.057662+08:00",
+   "last_seen": "2026-10-22T19:25:55.057674+08:00"
+  },
+  "Meloong-Git/PCL": {
+   "repo": "Meloong-Git/PCL",
+   "lists": [
+    "daily"
+   ],
+   "stars": 8522,
+   "owner": "Meloong-Git",
+   "homepage": "https://meloong.com/PCL",
+   "description": "Minecraft 启动器 Plain Craft Launcher（PCL）。",
+   "language": "Visual Basic .NET",
+   "topics": [
+    "launcher",
+    "minecraft",
+    "minecraft-launcher"
+   ],
+   "updated": "2026-10-20",
+   "metadata_date": "2026-10-22",
+   "first_seen": "2026-10-22T19:25:55.845516+08:00",
+   "last_seen": "2026-10-22T19:25:55.845530+08:00"
   }
  },
- "last_collected": "2026-10-22T17:00:47.760976+08:00",
+ "last_collected": "2026-10-22T19:25:57.122219+08:00",
  "list_counts": {
-  "daily": 12,
-  "weekly": 17,
+  "daily": 9,
+  "weekly": 16,
   "monthly": 20
  }
 }
