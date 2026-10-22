@@ -361,6 +361,19 @@
    "tags": [],
    "saved_at": "2026-10-21",
    "source": "feishu"
+  },
+  {
+   "repo": "twentyhq/twenty",
+   "url": "https://github.com/twentyhq/twenty",
+   "owner": "twentyhq",
+   "stars": 58946,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "Twenty 是一个开源的客户关系管理（CRM）系统，定位为 Salesforce 的开放替代品，并针对 AI 场景做了设计。它帮你集中管理客户信息、销售线索和沟通记录，避免被商业 CRM 的高价和封闭生态绑定。比如小团队可以用它自建销售管道，把邮件、公司、联系人关联起来，还能基于 GraphQL 接口和 AI 能力做二次开发。",
+   "site": "https://twenty.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-22"
   }
  ]
 }
