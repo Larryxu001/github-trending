@@ -387,6 +387,21 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-22"
+  },
+  {
+   "repo": "supabase/supabase",
+   "url": "https://github.com/supabase/supabase",
+   "owner": "supabase",
+   "stars": 112779,
+   "category": "数据 / 数据库",
+   "emoji": "💾",
+   "desc": "Supabase 是一个基于 PostgreSQL 的开源后端开发平台，相当于开源的 Firebase 替代品。它提供专用 Postgres 数据库，并内置用户认证、文件存储、实时订阅和向量检索等能力，让开发者不用自己搭建后端就能快速开发网站、移动应用和 AI 应用。比如做一个带登录和实时聊天的小程序，可以直接用它的认证和实时功能，省去大量服务器配置工作。",
+   "site": "https://supabase.com",
+   "note": "",
+   "tags": [
+    "后端"
+   ],
+   "saved_at": "2026-10-22"
   }
  ]
 }
