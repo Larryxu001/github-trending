@@ -374,6 +374,19 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-22"
+  },
+  {
+   "repo": "strelov1/freehire",
+   "url": "https://github.com/strelov1/freehire",
+   "owner": "strelov1",
+   "stars": 2172,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "freehire 是一个用 Go 编写的开源求职搜索引擎，把分散在各招聘网站和公司招聘系统（ATS）里的职位信息抓取、聚合到一起，让求职者在一个地方就能搜索和筛选岗位，不用反复切换网站。它解决的是职位信息碎片化、搜索效率低的问题，适合想快速找到匹配岗位的求职者，也适合想自建招聘聚合站点的开发者。",
+   "site": "https://freehire.me",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-22"
   }
  ]
 }
