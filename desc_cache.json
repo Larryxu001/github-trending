@@ -778,5 +778,29 @@
   "emoji": "🧠",
   "desc": "vLLM 是一个专为大语言模型设计的高吞吐、省显存的推理与服务引擎。它解决了部署 LLM 时速度慢、显存浪费严重的问题，通过 PagedAttention 等优化技术让同一块 GPU 能同时服务更多请求。开发者可以用它快速搭建类似 ChatGPT 的在线服务，例如把 Llama、DeepSeek 等模型部署成 API，支撑大量用户并发访问而不卡顿。",
   "site": "https://vllm.ai"
+ },
+ "wshobson/agents": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个面向 AI 编程代理的插件市场，让 Claude Code、Codex、Cursor、GitHub Copilot 等不同工具共享同一套技能插件。它解决了各家代理生态割裂、插件无法互通的问题：开发者只需在这里挑选或发布插件，就能跨多个编程助手复用，比如给 Claude Code 装一个代码审查技能，Codex 和 Cursor 也能直接调用，省去重复适配的麻烦。",
+  "site": "https://sethhobson.com"
+ },
+ "supabase/supabase": {
+  "cat": "数据 / 数据库",
+  "emoji": "💾",
+  "desc": "Supabase 是一个基于 PostgreSQL 的开源后端开发平台，相当于开源的 Firebase 替代品。它提供专用 Postgres 数据库，并内置用户认证、文件存储、实时订阅和向量检索等能力，让开发者不用自己搭建后端就能快速开发网站、移动应用和 AI 应用。比如做一个带登录和实时聊天的小程序，可以直接用它的认证和实时功能，省去大量服务器配置工作。",
+  "site": "https://supabase.com"
+ },
+ "twentyhq/twenty": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "Twenty 是一个开源的客户关系管理（CRM）系统，定位为 Salesforce 的开放替代品，并针对 AI 场景做了设计。它帮你集中管理客户信息、销售线索和沟通记录，避免被商业 CRM 的高价和封闭生态绑定。比如小团队可以用它自建销售管道，把邮件、公司、联系人关联起来，还能基于 GraphQL 接口和 AI 能力做二次开发。",
+  "site": "https://twenty.com"
+ },
+ "strelov1/freehire": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "freehire 是一个用 Go 编写的开源求职搜索引擎，把分散在各招聘网站和公司招聘系统（ATS）里的职位信息抓取、聚合到一起，让求职者在一个地方就能搜索和筛选岗位，不用反复切换网站。它解决的是职位信息碎片化、搜索效率低的问题，适合想快速找到匹配岗位的求职者，也适合想自建招聘聚合站点的开发者。",
+  "site": "https://freehire.me"
  }
 }
