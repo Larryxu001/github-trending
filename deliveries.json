@@ -4857,7 +4857,7 @@
   ]
  },
  "daily:2026-10-22": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-22",
    "new_count": 4,
@@ -4932,6 +4932,177 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-22 ｜ 今日新项目 4 个 ｜ 3 个分类 ｜ 30 天去重跳过 104 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-22/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 4 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [wshobson/agents](https://github.com/wshobson/agents)**　⭐ 41,434\n这是一个面向 AI 编程代理的插件市场，让 Claude Code、Codex、Cursor、GitHub Copilot 等不同工具共享同一套技能插件。它解决了各家代理生态割裂、插件无法互通的问题：开发者只需在这里挑选或发布插件，就能跨多个编程助手复用，比如给 Claude Code 装一个代码审查技能，Codex 和 Cursor 也能直接调用，省去重复适配的麻烦。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 wshobson ｜ 📅 更新 2026-10-19 ｜ 🏷 日/周榜 ｜ 🔗 [https://sethhobson.com](https://sethhobson.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [twentyhq/twenty](https://github.com/twentyhq/twenty)**　⭐ 58,946\nTwenty 是一个开源的客户关系管理（CRM）系统，定位为 Salesforce 的开放替代品，并针对 AI 场景做了设计。它帮你集中管理客户信息、销售线索和沟通记录，避免被商业 CRM 的高价和封闭生态绑定。比如小团队可以用它自建销售管道，把邮件、公司、联系人关联起来，还能基于 GraphQL 接口和 AI 能力做二次开发。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 twentyhq ｜ 📅 更新 2026-10-21 ｜ 🏷 日榜 ｜ 🔗 [https://twenty.com](https://twenty.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [strelov1/freehire](https://github.com/strelov1/freehire)**　⭐ 2,172\nfreehire 是一个用 Go 编写的开源求职搜索引擎，把分散在各招聘网站和公司招聘系统（ATS）里的职位信息抓取、聚合到一起，让求职者在一个地方就能搜索和筛选岗位，不用反复切换网站。它解决的是职位信息碎片化、搜索效率低的问题，适合想快速找到匹配岗位的求职者，也适合想自建招聘聚合站点的开发者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 strelov1 ｜ 📅 更新 2026-10-21 ｜ 🏷 日榜 ｜ 🔗 [https://freehire.me](https://freehire.me)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "wathet",
+       "title": {
+        "tag": "plain_text",
+        "content": "💾 数据 / 数据库 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [supabase/supabase](https://github.com/supabase/supabase)**　⭐ 112,779\nSupabase 是一个基于 PostgreSQL 的开源后端开发平台，相当于开源的 Firebase 替代品。它提供专用 Postgres 数据库，并内置用户认证、文件存储、实时订阅和向量检索等能力，让开发者不用自己搭建后端就能快速开发网站、移动应用和 AI 应用。比如做一个带登录和实时聊天的小程序，可以直接用它的认证和实时功能，省去大量服务器配置工作。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 supabase ｜ 📅 更新 2026-10-21 ｜ 🏷 日榜 ｜ 🔗 [https://supabase.com](https://supabase.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
