@@ -417,6 +417,21 @@
     "后端"
    ],
    "saved_at": "2026-10-23"
+  },
+  {
+   "repo": "Graphify-Labs/graphify",
+   "url": "https://github.com/Graphify-Labs/graphify",
+   "owner": "Graphify-Labs",
+   "stars": 129921,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "Graphify 能把任意代码库连同文档、SQL 表结构、配置和 PDF 一起，转成可查询的知识图谱。它作为 Claude Code、Cursor、Codex 和 Gemini CLI 的 /graphify 技能使用，靠本地确定性的 AST 解析建图，每条边都有解释，不需要向量数据库。比如你接手一个陌生项目，可以直接问「哪些函数会写这张表」，它顺着图谱给出答案和依据，适合代码理解、检索和 AI 编程助手增强。",
+   "site": "https://www.graphify.com",
+   "note": "",
+   "tags": [
+    "做工具"
+   ],
+   "saved_at": "2026-10-23"
   }
  ]
 }
