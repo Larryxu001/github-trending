@@ -125,7 +125,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-10-23T17:01:19.371080+08:00"
+   "last_seen": "2026-10-23T19:15:31.453566+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -183,7 +183,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-10-23T17:01:19.371154+08:00"
+   "last_seen": "2026-10-23T19:15:35.186366+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -201,7 +201,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-10-23T17:01:19.371131+08:00"
+   "last_seen": "2026-10-23T19:15:34.227827+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
@@ -227,7 +227,7 @@
    "updated": "2026-10-20",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-10-23T17:01:19.371166+08:00"
+   "last_seen": "2026-10-23T19:15:36.088102+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -281,6 +281,7 @@
   "NVIDIA/OpenShell": {
    "repo": "NVIDIA/OpenShell",
    "lists": [
+    "daily",
     "monthly",
     "weekly"
    ],
@@ -293,7 +294,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:16.915683+08:00",
-   "last_seen": "2026-10-23T17:01:19.371104+08:00"
+   "last_seen": "2026-10-23T19:15:31.453576+08:00"
   },
   "pbakaus/impeccable": {
    "repo": "pbakaus/impeccable",
@@ -310,7 +311,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-10-23T17:01:19.371178+08:00"
+   "last_seen": "2026-10-23T19:15:36.088074+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -340,7 +341,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:18.372902+08:00",
-   "last_seen": "2026-10-23T17:01:19.371182+08:00"
+   "last_seen": "2026-10-23T19:15:36.088114+08:00"
   },
   "anthropics/financial-services": {
    "repo": "anthropics/financial-services",
@@ -365,7 +366,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 100974,
+   "stars": 102420,
    "owner": "thedotmack",
    "homepage": "https://claude-mem.ai",
    "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
@@ -392,10 +393,10 @@
     "sqlite",
     "supermemory"
    ],
-   "updated": "2026-10-13",
-   "metadata_date": "2026-10-16",
+   "updated": "2026-10-23",
+   "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-10-16T17:00:42.495506+08:00"
+   "last_seen": "2026-10-23T19:15:36.565303+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -432,7 +433,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:20.630895+08:00",
-   "last_seen": "2026-10-23T17:01:19.371055+08:00"
+   "last_seen": "2026-10-23T19:15:31.453574+08:00"
   },
   "pablostanley/yoinks": {
    "repo": "pablostanley/yoinks",
@@ -523,7 +524,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-10-23T17:01:19.371049+08:00"
+   "last_seen": "2026-10-23T19:15:31.453554+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -580,7 +581,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:24.294659+08:00",
-   "last_seen": "2026-10-23T17:01:19.371093+08:00"
+   "last_seen": "2026-10-23T19:15:32.388522+08:00"
   },
   "deepseek-ai/DeepGEMM": {
    "repo": "deepseek-ai/DeepGEMM",
@@ -704,7 +705,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-10-23T17:01:19.371124+08:00"
+   "last_seen": "2026-10-23T19:15:35.186340+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -813,7 +814,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:30.899722+08:00",
-   "last_seen": "2026-10-23T17:01:19.371174+08:00"
+   "last_seen": "2026-10-23T19:15:36.088111+08:00"
   },
   "tt-a1i/archify": {
    "repo": "tt-a1i/archify",
@@ -947,7 +948,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-10-23T17:01:19.371060+08:00"
+   "last_seen": "2026-10-23T19:15:31.453569+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -963,7 +964,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-10-23T17:01:19.371146+08:00"
+   "last_seen": "2026-10-23T19:15:35.186359+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -1024,7 +1025,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-10-23T17:01:19.371142+08:00"
+   "last_seen": "2026-10-23T19:15:35.186354+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1149,7 +1150,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-10-23T17:01:19.371085+08:00"
+   "last_seen": "2026-10-23T19:15:31.453539+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1203,7 +1204,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-10-23T17:01:19.371068+08:00"
+   "last_seen": "2026-10-23T19:15:31.453558+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1292,7 +1293,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-10-23T17:01:19.371170+08:00"
+   "last_seen": "2026-10-23T19:15:36.088107+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1699,7 +1700,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-12T21:01:45.699604+08:00",
-   "last_seen": "2026-10-23T17:01:19.371162+08:00"
+   "last_seen": "2026-10-23T19:15:35.186370+08:00"
   },
   "michael-denyer/pstack-claude": {
    "repo": "michael-denyer/pstack-claude",
@@ -1862,7 +1863,7 @@
    "updated": "2026-10-19",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-14T20:38:19.756627+08:00",
-   "last_seen": "2026-10-23T17:01:19.371100+08:00"
+   "last_seen": "2026-10-23T19:15:35.186362+08:00"
   },
   "HKUDS/CLI-Anything": {
    "repo": "HKUDS/CLI-Anything",
@@ -1880,7 +1881,7 @@
    "updated": "2026-09-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-14T20:38:20.599871+08:00",
-   "last_seen": "2026-10-23T17:01:19.371120+08:00"
+   "last_seen": "2026-10-23T19:15:35.186346+08:00"
   },
   "ifixai-ai/iFixAi": {
    "repo": "ifixai-ai/iFixAi",
@@ -2047,7 +2048,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-10-23T17:01:19.371064+08:00"
+   "last_seen": "2026-10-23T19:15:31.453564+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2137,7 +2138,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-15T20:00:44.030304+08:00",
-   "last_seen": "2026-10-23T17:01:19.371076+08:00"
+   "last_seen": "2026-10-23T19:15:31.453571+08:00"
   },
   "lightseekorg/tokenspeed": {
    "repo": "lightseekorg/tokenspeed",
@@ -2254,7 +2255,7 @@
    "updated": "2026-10-21",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-16T19:00:19.574046+08:00",
-   "last_seen": "2026-10-23T17:01:19.371089+08:00"
+   "last_seen": "2026-10-23T19:15:31.453578+08:00"
   },
   "MadsLorentzen/ai-job-search": {
    "repo": "MadsLorentzen/ai-job-search",
@@ -2339,7 +2340,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-17T20:00:40.597318+08:00",
-   "last_seen": "2026-10-23T17:01:19.371138+08:00"
+   "last_seen": "2026-10-23T19:15:35.186315+08:00"
   },
   "stablyai/orca": {
    "repo": "stablyai/orca",
@@ -2377,7 +2378,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-17T20:00:41.381272+08:00",
-   "last_seen": "2026-10-23T17:01:19.371150+08:00"
+   "last_seen": "2026-10-23T19:15:33.289978+08:00"
   },
   "anomalyco/opencode": {
    "repo": "anomalyco/opencode",
@@ -2394,7 +2395,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-17T20:00:42.147007+08:00",
-   "last_seen": "2026-10-23T17:01:19.371112+08:00"
+   "last_seen": "2026-10-23T19:15:32.388475+08:00"
   },
   "mlabonne/llm-course": {
    "repo": "mlabonne/llm-course",
@@ -2456,7 +2457,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-18T20:00:44.193615+08:00",
-   "last_seen": "2026-10-23T17:01:19.371158+08:00"
+   "last_seen": "2026-10-23T19:15:35.186351+08:00"
   },
   "YuJunZhiXue/dsh-purge": {
    "repo": "YuJunZhiXue/dsh-purge",
@@ -2704,7 +2705,8 @@
   "supabase/supabase": {
    "repo": "supabase/supabase",
    "lists": [
-    "daily"
+    "daily",
+    "monthly"
    ],
    "stars": 113361,
    "owner": "supabase",
@@ -2735,7 +2737,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-21T19:25:46.066873+08:00",
-   "last_seen": "2026-10-23T17:01:19.371108+08:00"
+   "last_seen": "2026-10-23T19:15:37.065439+08:00"
   },
   "twentyhq/twenty": {
    "repo": "twentyhq/twenty",
@@ -2822,7 +2824,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-22T19:25:53.541836+08:00",
-   "last_seen": "2026-10-23T17:01:19.371033+08:00"
+   "last_seen": "2026-10-23T19:15:31.453561+08:00"
   },
   "fastapi/fastapi": {
    "repo": "fastapi/fastapi",
@@ -2900,12 +2902,145 @@
    "metadata_date": "2026-10-23",
    "first_seen": "2026-10-22T19:25:55.845516+08:00",
    "last_seen": "2026-10-23T17:01:19.371135+08:00"
+  },
+  "Renhuai123/ziwei-doushu": {
+   "repo": "Renhuai123/ziwei-doushu",
+   "lists": [
+    "daily"
+   ],
+   "stars": 6546,
+   "owner": "Renhuai123",
+   "homepage": "https://metisziwei.com/?from=gh-about",
+   "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+   "language": "TypeScript",
+   "topics": [
+    "bazi",
+    "chinese-astrology",
+    "divination",
+    "fortune-telling",
+    "nextjs",
+    "open-source",
+    "purple-star-astrology",
+    "typescript",
+    "zi-wei-dou-shu",
+    "ziwei-doushu"
+   ],
+   "updated": "2026-10-20",
+   "metadata_date": "2026-10-23",
+   "first_seen": "2026-10-23T19:15:31.888334+08:00",
+   "last_seen": "2026-10-23T19:15:31.888346+08:00"
+  },
+  "SnailSploit/Claude-Red": {
+   "repo": "SnailSploit/Claude-Red",
+   "lists": [
+    "daily"
+   ],
+   "stars": 8002,
+   "owner": "SnailSploit",
+   "homepage": "",
+   "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+   "language": "Python",
+   "topics": [
+    "claude-ai",
+    "claude-pt",
+    "claude-skills",
+    "redteam",
+    "redteam-tools",
+    "skills"
+   ],
+   "updated": "2026-10-12",
+   "metadata_date": "2026-10-23",
+   "first_seen": "2026-10-23T19:15:32.789833+08:00",
+   "last_seen": "2026-10-23T19:15:32.789843+08:00"
+  },
+  "OpenBMB/VoxCPM": {
+   "repo": "OpenBMB/VoxCPM",
+   "lists": [
+    "daily"
+   ],
+   "stars": 39989,
+   "owner": "OpenBMB",
+   "homepage": "https://voxcpm.com",
+   "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+   "language": "Python",
+   "topics": [
+    "audio",
+    "deeplearning",
+    "minicpm",
+    "multilingual",
+    "python",
+    "pytorch",
+    "speech",
+    "speech-synthesis",
+    "text-to-speech",
+    "tts",
+    "tts-model",
+    "voice-cloning",
+    "voice-design",
+    "voxcpm"
+   ],
+   "updated": "2026-10-08",
+   "metadata_date": "2026-10-23",
+   "first_seen": "2026-10-23T19:15:33.727698+08:00",
+   "last_seen": "2026-10-23T19:15:33.727708+08:00"
+  },
+  "nodejs/node": {
+   "repo": "nodejs/node",
+   "lists": [
+    "daily"
+   ],
+   "stars": 122590,
+   "owner": "nodejs",
+   "homepage": "https://nodejs.org",
+   "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+   "language": "JavaScript",
+   "topics": [
+    "javascript",
+    "js",
+    "linux",
+    "macos",
+    "mit",
+    "node",
+    "nodejs",
+    "runtime",
+    "windows"
+   ],
+   "updated": "2026-10-23",
+   "metadata_date": "2026-10-23",
+   "first_seen": "2026-10-23T19:15:34.686195+08:00",
+   "last_seen": "2026-10-23T19:15:34.686207+08:00"
+  },
+  "elie222/rakazo": {
+   "repo": "elie222/rakazo",
+   "lists": [
+    "weekly"
+   ],
+   "stars": 5313,
+   "owner": "elie222",
+   "homepage": "https://rakazo.com",
+   "description": "Open-source Grok Bot alternative. Choose your own model and sandbox.",
+   "language": "TypeScript",
+   "topics": [
+    "ai-agents",
+    "chatgpt",
+    "docker",
+    "electron",
+    "expo",
+    "grok",
+    "llm",
+    "self-hosted",
+    "typescript"
+   ],
+   "updated": "2026-10-23",
+   "metadata_date": "2026-10-23",
+   "first_seen": "2026-10-23T19:15:35.587915+08:00",
+   "last_seen": "2026-10-23T19:15:35.587925+08:00"
   }
  },
- "last_collected": "2026-10-23T17:01:19.371186+08:00",
+ "last_collected": "2026-10-23T19:15:37.065469+08:00",
  "list_counts": {
-  "daily": 9,
+  "daily": 8,
   "weekly": 15,
-  "monthly": 20
+  "monthly": 21
  }
 }
