@@ -477,6 +477,21 @@
     "效率"
    ],
    "saved_at": "2026-10-23"
+  },
+  {
+   "repo": "LibreSpark/LibreTV",
+   "url": "https://github.com/LibreSpark/LibreTV",
+   "owner": "LibreSpark",
+   "stars": 18264,
+   "category": "其他",
+   "emoji": "📦",
+   "desc": "LibreTV 是一个开源影视聚合站项目，用 TypeScript 和 Next.js 开发，主打一分钟快速搭建自己的在线影视网站。它支持 Docker 等多种部署方式，内置响应式界面，适合个人或小团队搭建电影、电视剧观看入口。比如你想给朋友做一个干净的追剧站，只需拉取镜像运行，就能拥有带搜索和播放功能的影视页面，省去从零开发前端的麻烦。",
+   "site": "https://libretv.is-an.org",
+   "note": "",
+   "tags": [
+    "做视频"
+   ],
+   "saved_at": "2026-10-23"
   }
  ]
 }
