@@ -462,6 +462,21 @@
     "做视频"
    ],
    "saved_at": "2026-10-23"
+  },
+  {
+   "repo": "hmjz100/LinkSwift",
+   "url": "https://github.com/hmjz100/LinkSwift",
+   "owner": "hmjz100",
+   "stars": 23488,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "LinkSwift 是一个基于 JavaScript 的网盘直链下载工具，能帮你把百度网盘、阿里云盘、夸克网盘等八大网盘的文件，解析出可直接下载的直链地址，再配合 Aria2、Motrix 等下载器使用，从而绕过官方客户端的限速。比如你想下载百度网盘里的大文件，用它获取直链后就能用下载工具高速下载，不用再忍受几十 KB/s 的龟速。",
+   "site": "https://github.com/hmjz100/LinkSwift",
+   "note": "下载提速",
+   "tags": [
+    "效率"
+   ],
+   "saved_at": "2026-10-23"
   }
  ]
 }
