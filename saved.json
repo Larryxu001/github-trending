@@ -432,6 +432,21 @@
     "做工具"
    ],
    "saved_at": "2026-10-23"
+  },
+  {
+   "repo": "headroomlabs-ai/headroom",
+   "url": "https://github.com/headroomlabs-ai/headroom",
+   "owner": "headroomlabs-ai",
+   "stars": 76129,
+   "category": "Agent 效率优化",
+   "emoji": "⚡",
+   "desc": "Headroom 是一个在内容送入大模型之前先做压缩的工具，专门处理工具输出、日志、文件和 RAG 片段，能在答案基本不变的前提下大幅减少 token 消耗——编码智能体省约 20%，JSON 数据可省 60% 到 95%。它提供库、代理和 MCP 服务器三种用法，适合接入 Claude Code、Cursor、LangChain 等场景，帮助开发者降低调用成本、缓解上下文窗口压力。",
+   "site": "https://docs.headroomlabs.ai/docs",
+   "note": "",
+   "tags": [
+    "RAG"
+   ],
+   "saved_at": "2026-10-23"
   }
  ]
 }
