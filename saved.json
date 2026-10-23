@@ -402,6 +402,21 @@
     "后端"
    ],
    "saved_at": "2026-10-22"
+  },
+  {
+   "repo": "fastapi/fastapi",
+   "url": "https://github.com/fastapi/fastapi",
+   "owner": "fastapi",
+   "stars": 103556,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "FastAPI 是一个用 Python 编写的高性能 Web 框架，专门用来快速搭建后端 API 服务。它基于类型注解自动校验请求数据并生成交互式接口文档，开发者只需写少量代码就能完成路由、参数解析和错误处理。比如你要做一个用户登录接口，定义好请求和返回的数据结构后，FastAPI 会自动检查输入格式并生成可在线测试的文档页面，非常适合从原型到生产环境的 API 开发。",
+   "site": "https://fastapi.tiangolo.com/",
+   "note": "",
+   "tags": [
+    "后端"
+   ],
+   "saved_at": "2026-10-23"
   }
  ]
 }
