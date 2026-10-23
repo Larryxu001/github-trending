@@ -5120,5 +5120,82 @@
     }
    }
   ]
+ },
+ "daily:2026-10-23": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-10-23",
+   "new_count": 4,
+   "skipped": 108,
+   "categories": [
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "fastapi/fastapi",
+       "url": "https://github.com/fastapi/fastapi",
+       "owner": "fastapi",
+       "stars": 103556,
+       "updated": "2026-10-22",
+       "lists": [
+        "daily"
+       ],
+       "desc": "FastAPI 是一个用 Python 编写的高性能 Web 框架，专门用来快速搭建后端 API 服务。它基于类型注解自动校验请求数据并生成交互式接口文档，开发者只需写少量代码就能完成路由、参数解析和错误处理。比如你要做一个用户登录接口，定义好请求和返回的数据结构后，FastAPI 会自动检查输入格式并生成可在线测试的文档页面，非常适合从原型到生产环境的 API 开发。",
+       "site": "https://fastapi.tiangolo.com/"
+      },
+      {
+       "repo": "php/php-src",
+       "url": "https://github.com/php/php-src",
+       "owner": "php",
+       "stars": 40977,
+       "updated": "2026-10-22",
+       "lists": [
+        "daily"
+       ],
+       "desc": "PHP 官方解释器源码仓库，用 C 语言实现，负责把 PHP 代码解析并执行。它解决的是「PHP 程序如何运行」这一根本问题，是 WordPress、Laravel 等无数网站和框架的底层引擎。例如你写 echo 'Hello'，就是由它编译执行并输出结果。开发者可在此参与语言特性开发、修复漏洞或研究内部实现。",
+       "site": "https://www.php.net"
+      }
+     ]
+    },
+    {
+     "name": "移动 / 桌面应用",
+     "emoji": "📱",
+     "items": [
+      {
+       "repo": "Meloong-Git/PCL",
+       "url": "https://github.com/Meloong-Git/PCL",
+       "owner": "Meloong-Git",
+       "stars": 8628,
+       "updated": "2026-10-20",
+       "lists": [
+        "daily"
+       ],
+       "desc": "PCL（Plain Craft Launcher）是一款用 Visual Basic .NET 编写的 Minecraft 启动器，主要面向 Windows 用户。它帮你一键安装和管理不同版本的 Minecraft、自动下载游戏与模组、管理 Java 环境，还能整合 Forge、Fabric 等模组加载器，省去手动配置的麻烦。比如你想和朋友玩某个整合包，用它几步就能装好并启动游戏，适合新手和想省事的玩家。",
+       "site": "https://meloong.com/PCL"
+      }
+     ]
+    },
+    {
+     "name": "学习资源",
+     "emoji": "📚",
+     "items": [
+      {
+       "repo": "luongnv89/claude-howto",
+       "url": "https://github.com/luongnv89/claude-howto",
+       "owner": "luongnv89",
+       "stars": 42864,
+       "updated": "2026-10-20",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个面向 Claude Code 的可视化教程项目，用大量示例和可直接复制的模板，带读者从基础概念一步步走到高级 Agent 用法。它解决的是官方文档偏抽象、新手不知从何下手的问题。比如你想让 Claude Code 自动完成代码审查或批量重构，可以直接套用项目里的现成模板，省去自己摸索提示词和配置的时间。",
+       "site": "http://luongnv.com/claude-howto/"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
