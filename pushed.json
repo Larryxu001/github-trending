@@ -132,5 +132,9 @@
  "wshobson/agents": "2026-10-22",
  "twentyhq/twenty": "2026-10-22",
  "strelov1/freehire": "2026-10-22",
- "supabase/supabase": "2026-10-22"
+ "supabase/supabase": "2026-10-22",
+ "fastapi/fastapi": "2026-10-23",
+ "php/php-src": "2026-10-23",
+ "Meloong-Git/PCL": "2026-10-23",
+ "luongnv89/claude-howto": "2026-10-23"
 }
