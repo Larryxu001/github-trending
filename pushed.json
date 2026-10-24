@@ -136,5 +136,10 @@
  "fastapi/fastapi": "2026-10-23",
  "php/php-src": "2026-10-23",
  "Meloong-Git/PCL": "2026-10-23",
- "luongnv89/claude-howto": "2026-10-23"
+ "luongnv89/claude-howto": "2026-10-23",
+ "OpenBMB/VoxCPM": "2026-10-24",
+ "elie222/rakazo": "2026-10-24",
+ "nodejs/node": "2026-10-24",
+ "SnailSploit/Claude-Red": "2026-10-24",
+ "Renhuai123/ziwei-doushu": "2026-10-24"
 }
