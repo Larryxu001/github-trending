@@ -5384,5 +5384,100 @@
     }
    }
   ]
+ },
+ "daily:2026-10-24": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-10-24",
+   "new_count": 5,
+   "skipped": 112,
+   "categories": [
+    {
+     "name": "AI / 大模型",
+     "emoji": "🧠",
+     "items": [
+      {
+       "repo": "OpenBMB/VoxCPM",
+       "url": "https://github.com/OpenBMB/VoxCPM",
+       "owner": "OpenBMB",
+       "stars": 40112,
+       "updated": "2026-10-08",
+       "lists": [
+        "daily"
+       ],
+       "desc": "VoxCPM 是一个开源的语音合成（TTS）大模型，主打无需分词器的多语言语音生成，能直接把文字变成自然流畅的语音，还支持创意音色设计和高度还原的语音克隆。它解决的是传统 TTS 音色生硬、跨语言效果差、克隆不够像的问题。比如你上传一段自己的录音，它就能用你的声音朗读中文、英文等多种语言的文本，适合做有声书、配音、虚拟人语音等应用。",
+       "site": "https://voxcpm.com"
+      },
+      {
+       "repo": "elie222/rakazo",
+       "url": "https://github.com/elie222/rakazo",
+       "owner": "elie222",
+       "stars": 5377,
+       "updated": "2026-10-23",
+       "lists": [
+        "weekly"
+       ],
+       "desc": "Rakazo 是一个开源的 AI 聊天机器人替代方案，类似 Grok Bot，但你可以自由选择底层大模型（如 ChatGPT、Grok 等）并运行在自托管沙箱环境中。它解决了用户对商业聊天机器人模型锁定和隐私担忧的问题，适合想自己掌控 AI 助手、注重数据安全或需要定制化模型的开发者与团队。例如，你可以把它部署在自己的服务器上，接入私有模型，让团队安全地使用 AI 对话。",
+       "site": "https://rakazo.com"
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "nodejs/node",
+       "url": "https://github.com/nodejs/node",
+       "owner": "nodejs",
+       "stars": 122694,
+       "updated": "2026-10-23",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Node.js 是一个让 JavaScript 能在浏览器之外运行的运行时环境，解决了 JavaScript 只能写网页前端脚本的局限。它基于 Chrome 的 V8 引擎，让开发者用同一门语言写服务器、命令行工具和桌面应用。比如你可以用它快速搭建一个网站后端，处理用户请求、读写数据库，还能借助 npm 生态直接复用海量现成代码库，大幅提升开发效率。",
+       "site": "https://nodejs.org"
+      }
+     ]
+    },
+    {
+     "name": "安全",
+     "emoji": "🔐",
+     "items": [
+      {
+       "repo": "SnailSploit/Claude-Red",
+       "url": "https://github.com/SnailSploit/Claude-Red",
+       "owner": "SnailSploit",
+       "stars": 8204,
+       "updated": "2026-10-12",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Claude-Red 是一个面向 Claude 技能系统的攻击性安全技能库，每个技能都是一个结构化的 SKILL.md 文件，为 Claude 注入针对特定攻击面的专家级方法论，覆盖 SQL 注入、shellcode、EDR 规避、漏洞开发等方向。它解决的是安全研究人员在红队测试中缺乏系统化 AI 辅助知识的问题，让 Claude 能按标准流程给出专业建议。例如做 SQL 注入测试时，加载对应技能后 Claude 会按实战方法论引导你完成探测与利用。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "其他",
+     "emoji": "📦",
+     "items": [
+      {
+       "repo": "Renhuai123/ziwei-doushu",
+       "url": "https://github.com/Renhuai123/ziwei-doushu",
+       "owner": "Renhuai123",
+       "stars": 6757,
+       "updated": "2026-10-20",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个用 TypeScript 编写的紫微斗数开源排盘引擎，基于倪海厦《天纪》体系，内置完整排盘算法、四化系统、格局知识库和古籍原文数据。它解决的是传统紫微斗数排盘依赖手工或闭源软件、结果难以复现的问题，开发者可据此快速构建命盘展示、运势分析等应用。例如输入出生时间，即可自动排出十二宫命盘并标注四化星与格局。",
+       "site": "https://metisziwei.com/?from=gh-about"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
