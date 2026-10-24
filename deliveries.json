@@ -5386,7 +5386,7 @@
   ]
  },
  "daily:2026-10-24": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-24",
    "new_count": 5,
@@ -5478,6 +5478,211 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-24 ｜ 今日新项目 5 个 ｜ 4 个分类 ｜ 30 天去重跳过 112 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-24/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)**　⭐ 40,112\nVoxCPM 是一个开源的语音合成（TTS）大模型，主打无需分词器的多语言语音生成，能直接把文字变成自然流畅的语音，还支持创意音色设计和高度还原的语音克隆。它解决的是传统 TTS 音色生硬、跨语言效果差、克隆不够像的问题。比如你上传一段自己的录音，它就能用你的声音朗读中文、英文等多种语言的文本，适合做有声书、配音、虚拟人语音等应用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 OpenBMB ｜ 📅 更新 2026-10-08 ｜ 🏷 日榜 ｜ 🔗 [https://voxcpm.com](https://voxcpm.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [elie222/rakazo](https://github.com/elie222/rakazo)**　⭐ 5,377\nRakazo 是一个开源的 AI 聊天机器人替代方案，类似 Grok Bot，但你可以自由选择底层大模型（如 ChatGPT、Grok 等）并运行在自托管沙箱环境中。它解决了用户对商业聊天机器人模型锁定和隐私担忧的问题，适合想自己掌控 AI 助手、注重数据安全或需要定制化模型的开发者与团队。例如，你可以把它部署在自己的服务器上，接入私有模型，让团队安全地使用 AI 对话。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 elie222 ｜ 📅 更新 2026-10-23 ｜ 🏷 周榜 ｜ 🔗 [https://rakazo.com](https://rakazo.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [nodejs/node](https://github.com/nodejs/node)**　⭐ 122,694\nNode.js 是一个让 JavaScript 能在浏览器之外运行的运行时环境，解决了 JavaScript 只能写网页前端脚本的局限。它基于 Chrome 的 V8 引擎，让开发者用同一门语言写服务器、命令行工具和桌面应用。比如你可以用它快速搭建一个网站后端，处理用户请求、读写数据库，还能借助 npm 生态直接复用海量现成代码库，大幅提升开发效率。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 nodejs ｜ 📅 更新 2026-10-23 ｜ 🏷 日榜 ｜ 🔗 [https://nodejs.org](https://nodejs.org)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "red",
+       "title": {
+        "tag": "plain_text",
+        "content": "🔐 安全 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [SnailSploit/Claude-Red](https://github.com/SnailSploit/Claude-Red)**　⭐ 8,204\nClaude-Red 是一个面向 Claude 技能系统的攻击性安全技能库，每个技能都是一个结构化的 SKILL.md 文件，为 Claude 注入针对特定攻击面的专家级方法论，覆盖 SQL 注入、shellcode、EDR 规避、漏洞开发等方向。它解决的是安全研究人员在红队测试中缺乏系统化 AI 辅助知识的问题，让 Claude 能按标准流程给出专业建议。例如做 SQL 注入测试时，加载对应技能后 Claude 会按实战方法论引导你完成探测与利用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 SnailSploit ｜ 📅 更新 2026-10-12 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "grey",
+       "title": {
+        "tag": "plain_text",
+        "content": "📦 其他 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Renhuai123/ziwei-doushu](https://github.com/Renhuai123/ziwei-doushu)**　⭐ 6,757\n这是一个用 TypeScript 编写的紫微斗数开源排盘引擎，基于倪海厦《天纪》体系，内置完整排盘算法、四化系统、格局知识库和古籍原文数据。它解决的是传统紫微斗数排盘依赖手工或闭源软件、结果难以复现的问题，开发者可据此快速构建命盘展示、运势分析等应用。例如输入出生时间，即可自动排出十二宫命盘并标注四化星与格局。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Renhuai123 ｜ 📅 更新 2026-10-20 ｜ 🏷 日榜 ｜ 🔗 [https://metisziwei.com/?from=gh-about](https://metisziwei.com/?from=gh-about)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
