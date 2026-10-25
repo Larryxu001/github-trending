@@ -856,5 +856,41 @@
   "emoji": "🧠",
   "desc": "Rakazo 是一个开源的 AI 聊天机器人替代方案，类似 Grok Bot，但你可以自由选择底层大模型（如 ChatGPT、Grok 等）并运行在自托管沙箱环境中。它解决了用户对商业聊天机器人模型锁定和隐私担忧的问题，适合想自己掌控 AI 助手、注重数据安全或需要定制化模型的开发者与团队。例如，你可以把它部署在自己的服务器上，接入私有模型，让团队安全地使用 AI 对话。",
   "site": "https://rakazo.com"
+ },
+ "aws/agent-toolkit-for-aws": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是 AWS 官方推出的工具包，为 AI 智能体提供连接 AWS 的 MCP 服务器、技能和插件。它解决的是智能体“不会用 AWS”的问题：装上后，AI 就能直接查询 S3 存储桶、调用 Lambda 函数或查看 CloudWatch 日志，而不需要开发者自己写对接代码。比如你让 AI 助手排查线上故障，它能通过这个工具包自动拉取日志并分析，省去手动切换控制台的麻烦。",
+  "site": "无"
+ },
+ "Nutlope/hallmark": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "Hallmark 是一个面向 Claude Code、Cursor 和 Codex 等 AI 编程助手的「反 AI 味」设计技能。它解决的是 AI 生成界面千篇一律、模板感重的问题，通过提供一套设计规范与样式约束，让 AI 写出的页面更有审美和辨识度。比如在 Cursor 里让 AI 做落地页时，它能避免默认的紫色渐变、圆角卡片堆砌，产出更接近专业设计师水准的界面。",
+  "site": "https://www.usehallmark.com/"
+ },
+ "pollen-robotics/microduck": {
+  "cat": "其他",
+  "emoji": "📦",
+  "desc": "Microduck 是一款由 Pollen Robotics 开源的微型双足机器鸭，用 Rust 编写控制程序。它把机器人硬件和软件打包成小巧易上手的平台，让爱好者和学生能低成本学习双足行走、步态控制和嵌入式编程。比如你可以给它写代码让它摇摇摆摆走路、保持平衡或做动作，适合做机器人教学和创意实验。",
+  "site": "https://pollen-robotics.com/microduck"
+ },
+ "google-gemini/gemini-cli": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "这是一个把 Gemini 大模型直接搬进命令行的开源 AI 智能体。你在终端里用自然语言提问或下指令，它就能理解并执行任务，比如读取项目文件、解释代码、生成脚本甚至调用外部工具，省去在浏览器和编辑器之间来回切换的麻烦。它支持 MCP 协议，可连接各类工具和数据源，适合开发者日常编码、调试和自动化操作。",
+  "site": "https://geminicli.com"
+ },
+ "jbiaojerry/ebook-treasure-chest": {
+  "cat": "学习资源",
+  "emoji": "📚",
+  "desc": "这是一个电子书下载链接的汇总仓库，把帆书、微信读书、京东读书、喜马拉雅等读书App里的电子书资源整理到一起，方便你按类别查找和下载。它解决的是找书难、资源分散的问题，比如你想读某本经管类书籍，直接在这个仓库里就能找到对应下载链接，省去到处搜索的麻烦。",
+  "site": "无"
+ },
+ "makecindy/cindy": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "Cindy 是一个开源、开箱即用的 AI Agent 应用，用 TypeScript 编写，基于 Electron 和 React Native 同时支持 macOS、iOS 和 Android。它把大模型能力封装成能直接干活的智能助手，省去从零搭建 Agent 的麻烦。比如你让它整理项目里的待办事项或自动处理日常任务，安装后配置好模型即可使用，适合想快速体验或集成 AI 助手的个人和团队。",
+  "site": "https://cindy.app"
  }
 }

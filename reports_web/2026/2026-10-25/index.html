@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 日报 · 2026-10-25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.023</span></div>
+    <h1>Github开源趋势日报</h1>
+    <div class="standfirst">每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目</div>
+    <div class="dateline"><b>2026 年 10 月 25 日</b>　·　第 23 期　·　本期共收录 <b>6</b> 个项目　·　30 天去重跳过 117 个</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>Agent 技能与插件<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>hallmark</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>agent-toolkit-for-aws</a></details><details><summary><span class="toc-no">02</span>Agent 基础设施与框架<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>gemini-cli</a><a class="toc-proj" href="#sec-2-2"><span class="toc-no">02</span>cindy</a></details><details><summary><span class="toc-no">03</span>学习资源<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>ebook-treasure-chest</a></details><details><summary><span class="toc-no">04</span>其他<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>microduck</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/Nutlope/hallmark" target="_blank">Nutlope/hallmark</a></h3>
+            <span class="stars">★ 31,843</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Nutlope/hallmark&quot;, &quot;url&quot;: &quot;https://github.com/Nutlope/hallmark&quot;, &quot;owner&quot;: &quot;Nutlope&quot;, &quot;stars&quot;: 31843, &quot;desc&quot;: &quot;Hallmark \u662f\u4e00\u4e2a\u9762\u5411 Claude Code\u3001Cursor \u548c Codex \u7b49 AI \u7f16\u7a0b\u52a9\u624b\u7684\u300c\u53cd AI \u5473\u300d\u8bbe\u8ba1\u6280\u80fd\u3002\u5b83\u89e3\u51b3\u7684\u662f AI \u751f\u6210\u754c\u9762\u5343\u7bc7\u4e00\u5f8b\u3001\u6a21\u677f\u611f\u91cd\u7684\u95ee\u9898\uff0c\u901a\u8fc7\u63d0\u4f9b\u4e00\u5957\u8bbe\u8ba1\u89c4\u8303\u4e0e\u6837\u5f0f\u7ea6\u675f\uff0c\u8ba9 AI \u5199\u51fa\u7684\u9875\u9762\u66f4\u6709\u5ba1\u7f8e\u548c\u8fa8\u8bc6\u5ea6\u3002\u6bd4\u5982\u5728 Cursor \u91cc\u8ba9 AI \u505a\u843d\u5730\u9875\u65f6\uff0c\u5b83\u80fd\u907f\u514d\u9ed8\u8ba4\u7684\u7d2b\u8272\u6e10\u53d8\u3001\u5706\u89d2\u5361\u7247\u5806\u780c\uff0c\u4ea7\u51fa\u66f4\u63a5\u8fd1\u4e13\u4e1a\u8bbe\u8ba1\u5e08\u6c34\u51c6\u7684\u754c\u9762\u3002&quot;, &quot;site&quot;: &quot;https://www.usehallmark.com/&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Hallmark 是一个面向 Claude Code、Cursor 和 Codex 等 AI 编程助手的「反 AI 味」设计技能。它解决的是 AI 生成界面千篇一律、模板感重的问题，通过提供一套设计规范与样式约束，让 AI 写出的页面更有审美和辨识度。比如在 Cursor 里让 AI 做落地页时，它能避免默认的紫色渐变、圆角卡片堆砌，产出更接近专业设计师水准的界面。</p>
+          
+          <div class="byline">
+            <span>Nutlope</span><i>·</i>
+            <span>更新于 2026-10-22</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://www.usehallmark.com/" target="_blank">https://www.usehallmark.com/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Nutlope/hallmark.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Nutlope/hallmark">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank">aws/agent-toolkit-for-aws</a></h3>
+            <span class="stars">★ 3,045</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;aws/agent-toolkit-for-aws&quot;, &quot;url&quot;: &quot;https://github.com/aws/agent-toolkit-for-aws&quot;, &quot;owner&quot;: &quot;aws&quot;, &quot;stars&quot;: 3045, &quot;desc&quot;: &quot;\u8fd9\u662f AWS \u5b98\u65b9\u63a8\u51fa\u7684\u5de5\u5177\u5305\uff0c\u4e3a AI \u667a\u80fd\u4f53\u63d0\u4f9b\u8fde\u63a5 AWS \u7684 MCP \u670d\u52a1\u5668\u3001\u6280\u80fd\u548c\u63d2\u4ef6\u3002\u5b83\u89e3\u51b3\u7684\u662f\u667a\u80fd\u4f53\u201c\u4e0d\u4f1a\u7528 AWS\u201d\u7684\u95ee\u9898\uff1a\u88c5\u4e0a\u540e\uff0cAI \u5c31\u80fd\u76f4\u63a5\u67e5\u8be2 S3 \u5b58\u50a8\u6876\u3001\u8c03\u7528 Lambda \u51fd\u6570\u6216\u67e5\u770b CloudWatch \u65e5\u5fd7\uff0c\u800c\u4e0d\u9700\u8981\u5f00\u53d1\u8005\u81ea\u5df1\u5199\u5bf9\u63a5\u4ee3\u7801\u3002\u6bd4\u5982\u4f60\u8ba9 AI \u52a9\u624b\u6392\u67e5\u7ebf\u4e0a\u6545\u969c\uff0c\u5b83\u80fd\u901a\u8fc7\u8fd9\u4e2a\u5de5\u5177\u5305\u81ea\u52a8\u62c9\u53d6\u65e5\u5fd7\u5e76\u5206\u6790\uff0c\u7701\u53bb\u624b\u52a8\u5207\u6362\u63a7\u5236\u53f0\u7684\u9ebb\u70e6\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是 AWS 官方推出的工具包，为 AI 智能体提供连接 AWS 的 MCP 服务器、技能和插件。它解决的是智能体“不会用 AWS”的问题：装上后，AI 就能直接查询 S3 存储桶、调用 Lambda 函数或查看 CloudWatch 日志，而不需要开发者自己写对接代码。比如你让 AI 助手排查线上故障，它能通过这个工具包自动拉取日志并分析，省去手动切换控制台的麻烦。</p>
+          
+          <div class="byline">
+            <span>aws</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/aws/agent-toolkit-for-aws.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/aws/agent-toolkit-for-aws">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">Agent 基础设施与框架</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/google-gemini/gemini-cli" target="_blank">google-gemini/gemini-cli</a></h3>
+            <span class="stars">★ 107,846</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;google-gemini/gemini-cli&quot;, &quot;url&quot;: &quot;https://github.com/google-gemini/gemini-cli&quot;, &quot;owner&quot;: &quot;google-gemini&quot;, &quot;stars&quot;: 107846, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u628a Gemini \u5927\u6a21\u578b\u76f4\u63a5\u642c\u8fdb\u547d\u4ee4\u884c\u7684\u5f00\u6e90 AI \u667a\u80fd\u4f53\u3002\u4f60\u5728\u7ec8\u7aef\u91cc\u7528\u81ea\u7136\u8bed\u8a00\u63d0\u95ee\u6216\u4e0b\u6307\u4ee4\uff0c\u5b83\u5c31\u80fd\u7406\u89e3\u5e76\u6267\u884c\u4efb\u52a1\uff0c\u6bd4\u5982\u8bfb\u53d6\u9879\u76ee\u6587\u4ef6\u3001\u89e3\u91ca\u4ee3\u7801\u3001\u751f\u6210\u811a\u672c\u751a\u81f3\u8c03\u7528\u5916\u90e8\u5de5\u5177\uff0c\u7701\u53bb\u5728\u6d4f\u89c8\u5668\u548c\u7f16\u8f91\u5668\u4e4b\u95f4\u6765\u56de\u5207\u6362\u7684\u9ebb\u70e6\u3002\u5b83\u652f\u6301 MCP \u534f\u8bae\uff0c\u53ef\u8fde\u63a5\u5404\u7c7b\u5de5\u5177\u548c\u6570\u636e\u6e90\uff0c\u9002\u5408\u5f00\u53d1\u8005\u65e5\u5e38\u7f16\u7801\u3001\u8c03\u8bd5\u548c\u81ea\u52a8\u5316\u64cd\u4f5c\u3002&quot;, &quot;site&quot;: &quot;https://geminicli.com&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个把 Gemini 大模型直接搬进命令行的开源 AI 智能体。你在终端里用自然语言提问或下指令，它就能理解并执行任务，比如读取项目文件、解释代码、生成脚本甚至调用外部工具，省去在浏览器和编辑器之间来回切换的麻烦。它支持 MCP 协议，可连接各类工具和数据源，适合开发者日常编码、调试和自动化操作。</p>
+          
+          <div class="byline">
+            <span>google-gemini</span><i>·</i>
+            <span>更新于 2026-10-24</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://geminicli.com" target="_blank">https://geminicli.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/google-gemini/gemini-cli.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/google-gemini/gemini-cli">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/makecindy/cindy" target="_blank">makecindy/cindy</a></h3>
+            <span class="stars">★ 3,944</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;makecindy/cindy&quot;, &quot;url&quot;: &quot;https://github.com/makecindy/cindy&quot;, &quot;owner&quot;: &quot;makecindy&quot;, &quot;stars&quot;: 3944, &quot;desc&quot;: &quot;Cindy \u662f\u4e00\u4e2a\u5f00\u6e90\u3001\u5f00\u7bb1\u5373\u7528\u7684 AI Agent \u5e94\u7528\uff0c\u7528 TypeScript \u7f16\u5199\uff0c\u57fa\u4e8e Electron \u548c React Native \u540c\u65f6\u652f\u6301 macOS\u3001iOS \u548c Android\u3002\u5b83\u628a\u5927\u6a21\u578b\u80fd\u529b\u5c01\u88c5\u6210\u80fd\u76f4\u63a5\u5e72\u6d3b\u7684\u667a\u80fd\u52a9\u624b\uff0c\u7701\u53bb\u4ece\u96f6\u642d\u5efa Agent \u7684\u9ebb\u70e6\u3002\u6bd4\u5982\u4f60\u8ba9\u5b83\u6574\u7406\u9879\u76ee\u91cc\u7684\u5f85\u529e\u4e8b\u9879\u6216\u81ea\u52a8\u5904\u7406\u65e5\u5e38\u4efb\u52a1\uff0c\u5b89\u88c5\u540e\u914d\u7f6e\u597d\u6a21\u578b\u5373\u53ef\u4f7f\u7528\uff0c\u9002\u5408\u60f3\u5feb\u901f\u4f53\u9a8c\u6216\u96c6\u6210 AI \u52a9\u624b\u7684\u4e2a\u4eba\u548c\u56e2\u961f\u3002&quot;, &quot;site&quot;: &quot;https://cindy.app&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Cindy 是一个开源、开箱即用的 AI Agent 应用，用 TypeScript 编写，基于 Electron 和 React Native 同时支持 macOS、iOS 和 Android。它把大模型能力封装成能直接干活的智能助手，省去从零搭建 Agent 的麻烦。比如你让它整理项目里的待办事项或自动处理日常任务，安装后配置好模型即可使用，适合想快速体验或集成 AI 助手的个人和团队。</p>
+          
+          <div class="byline">
+            <span>makecindy</span><i>·</i>
+            <span>更新于 2026-10-24</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://cindy.app" target="_blank">https://cindy.app</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/makecindy/cindy.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/makecindy/cindy">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">学习资源</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/jbiaojerry/ebook-treasure-chest" target="_blank">jbiaojerry/ebook-treasure-chest</a></h3>
+            <span class="stars">★ 22,505</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;jbiaojerry/ebook-treasure-chest&quot;, &quot;url&quot;: &quot;https://github.com/jbiaojerry/ebook-treasure-chest&quot;, &quot;owner&quot;: &quot;jbiaojerry&quot;, &quot;stars&quot;: 22505, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u7535\u5b50\u4e66\u4e0b\u8f7d\u94fe\u63a5\u7684\u6c47\u603b\u4ed3\u5e93\uff0c\u628a\u5e06\u4e66\u3001\u5fae\u4fe1\u8bfb\u4e66\u3001\u4eac\u4e1c\u8bfb\u4e66\u3001\u559c\u9a6c\u62c9\u96c5\u7b49\u8bfb\u4e66App\u91cc\u7684\u7535\u5b50\u4e66\u8d44\u6e90\u6574\u7406\u5230\u4e00\u8d77\uff0c\u65b9\u4fbf\u4f60\u6309\u7c7b\u522b\u67e5\u627e\u548c\u4e0b\u8f7d\u3002\u5b83\u89e3\u51b3\u7684\u662f\u627e\u4e66\u96be\u3001\u8d44\u6e90\u5206\u6563\u7684\u95ee\u9898\uff0c\u6bd4\u5982\u4f60\u60f3\u8bfb\u67d0\u672c\u7ecf\u7ba1\u7c7b\u4e66\u7c4d\uff0c\u76f4\u63a5\u5728\u8fd9\u4e2a\u4ed3\u5e93\u91cc\u5c31\u80fd\u627e\u5230\u5bf9\u5e94\u4e0b\u8f7d\u94fe\u63a5\uff0c\u7701\u53bb\u5230\u5904\u641c\u7d22\u7684\u9ebb\u70e6\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个电子书下载链接的汇总仓库，把帆书、微信读书、京东读书、喜马拉雅等读书App里的电子书资源整理到一起，方便你按类别查找和下载。它解决的是找书难、资源分散的问题，比如你想读某本经管类书籍，直接在这个仓库里就能找到对应下载链接，省去到处搜索的麻烦。</p>
+          
+          <div class="byline">
+            <span>jbiaojerry</span><i>·</i>
+            <span>更新于 2026-01-13</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/jbiaojerry/ebook-treasure-chest.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/jbiaojerry/ebook-treasure-chest">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">其他</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/pollen-robotics/microduck" target="_blank">pollen-robotics/microduck</a></h3>
+            <span class="stars">★ 10,814</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;pollen-robotics/microduck&quot;, &quot;url&quot;: &quot;https://github.com/pollen-robotics/microduck&quot;, &quot;owner&quot;: &quot;pollen-robotics&quot;, &quot;stars&quot;: 10814, &quot;desc&quot;: &quot;Microduck \u662f\u4e00\u6b3e\u7531 Pollen Robotics \u5f00\u6e90\u7684\u5fae\u578b\u53cc\u8db3\u673a\u5668\u9e2d\uff0c\u7528 Rust \u7f16\u5199\u63a7\u5236\u7a0b\u5e8f\u3002\u5b83\u628a\u673a\u5668\u4eba\u786c\u4ef6\u548c\u8f6f\u4ef6\u6253\u5305\u6210\u5c0f\u5de7\u6613\u4e0a\u624b\u7684\u5e73\u53f0\uff0c\u8ba9\u7231\u597d\u8005\u548c\u5b66\u751f\u80fd\u4f4e\u6210\u672c\u5b66\u4e60\u53cc\u8db3\u884c\u8d70\u3001\u6b65\u6001\u63a7\u5236\u548c\u5d4c\u5165\u5f0f\u7f16\u7a0b\u3002\u6bd4\u5982\u4f60\u53ef\u4ee5\u7ed9\u5b83\u5199\u4ee3\u7801\u8ba9\u5b83\u6447\u6447\u6446\u6446\u8d70\u8def\u3001\u4fdd\u6301\u5e73\u8861\u6216\u505a\u52a8\u4f5c\uff0c\u9002\u5408\u505a\u673a\u5668\u4eba\u6559\u5b66\u548c\u521b\u610f\u5b9e\u9a8c\u3002&quot;, &quot;site&quot;: &quot;https://pollen-robotics.com/microduck&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Microduck 是一款由 Pollen Robotics 开源的微型双足机器鸭，用 Rust 编写控制程序。它把机器人硬件和软件打包成小巧易上手的平台，让爱好者和学生能低成本学习双足行走、步态控制和嵌入式编程。比如你可以给它写代码让它摇摇摆摆走路、保持平衡或做动作，适合做机器人教学和创意实验。</p>
+          
+          <div class="byline">
+            <span>pollen-robotics</span><i>·</i>
+            <span>更新于 2026-10-24</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://pollen-robotics.com/microduck" target="_blank">https://pollen-robotics.com/microduck</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/pollen-robotics/microduck.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/pollen-robotics/microduck">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
+    btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = meta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>
