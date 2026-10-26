@@ -519,6 +519,20 @@
    "tags": [],
    "saved_at": "2026-10-26",
    "source": "feishu"
+  },
+  {
+   "repo": "peach-mitao/peach",
+   "url": "https://github.com/peach-mitao/peach",
+   "owner": "peach-mitao",
+   "stars": 11863,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Peach 是一个单用户、本地优先的个人媒体馆藏系统，专为管理成人影片收藏而设计。它把本地硬盘和 115、PikPak、OneDrive 等网盘里的影片汇成一个统一馆藏，支持封面墙挑片、原位播放、字幕搜索加载，还能读取已有 NFO 和海报补全标题、女优、厂牌信息，并跨站关注创作者更新、按番号云下载入库。观看记录和设置都存在本机，扫描不改原文件，适合想自己掌控影片库的成年用户。",
+   "site": "https://peach.video",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-26",
+   "source": "feishu"
   }
  ]
 }
