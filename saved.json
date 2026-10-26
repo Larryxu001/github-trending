@@ -492,6 +492,19 @@
     "做视频"
    ],
    "saved_at": "2026-10-23"
+  },
+  {
+   "repo": "TauricResearch/TradingAgents",
+   "url": "https://github.com/TauricResearch/TradingAgents",
+   "owner": "TauricResearch",
+   "stars": 114290,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "TradingAgents 是一个基于大语言模型的多智能体金融交易框架，把分析师、研究员、交易员和风控等角色拆成不同 AI 智能体，让它们像真实交易团队一样分工讨论、互相质疑，最终给出交易决策。它解决的是单一模型难以兼顾多角度分析的问题，可用于研究多智能体协作在量化交易中的效果，例如让看多和看空的智能体辩论后再下单。",
+   "site": "https://arxiv.org/pdf/2412.20138",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-26"
   }
  ]
 }
