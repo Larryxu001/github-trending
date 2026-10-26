@@ -505,6 +505,20 @@
    "note": "",
    "tags": [],
    "saved_at": "2026-10-26"
+  },
+  {
+   "repo": "cloudflare/cloudflared",
+   "url": "https://github.com/cloudflare/cloudflared",
+   "owner": "cloudflare",
+   "stars": 16245,
+   "category": "安全",
+   "emoji": "🔐",
+   "desc": "cloudflared 是 Cloudflare Tunnel 的命令行客户端，能在你的服务器和 Cloudflare 网络之间建立一条加密隧道，把外部访问安全地转发到本地服务，而无需在防火墙上开放端口。比如你想让家里的 NAS 或内网网站对外可用，又不想暴露公网 IP，运行它即可。它还支持通过隧道访问 SSH、RDP 等 TCP 服务，适合零信任网络接入场景。",
+   "site": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-26",
+   "source": "feishu"
   }
  ]
 }
