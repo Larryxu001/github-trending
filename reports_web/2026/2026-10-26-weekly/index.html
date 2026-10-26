@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 精选周报 · 2026-10-26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.024</span></div>
+    <h1>Github开源趋势精选周报</h1>
+    <div class="standfirst">本期收藏精选，保留备注与标签</div>
+    <div class="dateline"><b>2026 年 10 月 26 日</b>　·　第 24 期　·　本期共收录 <b>12</b> 个项目</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>开发工具与框架<span class="toc-n">5</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>fastapi</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>MediaCrawler</a><a class="toc-proj" href="#sec-1-3"><span class="toc-no">03</span>twenty</a><a class="toc-proj" href="#sec-1-4"><span class="toc-no">04</span>LinkSwift</a><a class="toc-proj" href="#sec-1-5"><span class="toc-no">05</span>freehire</a></details><details><summary><span class="toc-no">02</span>Agent 技能与插件<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>graphify</a></details><details><summary><span class="toc-no">03</span>数据 / 数据库<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>supabase</a></details><details><summary><span class="toc-no">04</span>Agent 效率优化<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>headroom</a></details><details><summary><span class="toc-no">05</span>其他<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-5-1"><span class="toc-no">01</span>LibreTV</a><a class="toc-proj" href="#sec-5-2"><span class="toc-no">02</span>jasna</a><a class="toc-proj" href="#sec-5-3"><span class="toc-no">03</span>xianyu-super-butler</a></details><details><summary><span class="toc-no">06</span>移动 / 桌面应用<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-6-1"><span class="toc-no">01</span>Filee</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">开发工具与框架</span><span class="sec-count">5 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/fastapi/fastapi" target="_blank">fastapi/fastapi</a></h3>
+            <span class="stars">★ 103,556</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;fastapi/fastapi&quot;, &quot;url&quot;: &quot;https://github.com/fastapi/fastapi&quot;, &quot;owner&quot;: &quot;fastapi&quot;, &quot;stars&quot;: 103556, &quot;desc&quot;: &quot;FastAPI \u662f\u4e00\u4e2a\u7528 Python \u7f16\u5199\u7684\u9ad8\u6027\u80fd Web \u6846\u67b6\uff0c\u4e13\u95e8\u7528\u6765\u5feb\u901f\u642d\u5efa\u540e\u7aef API \u670d\u52a1\u3002\u5b83\u57fa\u4e8e\u7c7b\u578b\u6ce8\u89e3\u81ea\u52a8\u6821\u9a8c\u8bf7\u6c42\u6570\u636e\u5e76\u751f\u6210\u4ea4\u4e92\u5f0f\u63a5\u53e3\u6587\u6863\uff0c\u5f00\u53d1\u8005\u53ea\u9700\u5199\u5c11\u91cf\u4ee3\u7801\u5c31\u80fd\u5b8c\u6210\u8def\u7531\u3001\u53c2\u6570\u89e3\u6790\u548c\u9519\u8bef\u5904\u7406\u3002\u6bd4\u5982\u4f60\u8981\u505a\u4e00\u4e2a\u7528\u6237\u767b\u5f55\u63a5\u53e3\uff0c\u5b9a\u4e49\u597d\u8bf7\u6c42\u548c\u8fd4\u56de\u7684\u6570\u636e\u7ed3\u6784\u540e\uff0cFastAPI \u4f1a\u81ea\u52a8\u68c0\u67e5\u8f93\u5165\u683c\u5f0f\u5e76\u751f\u6210\u53ef\u5728\u7ebf\u6d4b\u8bd5\u7684\u6587\u6863\u9875\u9762\uff0c\u975e\u5e38\u9002\u5408\u4ece\u539f\u578b\u5230\u751f\u4ea7\u73af\u5883\u7684 API \u5f00\u53d1\u3002&quot;, &quot;site&quot;: &quot;https://fastapi.tiangolo.com/&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">FastAPI 是一个用 Python 编写的高性能 Web 框架，专门用来快速搭建后端 API 服务。它基于类型注解自动校验请求数据并生成交互式接口文档，开发者只需写少量代码就能完成路由、参数解析和错误处理。比如你要做一个用户登录接口，定义好请求和返回的数据结构后，FastAPI 会自动检查输入格式并生成可在线测试的文档页面，非常适合从原型到生产环境的 API 开发。</p>
+          <p class="desc">标签：后端</p>
+          <div class="byline">
+            <span>fastapi</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://fastapi.tiangolo.com/" target="_blank">https://fastapi.tiangolo.com/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/fastapi/fastapi.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/fastapi/fastapi">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/NanmiCoder/MediaCrawler" target="_blank">NanmiCoder/MediaCrawler</a></h3>
+            <span class="stars">★ 67,591</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;NanmiCoder/MediaCrawler&quot;, &quot;url&quot;: &quot;https://github.com/NanmiCoder/MediaCrawler&quot;, &quot;owner&quot;: &quot;NanmiCoder&quot;, &quot;stars&quot;: 67591, &quot;desc&quot;: &quot;MediaCrawler \u662f\u4e00\u4e2a\u591a\u5e73\u53f0\u81ea\u5a92\u4f53\u6570\u636e\u91c7\u96c6\u5de5\u5177\uff0c\u652f\u6301\u5c0f\u7ea2\u4e66\u3001\u6296\u97f3\u3001\u5feb\u624b\u3001B\u7ad9\u3001\u5fae\u535a\u3001\u8d34\u5427\u3001\u77e5\u4e4e\u7b49\u4e3b\u6d41\u5e73\u53f0\uff0c\u53ef\u6293\u53d6\u5e16\u5b50\u3001\u89c6\u9891\u4fe1\u606f\u548c\u8bc4\u8bba\u3002\u5b83\u57fa\u4e8e Playwright \u6d4f\u89c8\u5668\u81ea\u52a8\u5316\uff0c\u901a\u8fc7\u4fdd\u7559\u767b\u5f55\u6001\u76f4\u63a5\u83b7\u53d6\u7b7e\u540d\u53c2\u6570\uff0c\u65e0\u9700\u9006\u5411\u590d\u6742\u52a0\u5bc6\u7b97\u6cd5\uff0c\u5927\u5e45\u964d\u4f4e\u722c\u866b\u95e8\u69db\u3002\u4f8b\u5982\u8f93\u5165\u5173\u952e\u8bcd\u5373\u53ef\u6279\u91cf\u91c7\u96c6\u5c0f\u7ea2\u4e66\u7b14\u8bb0\u53ca\u8bc4\u8bba\uff0c\u5e76\u652f\u6301\u5bfc\u51fa CSV\u3001JSON\u3001Excel\u3001MySQL \u7b49\u591a\u79cd\u683c\u5f0f\uff0c\u9002\u5408\u5b66\u4e60\u722c\u866b\u6280\u672f\u548c\u8fdb\u884c\u516c\u5f00\u6570\u636e\u5206\u6790\u3002&quot;, &quot;site&quot;: &quot;https://nanmicoder.github.io/MediaCrawler/&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">MediaCrawler 是一个多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎等主流平台，可抓取帖子、视频信息和评论。它基于 Playwright 浏览器自动化，通过保留登录态直接获取签名参数，无需逆向复杂加密算法，大幅降低爬虫门槛。例如输入关键词即可批量采集小红书笔记及评论，并支持导出 CSV、JSON、Excel、MySQL 等多种格式，适合学习爬虫技术和进行公开数据分析。</p>
+          
+          <div class="byline">
+            <span>NanmiCoder</span><i>·</i>
+            <span>更新于 2026-10-21</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://nanmicoder.github.io/MediaCrawler/" target="_blank">https://nanmicoder.github.io/MediaCrawler/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/NanmiCoder/MediaCrawler.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/NanmiCoder/MediaCrawler">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/twentyhq/twenty" target="_blank">twentyhq/twenty</a></h3>
+            <span class="stars">★ 58,946</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;twentyhq/twenty&quot;, &quot;url&quot;: &quot;https://github.com/twentyhq/twenty&quot;, &quot;owner&quot;: &quot;twentyhq&quot;, &quot;stars&quot;: 58946, &quot;desc&quot;: &quot;Twenty \u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5ba2\u6237\u5173\u7cfb\u7ba1\u7406\uff08CRM\uff09\u7cfb\u7edf\uff0c\u5b9a\u4f4d\u4e3a Salesforce \u7684\u5f00\u653e\u66ff\u4ee3\u54c1\uff0c\u5e76\u9488\u5bf9 AI \u573a\u666f\u505a\u4e86\u8bbe\u8ba1\u3002\u5b83\u5e2e\u4f60\u96c6\u4e2d\u7ba1\u7406\u5ba2\u6237\u4fe1\u606f\u3001\u9500\u552e\u7ebf\u7d22\u548c\u6c9f\u901a\u8bb0\u5f55\uff0c\u907f\u514d\u88ab\u5546\u4e1a CRM \u7684\u9ad8\u4ef7\u548c\u5c01\u95ed\u751f\u6001\u7ed1\u5b9a\u3002\u6bd4\u5982\u5c0f\u56e2\u961f\u53ef\u4ee5\u7528\u5b83\u81ea\u5efa\u9500\u552e\u7ba1\u9053\uff0c\u628a\u90ae\u4ef6\u3001\u516c\u53f8\u3001\u8054\u7cfb\u4eba\u5173\u8054\u8d77\u6765\uff0c\u8fd8\u80fd\u57fa\u4e8e GraphQL \u63a5\u53e3\u548c AI \u80fd\u529b\u505a\u4e8c\u6b21\u5f00\u53d1\u3002&quot;, &quot;site&quot;: &quot;https://twenty.com&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Twenty 是一个开源的客户关系管理（CRM）系统，定位为 Salesforce 的开放替代品，并针对 AI 场景做了设计。它帮你集中管理客户信息、销售线索和沟通记录，避免被商业 CRM 的高价和封闭生态绑定。比如小团队可以用它自建销售管道，把邮件、公司、联系人关联起来，还能基于 GraphQL 接口和 AI 能力做二次开发。</p>
+          
+          <div class="byline">
+            <span>twentyhq</span><i>·</i>
+            <span>更新于 2026-10-22</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://twenty.com" target="_blank">https://twenty.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/twentyhq/twenty.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/twentyhq/twenty">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/hmjz100/LinkSwift" target="_blank">hmjz100/LinkSwift</a></h3>
+            <span class="stars">★ 23,488</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;hmjz100/LinkSwift&quot;, &quot;url&quot;: &quot;https://github.com/hmjz100/LinkSwift&quot;, &quot;owner&quot;: &quot;hmjz100&quot;, &quot;stars&quot;: 23488, &quot;desc&quot;: &quot;LinkSwift \u662f\u4e00\u4e2a\u57fa\u4e8e JavaScript \u7684\u7f51\u76d8\u76f4\u94fe\u4e0b\u8f7d\u5de5\u5177\uff0c\u80fd\u5e2e\u4f60\u628a\u767e\u5ea6\u7f51\u76d8\u3001\u963f\u91cc\u4e91\u76d8\u3001\u5938\u514b\u7f51\u76d8\u7b49\u516b\u5927\u7f51\u76d8\u7684\u6587\u4ef6\uff0c\u89e3\u6790\u51fa\u53ef\u76f4\u63a5\u4e0b\u8f7d\u7684\u76f4\u94fe\u5730\u5740\uff0c\u518d\u914d\u5408 Aria2\u3001Motrix \u7b49\u4e0b\u8f7d\u5668\u4f7f\u7528\uff0c\u4ece\u800c\u7ed5\u8fc7\u5b98\u65b9\u5ba2\u6237\u7aef\u7684\u9650\u901f\u3002\u6bd4\u5982\u4f60\u60f3\u4e0b\u8f7d\u767e\u5ea6\u7f51\u76d8\u91cc\u7684\u5927\u6587\u4ef6\uff0c\u7528\u5b83\u83b7\u53d6\u76f4\u94fe\u540e\u5c31\u80fd\u7528\u4e0b\u8f7d\u5de5\u5177\u9ad8\u901f\u4e0b\u8f7d\uff0c\u4e0d\u7528\u518d\u5fcd\u53d7\u51e0\u5341 KB/s \u7684\u9f9f\u901f\u3002&quot;, &quot;site&quot;: &quot;https://github.com/hmjz100/LinkSwift&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">LinkSwift 是一个基于 JavaScript 的网盘直链下载工具，能帮你把百度网盘、阿里云盘、夸克网盘等八大网盘的文件，解析出可直接下载的直链地址，再配合 Aria2、Motrix 等下载器使用，从而绕过官方客户端的限速。比如你想下载百度网盘里的大文件，用它获取直链后就能用下载工具高速下载，不用再忍受几十 KB/s 的龟速。</p>
+          <p class="desc"><b>我的备注：</b>下载提速</p>
+          <p class="desc">标签：效率</p>
+          <div class="byline">
+            <span>hmjz100</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://github.com/hmjz100/LinkSwift" target="_blank">https://github.com/hmjz100/LinkSwift</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/hmjz100/LinkSwift.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/hmjz100/LinkSwift">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/strelov1/freehire" target="_blank">strelov1/freehire</a></h3>
+            <span class="stars">★ 2,172</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;strelov1/freehire&quot;, &quot;url&quot;: &quot;https://github.com/strelov1/freehire&quot;, &quot;owner&quot;: &quot;strelov1&quot;, &quot;stars&quot;: 2172, &quot;desc&quot;: &quot;freehire \u662f\u4e00\u4e2a\u7528 Go \u7f16\u5199\u7684\u5f00\u6e90\u6c42\u804c\u641c\u7d22\u5f15\u64ce\uff0c\u628a\u5206\u6563\u5728\u5404\u62db\u8058\u7f51\u7ad9\u548c\u516c\u53f8\u62db\u8058\u7cfb\u7edf\uff08ATS\uff09\u91cc\u7684\u804c\u4f4d\u4fe1\u606f\u6293\u53d6\u3001\u805a\u5408\u5230\u4e00\u8d77\uff0c\u8ba9\u6c42\u804c\u8005\u5728\u4e00\u4e2a\u5730\u65b9\u5c31\u80fd\u641c\u7d22\u548c\u7b5b\u9009\u5c97\u4f4d\uff0c\u4e0d\u7528\u53cd\u590d\u5207\u6362\u7f51\u7ad9\u3002\u5b83\u89e3\u51b3\u7684\u662f\u804c\u4f4d\u4fe1\u606f\u788e\u7247\u5316\u3001\u641c\u7d22\u6548\u7387\u4f4e\u7684\u95ee\u9898\uff0c\u9002\u5408\u60f3\u5feb\u901f\u627e\u5230\u5339\u914d\u5c97\u4f4d\u7684\u6c42\u804c\u8005\uff0c\u4e5f\u9002\u5408\u60f3\u81ea\u5efa\u62db\u8058\u805a\u5408\u7ad9\u70b9\u7684\u5f00\u53d1\u8005\u3002&quot;, &quot;site&quot;: &quot;https://freehire.me&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">freehire 是一个用 Go 编写的开源求职搜索引擎，把分散在各招聘网站和公司招聘系统（ATS）里的职位信息抓取、聚合到一起，让求职者在一个地方就能搜索和筛选岗位，不用反复切换网站。它解决的是职位信息碎片化、搜索效率低的问题，适合想快速找到匹配岗位的求职者，也适合想自建招聘聚合站点的开发者。</p>
+          
+          <div class="byline">
+            <span>strelov1</span><i>·</i>
+            <span>更新于 2026-10-22</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://freehire.me" target="_blank">https://freehire.me</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/strelov1/freehire.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/strelov1/freehire">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify</a></h3>
+            <span class="stars">★ 129,921</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Graphify-Labs/graphify&quot;, &quot;url&quot;: &quot;https://github.com/Graphify-Labs/graphify&quot;, &quot;owner&quot;: &quot;Graphify-Labs&quot;, &quot;stars&quot;: 129921, &quot;desc&quot;: &quot;Graphify \u80fd\u628a\u4efb\u610f\u4ee3\u7801\u5e93\u8fde\u540c\u6587\u6863\u3001SQL \u8868\u7ed3\u6784\u3001\u914d\u7f6e\u548c PDF \u4e00\u8d77\uff0c\u8f6c\u6210\u53ef\u67e5\u8be2\u7684\u77e5\u8bc6\u56fe\u8c31\u3002\u5b83\u4f5c\u4e3a Claude Code\u3001Cursor\u3001Codex \u548c Gemini CLI \u7684 /graphify \u6280\u80fd\u4f7f\u7528\uff0c\u9760\u672c\u5730\u786e\u5b9a\u6027\u7684 AST \u89e3\u6790\u5efa\u56fe\uff0c\u6bcf\u6761\u8fb9\u90fd\u6709\u89e3\u91ca\uff0c\u4e0d\u9700\u8981\u5411\u91cf\u6570\u636e\u5e93\u3002\u6bd4\u5982\u4f60\u63a5\u624b\u4e00\u4e2a\u964c\u751f\u9879\u76ee\uff0c\u53ef\u4ee5\u76f4\u63a5\u95ee\u300c\u54ea\u4e9b\u51fd\u6570\u4f1a\u5199\u8fd9\u5f20\u8868\u300d\uff0c\u5b83\u987a\u7740\u56fe\u8c31\u7ed9\u51fa\u7b54\u6848\u548c\u4f9d\u636e\uff0c\u9002\u5408\u4ee3\u7801\u7406\u89e3\u3001\u68c0\u7d22\u548c AI \u7f16\u7a0b\u52a9\u624b\u589e\u5f3a\u3002&quot;, &quot;site&quot;: &quot;https://www.graphify.com&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Graphify 能把任意代码库连同文档、SQL 表结构、配置和 PDF 一起，转成可查询的知识图谱。它作为 Claude Code、Cursor、Codex 和 Gemini CLI 的 /graphify 技能使用，靠本地确定性的 AST 解析建图，每条边都有解释，不需要向量数据库。比如你接手一个陌生项目，可以直接问「哪些函数会写这张表」，它顺着图谱给出答案和依据，适合代码理解、检索和 AI 编程助手增强。</p>
+          <p class="desc">标签：做工具</p>
+          <div class="byline">
+            <span>Graphify-Labs</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://www.graphify.com" target="_blank">https://www.graphify.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Graphify-Labs/graphify.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Graphify-Labs/graphify">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">数据 / 数据库</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/supabase/supabase" target="_blank">supabase/supabase</a></h3>
+            <span class="stars">★ 112,779</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;supabase/supabase&quot;, &quot;url&quot;: &quot;https://github.com/supabase/supabase&quot;, &quot;owner&quot;: &quot;supabase&quot;, &quot;stars&quot;: 112779, &quot;desc&quot;: &quot;Supabase \u662f\u4e00\u4e2a\u57fa\u4e8e PostgreSQL \u7684\u5f00\u6e90\u540e\u7aef\u5f00\u53d1\u5e73\u53f0\uff0c\u76f8\u5f53\u4e8e\u5f00\u6e90\u7684 Firebase \u66ff\u4ee3\u54c1\u3002\u5b83\u63d0\u4f9b\u4e13\u7528 Postgres \u6570\u636e\u5e93\uff0c\u5e76\u5185\u7f6e\u7528\u6237\u8ba4\u8bc1\u3001\u6587\u4ef6\u5b58\u50a8\u3001\u5b9e\u65f6\u8ba2\u9605\u548c\u5411\u91cf\u68c0\u7d22\u7b49\u80fd\u529b\uff0c\u8ba9\u5f00\u53d1\u8005\u4e0d\u7528\u81ea\u5df1\u642d\u5efa\u540e\u7aef\u5c31\u80fd\u5feb\u901f\u5f00\u53d1\u7f51\u7ad9\u3001\u79fb\u52a8\u5e94\u7528\u548c AI \u5e94\u7528\u3002\u6bd4\u5982\u505a\u4e00\u4e2a\u5e26\u767b\u5f55\u548c\u5b9e\u65f6\u804a\u5929\u7684\u5c0f\u7a0b\u5e8f\uff0c\u53ef\u4ee5\u76f4\u63a5\u7528\u5b83\u7684\u8ba4\u8bc1\u548c\u5b9e\u65f6\u529f\u80fd\uff0c\u7701\u53bb\u5927\u91cf\u670d\u52a1\u5668\u914d\u7f6e\u5de5\u4f5c\u3002&quot;, &quot;site&quot;: &quot;https://supabase.com&quot;, &quot;category&quot;: &quot;\u6570\u636e / \u6570\u636e\u5e93&quot;, &quot;emoji&quot;: &quot;\ud83d\udcbe&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Supabase 是一个基于 PostgreSQL 的开源后端开发平台，相当于开源的 Firebase 替代品。它提供专用 Postgres 数据库，并内置用户认证、文件存储、实时订阅和向量检索等能力，让开发者不用自己搭建后端就能快速开发网站、移动应用和 AI 应用。比如做一个带登录和实时聊天的小程序，可以直接用它的认证和实时功能，省去大量服务器配置工作。</p>
+          <p class="desc">标签：后端</p>
+          <div class="byline">
+            <span>supabase</span><i>·</i>
+            <span>更新于 2026-10-22</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://supabase.com" target="_blank">https://supabase.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/supabase/supabase.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/supabase/supabase">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">Agent 效率优化</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/headroomlabs-ai/headroom" target="_blank">headroomlabs-ai/headroom</a></h3>
+            <span class="stars">★ 76,129</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;headroomlabs-ai/headroom&quot;, &quot;url&quot;: &quot;https://github.com/headroomlabs-ai/headroom&quot;, &quot;owner&quot;: &quot;headroomlabs-ai&quot;, &quot;stars&quot;: 76129, &quot;desc&quot;: &quot;Headroom \u662f\u4e00\u4e2a\u5728\u5185\u5bb9\u9001\u5165\u5927\u6a21\u578b\u4e4b\u524d\u5148\u505a\u538b\u7f29\u7684\u5de5\u5177\uff0c\u4e13\u95e8\u5904\u7406\u5de5\u5177\u8f93\u51fa\u3001\u65e5\u5fd7\u3001\u6587\u4ef6\u548c RAG \u7247\u6bb5\uff0c\u80fd\u5728\u7b54\u6848\u57fa\u672c\u4e0d\u53d8\u7684\u524d\u63d0\u4e0b\u5927\u5e45\u51cf\u5c11 token \u6d88\u8017\u2014\u2014\u7f16\u7801\u667a\u80fd\u4f53\u7701\u7ea6 20%\uff0cJSON \u6570\u636e\u53ef\u7701 60% \u5230 95%\u3002\u5b83\u63d0\u4f9b\u5e93\u3001\u4ee3\u7406\u548c MCP \u670d\u52a1\u5668\u4e09\u79cd\u7528\u6cd5\uff0c\u9002\u5408\u63a5\u5165 Claude Code\u3001Cursor\u3001LangChain \u7b49\u573a\u666f\uff0c\u5e2e\u52a9\u5f00\u53d1\u8005\u964d\u4f4e\u8c03\u7528\u6210\u672c\u3001\u7f13\u89e3\u4e0a\u4e0b\u6587\u7a97\u53e3\u538b\u529b\u3002&quot;, &quot;site&quot;: &quot;https://docs.headroomlabs.ai/docs&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Headroom 是一个在内容送入大模型之前先做压缩的工具，专门处理工具输出、日志、文件和 RAG 片段，能在答案基本不变的前提下大幅减少 token 消耗——编码智能体省约 20%，JSON 数据可省 60% 到 95%。它提供库、代理和 MCP 服务器三种用法，适合接入 Claude Code、Cursor、LangChain 等场景，帮助开发者降低调用成本、缓解上下文窗口压力。</p>
+          <p class="desc">标签：RAG</p>
+          <div class="byline">
+            <span>headroomlabs-ai</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://docs.headroomlabs.ai/docs" target="_blank">https://docs.headroomlabs.ai/docs</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/headroomlabs-ai/headroom.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/headroomlabs-ai/headroom">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-5">
+        <div class="sec-kicker"><span class="sec-no">SECTION 05</span><span class="sec-name">其他</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-5-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/LibreSpark/LibreTV" target="_blank">LibreSpark/LibreTV</a></h3>
+            <span class="stars">★ 18,264</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;LibreSpark/LibreTV&quot;, &quot;url&quot;: &quot;https://github.com/LibreSpark/LibreTV&quot;, &quot;owner&quot;: &quot;LibreSpark&quot;, &quot;stars&quot;: 18264, &quot;desc&quot;: &quot;LibreTV \u662f\u4e00\u4e2a\u5f00\u6e90\u5f71\u89c6\u805a\u5408\u7ad9\u9879\u76ee\uff0c\u7528 TypeScript \u548c Next.js \u5f00\u53d1\uff0c\u4e3b\u6253\u4e00\u5206\u949f\u5feb\u901f\u642d\u5efa\u81ea\u5df1\u7684\u5728\u7ebf\u5f71\u89c6\u7f51\u7ad9\u3002\u5b83\u652f\u6301 Docker \u7b49\u591a\u79cd\u90e8\u7f72\u65b9\u5f0f\uff0c\u5185\u7f6e\u54cd\u5e94\u5f0f\u754c\u9762\uff0c\u9002\u5408\u4e2a\u4eba\u6216\u5c0f\u56e2\u961f\u642d\u5efa\u7535\u5f71\u3001\u7535\u89c6\u5267\u89c2\u770b\u5165\u53e3\u3002\u6bd4\u5982\u4f60\u60f3\u7ed9\u670b\u53cb\u505a\u4e00\u4e2a\u5e72\u51c0\u7684\u8ffd\u5267\u7ad9\uff0c\u53ea\u9700\u62c9\u53d6\u955c\u50cf\u8fd0\u884c\uff0c\u5c31\u80fd\u62e5\u6709\u5e26\u641c\u7d22\u548c\u64ad\u653e\u529f\u80fd\u7684\u5f71\u89c6\u9875\u9762\uff0c\u7701\u53bb\u4ece\u96f6\u5f00\u53d1\u524d\u7aef\u7684\u9ebb\u70e6\u3002&quot;, &quot;site&quot;: &quot;https://libretv.is-an.org&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">LibreTV 是一个开源影视聚合站项目，用 TypeScript 和 Next.js 开发，主打一分钟快速搭建自己的在线影视网站。它支持 Docker 等多种部署方式，内置响应式界面，适合个人或小团队搭建电影、电视剧观看入口。比如你想给朋友做一个干净的追剧站，只需拉取镜像运行，就能拥有带搜索和播放功能的影视页面，省去从零开发前端的麻烦。</p>
+          <p class="desc">标签：做视频</p>
+          <div class="byline">
+            <span>LibreSpark</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://libretv.is-an.org" target="_blank">https://libretv.is-an.org</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/LibreSpark/LibreTV.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/LibreSpark/LibreTV">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/Kruk2/jasna" target="_blank">Kruk2/jasna</a></h3>
+            <span class="stars">★ 2,322</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Kruk2/jasna&quot;, &quot;url&quot;: &quot;https://github.com/Kruk2/jasna&quot;, &quot;owner&quot;: &quot;Kruk2&quot;, &quot;stars&quot;: 2322, &quot;desc&quot;: &quot;jasna \u662f\u4e00\u4e2a\u7528 Python \u7f16\u5199\u7684\u89c6\u9891\u4fee\u590d\u5de5\u5177\uff0c\u4e13\u95e8\u7528\u6765\u6e05\u7406\u89c6\u9891\u4e2d\u7684\u7455\u75b5\uff0c\u6bd4\u5982\u53bb\u9664\u566a\u70b9\u3001\u5212\u75d5\u3001\u95ea\u70c1\u6216\u538b\u7f29\u5931\u771f\u3002\u5b83\u9002\u5408\u5904\u7406\u8001\u7247\u7ffb\u65b0\u6216\u4f4e\u8d28\u91cf\u7d20\u6750\uff0c\u8ba9\u753b\u9762\u66f4\u5e72\u51c0\u7a33\u5b9a\u3002\u4f8b\u5982\uff0c\u4f60\u53ef\u4ee5\u7528\u5b83\u4fee\u590d\u4e00\u6bb5\u5145\u6ee1\u566a\u70b9\u7684\u5bb6\u5ead\u5f55\u50cf\uff0c\u8f93\u51fa\u66f4\u6e05\u6670\u7684\u7248\u672c\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">jasna 是一个用 Python 编写的视频修复工具，专门用来清理视频中的瑕疵，比如去除噪点、划痕、闪烁或压缩失真。它适合处理老片翻新或低质量素材，让画面更干净稳定。例如，你可以用它修复一段充满噪点的家庭录像，输出更清晰的版本。</p>
+          <p class="desc">标签：做视频</p>
+          <div class="byline">
+            <span>Kruk2</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Kruk2/jasna.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Kruk2/jasna">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/23Star/xianyu-super-butler" target="_blank">23Star/xianyu-super-butler</a></h3>
+            <span class="stars">★ 1,316</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;23Star/xianyu-super-butler&quot;, &quot;url&quot;: &quot;https://github.com/23Star/xianyu-super-butler&quot;, &quot;owner&quot;: &quot;23Star&quot;, &quot;stars&quot;: 1316, &quot;desc&quot;: &quot;\u95f2\u9c7c\u8d85\u7ea7\u7ba1\u5bb6\u662f\u4e00\u6b3e\u9762\u5411\u95f2\u9c7c\u5356\u5bb6\u7684\u81ea\u52a8\u5316\u7ba1\u7406\u540e\u53f0\uff0c\u7528 Python \u5f00\u53d1\uff0c\u53ef\u628a\u591a\u4e2a\u95f2\u9c7c\u8d26\u53f7\u7edf\u4e00\u6258\u7ba1\u3002\u5b83\u80fd\u81ea\u52a8\u53d1\u8d27\uff08\u53d1\u5361\u5bc6\uff09\u3001\u5173\u952e\u8bcd\u52a0 AI \u81ea\u52a8\u56de\u590d\u3001\u81ea\u52a8\u8bc4\u4ef7\u3001\u6c42\u5c0f\u7ea2\u82b1\u3001\u5b9a\u65f6\u64e6\u4eae\u5546\u54c1\uff0c\u5e76\u540c\u6b65\u8ba2\u5355\u548c\u5546\u54c1\u6570\u636e\u3002\u5356\u5bb6\u4e0d\u7528\u518d\u76ef\u7740\u624b\u673a\u9010\u6761\u56de\u590d\uff0c\u6253\u5f00\u7f51\u9875\u5c31\u80fd\u770b\u6210\u4ea4\u989d\u3001\u5e93\u5b58\u548c\u4f1a\u8bdd\uff0c\u9002\u5408\u505a\u865a\u62df\u5546\u54c1\u6216\u591a\u8d26\u53f7\u7ecf\u8425\u7684\u4e2a\u4eba\u5356\u5bb6\u3002&quot;, &quot;site&quot;: &quot;https://xy.corleom.com&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">闲鱼超级管家是一款面向闲鱼卖家的自动化管理后台，用 Python 开发，可把多个闲鱼账号统一托管。它能自动发货（发卡密）、关键词加 AI 自动回复、自动评价、求小红花、定时擦亮商品，并同步订单和商品数据。卖家不用再盯着手机逐条回复，打开网页就能看成交额、库存和会话，适合做虚拟商品或多账号经营的个人卖家。</p>
+          
+          <div class="byline">
+            <span>23Star</span><i>·</i>
+            <span>更新于 2026-10-21</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://xy.corleom.com" target="_blank">https://xy.corleom.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/23Star/xianyu-super-butler.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/23Star/xianyu-super-butler">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-6">
+        <div class="sec-kicker"><span class="sec-no">SECTION 06</span><span class="sec-name">移动 / 桌面应用</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-6-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/KnifeLemon/Filee" target="_blank">KnifeLemon/Filee</a></h3>
+            <span class="stars">★ 7,397</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;KnifeLemon/Filee&quot;, &quot;url&quot;: &quot;https://github.com/KnifeLemon/Filee&quot;, &quot;owner&quot;: &quot;KnifeLemon&quot;, &quot;stars&quot;: 7397, &quot;desc&quot;: &quot;Filee \u662f\u4e00\u6b3e\u514d\u8d39\u5f00\u6e90\u7684\u79bb\u7ebf\u6587\u4ef6\u8f6c\u6362\u5de5\u5177\uff0c\u7528\u300c\u62d6\u62fd\u300d\u4ee3\u66ff\u7e41\u7410\u7684\u83dc\u5355\u64cd\u4f5c\uff1a\u6309\u4f4f Ctrl \u628a\u6587\u4ef6\u62d6\u5230\u5149\u6807\u5904\u5f39\u51fa\u7684\u683c\u5f0f\u5706\u73af\u4e0a\uff0c\u5c31\u80fd\u5b8c\u6210\u8f6c\u6362\u3002\u5b83\u652f\u6301\u56fe\u7247\u3001PDF\u3001Word\u3001Excel\u3001PPT\u3001HWP\u3001\u89c6\u9891\u3001\u97f3\u9891\u3001\u7535\u5b50\u4e66\u3001\u538b\u7f29\u5305\u7b49 244 \u79cd\u4ee5\u4e0a\u683c\u5f0f\uff0c\u65e0\u9700\u5b89\u88c5 Office \u6216\u4e0a\u4f20\u4e91\u7aef\uff0c\u6587\u4ef6\u59cb\u7ec8\u7559\u5728\u672c\u673a\u3002\u4f8b\u5982\u628a iPhone \u7684 HEIC \u7167\u7247\u62d6\u5230 JPG \u4e0a\u5373\u53ef\u79d2\u8f6c\uff0c\u8fd8\u652f\u6301\u6279\u91cf\u8f6c\u6362\u3001\u6587\u4ef6\u5939\u76d1\u63a7\u548c\u547d\u4ee4\u884c\u8c03\u7528\u3002&quot;, &quot;site&quot;: &quot;https://filee.sh&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Filee 是一款免费开源的离线文件转换工具，用「拖拽」代替繁琐的菜单操作：按住 Ctrl 把文件拖到光标处弹出的格式圆环上，就能完成转换。它支持图片、PDF、Word、Excel、PPT、HWP、视频、音频、电子书、压缩包等 244 种以上格式，无需安装 Office 或上传云端，文件始终留在本机。例如把 iPhone 的 HEIC 照片拖到 JPG 上即可秒转，还支持批量转换、文件夹监控和命令行调用。</p>
+          
+          <div class="byline">
+            <span>KnifeLemon</span><i>·</i>
+            <span>更新于 2026-10-20</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://filee.sh" target="_blank">https://filee.sh</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/KnifeLemon/Filee.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/KnifeLemon/Filee">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
+    btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = meta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>
