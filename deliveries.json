@@ -6319,7 +6319,7 @@
   ]
  },
  "weekly:2026-10-26": {
-  "status": "sending",
+  "status": "prepared",
   "report": {
    "date": "2026-10-26",
    "new_count": 12,
@@ -6573,7 +6573,11 @@
       ]
      }
     },
-    "status": "sending"
+    "status": "sent",
+    "receipt": {
+     "code": 0,
+     "confirmed_at": "2026-10-26T08:03:04.350590+08:00"
+    }
    },
    {
     "message": {
