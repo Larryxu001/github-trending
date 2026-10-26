@@ -533,6 +533,20 @@
    "tags": [],
    "saved_at": "2026-10-26",
    "source": "feishu"
+  },
+  {
+   "repo": "Hxd123459/lanbitou-uTools",
+   "url": "https://github.com/Hxd123459/lanbitou-uTools",
+   "owner": "Hxd123459",
+   "stars": 1,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "烂笔头是一款运行在 uTools 里的本地 AI 笔记插件，帮你随手记下碎片想法、图片或选中的文字，再通过全局搜索和 AI 对话快速找回、归纳，甚至把零散笔记整理成结构化长文。比如开会时随手记几条要点，之后让 AI 基于这些笔记总结成会议纪要。数据存在本机，支持多家大模型接口，还能作为 Agent 工具被调用。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-26",
+   "source": "feishu"
   }
  ]
 }
