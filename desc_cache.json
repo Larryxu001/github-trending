@@ -916,5 +916,23 @@
   "emoji": "🧩",
   "desc": "这是一个给 Claude Code 用的 SEO 技能包，内置 26 个子技能和 19 个子代理，覆盖技术 SEO、E-E-A-T、结构化数据、GEO/AEO、外链、本地 SEO、电商和国际 SEO 等场景，还能生成 PDF/Excel 报告。它解决的是营销人员做 SEO 时工具分散、流程繁琐的问题，比如输入网站地址就能自动检查 Lighthouse 代理浏览、llms.txt 等 AI 时代新指标并输出优化建议。",
   "site": "https://skool.com/ai-marketing-hub-pro"
+ },
+ "nightly-labs/openbot": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "OpenBot 是一个本地优先的桌面工作台，让多个 AI 助手像团队成员一样长期协作。你可以在独立工作区里同时运行 Codex、Claude、Grok，给它们分配任务队列、共享文件、控制浏览器，还能让智能体之间互相沟通。比如让它自动完成调研、写代码、整理资料等连续任务，数据留在本地更安全，适合需要多 AI 协同办公的个人或小团队。",
+  "site": "https://openbot.run/"
+ },
+ "gitroomhq/postiz-app": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "Postiz 是一个开源的社交媒体排期工具，核心亮点是引入 AI 智能体来自动化内容发布流程。它帮你把多个社交平台（如 X、LinkedIn、Mastodon 等）的帖子统一管理、定时发布，解决手动逐个平台发帖的繁琐问题。比如你可以让 AI 代理根据主题自动生成并安排一周的推文，再一键分发到各平台，省时省力。",
+  "site": "https://postiz.com"
+ },
+ "alchaincyf/huashu-design": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个给 AI 编程助手（如 Claude Code、Cursor）用的设计技能插件。你只需在对话里说一句话，它就能产出可交付的设计成果，比如网页、App 原型、可编辑 PPTX、动画或信息图。它内置 84 种带样张的风格库，每次会给出六个候选、帮你挑三个方向，还能记住你的审美偏好并做设计体检。适合不擅长设计的人快速拿到像样的成品，例如说一句「做个产品介绍 PPT」，就能直接拿到可编辑的 PPTX 文件。",
+  "site": "无"
  }
 }
