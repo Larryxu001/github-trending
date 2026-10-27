@@ -547,6 +547,20 @@
    "tags": [],
    "saved_at": "2026-10-26",
    "source": "feishu"
+  },
+  {
+   "repo": "tangchengjiao/jianzhou-media-workbench",
+   "url": "https://github.com/tangchengjiao/jianzhou-media-workbench",
+   "owner": "tangchengjiao",
+   "stars": 12,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "见舟自媒体运营工作台是一个本地优先的 AI 内容创作与运营工具，把选题、写作、视觉制作、渠道发布和数据复盘串成一条完整工作流。它解决创作者素材散落各处、发布后难以复盘的问题：同一个内容母题可以派生出短视频稿、封面、朋友圈和公众号文章，每个成品都保留版本、排期和发布记录，之后还能回到资料中心复用。比如从对标账号提取一条爆款结构，生成差异化提纲和稿件，做完稿件体检后制作封面、排期发布，再记录 T+1/T+3 指标进行复盘。数据保存在本机 SQLite，AI 写作、语音转写和图片生成按需接入外部 API。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-28",
+   "source": "feishu"
   }
  ]
 }
