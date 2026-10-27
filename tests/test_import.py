@@ -52,3 +52,18 @@ class ImportTests(unittest.TestCase):
             importer.notify('已加入精选')
             body=json.loads(send.call_args.args[0].data)
             self.assertEqual(body,{'msg_type':'text','content':{'text':'已加入精选'}})
+
+    def test_repository_404_explains_unavailable_without_calling_ai(self):
+        error = urllib.error.HTTPError('https://api.github.com/repos/a/b', 404, 'missing', {}, None)
+        with patch.dict(importer.os.environ, {'DEEPSEEK_API_KEY':'test'}), patch.object(importer, 'github', side_effect=error), patch.object(importer, '_llm_one') as ai:
+            with self.assertRaisesRegex(importer.RepositoryUnavailable, '重复重试无法解决'):
+                importer.analyse('a/b')
+            ai.assert_not_called()
+
+    def test_repository_404_summary_does_not_suggest_retry(self):
+        import io
+        with patch.dict(importer.os.environ, {'IMPORT_URLS':'["https://github.com/a/b"]', 'IMPORT_SOURCE':'pages', 'GITHUB_STEP_SUMMARY':importer.os.devnull}), patch.object(importer, 'import_one', side_effect=importer.RepositoryUnavailable('GitHub 无法访问该仓库（HTTP 404）')), patch('sys.stdout', new_callable=io.StringIO) as output:
+            with self.assertRaises(RuntimeError):
+                importer.main()
+            self.assertIn('GitHub 无法访问该仓库', output.getvalue())
+            self.assertNotIn('请查看 Actions 运行并重试', output.getvalue())

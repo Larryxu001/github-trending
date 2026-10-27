@@ -12,6 +12,10 @@ import urllib.request
 from desc_auto import _llm_one
 
 
+class RepositoryUnavailable(ValueError):
+    """The submitted repository cannot be read through GitHub."""
+
+
 def parse_repo(url):
     u = urllib.parse.urlsplit(url.strip())
     parts = u.path.strip('/').split('/')
@@ -50,7 +54,12 @@ def contains(saved, repo):
 def analyse(repo):
     if not os.environ.get('DEEPSEEK_API_KEY'):
         raise RuntimeError('未配置 DEEPSEEK_API_KEY，未加入精选')
-    info = github('repos/' + repo)
+    try:
+        info = github('repos/' + repo)
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            raise RepositoryUnavailable('GitHub 无法访问该仓库（HTTP 404）：可能已删除、转为私有或地址有误；请确认公开仓库链接后再提交，重复重试无法解决。') from None
+        raise
     if info.get('private'):
         raise ValueError('仅支持公开 GitHub 项目')
     # README is untrusted source material, never executable instructions.
@@ -119,6 +128,9 @@ def main():
             results.append(import_one(url))
         except Exception as error:
             # Do not log request objects or credential-bearing URLs.
+            if isinstance(error, RepositoryUnavailable):
+                failures.append(f'{url}：{error}')
+                continue
             detail = f'HTTP {error.code}' if isinstance(error, urllib.error.HTTPError) else type(error).__name__
             failures.append(f'{url}：导入失败（{detail}），请查看 Actions 运行并重试')
     summary = '\n\n'.join(results + failures)
