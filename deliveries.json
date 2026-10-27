@@ -6968,7 +6968,7 @@
   ]
  },
  "daily:2026-10-27": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-27",
    "new_count": 3,
@@ -7024,6 +7024,143 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-27 ｜ 今日新项目 3 个 ｜ 2 个分类 ｜ 30 天去重跳过 128 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-27/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design)**　⭐ 26,641\n这是一个给 AI 编程助手（如 Claude Code、Cursor）用的设计技能插件。你只需在对话里说一句话，它就能产出可交付的设计成果，比如网页、App 原型、可编辑 PPTX、动画或信息图。它内置 84 种带样张的风格库，每次会给出六个候选、帮你挑三个方向，还能记住你的审美偏好并做设计体检。适合不擅长设计的人快速拿到像样的成品，例如说一句「做个产品介绍 PPT」，就能直接拿到可编辑的 PPTX 文件。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 alchaincyf ｜ 📅 更新 2026-10-23 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app)**　⭐ 38,237\nPostiz 是一个开源的社交媒体排期工具，核心亮点是引入 AI 智能体来自动化内容发布流程。它帮你把多个社交平台（如 X、LinkedIn、Mastodon 等）的帖子统一管理、定时发布，解决手动逐个平台发帖的繁琐问题。比如你可以让 AI 代理根据主题自动生成并安排一周的推文，再一键分发到各平台，省时省力。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 gitroomhq ｜ 📅 更新 2026-10-24 ｜ 🏷 日榜 ｜ 🔗 [https://postiz.com](https://postiz.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [nightly-labs/openbot](https://github.com/nightly-labs/openbot)**　⭐ 1,298\nOpenBot 是一个本地优先的桌面工作台，让多个 AI 助手像团队成员一样长期协作。你可以在独立工作区里同时运行 Codex、Claude、Grok，给它们分配任务队列、共享文件、控制浏览器，还能让智能体之间互相沟通。比如让它自动完成调研、写代码、整理资料等连续任务，数据留在本地更安全，适合需要多 AI 协同办公的个人或小团队。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 nightly-labs ｜ 📅 更新 2026-10-26 ｜ 🏷 日榜 ｜ 🔗 [https://openbot.run/](https://openbot.run/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
