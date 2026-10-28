@@ -575,6 +575,20 @@
    "tags": [],
    "saved_at": "2026-10-28",
    "source": "feishu"
+  },
+  {
+   "repo": "Larryxu001/Tailored_llm_wiki",
+   "url": "https://github.com/Larryxu001/Tailored_llm_wiki",
+   "owner": "Larryxu001",
+   "stars": 0,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "LLM Wiki 是一款跨平台桌面应用，能把你的文档自动整理成互相链接的持久化知识库。它不采用传统 RAG 每次查询都重新检索的方式，而是让大模型增量地阅读、分析并生成 Wiki 页面，知识只编译一次并持续更新。比如你导入一批 PDF 论文，它会自动抽取实体和概念、建立交叉引用、生成摘要页，还提供知识图谱、语义搜索和 Deep Research，适合做个人或团队的第二大脑。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-28",
+   "source": "pages"
   }
  ]
 }
