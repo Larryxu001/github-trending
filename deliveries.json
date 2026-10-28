@@ -7174,5 +7174,70 @@
     }
    }
   ]
+ },
+ "daily:2026-10-28": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-10-28",
+   "new_count": 3,
+   "skipped": 131,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "elayadesign/ai-design-skills",
+       "url": "https://github.com/elayadesign/ai-design-skills",
+       "owner": "elayadesign",
+       "stars": 9086,
+       "updated": "2026-10-27",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个为 AI 设计助手提供技能与提示词集合的开源项目，帮助 AI 更规范地完成界面与视觉设计类任务。它解决的是通用大模型做设计时缺乏结构化方法、输出随意的问题，通过预设技能让 AI 按设计流程工作。例如让 AI 生成配色方案或页面布局时，可直接调用对应技能，得到更专业、可复用的结果。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "HKUDS/DeepTutor",
+       "url": "https://github.com/HKUDS/DeepTutor",
+       "owner": "HKUDS",
+       "stars": 45521,
+       "updated": "2026-10-27",
+       "lists": [
+        "daily"
+       ],
+       "desc": "DeepTutor 是一个基于多智能体与 RAG 的个性化终身学习辅导系统。它把复杂学习问题拆给多个 AI 智能体协作处理，结合检索增强生成从资料中找依据，再给出讲解、追问和练习，解决普通聊天机器人辅导不系统、不连贯、缺乏个性化的问题。比如你想系统学懂一个知识点，它能像私人导师一样持续跟踪进度、按你的水平调整讲解并出题检验。",
+       "site": "https://deeptutor.info/"
+      }
+     ]
+    },
+    {
+     "name": "安全",
+     "emoji": "🔐",
+     "items": [
+      {
+       "repo": "togg53192-cmd/jailbreaks",
+       "url": "https://github.com/togg53192-cmd/jailbreaks",
+       "owner": "togg53192-cmd",
+       "stars": 5235,
+       "updated": "2026-10-25",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个汇总各类越狱（jailbreak）方法的清单型项目，主要面向对 iOS 设备或 AI 模型进行非官方解锁感兴趣的用户。它把作者自己整理的多套越狱方案集中列出，方便查找和参考，省去四处搜索的麻烦。例如想给某台旧 iPhone 解除系统限制时，可以先来这里看有没有对应机型和版本的方案。注意越狱可能带来安全风险，使用前需自行评估。",
+       "site": "无"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
