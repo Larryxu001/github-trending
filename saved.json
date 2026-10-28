@@ -561,6 +561,20 @@
    "tags": [],
    "saved_at": "2026-10-28",
    "source": "feishu"
+  },
+  {
+   "repo": "ZJU-REAL/Easel",
+   "url": "https://github.com/ZJU-REAL/Easel",
+   "owner": "ZJU-REAL",
+   "stars": 4138,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "Easel 是一个开源的 AI 社交媒体运营助手，把发现热点、策划选题、创作图文视频、多平台发布和效果复盘串成一条完整工作流。它能为每个账号建立独立的定位与风格画像，并调用可运行的技能脚本真正产出成品，比如把一篇论文自动做成小红书知识卡片或短视频，再适配发布到小红书、抖音、知乎、B 站等七个平台，适合内容创作者和运营团队提升效率。",
+   "site": "https://zju-real.github.io/Easel/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-28",
+   "source": "feishu"
   }
  ]
 }
