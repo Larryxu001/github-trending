@@ -125,7 +125,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-10-28T17:00:38.870769+08:00"
+   "last_seen": "2026-10-28T20:00:41.561983+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -183,7 +183,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-10-28T17:00:38.870829+08:00"
+   "last_seen": "2026-10-28T20:00:41.562005+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -201,7 +201,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-10-28T17:00:38.870850+08:00"
+   "last_seen": "2026-10-28T20:00:42.479425+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
@@ -227,7 +227,7 @@
    "updated": "2026-10-26",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-10-28T17:00:38.870843+08:00"
+   "last_seen": "2026-10-28T20:00:44.276392+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -294,13 +294,14 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:16.915683+08:00",
-   "last_seen": "2026-10-28T17:00:38.870869+08:00"
+   "last_seen": "2026-10-28T20:00:46.931431+08:00"
   },
   "pbakaus/impeccable": {
    "repo": "pbakaus/impeccable",
    "lists": [
     "daily",
-    "monthly"
+    "monthly",
+    "weekly"
    ],
    "stars": 90245,
    "owner": "pbakaus",
@@ -311,7 +312,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-10-28T17:00:38.870798+08:00"
+   "last_seen": "2026-10-28T20:00:42.479374+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -396,7 +397,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-10-28T17:00:38.870881+08:00"
+   "last_seen": "2026-10-28T20:00:43.375104+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -705,7 +706,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-10-28T17:00:38.870839+08:00"
+   "last_seen": "2026-10-28T20:00:42.479452+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -741,7 +742,7 @@
    "updated": "2026-10-25",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:28.633812+08:00",
-   "last_seen": "2026-10-28T17:00:38.870898+08:00"
+   "last_seen": "2026-10-28T20:00:46.931458+08:00"
   },
   "cathrynlavery/diagram-design": {
    "repo": "cathrynlavery/diagram-design",
@@ -896,7 +897,7 @@
    "updated": "2026-10-18",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:33.111988+08:00",
-   "last_seen": "2026-10-28T17:00:38.870889+08:00"
+   "last_seen": "2026-10-28T20:00:46.931465+08:00"
   },
   "trycua/cua": {
    "repo": "trycua/cua",
@@ -950,7 +951,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-10-28T17:00:38.870777+08:00"
+   "last_seen": "2026-10-28T20:00:41.561999+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -966,7 +967,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-10-28T17:00:38.870892+08:00"
+   "last_seen": "2026-10-28T20:00:46.931470+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -1027,7 +1028,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-10-28T17:00:38.870886+08:00"
+   "last_seen": "2026-10-28T20:00:45.130218+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1153,7 +1154,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-10-28T17:00:38.870763+08:00"
+   "last_seen": "2026-10-28T20:00:41.561978+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1207,7 +1208,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-10-28T17:00:38.870788+08:00"
+   "last_seen": "2026-10-28T20:00:42.479415+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1296,7 +1297,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-10-28T17:00:38.870878+08:00"
+   "last_seen": "2026-10-28T20:00:46.011095+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1516,7 +1517,7 @@
    "updated": "2026-04-20",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-10T21:02:41.186466+08:00",
-   "last_seen": "2026-10-28T17:00:38.870795+08:00"
+   "last_seen": "2026-10-28T20:00:41.561996+08:00"
   },
   "longbridge/gpui-kit": {
    "repo": "longbridge/gpui-kit",
@@ -2053,7 +2054,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-10-28T17:00:38.870860+08:00"
+   "last_seen": "2026-10-28T20:00:42.479439+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2105,7 +2106,7 @@
    "updated": "2026-10-23",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-10-28T17:00:38.870791+08:00"
+   "last_seen": "2026-10-28T20:00:41.561993+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -2143,7 +2144,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-15T20:00:44.030304+08:00",
-   "last_seen": "2026-10-28T17:00:38.870836+08:00"
+   "last_seen": "2026-10-28T20:00:42.479434+08:00"
   },
   "lightseekorg/tokenspeed": {
    "repo": "lightseekorg/tokenspeed",
@@ -2298,7 +2299,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 23488,
+   "stars": 33773,
    "owner": "hmjz100",
    "homepage": "https://github.com/hmjz100/LinkSwift/raw/main/%EF%BC%88%E6%94%B9%EF%BC%89%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B.user.js",
    "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
@@ -2325,10 +2326,10 @@
     "xunlei-netdisk",
     "yidong-netdisk"
    ],
-   "updated": "2026-09-10",
-   "metadata_date": "2026-10-17",
+   "updated": "2026-10-27",
+   "metadata_date": "2026-10-28",
    "first_seen": "2026-10-16T19:00:21.171674+08:00",
-   "last_seen": "2026-10-17T18:21:35.787014+08:00"
+   "last_seen": "2026-10-28T20:00:43.776237+08:00"
   },
   "akitaonrails/ai-memory": {
    "repo": "akitaonrails/ai-memory",
@@ -2400,7 +2401,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-17T20:00:42.147007+08:00",
-   "last_seen": "2026-10-28T17:00:38.870846+08:00"
+   "last_seen": "2026-10-28T20:00:42.479448+08:00"
   },
   "mlabonne/llm-course": {
    "repo": "mlabonne/llm-course",
@@ -2594,7 +2595,7 @@
    "updated": "2026-10-26",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-20T20:00:43.509334+08:00",
-   "last_seen": "2026-10-28T17:00:38.870825+08:00"
+   "last_seen": "2026-10-28T20:00:42.479420+08:00"
   },
   "sickn33/agentic-awesome-skills": {
    "repo": "sickn33/agentic-awesome-skills",
@@ -3063,7 +3064,8 @@
   "Nutlope/hallmark": {
    "repo": "Nutlope/hallmark",
    "lists": [
-    "daily"
+    "daily",
+    "monthly"
    ],
    "stars": 38542,
    "owner": "Nutlope",
@@ -3074,7 +3076,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-10-28T17:00:38.870773+08:00"
+   "last_seen": "2026-10-28T20:00:42.479410+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3160,7 +3162,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-24T20:00:47.201438+08:00",
-   "last_seen": "2026-10-28T17:00:38.870822+08:00"
+   "last_seen": "2026-10-28T20:00:42.479430+08:00"
   },
   "TauricResearch/TradingAgents": {
    "repo": "TauricResearch/TradingAgents",
@@ -3183,7 +3185,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-25T18:59:14.321042+08:00",
-   "last_seen": "2026-10-28T17:00:38.870802+08:00"
+   "last_seen": "2026-10-28T20:00:42.479402+08:00"
   },
   "JetBrains/thinkrail": {
    "repo": "JetBrains/thinkrail",
@@ -3213,7 +3215,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-25T18:59:16.047190+08:00",
-   "last_seen": "2026-10-28T17:00:38.870863+08:00"
+   "last_seen": "2026-10-28T20:00:41.561961+08:00"
   },
   "coollabsio/coolify": {
    "repo": "coollabsio/coolify",
@@ -3275,7 +3277,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-10-28T17:00:38.870784+08:00"
+   "last_seen": "2026-10-28T20:00:41.561990+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3328,7 +3330,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-26T20:00:55.153056+08:00",
-   "last_seen": "2026-10-28T17:00:38.870781+08:00"
+   "last_seen": "2026-10-28T20:00:42.479444+08:00"
   },
   "gitroomhq/postiz-app": {
    "repo": "gitroomhq/postiz-app",
@@ -3408,7 +3410,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-10-28T17:00:38.870853+08:00"
+   "last_seen": "2026-10-28T20:00:41.562002+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3424,7 +3426,7 @@
    "updated": "2026-10-25",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-27T20:01:16.818697+08:00",
-   "last_seen": "2026-10-28T17:00:38.870872+08:00"
+   "last_seen": "2026-10-28T20:00:42.479457+08:00"
   },
   "elayadesign/ai-design-skills": {
    "repo": "elayadesign/ai-design-skills",
@@ -3440,13 +3442,135 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-10-28",
    "first_seen": "2026-10-28T05:00:43.297246+08:00",
-   "last_seen": "2026-10-28T17:00:38.870747+08:00"
+   "last_seen": "2026-10-28T20:00:41.561987+08:00"
+  },
+  "macro-inc/macro": {
+   "repo": "macro-inc/macro",
+   "lists": [
+    "daily"
+   ],
+   "stars": 5178,
+   "owner": "macro-inc",
+   "homepage": "https://macro.com",
+   "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+   "language": "Rust",
+   "topics": [
+    "agent",
+    "ai",
+    "ai-agents",
+    "all-in-one",
+    "crm",
+    "crm-system",
+    "email",
+    "linear",
+    "mcp",
+    "messaging",
+    "notes",
+    "notion",
+    "office",
+    "rust",
+    "slack",
+    "slack-alternative",
+    "startup",
+    "startup-tools",
+    "typescript",
+    "workspace"
+   ],
+   "updated": "2026-10-28",
+   "metadata_date": "2026-10-28",
+   "first_seen": "2026-10-28T20:00:41.979212+08:00",
+   "last_seen": "2026-10-28T20:00:41.979224+08:00"
+  },
+  "jakubkrehel/skills": {
+   "repo": "jakubkrehel/skills",
+   "lists": [
+    "weekly"
+   ],
+   "stars": 8866,
+   "owner": "jakubkrehel",
+   "homepage": "https://jakub.kr/skills",
+   "description": "A collection of agent skills that help you build great interfaces.",
+   "language": "Markdown",
+   "topics": [],
+   "updated": "2026-10-25",
+   "metadata_date": "2026-10-28",
+   "first_seen": "2026-10-28T20:00:42.874948+08:00",
+   "last_seen": "2026-10-28T20:00:42.874960+08:00"
+  },
+  "expo/skills": {
+   "repo": "expo/skills",
+   "lists": [
+    "daily"
+   ],
+   "stars": 3354,
+   "owner": "expo",
+   "homepage": "",
+   "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services",
+   "language": "Shell",
+   "topics": [],
+   "updated": "2026-10-28",
+   "metadata_date": "2026-10-28",
+   "first_seen": "2026-10-28T20:00:44.630061+08:00",
+   "last_seen": "2026-10-28T20:00:44.630072+08:00"
+  },
+  "ruvnet/RuView": {
+   "repo": "ruvnet/RuView",
+   "lists": [
+    "daily"
+   ],
+   "stars": 100539,
+   "owner": "ruvnet",
+   "homepage": "https://Cognitum.One/RuView",
+   "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+   "language": "Rust",
+   "topics": [
+    "awesome",
+    "claude",
+    "densepose",
+    "esp32",
+    "firmware",
+    "home-assistant",
+    "home-automation",
+    "iot",
+    "monitoring",
+    "networking",
+    "npm",
+    "pose-estimation",
+    "react",
+    "rf",
+    "self-learning",
+    "skills",
+    "spatial-intelligence",
+    "typescript",
+    "wifi",
+    "wifi-security"
+   ],
+   "updated": "2026-10-28",
+   "metadata_date": "2026-10-28",
+   "first_seen": "2026-10-28T20:00:45.510936+08:00",
+   "last_seen": "2026-10-28T20:00:45.510948+08:00"
+  },
+  "xiaolai/the-craft-of-selfteaching": {
+   "repo": "xiaolai/the-craft-of-selfteaching",
+   "lists": [
+    "daily"
+   ],
+   "stars": 18259,
+   "owner": "xiaolai",
+   "homepage": "",
+   "description": "One has no future if one couldn't teach themself.",
+   "language": "Jupyter Notebook",
+   "topics": [],
+   "updated": "2026-05-20",
+   "metadata_date": "2026-10-28",
+   "first_seen": "2026-10-28T20:00:46.431270+08:00",
+   "last_seen": "2026-10-28T20:00:46.431281+08:00"
   }
  },
- "last_collected": "2026-10-28T17:00:38.870910+08:00",
+ "last_collected": "2026-10-28T20:00:46.931478+08:00",
  "list_counts": {
-  "daily": 11,
-  "weekly": 13,
-  "monthly": 21
+  "daily": 14,
+  "weekly": 10,
+  "monthly": 18
  }
 }
