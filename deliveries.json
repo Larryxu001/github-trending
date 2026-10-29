@@ -7411,7 +7411,7 @@
   ]
  },
  "daily:2026-10-29": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-29",
    "new_count": 6,
@@ -7516,6 +7516,228 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-29 ｜ 今日新项目 6 个 ｜ 4 个分类 ｜ 30 天去重跳过 134 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-29/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 3 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)**　⭐ 104,225\n这是一个给 AI 编程助手「补审美」的技能包，专治 AI 生成网页千篇一律、像模板套出来的毛病。它让 Claude Code、Cursor 等工具在写前端时先做艺术方向、参考真实图片，再用浏览器实际检查效果，而不是凭空堆砌通用布局。比如做落地页时，它会先定视觉风格、找参考图，最后在浏览器里核对排版，让页面更像设计师作品而非 AI 流水线产物。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Leonxlnx ｜ 📅 更新 2026-10-28 ｜ 🏷 月/周榜 ｜ 🔗 [https://tasteskill.dev](https://tasteskill.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [jakubkrehel/skills](https://github.com/jakubkrehel/skills)**　⭐ 8,926\n这是一个面向 AI 编程助手的技能集合，专门帮助开发者构建更出色的用户界面。它把界面设计中的常见任务（如布局、配色、组件规范等）整理成可被 Agent 直接调用的技能，让 AI 在写前端代码时遵循统一的设计标准，而不是随意发挥。比如你让 Agent 生成一个表单页面，它会自动套用这些技能中的间距、字体和交互规则，产出更专业、更一致的结果。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 jakubkrehel ｜ 📅 更新 2026-10-25 ｜ 🏷 周榜 ｜ 🔗 [https://jakub.kr/skills](https://jakub.kr/skills)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [expo/skills](https://github.com/expo/skills)**　⭐ 3,470\n这是 Expo 官方提供的一组 AI 智能体技能包，专门帮助 AI 编程助手更好地理解和操作 Expo 项目及 Expo 应用服务（EAS）。它解决的是 AI 助手在 Expo 开发中容易出错、不熟悉构建发布流程的问题。安装后，AI 就能按规范帮你完成项目配置、云端构建、应用提交等任务，比如一句话让助手触发 EAS 构建并处理常见报错。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 expo ｜ 📅 更新 2026-10-28 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [macro-inc/macro](https://github.com/macro-inc/macro)**　⭐ 5,305\nMacro 是一个面向团队的一体化工作空间，把邮件、聊天、文档、任务、通话和 CRM 整合到同一个界面，并用共享的 AI 记忆把这些内容通过 @ 关联起来。它解决的是团队工具分散、信息割裂的问题，让 AI 代理能跨模块理解上下文，比如在聊天里 @ 一封邮件就能让代理总结并生成任务。项目用 Rust 开发，适合想统一协作流程并引入 AI 助手的团队。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 macro-inc ｜ 📅 更新 2026-10-28 ｜ 🏷 日榜 ｜ 🔗 [https://macro.com](https://macro.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "orange",
+       "title": {
+        "tag": "plain_text",
+        "content": "📚 学习资源 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [xiaolai/the-craft-of-selfteaching](https://github.com/xiaolai/the-craft-of-selfteaching)**　⭐ 18,413\n这是一个关于自学方法的中文开源电子书项目，作者李笑来用 Jupyter Notebook 写成，讲解如何培养自我教育能力。它解决的是很多人离开学校后不会独立学习、容易半途而废的问题，内容涵盖学习心态、刻意练习、写作与思考训练等。读者可以把它当作自学指南，例如想转行编程时，按书中方法拆解目标、持续练习并记录反思，从而不依赖老师也能系统掌握新技能。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 xiaolai ｜ 📅 更新 2026-05-20 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "grey",
+       "title": {
+        "tag": "plain_text",
+        "content": "📦 其他 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ruvnet/RuView](https://github.com/ruvnet/RuView)**　⭐ 100,806\nRuView 是一个用 Rust 编写的开源项目，它把普通 WiFi 信号变成实时空间感知能力，无需任何摄像头画面就能检测人体存在、监测呼吸心跳等生命体征，甚至做姿态估计。它解决了隐私敏感场景下传统视频监控的痛点，比如在卧室或浴室安装后，既能感知老人是否跌倒或长时间未动，又完全不采集图像。项目还提供 ESP32 固件和 Home Assistant 集成，方便智能家居用户直接接入使用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ruvnet ｜ 📅 更新 2026-10-28 ｜ 🏷 日榜 ｜ 🔗 [https://Cognitum.One/RuView](https://Cognitum.One/RuView)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
