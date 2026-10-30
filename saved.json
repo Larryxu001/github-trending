@@ -673,6 +673,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "ruvnet/RuView",
+   "url": "https://github.com/ruvnet/RuView",
+   "owner": "ruvnet",
+   "stars": 101711,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "RuView 把普通 WiFi 信号变成空间感知能力：用 9 美元的 ESP32 传感器采集信道状态信息（CSI），通过预训练模型识别房间内是否有人、呼吸和心率、动作姿态甚至睡眠质量，全程无需摄像头或穿戴设备，可穿墙、在黑暗中工作。它解决隐私敏感场景下的非接触监测问题，例如独居老人夜间跌倒或异常静止时自动向 Home Assistant 报警，并原生接入 Apple Home、Google Home、Alexa 等智能家居生态。",
+   "site": "https://Cognitum.One/RuView",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
