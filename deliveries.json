@@ -7761,7 +7761,7 @@
   ]
  },
  "daily:2026-10-30": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-10-30",
    "new_count": 3,
@@ -7817,6 +7817,143 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-10-30 ｜ 今日新项目 3 个 ｜ 2 个分类 ｜ 30 天去重跳过 140 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-10-30/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios)**　⭐ 28,913\n这个项目把 Claude Code 改造成一支完整的游戏开发工作室：内置 49 个 AI 角色（策划、程序、美术、测试等）和 72 个工作流技能，并模拟真实工作室的层级协作。你只需描述想做的游戏，它就会按流程分工推进，比如让策划写玩法文档、程序用 Unity 或 Godot 搭原型、测试提 Bug。适合独立开发者或小团队快速验证创意、补齐人手短板。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Donchitos ｜ 📅 更新 2026-10-19 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [CopilotKit/OpenBot](https://github.com/CopilotKit/OpenBot)**　⭐ 7,964\nOpenBot 是 CopilotKit 推出的开源 AI 同事框架，每个智能体都拥有一台自己的「电脑」——浏览器、文件和工具，可以自主操作网页、读写文件、调用工具完成任务。它的特点是「先决策后执行」：每个动作在执行前先确定方案，执行后完整记录，便于审计和治理。例如你可以让它自动登录后台、抓取数据并整理成报表，全程可追溯。它兼容任意 AG-UI 智能体，适合构建可控、可审计的浏览器自动化与 AI 协作应用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 CopilotKit ｜ 📅 更新 2026-10-29 ｜ 🏷 日榜 ｜ 🔗 [https://www.copilotkit.ai/openbot](https://www.copilotkit.ai/openbot)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot)**　⭐ 7,280\nOpenMausBot 是一个开源的 AI 智能体运行平台，可以理解为 Grok Bot 的免费替代品。它给 AI 智能体配了一台虚拟机，让智能体能在隔离环境中自由操作浏览器、运行命令、处理文件，而不会影响你的真实电脑。比如你可以让它自动登录网站抓取数据、批量处理文档，或完成需要多步骤操作的复杂任务。项目用 TypeScript 编写，支持自托管，适合想搭建私有 AI 助手又注重安全隔离的用户。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 milind-soni ｜ 📅 更新 2026-10-29 ｜ 🏷 日榜 ｜ 🔗 [https://www.openmausbot.com/](https://www.openmausbot.com/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
