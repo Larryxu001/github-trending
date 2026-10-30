@@ -729,6 +729,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "vorssaint/vorssaint-utils",
+   "url": "https://github.com/vorssaint/vorssaint-utils",
+   "owner": "vorssaint",
+   "stars": 31175,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Vorssaint 是一款免费开源的 macOS 菜单栏工具箱，用一个图标集成十几种付费 Mac 小工具的功能，解决用户为音量调节、系统监控、窗口切换、剪贴板历史等零散需求分别购买多个应用的问题。例如可单独调节每个应用的音量、用实时预览切换窗口、悬停 Dock 图标预览窗口，还能按需安装或卸载功能模块，无账号、无遥测、无订阅。",
+   "site": "https://vorssaint.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "feishu"
   }
  ]
 }
