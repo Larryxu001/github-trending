@@ -631,6 +631,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "codecrafters-io/build-your-own-x",
+   "url": "https://github.com/codecrafters-io/build-your-own-x",
+   "owner": "codecrafters-io",
+   "stars": 557550,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是一个精选教程合集，教你从零动手重造各种熟悉的技术，比如数据库、Git、操作系统、编程语言、3D 渲染器、区块链、BitTorrent 客户端等。每个主题下按编程语言列出分步指南，帮开发者通过亲手实现来真正理解原理，而不是只停留在调用现成工具。适合想深入底层、提升编程功力的学习者，例如跟着教程用 C 写一个简易数据库，或自己实现一个 Shell。",
+   "site": "https://codecrafters.io",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
