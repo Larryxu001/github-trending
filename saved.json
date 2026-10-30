@@ -715,6 +715,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "virattt/ai-hedge-fund",
+   "url": "https://github.com/virattt/ai-hedge-fund",
+   "owner": "virattt",
+   "stars": 64364,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "这是一个 AI 对冲基金的概念验证项目，用多个模拟不同投资风格的 AI 智能体（如价值投资、成长投资等）组成团队，共同分析股票行情、财报等数据并做出买卖决策。它不进行真实交易，主要用于教育和研究，帮助人们理解 AI 如何辅助投资决策。例如，你可以用历史数据回测某个 AI 基金的表现，或模拟用虚拟资金跟踪每日决策记录，观察 AI 投资策略的效果。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
