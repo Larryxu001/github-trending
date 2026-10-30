@@ -659,6 +659,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "Stirling-Tools/Stirling-PDF",
+   "url": "https://github.com/Stirling-Tools/Stirling-PDF",
+   "owner": "Stirling-Tools",
+   "stars": 95412,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "Stirling PDF 是一个开源的 PDF 处理平台，让你在自己的电脑或服务器上完成 PDF 编辑、合并、拆分、签名、脱敏、格式转换、OCR 识别和压缩等 50 多种操作，无需把敏感文档上传到第三方服务。它提供网页界面、桌面客户端和 REST API，还能用无代码工作流批量处理海量 PDF，适合注重隐私的个人和企业自建使用。",
+   "site": "https://stirling.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
