@@ -701,6 +701,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "iptv-org/iptv",
+   "url": "https://github.com/iptv-org/iptv",
+   "owner": "iptv-org",
+   "stars": 142803,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是一个汇集全球公开 IPTV 频道的开源项目，提供 M3U 播放列表，让你在 VLC 等支持直播的播放器中直接观看世界各地的电视频道。它解决了找直播源麻烦、频道分散的问题，比如你想看某个国家的新闻台，只需把主播放列表链接粘贴到播放器里打开即可，无需逐个搜索。项目还配套 EPG 节目单、数据库和 API，方便开发者二次利用。",
+   "site": "https://iptv-org.github.io",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
