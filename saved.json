@@ -645,6 +645,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "Shubhamsaboo/awesome-llm-apps",
+   "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+   "owner": "Shubhamsaboo",
+   "stars": 143499,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是一个开源 AI 应用模板合集，收录 100 多个可直接运行的智能体、Agent 技能和 RAG 应用，覆盖旅行规划、数据分析、语音客服、多智能体协作等场景。每个模板都配有完整代码和教程，克隆后装好依赖就能跑，还支持 Claude、GPT、Gemini、DeepSeek 等主流模型。比如想做一个把博客转成播客的工具，直接找到对应模板改改就能上线，适合开发者快速学习和二次开发。",
+   "site": "https://www.theunwindai.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
