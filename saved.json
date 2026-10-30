@@ -743,6 +743,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "feishu"
+  },
+  {
+   "repo": "calesthio/OpenMontage",
+   "url": "https://github.com/calesthio/OpenMontage",
+   "owner": "calesthio",
+   "stars": 73273,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "OpenMontage 是一个开源的智能体视频制作系统，能把 Claude Code、Cursor 等 AI 编程助手变成完整的视频工作室。你只需用自然语言描述需求，智能体就会自动完成选题调研、脚本撰写、AI 图像与视频生成、配音配乐、字幕和最终渲染，还支持从参考视频反推制作方案。例如说「做一支 60 秒神经网络科普动画」，它就能产出成片，适合内容创作者低成本批量制作视频。",
+   "site": "https://www.openmontage.video/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "feishu"
   }
  ]
 }
