@@ -589,6 +589,20 @@
    "tags": [],
    "saved_at": "2026-10-28",
    "source": "pages"
+  },
+  {
+   "repo": "n8n-io/n8n",
+   "url": "https://github.com/n8n-io/n8n",
+   "owner": "n8n-io",
+   "stars": 209123,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "n8n 是一个可自托管或云端部署的工作流自动化平台，把可视化拖拽画布和自定义代码结合起来，内置 AI 能力，能连接 1500 多个外部服务。它解决的问题是让不会写代码的人也能搭建自动化流程，同时让开发者用 JavaScript、Python 扩展复杂逻辑。例如可以搭建一个 AI 客服流程：收到邮件后调用大模型生成回复，人工审核后再发送，全程在画布上连线完成。",
+   "site": "https://n8n.io",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
