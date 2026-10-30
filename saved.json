@@ -617,6 +617,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "DigitalPlatDev/FreeDomain",
+   "url": "https://github.com/DigitalPlatDev/FreeDomain",
+   "owner": "DigitalPlatDev",
+   "stars": 206453,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "DigitalPlat FreeDomain 是一个提供免费域名注册并配套 DNS 学习资料的开源项目。它让没有预算的人也能拥有自己的网站域名，支持 .DPDNS.ORG、.US.KG 等后缀，用户注册后可自定义 nameserver 接入任意 DNS 服务商。项目还提供从注册、DNS 配置到建站、邮箱部署的完整教程，例如新手可以跟着指南把域名解析到自己的博客并上线。",
+   "site": "https://dashboard.digitalplat.org",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
