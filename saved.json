@@ -603,6 +603,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "langflow-ai/langflow",
+   "url": "https://github.com/langflow-ai/langflow",
+   "owner": "langflow-ai",
+   "stars": 156161,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "Langflow 是一个可视化搭建 AI 智能体和工作流的平台，让你像拖拽积木一样把大模型、向量数据库和各类 AI 工具连成流程，无需从零写代码。它支持多智能体协作、对话管理和检索，还能把流程一键发布成 API 或 MCP 服务供其他应用调用。例如，你可以快速拼出一个能查资料、调用工具并回答问题的客服机器人，边搭边在交互界面里测试调整。",
+   "site": "http://www.langflow.org",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
