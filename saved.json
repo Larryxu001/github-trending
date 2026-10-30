@@ -687,6 +687,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "pages"
+  },
+  {
+   "repo": "public-apis/public-apis",
+   "url": "https://github.com/public-apis/public-apis",
+   "owner": "public-apis",
+   "stars": 493477,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是一个由社区长期维护的免费公开 API 清单，把天气、股票、汇率、IP 定位、航班、邮箱验证等各类可免费调用的接口按领域分类整理在一起。开发者做项目需要外部数据时，不用到处搜索，直接在这里按分类找到合适的 API，再查看是否需要密钥、是否支持 HTTPS 和 CORS，就能快速接入。例如想给应用加一个汇率换算功能，可以在清单里找到 Fixer 或 Exchangerate Host 这类接口直接使用。",
+   "site": "https://APILayer.com/?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-10-31",
+   "source": "pages"
   }
  ]
 }
