@@ -8149,7 +8149,7 @@
   ]
  },
  "monthly:2026-10": {
-  "status": "sending",
+  "status": "prepared",
   "report": {
    "new_count": 35,
    "skipped": 0,
@@ -9616,7 +9616,11 @@
       ]
      }
     },
-    "status": "sending"
+    "status": "sent",
+    "receipt": {
+     "code": 0,
+     "confirmed_at": "2026-10-31T08:03:41.285265+08:00"
+    }
    },
    {
     "message": {
