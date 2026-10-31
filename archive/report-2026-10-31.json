@@ -1,0 +1,45 @@
+{
+ "date": "2026-10-31",
+ "new_count": 2,
+ "skipped": 143,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "anthropics/skills",
+     "url": "https://github.com/anthropics/skills",
+     "owner": "anthropics",
+     "stars": 185116,
+     "updated": "2026-10-28",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "这是 Anthropic 官方公开的 Agent Skills 仓库，用 Python 提供一套可复用的技能模块，让 AI 智能体学会执行具体任务，而不是每次从零编写提示词。它解决智能体能力零散、难以复用的问题，开发者可直接调用或参考这些技能来扩展自己的 Agent。例如让智能体自动处理文档、调用工具或完成多步流程时，可复用现成技能，减少重复开发。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "lightpanda-io/browser",
+     "url": "https://github.com/lightpanda-io/browser",
+     "owner": "lightpanda-io",
+     "stars": 38105,
+     "updated": "2026-10-30",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Lightpanda 是一个用 Zig 编写的无头浏览器，专为 AI 和自动化场景设计。它解决传统无头浏览器（如 Chrome）内存占用大、启动慢的问题，通过精简架构实现更轻量、更快速的网页渲染与交互。开发者可以用它替代 Puppeteer 或 Playwright 的底层浏览器，例如在爬取动态网页或运行自动化测试时，显著降低资源消耗并提升执行效率。",
+     "site": "https://lightpanda.io"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
