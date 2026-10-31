@@ -8147,5 +8147,525 @@
     }
    }
   ]
+ },
+ "monthly:2026-10": {
+  "status": "prepared",
+  "report": {
+   "new_count": 35,
+   "skipped": 0,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "obra/superpowers",
+       "url": "https://github.com/obra/superpowers",
+       "owner": "obra",
+       "stars": 294619,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。",
+       "site": "无",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "tt-a1i/archify",
+       "url": "https://github.com/tt-a1i/archify",
+       "owner": "tt-a1i",
+       "stars": 76438,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "让 AI 助手帮你画专业图表的技能。你说一句「画一个用户下单的系统架构图」，它就生成带动画、可导出高清图片的精美网页图表，比 Mermaid 那种朴素线条好看一个档次——写技术文档、做汇报直接就能用。",
+       "site": "https://tt-a1i.github.io/archify/",
+       "note": "画图表",
+       "tags": []
+      },
+      {
+       "repo": "pbakaus/impeccable",
+       "url": "https://github.com/pbakaus/impeccable",
+       "owner": "pbakaus",
+       "stars": 74557,
+       "updated": "2026-10-05",
+       "lists": [],
+       "desc": "专治「AI 生成的网页丑」。它是一套喂给 AI 的设计语言规范，教 AI 什么是好的间距、字体层级和配色。装上之后 AI 做的界面明显更像专业设计师出品，而不是千篇一律的模板风。",
+       "site": "https://impeccable.style",
+       "note": "网站 UI 设计美化",
+       "tags": [
+        "前端"
+       ]
+      },
+      {
+       "repo": "sansan0/TrendRadar",
+       "url": "https://github.com/sansan0/TrendRadar",
+       "owner": "sansan0",
+       "stars": 62725,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "TrendRadar 是一个 AI 驱动的舆情与热点监控工具，帮你告别信息过载。它聚合微博、知乎等多平台热榜和 RSS 订阅，用 AI 智能筛选、翻译并生成分析简报，再通过微信、飞书、钉钉、Telegram、邮件等渠道推送到手机。比如你只关心「AI 芯片」相关新闻，它就能自动过滤无关内容并定时提醒你。支持 Docker 一键部署，数据可本地或云端自持，还能接入 MCP 让 AI 对话分析趋势。",
+       "site": "https://trendradar.sandev.cc",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "cathrynlavery/diagram-design",
+       "url": "https://github.com/cathrynlavery/diagram-design",
+       "owner": "cathrynlavery",
+       "stars": 43947,
+       "updated": "2026-10-09",
+       "lists": [],
+       "desc": "这是一个为 Claude Code、Codex、GitHub Copilot 等 AI 编程助手准备的图表设计技能包，内置 42 种图表类型，用自包含的 HTML + SVG 生成干净、无阴影的编辑级图表，避免 Mermaid 默认样式的粗糙感。比如你让 AI 画一张系统架构图，它会直接输出可嵌入网页的 SVG，而不是千篇一律的流程图。适合需要高质量可视化、又不想手动调格式的开发者。",
+       "site": "https://cathrynlavery.github.io/diagram-design/",
+       "note": "画图",
+       "tags": [
+        "前端"
+       ]
+      },
+      {
+       "repo": "hugohe3/ppt-master",
+       "url": "https://github.com/hugohe3/ppt-master",
+       "owner": "hugohe3",
+       "stars": 61657,
+       "updated": "2026-10-14",
+       "lists": [],
+       "desc": "PPT Master 是一个运行在各类 AI 工具里的「技能」，你只要把 PDF、Word 或一个主题丢给 AI，它就能在你本机生成真正可编辑的 PowerPoint 文件——带原生形状、图表、表格、切换动画和语音旁白，还能套用你自己的 .pptx 模板。它解决的是 AI 做 PPT 只能生成图片或死板模板的问题，让生成结果能像手工做的一样在 PowerPoint 里继续改，数据也不用上传平台。",
+       "site": "https://hugohe3.github.io/ppt-master-examples/",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "Graphify-Labs/graphify",
+       "url": "https://github.com/Graphify-Labs/graphify",
+       "owner": "Graphify-Labs",
+       "stars": 129921,
+       "updated": "2026-10-23",
+       "lists": [],
+       "desc": "Graphify 能把任意代码库连同文档、SQL 表结构、配置和 PDF 一起，转成可查询的知识图谱。它作为 Claude Code、Cursor、Codex 和 Gemini CLI 的 /graphify 技能使用，靠本地确定性的 AST 解析建图，每条边都有解释，不需要向量数据库。比如你接手一个陌生项目，可以直接问「哪些函数会写这张表」，它顺着图谱给出答案和依据，适合代码理解、检索和 AI 编程助手增强。",
+       "site": "https://www.graphify.com",
+       "note": "",
+       "tags": [
+        "做工具"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Agent 效率优化",
+     "emoji": "⚡",
+     "items": [
+      {
+       "repo": "affaan-m/ECC",
+       "url": "https://github.com/affaan-m/ECC",
+       "owner": "affaan-m",
+       "stars": 271630,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "一套给编程 Agent 做「性能调优」的系统：技能管理、记忆、安全检查、先调研再动手的工作流，适配 Claude Code/Codex/Cursor 等主流工具。目标是让 AI 写代码更快、更稳、更少返工。",
+       "site": "https://ecc.tools",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "JuliusBrussee/caveman",
+       "url": "https://github.com/JuliusBrussee/caveman",
+       "owner": "JuliusBrussee",
+       "stars": 109243,
+       "updated": "2026-10-05",
+       "lists": [],
+       "desc": "一个爆火的省钱技巧：让 AI 用「穴居人式」极简英语思考和工作（说 make login work 而不是长篇大论），实测省 65% 的 token 消耗。表面是个梗，实际是真金白银地降 API 账单。",
+       "site": "https://docs.caveman.so/docs/quickstart",
+       "note": "省大模型 token",
+       "tags": [
+        "做 Agent"
+       ]
+      },
+      {
+       "repo": "headroomlabs-ai/headroom",
+       "url": "https://github.com/headroomlabs-ai/headroom",
+       "owner": "headroomlabs-ai",
+       "stars": 76129,
+       "updated": "2026-10-23",
+       "lists": [],
+       "desc": "Headroom 是一个在内容送入大模型之前先做压缩的工具，专门处理工具输出、日志、文件和 RAG 片段，能在答案基本不变的前提下大幅减少 token 消耗——编码智能体省约 20%，JSON 数据可省 60% 到 95%。它提供库、代理和 MCP 服务器三种用法，适合接入 Claude Code、Cursor、LangChain 等场景，帮助开发者降低调用成本、缓解上下文窗口压力。",
+       "site": "https://docs.headroomlabs.ai/docs",
+       "note": "",
+       "tags": [
+        "RAG"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "paperclipai/paperclip",
+       "url": "https://github.com/paperclipai/paperclip",
+       "owner": "paperclipai",
+       "stars": 96448,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "当公司里同时跑着好几个 AI Agent，这个开源应用就是它们的「人事部+项目管理台」：分配任务、查看进度、管理权限。相当于给你的 AI 员工们请了一位项目经理。",
+       "site": "https://paperclip.ing",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "opendatalab/MinerU",
+       "url": "https://github.com/opendatalab/MinerU",
+       "owner": "opendatalab",
+       "stars": 81265,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "MinerU 是 OpenDataLab 开源的高质量文档解析工具，能把 PDF、扫描件、Word、PPT、Excel、EPUB、HTML 等复杂文档转换成大模型可直接使用的 Markdown 或 JSON。它擅长处理表格、公式、多栏排版和扫描 OCR，并保留页码与块级定位，方便引用和检索。例如把一篇带公式和表格的学术论文 PDF 转成 Markdown 后，就能直接喂给 AI Agent 做问答或 RAG 检索，省去自己写解析器的麻烦。",
+       "site": "https://opendatalab.github.io/MinerU/",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "vectorize-io/hindsight",
+       "url": "https://github.com/vectorize-io/hindsight",
+       "owner": "vectorize-io",
+       "stars": 44831,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "给 AI Agent 装的「会成长的记忆」。普通记忆只是存聊天记录，Hindsight 会从过去的成功和失败里总结规律，下次遇到类似任务做得更好——让 AI 像新人一样逐渐变成老手。",
+       "site": "https://hindsight.vectorize.io/",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "学习资源",
+     "emoji": "📚",
+     "items": [
+      {
+       "repo": "byoungd/up",
+       "url": "https://github.com/byoungd/up",
+       "owner": "byoungd",
+       "stars": 67496,
+       "updated": "2026-10-09",
+       "lists": [],
+       "desc": "这是一个中英双语的终身学习指南，教你怎么学英语、怎么和 AI 协作、怎么用真实项目积累成长证据。它解决的是「想自学但不知道从哪下手、学了没成果」的问题，把英语学习、AI 工具使用和项目实践串成一条可执行的路径。比如你想提升英语又怕坚持不下去，可以照着里面的方法边做项目边练，把学习过程变成看得见的作品。",
+       "site": "https://byoungd.github.io/up/",
+       "note": "",
+       "tags": [
+        "学习"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "AI / 大模型",
+     "emoji": "🧠",
+     "items": [
+      {
+       "repo": "Tencent/WeKnora",
+       "url": "https://github.com/Tencent/WeKnora",
+       "owner": "Tencent",
+       "stars": 31818,
+       "updated": "2026-10-05",
+       "lists": [],
+       "desc": "腾讯开源的知识库平台：把公司一堆散落的文档丢进去，就能变成可问答的智能知识库，还能自动整理成 Wiki。典型的 RAG 应用，适合搭企业内部「问啥都知道」的 AI 知识助手。",
+       "site": "https://weknora.weixin.qq.com",
+       "note": "知识库",
+       "tags": []
+      },
+      {
+       "repo": "nashsu/llm_wiki",
+       "url": "https://github.com/nashsu/llm_wiki",
+       "owner": "nashsu",
+       "stars": 20285,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "LLM Wiki 是一款跨平台桌面应用，能把你的文档自动变成互相链接的知识库。它不像传统 RAG 每次提问都从头检索，而是让大模型增量地阅读、整理并持续维护一个持久化的 Wiki，知识只编译一次并保持更新。比如你导入一批 PDF 论文，它会自动生成摘要、实体和概念页面并建立交叉引用，还支持知识图谱、语义搜索和网页剪藏，适合做个人或团队的知识管理。",
+       "site": "无",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "harry0703/MoneyPrinterTurbo",
+       "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+       "owner": "harry0703",
+       "stars": 130531,
+       "updated": "2026-10-14",
+       "lists": [],
+       "desc": "MoneyPrinterTurbo 是一个开源的 AI 短视频一键生成工具。你只需输入一个主题或关键词，它就会自动调用大模型写视频脚本、匹配素材、生成配音字幕和背景音乐，最后用 ffmpeg 合成高清短视频，适合批量制作抖音、TikTok、YouTube Shorts 等平台内容。它提供 WebUI、API、CLI 和 AI Agent 四种用法，支持 Kimi、OpenAI、Claude、Gemini、DeepSeek 等多种模型，也能在每一步手动替换自定义内容。",
+       "site": "无",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "安全",
+     "emoji": "🔐",
+     "items": [
+      {
+       "repo": "Infisical/infisical",
+       "url": "https://github.com/Infisical/infisical",
+       "owner": "Infisical",
+       "stars": 29657,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "Infisical 是一个开源的密钥与证书管理平台，帮团队集中存放和同步应用密码、API Key、数据库凭据等敏感信息，防止它们被硬编码或泄露到 Git 仓库。它支持密钥版本回滚、定期轮换、动态生成临时凭据，还能签发和管理内部证书、控制特权访问并记录审计日志。例如开发时可用它的 CLI 把生产密钥自动注入本地环境，无需手动复制粘贴。",
+       "site": "https://infisical.com",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "morluto/rea",
+       "url": "https://github.com/morluto/rea",
+       "owner": "morluto",
+       "stars": 254168,
+       "updated": "2026-10-15",
+       "lists": [],
+       "desc": "REA 是一个面向逆向工程的开源工具，通过 MCP 协议把 AI 智能体接入 Hopper、Ghidra、IDA 等分析引擎，让智能体自动拆解原生二进制、Electron 应用、.NET 程序、APK 和网站。比如你想复刻某个 App 的搜索功能，只需让智能体用 REA 检查目标程序，它就能给出伪代码、调用关系和证据，并帮你实现类似功能。分析在本地完成，结论附带依据与局限。",
+       "site": "https://rea.tools",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "NationalSecurityAgency/ghidra",
+       "url": "https://github.com/NationalSecurityAgency/ghidra",
+       "owner": "NationalSecurityAgency",
+       "stars": 88797,
+       "updated": "2026-10-16",
+       "lists": [],
+       "desc": "Ghidra 是美国国家安全局（NSA）开源的一款软件逆向工程框架，用来分析编译后的程序。它能把二进制机器码反汇编、反编译成接近源代码的形式，还支持函数调用图、脚本扩展等功能，帮助安全人员理解恶意软件或寻找软件漏洞。比如拿到一个可疑的可执行文件，可以用它看清程序内部逻辑，判断是否有后门。它支持 Windows、macOS、Linux，也能用 Java 或 Python 写插件。",
+       "site": "无",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "longbridge/gpui-kit",
+       "url": "https://github.com/longbridge/gpui-kit",
+       "owner": "longbridge",
+       "stars": 15751,
+       "updated": "2026-10-05",
+       "lists": [],
+       "desc": "长桥开源的 Rust 桌面 UI 组件库，基于 GPUI（Zed 编辑器同款引擎），性能极好。想做 Rust 跨平台桌面应用——尤其是行情、交易这类实时界面——可以直接用这套现成组件。",
+       "site": "http://gpui-kit.com",
+       "note": "网站 UI 设计工具箱",
+       "tags": [
+        "前端"
+       ]
+      },
+      {
+       "repo": "jackyzha0/quartz",
+       "url": "https://github.com/jackyzha0/quartz",
+       "owner": "jackyzha0",
+       "stars": 13350,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "Quartz 是一个静态网站生成器，能把用 Markdown 写的笔记自动变成功能完整的网站，特别适合发布「数字花园」——也就是像 Obsidian 那样互相链接的笔记网络。它内置了搜索、反向链接、图谱视图等功能，你只需专注写作，它负责生成网页并免费部署。比如你有一堆 Obsidian 笔记，用 Quartz 就能一键发布成个人知识网站，读者可以像浏览维基百科一样在笔记间跳转。",
+       "site": "https://quartz.jzhao.xyz",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "fastapi/fastapi",
+       "url": "https://github.com/fastapi/fastapi",
+       "owner": "fastapi",
+       "stars": 103556,
+       "updated": "2026-10-23",
+       "lists": [],
+       "desc": "FastAPI 是一个用 Python 编写的高性能 Web 框架，专门用来快速搭建后端 API 服务。它基于类型注解自动校验请求数据并生成交互式接口文档，开发者只需写少量代码就能完成路由、参数解析和错误处理。比如你要做一个用户登录接口，定义好请求和返回的数据结构后，FastAPI 会自动检查输入格式并生成可在线测试的文档页面，非常适合从原型到生产环境的 API 开发。",
+       "site": "https://fastapi.tiangolo.com/",
+       "note": "",
+       "tags": [
+        "后端"
+       ]
+      },
+      {
+       "repo": "NanmiCoder/MediaCrawler",
+       "url": "https://github.com/NanmiCoder/MediaCrawler",
+       "owner": "NanmiCoder",
+       "stars": 67591,
+       "updated": "2026-10-21",
+       "lists": [],
+       "desc": "MediaCrawler 是一个多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎等主流平台，可抓取帖子、视频信息和评论。它基于 Playwright 浏览器自动化，通过保留登录态直接获取签名参数，无需逆向复杂加密算法，大幅降低爬虫门槛。例如输入关键词即可批量采集小红书笔记及评论，并支持导出 CSV、JSON、Excel、MySQL 等多种格式，适合学习爬虫技术和进行公开数据分析。",
+       "site": "https://nanmicoder.github.io/MediaCrawler/",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "twentyhq/twenty",
+       "url": "https://github.com/twentyhq/twenty",
+       "owner": "twentyhq",
+       "stars": 58946,
+       "updated": "2026-10-22",
+       "lists": [],
+       "desc": "Twenty 是一个开源的客户关系管理（CRM）系统，定位为 Salesforce 的开放替代品，并针对 AI 场景做了设计。它帮你集中管理客户信息、销售线索和沟通记录，避免被商业 CRM 的高价和封闭生态绑定。比如小团队可以用它自建销售管道，把邮件、公司、联系人关联起来，还能基于 GraphQL 接口和 AI 能力做二次开发。",
+       "site": "https://twenty.com",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "hmjz100/LinkSwift",
+       "url": "https://github.com/hmjz100/LinkSwift",
+       "owner": "hmjz100",
+       "stars": 23488,
+       "updated": "2026-10-23",
+       "lists": [],
+       "desc": "LinkSwift 是一个基于 JavaScript 的网盘直链下载工具，能帮你把百度网盘、阿里云盘、夸克网盘等八大网盘的文件，解析出可直接下载的直链地址，再配合 Aria2、Motrix 等下载器使用，从而绕过官方客户端的限速。比如你想下载百度网盘里的大文件，用它获取直链后就能用下载工具高速下载，不用再忍受几十 KB/s 的龟速。",
+       "site": "https://github.com/hmjz100/LinkSwift",
+       "note": "下载提速",
+       "tags": [
+        "效率"
+       ]
+      },
+      {
+       "repo": "strelov1/freehire",
+       "url": "https://github.com/strelov1/freehire",
+       "owner": "strelov1",
+       "stars": 2172,
+       "updated": "2026-10-22",
+       "lists": [],
+       "desc": "freehire 是一个用 Go 编写的开源求职搜索引擎，把分散在各招聘网站和公司招聘系统（ATS）里的职位信息抓取、聚合到一起，让求职者在一个地方就能搜索和筛选岗位，不用反复切换网站。它解决的是职位信息碎片化、搜索效率低的问题，适合想快速找到匹配岗位的求职者，也适合想自建招聘聚合站点的开发者。",
+       "site": "https://freehire.me",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "其他",
+     "emoji": "📦",
+     "items": [
+      {
+       "repo": "newsnext/newsnow",
+       "url": "https://github.com/newsnext/newsnow",
+       "owner": "newsnext",
+       "stars": 21979,
+       "updated": "2026-10-08",
+       "lists": [],
+       "desc": "NewsNow 是一个优雅的实时热点新闻聚合阅读器，把各大平台的热榜和最新资讯集中到一个干净清爽的界面里，解决用户在不同 App 之间来回切换看新闻的麻烦。它支持 GitHub 登录同步、智能缓存与自适应抓取频率，还能通过 MCP 接入 AI 工具。例如你想快速了解今天全网热点，打开它就能一屏看完，无需逐个平台翻找。",
+       "site": "https://newsnow.busiyi.world",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "pablostanley/yoinks",
+       "url": "https://github.com/pablostanley/yoinks",
+       "owner": "pablostanley",
+       "stars": 3655,
+       "updated": "2026-10-05",
+       "lists": [],
+       "desc": "终端里的视频下载器：一条命令把网页视频拉到本地，没有垃圾广告和套路。同类工具里界面最清爽的一个。",
+       "site": "无",
+       "note": "利用 yp-tlp 工具下载网站视频",
+       "tags": []
+      },
+      {
+       "repo": "LibreSpark/LibreTV",
+       "url": "https://github.com/LibreSpark/LibreTV",
+       "owner": "LibreSpark",
+       "stars": 18264,
+       "updated": "2026-10-23",
+       "lists": [],
+       "desc": "LibreTV 是一个开源影视聚合站项目，用 TypeScript 和 Next.js 开发，主打一分钟快速搭建自己的在线影视网站。它支持 Docker 等多种部署方式，内置响应式界面，适合个人或小团队搭建电影、电视剧观看入口。比如你想给朋友做一个干净的追剧站，只需拉取镜像运行，就能拥有带搜索和播放功能的影视页面，省去从零开发前端的麻烦。",
+       "site": "https://libretv.is-an.org",
+       "note": "",
+       "tags": [
+        "做视频"
+       ]
+      },
+      {
+       "repo": "Kruk2/jasna",
+       "url": "https://github.com/Kruk2/jasna",
+       "owner": "Kruk2",
+       "stars": 2322,
+       "updated": "2026-10-23",
+       "lists": [],
+       "desc": "jasna 是一个用 Python 编写的视频修复工具，专门用来清理视频中的瑕疵，比如去除噪点、划痕、闪烁或压缩失真。它适合处理老片翻新或低质量素材，让画面更干净稳定。例如，你可以用它修复一段充满噪点的家庭录像，输出更清晰的版本。",
+       "site": "无",
+       "note": "",
+       "tags": [
+        "做视频"
+       ]
+      },
+      {
+       "repo": "23Star/xianyu-super-butler",
+       "url": "https://github.com/23Star/xianyu-super-butler",
+       "owner": "23Star",
+       "stars": 1316,
+       "updated": "2026-10-21",
+       "lists": [],
+       "desc": "闲鱼超级管家是一款面向闲鱼卖家的自动化管理后台，用 Python 开发，可把多个闲鱼账号统一托管。它能自动发货（发卡密）、关键词加 AI 自动回复、自动评价、求小红花、定时擦亮商品，并同步订单和商品数据。卖家不用再盯着手机逐条回复，打开网页就能看成交额、库存和会话，适合做虚拟商品或多账号经营的个人卖家。",
+       "site": "https://xy.corleom.com",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "移动 / 桌面应用",
+     "emoji": "📱",
+     "items": [
+      {
+       "repo": "harry0703/MangoDisk",
+       "url": "https://github.com/harry0703/MangoDisk",
+       "owner": "harry0703",
+       "stars": 4075,
+       "updated": "2026-10-14",
+       "lists": [],
+       "desc": "MangoDisk 是一款用 Rust 和 Tauri 打造的跨平台磁盘清理与空间分析工具，支持 macOS、Windows 和 Linux。它能一键扫描系统缓存、浏览器数据、开发工具缓存（如 Xcode、Docker、Node.js 构建产物）和 AI 模型等占空间的内容，还提供大文件查找、重复文件清理、磁盘空间可视化（矩形树图/旭日图）、应用卸载、开机启动项管理和系统优化等功能。它坚持安全优先，默认只读扫描，清理前可逐项确认，并记录操作历史，适合想快速释放硬盘空间又怕误删的用户。",
+       "site": "https://mangodisk.app/",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "KnifeLemon/Filee",
+       "url": "https://github.com/KnifeLemon/Filee",
+       "owner": "KnifeLemon",
+       "stars": 7397,
+       "updated": "2026-10-20",
+       "lists": [],
+       "desc": "Filee 是一款免费开源的离线文件转换工具，用「拖拽」代替繁琐的菜单操作：按住 Ctrl 把文件拖到光标处弹出的格式圆环上，就能完成转换。它支持图片、PDF、Word、Excel、PPT、HWP、视频、音频、电子书、压缩包等 244 种以上格式，无需安装 Office 或上传云端，文件始终留在本机。例如把 iPhone 的 HEIC 照片拖到 JPG 上即可秒转，还支持批量转换、文件夹监控和命令行调用。",
+       "site": "https://filee.sh",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "数据 / 数据库",
+     "emoji": "💾",
+     "items": [
+      {
+       "repo": "supabase/supabase",
+       "url": "https://github.com/supabase/supabase",
+       "owner": "supabase",
+       "stars": 112779,
+       "updated": "2026-10-22",
+       "lists": [],
+       "desc": "Supabase 是一个基于 PostgreSQL 的开源后端开发平台，相当于开源的 Firebase 替代品。它提供专用 Postgres 数据库，并内置用户认证、文件存储、实时订阅和向量检索等能力，让开发者不用自己搭建后端就能快速开发网站、移动应用和 AI 应用。比如做一个带登录和实时聊天的小程序，可以直接用它的认证和实时功能，省去大量服务器配置工作。",
+       "site": "https://supabase.com",
+       "note": "",
+       "tags": [
+        "后端"
+       ]
+      }
+     ]
+    }
+   ],
+   "date": "2026-10",
+   "kind": "monthly",
+   "source_weeks": [
+    "2026-10-12",
+    "2026-10-19",
+    "2026-10-26"
+   ]
+  }
  }
 }
