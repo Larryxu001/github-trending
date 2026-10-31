@@ -8149,7 +8149,7 @@
   ]
  },
  "monthly:2026-10": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "new_count": 35,
    "skipped": 0,
@@ -9063,7 +9063,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    },
    {
     "message": {
