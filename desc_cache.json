@@ -1018,5 +1018,29 @@
   "emoji": "🛠",
   "desc": "Lightpanda 是一个用 Zig 编写的无头浏览器，专为 AI 和自动化场景设计。它解决传统无头浏览器（如 Chrome）内存占用大、启动慢的问题，通过精简架构实现更轻量、更快速的网页渲染与交互。开发者可以用它替代 Puppeteer 或 Playwright 的底层浏览器，例如在爬取动态网页或运行自动化测试时，显著降低资源消耗并提升执行效率。",
   "site": "https://lightpanda.io"
+ },
+ "Orkas-AI/Orkas": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "Orkas 是一个开源的本地优先 AI 团队桌面应用，你只需说出目标，它内置的「指挥官」就会自动拆解成待办事项，并调度 16 个专业智能体以及 Claude Code、Codex 等外部工具协作完成。它解决了个人或小团队缺乏统一 AI 工作流的问题，支持项目管理、定时自动化和连接器。例如你说「整理本周客户反馈并生成报告」，它会自动分派调研、写作、校对等智能体接力完成，全程在本地运行，也可接入自己的 API 密钥。",
+  "site": "https://orkas.ai?source=gh-orkas"
+ },
+ "bregman-arie/devops-exercises": {
+  "cat": "学习资源",
+  "emoji": "📚",
+  "desc": "这是一个面向 DevOps 面试准备的开源题库，覆盖 Linux、Docker、Kubernetes、AWS、Azure、Terraform、Ansible、Git、Python、网络、数据库等大量主题，并配有练习题和答案。它解决的是面试者不知道考什么、如何系统复习的问题，适合求职者按主题刷题查漏补缺，也适合工程师日常巩固知识，例如准备 Kubernetes 面试时可集中练习相关题目。",
+  "site": "无"
+ },
+ "vorssaint/vorssaint-utils": {
+  "cat": "移动 / 桌面应用",
+  "emoji": "📱",
+  "desc": "这是一款免费开源的 macOS 菜单栏工具箱，把多个常用小功能集中到屏幕顶部的菜单栏里。它提供窗口切换（类似 Alt-Tab）、应用卸载、防止电脑休眠等实用工具，解决 macOS 自带功能不够顺手、需要装一堆零散软件的问题。比如你想快速切换窗口或彻底卸载某个 App，点一下菜单栏图标就能完成，不用再翻系统设置或找第三方付费工具。",
+  "site": "https://vorssaint.com"
+ },
+ "AstrBotDevs/AstrBot": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "AstrBot 是一个开源的 AI 智能体助手与开发框架，能把大语言模型（如 ChatGPT、Gemini、Llama）接入 QQ、Discord 等聊天平台，并支持插件扩展和 MCP 协议。它解决的是「让 AI 助手快速落地到日常聊天工具」的问题：开发者无需从零搭建，就能做出能对话、能调用工具、能记住上下文的机器人。例如你可以把它部署到 Discord 服务器，让 AI 自动回答成员问题、查询资料或执行任务。",
+  "site": "https://astrbot.app"
  }
 }
