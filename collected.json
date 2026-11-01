@@ -126,7 +126,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-01T17:00:41.479816+08:00"
+   "last_seen": "2026-11-01T20:00:38.651826+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -184,7 +184,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-11-01T17:00:41.479853+08:00"
+   "last_seen": "2026-11-01T20:00:42.068975+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -202,7 +202,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-11-01T17:00:41.479903+08:00"
+   "last_seen": "2026-11-01T20:00:47.092658+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
@@ -229,7 +229,7 @@
    "updated": "2026-10-30",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-11-01T17:00:41.479891+08:00"
+   "last_seen": "2026-11-01T20:00:46.305395+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -320,7 +320,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-01T17:00:41.479829+08:00"
+   "last_seen": "2026-11-01T20:00:38.651824+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -405,7 +405,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-01T17:00:41.479787+08:00"
+   "last_seen": "2026-11-01T20:00:38.651803+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -714,7 +714,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-11-01T17:00:41.479885+08:00"
+   "last_seen": "2026-11-01T20:00:44.651654+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -959,23 +959,23 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-01T17:00:41.479832+08:00"
+   "last_seen": "2026-11-01T20:00:39.504099+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
    "lists": [
     "monthly"
    ],
-   "stars": 44511,
+   "stars": 45414,
    "owner": "tashfeenahmed",
    "homepage": "https://freellmapi.co",
    "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-10-30",
-   "metadata_date": "2026-10-31",
+   "updated": "2026-10-31",
+   "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-10-31T17:00:42.652388+08:00"
+   "last_seen": "2026-11-01T20:00:50.849867+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -1036,7 +1036,7 @@
    "updated": "2026-10-30",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-11-01T17:00:41.479860+08:00"
+   "last_seen": "2026-11-01T20:00:42.986279+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1162,7 +1162,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-01T17:00:41.479809+08:00"
+   "last_seen": "2026-11-01T20:00:38.651820+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1216,7 +1216,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-01T17:00:41.479841+08:00"
+   "last_seen": "2026-11-01T20:00:39.504093+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1306,7 +1306,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-01T17:00:41.479826+08:00"
+   "last_seen": "2026-11-01T20:00:39.504091+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1377,7 +1377,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-10T21:02:35.740958+08:00",
-   "last_seen": "2026-11-01T17:00:41.479909+08:00"
+   "last_seen": "2026-11-01T20:00:46.305427+08:00"
   },
   "tensorflow/tensorflow": {
    "repo": "tensorflow/tensorflow",
@@ -1526,7 +1526,7 @@
    "updated": "2026-04-20",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-10T21:02:41.186466+08:00",
-   "last_seen": "2026-11-01T17:00:41.479847+08:00"
+   "last_seen": "2026-11-01T20:00:42.986251+08:00"
   },
   "longbridge/gpui-kit": {
    "repo": "longbridge/gpui-kit",
@@ -1760,16 +1760,16 @@
     "daily",
     "monthly"
    ],
-   "stars": 37253,
+   "stars": 37484,
    "owner": "vercel-labs",
    "homepage": "https://skills.sh",
    "description": "The open agent skills tool - npx skills",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-10-29",
-   "metadata_date": "2026-10-31",
+   "updated": "2026-10-30",
+   "metadata_date": "2026-11-01",
    "first_seen": "2026-10-13T19:24:17.991914+08:00",
-   "last_seen": "2026-10-31T17:00:42.652386+08:00"
+   "last_seen": "2026-11-01T20:00:50.003124+08:00"
   },
   "xtool-org/xtool": {
    "repo": "xtool-org/xtool",
@@ -2064,7 +2064,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-01T17:00:41.479876+08:00"
+   "last_seen": "2026-11-01T20:00:43.823365+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2117,7 +2117,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-01T17:00:41.479838+08:00"
+   "last_seen": "2026-11-01T20:00:40.339788+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -2273,7 +2273,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-16T19:00:19.574046+08:00",
-   "last_seen": "2026-11-01T17:00:41.479912+08:00"
+   "last_seen": "2026-11-01T20:00:48.765447+08:00"
   },
   "MadsLorentzen/ai-job-search": {
    "repo": "MadsLorentzen/ai-job-search",
@@ -2500,7 +2500,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-19T17:00:44.506925+08:00",
-   "last_seen": "2026-11-01T17:00:41.479900+08:00"
+   "last_seen": "2026-11-01T20:00:47.092639+08:00"
   },
   "headroomlabs-ai/headroom": {
    "repo": "headroomlabs-ai/headroom",
@@ -2560,16 +2560,16 @@
    "lists": [
     "daily"
    ],
-   "stars": 42693,
+   "stars": 44929,
    "owner": "shiyu-coder",
    "homepage": "",
    "description": "Kronos: A Foundation Model for the Language of Financial Markets",
    "language": "Python",
    "topics": [],
    "updated": "2026-04-13",
-   "metadata_date": "2026-10-22",
+   "metadata_date": "2026-11-01",
    "first_seen": "2026-10-19T20:00:45.452575+08:00",
-   "last_seen": "2026-10-22T17:00:46.950466+08:00"
+   "last_seen": "2026-11-01T20:00:39.003998+08:00"
   },
   "Graphify-Labs/graphify": {
    "repo": "Graphify-Labs/graphify",
@@ -2950,7 +2950,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-23T19:15:31.888334+08:00",
-   "last_seen": "2026-11-01T17:00:41.479835+08:00"
+   "last_seen": "2026-11-01T20:00:43.823356+08:00"
   },
   "SnailSploit/Claude-Red": {
    "repo": "SnailSploit/Claude-Red",
@@ -3090,7 +3090,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-01T17:00:41.479803+08:00"
+   "last_seen": "2026-11-01T20:00:38.651817+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3199,14 +3199,15 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-25T18:59:14.321042+08:00",
-   "last_seen": "2026-11-01T17:00:41.479850+08:00"
+   "last_seen": "2026-11-01T20:00:43.823361+08:00"
   },
   "JetBrains/thinkrail": {
    "repo": "JetBrains/thinkrail",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 6460,
+   "stars": 6879,
    "owner": "JetBrains",
    "homepage": "https://thinkrail.ai/",
    "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
@@ -3226,10 +3227,10 @@
     "vibe-coding",
     "vibecoding"
    ],
-   "updated": "2026-10-30",
-   "metadata_date": "2026-10-31",
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-01",
    "first_seen": "2026-10-25T18:59:16.047190+08:00",
-   "last_seen": "2026-10-31T17:00:42.652360+08:00"
+   "last_seen": "2026-11-01T20:00:41.568879+08:00"
   },
   "coollabsio/coolify": {
    "repo": "coollabsio/coolify",
@@ -3292,7 +3293,7 @@
    "updated": "2026-10-22",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-01T17:00:41.479823+08:00"
+   "last_seen": "2026-11-01T20:00:39.504083+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3432,16 +3433,16 @@
    "lists": [
     "daily"
    ],
-   "stars": 10517,
+   "stars": 12523,
    "owner": "togg53192-cmd",
    "homepage": "",
    "description": "LIST OF ALL MY JAILBREAKS",
    "language": "",
    "topics": [],
-   "updated": "2026-10-28",
-   "metadata_date": "2026-10-31",
+   "updated": "2026-10-31",
+   "metadata_date": "2026-11-01",
    "first_seen": "2026-10-27T20:01:16.818697+08:00",
-   "last_seen": "2026-10-31T17:00:42.652363+08:00"
+   "last_seen": "2026-11-01T20:00:45.805270+08:00"
   },
   "elayadesign/ai-design-skills": {
    "repo": "elayadesign/ai-design-skills",
@@ -3510,7 +3511,7 @@
    "updated": "2026-10-25",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-01T17:00:41.479857+08:00"
+   "last_seen": "2026-11-01T20:00:43.823329+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3608,7 +3609,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-01T17:00:41.479866+08:00"
+   "last_seen": "2026-11-01T20:00:44.651620+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3637,14 +3638,14 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-01T17:00:41.479844+08:00"
+   "last_seen": "2026-11-01T20:00:39.504097+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
    "lists": [
     "daily"
    ],
-   "stars": 8617,
+   "stars": 9225,
    "owner": "CopilotKit",
    "homepage": "https://www.copilotkit.ai/openbot",
    "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
@@ -3658,10 +3659,10 @@
     "generative-ui",
     "mcp"
    ],
-   "updated": "2026-10-30",
-   "metadata_date": "2026-10-31",
+   "updated": "2026-10-31",
+   "metadata_date": "2026-11-01",
    "first_seen": "2026-10-29T20:00:46.716762+08:00",
-   "last_seen": "2026-10-31T17:00:42.652299+08:00"
+   "last_seen": "2026-11-01T20:00:44.979573+08:00"
   },
   "Donchitos/Claude-Code-Game-Studios": {
    "repo": "Donchitos/Claude-Code-Game-Studios",
@@ -3690,7 +3691,7 @@
    "updated": "2026-10-19",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-29T20:00:47.647693+08:00",
-   "last_seen": "2026-11-01T17:00:41.479819+08:00"
+   "last_seen": "2026-11-01T20:00:42.068989+08:00"
   },
   "anthropics/skills": {
    "repo": "anthropics/skills",
@@ -3709,7 +3710,7 @@
    "updated": "2026-10-28",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-01T17:00:41.479882+08:00"
+   "last_seen": "2026-11-01T20:00:45.479702+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -3734,7 +3735,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-30T20:00:44.151917+08:00",
-   "last_seen": "2026-11-01T17:00:41.479863+08:00"
+   "last_seen": "2026-11-01T20:00:38.651822+08:00"
   },
   "Orkas-AI/Orkas": {
    "repo": "Orkas-AI/Orkas",
@@ -3891,12 +3892,238 @@
    "metadata_date": "2026-11-01",
    "first_seen": "2026-10-31T19:54:48.035353+08:00",
    "last_seen": "2026-11-01T17:00:41.479906+08:00"
+  },
+  "public-apis/public-apis": {
+   "repo": "public-apis/public-apis",
+   "lists": [
+    "daily"
+   ],
+   "stars": 493985,
+   "owner": "public-apis",
+   "homepage": "https://APILayer.com/?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo",
+   "description": "A collective list of free APIs",
+   "language": "Python",
+   "topics": [
+    "api",
+    "apis",
+    "dataset",
+    "development",
+    "free",
+    "list",
+    "lists",
+    "open-source",
+    "public",
+    "public-api",
+    "public-apis",
+    "resources",
+    "software"
+   ],
+   "updated": "2026-10-30",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:39.839700+08:00",
+   "last_seen": "2026-11-01T20:00:39.839705+08:00"
+  },
+  "cjpais/Handy": {
+   "repo": "cjpais/Handy",
+   "lists": [
+    "daily"
+   ],
+   "stars": 36054,
+   "owner": "cjpais",
+   "homepage": "https://handy.computer",
+   "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
+   "language": "Rust",
+   "topics": [
+    "accessibility",
+    "cross-platform",
+    "speech-to-text",
+    "tauri-v2"
+   ],
+   "updated": "2026-10-27",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:40.686275+08:00",
+   "last_seen": "2026-11-01T20:00:40.686279+08:00"
+  },
+  "kornia/kornia": {
+   "repo": "kornia/kornia",
+   "lists": [
+    "daily"
+   ],
+   "stars": 11575,
+   "owner": "kornia",
+   "homepage": "https://kornia.readthedocs.io",
+   "description": "🐍 Geometric Computer Vision Library for Spatial AI",
+   "language": "Python",
+   "topics": [
+    "artificial-intelligence",
+    "computer-vision",
+    "deep-learning",
+    "hacktoberfest",
+    "image-processing",
+    "machine-learning",
+    "neural-network",
+    "python",
+    "pytorch",
+    "robotics",
+    "spatial-ai"
+   ],
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:42.486126+08:00",
+   "last_seen": "2026-11-01T20:00:42.486132+08:00"
+  },
+  "beenuar/AiSOC": {
+   "repo": "beenuar/AiSOC",
+   "lists": [
+    "daily"
+   ],
+   "stars": 5855,
+   "owner": "beenuar",
+   "homepage": "https://beenuar.github.io/AiSOC/",
+   "description": "Open-source AI Security Operations Center: alert fusion, LLM-agent triage, MITRE ATT&CK investigation, and a replayable decision ledger for every agent step. Self-hostable, runs with no API keys, MIT licensed. Ships an MCP server for Claude, Cursor and Continue.",
+   "language": "Python",
+   "topics": [
+    "agentic-ai",
+    "ai-security",
+    "alert-triage",
+    "blue-team",
+    "cybersecurity",
+    "detection-engineering",
+    "incident-response",
+    "langgraph",
+    "llm-agents",
+    "mcp",
+    "mitre-attack",
+    "model-context-protocol",
+    "purple-team",
+    "security-operations",
+    "self-hosted",
+    "siem",
+    "soar",
+    "soc",
+    "threat-detection",
+    "threat-intelligence"
+   ],
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:43.323202+08:00",
+   "last_seen": "2026-11-01T20:00:43.323214+08:00"
+  },
+  "anomalyco/hex": {
+   "repo": "anomalyco/hex",
+   "lists": [
+    "daily"
+   ],
+   "stars": 2525,
+   "owner": "anomalyco",
+   "homepage": "https://anoma.ly/hex",
+   "description": "Local-first voice dictation for macOS. Hold a shortcut, speak, and paste into any app. Native Rust, on-device speech recognition, and a Linux beta.",
+   "language": "Rust",
+   "topics": [
+    "dictation",
+    "linux",
+    "local-first",
+    "macos",
+    "rust",
+    "speech-recognition",
+    "speech-to-text",
+    "voice-control"
+   ],
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:44.151485+08:00",
+   "last_seen": "2026-11-01T20:00:44.151497+08:00"
+  },
+  "patchy631/ai-engineering-hub": {
+   "repo": "patchy631/ai-engineering-hub",
+   "lists": [
+    "daily"
+   ],
+   "stars": 39770,
+   "owner": "patchy631",
+   "homepage": "https://join.dailydoseofds.com",
+   "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
+   "language": "Jupyter Notebook",
+   "topics": [
+    "agents",
+    "ai",
+    "llms",
+    "machine-learning",
+    "mcp",
+    "rag"
+   ],
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:46.592532+08:00",
+   "last_seen": "2026-11-01T20:00:46.592540+08:00"
+  },
+  "FlashML-org/FreeToken": {
+   "repo": "FlashML-org/FreeToken",
+   "lists": [
+    "daily"
+   ],
+   "stars": 15097,
+   "owner": "FlashML-org",
+   "homepage": "flashml.ai",
+   "description": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+   "language": "Python",
+   "topics": [
+    "deepseek-v4",
+    "edge",
+    "glm",
+    "inference",
+    "minimax",
+    "moe",
+    "qwen",
+    "transformer"
+   ],
+   "updated": "2026-10-30",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:47.406829+08:00",
+   "last_seen": "2026-11-01T20:00:47.406836+08:00"
+  },
+  "ghostty-org/ghostty": {
+   "repo": "ghostty-org/ghostty",
+   "lists": [
+    "weekly"
+   ],
+   "stars": 63124,
+   "owner": "ghostty-org",
+   "homepage": "https://ghostty.org",
+   "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
+   "language": "Zig",
+   "topics": [],
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:48.265342+08:00",
+   "last_seen": "2026-11-01T20:00:48.265354+08:00"
+  },
+  "hyprwm/Hyprland": {
+   "repo": "hyprwm/Hyprland",
+   "lists": [
+    "daily"
+   ],
+   "stars": 39131,
+   "owner": "hyprwm",
+   "homepage": "https://hypr.land",
+   "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+   "language": "C++",
+   "topics": [
+    "compositor",
+    "cpp26",
+    "wayland",
+    "wayland-compositor"
+   ],
+   "updated": "2026-10-31",
+   "metadata_date": "2026-11-01",
+   "first_seen": "2026-11-01T20:00:49.141801+08:00",
+   "last_seen": "2026-11-01T20:00:49.141806+08:00"
   }
  },
- "last_collected": "2026-11-01T17:00:41.479916+08:00",
+ "last_collected": "2026-11-01T20:00:51.349976+08:00",
  "list_counts": {
-  "daily": 14,
-  "weekly": 15,
+  "daily": 17,
+  "weekly": 16,
   "monthly": 19
  }
 }
