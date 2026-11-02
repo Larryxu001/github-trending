@@ -11575,7 +11575,7 @@
   ]
  },
  "weekly:2026-11-02": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-02",
    "new_count": 19,
@@ -12337,7 +12337,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    },
    {
     "message": {
