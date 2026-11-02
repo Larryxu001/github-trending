@@ -757,6 +757,20 @@
    "tags": [],
    "saved_at": "2026-10-31",
    "source": "feishu"
+  },
+  {
+   "repo": "joeseesun/aicodinghunt",
+   "url": "https://github.com/joeseesun/aicodinghunt",
+   "owner": "joeseesun",
+   "stars": 0,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是一个把社区里大家自荐的 AI 工具、Agent、插件和开源项目整理成图文目录的网站，类似 Product Hunt 的 AI 工具版。用户可以按点赞和浏览量排序检索，还能直接投稿推荐自己的工具，解决了 AI 工具信息分散、难以发现和比较的问题。比如你想找一个好用的 AI 编程插件，打开这个猎场就能浏览、点赞并跳转到原帖了解详情。",
+   "site": "https://aicodinghunt.qiaomu.ai",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-02",
+   "source": "pages"
   }
  ]
 }
