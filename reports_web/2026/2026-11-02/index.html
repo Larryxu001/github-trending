@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 日报 · 2026-11-02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.031</span></div>
+    <h1>Github开源趋势日报</h1>
+    <div class="standfirst">每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目</div>
+    <div class="dateline"><b>2026 年 11 月 2 日</b>　·　第 31 期　·　本期共收录 <b>44</b> 个项目　·　30 天去重跳过 115 个</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>Agent 技能与插件<span class="toc-n">8</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>superpowers</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>skills</a><a class="toc-proj" href="#sec-1-3"><span class="toc-no">03</span>impeccable</a><a class="toc-proj" href="#sec-1-4"><span class="toc-no">04</span>archify</a><a class="toc-proj" href="#sec-1-5"><span class="toc-no">05</span>i-have-adhd</a><a class="toc-proj" href="#sec-1-6"><span class="toc-no">06</span>financial-services</a><a class="toc-proj" href="#sec-1-7"><span class="toc-no">07</span>knowledge-work-plugins</a><a class="toc-proj" href="#sec-1-8"><span class="toc-no">08</span>plugins</a></details><details><summary><span class="toc-no">02</span>Agent 基础设施与框架<span class="toc-n">8</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>paperclip</a><a class="toc-proj" href="#sec-2-2"><span class="toc-no">02</span>Agent-Reach</a><a class="toc-proj" href="#sec-2-3"><span class="toc-no">03</span>hindsight</a><a class="toc-proj" href="#sec-2-4"><span class="toc-no">04</span>OpenMAIC</a><a class="toc-proj" href="#sec-2-5"><span class="toc-no">05</span>cua</a><a class="toc-proj" href="#sec-2-6"><span class="toc-no">06</span>OpenShell</a><a class="toc-proj" href="#sec-2-7"><span class="toc-no">07</span>Octop</a><a class="toc-proj" href="#sec-2-8"><span class="toc-no">08</span>openrig</a></details><details><summary><span class="toc-no">03</span>Agent 效率优化<span class="toc-n">5</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>ECC</a><a class="toc-proj" href="#sec-3-2"><span class="toc-no">02</span>ponytail</a><a class="toc-proj" href="#sec-3-3"><span class="toc-no">03</span>caveman</a><a class="toc-proj" href="#sec-3-4"><span class="toc-no">04</span>context-mode</a><a class="toc-proj" href="#sec-3-5"><span class="toc-no">05</span>worktrunk</a></details><details><summary><span class="toc-no">04</span>AI / 大模型<span class="toc-n">6</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>pytorch</a><a class="toc-proj" href="#sec-4-2"><span class="toc-no">02</span>freellmapi</a><a class="toc-proj" href="#sec-4-3"><span class="toc-no">03</span>WeKnora</a><a class="toc-proj" href="#sec-4-4"><span class="toc-no">04</span>FreeToken</a><a class="toc-proj" href="#sec-4-5"><span class="toc-no">05</span>kornia</a><a class="toc-proj" href="#sec-4-6"><span class="toc-no">06</span>tilelang</a></details><details><summary><span class="toc-no">05</span>AI 应用与内容生成<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-5-1"><span class="toc-no">01</span>VoiceStudio</a><a class="toc-proj" href="#sec-5-2"><span class="toc-no">02</span>hyperframes</a><a class="toc-proj" href="#sec-5-3"><span class="toc-no">03</span>gods-eye-view</a></details><details><summary><span class="toc-no">06</span>开发工具与框架<span class="toc-n">5</span></summary><a class="toc-proj" href="#sec-6-1"><span class="toc-no">01</span>flutter</a><a class="toc-proj" href="#sec-6-2"><span class="toc-no">02</span>claude-code</a><a class="toc-proj" href="#sec-6-3"><span class="toc-no">03</span>ghostty</a><a class="toc-proj" href="#sec-6-4"><span class="toc-no">04</span>open-code-review</a><a class="toc-proj" href="#sec-6-5"><span class="toc-no">05</span>gpui-kit</a></details><details><summary><span class="toc-no">07</span>移动 / 桌面应用<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-7-1"><span class="toc-no">01</span>Hyprland</a><a class="toc-proj" href="#sec-7-2"><span class="toc-no">02</span>Handy</a><a class="toc-proj" href="#sec-7-3"><span class="toc-no">03</span>hex</a></details><details><summary><span class="toc-no">08</span>安全<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-8-1"><span class="toc-no">01</span>SkillSpector</a><a class="toc-proj" href="#sec-8-2"><span class="toc-no">02</span>AiSOC</a></details><details><summary><span class="toc-no">09</span>学习资源<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-9-1"><span class="toc-no">01</span>public-apis</a><a class="toc-proj" href="#sec-9-2"><span class="toc-no">02</span>ai-engineering-from-scratch</a><a class="toc-proj" href="#sec-9-3"><span class="toc-no">03</span>ai-engineering-hub</a></details><details><summary><span class="toc-no">10</span>其他<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-10-1"><span class="toc-no">01</span>yoinks</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">8 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></h3>
+            <span class="stars">★ 310,498</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;obra/superpowers&quot;, &quot;url&quot;: &quot;https://github.com/obra/superpowers&quot;, &quot;owner&quot;: &quot;obra&quot;, &quot;stars&quot;: 310498, &quot;desc&quot;: &quot;\u4e00\u5957\u7ed9 AI \u7f16\u7a0b\u52a9\u624b\u7528\u7684\u300c\u6280\u80fd\u6846\u67b6+\u5f00\u53d1\u65b9\u6cd5\u8bba\u300d\u3002\u5b83\u628a\u8d44\u6df1\u5de5\u7a0b\u5e08\u7684\u5de5\u4f5c\u4e60\u60ef\uff08\u5148\u60f3\u6e05\u695a\u518d\u52a8\u624b\u3001\u5c0f\u6b65\u63d0\u4ea4\u3001\u5199\u6d4b\u8bd5\uff09\u56fa\u5316\u6210\u53ef\u5b89\u88c5\u7684\u6280\u80fd\u5305\uff0c\u8ba9 Claude Code \u8fd9\u7c7b\u5de5\u5177\u4e0d\u518d\u4e0a\u6765\u5c31\u4e71\u5199\u4ee3\u7801\u3002\u6bd4\u5982\u4f60\u8bf4\u300c\u505a\u4e2a\u767b\u5f55\u529f\u80fd\u300d\uff0c\u5b83\u4f1a\u5148\u51fa\u65b9\u6848\u3001\u62c6\u4efb\u52a1\uff0c\u518d\u9010\u6b65\u5b9e\u73b0\u5e76\u81ea\u6d4b\u2014\u2014\u50cf\u6b63\u89c4\u519b\uff0c\u4e0d\u50cf\u6e38\u51fb\u961f\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一套给 AI 编程助手用的「技能框架+开发方法论」。它把资深工程师的工作习惯（先想清楚再动手、小步提交、写测试）固化成可安装的技能包，让 Claude Code 这类工具不再上来就乱写代码。比如你说「做个登录功能」，它会先出方案、拆任务，再逐步实现并自测——像正规军，不像游击队。</p>
+          
+          <div class="byline">
+            <span>obra</span><i>·</i>
+            <span>更新于 2026-10-29</span><i>·</i>
+            <span class="hot">日榜 · 周榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/obra/superpowers.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/obra/superpowers">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></h3>
+            <span class="stars">★ 308,108</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;mattpocock/skills&quot;, &quot;url&quot;: &quot;https://github.com/mattpocock/skills&quot;, &quot;owner&quot;: &quot;mattpocock&quot;, &quot;stars&quot;: 308108, &quot;desc&quot;: &quot;TypeScript \u6559\u80b2\u5708\u9876\u6d41\u4f5c\u8005 Matt Pocock \u516c\u5f00\u7684\u81ea\u5df1\u6bcf\u5929\u5728\u7528\u7684 AI \u6280\u80fd\u5e93\u3002\u76f8\u5f53\u4e8e\u628a\u4e00\u4f4d\u9876\u7ea7\u5de5\u7a0b\u5e08\u8c03\u6559 AI \u52a9\u624b\u7684\u79c1\u623f\u914d\u7f6e\u5168\u76d8\u6258\u51fa\uff0c\u4f60\u62f7\u5230\u81ea\u5df1\u9879\u76ee\u91cc\u5c31\u80fd\u7528\uff0c\u7701\u53bb\u51e0\u4e2a\u6708\u6478\u7d22\u63d0\u793a\u8bcd\u7684\u65f6\u95f4\u3002&quot;, &quot;site&quot;: &quot;https://aihero.dev/skills&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">TypeScript 教育圈顶流作者 Matt Pocock 公开的自己每天在用的 AI 技能库。相当于把一位顶级工程师调教 AI 助手的私房配置全盘托出，你拷到自己项目里就能用，省去几个月摸索提示词的时间。</p>
+          
+          <div class="byline">
+            <span>mattpocock</span><i>·</i>
+            <span>更新于 2026-10-31</span><i>·</i>
+            <span class="hot">日榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://aihero.dev/skills" target="_blank">https://aihero.dev/skills</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/mattpocock/skills.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/mattpocock/skills">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a></h3>
+            <span class="stars">★ 99,115</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;pbakaus/impeccable&quot;, &quot;url&quot;: &quot;https://github.com/pbakaus/impeccable&quot;, &quot;owner&quot;: &quot;pbakaus&quot;, &quot;stars&quot;: 99115, &quot;desc&quot;: &quot;\u4e13\u6cbb\u300cAI \u751f\u6210\u7684\u7f51\u9875\u4e11\u300d\u3002\u5b83\u662f\u4e00\u5957\u5582\u7ed9 AI \u7684\u8bbe\u8ba1\u8bed\u8a00\u89c4\u8303\uff0c\u6559 AI \u4ec0\u4e48\u662f\u597d\u7684\u95f4\u8ddd\u3001\u5b57\u4f53\u5c42\u7ea7\u548c\u914d\u8272\u3002\u88c5\u4e0a\u4e4b\u540e AI \u505a\u7684\u754c\u9762\u660e\u663e\u66f4\u50cf\u4e13\u4e1a\u8bbe\u8ba1\u5e08\u51fa\u54c1\uff0c\u800c\u4e0d\u662f\u5343\u7bc7\u4e00\u5f8b\u7684\u6a21\u677f\u98ce\u3002&quot;, &quot;site&quot;: &quot;https://impeccable.style&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">专治「AI 生成的网页丑」。它是一套喂给 AI 的设计语言规范，教 AI 什么是好的间距、字体层级和配色。装上之后 AI 做的界面明显更像专业设计师出品，而不是千篇一律的模板风。</p>
+          
+          <div class="byline">
+            <span>pbakaus</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://impeccable.style" target="_blank">https://impeccable.style</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/pbakaus/impeccable.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/pbakaus/impeccable">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i/archify</a></h3>
+            <span class="stars">★ 79,129</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tt-a1i/archify&quot;, &quot;url&quot;: &quot;https://github.com/tt-a1i/archify&quot;, &quot;owner&quot;: &quot;tt-a1i&quot;, &quot;stars&quot;: 79129, &quot;desc&quot;: &quot;\u8ba9 AI \u52a9\u624b\u5e2e\u4f60\u753b\u4e13\u4e1a\u56fe\u8868\u7684\u6280\u80fd\u3002\u4f60\u8bf4\u4e00\u53e5\u300c\u753b\u4e00\u4e2a\u7528\u6237\u4e0b\u5355\u7684\u7cfb\u7edf\u67b6\u6784\u56fe\u300d\uff0c\u5b83\u5c31\u751f\u6210\u5e26\u52a8\u753b\u3001\u53ef\u5bfc\u51fa\u9ad8\u6e05\u56fe\u7247\u7684\u7cbe\u7f8e\u7f51\u9875\u56fe\u8868\uff0c\u6bd4 Mermaid \u90a3\u79cd\u6734\u7d20\u7ebf\u6761\u597d\u770b\u4e00\u4e2a\u6863\u6b21\u2014\u2014\u5199\u6280\u672f\u6587\u6863\u3001\u505a\u6c47\u62a5\u76f4\u63a5\u5c31\u80fd\u7528\u3002&quot;, &quot;site&quot;: &quot;https://tt-a1i.github.io/archify/&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">让 AI 助手帮你画专业图表的技能。你说一句「画一个用户下单的系统架构图」，它就生成带动画、可导出高清图片的精美网页图表，比 Mermaid 那种朴素线条好看一个档次——写技术文档、做汇报直接就能用。</p>
+          
+          <div class="byline">
+            <span>tt-a1i</span><i>·</i>
+            <span>更新于 2026-10-07</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://tt-a1i.github.io/archify/" target="_blank">https://tt-a1i.github.io/archify/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/tt-a1i/archify.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/tt-a1i/archify">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></h3>
+            <span class="stars">★ 55,683</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;ayghri/i-have-adhd&quot;, &quot;url&quot;: &quot;https://github.com/ayghri/i-have-adhd&quot;, &quot;owner&quot;: &quot;ayghri&quot;, &quot;stars&quot;: 55683, &quot;desc&quot;: &quot;\u4e00\u4e2a\u8ba9 AI\u300c\u8bf4\u91cd\u70b9\u300d\u7684\u6280\u80fd\u3002\u9ed8\u8ba4\u60c5\u51b5\u4e0b AI \u559c\u6b22\u5148\u94fa\u57ab\u4e00\u5927\u6bb5\u80cc\u666f\u518d\u7ed9\u7b54\u6848\uff0c\u8fd9\u4e2a\u6280\u80fd\u5f3a\u5236\u5b83\u7ed3\u8bba\u5148\u884c\u3001\u77ed\u53e5\u8f93\u51fa\u3001\u62d2\u7edd\u5e9f\u8bdd\u2014\u2014\u5bf9 ADHD \u4eba\u7fa4\u548c\u6ca1\u8010\u5fc3\u7684\u5de5\u7a0b\u5e08\u90fd\u7279\u522b\u53cb\u597d\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一个让 AI「说重点」的技能。默认情况下 AI 喜欢先铺垫一大段背景再给答案，这个技能强制它结论先行、短句输出、拒绝废话——对 ADHD 人群和没耐心的工程师都特别友好。</p>
+          
+          <div class="byline">
+            <span>ayghri</span><i>·</i>
+            <span>更新于 2026-10-06</span><i>·</i>
+            <span class="hot">日榜 · 月榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/ayghri/i-have-adhd.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/ayghri/i-have-adhd">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-6">
+          <div class="item-head">
+            <span class="no">06</span>
+            <h3 class="title"><a href="https://github.com/anthropics/financial-services" target="_blank">anthropics/financial-services</a></h3>
+            <span class="stars">★ 40,619</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;anthropics/financial-services&quot;, &quot;url&quot;: &quot;https://github.com/anthropics/financial-services&quot;, &quot;owner&quot;: &quot;anthropics&quot;, &quot;stars&quot;: 40619, &quot;desc&quot;: &quot;Anthropic \u5b98\u65b9\u51fa\u54c1\u7684\u91d1\u878d\u884c\u4e1a\u6280\u80fd\u5305\uff0c\u6559 Claude \u5e72\u91d1\u878d\u4eba\u7684\u6d3b\uff1a\u8bfb\u8d22\u62a5\u3001\u505a\u5c3d\u804c\u8c03\u67e5\u3001\u5199\u6295\u7814\u5907\u5fd8\u5f55\u7b49\u3002\u76f8\u5f53\u4e8e\u628a\u91d1\u878d\u5206\u6790\u5e08\u7684\u6807\u51c6\u5de5\u4f5c\u6d41\u7a0b\u56fa\u5316\u6210\u4e86 AI \u6280\u80fd\uff0c\u91d1\u878d\u673a\u6784\u843d\u5730 AI \u7684\u6377\u5f84\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Anthropic 官方出品的金融行业技能包，教 Claude 干金融人的活：读财报、做尽职调查、写投研备忘录等。相当于把金融分析师的标准工作流程固化成了 AI 技能，金融机构落地 AI 的捷径。</p>
+          
+          <div class="byline">
+            <span>anthropics</span><i>·</i>
+            <span>更新于 2026-09-21</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/anthropics/financial-services.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/anthropics/financial-services">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-7">
+          <div class="item-head">
+            <span class="no">07</span>
+            <h3 class="title"><a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank">anthropics/knowledge-work-plugins</a></h3>
+            <span class="stars">★ 34,325</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;anthropics/knowledge-work-plugins&quot;, &quot;url&quot;: &quot;https://github.com/anthropics/knowledge-work-plugins&quot;, &quot;owner&quot;: &quot;anthropics&quot;, &quot;stars&quot;: 34325, &quot;desc&quot;: &quot;Anthropic \u5b98\u65b9\u4e3a\u767d\u9886\u77e5\u8bc6\u5de5\u4f5c\u8005\u505a\u7684\u63d2\u4ef6\u5e93\uff0c\u914d\u5408 Claude Cowork \u4f7f\u7528\uff0c\u8986\u76d6\u5199\u6587\u6863\u3001\u505a\u8868\u683c\u3001\u6574\u7406\u8c03\u7814\u8d44\u6599\u7b49\u65e5\u5e38\u529e\u516c\u573a\u666f\u2014\u2014\u8ba9 AI \u771f\u6b63\u63a5\u624b\u529e\u516c\u5ba4\u91cc\u7684\u91cd\u590d\u6742\u6d3b\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Anthropic 官方为白领知识工作者做的插件库，配合 Claude Cowork 使用，覆盖写文档、做表格、整理调研资料等日常办公场景——让 AI 真正接手办公室里的重复杂活。</p>
+          
+          <div class="byline">
+            <span>anthropics</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/anthropics/knowledge-work-plugins.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/anthropics/knowledge-work-plugins">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-8">
+          <div class="item-head">
+            <span class="no">08</span>
+            <h3 class="title"><a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a></h3>
+            <span class="stars">★ 14,980</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;cursor/plugins&quot;, &quot;url&quot;: &quot;https://github.com/cursor/plugins&quot;, &quot;owner&quot;: &quot;cursor&quot;, &quot;stars&quot;: 14980, &quot;desc&quot;: &quot;Cursor \u7f16\u8f91\u5668\u7684\u5b98\u65b9\u63d2\u4ef6\u89c4\u8303\u4e0e\u5b98\u65b9\u63d2\u4ef6\u96c6\u3002\u60f3\u77e5\u9053 Cursor \u63d2\u4ef6\u600e\u4e48\u5199\u3001\u5b98\u65b9\u90fd\u63d0\u4f9b\u4e86\u54ea\u4e9b\u80fd\u529b\uff0c\u770b\u8fd9\u4e00\u4e2a\u4ed3\u5e93\u5c31\u591f\u4e86\u2014\u2014Cursor \u63d2\u4ef6\u5f00\u53d1\u7684\u300c\u5b98\u65b9\u8bf4\u660e\u4e66\u300d\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Cursor 编辑器的官方插件规范与官方插件集。想知道 Cursor 插件怎么写、官方都提供了哪些能力，看这一个仓库就够了——Cursor 插件开发的「官方说明书」。</p>
+          
+          <div class="byline">
+            <span>cursor</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/cursor/plugins.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/cursor/plugins">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">Agent 基础设施与框架</span><span class="sec-count">8 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></h3>
+            <span class="stars">★ 107,921</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;paperclipai/paperclip&quot;, &quot;url&quot;: &quot;https://github.com/paperclipai/paperclip&quot;, &quot;owner&quot;: &quot;paperclipai&quot;, &quot;stars&quot;: 107921, &quot;desc&quot;: &quot;\u5f53\u516c\u53f8\u91cc\u540c\u65f6\u8dd1\u7740\u597d\u51e0\u4e2a AI Agent\uff0c\u8fd9\u4e2a\u5f00\u6e90\u5e94\u7528\u5c31\u662f\u5b83\u4eec\u7684\u300c\u4eba\u4e8b\u90e8+\u9879\u76ee\u7ba1\u7406\u53f0\u300d\uff1a\u5206\u914d\u4efb\u52a1\u3001\u67e5\u770b\u8fdb\u5ea6\u3001\u7ba1\u7406\u6743\u9650\u3002\u76f8\u5f53\u4e8e\u7ed9\u4f60\u7684 AI \u5458\u5de5\u4eec\u8bf7\u4e86\u4e00\u4f4d\u9879\u76ee\u7ecf\u7406\u3002&quot;, &quot;site&quot;: &quot;https://paperclip.ing&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">当公司里同时跑着好几个 AI Agent，这个开源应用就是它们的「人事部+项目管理台」：分配任务、查看进度、管理权限。相当于给你的 AI 员工们请了一位项目经理。</p>
+          
+          <div class="byline">
+            <span>paperclipai</span><i>·</i>
+            <span>更新于 2026-10-27</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://paperclip.ing" target="_blank">https://paperclip.ing</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/paperclipai/paperclip.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/paperclipai/paperclip">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a></h3>
+            <span class="stars">★ 106,714</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Panniantong/Agent-Reach&quot;, &quot;url&quot;: &quot;https://github.com/Panniantong/Agent-Reach&quot;, &quot;owner&quot;: &quot;Panniantong&quot;, &quot;stars&quot;: 106714, &quot;desc&quot;: &quot;AI \u52a9\u624b\u81ea\u5df1\u4e0d\u4f1a\u5237\u7f51\u9875\uff1f\u8fd9\u4e2a\u5de5\u5177\u4e00\u6761\u547d\u4ee4\u884c\u5c31\u8ba9\u5b83\u80fd\u8bfb Twitter\u3001Reddit\u3001YouTube\u3001B\u7ad9\u3001\u5c0f\u7ea2\u4e66\u7684\u5185\u5bb9\uff0c\u800c\u4e14\u4e0d\u7528\u82b1\u94b1\u4e70\u5404\u5bb6\u7684 API\u3002\u6bd4\u5982\u8ddf AI \u8bf4\u300c\u603b\u7ed3\u4e00\u4e0b\u4eca\u5929 Reddit \u4e0a\u5173\u4e8e\u67d0\u8bdd\u9898\u7684\u8ba8\u8bba\u300d\uff0c\u5b83\u5c31\u80fd\u81ea\u5df1\u53bb\u6293\u3001\u81ea\u5df1\u8bfb\u3001\u81ea\u5df1\u5199\u6458\u8981\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">AI 助手自己不会刷网页？这个工具一条命令行就让它能读 Twitter、Reddit、YouTube、B站、小红书的内容，而且不用花钱买各家的 API。比如跟 AI 说「总结一下今天 Reddit 上关于某话题的讨论」，它就能自己去抓、自己读、自己写摘要。</p>
+          
+          <div class="byline">
+            <span>Panniantong</span><i>·</i>
+            <span>更新于 2026-10-25</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Panniantong/Agent-Reach.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Panniantong/Agent-Reach">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/vectorize-io/hindsight" target="_blank">vectorize-io/hindsight</a></h3>
+            <span class="stars">★ 53,668</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;vectorize-io/hindsight&quot;, &quot;url&quot;: &quot;https://github.com/vectorize-io/hindsight&quot;, &quot;owner&quot;: &quot;vectorize-io&quot;, &quot;stars&quot;: 53668, &quot;desc&quot;: &quot;\u7ed9 AI Agent \u88c5\u7684\u300c\u4f1a\u6210\u957f\u7684\u8bb0\u5fc6\u300d\u3002\u666e\u901a\u8bb0\u5fc6\u53ea\u662f\u5b58\u804a\u5929\u8bb0\u5f55\uff0cHindsight \u4f1a\u4ece\u8fc7\u53bb\u7684\u6210\u529f\u548c\u5931\u8d25\u91cc\u603b\u7ed3\u89c4\u5f8b\uff0c\u4e0b\u6b21\u9047\u5230\u7c7b\u4f3c\u4efb\u52a1\u505a\u5f97\u66f4\u597d\u2014\u2014\u8ba9 AI \u50cf\u65b0\u4eba\u4e00\u6837\u9010\u6e10\u53d8\u6210\u8001\u624b\u3002&quot;, &quot;site&quot;: &quot;https://hindsight.vectorize.io/&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">给 AI Agent 装的「会成长的记忆」。普通记忆只是存聊天记录，Hindsight 会从过去的成功和失败里总结规律，下次遇到类似任务做得更好——让 AI 像新人一样逐渐变成老手。</p>
+          
+          <div class="byline">
+            <span>vectorize-io</span><i>·</i>
+            <span>更新于 2026-10-25</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://hindsight.vectorize.io/" target="_blank">https://hindsight.vectorize.io/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/vectorize-io/hindsight.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/vectorize-io/hindsight">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/THU-MAIC/OpenMAIC" target="_blank">THU-MAIC/OpenMAIC</a></h3>
+            <span class="stars">★ 42,091</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;THU-MAIC/OpenMAIC&quot;, &quot;url&quot;: &quot;https://github.com/THU-MAIC/OpenMAIC&quot;, &quot;owner&quot;: &quot;THU-MAIC&quot;, &quot;stars&quot;: 42091, &quot;desc&quot;: &quot;\u6e05\u534e\u56e2\u961f\u505a\u7684\u5f00\u6e90\u300cAI \u4e92\u52a8\u8bfe\u5802\u300d\uff1a\u591a\u4e2a AI \u5206\u522b\u626e\u6f14\u8001\u5e08\u3001\u52a9\u6559\u3001\u540c\u5b66\u966a\u4f60\u4e00\u8d77\u5b66\uff0c\u4e00\u952e\u5c31\u80fd\u5f00\u8bfe\u3002\u6bd4\u770b\u5f55\u64ad\u8bfe\u6709\u4e92\u52a8\u611f\u5f97\u591a\uff0c\u9002\u5408\u642d\u4f01\u4e1a\u5185\u8bad\u6216\u5728\u7ebf\u6559\u80b2\u4ea7\u54c1\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">清华团队做的开源「AI 互动课堂」：多个 AI 分别扮演老师、助教、同学陪你一起学，一键就能开课。比看录播课有互动感得多，适合搭企业内训或在线教育产品。</p>
+          
+          <div class="byline">
+            <span>THU-MAIC</span><i>·</i>
+            <span>更新于 2026-10-31</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/THU-MAIC/OpenMAIC.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/THU-MAIC/OpenMAIC">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/trycua/cua" target="_blank">trycua/cua</a></h3>
+            <span class="stars">★ 30,109</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;trycua/cua&quot;, &quot;url&quot;: &quot;https://github.com/trycua/cua&quot;, &quot;owner&quot;: &quot;trycua&quot;, &quot;stars&quot;: 30109, &quot;desc&quot;: &quot;\u8ba9 AI \u50cf\u4eba\u4e00\u6837\u64cd\u4f5c\u7535\u8111\u7684\u57fa\u7840\u8bbe\u65bd\uff1a\u6a21\u62df\u9f20\u6807\u952e\u76d8\u3001\u8de8 Mac/Windows/Linux \u6279\u91cf\u90e8\u7f72\uff0c\u8fd8\u9644\u5e26\u8bad\u7ec3\u548c\u8bc4\u6d4b\u5de5\u5177\u3002\u60f3\u505a\u300c\u4f1a\u64cd\u4f5c\u7535\u8111\u7684 AI\u300d\uff08\u7c7b\u4f3c Claude Computer Use\uff09\u7684\u56e2\u961f\u53ef\u4ee5\u62ff\u5b83\u6253\u5e95\u3002&quot;, &quot;site&quot;: &quot;https://cua.ai&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">让 AI 像人一样操作电脑的基础设施：模拟鼠标键盘、跨 Mac/Windows/Linux 批量部署，还附带训练和评测工具。想做「会操作电脑的 AI」（类似 Claude Computer Use）的团队可以拿它打底。</p>
+          
+          <div class="byline">
+            <span>trycua</span><i>·</i>
+            <span>更新于 2026-10-18</span><i>·</i>
+            <span class="hot">日榜 · 月榜</span><i>·</i>
+            <a class="site" href="https://cua.ai" target="_blank">https://cua.ai</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/trycua/cua.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/trycua/cua">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-6">
+          <div class="item-head">
+            <span class="no">06</span>
+            <h3 class="title"><a href="https://github.com/NVIDIA/OpenShell" target="_blank">NVIDIA/OpenShell</a></h3>
+            <span class="stars">★ 20,506</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;NVIDIA/OpenShell&quot;, &quot;url&quot;: &quot;https://github.com/NVIDIA/OpenShell&quot;, &quot;owner&quot;: &quot;NVIDIA&quot;, &quot;stars&quot;: 20506, &quot;desc&quot;: &quot;\u82f1\u4f1f\u8fbe\u51fa\u7684 AI Agent\u300c\u5b89\u5168\u5c4b\u300d\u3002\u81ea\u4e3b\u8fd0\u884c\u7684 Agent \u53ef\u80fd\u8bef\u5220\u6587\u4ef6\u3001\u4e71\u53d1\u8bf7\u6c42\uff0cOpenShell \u7ed9\u5b83\u4eec\u4e00\u4e2a\u9694\u79bb\u7684\u8fd0\u884c\u73af\u5883\u2014\u2014\u65e2\u80fd\u653e\u5f00\u624b\u811a\u5e72\u6d3b\uff0c\u53c8\u95ef\u4e0d\u4e86\u7978\uff0c\u4f01\u4e1a\u624d\u6562\u771f\u6b63\u653e\u5fc3\u7528\u3002&quot;, &quot;site&quot;: &quot;https://docs.nvidia.com/openshell/latest/&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">英伟达出的 AI Agent「安全屋」。自主运行的 Agent 可能误删文件、乱发请求，OpenShell 给它们一个隔离的运行环境——既能放开手脚干活，又闯不了祸，企业才敢真正放心用。</p>
+          
+          <div class="byline">
+            <span>NVIDIA</span><i>·</i>
+            <span>更新于 2026-10-28</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://docs.nvidia.com/openshell/latest/" target="_blank">https://docs.nvidia.com/openshell/latest/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/NVIDIA/OpenShell.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/NVIDIA/OpenShell">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-7">
+          <div class="item-head">
+            <span class="no">07</span>
+            <h3 class="title"><a href="https://github.com/TencentCloud/Octop" target="_blank">TencentCloud/Octop</a></h3>
+            <span class="stars">★ 11,003</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;TencentCloud/Octop&quot;, &quot;url&quot;: &quot;https://github.com/TencentCloud/Octop&quot;, &quot;owner&quot;: &quot;TencentCloud&quot;, &quot;stars&quot;: 11003, &quot;desc&quot;: &quot;\u817e\u8baf\u4e91\u51fa\u7684\u81ea\u6258\u7ba1 AI \u52a9\u624b\u5e73\u53f0\uff1a\u652f\u6301\u591a\u4eba\u540c\u65f6\u4f7f\u7528\u3001\u591a\u4e2a Agent \u534f\u4f5c\u3001\u957f\u671f\u8bb0\u5fc6\u3002\u9002\u5408\u60f3\u5728\u81ea\u5df1\u670d\u52a1\u5668\u4e0a\u642d\u56e2\u961f\u5171\u4eab AI \u52a9\u624b\u3001\u53c8\u4e0d\u60f3\u8ba9\u6570\u636e\u51fa\u95e8\u7684\u516c\u53f8\u3002&quot;, &quot;site&quot;: &quot;https://octop.cloud&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">腾讯云出的自托管 AI 助手平台：支持多人同时使用、多个 Agent 协作、长期记忆。适合想在自己服务器上搭团队共享 AI 助手、又不想让数据出门的公司。</p>
+          
+          <div class="byline">
+            <span>TencentCloud</span><i>·</i>
+            <span>更新于 2026-10-25</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://octop.cloud" target="_blank">https://octop.cloud</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/TencentCloud/Octop.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/TencentCloud/Octop">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-8">
+          <div class="item-head">
+            <span class="no">08</span>
+            <h3 class="title"><a href="https://github.com/mvschwarz/openrig" target="_blank">mvschwarz/openrig</a></h3>
+            <span class="stars">★ 8,452</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;mvschwarz/openrig&quot;, &quot;url&quot;: &quot;https://github.com/mvschwarz/openrig&quot;, &quot;owner&quot;: &quot;mvschwarz&quot;, &quot;stars&quot;: 8452, &quot;desc&quot;: &quot;\u628a Claude Code\u3001Codex \u8fd9\u4e9b\u7f16\u7a0b AI \u7ec4\u5efa\u6210\u300c\u5e38\u9a7b\u5f00\u53d1\u56e2\u961f\u300d\uff1a\u7ed9\u6bcf\u4e2a AI \u5206\u914d\u89d2\u8272\u3001\u5171\u4eab\u9879\u76ee\u4e0a\u4e0b\u6587\u3001\u5404\u81ea\u8ba4\u9886\u4efb\u52a1\u3002\u50cf\u7528 tmux \u7ba1\u7406\u7ec8\u7aef\u7a97\u53e3\u4e00\u6837\u7ba1\u7406\u4e00\u652f AI \u5f00\u53d1\u5c0f\u961f\u3002&quot;, &quot;site&quot;: &quot;https://openrig.dev&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">把 Claude Code、Codex 这些编程 AI 组建成「常驻开发团队」：给每个 AI 分配角色、共享项目上下文、各自认领任务。像用 tmux 管理终端窗口一样管理一支 AI 开发小队。</p>
+          
+          <div class="byline">
+            <span>mvschwarz</span><i>·</i>
+            <span>更新于 2026-10-30</span><i>·</i>
+            <span class="">月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://openrig.dev" target="_blank">https://openrig.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/mvschwarz/openrig.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/mvschwarz/openrig">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">Agent 效率优化</span><span class="sec-count">5 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></h3>
+            <span class="stars">★ 294,611</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;affaan-m/ECC&quot;, &quot;url&quot;: &quot;https://github.com/affaan-m/ECC&quot;, &quot;owner&quot;: &quot;affaan-m&quot;, &quot;stars&quot;: 294611, &quot;desc&quot;: &quot;\u4e00\u5957\u7ed9\u7f16\u7a0b Agent \u505a\u300c\u6027\u80fd\u8c03\u4f18\u300d\u7684\u7cfb\u7edf\uff1a\u6280\u80fd\u7ba1\u7406\u3001\u8bb0\u5fc6\u3001\u5b89\u5168\u68c0\u67e5\u3001\u5148\u8c03\u7814\u518d\u52a8\u624b\u7684\u5de5\u4f5c\u6d41\uff0c\u9002\u914d Claude Code/Codex/Cursor \u7b49\u4e3b\u6d41\u5de5\u5177\u3002\u76ee\u6807\u662f\u8ba9 AI \u5199\u4ee3\u7801\u66f4\u5feb\u3001\u66f4\u7a33\u3001\u66f4\u5c11\u8fd4\u5de5\u3002&quot;, &quot;site&quot;: &quot;https://ecc.tools&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一套给编程 Agent 做「性能调优」的系统：技能管理、记忆、安全检查、先调研再动手的工作流，适配 Claude Code/Codex/Cursor 等主流工具。目标是让 AI 写代码更快、更稳、更少返工。</p>
+          
+          <div class="byline">
+            <span>affaan-m</span><i>·</i>
+            <span>更新于 2026-10-30</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://ecc.tools" target="_blank">https://ecc.tools</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/affaan-m/ECC.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/affaan-m/ECC">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail</a></h3>
+            <span class="stars">★ 179,944</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;DietrichGebert/ponytail&quot;, &quot;url&quot;: &quot;https://github.com/DietrichGebert/ponytail&quot;, &quot;owner&quot;: &quot;DietrichGebert&quot;, &quot;stars&quot;: 179944, &quot;desc&quot;: &quot;\u4e13\u6cbb AI\u300c\u8fc7\u5ea6\u8bbe\u8ba1\u300d\u7684\u6bdb\u75c5\u3002\u5b83\u8ba9 AI \u50cf\u623f\u95f4\u91cc\u6700\u61d2\u7684\u8d44\u6df1\u5de5\u7a0b\u5e08\u4e00\u6837\u601d\u8003\uff1a\u80fd\u590d\u7528\u5c31\u4e0d\u65b0\u5199\uff0c\u80fd\u7b80\u5355\u5c31\u4e0d\u590d\u6742\u2014\u2014\u6700\u597d\u7684\u4ee3\u7801\u662f\u4f60\u6ca1\u5199\u7684\u4ee3\u7801\u3002\u88ab AI \u52a8\u4e0d\u52a8\u641e\u51fa\u4e09\u5c42\u62bd\u8c61\u6298\u78e8\u8fc7\u7684\u4eba\uff0c\u4f1a\u61c2\u5b83\u7684\u4ef7\u503c\u3002&quot;, &quot;site&quot;: &quot;https://ponytail.dev&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">专治 AI「过度设计」的毛病。它让 AI 像房间里最懒的资深工程师一样思考：能复用就不新写，能简单就不复杂——最好的代码是你没写的代码。被 AI 动不动搞出三层抽象折磨过的人，会懂它的价值。</p>
+          
+          <div class="byline">
+            <span>DietrichGebert</span><i>·</i>
+            <span>更新于 2026-10-29</span><i>·</i>
+            <span class="hot">日榜 · 月榜</span><i>·</i>
+            <a class="site" href="https://ponytail.dev" target="_blank">https://ponytail.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/DietrichGebert/ponytail.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/DietrichGebert/ponytail">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/JuliusBrussee/caveman" target="_blank">JuliusBrussee/caveman</a></h3>
+            <span class="stars">★ 112,343</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;JuliusBrussee/caveman&quot;, &quot;url&quot;: &quot;https://github.com/JuliusBrussee/caveman&quot;, &quot;owner&quot;: &quot;JuliusBrussee&quot;, &quot;stars&quot;: 112343, &quot;desc&quot;: &quot;\u4e00\u4e2a\u7206\u706b\u7684\u7701\u94b1\u6280\u5de7\uff1a\u8ba9 AI \u7528\u300c\u7a74\u5c45\u4eba\u5f0f\u300d\u6781\u7b80\u82f1\u8bed\u601d\u8003\u548c\u5de5\u4f5c\uff08\u8bf4 make login work \u800c\u4e0d\u662f\u957f\u7bc7\u5927\u8bba\uff09\uff0c\u5b9e\u6d4b\u7701 65% \u7684 token \u6d88\u8017\u3002\u8868\u9762\u662f\u4e2a\u6897\uff0c\u5b9e\u9645\u662f\u771f\u91d1\u767d\u94f6\u5730\u964d API \u8d26\u5355\u3002&quot;, &quot;site&quot;: &quot;https://docs.caveman.so/docs/quickstart&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一个爆火的省钱技巧：让 AI 用「穴居人式」极简英语思考和工作（说 make login work 而不是长篇大论），实测省 65% 的 token 消耗。表面是个梗，实际是真金白银地降 API 账单。</p>
+          
+          <div class="byline">
+            <span>JuliusBrussee</span><i>·</i>
+            <span>更新于 2026-10-15</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://docs.caveman.so/docs/quickstart" target="_blank">https://docs.caveman.so/docs/quickstart</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/JuliusBrussee/caveman.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/JuliusBrussee/caveman">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/mksglu/context-mode" target="_blank">mksglu/context-mode</a></h3>
+            <span class="stars">★ 33,118</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;mksglu/context-mode&quot;, &quot;url&quot;: &quot;https://github.com/mksglu/context-mode&quot;, &quot;owner&quot;: &quot;mksglu&quot;, &quot;stars&quot;: 33118, &quot;desc&quot;: &quot;AI \u7f16\u7a0b\u52a9\u624b\u7684\u300c\u4e0a\u4e0b\u6587\u7626\u8eab\u5e08\u300d\uff1a\u628a\u5de5\u5177\u8f93\u51fa\u91cc\u7684\u5e9f\u8bdd\u780d\u6389 98%\uff0c\u53ea\u7559\u7cbe\u534e\u8fdb\u4e0a\u4e0b\u6587\u7a97\u53e3\uff0c\u8fd8\u80fd\u8de8 17 \u4e2a\u5e73\u53f0\u6301\u4e45\u4fdd\u5b58\u4f1a\u8bdd\u8bb0\u5fc6\u3002\u4e0a\u4e0b\u6587\u7a97\u53e3\u5c31\u90a3\u4e48\u5927\uff0c\u7701\u51fa\u6765\u7684\u90fd\u662f\u94b1\u548c\u667a\u5546\u3002&quot;, &quot;site&quot;: &quot;https://context-mode.com&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">AI 编程助手的「上下文瘦身师」：把工具输出里的废话砍掉 98%，只留精华进上下文窗口，还能跨 17 个平台持久保存会话记忆。上下文窗口就那么大，省出来的都是钱和智商。</p>
+          
+          <div class="byline">
+            <span>mksglu</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://context-mode.com" target="_blank">https://context-mode.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/mksglu/context-mode.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/mksglu/context-mode">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/max-sixty/worktrunk" target="_blank">max-sixty/worktrunk</a></h3>
+            <span class="stars">★ 9,104</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;max-sixty/worktrunk&quot;, &quot;url&quot;: &quot;https://github.com/max-sixty/worktrunk&quot;, &quot;owner&quot;: &quot;max-sixty&quot;, &quot;stars&quot;: 9104, &quot;desc&quot;: &quot;Git worktree \u7ba1\u7406\u5de5\u5177\uff0c\u4e13\u4e3a\u300c\u591a\u4e2a AI \u540c\u65f6\u6539\u540c\u4e00\u4e2a\u9879\u76ee\u300d\u8bbe\u8ba1\uff1a\u6bcf\u4e2a AI \u5728\u72ec\u7acb\u5de5\u4f5c\u533a\u5e72\u6d3b\u4e92\u4e0d\u5e72\u6270\uff0c\u6700\u540e\u518d\u5408\u5e76\u3002\u591a Agent \u5e76\u884c\u5f00\u53d1\u7684\u5fc5\u5907\u57fa\u7840\u8bbe\u65bd\u3002&quot;, &quot;site&quot;: &quot;https://worktrunk.dev&quot;, &quot;category&quot;: &quot;Agent \u6548\u7387\u4f18\u5316&quot;, &quot;emoji&quot;: &quot;\u26a1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Git worktree 管理工具，专为「多个 AI 同时改同一个项目」设计：每个 AI 在独立工作区干活互不干扰，最后再合并。多 Agent 并行开发的必备基础设施。</p>
+          
+          <div class="byline">
+            <span>max-sixty</span><i>·</i>
+            <span>更新于 2026-10-09</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://worktrunk.dev" target="_blank">https://worktrunk.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/max-sixty/worktrunk.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/max-sixty/worktrunk">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">AI / 大模型</span><span class="sec-count">6 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/pytorch/pytorch" target="_blank">pytorch/pytorch</a></h3>
+            <span class="stars">★ 104,345</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;pytorch/pytorch&quot;, &quot;url&quot;: &quot;https://github.com/pytorch/pytorch&quot;, &quot;owner&quot;: &quot;pytorch&quot;, &quot;stars&quot;: 104345, &quot;desc&quot;: &quot;\u6df1\u5ea6\u5b66\u4e60\u9886\u57df\u7684\u4e8b\u5b9e\u6807\u51c6\u6846\u67b6\uff0c\u5168\u7403\u51e0\u4e4e\u6240\u6709 AI \u7814\u7a76\u548c\u5927\u91cf\u5de5\u4e1a\u754c\u6a21\u578b\u90fd\u5efa\u7acb\u5728\u5b83\u4e0a\u9762\u3002\u4ece GPT \u7c7b\u5927\u6a21\u578b\u7684\u8bad\u7ec3\u5230\u4f60\u624b\u673a\u91cc\u7684 AI \u529f\u80fd\uff0c\u80cc\u540e\u5927\u6982\u7387\u90fd\u6709 PyTorch\u3002&quot;, &quot;site&quot;: &quot;https://pytorch.org&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">深度学习领域的事实标准框架，全球几乎所有 AI 研究和大量工业界模型都建立在它上面。从 GPT 类大模型的训练到你手机里的 AI 功能，背后大概率都有 PyTorch。</p>
+          
+          <div class="byline">
+            <span>pytorch</span><i>·</i>
+            <span>更新于 2026-10-11</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://pytorch.org" target="_blank">https://pytorch.org</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/pytorch/pytorch.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/pytorch/pytorch">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/tashfeenahmed/freellmapi" target="_blank">tashfeenahmed/freellmapi</a></h3>
+            <span class="stars">★ 45,572</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tashfeenahmed/freellmapi&quot;, &quot;url&quot;: &quot;https://github.com/tashfeenahmed/freellmapi&quot;, &quot;owner&quot;: &quot;tashfeenahmed&quot;, &quot;stars&quot;: 45572, &quot;desc&quot;: &quot;\u628a 34 \u5bb6\u5382\u5546\u7684\u514d\u8d39\u5927\u6a21\u578b\u805a\u5408\u5230\u4e00\u4e2a\u63a5\u53e3\uff1a635 \u4e2a\u514d\u8d39\u6a21\u578b\u7aef\u70b9\u3001\u6bcf\u6708 74 \u4ebf token \u989d\u5ea6\uff0c\u81ea\u52a8\u9009\u8def\u3001\u5931\u8d25\u81ea\u52a8\u5207\u6362\u3002\u4e2a\u4eba\u5f00\u53d1\u8005\u73a9 AI \u5e94\u7528\u7684\u7701\u94b1\u795e\u5668\u2014\u2014\u4e00\u4e2a key \u7528\u904d\u5168\u7f51\u514d\u8d39\u6a21\u578b\u3002&quot;, &quot;site&quot;: &quot;https://freellmapi.co&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">把 34 家厂商的免费大模型聚合到一个接口：635 个免费模型端点、每月 74 亿 token 额度，自动选路、失败自动切换。个人开发者玩 AI 应用的省钱神器——一个 key 用遍全网免费模型。</p>
+          
+          <div class="byline">
+            <span>tashfeenahmed</span><i>·</i>
+            <span>更新于 2026-10-31</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://freellmapi.co" target="_blank">https://freellmapi.co</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/tashfeenahmed/freellmapi.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/tashfeenahmed/freellmapi">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/Tencent/WeKnora" target="_blank">Tencent/WeKnora</a></h3>
+            <span class="stars">★ 34,502</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Tencent/WeKnora&quot;, &quot;url&quot;: &quot;https://github.com/Tencent/WeKnora&quot;, &quot;owner&quot;: &quot;Tencent&quot;, &quot;stars&quot;: 34502, &quot;desc&quot;: &quot;\u817e\u8baf\u5f00\u6e90\u7684\u77e5\u8bc6\u5e93\u5e73\u53f0\uff1a\u628a\u516c\u53f8\u4e00\u5806\u6563\u843d\u7684\u6587\u6863\u4e22\u8fdb\u53bb\uff0c\u5c31\u80fd\u53d8\u6210\u53ef\u95ee\u7b54\u7684\u667a\u80fd\u77e5\u8bc6\u5e93\uff0c\u8fd8\u80fd\u81ea\u52a8\u6574\u7406\u6210 Wiki\u3002\u5178\u578b\u7684 RAG \u5e94\u7528\uff0c\u9002\u5408\u642d\u4f01\u4e1a\u5185\u90e8\u300c\u95ee\u5565\u90fd\u77e5\u9053\u300d\u7684 AI \u77e5\u8bc6\u52a9\u624b\u3002&quot;, &quot;site&quot;: &quot;https://weknora.weixin.qq.com&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">腾讯开源的知识库平台：把公司一堆散落的文档丢进去，就能变成可问答的智能知识库，还能自动整理成 Wiki。典型的 RAG 应用，适合搭企业内部「问啥都知道」的 AI 知识助手。</p>
+          
+          <div class="byline">
+            <span>Tencent</span><i>·</i>
+            <span>更新于 2026-10-17</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://weknora.weixin.qq.com" target="_blank">https://weknora.weixin.qq.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Tencent/WeKnora.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Tencent/WeKnora">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/FlashML-org/FreeToken" target="_blank">FlashML-org/FreeToken</a></h3>
+            <span class="stars">★ 15,243</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;FlashML-org/FreeToken&quot;, &quot;url&quot;: &quot;https://github.com/FlashML-org/FreeToken&quot;, &quot;owner&quot;: &quot;FlashML-org&quot;, &quot;stars&quot;: 15243, &quot;desc&quot;: &quot;FreeToken \u662f\u4e00\u4e2a\u672c\u5730\u5927\u6a21\u578b\u63a8\u7406\u5f15\u64ce\uff0c\u8ba9\u4f60\u5728\u666e\u901a\u53f0\u5f0f\u673a\u4e0a\u4e5f\u80fd\u8dd1\u52a8\u539f\u672c\u9700\u8981\u6570\u636e\u4e2d\u5fc3\u7ea7\u522b\u7b97\u529b\u7684\u5927\u6a21\u578b\uff0c\u6bd4\u5982 DeepSeek\u3001GLM\u3001Qwen\u3001MiniMax \u7b49 MoE \u67b6\u6784\u6a21\u578b\u3002\u5b83\u901a\u8fc7\u4f18\u5316\u63a8\u7406\u6548\u7387\uff0c\u89e3\u51b3\u672c\u5730\u90e8\u7f72\u5927\u6a21\u578b\u6162\u3001\u5403\u663e\u5b58\u3001\u95e8\u69db\u9ad8\u7684\u95ee\u9898\u3002\u4e3e\u4e2a\u4f8b\u5b50\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5728\u81ea\u5df1\u7684\u7535\u8111\u4e0a\u76f4\u63a5\u52a0\u8f7d\u5e76\u6d41\u7545\u8fd0\u884c\u8fd9\u4e9b\u5927\u6a21\u578b\u505a\u6d4b\u8bd5\u6216\u79c1\u6709\u5316\u5e94\u7528\uff0c\u65e0\u9700\u79df\u7528\u4e91\u7aef GPU\u3002&quot;, &quot;site&quot;: &quot;https://flashml.ai&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">FreeToken 是一个本地大模型推理引擎，让你在普通台式机上也能跑动原本需要数据中心级别算力的大模型，比如 DeepSeek、GLM、Qwen、MiniMax 等 MoE 架构模型。它通过优化推理效率，解决本地部署大模型慢、吃显存、门槛高的问题。举个例子，开发者可以在自己的电脑上直接加载并流畅运行这些大模型做测试或私有化应用，无需租用云端 GPU。</p>
+          
+          <div class="byline">
+            <span>FlashML-org</span><i>·</i>
+            <span>更新于 2026-10-30</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://flashml.ai" target="_blank">https://flashml.ai</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/FlashML-org/FreeToken.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/FlashML-org/FreeToken">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/kornia/kornia" target="_blank">kornia/kornia</a></h3>
+            <span class="stars">★ 11,693</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;kornia/kornia&quot;, &quot;url&quot;: &quot;https://github.com/kornia/kornia&quot;, &quot;owner&quot;: &quot;kornia&quot;, &quot;stars&quot;: 11693, &quot;desc&quot;: &quot;Kornia \u662f\u4e00\u4e2a\u57fa\u4e8e PyTorch \u7684\u51e0\u4f55\u8ba1\u7b97\u673a\u89c6\u89c9\u5e93\uff0c\u4e13\u95e8\u5904\u7406\u56fe\u50cf\u53d8\u6362\u3001\u76f8\u673a\u6807\u5b9a\u3001\u591a\u89c6\u56fe\u51e0\u4f55\u7b49\u7a7a\u95f4 AI \u4efb\u52a1\u3002\u5b83\u628a\u56fe\u50cf\u6ee4\u6ce2\u3001\u7279\u5f81\u5339\u914d\u3001\u5355\u5e94\u6027\u4f30\u8ba1\u7b49\u64cd\u4f5c\u505a\u6210\u53ef\u5fae\u5206\u7684\u6a21\u5757\uff0c\u80fd\u76f4\u63a5\u5d4c\u5165\u795e\u7ecf\u7f51\u7edc\u8bad\u7ec3\u3002\u6bd4\u5982\u505a\u673a\u5668\u4eba\u89c6\u89c9\u65f6\uff0c\u53ef\u4ee5\u7528\u5b83\u5feb\u901f\u5b9e\u73b0\u56fe\u50cf\u53bb\u7578\u53d8\u3001\u7acb\u4f53\u5339\u914d\u6216\u4f4d\u59ff\u4f30\u8ba1\uff0c\u7701\u53bb\u624b\u5199\u590d\u6742\u6570\u5b66\u4ee3\u7801\u7684\u9ebb\u70e6\u3002&quot;, &quot;site&quot;: &quot;https://kornia.readthedocs.io&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Kornia 是一个基于 PyTorch 的几何计算机视觉库，专门处理图像变换、相机标定、多视图几何等空间 AI 任务。它把图像滤波、特征匹配、单应性估计等操作做成可微分的模块，能直接嵌入神经网络训练。比如做机器人视觉时，可以用它快速实现图像去畸变、立体匹配或位姿估计，省去手写复杂数学代码的麻烦。</p>
+          
+          <div class="byline">
+            <span>kornia</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://kornia.readthedocs.io" target="_blank">https://kornia.readthedocs.io</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/kornia/kornia.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/kornia/kornia">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-6">
+          <div class="item-head">
+            <span class="no">06</span>
+            <h3 class="title"><a href="https://github.com/tile-ai/tilelang" target="_blank">tile-ai/tilelang</a></h3>
+            <span class="stars">★ 8,469</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tile-ai/tilelang&quot;, &quot;url&quot;: &quot;https://github.com/tile-ai/tilelang&quot;, &quot;owner&quot;: &quot;tile-ai&quot;, &quot;stars&quot;: 8469, &quot;desc&quot;: &quot;\u5199 GPU \u7b97\u5b50\uff08AI \u6a21\u578b\u63d0\u901f\u7684\u5173\u952e\u73af\u8282\uff09\u95e8\u69db\u5f88\u9ad8\uff0c\u8fd9\u95e8\u4e13\u7528\u8bed\u8a00\u8ba9\u4f60\u7528\u63a5\u8fd1 Python \u7684\u8bed\u6cd5\u5199\u51fa\u9ad8\u6027\u80fd kernel\uff0c\u5927\u5e45\u7f29\u77ed\u6a21\u578b\u63a8\u7406\u4f18\u5316\u5468\u671f\u3002\u505a\u6a21\u578b\u90e8\u7f72\u52a0\u901f\u7684\u56e2\u961f\u4f1a\u5f88\u9700\u8981\u3002&quot;, &quot;site&quot;: &quot;https://tilelang.com/&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">写 GPU 算子（AI 模型提速的关键环节）门槛很高，这门专用语言让你用接近 Python 的语法写出高性能 kernel，大幅缩短模型推理优化周期。做模型部署加速的团队会很需要。</p>
+          
+          <div class="byline">
+            <span>tile-ai</span><i>·</i>
+            <span>更新于 2026-10-07</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            <a class="site" href="https://tilelang.com/" target="_blank">https://tilelang.com/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/tile-ai/tilelang.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/tile-ai/tilelang">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-5">
+        <div class="sec-kicker"><span class="sec-no">SECTION 05</span><span class="sec-name">AI 应用与内容生成</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-5-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a></h3>
+            <span class="stars">★ 97,652</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;debpalash/VoiceStudio&quot;, &quot;url&quot;: &quot;https://github.com/debpalash/VoiceStudio&quot;, &quot;owner&quot;: &quot;debpalash&quot;, &quot;stars&quot;: 97652, &quot;desc&quot;: &quot;\u5f00\u6e90\u3001\u5b8c\u5168\u672c\u5730\u8fd0\u884c\u7684 ElevenLabs \u5e73\u66ff\uff1a\u58f0\u97f3\u514b\u9686\u3001\u89c6\u9891\u914d\u97f3\u3001\u542c\u5199\u8f6c\u5199\u3001\u5236\u4f5c\u6709\u58f0\u4e66\uff0c\u652f\u6301 646 \u79cd\u8bed\u8a00\u3002\u4e0d\u60f3\u4ed8\u8ba2\u9605\u8d39\u3001\u53c8\u8981\u6c42\u8bed\u97f3\u6570\u636e\u4e0d\u51fa\u672c\u673a\u7684\u9996\u9009\u65b9\u6848\u3002&quot;, &quot;site&quot;: &quot;https://voicestudio.sh&quot;, &quot;category&quot;: &quot;AI \u5e94\u7528\u4e0e\u5185\u5bb9\u751f\u6210&quot;, &quot;emoji&quot;: &quot;\ud83c\udfa8&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">开源、完全本地运行的 ElevenLabs 平替：声音克隆、视频配音、听写转写、制作有声书，支持 646 种语言。不想付订阅费、又要求语音数据不出本机的首选方案。</p>
+          
+          <div class="byline">
+            <span>debpalash</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://voicestudio.sh" target="_blank">https://voicestudio.sh</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/debpalash/VoiceStudio.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/debpalash/VoiceStudio">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/heygen-com/hyperframes" target="_blank">heygen-com/hyperframes</a></h3>
+            <span class="stars">★ 76,990</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;heygen-com/hyperframes&quot;, &quot;url&quot;: &quot;https://github.com/heygen-com/hyperframes&quot;, &quot;owner&quot;: &quot;heygen-com&quot;, &quot;stars&quot;: 76990, &quot;desc&quot;: &quot;HeyGen \u51fa\u7684\u300c\u7528 HTML \u505a\u89c6\u9891\u300d\u6846\u67b6\uff1a\u5199\u7f51\u9875\u4ee3\u7801\uff0c\u6e32\u67d3\u51fa\u6765\u5c31\u662f\u89c6\u9891\u3002\u5bf9 AI \u7279\u522b\u53cb\u597d\u2014\u2014AI \u672c\u6765\u5c31\u4f1a\u5199 HTML\uff0c\u73b0\u5728\u7b49\u4e8e\u76f4\u63a5\u4f1a\u505a\u89c6\u9891\u4e86\u3002\u6279\u91cf\u751f\u6210\u8425\u9500\u89c6\u9891\u3001\u52a8\u6001\u6570\u636e\u89c6\u9891\u90fd\u5f88\u5408\u9002\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;AI \u5e94\u7528\u4e0e\u5185\u5bb9\u751f\u6210&quot;, &quot;emoji&quot;: &quot;\ud83c\udfa8&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">HeyGen 出的「用 HTML 做视频」框架：写网页代码，渲染出来就是视频。对 AI 特别友好——AI 本来就会写 HTML，现在等于直接会做视频了。批量生成营销视频、动态数据视频都很合适。</p>
+          
+          <div class="byline">
+            <span>heygen-com</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="">月榜 · 周榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/heygen-com/hyperframes.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/heygen-com/hyperframes">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank">bilawalsidhu/gods-eye-view</a></h3>
+            <span class="stars">★ 54,848</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;bilawalsidhu/gods-eye-view&quot;, &quot;url&quot;: &quot;https://github.com/bilawalsidhu/gods-eye-view&quot;, &quot;owner&quot;: &quot;bilawalsidhu&quot;, &quot;stars&quot;: 54848, &quot;desc&quot;: &quot;\u6d4f\u89c8\u5668\u91cc\u7684\u300c\u4e0a\u5e1d\u89c6\u89d2\u300d\uff1a\u628a\u516c\u5f00\u7684\u536b\u661f\u3001\u822a\u73ed\u7b49\u771f\u5b9e\u7a7a\u95f4\u60c5\u62a5\u6570\u636e\u6295\u5c04\u5230\u4e00\u4e2a\u7167\u7247\u7ea7 3D \u5730\u7403\u4e0a\uff0c\u50cf\u60c5\u62a5\u6307\u6325\u4e2d\u5fc3\u7684\u5927\u5c4f\u3002GIS \u7231\u597d\u8005\u548c\u5f00\u6e90\u60c5\u62a5\uff08OSINT\uff09\u73a9\u5bb6\u7684\u73a9\u5177\u517c\u5de5\u5177\u3002&quot;, &quot;site&quot;: &quot;https://maptheworld.ai/&quot;, &quot;category&quot;: &quot;AI \u5e94\u7528\u4e0e\u5185\u5bb9\u751f\u6210&quot;, &quot;emoji&quot;: &quot;\ud83c\udfa8&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">浏览器里的「上帝视角」：把公开的卫星、航班等真实空间情报数据投射到一个照片级 3D 地球上，像情报指挥中心的大屏。GIS 爱好者和开源情报（OSINT）玩家的玩具兼工具。</p>
+          
+          <div class="byline">
+            <span>bilawalsidhu</span><i>·</i>
+            <span>更新于 2026-10-13</span><i>·</i>
+            <span class="hot">日榜 · 月榜</span><i>·</i>
+            <a class="site" href="https://maptheworld.ai/" target="_blank">https://maptheworld.ai/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/bilawalsidhu/gods-eye-view.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/bilawalsidhu/gods-eye-view">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-6">
+        <div class="sec-kicker"><span class="sec-no">SECTION 06</span><span class="sec-name">开发工具与框架</span><span class="sec-count">5 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-6-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/flutter/flutter" target="_blank">flutter/flutter</a></h3>
+            <span class="stars">★ 180,923</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;flutter/flutter&quot;, &quot;url&quot;: &quot;https://github.com/flutter/flutter&quot;, &quot;owner&quot;: &quot;flutter&quot;, &quot;stars&quot;: 180923, &quot;desc&quot;: &quot;Google \u7684\u8de8\u5e73\u53f0 UI \u6846\u67b6\uff1a\u5199\u4e00\u5957\u4ee3\u7801\uff0c\u540c\u65f6\u4ea7\u51fa iOS\u3001Android\u3001Web \u548c\u684c\u9762\u5e94\u7528\u3002\u95f2\u9c7c\u3001Google Pay \u7b49\u77e5\u540d App \u90fd\u662f Flutter \u505a\u7684\uff0c\u76ee\u524d\u8de8\u5e73\u53f0\u5f00\u53d1\u6700\u4e3b\u6d41\u7684\u9009\u62e9\u4e4b\u4e00\u3002&quot;, &quot;site&quot;: &quot;https://flutter.dev&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Google 的跨平台 UI 框架：写一套代码，同时产出 iOS、Android、Web 和桌面应用。闲鱼、Google Pay 等知名 App 都是 Flutter 做的，目前跨平台开发最主流的选择之一。</p>
+          
+          <div class="byline">
+            <span>flutter</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://flutter.dev" target="_blank">https://flutter.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/flutter/flutter.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/flutter/flutter">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-6-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/anthropics/claude-code" target="_blank">anthropics/claude-code</a></h3>
+            <span class="stars">★ 152,504</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;anthropics/claude-code&quot;, &quot;url&quot;: &quot;https://github.com/anthropics/claude-code&quot;, &quot;owner&quot;: &quot;anthropics&quot;, &quot;stars&quot;: 152504, &quot;desc&quot;: &quot;Anthropic \u5b98\u65b9\u7684 AI \u7f16\u7a0b\u5de5\u5177\uff0c\u4f4f\u5728\u4f60\u7684\u7ec8\u7aef\u91cc\uff1a\u80fd\u8bfb\u61c2\u6574\u4e2a\u4ee3\u7801\u5e93\u3001\u81ea\u5df1\u6267\u884c\u547d\u4ee4\u3001\u5904\u7406 git \u5de5\u4f5c\u6d41\uff0c\u7528\u81ea\u7136\u8bed\u8a00\u5429\u5490\u5b83\u5e72\u6d3b\u5c31\u884c\u3002\u5f53\u524d\u6700\u706b\u7684 Agent \u7f16\u7a0b\u5de5\u5177\u4e4b\u4e00\u3002&quot;, &quot;site&quot;: &quot;https://code.claude.com/docs/en/overview&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Anthropic 官方的 AI 编程工具，住在你的终端里：能读懂整个代码库、自己执行命令、处理 git 工作流，用自然语言吩咐它干活就行。当前最火的 Agent 编程工具之一。</p>
+          
+          <div class="byline">
+            <span>anthropics</span><i>·</i>
+            <span>更新于 2026-10-18</span><i>·</i>
+            <span class="hot">日榜 · 月榜</span><i>·</i>
+            <a class="site" href="https://code.claude.com/docs/en/overview" target="_blank">https://code.claude.com/docs/en/overview</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/anthropics/claude-code.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/anthropics/claude-code">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-6-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/ghostty-org/ghostty" target="_blank">ghostty-org/ghostty</a></h3>
+            <span class="stars">★ 63,152</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;ghostty-org/ghostty&quot;, &quot;url&quot;: &quot;https://github.com/ghostty-org/ghostty&quot;, &quot;owner&quot;: &quot;ghostty-org&quot;, &quot;stars&quot;: 63152, &quot;desc&quot;: &quot;Ghostty \u662f\u4e00\u6b3e\u7528 Zig \u7f16\u5199\u3001\u9762\u5411\u5f00\u53d1\u8005\u7684\u8de8\u5e73\u53f0\u7ec8\u7aef\u6a21\u62df\u5668\uff0c\u76ee\u6807\u662f\u8ba9\u547d\u4ee4\u884c\u64cd\u4f5c\u65e2\u5feb\u53c8\u987a\u624b\u3002\u5b83\u76f4\u63a5\u8c03\u7528\u5404\u7cfb\u7edf\u539f\u751f\u754c\u9762\u7ec4\u4ef6\uff0c\u5e76\u7528 GPU \u52a0\u901f\u6e32\u67d3\uff0c\u89e3\u51b3\u4f20\u7edf\u7ec8\u7aef\u5361\u987f\u3001\u5916\u89c2\u4e0d\u7edf\u4e00\u7684\u95ee\u9898\u3002\u6bd4\u5982\u5728 macOS \u6216 Linux \u4e0a\u6253\u5f00\u5927\u91cf\u65e5\u5fd7\u8f93\u51fa\u65f6\uff0c\u6eda\u52a8\u4f9d\u7136\u6d41\u7545\uff0c\u8fd8\u80fd\u4eab\u53d7\u539f\u751f\u7a97\u53e3\u548c\u5feb\u6377\u952e\u4f53\u9a8c\u3002&quot;, &quot;site&quot;: &quot;https://ghostty.org&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Ghostty 是一款用 Zig 编写、面向开发者的跨平台终端模拟器，目标是让命令行操作既快又顺手。它直接调用各系统原生界面组件，并用 GPU 加速渲染，解决传统终端卡顿、外观不统一的问题。比如在 macOS 或 Linux 上打开大量日志输出时，滚动依然流畅，还能享受原生窗口和快捷键体验。</p>
+          
+          <div class="byline">
+            <span>ghostty-org</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            <a class="site" href="https://ghostty.org" target="_blank">https://ghostty.org</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/ghostty-org/ghostty.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/ghostty-org/ghostty">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-6-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a></h3>
+            <span class="stars">★ 47,337</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;alibaba/open-code-review&quot;, &quot;url&quot;: &quot;https://github.com/alibaba/open-code-review&quot;, &quot;owner&quot;: &quot;alibaba&quot;, &quot;stars&quot;: 47337, &quot;desc&quot;: &quot;\u963f\u91cc\u5f00\u6e90\u7684 AI \u4ee3\u7801\u8bc4\u5ba1\u5de5\u5177\uff1a\u89c4\u5219\u5f15\u64ce+\u5927\u6a21\u578b\u53cc\u4fdd\u9669\uff0c\u80fd\u7cbe\u786e\u5230\u884c\u7ea7\u6307\u51fa\u7a7a\u6307\u9488\u3001\u7ebf\u7a0b\u5b89\u5168\u3001SQL \u6ce8\u5165\u7b49\u95ee\u9898\uff0c\u7ecf\u8fc7\u963f\u91cc\u6d77\u91cf\u4ee3\u7801\u7684\u5b9e\u6218\u68c0\u9a8c\u3002\u76f8\u5f53\u4e8e\u7ed9\u56e2\u961f\u8bf7\u4e86\u4e00\u4f4d\u4e0d\u77e5\u75b2\u5026\u7684 reviewer\u3002&quot;, &quot;site&quot;: &quot;https://open-codereview.ai&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">阿里开源的 AI 代码评审工具：规则引擎+大模型双保险，能精确到行级指出空指针、线程安全、SQL 注入等问题，经过阿里海量代码的实战检验。相当于给团队请了一位不知疲倦的 reviewer。</p>
+          
+          <div class="byline">
+            <span>alibaba</span><i>·</i>
+            <span>更新于 2026-10-15</span><i>·</i>
+            <span class="hot">日榜 · 月榜</span><i>·</i>
+            <a class="site" href="https://open-codereview.ai" target="_blank">https://open-codereview.ai</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/alibaba/open-code-review.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/alibaba/open-code-review">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-6-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/longbridge/gpui-kit" target="_blank">longbridge/gpui-kit</a></h3>
+            <span class="stars">★ 18,270</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;longbridge/gpui-kit&quot;, &quot;url&quot;: &quot;https://github.com/longbridge/gpui-kit&quot;, &quot;owner&quot;: &quot;longbridge&quot;, &quot;stars&quot;: 18270, &quot;desc&quot;: &quot;\u957f\u6865\u5f00\u6e90\u7684 Rust \u684c\u9762 UI \u7ec4\u4ef6\u5e93\uff0c\u57fa\u4e8e GPUI\uff08Zed \u7f16\u8f91\u5668\u540c\u6b3e\u5f15\u64ce\uff09\uff0c\u6027\u80fd\u6781\u597d\u3002\u60f3\u505a Rust \u8de8\u5e73\u53f0\u684c\u9762\u5e94\u7528\u2014\u2014\u5c24\u5176\u662f\u884c\u60c5\u3001\u4ea4\u6613\u8fd9\u7c7b\u5b9e\u65f6\u754c\u9762\u2014\u2014\u53ef\u4ee5\u76f4\u63a5\u7528\u8fd9\u5957\u73b0\u6210\u7ec4\u4ef6\u3002&quot;, &quot;site&quot;: &quot;http://gpui-kit.com&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">长桥开源的 Rust 桌面 UI 组件库，基于 GPUI（Zed 编辑器同款引擎），性能极好。想做 Rust 跨平台桌面应用——尤其是行情、交易这类实时界面——可以直接用这套现成组件。</p>
+          
+          <div class="byline">
+            <span>longbridge</span><i>·</i>
+            <span>更新于 2026-10-19</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="http://gpui-kit.com" target="_blank">http://gpui-kit.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/longbridge/gpui-kit.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/longbridge/gpui-kit">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-7">
+        <div class="sec-kicker"><span class="sec-no">SECTION 07</span><span class="sec-name">移动 / 桌面应用</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-7-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/hyprwm/Hyprland" target="_blank">hyprwm/Hyprland</a></h3>
+            <span class="stars">★ 39,256</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;hyprwm/Hyprland&quot;, &quot;url&quot;: &quot;https://github.com/hyprwm/Hyprland&quot;, &quot;owner&quot;: &quot;hyprwm&quot;, &quot;stars&quot;: 39256, &quot;desc&quot;: &quot;Hyprland \u662f\u4e00\u4e2a\u9762\u5411 Linux \u684c\u9762\u7684 Wayland \u7a97\u53e3\u5408\u6210\u5668\uff0c\u4e3b\u6253\u52a8\u6001\u5e73\u94fa\u5e03\u5c40\u548c\u9ad8\u5ea6\u53ef\u5b9a\u5236\u3002\u5b83\u89e3\u51b3\u4f20\u7edf\u684c\u9762\u7a97\u53e3\u7ba1\u7406\u4f4e\u6548\u3001\u5916\u89c2\u4e0e\u6027\u80fd\u96be\u517c\u987e\u7684\u95ee\u9898\uff1a\u6253\u5f00\u591a\u4e2a\u7ec8\u7aef\u548c\u6d4f\u89c8\u5668\u7a97\u53e3\u65f6\uff0c\u5b83\u4f1a\u81ea\u52a8\u5e73\u94fa\u6392\u5217\u3001\u4e0d\u7559\u7a7a\u9699\uff0c\u7528\u6237\u8fd8\u80fd\u7528\u914d\u7f6e\u6587\u4ef6\u548c\u63d2\u4ef6\u81ea\u5b9a\u4e49\u52a8\u753b\u3001\u5feb\u6377\u952e\u4e0e\u5de5\u4f5c\u533a\u3002\u9002\u5408\u8ffd\u6c42\u9ad8\u6548\u591a\u4efb\u52a1\u548c\u70ab\u9177\u89c6\u89c9\u6548\u679c\u7684 Linux \u7528\u6237\u3002&quot;, &quot;site&quot;: &quot;https://hypr.land&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Hyprland 是一个面向 Linux 桌面的 Wayland 窗口合成器，主打动态平铺布局和高度可定制。它解决传统桌面窗口管理低效、外观与性能难兼顾的问题：打开多个终端和浏览器窗口时，它会自动平铺排列、不留空隙，用户还能用配置文件和插件自定义动画、快捷键与工作区。适合追求高效多任务和炫酷视觉效果的 Linux 用户。</p>
+          
+          <div class="byline">
+            <span>hyprwm</span><i>·</i>
+            <span>更新于 2026-10-31</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://hypr.land" target="_blank">https://hypr.land</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/hyprwm/Hyprland.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/hyprwm/Hyprland">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-7-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/cjpais/Handy" target="_blank">cjpais/Handy</a></h3>
+            <span class="stars">★ 36,310</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;cjpais/Handy&quot;, &quot;url&quot;: &quot;https://github.com/cjpais/Handy&quot;, &quot;owner&quot;: &quot;cjpais&quot;, &quot;stars&quot;: 36310, &quot;desc&quot;: &quot;Handy \u662f\u4e00\u6b3e\u514d\u8d39\u5f00\u6e90\u7684\u8bed\u97f3\u8f6c\u6587\u5b57\u684c\u9762\u5e94\u7528\uff0c\u5b8c\u5168\u79bb\u7ebf\u8fd0\u884c\uff0c\u4e0d\u9700\u8981\u8054\u7f51\u6216\u4e0a\u4f20\u97f3\u9891\uff0c\u4fdd\u62a4\u9690\u79c1\u3002\u5b83\u8de8\u5e73\u53f0\u652f\u6301\uff0c\u53ef\u6269\u5c55\uff0c\u9002\u5408\u9700\u8981\u5feb\u901f\u628a\u8bf4\u8bdd\u53d8\u6210\u6587\u5b57\u7684\u573a\u666f\uff0c\u6bd4\u5982\u5199\u6587\u6863\u3001\u8bb0\u7b14\u8bb0\u6216\u53e3\u8ff0\u6d88\u606f\u65f6\uff0c\u6309\u4e0b\u5feb\u6377\u952e\u8bf4\u8bdd\uff0c\u6587\u5b57\u5c31\u81ea\u52a8\u8f93\u5165\u5230\u5f53\u524d\u5149\u6807\u5904\uff0c\u7701\u53bb\u624b\u52a8\u6253\u5b57\u3002&quot;, &quot;site&quot;: &quot;https://handy.computer&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Handy 是一款免费开源的语音转文字桌面应用，完全离线运行，不需要联网或上传音频，保护隐私。它跨平台支持，可扩展，适合需要快速把说话变成文字的场景，比如写文档、记笔记或口述消息时，按下快捷键说话，文字就自动输入到当前光标处，省去手动打字。</p>
+          
+          <div class="byline">
+            <span>cjpais</span><i>·</i>
+            <span>更新于 2026-10-27</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://handy.computer" target="_blank">https://handy.computer</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/cjpais/Handy.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/cjpais/Handy">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-7-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/anomalyco/hex" target="_blank">anomalyco/hex</a></h3>
+            <span class="stars">★ 2,955</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;anomalyco/hex&quot;, &quot;url&quot;: &quot;https://github.com/anomalyco/hex&quot;, &quot;owner&quot;: &quot;anomalyco&quot;, &quot;stars&quot;: 2955, &quot;desc&quot;: &quot;Hex \u662f\u4e00\u6b3e\u8de8\u5e73\u53f0\u7684\u672c\u5730\u8bed\u97f3\u542c\u5199\u5de5\u5177\uff0c\u652f\u6301 macOS\u3001Windows \u548c Linux\u3002\u5b83\u628a\u4f60\u8bf4\u7684\u8bdd\u5b9e\u65f6\u8f6c\u6210\u6587\u5b57\uff0c\u76f4\u63a5\u8f93\u5165\u5230\u5f53\u524d\u5149\u6807\u4f4d\u7f6e\uff0c\u9002\u5408\u5199\u90ae\u4ef6\u3001\u8bb0\u7b14\u8bb0\u6216\u5199\u4ee3\u7801\u65f6\u4e0d\u60f3\u52a8\u624b\u6253\u5b57\u7684\u573a\u666f\u3002\u6240\u6709\u8bed\u97f3\u8bc6\u522b\u90fd\u5728\u672c\u5730\u5b8c\u6210\uff0c\u4e0d\u4e0a\u4f20\u4e91\u7aef\uff0c\u9690\u79c1\u66f4\u5b89\u5168\uff0c\u79bb\u7ebf\u4e5f\u80fd\u7528\u3002\u6bd4\u5982\u5f00\u4f1a\u65f6\u4f60\u53ef\u4ee5\u5bf9\u7740\u9ea6\u514b\u98ce\u8bf4\u8bdd\uff0cHex \u4f1a\u628a\u5185\u5bb9\u81ea\u52a8\u586b\u8fdb\u6587\u6863\u91cc\u3002&quot;, &quot;site&quot;: &quot;https://anoma.ly/hex&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Hex 是一款跨平台的本地语音听写工具，支持 macOS、Windows 和 Linux。它把你说的话实时转成文字，直接输入到当前光标位置，适合写邮件、记笔记或写代码时不想动手打字的场景。所有语音识别都在本地完成，不上传云端，隐私更安全，离线也能用。比如开会时你可以对着麦克风说话，Hex 会把内容自动填进文档里。</p>
+          
+          <div class="byline">
+            <span>anomalyco</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://anoma.ly/hex" target="_blank">https://anoma.ly/hex</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/anomalyco/hex.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/anomalyco/hex">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-8">
+        <div class="sec-kicker"><span class="sec-no">SECTION 08</span><span class="sec-name">安全</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-8-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/NVIDIA/SkillSpector" target="_blank">NVIDIA/SkillSpector</a></h3>
+            <span class="stars">★ 21,952</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;NVIDIA/SkillSpector&quot;, &quot;url&quot;: &quot;https://github.com/NVIDIA/SkillSpector&quot;, &quot;owner&quot;: &quot;NVIDIA&quot;, &quot;stars&quot;: 21952, &quot;desc&quot;: &quot;\u73b0\u5728\u4eba\u4eba\u90fd\u5728\u88c5 AI \u6280\u80fd\u5305\uff0c\u4f46\u6280\u80fd\u91cc\u53ef\u80fd\u85cf\u7740\u63d0\u793a\u6ce8\u5165\u3001\u5077\u6570\u636e\u7684\u6076\u610f\u4ee3\u7801\u3002\u8fd9\u4e2a\u626b\u63cf\u5668\u5728\u5b89\u88c5\u524d\u68c0\u67e5 17 \u7c7b\u5171 71 \u79cd\u98ce\u9669\u6a21\u5f0f\u2014\u2014AI \u6280\u80fd\u754c\u7684\u300c\u6740\u6bd2\u8f6f\u4ef6\u300d\u3002&quot;, &quot;site&quot;: &quot;https://docs.nvidia.com/skills/&quot;, &quot;category&quot;: &quot;\u5b89\u5168&quot;, &quot;emoji&quot;: &quot;\ud83d\udd10&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">现在人人都在装 AI 技能包，但技能里可能藏着提示注入、偷数据的恶意代码。这个扫描器在安装前检查 17 类共 71 种风险模式——AI 技能界的「杀毒软件」。</p>
+          
+          <div class="byline">
+            <span>NVIDIA</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://docs.nvidia.com/skills/" target="_blank">https://docs.nvidia.com/skills/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/NVIDIA/SkillSpector.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/NVIDIA/SkillSpector">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-8-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/beenuar/AiSOC" target="_blank">beenuar/AiSOC</a></h3>
+            <span class="stars">★ 6,033</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;beenuar/AiSOC&quot;, &quot;url&quot;: &quot;https://github.com/beenuar/AiSOC&quot;, &quot;owner&quot;: &quot;beenuar&quot;, &quot;stars&quot;: 6033, &quot;desc&quot;: &quot;AiSOC \u662f\u4e00\u4e2a\u5f00\u6e90\u7684 AI \u5b89\u5168\u8fd0\u8425\u4e2d\u5fc3\uff0c\u628a\u5b89\u5168\u544a\u8b66\u81ea\u52a8\u6c47\u805a\u3001\u53bb\u91cd\uff0c\u518d\u4ea4\u7ed9\u5927\u6a21\u578b\u667a\u80fd\u4f53\u6309 MITRE ATT&amp;CK \u6846\u67b6\u505a\u8c03\u67e5\u548c\u5206\u8bca\uff0c\u5e76\u8bb0\u5f55\u6bcf\u4e00\u6b65\u51b3\u7b56\uff0c\u65b9\u4fbf\u4e8b\u540e\u56de\u653e\u590d\u76d8\u3002\u5b83\u89e3\u51b3\u7684\u662f\u5b89\u5168\u56e2\u961f\u544a\u8b66\u592a\u591a\u3001\u4eba\u5de5\u7814\u5224\u6162\u7684\u95ee\u9898\uff0c\u4f8b\u5982\u6536\u5230\u5927\u91cf\u53ef\u7591\u767b\u5f55\u544a\u8b66\u65f6\uff0c\u5b83\u80fd\u81ea\u52a8\u7b5b\u51fa\u771f\u6b63\u9700\u8981\u5904\u7f6e\u7684\u51e0\u6761\u5e76\u7ed9\u51fa\u8c03\u67e5\u4f9d\u636e\u3002\u9879\u76ee\u53ef\u81ea\u6258\u7ba1\u3001\u65e0\u9700 API \u5bc6\u94a5\u5373\u53ef\u8fd0\u884c\uff0c\u8fd8\u63d0\u4f9b MCP \u670d\u52a1\u5668\u4f9b Claude\u3001Cursor \u7b49\u5de5\u5177\u63a5\u5165\u3002&quot;, &quot;site&quot;: &quot;https://beenuar.github.io/AiSOC/&quot;, &quot;category&quot;: &quot;\u5b89\u5168&quot;, &quot;emoji&quot;: &quot;\ud83d\udd10&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">AiSOC 是一个开源的 AI 安全运营中心，把安全告警自动汇聚、去重，再交给大模型智能体按 MITRE ATT&amp;CK 框架做调查和分诊，并记录每一步决策，方便事后回放复盘。它解决的是安全团队告警太多、人工研判慢的问题，例如收到大量可疑登录告警时，它能自动筛出真正需要处置的几条并给出调查依据。项目可自托管、无需 API 密钥即可运行，还提供 MCP 服务器供 Claude、Cursor 等工具接入。</p>
+          
+          <div class="byline">
+            <span>beenuar</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://beenuar.github.io/AiSOC/" target="_blank">https://beenuar.github.io/AiSOC/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/beenuar/AiSOC.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/beenuar/AiSOC">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-9">
+        <div class="sec-kicker"><span class="sec-no">SECTION 09</span><span class="sec-name">学习资源</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-9-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/public-apis/public-apis" target="_blank">public-apis/public-apis</a></h3>
+            <span class="stars">★ 494,319</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;public-apis/public-apis&quot;, &quot;url&quot;: &quot;https://github.com/public-apis/public-apis&quot;, &quot;owner&quot;: &quot;public-apis&quot;, &quot;stars&quot;: 494319, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u7531\u793e\u533a\u5171\u540c\u7ef4\u62a4\u7684\u514d\u8d39\u516c\u5f00 API \u5927\u5168\uff0c\u6309\u7c7b\u522b\u6574\u7406\u4e86\u5927\u91cf\u65e0\u9700\u4ed8\u8d39\u5373\u53ef\u8c03\u7528\u7684\u63a5\u53e3\uff0c\u6bd4\u5982\u5929\u6c14\u3001\u6c47\u7387\u3001\u52a8\u7269\u56fe\u7247\u3001\u65b0\u95fb\u7b49\u3002\u5b83\u89e3\u51b3\u7684\u662f\u5f00\u53d1\u8005\u627e\u4e0d\u5230\u53ef\u7528\u514d\u8d39\u63a5\u53e3\u3001\u6216\u4e0d\u77e5\u9053\u6709\u54ea\u4e9b\u73b0\u6210\u6570\u636e\u6e90\u7684\u95ee\u9898\u3002\u65e0\u8bba\u505a\u7ec3\u4e60\u9879\u76ee\u3001\u5feb\u901f\u539f\u578b\u8fd8\u662f\u67e5\u627e\u7279\u5b9a\u9886\u57df API\uff0c\u90fd\u80fd\u5728\u8fd9\u91cc\u6309\u5206\u7c7b\u5feb\u901f\u68c0\u7d22\uff0c\u7701\u53bb\u5230\u5904\u641c\u7d22\u7684\u65f6\u95f4\u3002&quot;, &quot;site&quot;: &quot;https://APILayer.com/?utm_source=Github&amp;utm_medium=Referral&amp;utm_campaign=Public-apis-repo&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个由社区共同维护的免费公开 API 大全，按类别整理了大量无需付费即可调用的接口，比如天气、汇率、动物图片、新闻等。它解决的是开发者找不到可用免费接口、或不知道有哪些现成数据源的问题。无论做练习项目、快速原型还是查找特定领域 API，都能在这里按分类快速检索，省去到处搜索的时间。</p>
+          
+          <div class="byline">
+            <span>public-apis</span><i>·</i>
+            <span>更新于 2026-10-30</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://APILayer.com/?utm_source=Github&amp;utm_medium=Referral&amp;utm_campaign=Public-apis-repo" target="_blank">https://APILayer.com/?utm_source=Github&amp;utm_medium=Referral&amp;utm_campaign=Public-apis-repo</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/public-apis/public-apis.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/public-apis/public-apis">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-9-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></h3>
+            <span class="stars">★ 74,272</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;rohitg00/ai-engineering-from-scratch&quot;, &quot;url&quot;: &quot;https://github.com/rohitg00/ai-engineering-from-scratch&quot;, &quot;owner&quot;: &quot;rohitg00&quot;, &quot;stars&quot;: 74272, &quot;desc&quot;: &quot;\u4ece\u96f6\u5b66 AI \u5de5\u7a0b\u7684\u5b8c\u6574\u6559\u7a0b\uff1a\u6df1\u5ea6\u5b66\u4e60\u3001LLM\u3001Agent\u3001\u5f3a\u5316\u5b66\u4e60\u4e00\u8def\u8bb2\u5230\u5b9e\u6218\u90e8\u7f72\u3002\u9002\u5408\u60f3\u7cfb\u7edf\u8f6c\u884c\u6216\u8fdb\u9636 AI \u5de5\u7a0b\u5e08\u7684\u4eba\u2014\u2014\u4e00\u4e2a\u4ed3\u5e93\u9876\u4e00\u5957\u8bfe\u3002&quot;, &quot;site&quot;: &quot;https://aiengineeringfromscratch.com&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">从零学 AI 工程的完整教程：深度学习、LLM、Agent、强化学习一路讲到实战部署。适合想系统转行或进阶 AI 工程师的人——一个仓库顶一套课。</p>
+          
+          <div class="byline">
+            <span>rohitg00</span><i>·</i>
+            <span>更新于 2026-10-23</span><i>·</i>
+            <span class="">月榜</span><i>·</i>
+            <a class="site" href="https://aiengineeringfromscratch.com" target="_blank">https://aiengineeringfromscratch.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/rohitg00/ai-engineering-from-scratch.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/rohitg00/ai-engineering-from-scratch">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-9-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/patchy631/ai-engineering-hub" target="_blank">patchy631/ai-engineering-hub</a></h3>
+            <span class="stars">★ 40,028</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;patchy631/ai-engineering-hub&quot;, &quot;url&quot;: &quot;https://github.com/patchy631/ai-engineering-hub&quot;, &quot;owner&quot;: &quot;patchy631&quot;, &quot;stars&quot;: 40028, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u9762\u5411 AI \u5de5\u7a0b\u5b9e\u8df5\u7684\u6559\u7a0b\u5408\u96c6\uff0c\u7528 Jupyter Notebook \u624b\u628a\u624b\u8bb2\u89e3\u5927\u6a21\u578b\u3001RAG \u68c0\u7d22\u589e\u5f3a\u548c\u771f\u5b9e AI Agent \u5e94\u7528\u7684\u642d\u5efa\u65b9\u6cd5\u3002\u5b83\u89e3\u51b3\u7684\u662f\u300c\u77e5\u9053\u6982\u5ff5\u4f46\u4e0d\u4f1a\u843d\u5730\u300d\u7684\u95ee\u9898\uff0c\u6bcf\u4e2a\u6559\u7a0b\u90fd\u914d\u6709\u53ef\u8fd0\u884c\u4ee3\u7801\uff0c\u6bd4\u5982\u6559\u4f60\u642d\u5efa\u4e00\u4e2a\u80fd\u67e5\u8d44\u6599\u518d\u56de\u7b54\u7684 RAG \u95ee\u7b54\u673a\u5668\u4eba\uff0c\u6216\u4e00\u4e2a\u80fd\u8c03\u7528\u5de5\u5177\u5b8c\u6210\u4efb\u52a1\u7684 Agent\uff0c\u9002\u5408\u5f00\u53d1\u8005\u8fb9\u5b66\u8fb9\u7ec3\u3002&quot;, &quot;site&quot;: &quot;https://join.dailydoseofds.com&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个面向 AI 工程实践的教程合集，用 Jupyter Notebook 手把手讲解大模型、RAG 检索增强和真实 AI Agent 应用的搭建方法。它解决的是「知道概念但不会落地」的问题，每个教程都配有可运行代码，比如教你搭建一个能查资料再回答的 RAG 问答机器人，或一个能调用工具完成任务的 Agent，适合开发者边学边练。</p>
+          
+          <div class="byline">
+            <span>patchy631</span><i>·</i>
+            <span>更新于 2026-11-01</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://join.dailydoseofds.com" target="_blank">https://join.dailydoseofds.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/patchy631/ai-engineering-hub.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/patchy631/ai-engineering-hub">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-10">
+        <div class="sec-kicker"><span class="sec-no">SECTION 10</span><span class="sec-name">其他</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-10-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/pablostanley/yoinks" target="_blank">pablostanley/yoinks</a></h3>
+            <span class="stars">★ 5,310</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;pablostanley/yoinks&quot;, &quot;url&quot;: &quot;https://github.com/pablostanley/yoinks&quot;, &quot;owner&quot;: &quot;pablostanley&quot;, &quot;stars&quot;: 5310, &quot;desc&quot;: &quot;\u7ec8\u7aef\u91cc\u7684\u89c6\u9891\u4e0b\u8f7d\u5668\uff1a\u4e00\u6761\u547d\u4ee4\u628a\u7f51\u9875\u89c6\u9891\u62c9\u5230\u672c\u5730\uff0c\u6ca1\u6709\u5783\u573e\u5e7f\u544a\u548c\u5957\u8def\u3002\u540c\u7c7b\u5de5\u5177\u91cc\u754c\u9762\u6700\u6e05\u723d\u7684\u4e00\u4e2a\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">终端里的视频下载器：一条命令把网页视频拉到本地，没有垃圾广告和套路。同类工具里界面最清爽的一个。</p>
+          
+          <div class="byline">
+            <span>pablostanley</span><i>·</i>
+            <span>更新于 2026-07-17</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/pablostanley/yoinks.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/pablostanley/yoinks">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
+    btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = meta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>
