@@ -9934,7 +9934,7 @@
   ]
  },
  "daily:2026-11-02": {
-  "status": "sending",
+  "status": "prepared",
   "report": {
    "date": "2026-11-02",
    "new_count": 44,
@@ -10765,7 +10765,11 @@
       ]
      }
     },
-    "status": "sending"
+    "status": "sent",
+    "receipt": {
+     "code": 0,
+     "confirmed_at": "2026-11-02T08:01:52.767153+08:00"
+    }
    },
    {
     "message": {
