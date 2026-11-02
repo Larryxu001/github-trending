@@ -1,0 +1,280 @@
+{
+ "date": "2026-11-02",
+ "new_count": 19,
+ "skipped": 0,
+ "categories": [
+  {
+   "name": "学习资源",
+   "emoji": "📚",
+   "items": [
+    {
+     "repo": "codecrafters-io/build-your-own-x",
+     "url": "https://github.com/codecrafters-io/build-your-own-x",
+     "owner": "codecrafters-io",
+     "stars": 557550,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "这是一个精选教程合集，教你从零动手重造各种熟悉的技术，比如数据库、Git、操作系统、编程语言、3D 渲染器、区块链、BitTorrent 客户端等。每个主题下按编程语言列出分步指南，帮开发者通过亲手实现来真正理解原理，而不是只停留在调用现成工具。适合想深入底层、提升编程功力的学习者，例如跟着教程用 C 写一个简易数据库，或自己实现一个 Shell。",
+     "site": "https://codecrafters.io",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "public-apis/public-apis",
+     "url": "https://github.com/public-apis/public-apis",
+     "owner": "public-apis",
+     "stars": 493477,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "这是一个由社区长期维护的免费公开 API 清单，把天气、股票、汇率、IP 定位、航班、邮箱验证等各类可免费调用的接口按领域分类整理在一起。开发者做项目需要外部数据时，不用到处搜索，直接在这里按分类找到合适的 API，再查看是否需要密钥、是否支持 HTTPS 和 CORS，就能快速接入。例如想给应用加一个汇率换算功能，可以在清单里找到 Fixer 或 Exchangerate Host 这类接口直接使用。",
+     "site": "https://APILayer.com/?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "DigitalPlatDev/FreeDomain",
+     "url": "https://github.com/DigitalPlatDev/FreeDomain",
+     "owner": "DigitalPlatDev",
+     "stars": 206453,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "DigitalPlat FreeDomain 是一个提供免费域名注册并配套 DNS 学习资料的开源项目。它让没有预算的人也能拥有自己的网站域名，支持 .DPDNS.ORG、.US.KG 等后缀，用户注册后可自定义 nameserver 接入任意 DNS 服务商。项目还提供从注册、DNS 配置到建站、邮箱部署的完整教程，例如新手可以跟着指南把域名解析到自己的博客并上线。",
+     "site": "https://dashboard.digitalplat.org",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "Shubhamsaboo/awesome-llm-apps",
+     "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+     "owner": "Shubhamsaboo",
+     "stars": 143499,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "这是一个开源 AI 应用模板合集，收录 100 多个可直接运行的智能体、Agent 技能和 RAG 应用，覆盖旅行规划、数据分析、语音客服、多智能体协作等场景。每个模板都配有完整代码和教程，克隆后装好依赖就能跑，还支持 Claude、GPT、Gemini、DeepSeek 等主流模型。比如想做一个把博客转成播客的工具，直接找到对应模板改改就能上线，适合开发者快速学习和二次开发。",
+     "site": "https://www.theunwindai.com",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "iptv-org/iptv",
+     "url": "https://github.com/iptv-org/iptv",
+     "owner": "iptv-org",
+     "stars": 142803,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "这是一个汇集全球公开 IPTV 频道的开源项目，提供 M3U 播放列表，让你在 VLC 等支持直播的播放器中直接观看世界各地的电视频道。它解决了找直播源麻烦、频道分散的问题，比如你想看某个国家的新闻台，只需把主播放列表链接粘贴到播放器里打开即可，无需逐个搜索。项目还配套 EPG 节目单、数据库和 API，方便开发者二次利用。",
+     "site": "https://iptv-org.github.io",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "items": [
+    {
+     "repo": "n8n-io/n8n",
+     "url": "https://github.com/n8n-io/n8n",
+     "owner": "n8n-io",
+     "stars": 209123,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "n8n 是一个可自托管或云端部署的工作流自动化平台，把可视化拖拽画布和自定义代码结合起来，内置 AI 能力，能连接 1500 多个外部服务。它解决的问题是让不会写代码的人也能搭建自动化流程，同时让开发者用 JavaScript、Python 扩展复杂逻辑。例如可以搭建一个 AI 客服流程：收到邮件后调用大模型生成回复，人工审核后再发送，全程在画布上连线完成。",
+     "site": "https://n8n.io",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "langflow-ai/langflow",
+     "url": "https://github.com/langflow-ai/langflow",
+     "owner": "langflow-ai",
+     "stars": 156161,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "Langflow 是一个可视化搭建 AI 智能体和工作流的平台，让你像拖拽积木一样把大模型、向量数据库和各类 AI 工具连成流程，无需从零写代码。它支持多智能体协作、对话管理和检索，还能把流程一键发布成 API 或 MCP 服务供其他应用调用。例如，你可以快速拼出一个能查资料、调用工具并回答问题的客服机器人，边搭边在交互界面里测试调整。",
+     "site": "http://www.langflow.org",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "TauricResearch/TradingAgents",
+     "url": "https://github.com/TauricResearch/TradingAgents",
+     "owner": "TauricResearch",
+     "stars": 114290,
+     "updated": "2026-10-26",
+     "lists": [],
+     "desc": "TradingAgents 是一个基于大语言模型的多智能体金融交易框架，把分析师、研究员、交易员和风控等角色拆成不同 AI 智能体，让它们像真实交易团队一样分工讨论、互相质疑，最终给出交易决策。它解决的是单一模型难以兼顾多角度分析的问题，可用于研究多智能体协作在量化交易中的效果，例如让看多和看空的智能体辩论后再下单。",
+     "site": "https://arxiv.org/pdf/2412.20138",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "ruvnet/RuView",
+     "url": "https://github.com/ruvnet/RuView",
+     "owner": "ruvnet",
+     "stars": 101711,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "RuView 把普通 WiFi 信号变成空间感知能力：用 9 美元的 ESP32 传感器采集信道状态信息（CSI），通过预训练模型识别房间内是否有人、呼吸和心率、动作姿态甚至睡眠质量，全程无需摄像头或穿戴设备，可穿墙、在黑暗中工作。它解决隐私敏感场景下的非接触监测问题，例如独居老人夜间跌倒或异常静止时自动向 Home Assistant 报警，并原生接入 Apple Home、Google Home、Alexa 等智能家居生态。",
+     "site": "https://Cognitum.One/RuView",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "virattt/ai-hedge-fund",
+     "url": "https://github.com/virattt/ai-hedge-fund",
+     "owner": "virattt",
+     "stars": 64364,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "这是一个 AI 对冲基金的概念验证项目，用多个模拟不同投资风格的 AI 智能体（如价值投资、成长投资等）组成团队，共同分析股票行情、财报等数据并做出买卖决策。它不进行真实交易，主要用于教育和研究，帮助人们理解 AI 如何辅助投资决策。例如，你可以用历史数据回测某个 AI 基金的表现，或模拟用虚拟资金跟踪每日决策记录，观察 AI 投资策略的效果。",
+     "site": "无",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "tangchengjiao/jianzhou-media-workbench",
+     "url": "https://github.com/tangchengjiao/jianzhou-media-workbench",
+     "owner": "tangchengjiao",
+     "stars": 12,
+     "updated": "2026-10-28",
+     "lists": [],
+     "desc": "见舟自媒体运营工作台是一个本地优先的 AI 内容创作与运营工具，把选题、写作、视觉制作、渠道发布和数据复盘串成一条完整工作流。它解决创作者素材散落各处、发布后难以复盘的问题：同一个内容母题可以派生出短视频稿、封面、朋友圈和公众号文章，每个成品都保留版本、排期和发布记录，之后还能回到资料中心复用。比如从对标账号提取一条爆款结构，生成差异化提纲和稿件，做完稿件体检后制作封面、排期发布，再记录 T+1/T+3 指标进行复盘。数据保存在本机 SQLite，AI 写作、语音转写和图片生成按需接入外部 API。",
+     "site": "无",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "Larryxu001/Tailored_llm_wiki",
+     "url": "https://github.com/Larryxu001/Tailored_llm_wiki",
+     "owner": "Larryxu001",
+     "stars": 0,
+     "updated": "2026-10-28",
+     "lists": [],
+     "desc": "LLM Wiki 是一款跨平台桌面应用，能把你的文档自动整理成互相链接的持久化知识库。它不采用传统 RAG 每次查询都重新检索的方式，而是让大模型增量地阅读、分析并生成 Wiki 页面，知识只编译一次并持续更新。比如你导入一批 PDF 论文，它会自动抽取实体和概念、建立交叉引用、生成摘要页，还提供知识图谱、语义搜索和 Deep Research，适合做个人或团队的第二大脑。",
+     "site": "无",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "Stirling-Tools/Stirling-PDF",
+     "url": "https://github.com/Stirling-Tools/Stirling-PDF",
+     "owner": "Stirling-Tools",
+     "stars": 95412,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "Stirling PDF 是一个开源的 PDF 处理平台，让你在自己的电脑或服务器上完成 PDF 编辑、合并、拆分、签名、脱敏、格式转换、OCR 识别和压缩等 50 多种操作，无需把敏感文档上传到第三方服务。它提供网页界面、桌面客户端和 REST API，还能用无代码工作流批量处理海量 PDF，适合注重隐私的个人和企业自建使用。",
+     "site": "https://stirling.com",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "calesthio/OpenMontage",
+     "url": "https://github.com/calesthio/OpenMontage",
+     "owner": "calesthio",
+     "stars": 73273,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "OpenMontage 是一个开源的智能体视频制作系统，能把 Claude Code、Cursor 等 AI 编程助手变成完整的视频工作室。你只需用自然语言描述需求，智能体就会自动完成选题调研、脚本撰写、AI 图像与视频生成、配音配乐、字幕和最终渲染，还支持从参考视频反推制作方案。例如说「做一支 60 秒神经网络科普动画」，它就能产出成片，适合内容创作者低成本批量制作视频。",
+     "site": "https://www.openmontage.video/",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "ZJU-REAL/Easel",
+     "url": "https://github.com/ZJU-REAL/Easel",
+     "owner": "ZJU-REAL",
+     "stars": 4138,
+     "updated": "2026-10-28",
+     "lists": [],
+     "desc": "Easel 是一个开源的 AI 社交媒体运营助手，把发现热点、策划选题、创作图文视频、多平台发布和效果复盘串成一条完整工作流。它能为每个账号建立独立的定位与风格画像，并调用可运行的技能脚本真正产出成品，比如把一篇论文自动做成小红书知识卡片或短视频，再适配发布到小红书、抖音、知乎、B 站等七个平台，适合内容创作者和运营团队提升效率。",
+     "site": "https://zju-real.github.io/Easel/",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "Hxd123459/lanbitou-uTools",
+     "url": "https://github.com/Hxd123459/lanbitou-uTools",
+     "owner": "Hxd123459",
+     "stars": 1,
+     "updated": "2026-10-26",
+     "lists": [],
+     "desc": "烂笔头是一款运行在 uTools 里的本地 AI 笔记插件，帮你随手记下碎片想法、图片或选中的文字，再通过全局搜索和 AI 对话快速找回、归纳，甚至把零散笔记整理成结构化长文。比如开会时随手记几条要点，之后让 AI 基于这些笔记总结成会议纪要。数据存在本机，支持多家大模型接口，还能作为 Agent 工具被调用。",
+     "site": "无",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "移动 / 桌面应用",
+   "emoji": "📱",
+   "items": [
+    {
+     "repo": "vorssaint/vorssaint-utils",
+     "url": "https://github.com/vorssaint/vorssaint-utils",
+     "owner": "vorssaint",
+     "stars": 31175,
+     "updated": "2026-10-31",
+     "lists": [],
+     "desc": "Vorssaint 是一款免费开源的 macOS 菜单栏工具箱，用一个图标集成十几种付费 Mac 小工具的功能，解决用户为音量调节、系统监控、窗口切换、剪贴板历史等零散需求分别购买多个应用的问题。例如可单独调节每个应用的音量、用实时预览切换窗口、悬停 Dock 图标预览窗口，还能按需安装或卸载功能模块，无账号、无遥测、无订阅。",
+     "site": "https://vorssaint.com",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "peach-mitao/peach",
+     "url": "https://github.com/peach-mitao/peach",
+     "owner": "peach-mitao",
+     "stars": 11863,
+     "updated": "2026-10-26",
+     "lists": [],
+     "desc": "Peach 是一个单用户、本地优先的个人媒体馆藏系统，专为管理成人影片收藏而设计。它把本地硬盘和 115、PikPak、OneDrive 等网盘里的影片汇成一个统一馆藏，支持封面墙挑片、原位播放、字幕搜索加载，还能读取已有 NFO 和海报补全标题、女优、厂牌信息，并跨站关注创作者更新、按番号云下载入库。观看记录和设置都存在本机，扫描不改原文件，适合想自己掌控影片库的成年用户。",
+     "site": "https://peach.video",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "安全",
+   "emoji": "🔐",
+   "items": [
+    {
+     "repo": "cloudflare/cloudflared",
+     "url": "https://github.com/cloudflare/cloudflared",
+     "owner": "cloudflare",
+     "stars": 16245,
+     "updated": "2026-10-26",
+     "lists": [],
+     "desc": "cloudflared 是 Cloudflare Tunnel 的命令行客户端，能在你的服务器和 Cloudflare 网络之间建立一条加密隧道，把外部访问安全地转发到本地服务，而无需在防火墙上开放端口。比如你想让家里的 NAS 或内网网站对外可用，又不想暴露公网 IP，运行它即可。它还支持通过隧道访问 SSH、RDP 等 TCP 服务，适合零信任网络接入场景。",
+     "site": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/",
+     "note": "",
+     "tags": []
+    }
+   ]
+  }
+ ],
+ "kind": "weekly",
+ "period_start": "2026-10-26",
+ "period_end": "2026-11-02"
+}
