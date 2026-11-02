@@ -9934,7 +9934,7 @@
   ]
  },
  "daily:2026-11-02": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-02",
    "new_count": 44,
@@ -11528,7 +11528,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    },
    {
     "message": {
