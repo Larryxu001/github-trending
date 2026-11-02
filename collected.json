@@ -4,11 +4,12 @@
    "repo": "tester-army/e2e",
    "lists": [
     "daily",
+    "monthly",
     "weekly"
    ],
-   "stars": 10405,
+   "stars": 12510,
    "owner": "tester-army",
-   "homepage": "https://tester.army/e2e",
+   "homepage": "https://e2e.tester.army",
    "description": "Next generation e2e testing framework for web and mobile apps.",
    "language": "TypeScript",
    "topics": [
@@ -20,10 +21,10 @@
     "playwright",
     "web"
    ],
-   "updated": "2026-10-14",
-   "metadata_date": "2026-10-15",
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:08.700289+08:00",
-   "last_seen": "2026-10-15T17:00:43.015041+08:00"
+   "last_seen": "2026-11-02T20:00:47.698110+08:00"
   },
   "mvschwarz/openrig": {
    "repo": "mvschwarz/openrig",
@@ -84,16 +85,16 @@
     "daily",
     "weekly"
    ],
-   "stars": 308108,
+   "stars": 309681,
    "owner": "mattpocock",
    "homepage": "https://aihero.dev/skills",
    "description": "Skills for Real Engineers. Straight from my .agents directory.",
    "language": "Shell",
    "topics": [],
-   "updated": "2026-10-31",
-   "metadata_date": "2026-11-01",
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-01T17:00:41.479812+08:00"
+   "last_seen": "2026-11-02T20:00:50.457055+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -126,7 +127,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-02T18:42:55.532053+08:00"
+   "last_seen": "2026-11-02T20:00:48.198287+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -184,7 +185,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-11-02T18:42:55.532074+08:00"
+   "last_seen": "2026-11-02T20:00:52.792761+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -229,7 +230,7 @@
    "updated": "2026-10-30",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-11-02T18:42:55.532105+08:00"
+   "last_seen": "2026-11-02T20:00:55.439243+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -320,7 +321,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-02T18:42:55.532051+08:00"
+   "last_seen": "2026-11-02T20:00:47.292155+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -405,14 +406,15 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-02T18:42:55.532022+08:00"
+   "last_seen": "2026-11-02T20:00:46.399540+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
    "lists": [
+    "daily",
     "monthly"
    ],
-   "stars": 107921,
+   "stars": 110094,
    "owner": "paperclipai",
    "homepage": "https://paperclip.ing",
    "description": "The open-source app everyone uses to manage agents at work",
@@ -439,10 +441,10 @@
     "project-management",
     "workflow-automation"
    ],
-   "updated": "2026-10-27",
-   "metadata_date": "2026-10-28",
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:20.630895+08:00",
-   "last_seen": "2026-10-28T17:00:38.870895+08:00"
+   "last_seen": "2026-11-02T20:00:52.292598+08:00"
   },
   "pablostanley/yoinks": {
    "repo": "pablostanley/yoinks",
@@ -501,39 +503,40 @@
    "repo": "morluto/rea",
    "lists": [
     "daily",
+    "monthly",
     "weekly"
    ],
-   "stars": 377373,
+   "stars": 420865,
    "owner": "morluto",
    "homepage": "https://rea.tools",
    "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
    "language": "TypeScript",
    "topics": [
     "agent-skills",
-    "ai-agents",
-    "binary-analysis",
+    "ai",
+    "android",
     "claude-code",
     "cli",
-    "codex",
-    "cordis",
-    "decompiler",
-    "developer-tools",
-    "dsh",
+    "cpp",
     "dsh-plugin",
-    "ghidra",
-    "hopper",
-    "llm",
+    "html",
+    "java",
+    "javascript",
+    "linux",
     "mcp",
-    "model-context-protocol",
+    "nodejs",
+    "python",
     "rea",
-    "reverse-engineering",
-    "static-analysis",
-    "touhou"
+    "react",
+    "rust",
+    "security",
+    "touhou",
+    "typescript"
    ],
-   "updated": "2026-10-24",
-   "metadata_date": "2026-10-25",
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-10-25T17:00:40.899221+08:00"
+   "last_seen": "2026-11-02T20:00:45.899433+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -714,7 +717,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-11-02T18:42:55.532098+08:00"
+   "last_seen": "2026-11-02T20:00:55.439277+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -959,7 +962,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-02T18:42:55.532065+08:00"
+   "last_seen": "2026-11-02T20:00:48.198317+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -975,30 +978,32 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-11-02T18:42:55.532121+08:00"
+   "last_seen": "2026-11-02T20:00:55.439282+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
    "lists": [
+    "daily",
     "monthly"
    ],
-   "stars": 41681,
+   "stars": 46155,
    "owner": "JustVugg",
    "homepage": "https://justvugg.github.io/colibri",
    "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
    "language": "C",
    "topics": [],
-   "updated": "2026-10-13",
-   "metadata_date": "2026-10-14",
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:35.970620+08:00",
-   "last_seen": "2026-10-14T18:00:47.010642+08:00"
+   "last_seen": "2026-11-02T20:00:49.522806+08:00"
   },
   "max-sixty/worktrunk": {
    "repo": "max-sixty/worktrunk",
    "lists": [
+    "daily",
     "monthly"
    ],
-   "stars": 9104,
+   "stars": 9829,
    "owner": "max-sixty",
    "homepage": "https://worktrunk.dev",
    "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
@@ -1011,10 +1016,10 @@
     "git",
     "worktrees"
    ],
-   "updated": "2026-10-09",
-   "metadata_date": "2026-10-10",
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-10-10T18:02:43.452296+08:00"
+   "last_seen": "2026-11-02T20:00:51.393186+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1036,7 +1041,7 @@
    "updated": "2026-10-30",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-11-02T18:42:55.532082+08:00"
+   "last_seen": "2026-11-02T20:00:49.089024+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1162,7 +1167,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-02T18:42:55.532046+08:00"
+   "last_seen": "2026-11-02T20:00:46.399564+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1216,7 +1221,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-02T18:42:55.532061+08:00"
+   "last_seen": "2026-11-02T20:00:48.198309+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1306,7 +1311,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-02T18:42:55.532059+08:00"
+   "last_seen": "2026-11-02T20:00:48.198305+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1496,20 +1501,21 @@
   "ranxianglei/billion-context": {
    "repo": "ranxianglei/billion-context",
    "lists": [
+    "monthly",
     "weekly"
    ],
-   "stars": 1677,
+   "stars": 3643,
    "owner": "ranxianglei",
    "homepage": "",
-   "description": "A context-compression plugin for small context windows (a 100K context is enough), token savings (5x fewer tokens), and month-long single sessions (billions of tokens).上下文压缩插件，兼顾小窗口(100k上下文足矣)省token(省5倍token)和超长会话(数月级别几十亿token单会话)。billion-context is all you need",
+   "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
    "language": "TypeScript",
    "topics": [
     "dsh-plugin"
    ],
-   "updated": "2026-10-17",
-   "metadata_date": "2026-10-18",
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-10T21:02:40.409296+08:00",
-   "last_seen": "2026-10-18T18:38:52.835572+08:00"
+   "last_seen": "2026-11-02T20:00:48.588860+08:00"
   },
   "multica-ai/andrej-karpathy-skills": {
    "repo": "multica-ai/andrej-karpathy-skills",
@@ -1526,7 +1532,7 @@
    "updated": "2026-04-20",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-10T21:02:41.186466+08:00",
-   "last_seen": "2026-11-02T18:42:55.532080+08:00"
+   "last_seen": "2026-11-02T20:00:50.022955+08:00"
   },
   "longbridge/gpui-kit": {
    "repo": "longbridge/gpui-kit",
@@ -1720,13 +1726,14 @@
   "michael-denyer/pstack-claude": {
    "repo": "michael-denyer/pstack-claude",
    "lists": [
+    "monthly",
     "weekly"
    ],
-   "stars": 1898,
+   "stars": 3755,
    "owner": "michael-denyer",
    "homepage": "",
-   "description": "Claude Code, Codex, Copilot, Pi, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.",
-   "language": "JavaScript",
+   "description": "Claude Code, Codex, Copilot, Pi, OpenCode, Muse, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.",
+   "language": "TypeScript",
    "topics": [
     "agent-plugin",
     "agent-skills",
@@ -1744,15 +1751,15 @@
     "codex-plugin",
     "codex-skills",
     "coding-agent",
-    "developer-tools",
     "gemini-cli",
+    "muse-plugin",
     "opencode",
     "pstack"
    ],
-   "updated": "2026-10-13",
-   "metadata_date": "2026-10-13",
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
    "first_seen": "2026-10-13T18:02:00.496555+08:00",
-   "last_seen": "2026-10-13T18:02:00.496567+08:00"
+   "last_seen": "2026-11-02T20:00:54.044086+08:00"
   },
   "vercel-labs/skills": {
    "repo": "vercel-labs/skills",
@@ -2064,7 +2071,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-02T18:42:55.532092+08:00"
+   "last_seen": "2026-11-02T20:00:55.439271+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2117,7 +2124,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-02T18:42:55.532069+08:00"
+   "last_seen": "2026-11-02T20:00:48.198296+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -2569,7 +2576,7 @@
    "updated": "2026-04-13",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-19T20:00:45.452575+08:00",
-   "last_seen": "2026-11-02T18:42:55.532055+08:00"
+   "last_seen": "2026-11-02T20:00:48.198321+08:00"
   },
   "Graphify-Labs/graphify": {
    "repo": "Graphify-Labs/graphify",
@@ -3090,7 +3097,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-02T18:42:55.532042+08:00"
+   "last_seen": "2026-11-02T20:00:45.452268+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3199,7 +3206,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-25T18:59:14.321042+08:00",
-   "last_seen": "2026-11-02T18:42:55.532090+08:00"
+   "last_seen": "2026-11-02T20:00:52.792733+08:00"
   },
   "JetBrains/thinkrail": {
    "repo": "JetBrains/thinkrail",
@@ -3230,7 +3237,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-25T18:59:16.047190+08:00",
-   "last_seen": "2026-11-02T18:42:55.532072+08:00"
+   "last_seen": "2026-11-02T20:00:48.198313+08:00"
   },
   "coollabsio/coolify": {
    "repo": "coollabsio/coolify",
@@ -3293,7 +3300,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-02T18:42:55.532057+08:00"
+   "last_seen": "2026-11-02T20:00:48.198282+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3511,7 +3518,7 @@
    "updated": "2026-10-25",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-02T18:42:55.532086+08:00"
+   "last_seen": "2026-11-02T20:00:49.089017+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3609,7 +3616,7 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-02T18:42:55.532096+08:00"
+   "last_seen": "2026-11-02T20:00:51.893321+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3691,7 +3698,7 @@
    "updated": "2026-10-19",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-29T20:00:47.647693+08:00",
-   "last_seen": "2026-11-02T18:42:55.532076+08:00"
+   "last_seen": "2026-11-02T20:00:48.198292+08:00"
   },
   "anthropics/skills": {
    "repo": "anthropics/skills",
@@ -3710,7 +3717,7 @@
    "updated": "2026-10-28",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-02T18:42:55.532101+08:00"
+   "last_seen": "2026-11-02T20:00:50.957197+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -3970,7 +3977,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-11-01T20:00:42.486126+08:00",
-   "last_seen": "2026-11-02T18:42:55.532078+08:00"
+   "last_seen": "2026-11-02T20:00:49.088989+08:00"
   },
   "beenuar/AiSOC": {
    "repo": "beenuar/AiSOC",
@@ -4080,7 +4087,7 @@
    "updated": "2026-10-30",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-11-01T20:00:47.406829+08:00",
-   "last_seen": "2026-11-02T18:42:55.532108+08:00"
+   "last_seen": "2026-11-02T20:00:48.198301+08:00"
   },
   "ghostty-org/ghostty": {
    "repo": "ghostty-org/ghostty",
@@ -4096,7 +4103,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-11-01T20:00:48.265342+08:00",
-   "last_seen": "2026-11-02T18:42:55.532116+08:00"
+   "last_seen": "2026-11-02T20:00:53.672981+08:00"
   },
   "hyprwm/Hyprland": {
    "repo": "hyprwm/Hyprland",
@@ -4117,13 +4124,119 @@
    "updated": "2026-10-31",
    "metadata_date": "2026-11-02",
    "first_seen": "2026-11-01T20:00:49.141801+08:00",
-   "last_seen": "2026-11-02T18:42:55.532114+08:00"
+   "last_seen": "2026-11-02T20:00:48.198253+08:00"
+  },
+  "vercel-labs/agent-desktop": {
+   "repo": "vercel-labs/agent-desktop",
+   "lists": [
+    "daily"
+   ],
+   "stars": 7860,
+   "owner": "vercel-labs",
+   "homepage": "https://agent-browser.dev/desktop",
+   "description": "Agent Desktop gives any agent reliable computer use on the desktop. Built with Rust, it sees any app's real UI structure through OS accessibility trees and operates it — refs stay stable and actions stay safe to retry, instead of guessing from pixels.",
+   "language": "Rust",
+   "topics": [
+    "accessibility",
+    "accessibility-api",
+    "ai-agents",
+    "automation",
+    "cli",
+    "computer-use",
+    "computer-use-agent",
+    "computer-use-agents",
+    "desktop-automation",
+    "macos",
+    "mcp",
+    "rust"
+   ],
+   "updated": "2026-11-02",
+   "metadata_date": "2026-11-02",
+   "first_seen": "2026-11-02T20:00:44.952120+08:00",
+   "last_seen": "2026-11-02T20:00:44.952132+08:00"
+  },
+  "D4Vinci/Scrapling": {
+   "repo": "D4Vinci/Scrapling",
+   "lists": [
+    "daily"
+   ],
+   "stars": 92133,
+   "owner": "D4Vinci",
+   "homepage": "https://scrapling.readthedocs.io/en/latest/",
+   "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+   "language": "Python",
+   "topics": [
+    "ai",
+    "ai-scraping",
+    "automation",
+    "crawler",
+    "crawling",
+    "crawling-python",
+    "data",
+    "data-extraction",
+    "mcp",
+    "mcp-server",
+    "playwright",
+    "python",
+    "scraping",
+    "selectors",
+    "stealth",
+    "web-scraper",
+    "web-scraping",
+    "web-scraping-python",
+    "webscraping",
+    "xpath"
+   ],
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-02",
+   "first_seen": "2026-11-02T20:00:46.792008+08:00",
+   "last_seen": "2026-11-02T20:00:46.792018+08:00"
+  },
+  "karpathy/nanochat": {
+   "repo": "karpathy/nanochat",
+   "lists": [
+    "daily"
+   ],
+   "stars": 59611,
+   "owner": "karpathy",
+   "homepage": "",
+   "description": "The best ChatGPT that $100 can buy.",
+   "language": "Python",
+   "topics": [],
+   "updated": "2026-09-07",
+   "metadata_date": "2026-11-02",
+   "first_seen": "2026-11-02T20:00:53.172822+08:00",
+   "last_seen": "2026-11-02T20:00:53.172835+08:00"
+  },
+  "p-e-w/heretic": {
+   "repo": "p-e-w/heretic",
+   "lists": [
+    "daily"
+   ],
+   "stars": 37776,
+   "owner": "p-e-w",
+   "homepage": "https://heretic-project.org",
+   "description": "Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more",
+   "language": "Python",
+   "topics": [
+    "abliteration",
+    "anti-censorship",
+    "anticensorship",
+    "censorship",
+    "censorship-resistance",
+    "llm",
+    "transformer"
+   ],
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-02",
+   "first_seen": "2026-11-02T20:00:54.939094+08:00",
+   "last_seen": "2026-11-02T20:00:54.939105+08:00"
   }
  },
- "last_collected": "2026-11-02T18:42:55.532124+08:00",
+ "last_collected": "2026-11-02T20:00:55.439289+08:00",
  "list_counts": {
-  "daily": 16,
+  "daily": 15,
   "weekly": 16,
-  "monthly": 19
+  "monthly": 18
  }
 }
