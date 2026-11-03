@@ -771,6 +771,20 @@
    "tags": [],
    "saved_at": "2026-11-02",
    "source": "pages"
+  },
+  {
+   "repo": "D4Vinci/Scrapling",
+   "url": "https://github.com/D4Vinci/Scrapling",
+   "owner": "D4Vinci",
+   "stars": 92884,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "Scrapling 是一个 Python 网页抓取框架，把快速 HTTP 请求、隐身浏览器、JavaScript 渲染、CSS/XPath 解析和并发爬虫整合到一个库里。它能绕过 Cloudflare 等反爬机制，支持代理轮换、自动重试、断点续爬和数据导出，还能通过 MCP 服务器让 AI 代理直接抓取网页。例如几行代码就能抓取名言网站的作者和内容并保存为 JSON，适合从单页采集到整站爬取的各种场景。",
+   "site": "https://scrapling.readthedocs.io/en/latest/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-03",
+   "source": "pages"
   }
  ]
 }
