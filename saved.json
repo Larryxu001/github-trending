@@ -869,6 +869,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "pages"
+  },
+  {
+   "repo": "9001/copyparty",
+   "url": "https://github.com/9001/copyparty",
+   "owner": "9001",
+   "stars": 47250,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "copyparty 是一个用 Python 写的便携文件服务器，把几乎任何设备变成支持断点续传的文件共享中心。它只需 Python 就能跑，同时提供网页、WebDAV、FTP、SFTP、TFTP 等多种访问方式，还带媒体索引、缩略图、去重和搜索功能。比如你可以把旧笔记本或树莓派变成家庭 NAS，用浏览器拖拽上传下载，也能用手机 App 一键传文件。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
