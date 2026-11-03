@@ -939,6 +939,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "xuanli199/weekly",
+   "url": "https://github.com/xuanli199/weekly",
+   "owner": "xuanli199",
+   "stars": 3829,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是B站UP主玄离199「每周科技补全」视频的配套文档库，把每期视频里提到的软件和开源项目按周整理成 Markdown 文档，并同步发布为静态博客和飞书文档。观众看完视频后常记不住项目名字，这个仓库就像一个可搜索的索引目录，比如想找第50期提到的某个效率工具，直接翻对应文档即可，方便收藏、回顾和分享。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
