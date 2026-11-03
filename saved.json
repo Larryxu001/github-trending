@@ -799,6 +799,20 @@
    "tags": [],
    "saved_at": "2026-11-03",
    "source": "pages"
+  },
+  {
+   "repo": "ollama/ollama",
+   "url": "https://github.com/ollama/ollama",
+   "owner": "ollama",
+   "stars": 185729,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "Ollama 是一个让你在自己电脑上轻松运行开源大模型的工具，解决了本地部署大模型门槛高、配置麻烦的问题。只需一条命令（如 ollama run gemma4），就能下载并对话 Gemma、DeepSeek、Qwen 等模型，数据完全留在本地，保护隐私。它还提供 REST API 和 Python、JavaScript 库，方便开发者把本地模型接入自己的应用或 Claude Code、Copilot 等编程工具。",
+   "site": "https://ollama.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-03",
+   "source": "pages"
   }
  ]
 }
