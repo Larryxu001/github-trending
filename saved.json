@@ -883,6 +883,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "microsoft/markitdown",
+   "url": "https://github.com/microsoft/markitdown",
+   "owner": "microsoft",
+   "stars": 193701,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "MarkItDown 是微软开源的 Python 工具，能把 PDF、Word、Excel、PPT、图片、音频、HTML、ZIP 等多种文件统一转换成 Markdown 文本，保留标题、列表、表格、链接等结构。它主要服务于大模型和文本分析场景，因为 Markdown 接近纯文本、token 效率高，且主流 LLM 天然理解。例如把一份 PDF 报告转成 Markdown 后，可直接喂给 GPT 做摘要或问答。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
