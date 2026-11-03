@@ -24,7 +24,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:08.700289+08:00",
-   "last_seen": "2026-11-03T17:00:41.300425+08:00"
+   "last_seen": "2026-11-03T20:00:43.628778+08:00"
   },
   "mvschwarz/openrig": {
    "repo": "mvschwarz/openrig",
@@ -94,7 +94,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-03T17:00:41.300469+08:00"
+   "last_seen": "2026-11-03T20:00:40.465876+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -127,7 +127,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-03T17:00:41.300432+08:00"
+   "last_seen": "2026-11-03T20:00:40.465873+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -185,7 +185,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-11-03T17:00:41.300483+08:00"
+   "last_seen": "2026-11-03T20:00:43.628795+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -230,7 +230,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-11-03T17:00:41.300494+08:00"
+   "last_seen": "2026-11-03T20:00:43.628811+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -321,7 +321,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-03T17:00:41.300422+08:00"
+   "last_seen": "2026-11-03T20:00:40.465878+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -406,7 +406,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-03T17:00:41.300415+08:00"
+   "last_seen": "2026-11-03T20:00:40.465818+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -536,7 +536,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-03T17:00:41.300412+08:00"
+   "last_seen": "2026-11-03T20:00:40.465841+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -717,7 +717,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-11-03T17:00:41.300499+08:00"
+   "last_seen": "2026-11-03T20:00:43.628803+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -962,7 +962,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-03T17:00:41.300451+08:00"
+   "last_seen": "2026-11-03T20:00:40.465888+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -978,7 +978,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-11-03T17:00:41.300501+08:00"
+   "last_seen": "2026-11-03T20:00:43.628815+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -995,13 +995,14 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:35.970620+08:00",
-   "last_seen": "2026-11-03T17:00:41.300465+08:00"
+   "last_seen": "2026-11-03T20:00:40.465855+08:00"
   },
   "max-sixty/worktrunk": {
    "repo": "max-sixty/worktrunk",
    "lists": [
     "daily",
-    "monthly"
+    "monthly",
+    "weekly"
    ],
    "stars": 9927,
    "owner": "max-sixty",
@@ -1019,7 +1020,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-11-03T17:00:41.300474+08:00"
+   "last_seen": "2026-11-03T20:00:40.465850+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1041,7 +1042,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-11-03T17:00:41.300462+08:00"
+   "last_seen": "2026-11-03T20:00:41.245663+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1087,18 +1088,19 @@
   "spotify/portal-ai-plugins": {
    "repo": "spotify/portal-ai-plugins",
    "lists": [
+    "daily",
     "monthly"
    ],
-   "stars": 2435,
+   "stars": 2914,
    "owner": "spotify",
    "homepage": "",
    "description": "",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-10-06",
-   "metadata_date": "2026-10-09",
+   "updated": "2026-10-23",
+   "metadata_date": "2026-11-03",
    "first_seen": "2026-10-08T03:12:28.609870+08:00",
-   "last_seen": "2026-10-09T18:02:47.623436+08:00"
+   "last_seen": "2026-11-03T20:00:40.745519+08:00"
   },
   "manaflow-ai/cmux": {
    "repo": "manaflow-ai/cmux",
@@ -1167,7 +1169,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-03T17:00:41.300418+08:00"
+   "last_seen": "2026-11-03T20:00:40.465847+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1221,7 +1223,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-03T17:00:41.300446+08:00"
+   "last_seen": "2026-11-03T20:00:40.465880+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1311,7 +1313,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-03T17:00:41.300444+08:00"
+   "last_seen": "2026-11-03T20:00:40.465852+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1515,7 +1517,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-10T21:02:40.409296+08:00",
-   "last_seen": "2026-11-03T17:00:41.300456+08:00"
+   "last_seen": "2026-11-03T20:00:42.013961+08:00"
   },
   "multica-ai/andrej-karpathy-skills": {
    "repo": "multica-ai/andrej-karpathy-skills",
@@ -1532,7 +1534,7 @@
    "updated": "2026-04-20",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-10T21:02:41.186466+08:00",
-   "last_seen": "2026-11-03T17:00:41.300467+08:00"
+   "last_seen": "2026-11-03T20:00:43.628737+08:00"
   },
   "longbridge/gpui-kit": {
    "repo": "longbridge/gpui-kit",
@@ -1759,7 +1761,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-13T18:02:00.496555+08:00",
-   "last_seen": "2026-11-03T17:00:41.300490+08:00"
+   "last_seen": "2026-11-03T20:00:43.628818+08:00"
   },
   "vercel-labs/skills": {
    "repo": "vercel-labs/skills",
@@ -2071,7 +2073,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-03T17:00:41.300497+08:00"
+   "last_seen": "2026-11-03T20:00:43.628807+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2124,7 +2126,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-03T17:00:41.300437+08:00"
+   "last_seen": "2026-11-03T20:00:40.465871+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -2576,7 +2578,7 @@
    "updated": "2026-04-13",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-19T20:00:45.452575+08:00",
-   "last_seen": "2026-11-03T17:00:41.300454+08:00"
+   "last_seen": "2026-11-03T20:00:43.628783+08:00"
   },
   "Graphify-Labs/graphify": {
    "repo": "Graphify-Labs/graphify",
@@ -3097,7 +3099,7 @@
    "updated": "2026-10-29",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-03T17:00:41.300408+08:00"
+   "last_seen": "2026-11-03T20:00:40.465837+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3206,7 +3208,7 @@
    "updated": "2026-10-27",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-25T18:59:14.321042+08:00",
-   "last_seen": "2026-11-03T17:00:41.300480+08:00"
+   "last_seen": "2026-11-03T20:00:43.628799+08:00"
   },
   "JetBrains/thinkrail": {
    "repo": "JetBrains/thinkrail",
@@ -3237,7 +3239,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-25T18:59:16.047190+08:00",
-   "last_seen": "2026-11-03T17:00:41.300449+08:00"
+   "last_seen": "2026-11-03T20:00:41.245634+08:00"
   },
   "coollabsio/coolify": {
    "repo": "coollabsio/coolify",
@@ -3300,7 +3302,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-03T17:00:41.300429+08:00"
+   "last_seen": "2026-11-03T20:00:40.465885+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3518,7 +3520,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-03T17:00:41.300460+08:00"
+   "last_seen": "2026-11-03T20:00:42.797643+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3698,7 +3700,7 @@
    "updated": "2026-10-19",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-29T20:00:47.647693+08:00",
-   "last_seen": "2026-11-03T17:00:41.300434+08:00"
+   "last_seen": "2026-11-03T20:00:43.628787+08:00"
   },
   "anthropics/skills": {
    "repo": "anthropics/skills",
@@ -3717,7 +3719,7 @@
    "updated": "2026-10-28",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-03T17:00:41.300472+08:00"
+   "last_seen": "2026-11-03T20:00:42.013931+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4021,7 +4023,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 2955,
+   "stars": 4224,
    "owner": "anomalyco",
    "homepage": "https://anoma.ly/hex",
    "description": "Local voice dictation for mac, windows and linux",
@@ -4036,10 +4038,10 @@
     "speech-to-text",
     "voice-control"
    ],
-   "updated": "2026-11-01",
-   "metadata_date": "2026-11-02",
+   "updated": "2026-11-03",
+   "metadata_date": "2026-11-03",
    "first_seen": "2026-11-01T20:00:44.151485+08:00",
-   "last_seen": "2026-11-02T18:42:55.532088+08:00"
+   "last_seen": "2026-11-03T20:00:43.128559+08:00"
   },
   "patchy631/ai-engineering-hub": {
    "repo": "patchy631/ai-engineering-hub",
@@ -4103,12 +4105,13 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-11-01T20:00:48.265342+08:00",
-   "last_seen": "2026-11-03T17:00:41.300487+08:00"
+   "last_seen": "2026-11-03T20:00:43.628773+08:00"
   },
   "hyprwm/Hyprland": {
    "repo": "hyprwm/Hyprland",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 39782,
    "owner": "hyprwm",
@@ -4124,7 +4127,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-11-01T20:00:49.141801+08:00",
-   "last_seen": "2026-11-03T17:00:41.300427+08:00"
+   "last_seen": "2026-11-03T20:00:43.628791+08:00"
   },
   "vercel-labs/agent-desktop": {
    "repo": "vercel-labs/agent-desktop",
@@ -4153,7 +4156,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-11-02T20:00:44.952120+08:00",
-   "last_seen": "2026-11-03T17:00:41.300390+08:00"
+   "last_seen": "2026-11-03T20:00:40.465844+08:00"
   },
   "D4Vinci/Scrapling": {
    "repo": "D4Vinci/Scrapling",
@@ -4190,7 +4193,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-03T17:00:41.300420+08:00"
+   "last_seen": "2026-11-03T20:00:43.628767+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4230,13 +4233,70 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-03",
    "first_seen": "2026-11-02T20:00:54.939094+08:00",
-   "last_seen": "2026-11-03T17:00:41.300492+08:00"
+   "last_seen": "2026-11-03T20:00:40.465883+08:00"
+  },
+  "floci-io/floci": {
+   "repo": "floci-io/floci",
+   "lists": [
+    "daily"
+   ],
+   "stars": 28177,
+   "owner": "floci-io",
+   "homepage": "https://floci.io/floci/",
+   "description": "Light, fluffy, and always free - The AWS Local Emulator alternative",
+   "language": "Java",
+   "topics": [
+    "aws",
+    "aws-emulation",
+    "devops",
+    "docker",
+    "ec2",
+    "ecs",
+    "localstack",
+    "s3",
+    "sqs",
+    "testcontainers"
+   ],
+   "updated": "2026-11-03",
+   "metadata_date": "2026-11-03",
+   "first_seen": "2026-11-03T20:00:41.513774+08:00",
+   "last_seen": "2026-11-03T20:00:41.513785+08:00"
+  },
+  "Usagi-org/ai-goofish-monitor": {
+   "repo": "Usagi-org/ai-goofish-monitor",
+   "lists": [
+    "daily"
+   ],
+   "stars": 16103,
+   "owner": "Usagi-org",
+   "homepage": "",
+   "description": "基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。",
+   "language": "Python",
+   "topics": [
+    "ai",
+    "ai-assistant",
+    "ai-tools",
+    "automation",
+    "gemini",
+    "goofish",
+    "open-source",
+    "openai",
+    "playwright",
+    "tool",
+    "xian-yu",
+    "xianyu",
+    "xianyu-bot"
+   ],
+   "updated": "2026-10-10",
+   "metadata_date": "2026-11-03",
+   "first_seen": "2026-11-03T20:00:42.297474+08:00",
+   "last_seen": "2026-11-03T20:00:42.297486+08:00"
   }
  },
- "last_collected": "2026-11-03T17:00:41.300504+08:00",
+ "last_collected": "2026-11-03T20:00:43.628826+08:00",
  "list_counts": {
-  "daily": 15,
+  "daily": 13,
   "weekly": 16,
-  "monthly": 18
+  "monthly": 17
  }
 }
