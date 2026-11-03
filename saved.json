@@ -897,6 +897,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "bobeff/open-source-games",
+   "url": "https://github.com/bobeff/open-source-games",
+   "owner": "bobeff",
+   "stars": 17429,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是一个开源游戏大全清单，按动作、冒险、经营、城市建造、第一人称射击等类型整理了数百款开源游戏和商业游戏的开源复刻项目，每条都附有官网和源码链接。比如想找免费的城市建造游戏，可以直接看到 OpenRCT2、OpenTTD 等推荐；想研究经典游戏源码，也能找到 Doom、Quake 的官方开源代码。适合玩家淘游戏、开发者学习参考。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
