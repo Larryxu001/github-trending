@@ -827,6 +827,20 @@
    "tags": [],
    "saved_at": "2026-11-03",
    "source": "pages"
+  },
+  {
+   "repo": "abue-ammar/tinycast",
+   "url": "https://github.com/abue-ammar/tinycast",
+   "owner": "abue-ammar",
+   "stars": 9078,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Tinycast 是一款用 Swift 原生开发的 macOS 启动器，用一个全局快捷键就能呼出命令面板，快速启动应用、搜索文件、管理剪贴板历史、做计算和单位换算、运行快捷指令与自定义命令，还支持窗口管理、便签、AI 聊天和 Raycast 扩展。它解决的是 macOS 上启动器要么臃肿、要么功能分散的问题，比如按一个键就能找到并打开任意应用，或把刚复制的文字从剪贴板历史里粘回来，内存占用不到 100MB，免费开源。",
+   "site": "https://tinycast.dev",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-03",
+   "source": "pages"
   }
  ]
 }
