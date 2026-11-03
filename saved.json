@@ -813,6 +813,20 @@
    "tags": [],
    "saved_at": "2026-11-03",
    "source": "pages"
+  },
+  {
+   "repo": "storytold/craft-anything",
+   "url": "https://github.com/storytold/craft-anything",
+   "owner": "storytold",
+   "stars": 5092,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "Craft Anything 是一个纯 Rust 编写的开源逆向工程与重建引擎：你指定一个网站、应用或游戏，它先用真实检测工具分析原作的页面、代码和运行方式，再让 Claude Code 等编程智能体按你指定的技术栈生成一个新项目，并自动对比原作反复修正。它提供 314 个工具，每个都是 CLI 命令和 MCP 工具，可被任意智能体调用；例如输入网址并说「重建这个网站」，就能得到可运行的新版本。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-03",
+   "source": "pages"
   }
  ]
 }
