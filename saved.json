@@ -855,6 +855,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "pages"
+  },
+  {
+   "repo": "nickrunning/wechat-selkies",
+   "url": "https://github.com/nickrunning/wechat-selkies",
+   "owner": "nickrunning",
+   "stars": 3099,
+   "category": "其他",
+   "emoji": "📦",
+   "desc": "这是一个把官方微信、QQ 的 Linux 客户端封装进 Docker 容器的开源项目，借助 Selkies WebRTC 技术，让你直接在浏览器里打开并使用微信和 QQ，无需在电脑或手机上安装客户端。它支持中文本地输入法、聊天记录持久化、文件传输、GPU 硬件加速，兼容 AMD64 和 ARM64 架构，还能通过 proot-apps 安装 Telegram 等第三方应用。适合把微信部署在服务器上远程办公，或用浏览器快速访问的场景。",
+   "site": "https://hub.docker.com/r/nickrunning/wechat-selkies",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "pages"
   }
  ]
 }
