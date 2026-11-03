@@ -841,6 +841,20 @@
    "tags": [],
    "saved_at": "2026-11-03",
    "source": "pages"
+  },
+  {
+   "repo": "jsdelivr/jsdelivr",
+   "url": "https://github.com/jsdelivr/jsdelivr",
+   "owner": "jsdelivr",
+   "stars": 6417,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "jsDelivr 是一个免费、快速、可靠的开源 CDN，专门为 npm、GitHub 和 JavaScript 生态提供文件加速分发。它解决的是开源库加载慢、不稳定、甚至因作者删包导致网站挂掉的问题：只要文件被访问过一次，就会永久缓存，即使 npm 包被删除也能继续提供。比如你在网页里引用 jQuery，只需写 /npm/jquery@3/dist/jquery.min.js，就能从全球节点高速加载，还支持自动压缩、ES 模块和版本回退。",
+   "site": "https://www.jsdelivr.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "pages"
   }
  ]
 }
