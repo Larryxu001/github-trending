@@ -785,6 +785,20 @@
    "tags": [],
    "saved_at": "2026-11-03",
    "source": "pages"
+  },
+  {
+   "repo": "xpzouying/xiaohongshu-mcp",
+   "url": "https://github.com/xpzouying/xiaohongshu-mcp",
+   "owner": "xpzouying",
+   "stars": 16777,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "这是一个让 AI 助手直接操作小红书的 MCP 服务，用 Go 编写。它把登录、发布图文或视频、搜索内容、查看推荐流、获取帖子详情与评论、发表或回复评论、点赞收藏、查看用户主页等能力封装成标准 MCP 工具，接入 Claude Code 等客户端后，AI 就能自动完成小红书运营。例如让 AI 按关键词搜索笔记、读取互动数据，再自动发布带标签的图文内容。",
+   "site": "https://www.haha.ai/xiaohongshu-mcp",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-03",
+   "source": "pages"
   }
  ]
 }
