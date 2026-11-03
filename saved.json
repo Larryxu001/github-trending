@@ -925,6 +925,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "wangrongding/wechat-bot",
+   "url": "https://github.com/wangrongding/wechat-bot",
+   "owner": "wangrongding",
+   "stars": 11521,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "这是一个基于 Wechaty 的多平台 IM 智能体，能把微信、飞书、Telegram、WhatsApp 收到的消息转发给 ChatGPT、Claude、DeepSeek、Kimi、Ollama 等大模型自动回复。它支持白名单和群聊 @ 触发，还能读取本地微信聊天记录、群成员和朋友圈缓存，做群聊统计或 AI 深度分析，比如分析某个群最近聊了什么、谁最活跃。适合想给 IM 加 AI 助手或做社群运营分析的人。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
