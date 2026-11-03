@@ -911,6 +911,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "niedev/RTranslator",
+   "url": "https://github.com/niedev/RTranslator",
+   "owner": "niedev",
+   "stars": 10607,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "RTranslator 是一款安卓端的开源离线实时翻译应用，把 Meta 的 NLLB 翻译模型和 OpenAI 的 Whisper 语音识别模型直接跑在手机上，不依赖服务器，保护隐私且断网也能用。它提供对话模式、对讲机模式和文本翻译三种用法：两人各装一个 App 并连上蓝牙耳机，就能像对方说母语一样自然交谈；对讲机模式只需一部手机，适合问路、购物等简短交流。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
