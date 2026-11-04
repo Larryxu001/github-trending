@@ -1107,6 +1107,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "komi-store/komi-store",
+   "url": "https://github.com/komi-store/komi-store",
+   "owner": "komi-store",
+   "stars": 20307,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Komi Store 是一个免费开源的跨平台应用商店，专门用来浏览、发现并一键安装开发者发布在 GitHub、Codeberg 等平台上的软件。它解决了开源软件分散在各仓库、普通用户难以找到和安装的问题，支持 Android、Windows、macOS 和 Linux。例如你想装某个 GitHub 上的开源小工具，不用手动找安装包，在 Komi Store 里搜索后点一下即可完成下载安装。",
+   "site": "https://www.komistore.app",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
