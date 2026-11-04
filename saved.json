@@ -1051,6 +1051,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "decolua/9router",
+   "url": "https://github.com/decolua/9router",
+   "owner": "decolua",
+   "stars": 31901,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "9Router 是一个本地运行的 AI 路由网关，把 Claude Code、Cursor、Cline、Codex 等编程工具统一接到 40 多家 AI 服务商的 100 多个模型上。它解决订阅额度用不完、限流中断、API 太贵的问题：当某个渠道额度耗尽时自动切换到更便宜或免费的模型，还能压缩工具输出内容节省 20-40% token。例如在 Claude Code 里把接口地址改成 localhost:20128 就能免费用上 Claude、GPT、Gemini 等模型。",
+   "site": "https://9router.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
