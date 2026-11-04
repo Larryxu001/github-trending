@@ -1135,6 +1135,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "xushengfeng/eSearch",
+   "url": "https://github.com/xushengfeng/eSearch",
+   "owner": "xushengfeng",
+   "stars": 7390,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "eSearch 是一款跨平台（Windows、Linux、macOS）的桌面截屏与屏幕信息处理工具，核心是把截屏、离线 OCR、搜索、翻译、贴图、录屏、滚动截屏和屏幕翻译整合在一起。它解决了 Linux 上缺少类似 Snipaste 和手机“大爆炸”式即时搜索工具的问题：框选屏幕文字后按回车即可离线识别，再一键搜索或翻译；还能把截图钉在屏幕上、录制带光标提示的演示视频，适合需要频繁处理屏幕内容的办公、学习和开发场景。",
+   "site": "https://esearch-app.netlify.app/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "pages"
   }
  ]
 }
