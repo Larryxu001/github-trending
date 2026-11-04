@@ -981,6 +981,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "dimthink/PriceAI",
+   "url": "https://github.com/dimthink/PriceAI",
+   "owner": "dimthink",
+   "stars": 5027,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "PriceAI 是一个 AI 订阅与 API 的比价雷达，把 ChatGPT、Claude、Gemini 等官方订阅、200 多个卡网发卡渠道、官方 API 和中转 API 的价格、库存、倍率集中展示，帮你判断哪个渠道真有货、价格是否靠谱。比如想买 ChatGPT Plus，可以一次看到官网地区价、代充价和卡密价，再回原站核验下单。它不卖货不担保，只做购买前的成本参考。",
+   "site": "https://priceai.cc",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
