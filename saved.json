@@ -1037,6 +1037,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "AnInsomniacy/rayburst",
+   "url": "https://github.com/AnInsomniacy/rayburst",
+   "owner": "AnInsomniacy",
+   "stars": 11365,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Rayburst 是一款开源跨平台下载管理器，用 TypeScript 和 Rust（Tauri 2）开发，底层采用 Aria2 Next 引擎。它支持 HTTP、BitTorrent、磁力链接、ED2K、HLS/DASH 等多种协议，并提供浏览器扩展接管下载、限速调度、托盘常驻、通知与自动关机等功能。例如，你可以把浏览器里的下载任务一键交给它，并让它自动按时间段限速，适合需要管理大量下载任务的用户。",
+   "site": "https://rayburst.pages.dev",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
