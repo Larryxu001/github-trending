@@ -24,7 +24,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:08.700289+08:00",
-   "last_seen": "2026-11-04T17:00:39.748258+08:00"
+   "last_seen": "2026-11-04T20:00:53.714084+08:00"
   },
   "mvschwarz/openrig": {
    "repo": "mvschwarz/openrig",
@@ -94,7 +94,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-04T17:00:39.748205+08:00"
+   "last_seen": "2026-11-04T20:00:46.032179+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -127,7 +127,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-04T17:00:39.748202+08:00"
+   "last_seen": "2026-11-04T20:00:46.032237+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -185,7 +185,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-11-04T17:00:39.748270+08:00"
+   "last_seen": "2026-11-04T20:00:51.206668+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -236,9 +236,10 @@
    "repo": "boykopovar/AnyPS5",
    "lists": [
     "daily",
+    "monthly",
     "weekly"
    ],
-   "stars": 45288,
+   "stars": 51025,
    "owner": "boykopovar",
    "homepage": "https://boykopovar.github.io/AnyPS5/",
    "description": "Tool for automatic PS5 executables porting to Linux and Windows",
@@ -252,10 +253,10 @@
     "spir-v",
     "vulkan"
    ],
-   "updated": "2026-10-20",
-   "metadata_date": "2026-10-21",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-10-21T17:00:41.037632+08:00"
+   "last_seen": "2026-11-04T20:00:45.532024+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -321,7 +322,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-04T17:00:39.748208+08:00"
+   "last_seen": "2026-11-04T20:00:46.032227+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -406,7 +407,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-04T17:00:39.748158+08:00"
+   "last_seen": "2026-11-04T20:00:45.203679+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -536,7 +537,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-04T17:00:39.748180+08:00"
+   "last_seen": "2026-11-04T20:00:45.203711+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -717,7 +718,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-11-04T17:00:39.748275+08:00"
+   "last_seen": "2026-11-04T20:00:51.206687+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -962,7 +963,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-04T17:00:39.748220+08:00"
+   "last_seen": "2026-11-04T20:00:47.785890+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -1020,7 +1021,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-11-04T17:00:39.748190+08:00"
+   "last_seen": "2026-11-04T20:00:45.203719+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1042,7 +1043,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-11-04T17:00:39.748229+08:00"
+   "last_seen": "2026-11-04T20:00:46.947928+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1169,7 +1170,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-04T17:00:39.748187+08:00"
+   "last_seen": "2026-11-04T20:00:46.032215+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1223,7 +1224,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-04T17:00:39.748211+08:00"
+   "last_seen": "2026-11-04T20:00:46.032252+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1313,7 +1314,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-04T17:00:39.748193+08:00"
+   "last_seen": "2026-11-04T20:00:46.032208+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1534,7 +1535,7 @@
    "updated": "2026-04-20",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-10T21:02:41.186466+08:00",
-   "last_seen": "2026-11-04T17:00:39.748249+08:00"
+   "last_seen": "2026-11-04T20:00:50.359559+08:00"
   },
   "longbridge/gpui-kit": {
    "repo": "longbridge/gpui-kit",
@@ -2073,7 +2074,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-04T17:00:39.748278+08:00"
+   "last_seen": "2026-11-04T20:00:52.880910+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2126,7 +2127,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-04T17:00:39.748199+08:00"
+   "last_seen": "2026-11-04T20:00:46.032232+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -3099,7 +3100,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-04T17:00:39.748175+08:00"
+   "last_seen": "2026-11-04T20:00:45.203725+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3239,7 +3240,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-25T18:59:16.047190+08:00",
-   "last_seen": "2026-11-04T17:00:39.748226+08:00"
+   "last_seen": "2026-11-04T20:00:48.663669+08:00"
   },
   "coollabsio/coolify": {
    "repo": "coollabsio/coolify",
@@ -3302,7 +3303,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-04T17:00:39.748217+08:00"
+   "last_seen": "2026-11-04T20:00:51.206682+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3520,7 +3521,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-04T17:00:39.748243+08:00"
+   "last_seen": "2026-11-04T20:00:47.785861+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3597,7 +3598,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 108511,
+   "stars": 109776,
    "owner": "Leonxlnx",
    "homepage": "https://tasteskill.dev",
    "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
@@ -3615,10 +3616,10 @@
     "ui-design",
     "web-design"
    ],
-   "updated": "2026-10-31",
-   "metadata_date": "2026-11-03",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-03T17:00:41.300476+08:00"
+   "last_seen": "2026-11-04T20:00:53.213934+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3719,7 +3720,7 @@
    "updated": "2026-10-28",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-04T17:00:39.748234+08:00"
+   "last_seen": "2026-11-04T20:00:46.032247+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4105,7 +4106,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-11-01T20:00:48.265342+08:00",
-   "last_seen": "2026-11-04T17:00:39.748255+08:00"
+   "last_seen": "2026-11-04T20:00:49.538084+08:00"
   },
   "hyprwm/Hyprland": {
    "repo": "hyprwm/Hyprland",
@@ -4127,7 +4128,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-11-01T20:00:49.141801+08:00",
-   "last_seen": "2026-11-04T17:00:39.748267+08:00"
+   "last_seen": "2026-11-04T20:00:51.206640+08:00"
   },
   "vercel-labs/agent-desktop": {
    "repo": "vercel-labs/agent-desktop",
@@ -4156,7 +4157,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-11-02T20:00:44.952120+08:00",
-   "last_seen": "2026-11-04T17:00:39.748184+08:00"
+   "last_seen": "2026-11-04T20:00:46.032243+08:00"
   },
   "D4Vinci/Scrapling": {
    "repo": "D4Vinci/Scrapling",
@@ -4193,7 +4194,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-04T17:00:39.748252+08:00"
+   "last_seen": "2026-11-04T20:00:51.206675+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4260,7 +4261,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-04",
    "first_seen": "2026-11-03T20:00:41.513774+08:00",
-   "last_seen": "2026-11-04T17:00:39.748232+08:00"
+   "last_seen": "2026-11-04T20:00:46.032221+08:00"
   },
   "Usagi-org/ai-goofish-monitor": {
    "repo": "Usagi-org/ai-goofish-monitor",
@@ -4291,12 +4292,239 @@
    "metadata_date": "2026-11-04",
    "first_seen": "2026-11-03T20:00:42.297474+08:00",
    "last_seen": "2026-11-04T17:00:39.748241+08:00"
+  },
+  "NVIDIA/auto-ontology": {
+   "repo": "NVIDIA/auto-ontology",
+   "lists": [
+    "daily"
+   ],
+   "stars": 3641,
+   "owner": "NVIDIA",
+   "homepage": "",
+   "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+   "language": "Python",
+   "topics": [],
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:44.703514+08:00",
+   "last_seen": "2026-11-04T20:00:44.703526+08:00"
+  },
+  "github/spec-kit": {
+   "repo": "github/spec-kit",
+   "lists": [
+    "daily"
+   ],
+   "stars": 146914,
+   "owner": "github",
+   "homepage": "https://github.github.com/spec-kit/",
+   "description": "💫 Toolkit to help you get started with SDD or any other process!",
+   "language": "Python",
+   "topics": [
+    "ai",
+    "copilot",
+    "development",
+    "engineering",
+    "prd",
+    "spec",
+    "spec-driven"
+   ],
+   "updated": "2026-11-03",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:46.447765+08:00",
+   "last_seen": "2026-11-04T20:00:46.447775+08:00"
+  },
+  "The-PR-Agent/pr-agent": {
+   "repo": "The-PR-Agent/pr-agent",
+   "lists": [
+    "daily"
+   ],
+   "stars": 14504,
+   "owner": "The-PR-Agent",
+   "homepage": "https://www.pr-agent.ai",
+   "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+   "language": "Python",
+   "topics": [
+    "ai",
+    "anthropic",
+    "code-review",
+    "coding-assistant",
+    "devtools",
+    "ollama",
+    "openai",
+    "pull-request",
+    "pull-requests"
+   ],
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:47.285699+08:00",
+   "last_seen": "2026-11-04T20:00:47.285711+08:00"
+  },
+  "harry0703/MoneyPrinterTurbo": {
+   "repo": "harry0703/MoneyPrinterTurbo",
+   "lists": [
+    "daily"
+   ],
+   "stars": 138537,
+   "owner": "harry0703",
+   "homepage": "",
+   "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+   "language": "Python",
+   "topics": [
+    "ai-video-generator",
+    "content-creation",
+    "ffmpeg",
+    "instagram-reels",
+    "llm",
+    "python",
+    "short-video",
+    "subtitles",
+    "text-to-speech",
+    "tiktok",
+    "video-automation",
+    "video-workflow",
+    "workflow-automation",
+    "youtube-shorts"
+   ],
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:48.163501+08:00",
+   "last_seen": "2026-11-04T20:00:48.163513+08:00"
+  },
+  "garrytan/gstack": {
+   "repo": "garrytan/gstack",
+   "lists": [
+    "daily"
+   ],
+   "stars": 139031,
+   "owner": "garrytan",
+   "homepage": "",
+   "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+   "language": "TypeScript",
+   "topics": [],
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:49.037919+08:00",
+   "last_seen": "2026-11-04T20:00:49.037931+08:00"
+  },
+  "JiaFeiMiao-K-Cat/DiscImageStudio": {
+   "repo": "JiaFeiMiao-K-Cat/DiscImageStudio",
+   "lists": [
+    "daily"
+   ],
+   "stars": 5985,
+   "owner": "JiaFeiMiao-K-Cat",
+   "homepage": "",
+   "description": "",
+   "language": "C#",
+   "topics": [],
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:49.859389+08:00",
+   "last_seen": "2026-11-04T20:00:49.859402+08:00"
+  },
+  "MichaelCade/90DaysOfDevOps": {
+   "repo": "MichaelCade/90DaysOfDevOps",
+   "lists": [
+    "daily"
+   ],
+   "stars": 30140,
+   "owner": "MichaelCade",
+   "homepage": "https://www.90daysofdevops.com/",
+   "description": "This repository started out as a learning in public project for myself and has now become a structured learning map for many in the community. We have 3 years under our belt covering all things DevOps, including Principles, Processes, Tooling and Use Cases surrounding this vast topic. ",
+   "language": "Shell",
+   "topics": [
+    "ansible",
+    "backup",
+    "containers",
+    "devops",
+    "iac",
+    "kubernetes",
+    "networking",
+    "terraform"
+   ],
+   "updated": "2026-06-24",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:50.706479+08:00",
+   "last_seen": "2026-11-04T20:00:50.706492+08:00"
+  },
+  "scenario-labs/skills": {
+   "repo": "scenario-labs/skills",
+   "lists": [
+    "daily"
+   ],
+   "stars": 2079,
+   "owner": "scenario-labs",
+   "homepage": "https://www.skills.sh/scenario-labs/skills",
+   "description": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
+   "language": "Python",
+   "topics": [
+    "3d-models",
+    "agent-skills",
+    "ai-agents",
+    "ai-art",
+    "blender",
+    "claude-code",
+    "claude-skills",
+    "codex",
+    "game-assets",
+    "game-development",
+    "generative-ai",
+    "image-generation",
+    "maya",
+    "mcp",
+    "model-context-protocol",
+    "skills-sh",
+    "unity",
+    "unreal-engine",
+    "video-generation",
+    "zbrush"
+   ],
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:51.537666+08:00",
+   "last_seen": "2026-11-04T20:00:51.537678+08:00"
+  },
+  "calesthio/OpenMontage": {
+   "repo": "calesthio/OpenMontage",
+   "lists": [
+    "weekly"
+   ],
+   "stars": 76222,
+   "owner": "calesthio",
+   "homepage": "https://www.openmontage.video/",
+   "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+   "language": "Python",
+   "topics": [
+    "agent",
+    "agentic-ai",
+    "ai",
+    "claude",
+    "copilot",
+    "cursor",
+    "elevenlabs",
+    "ffmpeg",
+    "flux",
+    "image-generation",
+    "open-source",
+    "openai",
+    "python",
+    "remotion",
+    "stable-diffusion",
+    "text-to-speech",
+    "text-to-video",
+    "video-generation",
+    "video-production"
+   ],
+   "updated": "2026-11-03",
+   "metadata_date": "2026-11-04",
+   "first_seen": "2026-11-04T20:00:52.380748+08:00",
+   "last_seen": "2026-11-04T20:00:52.380758+08:00"
   }
  },
- "last_collected": "2026-11-04T17:00:39.748290+08:00",
+ "last_collected": "2026-11-04T20:00:53.714115+08:00",
  "list_counts": {
-  "daily": 13,
-  "weekly": 16,
-  "monthly": 17
+  "daily": 14,
+  "weekly": 15,
+  "monthly": 15
  }
 }
