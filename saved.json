@@ -1149,6 +1149,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "pages"
+  },
+  {
+   "repo": "wquguru/cicada",
+   "url": "https://github.com/wquguru/cicada",
+   "owner": "wquguru",
+   "stars": 1039,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "知了 Cicada 是一款 macOS 菜单栏应用，能实时读取 Mac 系统声音，为任意会议或直播（如 Zoom、飞书、YouTube）生成双语字幕和同声传译，并在本机自动整理结构化会议纪要。它解决了跨语言开会听不懂、记不全的痛点：对方说英文，几秒内就能看到中文字幕；按住右 Option 键说话，对方能直接听到翻译后的语音；会后还能导出 Markdown、Word 和 SRT。声音识别全在本机完成，隐私性好。",
+   "site": "cicada.indaloop.app",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "feishu"
   }
  ]
 }
