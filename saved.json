@@ -1009,6 +1009,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "wzh4869/AppPorts",
+   "url": "https://github.com/wzh4869/AppPorts",
+   "owner": "wzh4869",
+   "stars": 2197,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "AppPorts 是一款 macOS 桌面工具，专门解决 Mac 内置硬盘空间不足的问题。它能把体积大的应用、聊天记录、照片视频等数据迁移到外接硬盘，同时在本地保留一个轻量启动入口，图标不变、没有快捷方式小箭头，插上硬盘后照常从访达或程序坞打开。例如把几十 GB 的微信聊天记录搬到移动硬盘，Mac 本地立刻腾出空间，使用体验几乎不受影响，还支持随时恢复回本地。",
+   "site": "https://appports.shimoko.com",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
