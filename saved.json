@@ -1023,6 +1023,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "14790897/handwriting-web",
+   "url": "https://github.com/14790897/handwriting-web",
+   "owner": "14790897",
+   "stars": 1474,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "这是一个把普通文本转换成逼真手写图片的网页工具。你只需粘贴或上传文字（支持 PDF、Word 等文件提取），再调一调边距、字符随机抖动、笔画旋转、墨水深浅和涂改痕迹等参数，就能生成看起来像真人手写的图片，还能上传自定义字体和背景纸。适合需要交手写作业、写感谢信或制作个性化手写素材的场景，例如把一篇论文一键变成手写稿并导出 PDF。",
+   "site": "https://handwrite.sixiangjia.de",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
