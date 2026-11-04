@@ -967,6 +967,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "koala73/worldmonitor",
+   "url": "https://github.com/koala73/worldmonitor",
+   "owner": "koala73",
+   "stars": 90094,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "World Monitor 是一个实时全球情报仪表盘，把新闻聚合、地缘政治监控和基础设施追踪整合到一个界面里。它用 AI 自动汇总多源新闻生成简报，还能把军事、经济、灾害等信号交叉关联，帮助用户快速判断局势。比如想了解某国是否动荡，它能给出国家不稳定指数和 24 小时变化。项目还提供 MCP 服务器、CLI 和多种语言 SDK，方便 AI 代理和脚本直接调用这些情报数据。",
+   "site": "https://worldmonitor.app",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
