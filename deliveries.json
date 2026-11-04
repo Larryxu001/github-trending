@@ -12975,7 +12975,7 @@
   ]
  },
  "daily:2026-11-04": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-04",
    "new_count": 3,
@@ -13038,6 +13038,160 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-04 ｜ 今日新项目 3 个 ｜ 3 个分类 ｜ 30 天去重跳过 162 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-04/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 4 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)**　⭐ 3,874\n这是把 Poteto 的 pstack 工作流移植到 Claude Code、Codex、Gemini 等多个 AI 编程助手上的插件集合。它提供一套严谨的智能体工作流程，把原本为 Cursor 设计的操作原语翻译成各平台可用的技能，让开发者无论用哪个助手都能获得一致的代码审查、任务拆解等能力。例如在 Claude Code 里装上后，就能按固定步骤自动完成代码评审，减少手动提示的随意性。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 michael-denyer ｜ 📅 更新 2026-11-03 ｜ 🏷 月/周榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)**　⭐ 16,295\n这是一个基于 Playwright 和 AI 的闲鱼商品监控工具，能自动抓取闲鱼上大量商品信息，并用大模型进行智能分析筛选。它解决了手动刷闲鱼找好货效率低的问题，比如你想低价收一台相机，它可以定时监控新上架商品，自动判断成色、价格是否合理，并通过后台管理界面推送提醒，帮你快速找到心仪产品。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Usagi-org ｜ 📅 更新 2026-10-10 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [floci-io/floci](https://github.com/floci-io/floci)**　⭐ 28,505\nFloci 是一个用 Java 编写的本地 AWS 模拟器，让你在开发机上就能跑起 S3、SQS、EC2、ECS 等云服务，不用连真实 AWS 账号。它解决的是本地调试和自动化测试依赖云端、费钱又慢的问题。比如写上传文件的代码时，可以直接把请求指向 Floci 验证逻辑，配合 Testcontainers 还能在 CI 里跑集成测试，轻量免费。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 floci-io ｜ 📅 更新 2026-11-03 ｜ 🏷 日榜 ｜ 🔗 [https://floci.io/floci/](https://floci.io/floci/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
