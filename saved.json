@@ -1093,6 +1093,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "AmintaCCCP/GithubStarsManager",
+   "url": "https://github.com/AmintaCCCP/GithubStarsManager",
+   "owner": "AmintaCCCP",
+   "stars": 3800,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "这是一个帮你管理 GitHub 星标仓库的桌面工具：它自动同步你点过星的项目，用 AI 生成摘要、标签和分类，还能用自然语言语义搜索，比如搜「做视频剪辑的库」就能找到相关仓库。此外还支持版本发布追踪、一键下载、仓库问答助手和 MCP 接口，数据全部保存在本地，解决「星标一堆却找不到」的痛点。",
+   "site": "https://gsm.aminta.top",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
