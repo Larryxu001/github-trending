@@ -7,7 +7,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 12806,
+   "stars": 13117,
    "owner": "tester-army",
    "homepage": "https://e2e.com",
    "description": "Next generation e2e testing framework for web and mobile apps.",
@@ -21,10 +21,10 @@
     "playwright",
     "web"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:08.700289+08:00",
-   "last_seen": "2026-11-04T23:00:54.471629+08:00"
+   "last_seen": "2026-11-05T02:01:24.954044+08:00"
   },
   "mvschwarz/openrig": {
    "repo": "mvschwarz/openrig",
@@ -85,16 +85,16 @@
     "daily",
     "weekly"
    ],
-   "stars": 311151,
+   "stars": 312844,
    "owner": "mattpocock",
    "homepage": "https://aihero.dev/skills",
    "description": "Skills for Real Engineers. Straight from my .agents directory.",
    "language": "Shell",
    "topics": [],
-   "updated": "2026-11-01",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-04T23:00:52.805743+08:00"
+   "last_seen": "2026-11-05T02:00:53.552386+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -102,7 +102,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 78220,
+   "stars": 78807,
    "owner": "heygen-com",
    "homepage": "https://hyperframes.heygen.com",
    "description": "Write HTML. Render video. Built for agents.",
@@ -124,10 +124,10 @@
     "typescript",
     "video-editor"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-04T23:00:52.805761+08:00"
+   "last_seen": "2026-11-05T02:00:59.246666+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -166,7 +166,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 25180,
+   "stars": 25386,
    "owner": "earthtojake",
    "homepage": "https://www.texttocad.dev",
    "description": "Design physical products with AI",
@@ -182,10 +182,10 @@
     "stp",
     "text-to-cad"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:13.191252+08:00",
-   "last_seen": "2026-11-04T23:00:53.636175+08:00"
+   "last_seen": "2026-11-05T02:01:16.095508+08:00"
   },
   "cursor/plugins": {
    "repo": "cursor/plugins",
@@ -239,7 +239,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 51025,
+   "stars": 51109,
    "owner": "boykopovar",
    "homepage": "https://boykopovar.github.io/AnyPS5/",
    "description": "Tool for automatic PS5 executables porting to Linux and Windows",
@@ -254,9 +254,9 @@
     "vulkan"
    ],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-11-04T23:00:52.805739+08:00"
+   "last_seen": "2026-11-05T02:00:52.597517+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -307,7 +307,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 101293,
+   "stars": 102501,
    "owner": "pbakaus",
    "homepage": "https://impeccable.style",
    "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
@@ -319,10 +319,10 @@
     "design",
     "slop"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-04T23:00:52.805755+08:00"
+   "last_seen": "2026-11-05T02:00:57.360027+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -377,7 +377,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 111610,
+   "stars": 112627,
    "owner": "thedotmack",
    "homepage": "https://claude-mem.ai",
    "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
@@ -404,10 +404,10 @@
     "sqlite",
     "supermemory"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-04T23:00:52.805722+08:00"
+   "last_seen": "2026-11-05T02:00:48.852994+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -507,7 +507,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 426243,
+   "stars": 430108,
    "owner": "morluto",
    "homepage": "https://rea.tools",
    "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
@@ -534,10 +534,10 @@
     "touhou",
     "typescript"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-04T23:00:52.805729+08:00"
+   "last_seen": "2026-11-05T02:00:49.785207+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -688,11 +688,11 @@
     "monthly",
     "weekly"
    ],
-   "stars": 33358,
+   "stars": 33449,
    "owner": "mksglu",
    "homepage": "https://contextmode.ai/?utm_source=github&utm_medium=about",
    "description": "Free, local plugin that keeps tool output out of your coding agent's context window. Sandbox and SQLite FTS5 search, 99% fewer bytes in context. Works with Claude Code, Codex, Pi, OpenCode, Gemini CLI, Copilot CLI and 4 more agents. Zero telemetry.",
-   "language": "TypeScript",
+   "language": "JavaScript",
    "topics": [
     "antigravity",
     "claude",
@@ -715,10 +715,10 @@
     "skills",
     "zed-extension"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:27.897372+08:00",
-   "last_seen": "2026-11-04T23:00:53.636193+08:00"
+   "last_seen": "2026-11-05T02:01:19.005428+08:00"
   },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
@@ -954,16 +954,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 34582,
+   "stars": 34706,
    "owner": "anthropics",
    "homepage": "",
    "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
    "language": "Python",
    "topics": [],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-04T23:00:52.805786+08:00"
+   "last_seen": "2026-11-05T02:01:07.081326+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -1005,7 +1005,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 10374,
+   "stars": 10904,
    "owner": "max-sixty",
    "homepage": "https://worktrunk.dev",
    "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
@@ -1018,10 +1018,10 @@
     "git",
     "worktrees"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-11-04T23:00:52.805733+08:00"
+   "last_seen": "2026-11-05T02:00:50.728561+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1030,7 +1030,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 97475,
+   "stars": 97761,
    "owner": "NationalSecurityAgency",
    "homepage": "",
    "description": "Ghidra is a software reverse engineering (SRE) framework",
@@ -1040,10 +1040,10 @@
     "reverse-engineering",
     "software-analysis"
    ],
-   "updated": "2026-11-02",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-03",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-11-04T23:00:52.805776+08:00"
+   "last_seen": "2026-11-05T02:01:04.240736+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1161,16 +1161,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 58016,
+   "stars": 58783,
    "owner": "cloudflare",
    "homepage": "",
    "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
    "language": "JavaScript",
    "topics": [],
    "updated": "2026-09-14",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-04T23:00:52.805749+08:00"
+   "last_seen": "2026-11-05T02:00:55.448442+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1195,7 +1195,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 99848,
+   "stars": 100781,
    "owner": "debpalash",
    "homepage": "https://voicestudio.sh",
    "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
@@ -1221,10 +1221,10 @@
     "voicestudio",
     "workflow"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-04T23:00:52.805770+08:00"
+   "last_seen": "2026-11-05T02:01:02.169200+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1305,16 +1305,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 43832,
+   "stars": 46072,
    "owner": "pingdotgg",
    "homepage": "https://t3.codes",
    "description": "",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-04T23:00:52.805746+08:00"
+   "last_seen": "2026-11-05T02:00:54.493575+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1526,16 +1526,16 @@
     "daily",
     "weekly"
    ],
-   "stars": 228964,
+   "stars": 229409,
    "owner": "multica-ai",
    "homepage": "",
    "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
    "language": "",
    "topics": [],
    "updated": "2026-04-20",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-10T21:02:41.186466+08:00",
-   "last_seen": "2026-11-04T23:00:53.636112+08:00"
+   "last_seen": "2026-11-05T02:01:13.310311+08:00"
   },
   "longbridge/gpui-kit": {
    "repo": "longbridge/gpui-kit",
@@ -2061,7 +2061,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 45952,
+   "stars": 46095,
    "owner": "anthropics",
    "homepage": "https://code.claude.com/docs/en/plugins",
    "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
@@ -2071,10 +2071,10 @@
     "mcp",
     "skills"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-04T23:00:53.636209+08:00"
+   "last_seen": "2026-11-05T02:01:21.950960+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -2109,7 +2109,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 311734,
+   "stars": 312315,
    "owner": "obra",
    "homepage": "",
    "description": "An agentic skills framework & software development methodology that works.",
@@ -2125,9 +2125,9 @@
     "superpowers"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-04T23:00:52.805758+08:00"
+   "last_seen": "2026-11-05T02:00:58.306862+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -3091,16 +3091,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 46764,
+   "stars": 47707,
    "owner": "Nutlope",
    "homepage": "https://www.usehallmark.com/",
    "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
    "language": "CSS",
    "topics": [],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-04T23:00:52.805736+08:00"
+   "last_seen": "2026-11-05T02:00:51.668255+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3217,7 +3217,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 7372,
+   "stars": 7571,
    "owner": "JetBrains",
    "homepage": "https://thinkrail.ai/",
    "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
@@ -3237,10 +3237,10 @@
     "vibe-coding",
     "vibecoding"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-25T18:59:16.047190+08:00",
-   "last_seen": "2026-11-04T23:00:52.805792+08:00"
+   "last_seen": "2026-11-05T02:01:09.112589+08:00"
   },
   "coollabsio/coolify": {
    "repo": "coollabsio/coolify",
@@ -3286,7 +3286,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 26240,
+   "stars": 26585,
    "owner": "AgriciDaniel",
    "homepage": "skool.com/ai-marketing-hub-pro",
    "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
@@ -3301,9 +3301,9 @@
     "seo"
    ],
    "updated": "2026-11-01",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-04T23:00:53.636187+08:00"
+   "last_seen": "2026-11-05T02:01:18.012205+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3512,16 +3512,16 @@
    "lists": [
     "weekly"
    ],
-   "stars": 10559,
+   "stars": 10757,
    "owner": "jakubkrehel",
    "homepage": "https://jakub.kr/skills",
    "description": "A collection of agent skills that help you build great interfaces.",
    "language": "Markdown",
    "topics": [],
    "updated": "2026-11-02",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-04T23:00:52.805783+08:00"
+   "last_seen": "2026-11-05T02:01:06.065391+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3598,7 +3598,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 109776,
+   "stars": 109936,
    "owner": "Leonxlnx",
    "homepage": "https://tasteskill.dev",
    "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
@@ -3617,9 +3617,9 @@
     "web-design"
    ],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-04T23:00:54.471598+08:00"
+   "last_seen": "2026-11-05T02:01:23.893567+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3709,7 +3709,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 187034,
+   "stars": 187357,
    "owner": "anthropics",
    "homepage": "",
    "description": "Public repository for Agent Skills",
@@ -3718,9 +3718,9 @@
     "agent-skills"
    ],
    "updated": "2026-10-28",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-04T23:00:52.805767+08:00"
+   "last_seen": "2026-11-05T02:01:01.224282+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4097,16 +4097,16 @@
    "lists": [
     "weekly"
    ],
-   "stars": 63406,
+   "stars": 63527,
    "owner": "ghostty-org",
    "homepage": "https://ghostty.org",
    "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
    "language": "Zig",
    "topics": [],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-01T20:00:48.265342+08:00",
-   "last_seen": "2026-11-04T23:00:52.805798+08:00"
+   "last_seen": "2026-11-05T02:01:11.062182+08:00"
   },
   "hyprwm/Hyprland": {
    "repo": "hyprwm/Hyprland",
@@ -4114,7 +4114,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 40196,
+   "stars": 40288,
    "owner": "hyprwm",
    "homepage": "https://hypr.land",
    "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
@@ -4125,17 +4125,17 @@
     "wayland",
     "wayland-compositor"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-01T20:00:49.141801+08:00",
-   "last_seen": "2026-11-04T23:00:53.636151+08:00"
+   "last_seen": "2026-11-05T02:01:15.151402+08:00"
   },
   "vercel-labs/agent-desktop": {
    "repo": "vercel-labs/agent-desktop",
    "lists": [
     "daily"
    ],
-   "stars": 12200,
+   "stars": 14579,
    "owner": "vercel-labs",
    "homepage": "https://agent-browser.dev/desktop",
    "description": "Computer use CLI for AI agents",
@@ -4155,16 +4155,16 @@
     "rust"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-02T20:00:44.952120+08:00",
-   "last_seen": "2026-11-04T23:00:52.805764+08:00"
+   "last_seen": "2026-11-05T02:01:00.214185+08:00"
   },
   "D4Vinci/Scrapling": {
    "repo": "D4Vinci/Scrapling",
    "lists": [
     "daily"
    ],
-   "stars": 94255,
+   "stars": 96186,
    "owner": "D4Vinci",
    "homepage": "https://scrapling.readthedocs.io/en/latest/",
    "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
@@ -4191,10 +4191,10 @@
     "webscraping",
     "xpath"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-04T23:00:53.636198+08:00"
+   "last_seen": "2026-11-05T02:01:19.956723+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4241,7 +4241,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 28505,
+   "stars": 29443,
    "owner": "floci-io",
    "homepage": "https://floci.io/floci/",
    "description": "Light, fluffy, and always free - The AWS Local Emulator alternative",
@@ -4258,10 +4258,10 @@
     "sqs",
     "testcontainers"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-03T20:00:41.513774+08:00",
-   "last_seen": "2026-11-04T23:00:52.805752+08:00"
+   "last_seen": "2026-11-05T02:00:56.406379+08:00"
   },
   "Usagi-org/ai-goofish-monitor": {
    "repo": "Usagi-org/ai-goofish-monitor",
@@ -4298,23 +4298,23 @@
    "lists": [
     "daily"
    ],
-   "stars": 3641,
+   "stars": 4431,
    "owner": "NVIDIA",
    "homepage": "",
    "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
    "language": "Python",
    "topics": [],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:44.703514+08:00",
-   "last_seen": "2026-11-04T23:00:52.805692+08:00"
+   "last_seen": "2026-11-05T02:00:47.883986+08:00"
   },
   "github/spec-kit": {
    "repo": "github/spec-kit",
    "lists": [
     "daily"
    ],
-   "stars": 146914,
+   "stars": 147148,
    "owner": "github",
    "homepage": "https://github.github.com/spec-kit/",
    "description": "💫 Toolkit to help you get started with SDD or any other process!",
@@ -4328,17 +4328,17 @@
     "spec",
     "spec-driven"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:46.447765+08:00",
-   "last_seen": "2026-11-04T23:00:52.805773+08:00"
+   "last_seen": "2026-11-05T02:01:03.124588+08:00"
   },
   "The-PR-Agent/pr-agent": {
    "repo": "The-PR-Agent/pr-agent",
    "lists": [
     "daily"
    ],
-   "stars": 14504,
+   "stars": 14631,
    "owner": "The-PR-Agent",
    "homepage": "https://www.pr-agent.ai",
    "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
@@ -4355,16 +4355,16 @@
     "pull-requests"
    ],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:47.285699+08:00",
-   "last_seen": "2026-11-04T23:00:52.805779+08:00"
+   "last_seen": "2026-11-05T02:01:05.154402+08:00"
   },
   "harry0703/MoneyPrinterTurbo": {
    "repo": "harry0703/MoneyPrinterTurbo",
    "lists": [
     "daily"
    ],
-   "stars": 138537,
+   "stars": 138784,
    "owner": "harry0703",
    "homepage": "",
    "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
@@ -4386,48 +4386,48 @@
     "youtube-shorts"
    ],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:48.163501+08:00",
-   "last_seen": "2026-11-04T23:00:52.805789+08:00"
+   "last_seen": "2026-11-05T02:01:08.049011+08:00"
   },
   "garrytan/gstack": {
    "repo": "garrytan/gstack",
    "lists": [
     "daily"
    ],
-   "stars": 139031,
+   "stars": 139184,
    "owner": "garrytan",
    "homepage": "",
    "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
    "language": "TypeScript",
    "topics": [],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:49.037919+08:00",
-   "last_seen": "2026-11-04T23:00:52.805795+08:00"
+   "last_seen": "2026-11-05T02:01:10.087432+08:00"
   },
   "JiaFeiMiao-K-Cat/DiscImageStudio": {
    "repo": "JiaFeiMiao-K-Cat/DiscImageStudio",
    "lists": [
     "daily"
    ],
-   "stars": 5985,
+   "stars": 6305,
    "owner": "JiaFeiMiao-K-Cat",
    "homepage": "",
    "description": "",
    "language": "C#",
    "topics": [],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:49.859389+08:00",
-   "last_seen": "2026-11-04T23:00:53.636144+08:00"
+   "last_seen": "2026-11-05T02:01:14.181976+08:00"
   },
   "MichaelCade/90DaysOfDevOps": {
    "repo": "MichaelCade/90DaysOfDevOps",
    "lists": [
     "daily"
    ],
-   "stars": 30140,
+   "stars": 30280,
    "owner": "MichaelCade",
    "homepage": "https://www.90daysofdevops.com/",
    "description": "This repository started out as a learning in public project for myself and has now become a structured learning map for many in the community. We have 3 years under our belt covering all things DevOps, including Principles, Processes, Tooling and Use Cases surrounding this vast topic. ",
@@ -4443,16 +4443,16 @@
     "terraform"
    ],
    "updated": "2026-06-24",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:50.706479+08:00",
-   "last_seen": "2026-11-04T23:00:53.636180+08:00"
+   "last_seen": "2026-11-05T02:01:17.058796+08:00"
   },
   "scenario-labs/skills": {
    "repo": "scenario-labs/skills",
    "lists": [
     "daily"
    ],
-   "stars": 2079,
+   "stars": 2272,
    "owner": "scenario-labs",
    "homepage": "https://www.skills.sh/scenario-labs/skills",
    "description": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
@@ -4480,16 +4480,16 @@
     "zbrush"
    ],
    "updated": "2026-11-04",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:51.537666+08:00",
-   "last_seen": "2026-11-04T23:00:54.471636+08:00"
+   "last_seen": "2026-11-05T02:01:25.925376+08:00"
   },
   "calesthio/OpenMontage": {
    "repo": "calesthio/OpenMontage",
    "lists": [
     "weekly"
    ],
-   "stars": 76222,
+   "stars": 76397,
    "owner": "calesthio",
    "homepage": "https://www.openmontage.video/",
    "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
@@ -4516,16 +4516,16 @@
     "video-production"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T20:00:52.380748+08:00",
-   "last_seen": "2026-11-04T23:00:53.636204+08:00"
+   "last_seen": "2026-11-05T02:01:20.901021+08:00"
   },
   "FareedKhan-dev/kimi-k3-in-c": {
    "repo": "FareedKhan-dev/kimi-k3-in-c",
    "lists": [
     "daily"
    ],
-   "stars": 10045,
+   "stars": 10128,
    "owner": "FareedKhan-dev",
    "homepage": "https://medium.com/@fareedkhandev/building-kimi-k3-in-c-to-run-a-2-8t-model-on-consumer-hardware-a5792cbf3b59",
    "description": "A 2.78-trillion-parameter Kimi K3 running inference on a single CPU in 8.24 GB of RAM. Portable C99: no BLAS, no framework, no GPU.",
@@ -4553,16 +4553,16 @@
     "zero-dependencies"
    ],
    "updated": "2026-10-02",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T23:00:53.135956+08:00",
-   "last_seen": "2026-11-04T23:00:53.135968+08:00"
+   "last_seen": "2026-11-05T02:01:12.216299+08:00"
   },
   "Thysrael/Horizon": {
    "repo": "Thysrael/Horizon",
    "lists": [
     "daily"
    ],
-   "stars": 12338,
+   "stars": 12396,
    "owner": "Thysrael",
    "homepage": "https://www.horizon1123.top",
    "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
@@ -4578,12 +4578,12 @@
     "webhook"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "metadata_date": "2026-11-05",
    "first_seen": "2026-11-04T23:00:53.971446+08:00",
-   "last_seen": "2026-11-04T23:00:53.971458+08:00"
+   "last_seen": "2026-11-05T02:01:22.985788+08:00"
   }
  },
- "last_collected": "2026-11-04T23:00:54.471645+08:00",
+ "last_collected": "2026-11-05T02:01:26.425522+08:00",
  "list_counts": {
   "daily": 16,
   "weekly": 15,
