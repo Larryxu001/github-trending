@@ -995,6 +995,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "Gloridust/WechatOnCloud",
+   "url": "https://github.com/Gloridust/WechatOnCloud",
+   "owner": "Gloridust",
+   "stars": 3951,
+   "category": "其他",
+   "emoji": "📦",
+   "desc": "云微是一个可自托管的「云端微信」平台：在自己的 NAS 或服务器上用 Docker 跑起服务端微信、QQ 或 Chromium 浏览器实例，再用任意设备的浏览器远程访问，多端共享同一会话。它解决的是手机微信无法多设备同时在线、网页版功能受限的问题，比如你在公司电脑打开浏览器就能收发家里 NAS 上登录的微信消息，聊天记录始终留在自己设备上。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
