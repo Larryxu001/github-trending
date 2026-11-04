@@ -1121,6 +1121,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "nexmoe/VidBee",
+   "url": "https://github.com/nexmoe/VidBee",
+   "owner": "nexmoe",
+   "stars": 11062,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "VidBee 是一款免费开源的跨平台桌面应用，把视频和音频变成可搜索的个人媒体库。它能从 1000 多个网站下载视频、音频、播放列表和频道，也能导入本地文件；随后在电脑本地用 Whisper 等模型转写，自动区分说话人并生成带时间戳的字幕，再调用你选择的 AI（OpenAI、Ollama 等）做摘要、翻译或问答。比如下载一期访谈播客后，它能标出每位说话人，你搜索一句话就能跳回对应时间点，并一键导出文字稿。",
+   "site": "https://vidbee.org",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
