@@ -953,6 +953,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "qingjian-team/qingjian",
+   "url": "https://github.com/qingjian-team/qingjian",
+   "owner": "qingjian-team",
+   "stars": 7532,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "青简是一款用 Rust 编写的跨平台拼音输入法，支持整句输入、双拼、五笔和拼写纠错，最大特色是在候选词旁显示正在学习语言的译词，让背单词自然融入日常打字。比如输入「kaifa」选「开发」时，旁边会显示 development，覆盖英语、日语、西班牙语、越南语和德语。所有转换和统计都在本地完成，无需账号，适合想边打字边积累词汇的人。",
+   "site": "https://qingjian.app",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
