@@ -1065,6 +1065,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "jo-inc/camofox-browser",
+   "url": "https://github.com/jo-inc/camofox-browser",
+   "owner": "jo-inc",
+   "stars": 12138,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "这是一个专为 AI 智能体打造的隐身无头浏览器服务，基于 Camoufox（在 C++ 层伪装指纹的 Firefox 分支），能绕过 Cloudflare 等反爬和机器人检测。它把浏览器封装成 REST API，用无障碍快照代替臃肿 HTML，元素用 e1、e2 稳定引用，方便智能体点击操作，还支持 Cookie 导入、代理、截图和 YouTube 字幕提取。例如让智能体抓取被 Cloudflare 保护的网站时，普通 Playwright 会被拦截，而它能正常访问。",
+   "site": "https://github.com/jo-inc/camofox-browser#readme",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
