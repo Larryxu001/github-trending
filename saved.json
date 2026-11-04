@@ -1149,6 +1149,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "pages"
+  },
+  {
+   "repo": "StrayMeteor3337/WechatRealFriends",
+   "url": "https://github.com/StrayMeteor3337/WechatRealFriends",
+   "owner": "StrayMeteor3337",
+   "stars": 5173,
+   "category": "其他",
+   "emoji": "📦",
+   "desc": "这是一个微信好友关系检测工具，基于微信iPad协议，能一键找出偷偷删除或拉黑你的单向好友，并自动把他们打上标签，方便在电脑端批量清理，且不会打扰到对方。它解决的是微信无法直接查看谁删了你、只能逐个发消息试探的痛点，适合好友数量多、想快速清理通讯录的用户。不过项目已失效，作者推荐改用新项目WeFriends。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
