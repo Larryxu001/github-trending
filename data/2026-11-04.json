@@ -1,0 +1,63 @@
+{
+ "date": "2026-11-04",
+ "new_count": 3,
+ "skipped": 162,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "michael-denyer/pstack-claude",
+     "url": "https://github.com/michael-denyer/pstack-claude",
+     "owner": "michael-denyer",
+     "stars": 3874,
+     "updated": "2026-11-03",
+     "lists": [
+      "monthly",
+      "weekly"
+     ],
+     "desc": "这是把 Poteto 的 pstack 工作流移植到 Claude Code、Codex、Gemini 等多个 AI 编程助手上的插件集合。它提供一套严谨的智能体工作流程，把原本为 Cursor 设计的操作原语翻译成各平台可用的技能，让开发者无论用哪个助手都能获得一致的代码审查、任务拆解等能力。例如在 Claude Code 里装上后，就能按固定步骤自动完成代码评审，减少手动提示的随意性。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "Usagi-org/ai-goofish-monitor",
+     "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+     "owner": "Usagi-org",
+     "stars": 16295,
+     "updated": "2026-10-10",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个基于 Playwright 和 AI 的闲鱼商品监控工具，能自动抓取闲鱼上大量商品信息，并用大模型进行智能分析筛选。它解决了手动刷闲鱼找好货效率低的问题，比如你想低价收一台相机，它可以定时监控新上架商品，自动判断成色、价格是否合理，并通过后台管理界面推送提醒，帮你快速找到心仪产品。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "floci-io/floci",
+     "url": "https://github.com/floci-io/floci",
+     "owner": "floci-io",
+     "stars": 28505,
+     "updated": "2026-11-03",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Floci 是一个用 Java 编写的本地 AWS 模拟器，让你在开发机上就能跑起 S3、SQS、EC2、ECS 等云服务，不用连真实 AWS 账号。它解决的是本地调试和自动化测试依赖云端、费钱又慢的问题。比如写上传文件的代码时，可以直接把请求指向 Floci 验证逻辑，配合 Testcontainers 还能在 CI 里跑集成测试，轻量免费。",
+     "site": "https://floci.io/floci/"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
