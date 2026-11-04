@@ -1079,6 +1079,20 @@
    "tags": [],
    "saved_at": "2026-11-04",
    "source": "feishu"
+  },
+  {
+   "repo": "dreammis/social-auto-upload",
+   "url": "https://github.com/dreammis/social-auto-upload",
+   "owner": "dreammis",
+   "stars": 16088,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "这是一个面向内容创作者的多平台自动发布工具，用一条命令或一个 Agent 技能，就能把视频、图文或文章同时发到抖音、小红书、B站、快手、视频号、TikTok、YouTube 等十几个平台。它解决了手动逐个平台上传、填写标题标签的重复劳动，还支持多账号管理和定时发布。比如你剪好一条视频，运行 sau douyin upload-video 就能自动登录并发布到抖音，也可以交给 Claude Code 等 Agent 按技能说明自动完成。",
+   "site": "https://sap-doc.nasdaddy.com/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-04",
+   "source": "feishu"
   }
  ]
 }
