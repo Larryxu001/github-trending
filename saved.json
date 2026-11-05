@@ -1205,6 +1205,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "hypit-ai/hypit",
+   "url": "https://github.com/hypit-ai/hypit",
+   "owner": "hypit-ai",
+   "stars": 28124,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "Hypit 是给 Claude Code、Codex 等 AI 编程代理使用的视频创作技能与系统。你丢进一个爆款视频，代理就能克隆整套制作流程——素材、字幕、B-roll 和特效，并生成可编辑、可重复运行的视频工程，一条命令产出上百个变体。它用基于文字的 SVML 语言描述视频，让改台词、换人物、换语言都不影响整体结构，适合批量做广告、短视频和播客切片。",
+   "site": "https://hypit.ai",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
