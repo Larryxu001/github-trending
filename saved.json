@@ -1177,6 +1177,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "KKKKhazix/AIHOT",
+   "url": "https://github.com/KKKKhazix/AIHOT",
+   "owner": "KKKKhazix",
+   "stars": 9622,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "AIHOT 是一个开源的行业热点站框架：它从 RSS、网页、X、微信公众号等信源自动采集内容，用大模型预筛、两次独立评分，挑出值得看的消息并写成中文标题和摘要，再把同一事件的报道聚成簇、按独立来源数算热度，每天自动生成日报。你只需替换行业信源和精选提示词，就能搭出法律、HR、金融等垂直领域的热点站，适合想低成本自建内容聚合站的人。",
+   "site": "https://aihot.news",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
