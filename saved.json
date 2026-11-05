@@ -1289,6 +1289,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "datalab-to/marker",
+   "url": "https://github.com/datalab-to/marker",
+   "owner": "datalab-to",
+   "stars": 40785,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "Marker 是一个高精度的文档转换工具，能把 PDF、图片、PPTX、DOCX 等文件快速转成 Markdown、JSON、HTML 或分块文本。它擅长处理表格、公式、多栏排版和扫描件，还能自动去掉页眉页脚、提取图片。比如把一篇 arXiv 论文 PDF 转成结构清晰的 Markdown，方便后续检索或喂给大模型。可选接入 LLM 进一步提升准确率，支持 GPU、CPU 和 MPS 运行。",
+   "site": "https://www.datalab.to",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
