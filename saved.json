@@ -1191,6 +1191,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "TNTcraftHIM/Piik",
+   "url": "https://github.com/TNTcraftHIM/Piik",
+   "owner": "TNTcraftHIM",
+   "stars": 4088,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Piik 是一个免费开源的私密屏幕共享工具，让你和最多 20 位朋友在浏览器里一起看游戏直播、看电影或分享照片，无需对方安装任何软件。它优先通过 P2P 直连传输画面，也支持自部署服务器作为中转，还提供语音聊天、文字消息和远程控制功能，比如让朋友接手玩你的游戏。适合小圈子聚会或远程观影，兼顾隐私与低延迟。",
+   "site": "https://piik.tv",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
