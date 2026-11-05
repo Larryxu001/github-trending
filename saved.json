@@ -1233,6 +1233,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "Vincentwei1021/anything2explainer",
+   "url": "https://github.com/Vincentwei1021/anything2explainer",
+   "owner": "Vincentwei1021",
+   "stars": 3064,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "这是一个给 Claude Code 和 Codex 用的技能插件：你只要给一个主题（比如「讲讲向量数据库」），它就能自动调研、写旁白、生成配音和字幕，再用 Remotion 以代码逐帧画出黑底动效讲解视频，输出带章节进度条的 MP4。它解决的是「想快速做一条有讲解、有画面、有字幕的科普视频」的问题，全程由多个 AI 智能体分工并行完成，约 1-3 小时出片，中途只在四个关键节点找你确认。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
