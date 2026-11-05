@@ -1261,6 +1261,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "tianma-if/edgeever",
+   "url": "https://github.com/tianma-if/edgeever",
+   "owner": "tianma-if",
+   "stars": 3126,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "EdgeEver 是一款开源的 AI 原生笔记与个人知识库工具，可以看作 Evernote 或 Obsidian 的替代品。它保留经典三栏布局，支持富文本与 Markdown 双向切换、毫秒级全文搜索、多端即时同步，并内置 MCP 协议让 AI 助手直接读写笔记。最大亮点是能零成本跑在 Cloudflare 免费额度上，也可用 Docker 自托管，适合想摆脱订阅费、又需要 AI 辅助整理知识的用户。",
+   "site": "https://edgeever.org",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
