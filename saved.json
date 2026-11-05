@@ -1247,6 +1247,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "Panniantong/Agent-Reach",
+   "url": "https://github.com/Panniantong/Agent-Reach",
+   "owner": "Panniantong",
+   "stars": 109068,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "Agent Reach 是一个给 AI Agent 补上「上网能力」的命令行工具。Claude Code、Cursor 这类 Agent 自带搜索，却读不到需要登录或中文平台的内容。它把 B站、小红书、X、Reddit、YouTube、GitHub、V2EX 等平台的抓取工具统一装好，Agent 一条命令就能搜索和阅读，比如 agent-reach bilibili search「大模型」直接拿到视频信息与字幕，全程零 API 费用，且只读不写、不碰你的密码。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
