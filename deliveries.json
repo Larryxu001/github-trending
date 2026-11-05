@@ -13209,5 +13209,227 @@
     }
    }
   ]
+ },
+ "daily:2026-11-05": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-05",
+   "new_count": 14,
+   "skipped": 162,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "msitarzewski/agency-agents",
+       "url": "https://github.com/msitarzewski/agency-agents",
+       "owner": "msitarzewski",
+       "stars": 162150,
+       "updated": "2026-10-19",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个用 Shell 脚本搭建的「AI 代理团队」合集，把前端开发、社区运营、创意脑暴、现实检查等不同角色拆成一个个有性格、有流程的专家代理。你只需调用对应代理，就能获得该领域的专业建议和可交付成果，省去自己反复写提示词的麻烦。比如做产品前，先让「现实检查员」挑毛病，再让「前端魔法师」出方案，相当于随身带了一支分工明确的 AI 小队。",
+       "site": "无"
+      },
+      {
+       "repo": "garrytan/gstack",
+       "url": "https://github.com/garrytan/gstack",
+       "owner": "garrytan",
+       "stars": 139184,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是 Garry Tan 公开的一套 Claude Code 配置，包含 23 个预设工具，分别扮演 CEO、设计师、工程经理、发布经理、文档工程师和 QA 等角色。它解决的问题是：普通用户不知道如何把 Claude Code 调教成高效的多角色协作助手。装上后，你可以让 AI 自动完成需求评审、代码审查、发布检查和文档生成等任务，比如让「QA」工具自动跑测试并生成报告。",
+       "site": "无"
+      },
+      {
+       "repo": "calesthio/OpenMontage",
+       "url": "https://github.com/calesthio/OpenMontage",
+       "owner": "calesthio",
+       "stars": 76397,
+       "updated": "2026-11-03",
+       "lists": [
+        "weekly"
+       ],
+       "desc": "OpenMontage 是一个开源的智能体视频制作系统，它把 AI 编程助手变成完整的视频工作室。项目内置 12 条制作流水线和 100 多个工具，并附带 700 多份智能体技能与制作知识文件，覆盖脚本、配音、图像生成、剪辑合成等环节。你只需在 Claude、Cursor 等助手里下达指令，它就能调用 ElevenLabs、FLUX、FFmpeg 等工具自动完成一条视频，适合想低成本做视频又不想学复杂剪辑软件的人。",
+       "site": "https://www.openmontage.video/"
+      },
+      {
+       "repo": "scenario-labs/skills",
+       "url": "https://github.com/scenario-labs/skills",
+       "owner": "scenario-labs",
+       "stars": 2272,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个给 AI Agent 用的技能包，让 Claude Code、Codex 等智能体能够直接生成生产级的图片、视频、音频和 3D 模型。它会自动挑选合适的模型、先报价再花钱，并通过 Scenario MCP 保持角色和品牌风格一致。比如做游戏时，可以让 Agent 调用它驱动 Blender、Maya、Unreal 或 Unity 批量产出风格统一的角色和场景资产，省去手动切换工具和反复调参的麻烦。",
+       "site": "https://www.skills.sh/scenario-labs/skills"
+      }
+     ]
+    },
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "NVIDIA/auto-ontology",
+       "url": "https://github.com/NVIDIA/auto-ontology",
+       "owner": "NVIDIA",
+       "stars": 4431,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Auto Ontology 是一个 Python 框架，用于在数据之上构建语义化、基于图的推理层。它解决的是大模型和智能体在查询数据时容易产生不确定结果、上下文检索不准、推理过程难以解释的问题。通过把数据组织成带语义关系的图，它能生成确定性的查询、提升检索质量，并让 AI 的决策更可解释。例如在智能体需要从企业数据库回答问题时，可先用它把数据关系理清，再稳定地生成查询语句。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "AI / 大模型",
+     "emoji": "🧠",
+     "items": [
+      {
+       "repo": "Thysrael/Horizon",
+       "url": "https://github.com/Thysrael/Horizon",
+       "owner": "Thysrael",
+       "stars": 12396,
+       "updated": "2026-11-03",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Horizon 是一个用 AI 打造的个性化新闻雷达，能自动抓取你关心的资讯源，借助大模型筛选、总结并生成中英文双语每日简报，还能通过飞书机器人或 Webhook 推送到你手上。它解决信息过载、手动筛选费时的问题，比如你只需配置好关键词和来源，每天早上就能收到一份精炼的行业动态摘要，无需自己刷遍各个网站。",
+       "site": "https://www.horizon1123.top"
+      },
+      {
+       "repo": "FareedKhan-dev/kimi-k3-in-c",
+       "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+       "owner": "FareedKhan-dev",
+       "stars": 10128,
+       "updated": "2026-10-02",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这个项目用纯 C99 从零实现了一个推理引擎，让 2.78 万亿参数的 Kimi K3 大模型能在单颗 CPU、仅 8.24 GB 内存下跑起来，不依赖 BLAS、深度学习框架或 GPU。它解决了普通电脑无法运行超大模型的痛点，适合想低成本本地部署、学习大模型底层原理的开发者。",
+       "site": "https://medium.com/@fareedkhandev/building-kimi-k3-in-c-to-run-a-2-8t-model-on-consumer-hardware-a5792cbf3b59"
+      }
+     ]
+    },
+    {
+     "name": "AI 应用与内容生成",
+     "emoji": "🎨",
+     "items": [
+      {
+       "repo": "harry0703/MoneyPrinterTurbo",
+       "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+       "owner": "harry0703",
+       "stars": 138784,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily"
+       ],
+       "desc": "短视频「印钞机」：输入一个主题（比如「10 个提高工作效率的方法」），AI 自动写稿、找素材、配音、加字幕，输出一条可以直接发抖音/YouTube Shorts 的高清视频。自媒体矩阵号的效率利器。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "github/spec-kit",
+       "url": "https://github.com/github/spec-kit",
+       "owner": "github",
+       "stars": 147148,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是 GitHub 官方推出的规范驱动开发（SDD）工具包，帮你在写代码前先把需求文档、技术方案和任务清单理清楚。它提供一套模板和流程，让 AI 编程助手（如 Copilot）按规范生成代码，避免「想到哪写到哪」。比如开发新功能时，先用它写出 PRD 和任务拆解，再让 AI 照着执行，减少返工。",
+       "site": "https://github.github.com/spec-kit/"
+      },
+      {
+       "repo": "The-PR-Agent/pr-agent",
+       "url": "https://github.com/The-PR-Agent/pr-agent",
+       "owner": "The-PR-Agent",
+       "stars": 14631,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily"
+       ],
+       "desc": "PR Agent 是一个开源的 AI 代码审查工具，能自动分析 GitHub 拉取请求并给出改进建议。它解决了人工审查耗时、容易遗漏的问题：开发者提交 PR 后，它会自动生成描述、指出潜在 bug、建议优化写法，甚至直接给出修改代码。支持 OpenAI、Anthropic、Ollama 等多种模型，可集成到现有开发流程中，帮助团队提升代码质量和评审效率。",
+       "site": "https://www.pr-agent.ai"
+      },
+      {
+       "repo": "JiaFeiMiao-K-Cat/DiscImageStudio",
+       "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+       "owner": "JiaFeiMiao-K-Cat",
+       "stars": 6305,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily"
+       ],
+       "desc": "DiscImageStudio 是一个用 C# 编写的磁盘镜像处理工具，主要用于创建、编辑、转换和浏览光盘或软盘镜像文件（如 ISO、IMG 等）。它解决了普通用户难以直接查看或修改镜像内容的问题，比如你可以用它打开一个 ISO 文件，提取里面的文件，或者把一堆文件打包成新的镜像。适合需要制作启动盘、备份光盘或研究镜像格式的开发者和爱好者使用。",
+       "site": "无"
+      },
+      {
+       "repo": "Gaurav-Gosain/tuios",
+       "url": "https://github.com/Gaurav-Gosain/tuios",
+       "owner": "Gaurav-Gosain",
+       "stars": 5933,
+       "updated": "2026-10-25",
+       "lists": [
+        "monthly"
+       ],
+       "desc": "tuios 是一个用 Go 写的终端窗口管理器，专为同时使用多个编码 AI 代理（如 Claude Code、Codex）的开发者设计。它支持平铺分屏、工作区和重启后仍保留的会话，还能把所有代理的进度汇总到一个 Inbox 里。比如你同时跑三个代理改不同模块，不用来回切终端，一眼就能看到谁在干什么、谁卡住了。",
+       "site": "https://tuios.dev"
+      }
+     ]
+    },
+    {
+     "name": "移动 / 桌面应用",
+     "emoji": "📱",
+     "items": [
+      {
+       "repo": "DuarteSantos8/openGym",
+       "url": "https://github.com/DuarteSantos8/openGym",
+       "owner": "DuarteSantos8",
+       "stars": 12239,
+       "updated": "2026-10-15",
+       "lists": [
+        "daily",
+        "weekly"
+       ],
+       "desc": "openGym 是一个可自托管的健身与自重训练记录应用，帮你规划训练计划、记录组数（含超级组、热身、有氧），并直观显示哪些肌肉被练到、疲劳或已退化。它支持从 FitNotes、Strong、Hevy 导入历史数据，还能用 Passkey 免密码登录。所有数据存在你自己的服务器上，适合注重隐私、想长期追踪训练效果的健身爱好者。",
+       "site": "https://opengym.duarte-santos.ch"
+      }
+     ]
+    },
+    {
+     "name": "学习资源",
+     "emoji": "📚",
+     "items": [
+      {
+       "repo": "MichaelCade/90DaysOfDevOps",
+       "url": "https://github.com/MichaelCade/90DaysOfDevOps",
+       "owner": "MichaelCade",
+       "stars": 30280,
+       "updated": "2026-06-24",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个面向 DevOps 新手的结构化学习路线图，用 90 天计划带你从零掌握 DevOps 核心知识。内容覆盖原则、流程、工具和实战场景，包括 Ansible、Terraform、Kubernetes、容器、网络、备份等主题，每天一个知识点配练习。比如第 1 天先讲 DevOps 是什么，后续逐步深入 IaC 和云原生工具。适合想系统入门或转行的人按图索骥，避免东学一块西学一块。",
+       "site": "https://www.90daysofdevops.com/"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }

@@ -1132,5 +1132,53 @@
   "emoji": "🧠",
   "desc": "这是一个基于 Playwright 和 AI 的闲鱼商品监控工具，能自动抓取闲鱼上大量商品信息，并用大模型进行智能分析筛选。它解决了手动刷闲鱼找好货效率低的问题，比如你想低价收一台相机，它可以定时监控新上架商品，自动判断成色、价格是否合理，并通过后台管理界面推送提醒，帮你快速找到心仪产品。",
   "site": "无"
+ },
+ "NVIDIA/auto-ontology": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "Auto Ontology 是一个 Python 框架，用于在数据之上构建语义化、基于图的推理层。它解决的是大模型和智能体在查询数据时容易产生不确定结果、上下文检索不准、推理过程难以解释的问题。通过把数据组织成带语义关系的图，它能生成确定性的查询、提升检索质量，并让 AI 的决策更可解释。例如在智能体需要从企业数据库回答问题时，可先用它把数据关系理清，再稳定地生成查询语句。",
+  "site": "无"
+ },
+ "github/spec-kit": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "这是 GitHub 官方推出的规范驱动开发（SDD）工具包，帮你在写代码前先把需求文档、技术方案和任务清单理清楚。它提供一套模板和流程，让 AI 编程助手（如 Copilot）按规范生成代码，避免「想到哪写到哪」。比如开发新功能时，先用它写出 PRD 和任务拆解，再让 AI 照着执行，减少返工。",
+  "site": "https://github.github.com/spec-kit/"
+ },
+ "The-PR-Agent/pr-agent": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "PR Agent 是一个开源的 AI 代码审查工具，能自动分析 GitHub 拉取请求并给出改进建议。它解决了人工审查耗时、容易遗漏的问题：开发者提交 PR 后，它会自动生成描述、指出潜在 bug、建议优化写法，甚至直接给出修改代码。支持 OpenAI、Anthropic、Ollama 等多种模型，可集成到现有开发流程中，帮助团队提升代码质量和评审效率。",
+  "site": "https://www.pr-agent.ai"
+ },
+ "JiaFeiMiao-K-Cat/DiscImageStudio": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "DiscImageStudio 是一个用 C# 编写的磁盘镜像处理工具，主要用于创建、编辑、转换和浏览光盘或软盘镜像文件（如 ISO、IMG 等）。它解决了普通用户难以直接查看或修改镜像内容的问题，比如你可以用它打开一个 ISO 文件，提取里面的文件，或者把一堆文件打包成新的镜像。适合需要制作启动盘、备份光盘或研究镜像格式的开发者和爱好者使用。",
+  "site": "无"
+ },
+ "MichaelCade/90DaysOfDevOps": {
+  "cat": "学习资源",
+  "emoji": "📚",
+  "desc": "这是一个面向 DevOps 新手的结构化学习路线图，用 90 天计划带你从零掌握 DevOps 核心知识。内容覆盖原则、流程、工具和实战场景，包括 Ansible、Terraform、Kubernetes、容器、网络、备份等主题，每天一个知识点配练习。比如第 1 天先讲 DevOps 是什么，后续逐步深入 IaC 和云原生工具。适合想系统入门或转行的人按图索骥，避免东学一块西学一块。",
+  "site": "https://www.90daysofdevops.com/"
+ },
+ "scenario-labs/skills": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个给 AI Agent 用的技能包，让 Claude Code、Codex 等智能体能够直接生成生产级的图片、视频、音频和 3D 模型。它会自动挑选合适的模型、先报价再花钱，并通过 Scenario MCP 保持角色和品牌风格一致。比如做游戏时，可以让 Agent 调用它驱动 Blender、Maya、Unreal 或 Unity 批量产出风格统一的角色和场景资产，省去手动切换工具和反复调参的麻烦。",
+  "site": "https://www.skills.sh/scenario-labs/skills"
+ },
+ "FareedKhan-dev/kimi-k3-in-c": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "这个项目用纯 C99 从零实现了一个推理引擎，让 2.78 万亿参数的 Kimi K3 大模型能在单颗 CPU、仅 8.24 GB 内存下跑起来，不依赖 BLAS、深度学习框架或 GPU。它解决了普通电脑无法运行超大模型的痛点，适合想低成本本地部署、学习大模型底层原理的开发者。",
+  "site": "https://medium.com/@fareedkhandev/building-kimi-k3-in-c-to-run-a-2-8t-model-on-consumer-hardware-a5792cbf3b59"
+ },
+ "Thysrael/Horizon": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "Horizon 是一个用 AI 打造的个性化新闻雷达，能自动抓取你关心的资讯源，借助大模型筛选、总结并生成中英文双语每日简报，还能通过飞书机器人或 Webhook 推送到你手上。它解决信息过载、手动筛选费时的问题，比如你只需配置好关键词和来源，每天早上就能收到一份精炼的行业动态摘要，无需自己刷遍各个网站。",
+  "site": "https://www.horizon1123.top"
  }
 }
