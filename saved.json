@@ -1163,6 +1163,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "feishu"
+  },
+  {
+   "repo": "yetone/magpie",
+   "url": "https://github.com/yetone/magpie",
+   "owner": "yetone",
+   "stars": 30258,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "magpie 是一个本地 AI 模型网关，把 Claude Code、Codex、Gemini CLI 等各类 AI 编程助手统一接入同一个入口。它解决的是每个助手各自配置模型、订阅互不通用、额度用完就报错的问题：你可以在菜单栏里一键把 Claude Code 切到 Kimi、把 Codex 切到 DeepSeek，额度耗尽时自动切换到下一个账号或模型，还能在请求发出前对密钥、密码等敏感信息做本地脱敏。",
+   "site": "https://usemagpie.ai",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
