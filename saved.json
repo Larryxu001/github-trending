@@ -1219,6 +1219,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "remotion-dev/remotion",
+   "url": "https://github.com/remotion-dev/remotion",
+   "owner": "remotion-dev",
+   "stars": 70955,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "Remotion 是一个用 React 编写视频的开源框架，让你像写网页一样用代码生成视频。它把动画、字幕、音效等做成可复用的 React 组件，支持在浏览器里实时预览和编辑，也能通过 Node.js 或云端批量渲染。适合需要自动化生产视频的场景，比如为成千上万个商品各生成一段带价格和图片的短视频，或搭建自己的视频编辑器。",
+   "site": "https://remotion.dev",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-05",
+   "source": "pages"
   }
  ]
 }
