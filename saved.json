@@ -1289,6 +1289,20 @@
    "tags": [],
    "saved_at": "2026-11-06",
    "source": "pages"
+  },
+  {
+   "repo": "vesaias/JobNavigator",
+   "url": "https://github.com/vesaias/JobNavigator",
+   "owner": "vesaias",
+   "stars": 181,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "JobNavigator 是一个可自托管的求职自动化工具，用 Docker 一键部署。它会自动抓取招聘网站和公司招聘页的职位，用 AI 按你的简历打分筛选，还能针对具体岗位改写简历和求职信、自动填写申请表，并跟踪每份申请的进度，通过 Telegram 提醒。比如你设定好简历后，它每天自动收集新职位、标出匹配度高的岗位，你只需审核并投递，省去大量重复筛选和填表的时间。",
+   "site": "https://vesaias.github.io/JobNavigator-demo",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-06",
+   "source": "pages"
   }
  ]
 }
