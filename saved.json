@@ -1275,6 +1275,20 @@
    "tags": [],
    "saved_at": "2026-11-05",
    "source": "pages"
+  },
+  {
+   "repo": "JuneYaooo/rea-video",
+   "url": "https://github.com/JuneYaooo/rea-video",
+   "owner": "JuneYaooo",
+   "stars": 2385,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "rea-video 是一个给 AI Agent 用的视频逆向分析技能：输入任意视频，它逐镜头判断画面是实拍、AI 生成还是代码制作，并分析字幕样式、剪辑节奏、配音配乐和素材来源，最后给出可执行的复刻方案。例如一条 TikTok 带货视频，它会告诉你用了几个机位、几组打光，哪些镜头是 AI 生成、该怎么写提示词，哪些界面要用 Remotion 代码重建。适合想拆解爆款视频、学习制作方法或批量复刻内容的人。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-06",
+   "source": "pages"
   }
  ]
 }
