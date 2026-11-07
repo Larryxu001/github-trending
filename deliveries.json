@@ -14342,7 +14342,7 @@
   ]
  },
  "daily:2026-11-07": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-07",
    "new_count": 15,
@@ -14558,6 +14558,381 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-07 ｜ 今日新项目 15 个 ｜ 4 个分类 ｜ 30 天去重跳过 178 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-07/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)**　⭐ 63,427\n这是 Cloudflare 推出的一个编码代理技能，专门用来做多阶段安全审计。它把审计拆成多个阶段，让 AI 代理逐步排查代码中的安全问题，并且每个发现都要经过独立验证，最终输出机器可读的结果，方便集成到自动化流程里。比如你让 AI 审查一个 Web 项目，它能按阶段检查注入、权限、依赖漏洞等，并给出可验证的结论，避免误报。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 cloudflare ｜ 📅 更新 2026-09-14 ｜ 🏷 日/月/周榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [spotify/portal-ai-plugins](https://github.com/spotify/portal-ai-plugins)**　⭐ 2,972\n这是 Spotify 官方开源的 AI 插件集合，用 TypeScript 编写，为 AI 助手提供接入 Spotify 音乐服务的能力。它解决的是 AI 无法直接操作用户音乐账号的问题，让智能体可以搜索歌曲、查看播放列表、控制播放等。比如你问 AI「帮我放一首周杰伦的歌」，它就能通过这个插件调用 Spotify 接口完成操作。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 spotify ｜ 📅 更新 2026-10-23 ｜ 🏷 日/月榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 10 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [react/react](https://github.com/react/react)**　⭐ 252,138\nReact 是用于构建网页和原生应用界面的 JavaScript 库，核心思路是把界面拆成可复用的组件，用声明式写法描述「界面应该长什么样」，数据变化时自动更新页面，开发者不用手动操作 DOM。它解决了复杂前端界面难以维护的问题，比如做一个带点赞、评论实时刷新的社交页面，用 React 管理状态和渲染会清晰很多。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 react ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://react.dev](https://react.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [microsoft/vscode](https://github.com/microsoft/vscode)**　⭐ 194,895\nVisual Studio Code 是微软推出的免费开源代码编辑器，用 TypeScript 和 Electron 构建，支持 Windows、macOS 和 Linux。它解决的是开发者写代码时缺少轻量又强大的工具的问题：内置语法高亮、智能补全、调试和 Git 集成，还能通过扩展市场安装插件来支持 Python、Go 等各种语言。比如写前端时，它能实时提示错误并一键格式化代码，是很多程序员日常开发的首选。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 microsoft ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://code.visualstudio.com](https://code.visualstudio.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [angular/angular](https://github.com/angular/angular)**　⭐ 101,223\nAngular 是一个由 Google 维护的 TypeScript 前端框架，用来构建大型、可靠的 Web 应用。它内置路由、表单、依赖注入和测试工具，还支持渐进式 Web 应用（PWA）和性能优化，帮团队避免重复造轮子。比如开发一个企业后台管理系统，用 Angular 可以快速搭建模块化页面、管理数据流并保证代码可维护。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 angular ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://angular.dev](https://angular.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**4. [zed-industries/zed](https://github.com/zed-industries/zed)**　⭐ 93,322\nZed 是一款用 Rust 编写的高性能多人协作代码编辑器，由 Atom 和 Tree-sitter 的创造者打造。它主打极快的启动和响应速度，并内置实时协作功能，让多个开发者可以像在同一个文档里一样同时编辑代码、共享终端和调试。比如远程结对编程时，队友能直接看到你的光标和修改，无需额外插件。它解决了传统编辑器卡顿和协作工具割裂的问题，适合追求流畅体验和团队协同的开发者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 zed-industries ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://zed.dev](https://zed.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**5. [rails/rails](https://github.com/rails/rails)**　⭐ 58,938\nRuby on Rails 是一个用 Ruby 编写的全栈 Web 开发框架，遵循 MVC 架构，内置 ActiveRecord 数据库操作、路由、视图模板和 ActiveJob 后台任务等组件。它解决的是 Web 应用开发中重复搭建基础设施的问题，让开发者专注业务逻辑。例如，用几条命令就能生成一个带增删改查功能的博客后台，适合快速构建网站和 API。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 rails ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://rubyonrails.org](https://rubyonrails.org)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**6. [astral-sh/ruff](https://github.com/astral-sh/ruff)**　⭐ 50,558\nRuff 是用 Rust 编写的 Python 代码检查与格式化工具，速度比传统工具快几十倍。它能自动发现代码中的风格问题、潜在 bug 和不规范写法，比如未使用的导入、变量命名错误等，并支持一键格式化。对开发者来说，它替代了 flake8、isort、black 等多个工具，配置简单、运行极快，适合在编辑器、CI 流水线中日常使用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 astral-sh ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://docs.astral.sh/ruff](https://docs.astral.sh/ruff)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**7. [nushell/nushell](https://github.com/nushell/nushell)**　⭐ 40,860\nNushell 是一种用 Rust 编写的新型命令行 Shell，它把命令输出当作结构化表格来处理，而不是纯文本。传统 Shell 里用 grep、awk 解析文本很麻烦，Nushell 可以直接对表格做筛选、排序、计算，比如 ls | where size > 1mb 就能列出大文件。它跨平台、报错友好，适合日常运维、数据处理和脚本编写，让命令行操作更直观高效。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 nushell ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://www.nushell.sh/](https://www.nushell.sh/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**8. [mpv-player/mpv](https://github.com/mpv-player/mpv)**　⭐ 37,817\nmpv 是一款开源的命令行媒体播放器，基于 FFmpeg 和 MPlayer 项目发展而来，能播放几乎所有常见音视频格式。它没有复杂的图形界面，但支持脚本扩展、硬件解码、高质量视频输出和精细的参数控制，适合追求轻量、高效和可定制播放体验的用户。例如开发者可以用命令行批量播放视频，或通过配置文件自定义快捷键和画质，也常被其他软件当作播放内核嵌入使用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 mpv-player ｜ 📅 更新 2026-11-05 ｜ 🏷 日榜 ｜ 🔗 [https://mpv.io](https://mpv.io)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**9. [symfony/symfony](https://github.com/symfony/symfony)**　⭐ 31,313\nSymfony 是 PHP 生态中成熟的全栈 Web 框架，提供路由、模板、表单、数据库 ORM、安全认证等一整套组件，帮开发者快速搭建稳定可维护的网站和 API。它既能整体使用，也能单独复用某个组件，比如只拿它的 HTTP 请求处理库。许多大型项目（如 Drupal、Laravel 的部分底层）都受益于它，适合需要长期维护的企业级应用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 symfony ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://symfony.com](https://symfony.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**10. [EpicGames/raddebugger](https://github.com/EpicGames/raddebugger)**　⭐ 8,521\nraddebugger 是 Epic Games 开源的一款原生图形化调试器，专门用于 Windows 用户态下的多进程调试。它解决了传统调试器在同时调试多个进程时操作繁琐、信息分散的问题，让开发者能在一个界面里统一查看和管理所有被调试进程的线程、调用栈和断点。例如在开发游戏时，主进程和渲染进程需要协同排查崩溃，用它就能同时挂载并切换观察，大幅提升定位效率。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 EpicGames ｜ 📅 更新 2026-10-12 ｜ 🏷 日/周榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "wathet",
+       "title": {
+        "tag": "plain_text",
+        "content": "💾 数据 / 数据库 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [prometheus/prometheus](https://github.com/prometheus/prometheus)**　⭐ 67,060\nPrometheus 是一套开源的监控系统和时序数据库，专门收集和存储带时间戳的指标数据，比如服务器的 CPU 使用率、内存占用、请求延迟等。它通过定时抓取目标暴露的指标接口来采集数据，并提供强大的查询语言 PromQL 做分析和告警。例如运维人员可以用它监控几百台机器的健康状态，一旦某项指标异常就自动触发告警，是云原生时代最主流的监控方案之一。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 prometheus ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://prometheus.io/](https://prometheus.io/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [etcd-io/etcd](https://github.com/etcd-io/etcd)**　⭐ 52,536\netcd 是一个用 Go 编写的分布式键值存储，专门保存分布式系统里最关键的配置和状态数据。它通过 Raft 共识算法让多台机器保持一致，即使部分节点故障也能继续工作。最典型的用途是 Kubernetes 用它存集群的所有配置和状态；其他系统也常用它做服务发现、选主和分布式锁，相当于分布式系统的可靠小账本。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 etcd-io ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://etcd.io](https://etcd.io)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "red",
+       "title": {
+        "tag": "plain_text",
+        "content": "🔐 安全 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [openssl/openssl](https://github.com/openssl/openssl)**　⭐ 31,244\nOpenSSL 是一个通用的加密与 TLS 工具库，用 C 语言编写，为网络通信提供加密、解密和身份验证能力。它解决了数据在传输和存储中如何防止被窃听或篡改的问题，比如网站启用 HTTPS 时，浏览器和服务器之间的加密握手就常依赖它。开发者可用它实现安全连接、证书管理和数据加密，是互联网安全基础设施的关键组件。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 openssl ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 [https://openssl-library.org/](https://openssl-library.org/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
