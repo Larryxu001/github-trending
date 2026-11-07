@@ -94,7 +94,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-07T17:46:02.974645+08:00"
+   "last_seen": "2026-11-07T20:00:43.253069+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -127,7 +127,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-07T17:46:02.974599+08:00"
+   "last_seen": "2026-11-07T20:00:44.926176+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -256,7 +256,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-11-07T17:46:02.974573+08:00"
+   "last_seen": "2026-11-07T20:00:44.087031+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -322,7 +322,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-07T17:46:02.974603+08:00"
+   "last_seen": "2026-11-07T20:00:45.736444+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -407,7 +407,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-07T17:46:02.974549+08:00"
+   "last_seen": "2026-11-07T20:00:43.253047+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -537,7 +537,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-07T17:46:02.974553+08:00"
+   "last_seen": "2026-11-07T20:00:43.253055+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -1021,7 +1021,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-11-07T17:46:02.974578+08:00"
+   "last_seen": "2026-11-07T20:00:43.253059+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1170,7 +1170,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-07T17:46:02.974585+08:00"
+   "last_seen": "2026-11-07T20:00:43.253058+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1224,7 +1224,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-07T17:46:02.974592+08:00"
+   "last_seen": "2026-11-07T20:00:44.926166+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1248,7 +1248,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-08T19:08:03.335575+08:00",
-   "last_seen": "2026-11-07T17:46:02.974566+08:00"
+   "last_seen": "2026-11-07T20:00:43.253067+08:00"
   },
   "liquidslr/system-design-notes": {
    "repo": "liquidslr/system-design-notes",
@@ -1315,7 +1315,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-07T17:46:02.974571+08:00"
+   "last_seen": "2026-11-07T20:00:44.087028+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1505,10 +1505,11 @@
   "ranxianglei/billion-context": {
    "repo": "ranxianglei/billion-context",
    "lists": [
+    "daily",
     "monthly",
     "weekly"
    ],
-   "stars": 3869,
+   "stars": 4397,
    "owner": "ranxianglei",
    "homepage": "",
    "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
@@ -1516,10 +1517,10 @@
    "topics": [
     "dsh-plugin"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-07",
    "first_seen": "2026-10-10T21:02:40.409296+08:00",
-   "last_seen": "2026-11-04T17:00:39.748237+08:00"
+   "last_seen": "2026-11-07T20:00:47.735588+08:00"
   },
   "multica-ai/andrej-karpathy-skills": {
    "repo": "multica-ai/andrej-karpathy-skills",
@@ -2128,7 +2129,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-07T17:46:02.974608+08:00"
+   "last_seen": "2026-11-07T20:00:49.964594+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -2581,7 +2582,7 @@
    "updated": "2026-04-13",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-19T20:00:45.452575+08:00",
-   "last_seen": "2026-11-07T17:46:02.974665+08:00"
+   "last_seen": "2026-11-07T20:00:49.964604+08:00"
   },
   "Graphify-Labs/graphify": {
    "repo": "Graphify-Labs/graphify",
@@ -2940,9 +2941,10 @@
   "Renhuai123/ziwei-doushu": {
    "repo": "Renhuai123/ziwei-doushu",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 12978,
+   "stars": 16623,
    "owner": "Renhuai123",
    "homepage": "https://ouranic.cn/?from=gh-about",
    "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
@@ -2959,10 +2961,10 @@
     "zi-wei-dou-shu",
     "ziwei-doushu"
    ],
-   "updated": "2026-10-31",
-   "metadata_date": "2026-11-02",
+   "updated": "2026-11-03",
+   "metadata_date": "2026-11-07",
    "first_seen": "2026-10-23T19:15:31.888334+08:00",
-   "last_seen": "2026-11-02T14:00:45.801489+08:00"
+   "last_seen": "2026-11-07T20:00:43.586940+08:00"
   },
   "SnailSploit/Claude-Red": {
    "repo": "SnailSploit/Claude-Red",
@@ -3102,7 +3104,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-07T17:46:02.974580+08:00"
+   "last_seen": "2026-11-07T20:00:43.253061+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3526,7 +3528,7 @@
    "updated": "2026-11-02",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-07T17:46:02.974627+08:00"
+   "last_seen": "2026-11-07T20:00:46.591394+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3654,7 +3656,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-07T17:46:02.974596+08:00"
+   "last_seen": "2026-11-07T20:00:45.736429+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
@@ -3708,7 +3710,7 @@
    "updated": "2026-10-19",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-29T20:00:47.647693+08:00",
-   "last_seen": "2026-11-07T17:46:02.974563+08:00"
+   "last_seen": "2026-11-07T20:00:43.253065+08:00"
   },
   "anthropics/skills": {
    "repo": "anthropics/skills",
@@ -3727,7 +3729,7 @@
    "updated": "2026-10-28",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-07T17:46:02.974590+08:00"
+   "last_seen": "2026-11-07T20:00:44.087020+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4135,7 +4137,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-01T20:00:49.141801+08:00",
-   "last_seen": "2026-11-07T17:46:02.974622+08:00"
+   "last_seen": "2026-11-07T20:00:48.235669+08:00"
   },
   "vercel-labs/agent-desktop": {
    "repo": "vercel-labs/agent-desktop",
@@ -4202,7 +4204,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-07T17:46:02.974658+08:00"
+   "last_seen": "2026-11-07T20:00:45.736437+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4320,9 +4322,10 @@
   "github/spec-kit": {
    "repo": "github/spec-kit",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 147148,
+   "stars": 148299,
    "owner": "github",
    "homepage": "https://github.github.com/spec-kit/",
    "description": "💫 Toolkit to help you get started with SDD or any other process!",
@@ -4336,10 +4339,10 @@
     "spec",
     "spec-driven"
    ],
-   "updated": "2026-11-04",
-   "metadata_date": "2026-11-05",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-07",
    "first_seen": "2026-11-04T20:00:46.447765+08:00",
-   "last_seen": "2026-11-05T18:31:35.558483+08:00"
+   "last_seen": "2026-11-07T20:00:49.464513+08:00"
   },
   "The-PR-Agent/pr-agent": {
    "repo": "The-PR-Agent/pr-agent",
@@ -4366,7 +4369,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-04T20:00:47.285699+08:00",
-   "last_seen": "2026-11-07T17:46:02.974638+08:00"
+   "last_seen": "2026-11-07T20:00:49.964602+08:00"
   },
   "harry0703/MoneyPrinterTurbo": {
    "repo": "harry0703/MoneyPrinterTurbo",
@@ -4527,7 +4530,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-04T20:00:52.380748+08:00",
-   "last_seen": "2026-11-07T17:46:02.974631+08:00"
+   "last_seen": "2026-11-07T20:00:45.736442+08:00"
   },
   "FareedKhan-dev/kimi-k3-in-c": {
    "repo": "FareedKhan-dev/kimi-k3-in-c",
@@ -4629,23 +4632,24 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-05T20:00:46.683725+08:00",
-   "last_seen": "2026-11-07T17:46:02.974610+08:00"
+   "last_seen": "2026-11-07T20:00:43.253063+08:00"
   },
   "vercel-labs/agent-browser": {
    "repo": "vercel-labs/agent-browser",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 45750,
+   "stars": 46406,
    "owner": "vercel-labs",
    "homepage": "https://agent-browser.dev",
    "description": "Browser automation CLI for AI agents",
    "language": "Rust",
    "topics": [],
-   "updated": "2026-11-05",
-   "metadata_date": "2026-11-06",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-07",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-06T18:34:55.944321+08:00"
+   "last_seen": "2026-11-07T20:00:42.752964+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -4705,7 +4709,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-06T20:00:42.527157+08:00",
-   "last_seen": "2026-11-07T17:46:02.974534+08:00"
+   "last_seen": "2026-11-07T20:00:47.426542+08:00"
   },
   "rails/rails": {
    "repo": "rails/rails",
@@ -4848,7 +4852,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-06T20:00:50.347073+08:00",
-   "last_seen": "2026-11-07T17:46:02.974606+08:00"
+   "last_seen": "2026-11-07T20:00:44.926174+08:00"
   },
   "microsoft/vscode": {
    "repo": "microsoft/vscode",
@@ -4968,13 +4972,135 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-07",
    "first_seen": "2026-11-06T20:00:55.539553+08:00",
-   "last_seen": "2026-11-07T17:46:02.974663+08:00"
+   "last_seen": "2026-11-07T20:00:45.736440+08:00"
+  },
+  "meta/astryx": {
+   "repo": "meta/astryx",
+   "lists": [
+    "daily"
+   ],
+   "stars": 14122,
+   "owner": "meta",
+   "homepage": "http://astryx.atmeta.com",
+   "description": "An open source design system that's fully customizable and agent ready",
+   "language": "TypeScript",
+   "topics": [],
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-07",
+   "first_seen": "2026-11-07T20:00:44.426081+08:00",
+   "last_seen": "2026-11-07T20:00:44.426085+08:00"
+  },
+  "sherlock-project/sherlock": {
+   "repo": "sherlock-project/sherlock",
+   "lists": [
+    "daily"
+   ],
+   "stars": 99348,
+   "owner": "sherlock-project",
+   "homepage": "https://sherlockproject.xyz",
+   "description": "Hunt down social media accounts by username across social networks",
+   "language": "Python",
+   "topics": [
+    "cli",
+    "cti",
+    "cybersecurity",
+    "forensics",
+    "hacktoberfest",
+    "information-gathering",
+    "infosec",
+    "linux",
+    "osint",
+    "pentesting",
+    "python",
+    "python3",
+    "reconnaissance",
+    "redteam",
+    "sherlock",
+    "tools"
+   ],
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-07",
+   "first_seen": "2026-11-07T20:00:45.236343+08:00",
+   "last_seen": "2026-11-07T20:00:45.236348+08:00"
+  },
+  "tailwindlabs/tailwindcss": {
+   "repo": "tailwindlabs/tailwindcss",
+   "lists": [
+    "daily"
+   ],
+   "stars": 98199,
+   "owner": "tailwindlabs",
+   "homepage": "https://tailwindcss.com/",
+   "description": "A utility-first CSS framework for rapid UI development.",
+   "language": "TypeScript",
+   "topics": [
+    "css",
+    "css-framework",
+    "functional-css",
+    "postcss",
+    "responsive",
+    "tailwindcss",
+    "utility-classes"
+   ],
+   "updated": "2026-11-06",
+   "metadata_date": "2026-11-07",
+   "first_seen": "2026-11-07T20:00:46.091309+08:00",
+   "last_seen": "2026-11-07T20:00:46.091314+08:00"
+  },
+  "mbillow/localthings": {
+   "repo": "mbillow/localthings",
+   "lists": [
+    "daily"
+   ],
+   "stars": 939,
+   "owner": "mbillow",
+   "homepage": "",
+   "description": "Control your Samsung appliances from Home Assistant over your home network, with no cloud account.",
+   "language": "Python",
+   "topics": [
+    "coap-protocol",
+    "coap-server",
+    "custom-component",
+    "dtls",
+    "hacs",
+    "hacs-integration",
+    "home-assistant",
+    "home-automation",
+    "samsung",
+    "smartthings"
+   ],
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-07",
+   "first_seen": "2026-11-07T20:00:46.926457+08:00",
+   "last_seen": "2026-11-07T20:00:46.926462+08:00"
+  },
+  "dsx-ai-factory/nvke": {
+   "repo": "dsx-ai-factory/nvke",
+   "lists": [
+    "daily"
+   ],
+   "stars": 338,
+   "owner": "dsx-ai-factory",
+   "homepage": "https://docs.nvidia.com/nvke/",
+   "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
+   "language": "Go",
+   "topics": [
+    "bare-metal",
+    "cluster-api",
+    "gpu",
+    "kubernetes",
+    "nvidia"
+   ],
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-07",
+   "first_seen": "2026-11-07T20:00:48.594593+08:00",
+   "last_seen": "2026-11-07T20:00:48.594598+08:00"
   }
  },
- "last_collected": "2026-11-07T17:46:02.974668+08:00",
+ "last_collected": "2026-11-07T20:00:49.964607+08:00",
  "list_counts": {
-  "daily": 18,
-  "weekly": 18,
-  "monthly": 13
+  "daily": 15,
+  "weekly": 19,
+  "monthly": 10
  }
 }
