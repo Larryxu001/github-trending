@@ -85,16 +85,16 @@
     "daily",
     "weekly"
    ],
-   "stars": 316427,
+   "stars": 317436,
    "owner": "mattpocock",
    "homepage": "https://aihero.dev/skills",
    "description": "Skills for Real Engineers. Straight from my .agents directory.",
    "language": "Shell",
    "topics": [],
    "updated": "2026-11-05",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-07T23:00:42.265305+08:00"
+   "last_seen": "2026-11-08T01:37:24.834450+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -102,7 +102,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 79988,
+   "stars": 80445,
    "owner": "heygen-com",
    "homepage": "https://hyperframes.heygen.com",
    "description": "Write HTML. Render video. Built for agents.",
@@ -124,10 +124,10 @@
     "typescript",
     "video-editor"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-07T23:00:42.265328+08:00"
+   "last_seen": "2026-11-08T01:37:31.343119+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -239,7 +239,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 51704,
+   "stars": 51978,
    "owner": "boykopovar",
    "homepage": "https://boykopovar.github.io/AnyPS5/",
    "description": "Tool for automatic PS5 executables porting to Linux and Windows",
@@ -253,10 +253,10 @@
     "spir-v",
     "vulkan"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-11-07T23:00:42.265312+08:00"
+   "last_seen": "2026-11-08T01:37:28.197608+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -307,7 +307,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 104609,
+   "stars": 105326,
    "owner": "pbakaus",
    "homepage": "https://impeccable.style",
    "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
@@ -319,10 +319,10 @@
     "design",
     "slop"
    ],
-   "updated": "2026-11-05",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-07T23:00:42.265338+08:00"
+   "last_seen": "2026-11-08T01:37:36.126460+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -377,7 +377,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 113893,
+   "stars": 114345,
    "owner": "thedotmack",
    "homepage": "https://claude-mem.ai",
    "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
@@ -404,10 +404,10 @@
     "sqlite",
     "supermemory"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-07T23:00:42.265287+08:00"
+   "last_seen": "2026-11-08T01:37:18.416278+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -507,7 +507,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 437179,
+   "stars": 440310,
    "owner": "morluto",
    "homepage": "https://rea.tools",
    "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
@@ -534,10 +534,10 @@
     "touhou",
     "typescript"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-07T23:00:42.265290+08:00"
+   "last_seen": "2026-11-08T01:37:19.203546+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -1005,7 +1005,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 11762,
+   "stars": 11914,
    "owner": "max-sixty",
    "homepage": "https://worktrunk.dev",
    "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
@@ -1018,10 +1018,10 @@
     "git",
     "worktrees"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-11-07T23:00:42.265295+08:00"
+   "last_seen": "2026-11-08T01:37:20.869373+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1161,16 +1161,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 63427,
+   "stars": 65266,
    "owner": "cloudflare",
    "homepage": "",
    "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
    "language": "JavaScript",
    "topics": [],
    "updated": "2026-09-14",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-07T23:00:42.265293+08:00"
+   "last_seen": "2026-11-08T01:37:19.998398+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1195,7 +1195,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 102664,
+   "stars": 103614,
    "owner": "debpalash",
    "homepage": "https://voicestudio.sh",
    "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
@@ -1221,10 +1221,10 @@
     "voicestudio",
     "workflow"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-07T23:00:42.265316+08:00"
+   "last_seen": "2026-11-08T01:37:29.751525+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1233,7 +1233,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 39194,
+   "stars": 39482,
    "owner": "storytold",
    "homepage": "https://getartcraft.com",
    "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
@@ -1245,10 +1245,10 @@
     "filmmaking",
     "imagegeneration"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-08T19:08:03.335575+08:00",
-   "last_seen": "2026-11-07T23:00:42.265303+08:00"
+   "last_seen": "2026-11-08T01:37:24.097681+08:00"
   },
   "liquidslr/system-design-notes": {
    "repo": "liquidslr/system-design-notes",
@@ -1306,16 +1306,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 49350,
+   "stars": 50860,
    "owner": "pingdotgg",
    "homepage": "https://t3.codes",
    "description": "",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-07T23:00:42.265310+08:00"
+   "last_seen": "2026-11-08T01:37:27.432779+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1509,7 +1509,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 4397,
+   "stars": 4519,
    "owner": "ranxianglei",
    "homepage": "",
    "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
@@ -1518,9 +1518,9 @@
     "dsh-plugin"
    ],
    "updated": "2026-11-07",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-10T21:02:40.409296+08:00",
-   "last_seen": "2026-11-07T23:00:42.265347+08:00"
+   "last_seen": "2026-11-08T01:37:40.056329+08:00"
   },
   "multica-ai/andrej-karpathy-skills": {
    "repo": "multica-ai/andrej-karpathy-skills",
@@ -2111,7 +2111,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 313477,
+   "stars": 313987,
    "owner": "obra",
    "homepage": "",
    "description": "An agentic skills framework & software development methodology that works.",
@@ -2127,9 +2127,9 @@
     "superpowers"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-07T23:00:42.265354+08:00"
+   "last_seen": "2026-11-08T01:37:43.123268+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -2573,16 +2573,16 @@
     "daily",
     "weekly"
    ],
-   "stars": 47028,
+   "stars": 47192,
    "owner": "shiyu-coder",
    "homepage": "",
    "description": "Kronos: A Foundation Model for the Language of Financial Markets",
    "language": "Python",
    "topics": [],
    "updated": "2026-04-13",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-19T20:00:45.452575+08:00",
-   "last_seen": "2026-11-07T23:00:42.265357+08:00"
+   "last_seen": "2026-11-08T01:37:44.670536+08:00"
   },
   "Graphify-Labs/graphify": {
    "repo": "Graphify-Labs/graphify",
@@ -2944,7 +2944,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 16623,
+   "stars": 16697,
    "owner": "Renhuai123",
    "homepage": "https://ouranic.cn/?from=gh-about",
    "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
@@ -2962,9 +2962,9 @@
     "ziwei-doushu"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-23T19:15:31.888334+08:00",
-   "last_seen": "2026-11-07T23:00:42.265306+08:00"
+   "last_seen": "2026-11-08T01:37:25.620106+08:00"
   },
   "SnailSploit/Claude-Red": {
    "repo": "SnailSploit/Claude-Red",
@@ -3095,16 +3095,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 49424,
+   "stars": 50098,
    "owner": "Nutlope",
    "homepage": "https://www.usehallmark.com/",
    "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
    "language": "CSS",
    "topics": [],
    "updated": "2026-11-05",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-07T23:00:42.265296+08:00"
+   "last_seen": "2026-11-08T01:37:21.629660+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3519,16 +3519,16 @@
    "lists": [
     "weekly"
    ],
-   "stars": 11234,
+   "stars": 11448,
    "owner": "jakubkrehel",
    "homepage": "https://jakub.kr/skills",
    "description": "A collection of agent skills that help you build great interfaces.",
    "language": "Markdown",
    "topics": [],
-   "updated": "2026-11-02",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-07T23:00:42.265342+08:00"
+   "last_seen": "2026-11-08T01:37:37.746435+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3634,7 +3634,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 14908,
+   "stars": 16674,
    "owner": "milind-soni",
    "homepage": "https://www.openmausbot.com/",
    "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
@@ -3653,10 +3653,10 @@
     "self-hosted",
     "typescript"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-07T23:00:42.265331+08:00"
+   "last_seen": "2026-11-08T01:37:33.036562+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
@@ -3688,7 +3688,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 36016,
+   "stars": 36439,
    "owner": "Donchitos",
    "homepage": "",
    "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
@@ -3708,9 +3708,9 @@
     "unreal-engine"
    ],
    "updated": "2026-10-19",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-29T20:00:47.647693+08:00",
-   "last_seen": "2026-11-07T23:00:42.265301+08:00"
+   "last_seen": "2026-11-08T01:37:23.310145+08:00"
   },
   "anthropics/skills": {
    "repo": "anthropics/skills",
@@ -3718,7 +3718,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 188093,
+   "stars": 188545,
    "owner": "anthropics",
    "homepage": "",
    "description": "Public repository for Agent Skills",
@@ -3726,10 +3726,10 @@
    "topics": [
     "agent-skills"
    ],
-   "updated": "2026-10-28",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-06",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-07T23:00:42.265308+08:00"
+   "last_seen": "2026-11-08T01:37:26.638115+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4123,7 +4123,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 40426,
+   "stars": 40478,
    "owner": "hyprwm",
    "homepage": "https://hypr.land",
    "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
@@ -4135,9 +4135,9 @@
     "wayland-compositor"
    ],
    "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-01T20:00:49.141801+08:00",
-   "last_seen": "2026-11-07T23:00:42.265349+08:00"
+   "last_seen": "2026-11-08T01:37:40.813473+08:00"
   },
   "vercel-labs/agent-desktop": {
    "repo": "vercel-labs/agent-desktop",
@@ -4174,7 +4174,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 98732,
+   "stars": 99194,
    "owner": "D4Vinci",
    "homepage": "https://scrapling.readthedocs.io/en/latest/",
    "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
@@ -4202,9 +4202,9 @@
     "xpath"
    ],
    "updated": "2026-11-05",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-07T23:00:42.265333+08:00"
+   "last_seen": "2026-11-08T01:37:33.826538+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4325,7 +4325,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 148299,
+   "stars": 148355,
    "owner": "github",
    "homepage": "https://github.github.com/spec-kit/",
    "description": "💫 Toolkit to help you get started with SDD or any other process!",
@@ -4340,9 +4340,9 @@
     "spec-driven"
    ],
    "updated": "2026-11-07",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-04T20:00:46.447765+08:00",
-   "last_seen": "2026-11-07T23:00:42.265352+08:00"
+   "last_seen": "2026-11-08T01:37:42.394070+08:00"
   },
   "The-PR-Agent/pr-agent": {
    "repo": "The-PR-Agent/pr-agent",
@@ -4350,7 +4350,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 15252,
+   "stars": 15405,
    "owner": "The-PR-Agent",
    "homepage": "https://www.pr-agent.ai",
    "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
@@ -4366,10 +4366,10 @@
     "pull-request",
     "pull-requests"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-04T20:00:47.285699+08:00",
-   "last_seen": "2026-11-07T23:00:42.265355+08:00"
+   "last_seen": "2026-11-08T01:37:43.891633+08:00"
   },
   "harry0703/MoneyPrinterTurbo": {
    "repo": "harry0703/MoneyPrinterTurbo",
@@ -4501,7 +4501,7 @@
    "lists": [
     "weekly"
    ],
-   "stars": 77589,
+   "stars": 78126,
    "owner": "calesthio",
    "homepage": "https://www.openmontage.video/",
    "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
@@ -4528,9 +4528,9 @@
     "video-production"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-04T20:00:52.380748+08:00",
-   "last_seen": "2026-11-07T23:00:42.265336+08:00"
+   "last_seen": "2026-11-08T01:37:35.384226+08:00"
   },
   "FareedKhan-dev/kimi-k3-in-c": {
    "repo": "FareedKhan-dev/kimi-k3-in-c",
@@ -4619,7 +4619,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 22739,
+   "stars": 23207,
    "owner": "google",
    "homepage": "",
    "description": "Agent Skills for Google products and technologies",
@@ -4629,10 +4629,10 @@
     "googlecloud",
     "skills"
    ],
-   "updated": "2026-11-05",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-05T20:00:46.683725+08:00",
-   "last_seen": "2026-11-07T23:00:42.265299+08:00"
+   "last_seen": "2026-11-08T01:37:22.471569+08:00"
   },
   "vercel-labs/agent-browser": {
    "repo": "vercel-labs/agent-browser",
@@ -4640,16 +4640,16 @@
     "daily",
     "weekly"
    ],
-   "stars": 46406,
+   "stars": 46623,
    "owner": "vercel-labs",
    "homepage": "https://agent-browser.dev",
    "description": "Browser automation CLI for AI agents",
    "language": "Rust",
    "topics": [],
    "updated": "2026-11-07",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-07T23:00:42.265268+08:00"
+   "last_seen": "2026-11-08T01:37:17.651257+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -4695,7 +4695,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 93322,
+   "stars": 94161,
    "owner": "zed-industries",
    "homepage": "https://zed.dev",
    "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
@@ -4706,10 +4706,10 @@
     "text-editor",
     "zed"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-06T20:00:42.527157+08:00",
-   "last_seen": "2026-11-07T23:00:42.265345+08:00"
+   "last_seen": "2026-11-08T01:37:39.284554+08:00"
   },
   "rails/rails": {
    "repo": "rails/rails",
@@ -4835,7 +4835,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 67060,
+   "stars": 67363,
    "owner": "prometheus",
    "homepage": "https://prometheus.io/",
    "description": "The Prometheus monitoring system and time series database.",
@@ -4849,10 +4849,10 @@
     "prometheus",
     "time-series"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-06T20:00:50.347073+08:00",
-   "last_seen": "2026-11-07T23:00:42.265317+08:00"
+   "last_seen": "2026-11-08T01:37:30.543156+08:00"
   },
   "microsoft/vscode": {
    "repo": "microsoft/vscode",
@@ -4951,7 +4951,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 50558,
+   "stars": 50893,
    "owner": "astral-sh",
    "homepage": "https://docs.astral.sh/ruff",
    "description": "An extremely fast Python linter and code formatter, written in Rust.",
@@ -4969,33 +4969,33 @@
     "style-guide",
     "styleguide"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-06T20:00:55.539553+08:00",
-   "last_seen": "2026-11-07T23:00:42.265335+08:00"
+   "last_seen": "2026-11-08T01:37:34.568473+08:00"
   },
   "meta/astryx": {
    "repo": "meta/astryx",
    "lists": [
     "daily"
    ],
-   "stars": 14122,
+   "stars": 14287,
    "owner": "meta",
    "homepage": "http://astryx.atmeta.com",
    "description": "An open source design system that's fully customizable and agent ready",
    "language": "TypeScript",
    "topics": [],
    "updated": "2026-11-07",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:44.426081+08:00",
-   "last_seen": "2026-11-07T23:00:42.265314+08:00"
+   "last_seen": "2026-11-08T01:37:29.029133+08:00"
   },
   "sherlock-project/sherlock": {
    "repo": "sherlock-project/sherlock",
    "lists": [
     "daily"
    ],
-   "stars": 99348,
+   "stars": 100014,
    "owner": "sherlock-project",
    "homepage": "https://sherlockproject.xyz",
    "description": "Hunt down social media accounts by username across social networks",
@@ -5019,16 +5019,16 @@
     "tools"
    ],
    "updated": "2026-11-07",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:45.236343+08:00",
-   "last_seen": "2026-11-07T23:00:42.265329+08:00"
+   "last_seen": "2026-11-08T01:37:32.265417+08:00"
   },
   "tailwindlabs/tailwindcss": {
    "repo": "tailwindlabs/tailwindcss",
    "lists": [
     "daily"
    ],
-   "stars": 98199,
+   "stars": 98328,
    "owner": "tailwindlabs",
    "homepage": "https://tailwindcss.com/",
    "description": "A utility-first CSS framework for rapid UI development.",
@@ -5043,16 +5043,16 @@
     "utility-classes"
    ],
    "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:46.091309+08:00",
-   "last_seen": "2026-11-07T23:00:42.265340+08:00"
+   "last_seen": "2026-11-08T01:37:36.941646+08:00"
   },
   "mbillow/localthings": {
    "repo": "mbillow/localthings",
    "lists": [
     "daily"
    ],
-   "stars": 939,
+   "stars": 998,
    "owner": "mbillow",
    "homepage": "",
    "description": "Control your Samsung appliances from Home Assistant over your home network, with no cloud account.",
@@ -5070,16 +5070,16 @@
     "smartthings"
    ],
    "updated": "2026-11-07",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:46.926457+08:00",
-   "last_seen": "2026-11-07T23:00:42.265343+08:00"
+   "last_seen": "2026-11-08T01:37:38.496036+08:00"
   },
   "dsx-ai-factory/nvke": {
    "repo": "dsx-ai-factory/nvke",
    "lists": [
     "daily"
    ],
-   "stars": 338,
+   "stars": 448,
    "owner": "dsx-ai-factory",
    "homepage": "https://docs.nvidia.com/nvke/",
    "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
@@ -5092,12 +5092,12 @@
     "nvidia"
    ],
    "updated": "2026-11-07",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:48.594593+08:00",
-   "last_seen": "2026-11-07T23:00:42.265350+08:00"
+   "last_seen": "2026-11-08T01:37:41.587247+08:00"
   }
  },
- "last_collected": "2026-11-07T23:00:42.265359+08:00",
+ "last_collected": "2026-11-08T01:37:45.170709+08:00",
  "list_counts": {
   "daily": 15,
   "weekly": 19,
