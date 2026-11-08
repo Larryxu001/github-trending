@@ -82,7 +82,7 @@
  "Friedrich-M/UniMate": "2026-10-08",
  "manaflow-ai/cmux": "2026-10-08",
  "EpicGames/raddebugger": "2026-11-07",
- "storytold/artcraft": "2026-10-09",
+ "storytold/artcraft": "2026-11-08",
  "liquidslr/system-design-notes": "2026-10-09",
  "twostraws/SwiftUI-Agent-Skill": "2026-10-10",
  "BerriAI/litellm": "2026-10-10",
@@ -211,5 +211,10 @@
  "symfony/symfony": "2026-11-07",
  "prometheus/prometheus": "2026-11-07",
  "etcd-io/etcd": "2026-11-07",
- "openssl/openssl": "2026-11-07"
+ "openssl/openssl": "2026-11-07",
+ "tailwindlabs/tailwindcss": "2026-11-08",
+ "meta/astryx": "2026-11-08",
+ "mbillow/localthings": "2026-11-08",
+ "dsx-ai-factory/nvke": "2026-11-08",
+ "sherlock-project/sherlock": "2026-11-08"
 }
