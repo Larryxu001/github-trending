@@ -94,7 +94,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-08T14:00:40.284199+08:00"
+   "last_seen": "2026-11-08T20:01:15.214841+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -127,7 +127,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-08T14:00:40.284223+08:00"
+   "last_seen": "2026-11-08T20:01:13.667949+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -256,7 +256,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:15.394817+08:00",
-   "last_seen": "2026-11-08T14:00:40.284211+08:00"
+   "last_seen": "2026-11-08T20:01:14.423198+08:00"
   },
   "ayghri/i-have-adhd": {
    "repo": "ayghri/i-have-adhd",
@@ -322,7 +322,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-08T14:00:40.284242+08:00"
+   "last_seen": "2026-11-08T20:01:14.423207+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -407,7 +407,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-08T14:00:40.284170+08:00"
+   "last_seen": "2026-11-08T20:01:12.873457+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -537,7 +537,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-08T14:00:40.284176+08:00"
+   "last_seen": "2026-11-08T20:01:12.873424+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -1021,7 +1021,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-11-08T14:00:40.284183+08:00"
+   "last_seen": "2026-11-08T20:01:12.873472+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1030,7 +1030,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 98327,
+   "stars": 98632,
    "owner": "NationalSecurityAgency",
    "homepage": "",
    "description": "Ghidra is a software reverse engineering (SRE) framework",
@@ -1041,9 +1041,9 @@
     "software-analysis"
    ],
    "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-11-07T17:46:02.974615+08:00"
+   "last_seen": "2026-11-08T20:01:15.482280+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1170,7 +1170,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-08T14:00:40.284180+08:00"
+   "last_seen": "2026-11-08T20:01:12.873476+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1224,7 +1224,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-08T14:00:40.284217+08:00"
+   "last_seen": "2026-11-08T20:01:13.667957+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1248,7 +1248,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-08T19:08:03.335575+08:00",
-   "last_seen": "2026-11-08T14:00:40.284196+08:00"
+   "last_seen": "2026-11-08T20:01:13.667933+08:00"
   },
   "liquidslr/system-design-notes": {
    "repo": "liquidslr/system-design-notes",
@@ -1315,7 +1315,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-08T14:00:40.284208+08:00"
+   "last_seen": "2026-11-08T20:01:13.667961+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1520,7 +1520,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-10T21:02:40.409296+08:00",
-   "last_seen": "2026-11-08T14:00:40.284257+08:00"
+   "last_seen": "2026-11-08T20:01:14.423162+08:00"
   },
   "multica-ai/andrej-karpathy-skills": {
    "repo": "multica-ai/andrej-karpathy-skills",
@@ -2964,7 +2964,7 @@
    "updated": "2026-11-03",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-23T19:15:31.888334+08:00",
-   "last_seen": "2026-11-08T14:00:40.284202+08:00"
+   "last_seen": "2026-11-08T20:01:14.423191+08:00"
   },
   "SnailSploit/Claude-Red": {
    "repo": "SnailSploit/Claude-Red",
@@ -3104,7 +3104,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-08T14:00:40.284186+08:00"
+   "last_seen": "2026-11-08T20:01:12.873463+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3424,7 +3424,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 55848,
+   "stars": 56617,
    "owner": "HKUDS",
    "homepage": "http://arxiv.org/abs/2604.26962",
    "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
@@ -3440,10 +3440,10 @@
     "multi-agent-systems",
     "rag"
    ],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-11-07T17:46:02.974613+08:00"
+   "last_seen": "2026-11-08T20:01:14.714701+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3528,7 +3528,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-28T20:00:42.874948+08:00",
-   "last_seen": "2026-11-08T14:00:40.284239+08:00"
+   "last_seen": "2026-11-08T20:01:15.982388+08:00"
   },
   "expo/skills": {
    "repo": "expo/skills",
@@ -3656,7 +3656,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-08T14:00:40.284230+08:00"
+   "last_seen": "2026-11-08T20:01:12.873468+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
@@ -3710,7 +3710,7 @@
    "updated": "2026-10-19",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-29T20:00:47.647693+08:00",
-   "last_seen": "2026-11-08T14:00:40.284193+08:00"
+   "last_seen": "2026-11-08T20:01:13.667944+08:00"
   },
   "anthropics/skills": {
    "repo": "anthropics/skills",
@@ -3729,7 +3729,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-08T14:00:40.284205+08:00"
+   "last_seen": "2026-11-08T20:01:13.667904+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4137,7 +4137,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-01T20:00:49.141801+08:00",
-   "last_seen": "2026-11-08T14:00:40.284254+08:00"
+   "last_seen": "2026-11-08T20:01:15.982428+08:00"
   },
   "vercel-labs/agent-desktop": {
    "repo": "vercel-labs/agent-desktop",
@@ -4204,7 +4204,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-08T14:00:40.284233+08:00"
+   "last_seen": "2026-11-08T20:01:14.423203+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4306,18 +4306,19 @@
   "NVIDIA/auto-ontology": {
    "repo": "NVIDIA/auto-ontology",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 8695,
+   "stars": 9953,
    "owner": "NVIDIA",
    "homepage": "",
    "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
    "language": "Python",
    "topics": [],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
    "first_seen": "2026-11-04T20:00:44.703514+08:00",
-   "last_seen": "2026-11-07T17:46:02.974557+08:00"
+   "last_seen": "2026-11-08T20:01:12.373287+08:00"
   },
   "github/spec-kit": {
    "repo": "github/spec-kit",
@@ -4342,7 +4343,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-04T20:00:46.447765+08:00",
-   "last_seen": "2026-11-08T14:00:40.284260+08:00"
+   "last_seen": "2026-11-08T20:01:15.982417+08:00"
   },
   "The-PR-Agent/pr-agent": {
    "repo": "The-PR-Agent/pr-agent",
@@ -4369,7 +4370,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-04T20:00:47.285699+08:00",
-   "last_seen": "2026-11-08T14:00:40.284269+08:00"
+   "last_seen": "2026-11-08T20:01:15.982423+08:00"
   },
   "harry0703/MoneyPrinterTurbo": {
    "repo": "harry0703/MoneyPrinterTurbo",
@@ -4649,7 +4650,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-08T14:00:40.284154+08:00"
+   "last_seen": "2026-11-08T20:01:13.667939+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -4988,7 +4989,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:44.426081+08:00",
-   "last_seen": "2026-11-08T14:00:40.284214+08:00"
+   "last_seen": "2026-11-08T20:01:13.667953+08:00"
   },
   "sherlock-project/sherlock": {
    "repo": "sherlock-project/sherlock",
@@ -5021,7 +5022,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:45.236343+08:00",
-   "last_seen": "2026-11-08T14:00:40.284226+08:00"
+   "last_seen": "2026-11-08T20:01:12.081518+08:00"
   },
   "tailwindlabs/tailwindcss": {
    "repo": "tailwindlabs/tailwindcss",
@@ -5094,13 +5095,79 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-08",
    "first_seen": "2026-11-07T20:00:48.594593+08:00",
-   "last_seen": "2026-11-08T14:00:40.284263+08:00"
+   "last_seen": "2026-11-08T20:01:12.873452+08:00"
+  },
+  "anthropics/claude-quickstarts": {
+   "repo": "anthropics/claude-quickstarts",
+   "lists": [
+    "daily"
+   ],
+   "stars": 19175,
+   "owner": "anthropics",
+   "homepage": "",
+   "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+   "language": "Python",
+   "topics": [],
+   "updated": "2026-11-06",
+   "metadata_date": "2026-11-08",
+   "first_seen": "2026-11-08T20:01:13.167759+08:00",
+   "last_seen": "2026-11-08T20:01:13.167770+08:00"
+  },
+  "google-deepmind/mujoco": {
+   "repo": "google-deepmind/mujoco",
+   "lists": [
+    "daily"
+   ],
+   "stars": 16143,
+   "owner": "google-deepmind",
+   "homepage": "https://mujoco.org",
+   "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+   "language": "C++",
+   "topics": [
+    "mujoco",
+    "physics",
+    "robotics"
+   ],
+   "updated": "2026-11-07",
+   "metadata_date": "2026-11-08",
+   "first_seen": "2026-11-08T20:01:13.922998+08:00",
+   "last_seen": "2026-11-08T20:01:13.923008+08:00"
+  },
+  "blader/humanizer": {
+   "repo": "blader/humanizer",
+   "lists": [
+    "weekly"
+   ],
+   "stars": 66148,
+   "owner": "blader",
+   "homepage": "https://skills.sh/blader/humanizer",
+   "description": "Agent skill that removes signs of AI-generated writing from text",
+   "language": "Python",
+   "topics": [
+    "agent-skills",
+    "ai-humanizer",
+    "ai-writing",
+    "chatgpt",
+    "claude",
+    "claude-code",
+    "codex",
+    "cursor",
+    "humanize-ai-text",
+    "humanizer",
+    "llm",
+    "prompt-engineering",
+    "writing-tools"
+   ],
+   "updated": "2026-10-28",
+   "metadata_date": "2026-11-08",
+   "first_seen": "2026-11-08T20:01:16.267630+08:00",
+   "last_seen": "2026-11-08T20:01:16.267641+08:00"
   }
  },
- "last_collected": "2026-11-08T14:00:40.284275+08:00",
+ "last_collected": "2026-11-08T20:01:16.767741+08:00",
  "list_counts": {
-  "daily": 15,
-  "weekly": 18,
-  "monthly": 10
+  "daily": 9,
+  "weekly": 17,
+  "monthly": 12
  }
 }
