@@ -14954,5 +14954,108 @@
     }
    }
   ]
+ },
+ "daily:2026-11-08": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-08",
+   "new_count": 6,
+   "skipped": 192,
+   "categories": [
+    {
+     "name": "AI / 大模型",
+     "emoji": "🧠",
+     "items": [
+      {
+       "repo": "storytold/artcraft",
+       "url": "https://github.com/storytold/artcraft",
+       "owner": "storytold",
+       "stars": 39482,
+       "updated": "2026-11-07",
+       "lists": [
+        "daily",
+        "monthly",
+        "weekly"
+       ],
+       "desc": "ArtCraft 是一款面向艺术家、设计师和电影制作人的创意引擎，用 Rust 编写。它把 AI 图像生成与 3D 图形、视频制作流程结合起来，帮助创作者在同一个工具里完成从概念设计到动态画面的创作。比如电影分镜师可以先用文字描述生成场景图，再直接调整三维构图和镜头运动，省去在多个软件间来回切换的麻烦，让 AI 真正服务于有意图的艺术表达。",
+       "site": "https://getartcraft.com"
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "tailwindlabs/tailwindcss",
+       "url": "https://github.com/tailwindlabs/tailwindcss",
+       "owner": "tailwindlabs",
+       "stars": 98328,
+       "updated": "2026-11-06",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Tailwind CSS 是一个“原子化”CSS 框架，把样式拆成大量现成的小类名，比如 flex、p-4、text-center，直接写在 HTML 里就能拼出界面，不用再为每个组件手写 CSS。它解决了传统 CSS 类名混乱、样式复用难、改一处怕影响全局的问题，配合响应式前缀还能快速做适配。适合想高效搭建 UI、保持设计统一的开发者。",
+       "site": "https://tailwindcss.com/"
+      },
+      {
+       "repo": "meta/astryx",
+       "url": "https://github.com/meta/astryx",
+       "owner": "meta",
+       "stars": 14287,
+       "updated": "2026-11-07",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Astryx 是 Meta 开源的设计系统，用 TypeScript 编写，提供一套可完全定制的 UI 组件和设计规范，帮助开发者快速搭建风格统一的前端界面。它特别强调「Agent ready」，即组件和文档结构对 AI 编程助手友好，方便智能体理解并生成符合规范的代码。比如团队要做后台管理页面，可直接复用其组件并调整主题，省去从零设计样式的时间。",
+       "site": "http://astryx.atmeta.com"
+      },
+      {
+       "repo": "mbillow/localthings",
+       "url": "https://github.com/mbillow/localthings",
+       "owner": "mbillow",
+       "stars": 998,
+       "updated": "2026-11-07",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个 Home Assistant 自定义集成，让你通过家庭局域网直接控制三星家电，无需登录三星云账号。它基于 CoAP 协议与设备通信，并用 DTLS 加密保证安全，解决了官方云方案依赖外网、隐私顾虑和延迟问题。比如你可以在 Home Assistant 里本地开关三星洗衣机或空调，断网也能用，响应更快，数据不出家门。",
+       "site": "无"
+      },
+      {
+       "repo": "dsx-ai-factory/nvke",
+       "url": "https://github.com/dsx-ai-factory/nvke",
+       "owner": "dsx-ai-factory",
+       "stars": 448,
+       "updated": "2026-11-07",
+       "lists": [
+        "daily"
+       ],
+       "desc": "NVKE 是英伟达推出的 GPU Kubernetes 管理平台，专门用来在裸金属服务器上部署和运维带 GPU 的 K8s 集群。它基于 Cluster API 实现集群的自动化创建、扩缩容和生命周期管理，省去手动装系统、配驱动、装 GPU 插件的麻烦。比如一个 AI 团队要搭多机多卡训练集群，用 NVKE 就能像声明配置一样把 GPU 节点纳管起来，快速拉起可用的 Kubernetes 环境。",
+       "site": "https://docs.nvidia.com/nvke/"
+      }
+     ]
+    },
+    {
+     "name": "安全",
+     "emoji": "🔐",
+     "items": [
+      {
+       "repo": "sherlock-project/sherlock",
+       "url": "https://github.com/sherlock-project/sherlock",
+       "owner": "sherlock-project",
+       "stars": 100014,
+       "updated": "2026-11-07",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Sherlock 是一款开源情报（OSINT）工具，能根据一个用户名在各大社交网络批量搜索对应账号。你只需输入像「zhangsan」这样的用户名，它就会自动检查数百个平台是否存在该账号，并列出找到的链接。常用于网络安全调查、渗透测试前的信息收集、寻找网络喷子真实身份，或检查自己的用户名被哪些网站占用，省去逐个平台手动搜索的麻烦。",
+       "site": "https://sherlockproject.xyz"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
