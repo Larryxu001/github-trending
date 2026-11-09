@@ -84,7 +84,7 @@
  "EpicGames/raddebugger": "2026-11-07",
  "storytold/artcraft": "2026-11-08",
  "liquidslr/system-design-notes": "2026-10-09",
- "twostraws/SwiftUI-Agent-Skill": "2026-10-10",
+ "twostraws/SwiftUI-Agent-Skill": "2026-11-09",
  "BerriAI/litellm": "2026-10-10",
  "Robbyant/lingbot-map": "2026-10-10",
  "multica-ai/andrej-karpathy-skills": "2026-10-11",
@@ -216,5 +216,8 @@
  "meta/astryx": "2026-11-08",
  "mbillow/localthings": "2026-11-08",
  "dsx-ai-factory/nvke": "2026-11-08",
- "sherlock-project/sherlock": "2026-11-08"
+ "sherlock-project/sherlock": "2026-11-08",
+ "blader/humanizer": "2026-11-09",
+ "google-deepmind/mujoco": "2026-11-09",
+ "anthropics/claude-quickstarts": "2026-11-09"
 }
