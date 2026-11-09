@@ -15280,7 +15280,7 @@
   ]
  },
  "daily:2026-11-09": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-09",
    "new_count": 4,
@@ -15355,6 +15355,177 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-09 ｜ 今日新项目 4 个 ｜ 3 个分类 ｜ 30 天去重跳过 197 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-09/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 4 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [blader/humanizer](https://github.com/blader/humanizer)**　⭐ 66,315\n这是一个给 AI 写作助手用的技能插件，专门把文本里那些一眼就能看出是 AI 写的痕迹去掉，比如套话开头、机械排比、过度总结等。把它装进 Claude Code、Cursor 或 Codex 等工具后，AI 生成的文案会更像真人写的，适合需要发布博客、邮件或社交内容时使用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 blader ｜ 📅 更新 2026-10-28 ｜ 🏷 周榜 ｜ 🔗 [https://skills.sh/blader/humanizer](https://skills.sh/blader/humanizer)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [twostraws/SwiftUI-Agent-Skill](https://github.com/twostraws/SwiftUI-Agent-Skill)**　⭐ 6,058\n这是给 Claude Code、Codex 等 AI 编程工具用的 SwiftUI 技能包，相当于给 AI 装上一本苹果界面开发的“参考手册”。它让 AI 在写 SwiftUI 代码时更懂布局、状态管理和常见坑，减少瞎编 API 的情况。比如你让 AI 做一个带列表和导航的 iOS 页面，它会按 SwiftUI 的正确写法生成，而不是套用 React 或 UIKit 的思路。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 twostraws ｜ 📅 更新 2026-10-07 ｜ 🏷 日/周榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [google-deepmind/mujoco](https://github.com/google-deepmind/mujoco)**　⭐ 16,282\nMuJoCo 是一个通用的物理仿真引擎，专门模拟多关节机器人和物体之间的接触与运动。它解决了在真实世界中测试机器人成本高、风险大的问题，让研究人员能在电脑里快速搭建虚拟环境，比如训练四足机器人行走、测试机械臂抓取物体，或验证控制算法是否稳定。它计算精准、速度快，广泛用于机器人学、强化学习和生物力学研究。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 google-deepmind ｜ 📅 更新 2026-11-07 ｜ 🏷 日榜 ｜ 🔗 [https://mujoco.org](https://mujoco.org)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "orange",
+       "title": {
+        "tag": "plain_text",
+        "content": "📚 学习资源 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [anthropics/claude-quickstarts](https://github.com/anthropics/claude-quickstarts)**　⭐ 19,298\n这是 Anthropic 官方提供的 Claude API 入门示例合集，包含多个可直接运行的小项目，帮助开发者快速上手并搭建可部署的 AI 应用。它解决了新手不知从何入手的问题，比如通过客服机器人、文档问答等示例，演示如何调用模型、处理流式输出和集成工具，让开发者照着改就能做出自己的产品。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 anthropics ｜ 📅 更新 2026-11-06 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
