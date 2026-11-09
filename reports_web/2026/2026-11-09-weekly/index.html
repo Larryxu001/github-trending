@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 精选周报 · 2026-11-09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.038</span></div>
+    <h1>Github开源趋势精选周报</h1>
+    <div class="standfirst">本期收藏精选，保留备注与标签</div>
+    <div class="dateline"><b>2026 年 11 月 9 日</b>　·　第 38 期　·　本期共收录 <b>39</b> 个项目</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>开发工具与框架<span class="toc-n">7</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>markitdown</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>Scrapling</a><a class="toc-proj" href="#sec-1-3"><span class="toc-no">03</span>remotion</a><a class="toc-proj" href="#sec-1-4"><span class="toc-no">04</span>copyparty</a><a class="toc-proj" href="#sec-1-5"><span class="toc-no">05</span>jsdelivr</a><a class="toc-proj" href="#sec-1-6"><span class="toc-no">06</span>GithubStarsManager</a><a class="toc-proj" href="#sec-1-7"><span class="toc-no">07</span>handwriting-web</a></details><details><summary><span class="toc-no">02</span>Agent 基础设施与框架<span class="toc-n">5</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>orca</a><a class="toc-proj" href="#sec-2-2"><span class="toc-no">02</span>Agent-Reach</a><a class="toc-proj" href="#sec-2-3"><span class="toc-no">03</span>worldmonitor</a><a class="toc-proj" href="#sec-2-4"><span class="toc-no">04</span>camofox-browser</a><a class="toc-proj" href="#sec-2-5"><span class="toc-no">05</span>craft-anything</a></details><details><summary><span class="toc-no">03</span>AI / 大模型<span class="toc-n">7</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>ollama</a><a class="toc-proj" href="#sec-3-2"><span class="toc-no">02</span>marker</a><a class="toc-proj" href="#sec-3-3"><span class="toc-no">03</span>9router</a><a class="toc-proj" href="#sec-3-4"><span class="toc-no">04</span>magpie</a><a class="toc-proj" href="#sec-3-5"><span class="toc-no">05</span>wechat-bot</a><a class="toc-proj" href="#sec-3-6"><span class="toc-no">06</span>AIHOT</a><a class="toc-proj" href="#sec-3-7"><span class="toc-no">07</span>PriceAI</a></details><details><summary><span class="toc-no">04</span>移动 / 桌面应用<span class="toc-n">10</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>komi-store</a><a class="toc-proj" href="#sec-4-2"><span class="toc-no">02</span>rayburst</a><a class="toc-proj" href="#sec-4-3"><span class="toc-no">03</span>VidBee</a><a class="toc-proj" href="#sec-4-4"><span class="toc-no">04</span>RTranslator</a><a class="toc-proj" href="#sec-4-5"><span class="toc-no">05</span>tinycast</a><a class="toc-proj" href="#sec-4-6"><span class="toc-no">06</span>qingjian</a><a class="toc-proj" href="#sec-4-7"><span class="toc-no">07</span>Piik</a><a class="toc-proj" href="#sec-4-8"><span class="toc-no">08</span>edgeever</a><a class="toc-proj" href="#sec-4-9"><span class="toc-no">09</span>AppPorts</a><a class="toc-proj" href="#sec-4-10"><span class="toc-no">10</span>cicada</a></details><details><summary><span class="toc-no">05</span>Agent 技能与插件<span class="toc-n">6</span></summary><a class="toc-proj" href="#sec-5-1"><span class="toc-no">01</span>hypit</a><a class="toc-proj" href="#sec-5-2"><span class="toc-no">02</span>xiaohongshu-mcp</a><a class="toc-proj" href="#sec-5-3"><span class="toc-no">03</span>social-auto-upload</a><a class="toc-proj" href="#sec-5-4"><span class="toc-no">04</span>anything2explainer</a><a class="toc-proj" href="#sec-5-5"><span class="toc-no">05</span>rea-video</a><a class="toc-proj" href="#sec-5-6"><span class="toc-no">06</span>JobNavigator</a></details><details><summary><span class="toc-no">06</span>其他<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-6-1"><span class="toc-no">01</span>WechatOnCloud</a><a class="toc-proj" href="#sec-6-2"><span class="toc-no">02</span>wechat-selkies</a></details><details><summary><span class="toc-no">07</span>学习资源<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-7-1"><span class="toc-no">01</span>weekly</a><a class="toc-proj" href="#sec-7-2"><span class="toc-no">02</span>aicodinghunt</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">开发工具与框架</span><span class="sec-count">7 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></h3>
+            <span class="stars">★ 193,701</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;microsoft/markitdown&quot;, &quot;url&quot;: &quot;https://github.com/microsoft/markitdown&quot;, &quot;owner&quot;: &quot;microsoft&quot;, &quot;stars&quot;: 193701, &quot;desc&quot;: &quot;MarkItDown \u662f\u5fae\u8f6f\u5f00\u6e90\u7684 Python \u5de5\u5177\uff0c\u80fd\u628a PDF\u3001Word\u3001Excel\u3001PPT\u3001\u56fe\u7247\u3001\u97f3\u9891\u3001HTML\u3001ZIP \u7b49\u591a\u79cd\u6587\u4ef6\u7edf\u4e00\u8f6c\u6362\u6210 Markdown \u6587\u672c\uff0c\u4fdd\u7559\u6807\u9898\u3001\u5217\u8868\u3001\u8868\u683c\u3001\u94fe\u63a5\u7b49\u7ed3\u6784\u3002\u5b83\u4e3b\u8981\u670d\u52a1\u4e8e\u5927\u6a21\u578b\u548c\u6587\u672c\u5206\u6790\u573a\u666f\uff0c\u56e0\u4e3a Markdown \u63a5\u8fd1\u7eaf\u6587\u672c\u3001token \u6548\u7387\u9ad8\uff0c\u4e14\u4e3b\u6d41 LLM \u5929\u7136\u7406\u89e3\u3002\u4f8b\u5982\u628a\u4e00\u4efd PDF \u62a5\u544a\u8f6c\u6210 Markdown \u540e\uff0c\u53ef\u76f4\u63a5\u5582\u7ed9 GPT \u505a\u6458\u8981\u6216\u95ee\u7b54\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">MarkItDown 是微软开源的 Python 工具，能把 PDF、Word、Excel、PPT、图片、音频、HTML、ZIP 等多种文件统一转换成 Markdown 文本，保留标题、列表、表格、链接等结构。它主要服务于大模型和文本分析场景，因为 Markdown 接近纯文本、token 效率高，且主流 LLM 天然理解。例如把一份 PDF 报告转成 Markdown 后，可直接喂给 GPT 做摘要或问答。</p>
+          
+          <div class="byline">
+            <span>microsoft</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/microsoft/markitdown.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/microsoft/markitdown">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/D4Vinci/Scrapling" target="_blank">D4Vinci/Scrapling</a></h3>
+            <span class="stars">★ 92,884</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;D4Vinci/Scrapling&quot;, &quot;url&quot;: &quot;https://github.com/D4Vinci/Scrapling&quot;, &quot;owner&quot;: &quot;D4Vinci&quot;, &quot;stars&quot;: 92884, &quot;desc&quot;: &quot;Scrapling \u662f\u4e00\u4e2a Python \u7f51\u9875\u6293\u53d6\u6846\u67b6\uff0c\u628a\u5feb\u901f HTTP \u8bf7\u6c42\u3001\u9690\u8eab\u6d4f\u89c8\u5668\u3001JavaScript \u6e32\u67d3\u3001CSS/XPath \u89e3\u6790\u548c\u5e76\u53d1\u722c\u866b\u6574\u5408\u5230\u4e00\u4e2a\u5e93\u91cc\u3002\u5b83\u80fd\u7ed5\u8fc7 Cloudflare \u7b49\u53cd\u722c\u673a\u5236\uff0c\u652f\u6301\u4ee3\u7406\u8f6e\u6362\u3001\u81ea\u52a8\u91cd\u8bd5\u3001\u65ad\u70b9\u7eed\u722c\u548c\u6570\u636e\u5bfc\u51fa\uff0c\u8fd8\u80fd\u901a\u8fc7 MCP \u670d\u52a1\u5668\u8ba9 AI \u4ee3\u7406\u76f4\u63a5\u6293\u53d6\u7f51\u9875\u3002\u4f8b\u5982\u51e0\u884c\u4ee3\u7801\u5c31\u80fd\u6293\u53d6\u540d\u8a00\u7f51\u7ad9\u7684\u4f5c\u8005\u548c\u5185\u5bb9\u5e76\u4fdd\u5b58\u4e3a JSON\uff0c\u9002\u5408\u4ece\u5355\u9875\u91c7\u96c6\u5230\u6574\u7ad9\u722c\u53d6\u7684\u5404\u79cd\u573a\u666f\u3002&quot;, &quot;site&quot;: &quot;https://scrapling.readthedocs.io/en/latest/&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Scrapling 是一个 Python 网页抓取框架，把快速 HTTP 请求、隐身浏览器、JavaScript 渲染、CSS/XPath 解析和并发爬虫整合到一个库里。它能绕过 Cloudflare 等反爬机制，支持代理轮换、自动重试、断点续爬和数据导出，还能通过 MCP 服务器让 AI 代理直接抓取网页。例如几行代码就能抓取名言网站的作者和内容并保存为 JSON，适合从单页采集到整站爬取的各种场景。</p>
+          
+          <div class="byline">
+            <span>D4Vinci</span><i>·</i>
+            <span>更新于 2026-11-03</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://scrapling.readthedocs.io/en/latest/" target="_blank">https://scrapling.readthedocs.io/en/latest/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/D4Vinci/Scrapling.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/D4Vinci/Scrapling">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/remotion-dev/remotion" target="_blank">remotion-dev/remotion</a></h3>
+            <span class="stars">★ 70,955</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;remotion-dev/remotion&quot;, &quot;url&quot;: &quot;https://github.com/remotion-dev/remotion&quot;, &quot;owner&quot;: &quot;remotion-dev&quot;, &quot;stars&quot;: 70955, &quot;desc&quot;: &quot;Remotion \u662f\u4e00\u4e2a\u7528 React \u7f16\u5199\u89c6\u9891\u7684\u5f00\u6e90\u6846\u67b6\uff0c\u8ba9\u4f60\u50cf\u5199\u7f51\u9875\u4e00\u6837\u7528\u4ee3\u7801\u751f\u6210\u89c6\u9891\u3002\u5b83\u628a\u52a8\u753b\u3001\u5b57\u5e55\u3001\u97f3\u6548\u7b49\u505a\u6210\u53ef\u590d\u7528\u7684 React \u7ec4\u4ef6\uff0c\u652f\u6301\u5728\u6d4f\u89c8\u5668\u91cc\u5b9e\u65f6\u9884\u89c8\u548c\u7f16\u8f91\uff0c\u4e5f\u80fd\u901a\u8fc7 Node.js \u6216\u4e91\u7aef\u6279\u91cf\u6e32\u67d3\u3002\u9002\u5408\u9700\u8981\u81ea\u52a8\u5316\u751f\u4ea7\u89c6\u9891\u7684\u573a\u666f\uff0c\u6bd4\u5982\u4e3a\u6210\u5343\u4e0a\u4e07\u4e2a\u5546\u54c1\u5404\u751f\u6210\u4e00\u6bb5\u5e26\u4ef7\u683c\u548c\u56fe\u7247\u7684\u77ed\u89c6\u9891\uff0c\u6216\u642d\u5efa\u81ea\u5df1\u7684\u89c6\u9891\u7f16\u8f91\u5668\u3002&quot;, &quot;site&quot;: &quot;https://remotion.dev&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Remotion 是一个用 React 编写视频的开源框架，让你像写网页一样用代码生成视频。它把动画、字幕、音效等做成可复用的 React 组件，支持在浏览器里实时预览和编辑，也能通过 Node.js 或云端批量渲染。适合需要自动化生产视频的场景，比如为成千上万个商品各生成一段带价格和图片的短视频，或搭建自己的视频编辑器。</p>
+          
+          <div class="byline">
+            <span>remotion-dev</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://remotion.dev" target="_blank">https://remotion.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/remotion-dev/remotion.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/remotion-dev/remotion">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/9001/copyparty" target="_blank">9001/copyparty</a></h3>
+            <span class="stars">★ 47,250</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;9001/copyparty&quot;, &quot;url&quot;: &quot;https://github.com/9001/copyparty&quot;, &quot;owner&quot;: &quot;9001&quot;, &quot;stars&quot;: 47250, &quot;desc&quot;: &quot;copyparty \u662f\u4e00\u4e2a\u7528 Python \u5199\u7684\u4fbf\u643a\u6587\u4ef6\u670d\u52a1\u5668\uff0c\u628a\u51e0\u4e4e\u4efb\u4f55\u8bbe\u5907\u53d8\u6210\u652f\u6301\u65ad\u70b9\u7eed\u4f20\u7684\u6587\u4ef6\u5171\u4eab\u4e2d\u5fc3\u3002\u5b83\u53ea\u9700 Python \u5c31\u80fd\u8dd1\uff0c\u540c\u65f6\u63d0\u4f9b\u7f51\u9875\u3001WebDAV\u3001FTP\u3001SFTP\u3001TFTP \u7b49\u591a\u79cd\u8bbf\u95ee\u65b9\u5f0f\uff0c\u8fd8\u5e26\u5a92\u4f53\u7d22\u5f15\u3001\u7f29\u7565\u56fe\u3001\u53bb\u91cd\u548c\u641c\u7d22\u529f\u80fd\u3002\u6bd4\u5982\u4f60\u53ef\u4ee5\u628a\u65e7\u7b14\u8bb0\u672c\u6216\u6811\u8393\u6d3e\u53d8\u6210\u5bb6\u5ead NAS\uff0c\u7528\u6d4f\u89c8\u5668\u62d6\u62fd\u4e0a\u4f20\u4e0b\u8f7d\uff0c\u4e5f\u80fd\u7528\u624b\u673a App \u4e00\u952e\u4f20\u6587\u4ef6\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">copyparty 是一个用 Python 写的便携文件服务器，把几乎任何设备变成支持断点续传的文件共享中心。它只需 Python 就能跑，同时提供网页、WebDAV、FTP、SFTP、TFTP 等多种访问方式，还带媒体索引、缩略图、去重和搜索功能。比如你可以把旧笔记本或树莓派变成家庭 NAS，用浏览器拖拽上传下载，也能用手机 App 一键传文件。</p>
+          
+          <div class="byline">
+            <span>9001</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/9001/copyparty.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/9001/copyparty">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/jsdelivr/jsdelivr" target="_blank">jsdelivr/jsdelivr</a></h3>
+            <span class="stars">★ 6,417</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;jsdelivr/jsdelivr&quot;, &quot;url&quot;: &quot;https://github.com/jsdelivr/jsdelivr&quot;, &quot;owner&quot;: &quot;jsdelivr&quot;, &quot;stars&quot;: 6417, &quot;desc&quot;: &quot;jsDelivr \u662f\u4e00\u4e2a\u514d\u8d39\u3001\u5feb\u901f\u3001\u53ef\u9760\u7684\u5f00\u6e90 CDN\uff0c\u4e13\u95e8\u4e3a npm\u3001GitHub \u548c JavaScript \u751f\u6001\u63d0\u4f9b\u6587\u4ef6\u52a0\u901f\u5206\u53d1\u3002\u5b83\u89e3\u51b3\u7684\u662f\u5f00\u6e90\u5e93\u52a0\u8f7d\u6162\u3001\u4e0d\u7a33\u5b9a\u3001\u751a\u81f3\u56e0\u4f5c\u8005\u5220\u5305\u5bfc\u81f4\u7f51\u7ad9\u6302\u6389\u7684\u95ee\u9898\uff1a\u53ea\u8981\u6587\u4ef6\u88ab\u8bbf\u95ee\u8fc7\u4e00\u6b21\uff0c\u5c31\u4f1a\u6c38\u4e45\u7f13\u5b58\uff0c\u5373\u4f7f npm \u5305\u88ab\u5220\u9664\u4e5f\u80fd\u7ee7\u7eed\u63d0\u4f9b\u3002\u6bd4\u5982\u4f60\u5728\u7f51\u9875\u91cc\u5f15\u7528 jQuery\uff0c\u53ea\u9700\u5199 /npm/jquery@3/dist/jquery.min.js\uff0c\u5c31\u80fd\u4ece\u5168\u7403\u8282\u70b9\u9ad8\u901f\u52a0\u8f7d\uff0c\u8fd8\u652f\u6301\u81ea\u52a8\u538b\u7f29\u3001ES \u6a21\u5757\u548c\u7248\u672c\u56de\u9000\u3002&quot;, &quot;site&quot;: &quot;https://www.jsdelivr.com&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">jsDelivr 是一个免费、快速、可靠的开源 CDN，专门为 npm、GitHub 和 JavaScript 生态提供文件加速分发。它解决的是开源库加载慢、不稳定、甚至因作者删包导致网站挂掉的问题：只要文件被访问过一次，就会永久缓存，即使 npm 包被删除也能继续提供。比如你在网页里引用 jQuery，只需写 /npm/jquery@3/dist/jquery.min.js，就能从全球节点高速加载，还支持自动压缩、ES 模块和版本回退。</p>
+          
+          <div class="byline">
+            <span>jsdelivr</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://www.jsdelivr.com" target="_blank">https://www.jsdelivr.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/jsdelivr/jsdelivr.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/jsdelivr/jsdelivr">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-6">
+          <div class="item-head">
+            <span class="no">06</span>
+            <h3 class="title"><a href="https://github.com/AmintaCCCP/GithubStarsManager" target="_blank">AmintaCCCP/GithubStarsManager</a></h3>
+            <span class="stars">★ 3,800</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;AmintaCCCP/GithubStarsManager&quot;, &quot;url&quot;: &quot;https://github.com/AmintaCCCP/GithubStarsManager&quot;, &quot;owner&quot;: &quot;AmintaCCCP&quot;, &quot;stars&quot;: 3800, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u5e2e\u4f60\u7ba1\u7406 GitHub \u661f\u6807\u4ed3\u5e93\u7684\u684c\u9762\u5de5\u5177\uff1a\u5b83\u81ea\u52a8\u540c\u6b65\u4f60\u70b9\u8fc7\u661f\u7684\u9879\u76ee\uff0c\u7528 AI \u751f\u6210\u6458\u8981\u3001\u6807\u7b7e\u548c\u5206\u7c7b\uff0c\u8fd8\u80fd\u7528\u81ea\u7136\u8bed\u8a00\u8bed\u4e49\u641c\u7d22\uff0c\u6bd4\u5982\u641c\u300c\u505a\u89c6\u9891\u526a\u8f91\u7684\u5e93\u300d\u5c31\u80fd\u627e\u5230\u76f8\u5173\u4ed3\u5e93\u3002\u6b64\u5916\u8fd8\u652f\u6301\u7248\u672c\u53d1\u5e03\u8ffd\u8e2a\u3001\u4e00\u952e\u4e0b\u8f7d\u3001\u4ed3\u5e93\u95ee\u7b54\u52a9\u624b\u548c MCP \u63a5\u53e3\uff0c\u6570\u636e\u5168\u90e8\u4fdd\u5b58\u5728\u672c\u5730\uff0c\u89e3\u51b3\u300c\u661f\u6807\u4e00\u5806\u5374\u627e\u4e0d\u5230\u300d\u7684\u75db\u70b9\u3002&quot;, &quot;site&quot;: &quot;https://gsm.aminta.top&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个帮你管理 GitHub 星标仓库的桌面工具：它自动同步你点过星的项目，用 AI 生成摘要、标签和分类，还能用自然语言语义搜索，比如搜「做视频剪辑的库」就能找到相关仓库。此外还支持版本发布追踪、一键下载、仓库问答助手和 MCP 接口，数据全部保存在本地，解决「星标一堆却找不到」的痛点。</p>
+          
+          <div class="byline">
+            <span>AmintaCCCP</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://gsm.aminta.top" target="_blank">https://gsm.aminta.top</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/AmintaCCCP/GithubStarsManager.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/AmintaCCCP/GithubStarsManager">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-7">
+          <div class="item-head">
+            <span class="no">07</span>
+            <h3 class="title"><a href="https://github.com/14790897/handwriting-web" target="_blank">14790897/handwriting-web</a></h3>
+            <span class="stars">★ 1,474</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;14790897/handwriting-web&quot;, &quot;url&quot;: &quot;https://github.com/14790897/handwriting-web&quot;, &quot;owner&quot;: &quot;14790897&quot;, &quot;stars&quot;: 1474, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u628a\u666e\u901a\u6587\u672c\u8f6c\u6362\u6210\u903c\u771f\u624b\u5199\u56fe\u7247\u7684\u7f51\u9875\u5de5\u5177\u3002\u4f60\u53ea\u9700\u7c98\u8d34\u6216\u4e0a\u4f20\u6587\u5b57\uff08\u652f\u6301 PDF\u3001Word \u7b49\u6587\u4ef6\u63d0\u53d6\uff09\uff0c\u518d\u8c03\u4e00\u8c03\u8fb9\u8ddd\u3001\u5b57\u7b26\u968f\u673a\u6296\u52a8\u3001\u7b14\u753b\u65cb\u8f6c\u3001\u58a8\u6c34\u6df1\u6d45\u548c\u6d82\u6539\u75d5\u8ff9\u7b49\u53c2\u6570\uff0c\u5c31\u80fd\u751f\u6210\u770b\u8d77\u6765\u50cf\u771f\u4eba\u624b\u5199\u7684\u56fe\u7247\uff0c\u8fd8\u80fd\u4e0a\u4f20\u81ea\u5b9a\u4e49\u5b57\u4f53\u548c\u80cc\u666f\u7eb8\u3002\u9002\u5408\u9700\u8981\u4ea4\u624b\u5199\u4f5c\u4e1a\u3001\u5199\u611f\u8c22\u4fe1\u6216\u5236\u4f5c\u4e2a\u6027\u5316\u624b\u5199\u7d20\u6750\u7684\u573a\u666f\uff0c\u4f8b\u5982\u628a\u4e00\u7bc7\u8bba\u6587\u4e00\u952e\u53d8\u6210\u624b\u5199\u7a3f\u5e76\u5bfc\u51fa PDF\u3002&quot;, &quot;site&quot;: &quot;https://handwrite.sixiangjia.de&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个把普通文本转换成逼真手写图片的网页工具。你只需粘贴或上传文字（支持 PDF、Word 等文件提取），再调一调边距、字符随机抖动、笔画旋转、墨水深浅和涂改痕迹等参数，就能生成看起来像真人手写的图片，还能上传自定义字体和背景纸。适合需要交手写作业、写感谢信或制作个性化手写素材的场景，例如把一篇论文一键变成手写稿并导出 PDF。</p>
+          
+          <div class="byline">
+            <span>14790897</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://handwrite.sixiangjia.de" target="_blank">https://handwrite.sixiangjia.de</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/14790897/handwriting-web.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/14790897/handwriting-web">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">Agent 基础设施与框架</span><span class="sec-count">5 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a></h3>
+            <span class="stars">★ 116,319</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;stablyai/orca&quot;, &quot;url&quot;: &quot;https://github.com/stablyai/orca&quot;, &quot;owner&quot;: &quot;stablyai&quot;, &quot;stars&quot;: 116319, &quot;desc&quot;: &quot;Orca \u662f\u4e00\u4e2a\u9762\u5411 AI \u7f16\u7a0b Agent \u7684\u7f16\u6392\u5de5\u4f5c\u53f0\uff0c\u8ba9\u4f60\u540c\u65f6\u8fd0\u884c Claude Code\u3001Codex\u3001OpenCode \u7b49\u591a\u4e2a\u547d\u4ee4\u884c Agent\uff0c\u6bcf\u4e2a Agent \u5728\u72ec\u7acb\u7684 git worktree \u4e2d\u4e92\u4e0d\u5e72\u6270\u3002\u5b83\u89e3\u51b3\u4e86\u591a Agent \u5e76\u884c\u65f6\u6df7\u4e71\u3001\u96be\u4ee5\u5bf9\u6bd4\u548c\u8ffd\u8e2a\u7684\u95ee\u9898\uff1a\u6bd4\u5982\u628a\u540c\u4e00\u4e2a\u9700\u6c42\u5206\u53d1\u7ed9\u4e94\u4e2a Agent \u5404\u5199\u4e00\u7248\uff0c\u518d\u6bd4\u8f83\u7ed3\u679c\u5408\u5e76\u6700\u4f18\u7684\u3002\u8fd8\u63d0\u4f9b\u7ec8\u7aef\u5206\u5c4f\u3001\u624b\u673a\u7aef\u76d1\u63a7\u3001SSH \u8fdc\u7a0b\u8fd0\u884c\u3001GitHub/Linear \u96c6\u6210\u548c CLI \u811a\u672c\u5316\u7b49\u80fd\u529b\uff0c\u9002\u5408\u5e0c\u671b\u89c4\u6a21\u5316\u4f7f\u7528\u7f16\u7a0b Agent \u7684\u5f00\u53d1\u8005\u3002&quot;, &quot;site&quot;: &quot;https://orca.dev&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Orca 是一个面向 AI 编程 Agent 的编排工作台，让你同时运行 Claude Code、Codex、OpenCode 等多个命令行 Agent，每个 Agent 在独立的 git worktree 中互不干扰。它解决了多 Agent 并行时混乱、难以对比和追踪的问题：比如把同一个需求分发给五个 Agent 各写一版，再比较结果合并最优的。还提供终端分屏、手机端监控、SSH 远程运行、GitHub/Linear 集成和 CLI 脚本化等能力，适合希望规模化使用编程 Agent 的开发者。</p>
+          
+          <div class="byline">
+            <span>stablyai</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://orca.dev" target="_blank">https://orca.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/stablyai/orca.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/stablyai/orca">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a></h3>
+            <span class="stars">★ 109,068</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Panniantong/Agent-Reach&quot;, &quot;url&quot;: &quot;https://github.com/Panniantong/Agent-Reach&quot;, &quot;owner&quot;: &quot;Panniantong&quot;, &quot;stars&quot;: 109068, &quot;desc&quot;: &quot;Agent Reach \u662f\u4e00\u4e2a\u7ed9 AI Agent \u8865\u4e0a\u300c\u4e0a\u7f51\u80fd\u529b\u300d\u7684\u547d\u4ee4\u884c\u5de5\u5177\u3002Claude Code\u3001Cursor \u8fd9\u7c7b Agent \u81ea\u5e26\u641c\u7d22\uff0c\u5374\u8bfb\u4e0d\u5230\u9700\u8981\u767b\u5f55\u6216\u4e2d\u6587\u5e73\u53f0\u7684\u5185\u5bb9\u3002\u5b83\u628a B\u7ad9\u3001\u5c0f\u7ea2\u4e66\u3001X\u3001Reddit\u3001YouTube\u3001GitHub\u3001V2EX \u7b49\u5e73\u53f0\u7684\u6293\u53d6\u5de5\u5177\u7edf\u4e00\u88c5\u597d\uff0cAgent \u4e00\u6761\u547d\u4ee4\u5c31\u80fd\u641c\u7d22\u548c\u9605\u8bfb\uff0c\u6bd4\u5982 agent-reach bilibili search\u300c\u5927\u6a21\u578b\u300d\u76f4\u63a5\u62ff\u5230\u89c6\u9891\u4fe1\u606f\u4e0e\u5b57\u5e55\uff0c\u5168\u7a0b\u96f6 API \u8d39\u7528\uff0c\u4e14\u53ea\u8bfb\u4e0d\u5199\u3001\u4e0d\u78b0\u4f60\u7684\u5bc6\u7801\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Agent Reach 是一个给 AI Agent 补上「上网能力」的命令行工具。Claude Code、Cursor 这类 Agent 自带搜索，却读不到需要登录或中文平台的内容。它把 B站、小红书、X、Reddit、YouTube、GitHub、V2EX 等平台的抓取工具统一装好，Agent 一条命令就能搜索和阅读，比如 agent-reach bilibili search「大模型」直接拿到视频信息与字幕，全程零 API 费用，且只读不写、不碰你的密码。</p>
+          
+          <div class="byline">
+            <span>Panniantong</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Panniantong/Agent-Reach.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Panniantong/Agent-Reach">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></h3>
+            <span class="stars">★ 90,094</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;koala73/worldmonitor&quot;, &quot;url&quot;: &quot;https://github.com/koala73/worldmonitor&quot;, &quot;owner&quot;: &quot;koala73&quot;, &quot;stars&quot;: 90094, &quot;desc&quot;: &quot;World Monitor \u662f\u4e00\u4e2a\u5b9e\u65f6\u5168\u7403\u60c5\u62a5\u4eea\u8868\u76d8\uff0c\u628a\u65b0\u95fb\u805a\u5408\u3001\u5730\u7f18\u653f\u6cbb\u76d1\u63a7\u548c\u57fa\u7840\u8bbe\u65bd\u8ffd\u8e2a\u6574\u5408\u5230\u4e00\u4e2a\u754c\u9762\u91cc\u3002\u5b83\u7528 AI \u81ea\u52a8\u6c47\u603b\u591a\u6e90\u65b0\u95fb\u751f\u6210\u7b80\u62a5\uff0c\u8fd8\u80fd\u628a\u519b\u4e8b\u3001\u7ecf\u6d4e\u3001\u707e\u5bb3\u7b49\u4fe1\u53f7\u4ea4\u53c9\u5173\u8054\uff0c\u5e2e\u52a9\u7528\u6237\u5feb\u901f\u5224\u65ad\u5c40\u52bf\u3002\u6bd4\u5982\u60f3\u4e86\u89e3\u67d0\u56fd\u662f\u5426\u52a8\u8361\uff0c\u5b83\u80fd\u7ed9\u51fa\u56fd\u5bb6\u4e0d\u7a33\u5b9a\u6307\u6570\u548c 24 \u5c0f\u65f6\u53d8\u5316\u3002\u9879\u76ee\u8fd8\u63d0\u4f9b MCP \u670d\u52a1\u5668\u3001CLI \u548c\u591a\u79cd\u8bed\u8a00 SDK\uff0c\u65b9\u4fbf AI \u4ee3\u7406\u548c\u811a\u672c\u76f4\u63a5\u8c03\u7528\u8fd9\u4e9b\u60c5\u62a5\u6570\u636e\u3002&quot;, &quot;site&quot;: &quot;https://worldmonitor.app&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">World Monitor 是一个实时全球情报仪表盘，把新闻聚合、地缘政治监控和基础设施追踪整合到一个界面里。它用 AI 自动汇总多源新闻生成简报，还能把军事、经济、灾害等信号交叉关联，帮助用户快速判断局势。比如想了解某国是否动荡，它能给出国家不稳定指数和 24 小时变化。项目还提供 MCP 服务器、CLI 和多种语言 SDK，方便 AI 代理和脚本直接调用这些情报数据。</p>
+          
+          <div class="byline">
+            <span>koala73</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://worldmonitor.app" target="_blank">https://worldmonitor.app</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/koala73/worldmonitor.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/koala73/worldmonitor">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/jo-inc/camofox-browser" target="_blank">jo-inc/camofox-browser</a></h3>
+            <span class="stars">★ 12,138</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;jo-inc/camofox-browser&quot;, &quot;url&quot;: &quot;https://github.com/jo-inc/camofox-browser&quot;, &quot;owner&quot;: &quot;jo-inc&quot;, &quot;stars&quot;: 12138, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u4e13\u4e3a AI \u667a\u80fd\u4f53\u6253\u9020\u7684\u9690\u8eab\u65e0\u5934\u6d4f\u89c8\u5668\u670d\u52a1\uff0c\u57fa\u4e8e Camoufox\uff08\u5728 C++ \u5c42\u4f2a\u88c5\u6307\u7eb9\u7684 Firefox \u5206\u652f\uff09\uff0c\u80fd\u7ed5\u8fc7 Cloudflare \u7b49\u53cd\u722c\u548c\u673a\u5668\u4eba\u68c0\u6d4b\u3002\u5b83\u628a\u6d4f\u89c8\u5668\u5c01\u88c5\u6210 REST API\uff0c\u7528\u65e0\u969c\u788d\u5feb\u7167\u4ee3\u66ff\u81c3\u80bf HTML\uff0c\u5143\u7d20\u7528 e1\u3001e2 \u7a33\u5b9a\u5f15\u7528\uff0c\u65b9\u4fbf\u667a\u80fd\u4f53\u70b9\u51fb\u64cd\u4f5c\uff0c\u8fd8\u652f\u6301 Cookie \u5bfc\u5165\u3001\u4ee3\u7406\u3001\u622a\u56fe\u548c YouTube \u5b57\u5e55\u63d0\u53d6\u3002\u4f8b\u5982\u8ba9\u667a\u80fd\u4f53\u6293\u53d6\u88ab Cloudflare \u4fdd\u62a4\u7684\u7f51\u7ad9\u65f6\uff0c\u666e\u901a Playwright \u4f1a\u88ab\u62e6\u622a\uff0c\u800c\u5b83\u80fd\u6b63\u5e38\u8bbf\u95ee\u3002&quot;, &quot;site&quot;: &quot;https://github.com/jo-inc/camofox-browser#readme&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个专为 AI 智能体打造的隐身无头浏览器服务，基于 Camoufox（在 C++ 层伪装指纹的 Firefox 分支），能绕过 Cloudflare 等反爬和机器人检测。它把浏览器封装成 REST API，用无障碍快照代替臃肿 HTML，元素用 e1、e2 稳定引用，方便智能体点击操作，还支持 Cookie 导入、代理、截图和 YouTube 字幕提取。例如让智能体抓取被 Cloudflare 保护的网站时，普通 Playwright 会被拦截，而它能正常访问。</p>
+          
+          <div class="byline">
+            <span>jo-inc</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://github.com/jo-inc/camofox-browser#readme" target="_blank">https://github.com/jo-inc/camofox-browser#readme</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/jo-inc/camofox-browser.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/jo-inc/camofox-browser">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/storytold/craft-anything" target="_blank">storytold/craft-anything</a></h3>
+            <span class="stars">★ 5,092</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;storytold/craft-anything&quot;, &quot;url&quot;: &quot;https://github.com/storytold/craft-anything&quot;, &quot;owner&quot;: &quot;storytold&quot;, &quot;stars&quot;: 5092, &quot;desc&quot;: &quot;Craft Anything \u662f\u4e00\u4e2a\u7eaf Rust \u7f16\u5199\u7684\u5f00\u6e90\u9006\u5411\u5de5\u7a0b\u4e0e\u91cd\u5efa\u5f15\u64ce\uff1a\u4f60\u6307\u5b9a\u4e00\u4e2a\u7f51\u7ad9\u3001\u5e94\u7528\u6216\u6e38\u620f\uff0c\u5b83\u5148\u7528\u771f\u5b9e\u68c0\u6d4b\u5de5\u5177\u5206\u6790\u539f\u4f5c\u7684\u9875\u9762\u3001\u4ee3\u7801\u548c\u8fd0\u884c\u65b9\u5f0f\uff0c\u518d\u8ba9 Claude Code \u7b49\u7f16\u7a0b\u667a\u80fd\u4f53\u6309\u4f60\u6307\u5b9a\u7684\u6280\u672f\u6808\u751f\u6210\u4e00\u4e2a\u65b0\u9879\u76ee\uff0c\u5e76\u81ea\u52a8\u5bf9\u6bd4\u539f\u4f5c\u53cd\u590d\u4fee\u6b63\u3002\u5b83\u63d0\u4f9b 314 \u4e2a\u5de5\u5177\uff0c\u6bcf\u4e2a\u90fd\u662f CLI \u547d\u4ee4\u548c MCP \u5de5\u5177\uff0c\u53ef\u88ab\u4efb\u610f\u667a\u80fd\u4f53\u8c03\u7528\uff1b\u4f8b\u5982\u8f93\u5165\u7f51\u5740\u5e76\u8bf4\u300c\u91cd\u5efa\u8fd9\u4e2a\u7f51\u7ad9\u300d\uff0c\u5c31\u80fd\u5f97\u5230\u53ef\u8fd0\u884c\u7684\u65b0\u7248\u672c\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Craft Anything 是一个纯 Rust 编写的开源逆向工程与重建引擎：你指定一个网站、应用或游戏，它先用真实检测工具分析原作的页面、代码和运行方式，再让 Claude Code 等编程智能体按你指定的技术栈生成一个新项目，并自动对比原作反复修正。它提供 314 个工具，每个都是 CLI 命令和 MCP 工具，可被任意智能体调用；例如输入网址并说「重建这个网站」，就能得到可运行的新版本。</p>
+          
+          <div class="byline">
+            <span>storytold</span><i>·</i>
+            <span>更新于 2026-11-03</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/storytold/craft-anything.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/storytold/craft-anything">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">AI / 大模型</span><span class="sec-count">7 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/ollama/ollama" target="_blank">ollama/ollama</a></h3>
+            <span class="stars">★ 185,729</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;ollama/ollama&quot;, &quot;url&quot;: &quot;https://github.com/ollama/ollama&quot;, &quot;owner&quot;: &quot;ollama&quot;, &quot;stars&quot;: 185729, &quot;desc&quot;: &quot;Ollama \u662f\u4e00\u4e2a\u8ba9\u4f60\u5728\u81ea\u5df1\u7535\u8111\u4e0a\u8f7b\u677e\u8fd0\u884c\u5f00\u6e90\u5927\u6a21\u578b\u7684\u5de5\u5177\uff0c\u89e3\u51b3\u4e86\u672c\u5730\u90e8\u7f72\u5927\u6a21\u578b\u95e8\u69db\u9ad8\u3001\u914d\u7f6e\u9ebb\u70e6\u7684\u95ee\u9898\u3002\u53ea\u9700\u4e00\u6761\u547d\u4ee4\uff08\u5982 ollama run gemma4\uff09\uff0c\u5c31\u80fd\u4e0b\u8f7d\u5e76\u5bf9\u8bdd Gemma\u3001DeepSeek\u3001Qwen \u7b49\u6a21\u578b\uff0c\u6570\u636e\u5b8c\u5168\u7559\u5728\u672c\u5730\uff0c\u4fdd\u62a4\u9690\u79c1\u3002\u5b83\u8fd8\u63d0\u4f9b REST API \u548c Python\u3001JavaScript \u5e93\uff0c\u65b9\u4fbf\u5f00\u53d1\u8005\u628a\u672c\u5730\u6a21\u578b\u63a5\u5165\u81ea\u5df1\u7684\u5e94\u7528\u6216 Claude Code\u3001Copilot \u7b49\u7f16\u7a0b\u5de5\u5177\u3002&quot;, &quot;site&quot;: &quot;https://ollama.com&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Ollama 是一个让你在自己电脑上轻松运行开源大模型的工具，解决了本地部署大模型门槛高、配置麻烦的问题。只需一条命令（如 ollama run gemma4），就能下载并对话 Gemma、DeepSeek、Qwen 等模型，数据完全留在本地，保护隐私。它还提供 REST API 和 Python、JavaScript 库，方便开发者把本地模型接入自己的应用或 Claude Code、Copilot 等编程工具。</p>
+          
+          <div class="byline">
+            <span>ollama</span><i>·</i>
+            <span>更新于 2026-11-03</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://ollama.com" target="_blank">https://ollama.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/ollama/ollama.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/ollama/ollama">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/datalab-to/marker" target="_blank">datalab-to/marker</a></h3>
+            <span class="stars">★ 40,785</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;datalab-to/marker&quot;, &quot;url&quot;: &quot;https://github.com/datalab-to/marker&quot;, &quot;owner&quot;: &quot;datalab-to&quot;, &quot;stars&quot;: 40785, &quot;desc&quot;: &quot;Marker \u662f\u4e00\u4e2a\u9ad8\u7cbe\u5ea6\u7684\u6587\u6863\u8f6c\u6362\u5de5\u5177\uff0c\u80fd\u628a PDF\u3001\u56fe\u7247\u3001PPTX\u3001DOCX \u7b49\u6587\u4ef6\u5feb\u901f\u8f6c\u6210 Markdown\u3001JSON\u3001HTML \u6216\u5206\u5757\u6587\u672c\u3002\u5b83\u64c5\u957f\u5904\u7406\u8868\u683c\u3001\u516c\u5f0f\u3001\u591a\u680f\u6392\u7248\u548c\u626b\u63cf\u4ef6\uff0c\u8fd8\u80fd\u81ea\u52a8\u53bb\u6389\u9875\u7709\u9875\u811a\u3001\u63d0\u53d6\u56fe\u7247\u3002\u6bd4\u5982\u628a\u4e00\u7bc7 arXiv \u8bba\u6587 PDF \u8f6c\u6210\u7ed3\u6784\u6e05\u6670\u7684 Markdown\uff0c\u65b9\u4fbf\u540e\u7eed\u68c0\u7d22\u6216\u5582\u7ed9\u5927\u6a21\u578b\u3002\u53ef\u9009\u63a5\u5165 LLM \u8fdb\u4e00\u6b65\u63d0\u5347\u51c6\u786e\u7387\uff0c\u652f\u6301 GPU\u3001CPU \u548c MPS \u8fd0\u884c\u3002&quot;, &quot;site&quot;: &quot;https://www.datalab.to&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Marker 是一个高精度的文档转换工具，能把 PDF、图片、PPTX、DOCX 等文件快速转成 Markdown、JSON、HTML 或分块文本。它擅长处理表格、公式、多栏排版和扫描件，还能自动去掉页眉页脚、提取图片。比如把一篇 arXiv 论文 PDF 转成结构清晰的 Markdown，方便后续检索或喂给大模型。可选接入 LLM 进一步提升准确率，支持 GPU、CPU 和 MPS 运行。</p>
+          
+          <div class="byline">
+            <span>datalab-to</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://www.datalab.to" target="_blank">https://www.datalab.to</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/datalab-to/marker.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/datalab-to/marker">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/decolua/9router" target="_blank">decolua/9router</a></h3>
+            <span class="stars">★ 31,901</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;decolua/9router&quot;, &quot;url&quot;: &quot;https://github.com/decolua/9router&quot;, &quot;owner&quot;: &quot;decolua&quot;, &quot;stars&quot;: 31901, &quot;desc&quot;: &quot;9Router \u662f\u4e00\u4e2a\u672c\u5730\u8fd0\u884c\u7684 AI \u8def\u7531\u7f51\u5173\uff0c\u628a Claude Code\u3001Cursor\u3001Cline\u3001Codex \u7b49\u7f16\u7a0b\u5de5\u5177\u7edf\u4e00\u63a5\u5230 40 \u591a\u5bb6 AI \u670d\u52a1\u5546\u7684 100 \u591a\u4e2a\u6a21\u578b\u4e0a\u3002\u5b83\u89e3\u51b3\u8ba2\u9605\u989d\u5ea6\u7528\u4e0d\u5b8c\u3001\u9650\u6d41\u4e2d\u65ad\u3001API \u592a\u8d35\u7684\u95ee\u9898\uff1a\u5f53\u67d0\u4e2a\u6e20\u9053\u989d\u5ea6\u8017\u5c3d\u65f6\u81ea\u52a8\u5207\u6362\u5230\u66f4\u4fbf\u5b9c\u6216\u514d\u8d39\u7684\u6a21\u578b\uff0c\u8fd8\u80fd\u538b\u7f29\u5de5\u5177\u8f93\u51fa\u5185\u5bb9\u8282\u7701 20-40% token\u3002\u4f8b\u5982\u5728 Claude Code \u91cc\u628a\u63a5\u53e3\u5730\u5740\u6539\u6210 localhost:20128 \u5c31\u80fd\u514d\u8d39\u7528\u4e0a Claude\u3001GPT\u3001Gemini \u7b49\u6a21\u578b\u3002&quot;, &quot;site&quot;: &quot;https://9router.com&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">9Router 是一个本地运行的 AI 路由网关，把 Claude Code、Cursor、Cline、Codex 等编程工具统一接到 40 多家 AI 服务商的 100 多个模型上。它解决订阅额度用不完、限流中断、API 太贵的问题：当某个渠道额度耗尽时自动切换到更便宜或免费的模型，还能压缩工具输出内容节省 20-40% token。例如在 Claude Code 里把接口地址改成 localhost:20128 就能免费用上 Claude、GPT、Gemini 等模型。</p>
+          
+          <div class="byline">
+            <span>decolua</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://9router.com" target="_blank">https://9router.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/decolua/9router.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/decolua/9router">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/yetone/magpie" target="_blank">yetone/magpie</a></h3>
+            <span class="stars">★ 30,258</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;yetone/magpie&quot;, &quot;url&quot;: &quot;https://github.com/yetone/magpie&quot;, &quot;owner&quot;: &quot;yetone&quot;, &quot;stars&quot;: 30258, &quot;desc&quot;: &quot;magpie \u662f\u4e00\u4e2a\u672c\u5730 AI \u6a21\u578b\u7f51\u5173\uff0c\u628a Claude Code\u3001Codex\u3001Gemini CLI \u7b49\u5404\u7c7b AI \u7f16\u7a0b\u52a9\u624b\u7edf\u4e00\u63a5\u5165\u540c\u4e00\u4e2a\u5165\u53e3\u3002\u5b83\u89e3\u51b3\u7684\u662f\u6bcf\u4e2a\u52a9\u624b\u5404\u81ea\u914d\u7f6e\u6a21\u578b\u3001\u8ba2\u9605\u4e92\u4e0d\u901a\u7528\u3001\u989d\u5ea6\u7528\u5b8c\u5c31\u62a5\u9519\u7684\u95ee\u9898\uff1a\u4f60\u53ef\u4ee5\u5728\u83dc\u5355\u680f\u91cc\u4e00\u952e\u628a Claude Code \u5207\u5230 Kimi\u3001\u628a Codex \u5207\u5230 DeepSeek\uff0c\u989d\u5ea6\u8017\u5c3d\u65f6\u81ea\u52a8\u5207\u6362\u5230\u4e0b\u4e00\u4e2a\u8d26\u53f7\u6216\u6a21\u578b\uff0c\u8fd8\u80fd\u5728\u8bf7\u6c42\u53d1\u51fa\u524d\u5bf9\u5bc6\u94a5\u3001\u5bc6\u7801\u7b49\u654f\u611f\u4fe1\u606f\u505a\u672c\u5730\u8131\u654f\u3002&quot;, &quot;site&quot;: &quot;https://usemagpie.ai&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">magpie 是一个本地 AI 模型网关，把 Claude Code、Codex、Gemini CLI 等各类 AI 编程助手统一接入同一个入口。它解决的是每个助手各自配置模型、订阅互不通用、额度用完就报错的问题：你可以在菜单栏里一键把 Claude Code 切到 Kimi、把 Codex 切到 DeepSeek，额度耗尽时自动切换到下一个账号或模型，还能在请求发出前对密钥、密码等敏感信息做本地脱敏。</p>
+          
+          <div class="byline">
+            <span>yetone</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://usemagpie.ai" target="_blank">https://usemagpie.ai</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/yetone/magpie.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/yetone/magpie">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/wangrongding/wechat-bot" target="_blank">wangrongding/wechat-bot</a></h3>
+            <span class="stars">★ 11,521</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;wangrongding/wechat-bot&quot;, &quot;url&quot;: &quot;https://github.com/wangrongding/wechat-bot&quot;, &quot;owner&quot;: &quot;wangrongding&quot;, &quot;stars&quot;: 11521, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u57fa\u4e8e Wechaty \u7684\u591a\u5e73\u53f0 IM \u667a\u80fd\u4f53\uff0c\u80fd\u628a\u5fae\u4fe1\u3001\u98de\u4e66\u3001Telegram\u3001WhatsApp \u6536\u5230\u7684\u6d88\u606f\u8f6c\u53d1\u7ed9 ChatGPT\u3001Claude\u3001DeepSeek\u3001Kimi\u3001Ollama \u7b49\u5927\u6a21\u578b\u81ea\u52a8\u56de\u590d\u3002\u5b83\u652f\u6301\u767d\u540d\u5355\u548c\u7fa4\u804a @ \u89e6\u53d1\uff0c\u8fd8\u80fd\u8bfb\u53d6\u672c\u5730\u5fae\u4fe1\u804a\u5929\u8bb0\u5f55\u3001\u7fa4\u6210\u5458\u548c\u670b\u53cb\u5708\u7f13\u5b58\uff0c\u505a\u7fa4\u804a\u7edf\u8ba1\u6216 AI \u6df1\u5ea6\u5206\u6790\uff0c\u6bd4\u5982\u5206\u6790\u67d0\u4e2a\u7fa4\u6700\u8fd1\u804a\u4e86\u4ec0\u4e48\u3001\u8c01\u6700\u6d3b\u8dc3\u3002\u9002\u5408\u60f3\u7ed9 IM \u52a0 AI \u52a9\u624b\u6216\u505a\u793e\u7fa4\u8fd0\u8425\u5206\u6790\u7684\u4eba\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个基于 Wechaty 的多平台 IM 智能体，能把微信、飞书、Telegram、WhatsApp 收到的消息转发给 ChatGPT、Claude、DeepSeek、Kimi、Ollama 等大模型自动回复。它支持白名单和群聊 @ 触发，还能读取本地微信聊天记录、群成员和朋友圈缓存，做群聊统计或 AI 深度分析，比如分析某个群最近聊了什么、谁最活跃。适合想给 IM 加 AI 助手或做社群运营分析的人。</p>
+          
+          <div class="byline">
+            <span>wangrongding</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/wangrongding/wechat-bot.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/wangrongding/wechat-bot">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-6">
+          <div class="item-head">
+            <span class="no">06</span>
+            <h3 class="title"><a href="https://github.com/KKKKhazix/AIHOT" target="_blank">KKKKhazix/AIHOT</a></h3>
+            <span class="stars">★ 9,622</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;KKKKhazix/AIHOT&quot;, &quot;url&quot;: &quot;https://github.com/KKKKhazix/AIHOT&quot;, &quot;owner&quot;: &quot;KKKKhazix&quot;, &quot;stars&quot;: 9622, &quot;desc&quot;: &quot;AIHOT \u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u884c\u4e1a\u70ed\u70b9\u7ad9\u6846\u67b6\uff1a\u5b83\u4ece RSS\u3001\u7f51\u9875\u3001X\u3001\u5fae\u4fe1\u516c\u4f17\u53f7\u7b49\u4fe1\u6e90\u81ea\u52a8\u91c7\u96c6\u5185\u5bb9\uff0c\u7528\u5927\u6a21\u578b\u9884\u7b5b\u3001\u4e24\u6b21\u72ec\u7acb\u8bc4\u5206\uff0c\u6311\u51fa\u503c\u5f97\u770b\u7684\u6d88\u606f\u5e76\u5199\u6210\u4e2d\u6587\u6807\u9898\u548c\u6458\u8981\uff0c\u518d\u628a\u540c\u4e00\u4e8b\u4ef6\u7684\u62a5\u9053\u805a\u6210\u7c07\u3001\u6309\u72ec\u7acb\u6765\u6e90\u6570\u7b97\u70ed\u5ea6\uff0c\u6bcf\u5929\u81ea\u52a8\u751f\u6210\u65e5\u62a5\u3002\u4f60\u53ea\u9700\u66ff\u6362\u884c\u4e1a\u4fe1\u6e90\u548c\u7cbe\u9009\u63d0\u793a\u8bcd\uff0c\u5c31\u80fd\u642d\u51fa\u6cd5\u5f8b\u3001HR\u3001\u91d1\u878d\u7b49\u5782\u76f4\u9886\u57df\u7684\u70ed\u70b9\u7ad9\uff0c\u9002\u5408\u60f3\u4f4e\u6210\u672c\u81ea\u5efa\u5185\u5bb9\u805a\u5408\u7ad9\u7684\u4eba\u3002&quot;, &quot;site&quot;: &quot;https://aihot.news&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">AIHOT 是一个开源的行业热点站框架：它从 RSS、网页、X、微信公众号等信源自动采集内容，用大模型预筛、两次独立评分，挑出值得看的消息并写成中文标题和摘要，再把同一事件的报道聚成簇、按独立来源数算热度，每天自动生成日报。你只需替换行业信源和精选提示词，就能搭出法律、HR、金融等垂直领域的热点站，适合想低成本自建内容聚合站的人。</p>
+          
+          <div class="byline">
+            <span>KKKKhazix</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://aihot.news" target="_blank">https://aihot.news</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/KKKKhazix/AIHOT.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/KKKKhazix/AIHOT">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-7">
+          <div class="item-head">
+            <span class="no">07</span>
+            <h3 class="title"><a href="https://github.com/dimthink/PriceAI" target="_blank">dimthink/PriceAI</a></h3>
+            <span class="stars">★ 5,027</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;dimthink/PriceAI&quot;, &quot;url&quot;: &quot;https://github.com/dimthink/PriceAI&quot;, &quot;owner&quot;: &quot;dimthink&quot;, &quot;stars&quot;: 5027, &quot;desc&quot;: &quot;PriceAI \u662f\u4e00\u4e2a AI \u8ba2\u9605\u4e0e API \u7684\u6bd4\u4ef7\u96f7\u8fbe\uff0c\u628a ChatGPT\u3001Claude\u3001Gemini \u7b49\u5b98\u65b9\u8ba2\u9605\u3001200 \u591a\u4e2a\u5361\u7f51\u53d1\u5361\u6e20\u9053\u3001\u5b98\u65b9 API \u548c\u4e2d\u8f6c API \u7684\u4ef7\u683c\u3001\u5e93\u5b58\u3001\u500d\u7387\u96c6\u4e2d\u5c55\u793a\uff0c\u5e2e\u4f60\u5224\u65ad\u54ea\u4e2a\u6e20\u9053\u771f\u6709\u8d27\u3001\u4ef7\u683c\u662f\u5426\u9760\u8c31\u3002\u6bd4\u5982\u60f3\u4e70 ChatGPT Plus\uff0c\u53ef\u4ee5\u4e00\u6b21\u770b\u5230\u5b98\u7f51\u5730\u533a\u4ef7\u3001\u4ee3\u5145\u4ef7\u548c\u5361\u5bc6\u4ef7\uff0c\u518d\u56de\u539f\u7ad9\u6838\u9a8c\u4e0b\u5355\u3002\u5b83\u4e0d\u5356\u8d27\u4e0d\u62c5\u4fdd\uff0c\u53ea\u505a\u8d2d\u4e70\u524d\u7684\u6210\u672c\u53c2\u8003\u3002&quot;, &quot;site&quot;: &quot;https://priceai.cc&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">PriceAI 是一个 AI 订阅与 API 的比价雷达，把 ChatGPT、Claude、Gemini 等官方订阅、200 多个卡网发卡渠道、官方 API 和中转 API 的价格、库存、倍率集中展示，帮你判断哪个渠道真有货、价格是否靠谱。比如想买 ChatGPT Plus，可以一次看到官网地区价、代充价和卡密价，再回原站核验下单。它不卖货不担保，只做购买前的成本参考。</p>
+          
+          <div class="byline">
+            <span>dimthink</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://priceai.cc" target="_blank">https://priceai.cc</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/dimthink/PriceAI.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/dimthink/PriceAI">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">移动 / 桌面应用</span><span class="sec-count">10 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/komi-store/komi-store" target="_blank">komi-store/komi-store</a></h3>
+            <span class="stars">★ 20,307</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;komi-store/komi-store&quot;, &quot;url&quot;: &quot;https://github.com/komi-store/komi-store&quot;, &quot;owner&quot;: &quot;komi-store&quot;, &quot;stars&quot;: 20307, &quot;desc&quot;: &quot;Komi Store \u662f\u4e00\u4e2a\u514d\u8d39\u5f00\u6e90\u7684\u8de8\u5e73\u53f0\u5e94\u7528\u5546\u5e97\uff0c\u4e13\u95e8\u7528\u6765\u6d4f\u89c8\u3001\u53d1\u73b0\u5e76\u4e00\u952e\u5b89\u88c5\u5f00\u53d1\u8005\u53d1\u5e03\u5728 GitHub\u3001Codeberg \u7b49\u5e73\u53f0\u4e0a\u7684\u8f6f\u4ef6\u3002\u5b83\u89e3\u51b3\u4e86\u5f00\u6e90\u8f6f\u4ef6\u5206\u6563\u5728\u5404\u4ed3\u5e93\u3001\u666e\u901a\u7528\u6237\u96be\u4ee5\u627e\u5230\u548c\u5b89\u88c5\u7684\u95ee\u9898\uff0c\u652f\u6301 Android\u3001Windows\u3001macOS \u548c Linux\u3002\u4f8b\u5982\u4f60\u60f3\u88c5\u67d0\u4e2a GitHub \u4e0a\u7684\u5f00\u6e90\u5c0f\u5de5\u5177\uff0c\u4e0d\u7528\u624b\u52a8\u627e\u5b89\u88c5\u5305\uff0c\u5728 Komi Store \u91cc\u641c\u7d22\u540e\u70b9\u4e00\u4e0b\u5373\u53ef\u5b8c\u6210\u4e0b\u8f7d\u5b89\u88c5\u3002&quot;, &quot;site&quot;: &quot;https://www.komistore.app&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Komi Store 是一个免费开源的跨平台应用商店，专门用来浏览、发现并一键安装开发者发布在 GitHub、Codeberg 等平台上的软件。它解决了开源软件分散在各仓库、普通用户难以找到和安装的问题，支持 Android、Windows、macOS 和 Linux。例如你想装某个 GitHub 上的开源小工具，不用手动找安装包，在 Komi Store 里搜索后点一下即可完成下载安装。</p>
+          
+          <div class="byline">
+            <span>komi-store</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://www.komistore.app" target="_blank">https://www.komistore.app</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/komi-store/komi-store.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/komi-store/komi-store">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/AnInsomniacy/rayburst" target="_blank">AnInsomniacy/rayburst</a></h3>
+            <span class="stars">★ 11,365</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;AnInsomniacy/rayburst&quot;, &quot;url&quot;: &quot;https://github.com/AnInsomniacy/rayburst&quot;, &quot;owner&quot;: &quot;AnInsomniacy&quot;, &quot;stars&quot;: 11365, &quot;desc&quot;: &quot;Rayburst \u662f\u4e00\u6b3e\u5f00\u6e90\u8de8\u5e73\u53f0\u4e0b\u8f7d\u7ba1\u7406\u5668\uff0c\u7528 TypeScript \u548c Rust\uff08Tauri 2\uff09\u5f00\u53d1\uff0c\u5e95\u5c42\u91c7\u7528 Aria2 Next \u5f15\u64ce\u3002\u5b83\u652f\u6301 HTTP\u3001BitTorrent\u3001\u78c1\u529b\u94fe\u63a5\u3001ED2K\u3001HLS/DASH \u7b49\u591a\u79cd\u534f\u8bae\uff0c\u5e76\u63d0\u4f9b\u6d4f\u89c8\u5668\u6269\u5c55\u63a5\u7ba1\u4e0b\u8f7d\u3001\u9650\u901f\u8c03\u5ea6\u3001\u6258\u76d8\u5e38\u9a7b\u3001\u901a\u77e5\u4e0e\u81ea\u52a8\u5173\u673a\u7b49\u529f\u80fd\u3002\u4f8b\u5982\uff0c\u4f60\u53ef\u4ee5\u628a\u6d4f\u89c8\u5668\u91cc\u7684\u4e0b\u8f7d\u4efb\u52a1\u4e00\u952e\u4ea4\u7ed9\u5b83\uff0c\u5e76\u8ba9\u5b83\u81ea\u52a8\u6309\u65f6\u95f4\u6bb5\u9650\u901f\uff0c\u9002\u5408\u9700\u8981\u7ba1\u7406\u5927\u91cf\u4e0b\u8f7d\u4efb\u52a1\u7684\u7528\u6237\u3002&quot;, &quot;site&quot;: &quot;https://rayburst.pages.dev&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Rayburst 是一款开源跨平台下载管理器，用 TypeScript 和 Rust（Tauri 2）开发，底层采用 Aria2 Next 引擎。它支持 HTTP、BitTorrent、磁力链接、ED2K、HLS/DASH 等多种协议，并提供浏览器扩展接管下载、限速调度、托盘常驻、通知与自动关机等功能。例如，你可以把浏览器里的下载任务一键交给它，并让它自动按时间段限速，适合需要管理大量下载任务的用户。</p>
+          
+          <div class="byline">
+            <span>AnInsomniacy</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://rayburst.pages.dev" target="_blank">https://rayburst.pages.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/AnInsomniacy/rayburst.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/AnInsomniacy/rayburst">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/nexmoe/VidBee" target="_blank">nexmoe/VidBee</a></h3>
+            <span class="stars">★ 11,062</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;nexmoe/VidBee&quot;, &quot;url&quot;: &quot;https://github.com/nexmoe/VidBee&quot;, &quot;owner&quot;: &quot;nexmoe&quot;, &quot;stars&quot;: 11062, &quot;desc&quot;: &quot;VidBee \u662f\u4e00\u6b3e\u514d\u8d39\u5f00\u6e90\u7684\u8de8\u5e73\u53f0\u684c\u9762\u5e94\u7528\uff0c\u628a\u89c6\u9891\u548c\u97f3\u9891\u53d8\u6210\u53ef\u641c\u7d22\u7684\u4e2a\u4eba\u5a92\u4f53\u5e93\u3002\u5b83\u80fd\u4ece 1000 \u591a\u4e2a\u7f51\u7ad9\u4e0b\u8f7d\u89c6\u9891\u3001\u97f3\u9891\u3001\u64ad\u653e\u5217\u8868\u548c\u9891\u9053\uff0c\u4e5f\u80fd\u5bfc\u5165\u672c\u5730\u6587\u4ef6\uff1b\u968f\u540e\u5728\u7535\u8111\u672c\u5730\u7528 Whisper \u7b49\u6a21\u578b\u8f6c\u5199\uff0c\u81ea\u52a8\u533a\u5206\u8bf4\u8bdd\u4eba\u5e76\u751f\u6210\u5e26\u65f6\u95f4\u6233\u7684\u5b57\u5e55\uff0c\u518d\u8c03\u7528\u4f60\u9009\u62e9\u7684 AI\uff08OpenAI\u3001Ollama \u7b49\uff09\u505a\u6458\u8981\u3001\u7ffb\u8bd1\u6216\u95ee\u7b54\u3002\u6bd4\u5982\u4e0b\u8f7d\u4e00\u671f\u8bbf\u8c08\u64ad\u5ba2\u540e\uff0c\u5b83\u80fd\u6807\u51fa\u6bcf\u4f4d\u8bf4\u8bdd\u4eba\uff0c\u4f60\u641c\u7d22\u4e00\u53e5\u8bdd\u5c31\u80fd\u8df3\u56de\u5bf9\u5e94\u65f6\u95f4\u70b9\uff0c\u5e76\u4e00\u952e\u5bfc\u51fa\u6587\u5b57\u7a3f\u3002&quot;, &quot;site&quot;: &quot;https://vidbee.org&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">VidBee 是一款免费开源的跨平台桌面应用，把视频和音频变成可搜索的个人媒体库。它能从 1000 多个网站下载视频、音频、播放列表和频道，也能导入本地文件；随后在电脑本地用 Whisper 等模型转写，自动区分说话人并生成带时间戳的字幕，再调用你选择的 AI（OpenAI、Ollama 等）做摘要、翻译或问答。比如下载一期访谈播客后，它能标出每位说话人，你搜索一句话就能跳回对应时间点，并一键导出文字稿。</p>
+          
+          <div class="byline">
+            <span>nexmoe</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://vidbee.org" target="_blank">https://vidbee.org</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/nexmoe/VidBee.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/nexmoe/VidBee">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/niedev/RTranslator" target="_blank">niedev/RTranslator</a></h3>
+            <span class="stars">★ 10,607</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;niedev/RTranslator&quot;, &quot;url&quot;: &quot;https://github.com/niedev/RTranslator&quot;, &quot;owner&quot;: &quot;niedev&quot;, &quot;stars&quot;: 10607, &quot;desc&quot;: &quot;RTranslator \u662f\u4e00\u6b3e\u5b89\u5353\u7aef\u7684\u5f00\u6e90\u79bb\u7ebf\u5b9e\u65f6\u7ffb\u8bd1\u5e94\u7528\uff0c\u628a Meta \u7684 NLLB \u7ffb\u8bd1\u6a21\u578b\u548c OpenAI \u7684 Whisper \u8bed\u97f3\u8bc6\u522b\u6a21\u578b\u76f4\u63a5\u8dd1\u5728\u624b\u673a\u4e0a\uff0c\u4e0d\u4f9d\u8d56\u670d\u52a1\u5668\uff0c\u4fdd\u62a4\u9690\u79c1\u4e14\u65ad\u7f51\u4e5f\u80fd\u7528\u3002\u5b83\u63d0\u4f9b\u5bf9\u8bdd\u6a21\u5f0f\u3001\u5bf9\u8bb2\u673a\u6a21\u5f0f\u548c\u6587\u672c\u7ffb\u8bd1\u4e09\u79cd\u7528\u6cd5\uff1a\u4e24\u4eba\u5404\u88c5\u4e00\u4e2a App \u5e76\u8fde\u4e0a\u84dd\u7259\u8033\u673a\uff0c\u5c31\u80fd\u50cf\u5bf9\u65b9\u8bf4\u6bcd\u8bed\u4e00\u6837\u81ea\u7136\u4ea4\u8c08\uff1b\u5bf9\u8bb2\u673a\u6a21\u5f0f\u53ea\u9700\u4e00\u90e8\u624b\u673a\uff0c\u9002\u5408\u95ee\u8def\u3001\u8d2d\u7269\u7b49\u7b80\u77ed\u4ea4\u6d41\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">RTranslator 是一款安卓端的开源离线实时翻译应用，把 Meta 的 NLLB 翻译模型和 OpenAI 的 Whisper 语音识别模型直接跑在手机上，不依赖服务器，保护隐私且断网也能用。它提供对话模式、对讲机模式和文本翻译三种用法：两人各装一个 App 并连上蓝牙耳机，就能像对方说母语一样自然交谈；对讲机模式只需一部手机，适合问路、购物等简短交流。</p>
+          
+          <div class="byline">
+            <span>niedev</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/niedev/RTranslator.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/niedev/RTranslator">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/abue-ammar/tinycast" target="_blank">abue-ammar/tinycast</a></h3>
+            <span class="stars">★ 9,078</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;abue-ammar/tinycast&quot;, &quot;url&quot;: &quot;https://github.com/abue-ammar/tinycast&quot;, &quot;owner&quot;: &quot;abue-ammar&quot;, &quot;stars&quot;: 9078, &quot;desc&quot;: &quot;Tinycast \u662f\u4e00\u6b3e\u7528 Swift \u539f\u751f\u5f00\u53d1\u7684 macOS \u542f\u52a8\u5668\uff0c\u7528\u4e00\u4e2a\u5168\u5c40\u5feb\u6377\u952e\u5c31\u80fd\u547c\u51fa\u547d\u4ee4\u9762\u677f\uff0c\u5feb\u901f\u542f\u52a8\u5e94\u7528\u3001\u641c\u7d22\u6587\u4ef6\u3001\u7ba1\u7406\u526a\u8d34\u677f\u5386\u53f2\u3001\u505a\u8ba1\u7b97\u548c\u5355\u4f4d\u6362\u7b97\u3001\u8fd0\u884c\u5feb\u6377\u6307\u4ee4\u4e0e\u81ea\u5b9a\u4e49\u547d\u4ee4\uff0c\u8fd8\u652f\u6301\u7a97\u53e3\u7ba1\u7406\u3001\u4fbf\u7b7e\u3001AI \u804a\u5929\u548c Raycast \u6269\u5c55\u3002\u5b83\u89e3\u51b3\u7684\u662f macOS \u4e0a\u542f\u52a8\u5668\u8981\u4e48\u81c3\u80bf\u3001\u8981\u4e48\u529f\u80fd\u5206\u6563\u7684\u95ee\u9898\uff0c\u6bd4\u5982\u6309\u4e00\u4e2a\u952e\u5c31\u80fd\u627e\u5230\u5e76\u6253\u5f00\u4efb\u610f\u5e94\u7528\uff0c\u6216\u628a\u521a\u590d\u5236\u7684\u6587\u5b57\u4ece\u526a\u8d34\u677f\u5386\u53f2\u91cc\u7c98\u56de\u6765\uff0c\u5185\u5b58\u5360\u7528\u4e0d\u5230 100MB\uff0c\u514d\u8d39\u5f00\u6e90\u3002&quot;, &quot;site&quot;: &quot;https://tinycast.dev&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Tinycast 是一款用 Swift 原生开发的 macOS 启动器，用一个全局快捷键就能呼出命令面板，快速启动应用、搜索文件、管理剪贴板历史、做计算和单位换算、运行快捷指令与自定义命令，还支持窗口管理、便签、AI 聊天和 Raycast 扩展。它解决的是 macOS 上启动器要么臃肿、要么功能分散的问题，比如按一个键就能找到并打开任意应用，或把刚复制的文字从剪贴板历史里粘回来，内存占用不到 100MB，免费开源。</p>
+          
+          <div class="byline">
+            <span>abue-ammar</span><i>·</i>
+            <span>更新于 2026-11-03</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://tinycast.dev" target="_blank">https://tinycast.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/abue-ammar/tinycast.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/abue-ammar/tinycast">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-6">
+          <div class="item-head">
+            <span class="no">06</span>
+            <h3 class="title"><a href="https://github.com/qingjian-team/qingjian" target="_blank">qingjian-team/qingjian</a></h3>
+            <span class="stars">★ 7,532</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;qingjian-team/qingjian&quot;, &quot;url&quot;: &quot;https://github.com/qingjian-team/qingjian&quot;, &quot;owner&quot;: &quot;qingjian-team&quot;, &quot;stars&quot;: 7532, &quot;desc&quot;: &quot;\u9752\u7b80\u662f\u4e00\u6b3e\u7528 Rust \u7f16\u5199\u7684\u8de8\u5e73\u53f0\u62fc\u97f3\u8f93\u5165\u6cd5\uff0c\u652f\u6301\u6574\u53e5\u8f93\u5165\u3001\u53cc\u62fc\u3001\u4e94\u7b14\u548c\u62fc\u5199\u7ea0\u9519\uff0c\u6700\u5927\u7279\u8272\u662f\u5728\u5019\u9009\u8bcd\u65c1\u663e\u793a\u6b63\u5728\u5b66\u4e60\u8bed\u8a00\u7684\u8bd1\u8bcd\uff0c\u8ba9\u80cc\u5355\u8bcd\u81ea\u7136\u878d\u5165\u65e5\u5e38\u6253\u5b57\u3002\u6bd4\u5982\u8f93\u5165\u300ckaifa\u300d\u9009\u300c\u5f00\u53d1\u300d\u65f6\uff0c\u65c1\u8fb9\u4f1a\u663e\u793a development\uff0c\u8986\u76d6\u82f1\u8bed\u3001\u65e5\u8bed\u3001\u897f\u73ed\u7259\u8bed\u3001\u8d8a\u5357\u8bed\u548c\u5fb7\u8bed\u3002\u6240\u6709\u8f6c\u6362\u548c\u7edf\u8ba1\u90fd\u5728\u672c\u5730\u5b8c\u6210\uff0c\u65e0\u9700\u8d26\u53f7\uff0c\u9002\u5408\u60f3\u8fb9\u6253\u5b57\u8fb9\u79ef\u7d2f\u8bcd\u6c47\u7684\u4eba\u3002&quot;, &quot;site&quot;: &quot;https://qingjian.app&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">青简是一款用 Rust 编写的跨平台拼音输入法，支持整句输入、双拼、五笔和拼写纠错，最大特色是在候选词旁显示正在学习语言的译词，让背单词自然融入日常打字。比如输入「kaifa」选「开发」时，旁边会显示 development，覆盖英语、日语、西班牙语、越南语和德语。所有转换和统计都在本地完成，无需账号，适合想边打字边积累词汇的人。</p>
+          
+          <div class="byline">
+            <span>qingjian-team</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://qingjian.app" target="_blank">https://qingjian.app</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/qingjian-team/qingjian.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/qingjian-team/qingjian">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-7">
+          <div class="item-head">
+            <span class="no">07</span>
+            <h3 class="title"><a href="https://github.com/TNTcraftHIM/Piik" target="_blank">TNTcraftHIM/Piik</a></h3>
+            <span class="stars">★ 4,088</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;TNTcraftHIM/Piik&quot;, &quot;url&quot;: &quot;https://github.com/TNTcraftHIM/Piik&quot;, &quot;owner&quot;: &quot;TNTcraftHIM&quot;, &quot;stars&quot;: 4088, &quot;desc&quot;: &quot;Piik \u662f\u4e00\u4e2a\u514d\u8d39\u5f00\u6e90\u7684\u79c1\u5bc6\u5c4f\u5e55\u5171\u4eab\u5de5\u5177\uff0c\u8ba9\u4f60\u548c\u6700\u591a 20 \u4f4d\u670b\u53cb\u5728\u6d4f\u89c8\u5668\u91cc\u4e00\u8d77\u770b\u6e38\u620f\u76f4\u64ad\u3001\u770b\u7535\u5f71\u6216\u5206\u4eab\u7167\u7247\uff0c\u65e0\u9700\u5bf9\u65b9\u5b89\u88c5\u4efb\u4f55\u8f6f\u4ef6\u3002\u5b83\u4f18\u5148\u901a\u8fc7 P2P \u76f4\u8fde\u4f20\u8f93\u753b\u9762\uff0c\u4e5f\u652f\u6301\u81ea\u90e8\u7f72\u670d\u52a1\u5668\u4f5c\u4e3a\u4e2d\u8f6c\uff0c\u8fd8\u63d0\u4f9b\u8bed\u97f3\u804a\u5929\u3001\u6587\u5b57\u6d88\u606f\u548c\u8fdc\u7a0b\u63a7\u5236\u529f\u80fd\uff0c\u6bd4\u5982\u8ba9\u670b\u53cb\u63a5\u624b\u73a9\u4f60\u7684\u6e38\u620f\u3002\u9002\u5408\u5c0f\u5708\u5b50\u805a\u4f1a\u6216\u8fdc\u7a0b\u89c2\u5f71\uff0c\u517c\u987e\u9690\u79c1\u4e0e\u4f4e\u5ef6\u8fdf\u3002&quot;, &quot;site&quot;: &quot;https://piik.tv&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Piik 是一个免费开源的私密屏幕共享工具，让你和最多 20 位朋友在浏览器里一起看游戏直播、看电影或分享照片，无需对方安装任何软件。它优先通过 P2P 直连传输画面，也支持自部署服务器作为中转，还提供语音聊天、文字消息和远程控制功能，比如让朋友接手玩你的游戏。适合小圈子聚会或远程观影，兼顾隐私与低延迟。</p>
+          
+          <div class="byline">
+            <span>TNTcraftHIM</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://piik.tv" target="_blank">https://piik.tv</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/TNTcraftHIM/Piik.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/TNTcraftHIM/Piik">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-8">
+          <div class="item-head">
+            <span class="no">08</span>
+            <h3 class="title"><a href="https://github.com/tianma-if/edgeever" target="_blank">tianma-if/edgeever</a></h3>
+            <span class="stars">★ 3,126</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tianma-if/edgeever&quot;, &quot;url&quot;: &quot;https://github.com/tianma-if/edgeever&quot;, &quot;owner&quot;: &quot;tianma-if&quot;, &quot;stars&quot;: 3126, &quot;desc&quot;: &quot;EdgeEver \u662f\u4e00\u6b3e\u5f00\u6e90\u7684 AI \u539f\u751f\u7b14\u8bb0\u4e0e\u4e2a\u4eba\u77e5\u8bc6\u5e93\u5de5\u5177\uff0c\u53ef\u4ee5\u770b\u4f5c Evernote \u6216 Obsidian \u7684\u66ff\u4ee3\u54c1\u3002\u5b83\u4fdd\u7559\u7ecf\u5178\u4e09\u680f\u5e03\u5c40\uff0c\u652f\u6301\u5bcc\u6587\u672c\u4e0e Markdown \u53cc\u5411\u5207\u6362\u3001\u6beb\u79d2\u7ea7\u5168\u6587\u641c\u7d22\u3001\u591a\u7aef\u5373\u65f6\u540c\u6b65\uff0c\u5e76\u5185\u7f6e MCP \u534f\u8bae\u8ba9 AI \u52a9\u624b\u76f4\u63a5\u8bfb\u5199\u7b14\u8bb0\u3002\u6700\u5927\u4eae\u70b9\u662f\u80fd\u96f6\u6210\u672c\u8dd1\u5728 Cloudflare \u514d\u8d39\u989d\u5ea6\u4e0a\uff0c\u4e5f\u53ef\u7528 Docker \u81ea\u6258\u7ba1\uff0c\u9002\u5408\u60f3\u6446\u8131\u8ba2\u9605\u8d39\u3001\u53c8\u9700\u8981 AI \u8f85\u52a9\u6574\u7406\u77e5\u8bc6\u7684\u7528\u6237\u3002&quot;, &quot;site&quot;: &quot;https://edgeever.org&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">EdgeEver 是一款开源的 AI 原生笔记与个人知识库工具，可以看作 Evernote 或 Obsidian 的替代品。它保留经典三栏布局，支持富文本与 Markdown 双向切换、毫秒级全文搜索、多端即时同步，并内置 MCP 协议让 AI 助手直接读写笔记。最大亮点是能零成本跑在 Cloudflare 免费额度上，也可用 Docker 自托管，适合想摆脱订阅费、又需要 AI 辅助整理知识的用户。</p>
+          
+          <div class="byline">
+            <span>tianma-if</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://edgeever.org" target="_blank">https://edgeever.org</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/tianma-if/edgeever.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/tianma-if/edgeever">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-9">
+          <div class="item-head">
+            <span class="no">09</span>
+            <h3 class="title"><a href="https://github.com/wzh4869/AppPorts" target="_blank">wzh4869/AppPorts</a></h3>
+            <span class="stars">★ 2,197</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;wzh4869/AppPorts&quot;, &quot;url&quot;: &quot;https://github.com/wzh4869/AppPorts&quot;, &quot;owner&quot;: &quot;wzh4869&quot;, &quot;stars&quot;: 2197, &quot;desc&quot;: &quot;AppPorts \u662f\u4e00\u6b3e macOS \u684c\u9762\u5de5\u5177\uff0c\u4e13\u95e8\u89e3\u51b3 Mac \u5185\u7f6e\u786c\u76d8\u7a7a\u95f4\u4e0d\u8db3\u7684\u95ee\u9898\u3002\u5b83\u80fd\u628a\u4f53\u79ef\u5927\u7684\u5e94\u7528\u3001\u804a\u5929\u8bb0\u5f55\u3001\u7167\u7247\u89c6\u9891\u7b49\u6570\u636e\u8fc1\u79fb\u5230\u5916\u63a5\u786c\u76d8\uff0c\u540c\u65f6\u5728\u672c\u5730\u4fdd\u7559\u4e00\u4e2a\u8f7b\u91cf\u542f\u52a8\u5165\u53e3\uff0c\u56fe\u6807\u4e0d\u53d8\u3001\u6ca1\u6709\u5feb\u6377\u65b9\u5f0f\u5c0f\u7bad\u5934\uff0c\u63d2\u4e0a\u786c\u76d8\u540e\u7167\u5e38\u4ece\u8bbf\u8fbe\u6216\u7a0b\u5e8f\u575e\u6253\u5f00\u3002\u4f8b\u5982\u628a\u51e0\u5341 GB \u7684\u5fae\u4fe1\u804a\u5929\u8bb0\u5f55\u642c\u5230\u79fb\u52a8\u786c\u76d8\uff0cMac \u672c\u5730\u7acb\u523b\u817e\u51fa\u7a7a\u95f4\uff0c\u4f7f\u7528\u4f53\u9a8c\u51e0\u4e4e\u4e0d\u53d7\u5f71\u54cd\uff0c\u8fd8\u652f\u6301\u968f\u65f6\u6062\u590d\u56de\u672c\u5730\u3002&quot;, &quot;site&quot;: &quot;https://appports.shimoko.com&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">AppPorts 是一款 macOS 桌面工具，专门解决 Mac 内置硬盘空间不足的问题。它能把体积大的应用、聊天记录、照片视频等数据迁移到外接硬盘，同时在本地保留一个轻量启动入口，图标不变、没有快捷方式小箭头，插上硬盘后照常从访达或程序坞打开。例如把几十 GB 的微信聊天记录搬到移动硬盘，Mac 本地立刻腾出空间，使用体验几乎不受影响，还支持随时恢复回本地。</p>
+          
+          <div class="byline">
+            <span>wzh4869</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://appports.shimoko.com" target="_blank">https://appports.shimoko.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/wzh4869/AppPorts.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/wzh4869/AppPorts">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-4-10">
+          <div class="item-head">
+            <span class="no">10</span>
+            <h3 class="title"><a href="https://github.com/wquguru/cicada" target="_blank">wquguru/cicada</a></h3>
+            <span class="stars">★ 1,039</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;wquguru/cicada&quot;, &quot;url&quot;: &quot;https://github.com/wquguru/cicada&quot;, &quot;owner&quot;: &quot;wquguru&quot;, &quot;stars&quot;: 1039, &quot;desc&quot;: &quot;\u77e5\u4e86 Cicada \u662f\u4e00\u6b3e macOS \u83dc\u5355\u680f\u5e94\u7528\uff0c\u80fd\u5b9e\u65f6\u8bfb\u53d6 Mac \u7cfb\u7edf\u58f0\u97f3\uff0c\u4e3a\u4efb\u610f\u4f1a\u8bae\u6216\u76f4\u64ad\uff08\u5982 Zoom\u3001\u98de\u4e66\u3001YouTube\uff09\u751f\u6210\u53cc\u8bed\u5b57\u5e55\u548c\u540c\u58f0\u4f20\u8bd1\uff0c\u5e76\u5728\u672c\u673a\u81ea\u52a8\u6574\u7406\u7ed3\u6784\u5316\u4f1a\u8bae\u7eaa\u8981\u3002\u5b83\u89e3\u51b3\u4e86\u8de8\u8bed\u8a00\u5f00\u4f1a\u542c\u4e0d\u61c2\u3001\u8bb0\u4e0d\u5168\u7684\u75db\u70b9\uff1a\u5bf9\u65b9\u8bf4\u82f1\u6587\uff0c\u51e0\u79d2\u5185\u5c31\u80fd\u770b\u5230\u4e2d\u6587\u5b57\u5e55\uff1b\u6309\u4f4f\u53f3 Option \u952e\u8bf4\u8bdd\uff0c\u5bf9\u65b9\u80fd\u76f4\u63a5\u542c\u5230\u7ffb\u8bd1\u540e\u7684\u8bed\u97f3\uff1b\u4f1a\u540e\u8fd8\u80fd\u5bfc\u51fa Markdown\u3001Word \u548c SRT\u3002\u58f0\u97f3\u8bc6\u522b\u5168\u5728\u672c\u673a\u5b8c\u6210\uff0c\u9690\u79c1\u6027\u597d\u3002&quot;, &quot;site&quot;: &quot;cicada.indaloop.app&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">知了 Cicada 是一款 macOS 菜单栏应用，能实时读取 Mac 系统声音，为任意会议或直播（如 Zoom、飞书、YouTube）生成双语字幕和同声传译，并在本机自动整理结构化会议纪要。它解决了跨语言开会听不懂、记不全的痛点：对方说英文，几秒内就能看到中文字幕；按住右 Option 键说话，对方能直接听到翻译后的语音；会后还能导出 Markdown、Word 和 SRT。声音识别全在本机完成，隐私性好。</p>
+          
+          <div class="byline">
+            <span>wquguru</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="cicada.indaloop.app" target="_blank">cicada.indaloop.app</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/wquguru/cicada.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/wquguru/cicada">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-5">
+        <div class="sec-kicker"><span class="sec-no">SECTION 05</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">6 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-5-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/hypit-ai/hypit" target="_blank">hypit-ai/hypit</a></h3>
+            <span class="stars">★ 28,124</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;hypit-ai/hypit&quot;, &quot;url&quot;: &quot;https://github.com/hypit-ai/hypit&quot;, &quot;owner&quot;: &quot;hypit-ai&quot;, &quot;stars&quot;: 28124, &quot;desc&quot;: &quot;Hypit \u662f\u7ed9 Claude Code\u3001Codex \u7b49 AI \u7f16\u7a0b\u4ee3\u7406\u4f7f\u7528\u7684\u89c6\u9891\u521b\u4f5c\u6280\u80fd\u4e0e\u7cfb\u7edf\u3002\u4f60\u4e22\u8fdb\u4e00\u4e2a\u7206\u6b3e\u89c6\u9891\uff0c\u4ee3\u7406\u5c31\u80fd\u514b\u9686\u6574\u5957\u5236\u4f5c\u6d41\u7a0b\u2014\u2014\u7d20\u6750\u3001\u5b57\u5e55\u3001B-roll \u548c\u7279\u6548\uff0c\u5e76\u751f\u6210\u53ef\u7f16\u8f91\u3001\u53ef\u91cd\u590d\u8fd0\u884c\u7684\u89c6\u9891\u5de5\u7a0b\uff0c\u4e00\u6761\u547d\u4ee4\u4ea7\u51fa\u4e0a\u767e\u4e2a\u53d8\u4f53\u3002\u5b83\u7528\u57fa\u4e8e\u6587\u5b57\u7684 SVML \u8bed\u8a00\u63cf\u8ff0\u89c6\u9891\uff0c\u8ba9\u6539\u53f0\u8bcd\u3001\u6362\u4eba\u7269\u3001\u6362\u8bed\u8a00\u90fd\u4e0d\u5f71\u54cd\u6574\u4f53\u7ed3\u6784\uff0c\u9002\u5408\u6279\u91cf\u505a\u5e7f\u544a\u3001\u77ed\u89c6\u9891\u548c\u64ad\u5ba2\u5207\u7247\u3002&quot;, &quot;site&quot;: &quot;https://hypit.ai&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Hypit 是给 Claude Code、Codex 等 AI 编程代理使用的视频创作技能与系统。你丢进一个爆款视频，代理就能克隆整套制作流程——素材、字幕、B-roll 和特效，并生成可编辑、可重复运行的视频工程，一条命令产出上百个变体。它用基于文字的 SVML 语言描述视频，让改台词、换人物、换语言都不影响整体结构，适合批量做广告、短视频和播客切片。</p>
+          
+          <div class="byline">
+            <span>hypit-ai</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://hypit.ai" target="_blank">https://hypit.ai</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/hypit-ai/hypit.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/hypit-ai/hypit">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/xpzouying/xiaohongshu-mcp" target="_blank">xpzouying/xiaohongshu-mcp</a></h3>
+            <span class="stars">★ 16,777</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;xpzouying/xiaohongshu-mcp&quot;, &quot;url&quot;: &quot;https://github.com/xpzouying/xiaohongshu-mcp&quot;, &quot;owner&quot;: &quot;xpzouying&quot;, &quot;stars&quot;: 16777, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u8ba9 AI \u52a9\u624b\u76f4\u63a5\u64cd\u4f5c\u5c0f\u7ea2\u4e66\u7684 MCP \u670d\u52a1\uff0c\u7528 Go \u7f16\u5199\u3002\u5b83\u628a\u767b\u5f55\u3001\u53d1\u5e03\u56fe\u6587\u6216\u89c6\u9891\u3001\u641c\u7d22\u5185\u5bb9\u3001\u67e5\u770b\u63a8\u8350\u6d41\u3001\u83b7\u53d6\u5e16\u5b50\u8be6\u60c5\u4e0e\u8bc4\u8bba\u3001\u53d1\u8868\u6216\u56de\u590d\u8bc4\u8bba\u3001\u70b9\u8d5e\u6536\u85cf\u3001\u67e5\u770b\u7528\u6237\u4e3b\u9875\u7b49\u80fd\u529b\u5c01\u88c5\u6210\u6807\u51c6 MCP \u5de5\u5177\uff0c\u63a5\u5165 Claude Code \u7b49\u5ba2\u6237\u7aef\u540e\uff0cAI \u5c31\u80fd\u81ea\u52a8\u5b8c\u6210\u5c0f\u7ea2\u4e66\u8fd0\u8425\u3002\u4f8b\u5982\u8ba9 AI \u6309\u5173\u952e\u8bcd\u641c\u7d22\u7b14\u8bb0\u3001\u8bfb\u53d6\u4e92\u52a8\u6570\u636e\uff0c\u518d\u81ea\u52a8\u53d1\u5e03\u5e26\u6807\u7b7e\u7684\u56fe\u6587\u5185\u5bb9\u3002&quot;, &quot;site&quot;: &quot;https://www.haha.ai/xiaohongshu-mcp&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个让 AI 助手直接操作小红书的 MCP 服务，用 Go 编写。它把登录、发布图文或视频、搜索内容、查看推荐流、获取帖子详情与评论、发表或回复评论、点赞收藏、查看用户主页等能力封装成标准 MCP 工具，接入 Claude Code 等客户端后，AI 就能自动完成小红书运营。例如让 AI 按关键词搜索笔记、读取互动数据，再自动发布带标签的图文内容。</p>
+          
+          <div class="byline">
+            <span>xpzouying</span><i>·</i>
+            <span>更新于 2026-11-03</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://www.haha.ai/xiaohongshu-mcp" target="_blank">https://www.haha.ai/xiaohongshu-mcp</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/xpzouying/xiaohongshu-mcp.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/xpzouying/xiaohongshu-mcp">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/dreammis/social-auto-upload" target="_blank">dreammis/social-auto-upload</a></h3>
+            <span class="stars">★ 16,088</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;dreammis/social-auto-upload&quot;, &quot;url&quot;: &quot;https://github.com/dreammis/social-auto-upload&quot;, &quot;owner&quot;: &quot;dreammis&quot;, &quot;stars&quot;: 16088, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u9762\u5411\u5185\u5bb9\u521b\u4f5c\u8005\u7684\u591a\u5e73\u53f0\u81ea\u52a8\u53d1\u5e03\u5de5\u5177\uff0c\u7528\u4e00\u6761\u547d\u4ee4\u6216\u4e00\u4e2a Agent \u6280\u80fd\uff0c\u5c31\u80fd\u628a\u89c6\u9891\u3001\u56fe\u6587\u6216\u6587\u7ae0\u540c\u65f6\u53d1\u5230\u6296\u97f3\u3001\u5c0f\u7ea2\u4e66\u3001B\u7ad9\u3001\u5feb\u624b\u3001\u89c6\u9891\u53f7\u3001TikTok\u3001YouTube \u7b49\u5341\u51e0\u4e2a\u5e73\u53f0\u3002\u5b83\u89e3\u51b3\u4e86\u624b\u52a8\u9010\u4e2a\u5e73\u53f0\u4e0a\u4f20\u3001\u586b\u5199\u6807\u9898\u6807\u7b7e\u7684\u91cd\u590d\u52b3\u52a8\uff0c\u8fd8\u652f\u6301\u591a\u8d26\u53f7\u7ba1\u7406\u548c\u5b9a\u65f6\u53d1\u5e03\u3002\u6bd4\u5982\u4f60\u526a\u597d\u4e00\u6761\u89c6\u9891\uff0c\u8fd0\u884c sau douyin upload-video \u5c31\u80fd\u81ea\u52a8\u767b\u5f55\u5e76\u53d1\u5e03\u5230\u6296\u97f3\uff0c\u4e5f\u53ef\u4ee5\u4ea4\u7ed9 Claude Code \u7b49 Agent \u6309\u6280\u80fd\u8bf4\u660e\u81ea\u52a8\u5b8c\u6210\u3002&quot;, &quot;site&quot;: &quot;https://sap-doc.nasdaddy.com/&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个面向内容创作者的多平台自动发布工具，用一条命令或一个 Agent 技能，就能把视频、图文或文章同时发到抖音、小红书、B站、快手、视频号、TikTok、YouTube 等十几个平台。它解决了手动逐个平台上传、填写标题标签的重复劳动，还支持多账号管理和定时发布。比如你剪好一条视频，运行 sau douyin upload-video 就能自动登录并发布到抖音，也可以交给 Claude Code 等 Agent 按技能说明自动完成。</p>
+          
+          <div class="byline">
+            <span>dreammis</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://sap-doc.nasdaddy.com/" target="_blank">https://sap-doc.nasdaddy.com/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/dreammis/social-auto-upload.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/dreammis/social-auto-upload">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/Vincentwei1021/anything2explainer" target="_blank">Vincentwei1021/anything2explainer</a></h3>
+            <span class="stars">★ 3,064</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Vincentwei1021/anything2explainer&quot;, &quot;url&quot;: &quot;https://github.com/Vincentwei1021/anything2explainer&quot;, &quot;owner&quot;: &quot;Vincentwei1021&quot;, &quot;stars&quot;: 3064, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u7ed9 Claude Code \u548c Codex \u7528\u7684\u6280\u80fd\u63d2\u4ef6\uff1a\u4f60\u53ea\u8981\u7ed9\u4e00\u4e2a\u4e3b\u9898\uff08\u6bd4\u5982\u300c\u8bb2\u8bb2\u5411\u91cf\u6570\u636e\u5e93\u300d\uff09\uff0c\u5b83\u5c31\u80fd\u81ea\u52a8\u8c03\u7814\u3001\u5199\u65c1\u767d\u3001\u751f\u6210\u914d\u97f3\u548c\u5b57\u5e55\uff0c\u518d\u7528 Remotion \u4ee5\u4ee3\u7801\u9010\u5e27\u753b\u51fa\u9ed1\u5e95\u52a8\u6548\u8bb2\u89e3\u89c6\u9891\uff0c\u8f93\u51fa\u5e26\u7ae0\u8282\u8fdb\u5ea6\u6761\u7684 MP4\u3002\u5b83\u89e3\u51b3\u7684\u662f\u300c\u60f3\u5feb\u901f\u505a\u4e00\u6761\u6709\u8bb2\u89e3\u3001\u6709\u753b\u9762\u3001\u6709\u5b57\u5e55\u7684\u79d1\u666e\u89c6\u9891\u300d\u7684\u95ee\u9898\uff0c\u5168\u7a0b\u7531\u591a\u4e2a AI \u667a\u80fd\u4f53\u5206\u5de5\u5e76\u884c\u5b8c\u6210\uff0c\u7ea6 1-3 \u5c0f\u65f6\u51fa\u7247\uff0c\u4e2d\u9014\u53ea\u5728\u56db\u4e2a\u5173\u952e\u8282\u70b9\u627e\u4f60\u786e\u8ba4\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个给 Claude Code 和 Codex 用的技能插件：你只要给一个主题（比如「讲讲向量数据库」），它就能自动调研、写旁白、生成配音和字幕，再用 Remotion 以代码逐帧画出黑底动效讲解视频，输出带章节进度条的 MP4。它解决的是「想快速做一条有讲解、有画面、有字幕的科普视频」的问题，全程由多个 AI 智能体分工并行完成，约 1-3 小时出片，中途只在四个关键节点找你确认。</p>
+          
+          <div class="byline">
+            <span>Vincentwei1021</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Vincentwei1021/anything2explainer.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Vincentwei1021/anything2explainer">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-5">
+          <div class="item-head">
+            <span class="no">05</span>
+            <h3 class="title"><a href="https://github.com/JuneYaooo/rea-video" target="_blank">JuneYaooo/rea-video</a></h3>
+            <span class="stars">★ 2,385</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;JuneYaooo/rea-video&quot;, &quot;url&quot;: &quot;https://github.com/JuneYaooo/rea-video&quot;, &quot;owner&quot;: &quot;JuneYaooo&quot;, &quot;stars&quot;: 2385, &quot;desc&quot;: &quot;rea-video \u662f\u4e00\u4e2a\u7ed9 AI Agent \u7528\u7684\u89c6\u9891\u9006\u5411\u5206\u6790\u6280\u80fd\uff1a\u8f93\u5165\u4efb\u610f\u89c6\u9891\uff0c\u5b83\u9010\u955c\u5934\u5224\u65ad\u753b\u9762\u662f\u5b9e\u62cd\u3001AI \u751f\u6210\u8fd8\u662f\u4ee3\u7801\u5236\u4f5c\uff0c\u5e76\u5206\u6790\u5b57\u5e55\u6837\u5f0f\u3001\u526a\u8f91\u8282\u594f\u3001\u914d\u97f3\u914d\u4e50\u548c\u7d20\u6750\u6765\u6e90\uff0c\u6700\u540e\u7ed9\u51fa\u53ef\u6267\u884c\u7684\u590d\u523b\u65b9\u6848\u3002\u4f8b\u5982\u4e00\u6761 TikTok \u5e26\u8d27\u89c6\u9891\uff0c\u5b83\u4f1a\u544a\u8bc9\u4f60\u7528\u4e86\u51e0\u4e2a\u673a\u4f4d\u3001\u51e0\u7ec4\u6253\u5149\uff0c\u54ea\u4e9b\u955c\u5934\u662f AI \u751f\u6210\u3001\u8be5\u600e\u4e48\u5199\u63d0\u793a\u8bcd\uff0c\u54ea\u4e9b\u754c\u9762\u8981\u7528 Remotion \u4ee3\u7801\u91cd\u5efa\u3002\u9002\u5408\u60f3\u62c6\u89e3\u7206\u6b3e\u89c6\u9891\u3001\u5b66\u4e60\u5236\u4f5c\u65b9\u6cd5\u6216\u6279\u91cf\u590d\u523b\u5185\u5bb9\u7684\u4eba\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">rea-video 是一个给 AI Agent 用的视频逆向分析技能：输入任意视频，它逐镜头判断画面是实拍、AI 生成还是代码制作，并分析字幕样式、剪辑节奏、配音配乐和素材来源，最后给出可执行的复刻方案。例如一条 TikTok 带货视频，它会告诉你用了几个机位、几组打光，哪些镜头是 AI 生成、该怎么写提示词，哪些界面要用 Remotion 代码重建。适合想拆解爆款视频、学习制作方法或批量复刻内容的人。</p>
+          
+          <div class="byline">
+            <span>JuneYaooo</span><i>·</i>
+            <span>更新于 2026-11-06</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/JuneYaooo/rea-video.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/JuneYaooo/rea-video">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-6">
+          <div class="item-head">
+            <span class="no">06</span>
+            <h3 class="title"><a href="https://github.com/vesaias/JobNavigator" target="_blank">vesaias/JobNavigator</a></h3>
+            <span class="stars">★ 181</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;vesaias/JobNavigator&quot;, &quot;url&quot;: &quot;https://github.com/vesaias/JobNavigator&quot;, &quot;owner&quot;: &quot;vesaias&quot;, &quot;stars&quot;: 181, &quot;desc&quot;: &quot;JobNavigator \u662f\u4e00\u4e2a\u53ef\u81ea\u6258\u7ba1\u7684\u6c42\u804c\u81ea\u52a8\u5316\u5de5\u5177\uff0c\u7528 Docker \u4e00\u952e\u90e8\u7f72\u3002\u5b83\u4f1a\u81ea\u52a8\u6293\u53d6\u62db\u8058\u7f51\u7ad9\u548c\u516c\u53f8\u62db\u8058\u9875\u7684\u804c\u4f4d\uff0c\u7528 AI \u6309\u4f60\u7684\u7b80\u5386\u6253\u5206\u7b5b\u9009\uff0c\u8fd8\u80fd\u9488\u5bf9\u5177\u4f53\u5c97\u4f4d\u6539\u5199\u7b80\u5386\u548c\u6c42\u804c\u4fe1\u3001\u81ea\u52a8\u586b\u5199\u7533\u8bf7\u8868\uff0c\u5e76\u8ddf\u8e2a\u6bcf\u4efd\u7533\u8bf7\u7684\u8fdb\u5ea6\uff0c\u901a\u8fc7 Telegram \u63d0\u9192\u3002\u6bd4\u5982\u4f60\u8bbe\u5b9a\u597d\u7b80\u5386\u540e\uff0c\u5b83\u6bcf\u5929\u81ea\u52a8\u6536\u96c6\u65b0\u804c\u4f4d\u3001\u6807\u51fa\u5339\u914d\u5ea6\u9ad8\u7684\u5c97\u4f4d\uff0c\u4f60\u53ea\u9700\u5ba1\u6838\u5e76\u6295\u9012\uff0c\u7701\u53bb\u5927\u91cf\u91cd\u590d\u7b5b\u9009\u548c\u586b\u8868\u7684\u65f6\u95f4\u3002&quot;, &quot;site&quot;: &quot;https://vesaias.github.io/JobNavigator-demo&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">JobNavigator 是一个可自托管的求职自动化工具，用 Docker 一键部署。它会自动抓取招聘网站和公司招聘页的职位，用 AI 按你的简历打分筛选，还能针对具体岗位改写简历和求职信、自动填写申请表，并跟踪每份申请的进度，通过 Telegram 提醒。比如你设定好简历后，它每天自动收集新职位、标出匹配度高的岗位，你只需审核并投递，省去大量重复筛选和填表的时间。</p>
+          
+          <div class="byline">
+            <span>vesaias</span><i>·</i>
+            <span>更新于 2026-11-06</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://vesaias.github.io/JobNavigator-demo" target="_blank">https://vesaias.github.io/JobNavigator-demo</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/vesaias/JobNavigator.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/vesaias/JobNavigator">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-6">
+        <div class="sec-kicker"><span class="sec-no">SECTION 06</span><span class="sec-name">其他</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-6-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/Gloridust/WechatOnCloud" target="_blank">Gloridust/WechatOnCloud</a></h3>
+            <span class="stars">★ 3,951</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Gloridust/WechatOnCloud&quot;, &quot;url&quot;: &quot;https://github.com/Gloridust/WechatOnCloud&quot;, &quot;owner&quot;: &quot;Gloridust&quot;, &quot;stars&quot;: 3951, &quot;desc&quot;: &quot;\u4e91\u5fae\u662f\u4e00\u4e2a\u53ef\u81ea\u6258\u7ba1\u7684\u300c\u4e91\u7aef\u5fae\u4fe1\u300d\u5e73\u53f0\uff1a\u5728\u81ea\u5df1\u7684 NAS \u6216\u670d\u52a1\u5668\u4e0a\u7528 Docker \u8dd1\u8d77\u670d\u52a1\u7aef\u5fae\u4fe1\u3001QQ \u6216 Chromium \u6d4f\u89c8\u5668\u5b9e\u4f8b\uff0c\u518d\u7528\u4efb\u610f\u8bbe\u5907\u7684\u6d4f\u89c8\u5668\u8fdc\u7a0b\u8bbf\u95ee\uff0c\u591a\u7aef\u5171\u4eab\u540c\u4e00\u4f1a\u8bdd\u3002\u5b83\u89e3\u51b3\u7684\u662f\u624b\u673a\u5fae\u4fe1\u65e0\u6cd5\u591a\u8bbe\u5907\u540c\u65f6\u5728\u7ebf\u3001\u7f51\u9875\u7248\u529f\u80fd\u53d7\u9650\u7684\u95ee\u9898\uff0c\u6bd4\u5982\u4f60\u5728\u516c\u53f8\u7535\u8111\u6253\u5f00\u6d4f\u89c8\u5668\u5c31\u80fd\u6536\u53d1\u5bb6\u91cc NAS \u4e0a\u767b\u5f55\u7684\u5fae\u4fe1\u6d88\u606f\uff0c\u804a\u5929\u8bb0\u5f55\u59cb\u7ec8\u7559\u5728\u81ea\u5df1\u8bbe\u5907\u4e0a\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">云微是一个可自托管的「云端微信」平台：在自己的 NAS 或服务器上用 Docker 跑起服务端微信、QQ 或 Chromium 浏览器实例，再用任意设备的浏览器远程访问，多端共享同一会话。它解决的是手机微信无法多设备同时在线、网页版功能受限的问题，比如你在公司电脑打开浏览器就能收发家里 NAS 上登录的微信消息，聊天记录始终留在自己设备上。</p>
+          
+          <div class="byline">
+            <span>Gloridust</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Gloridust/WechatOnCloud.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Gloridust/WechatOnCloud">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-6-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/nickrunning/wechat-selkies" target="_blank">nickrunning/wechat-selkies</a></h3>
+            <span class="stars">★ 3,099</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;nickrunning/wechat-selkies&quot;, &quot;url&quot;: &quot;https://github.com/nickrunning/wechat-selkies&quot;, &quot;owner&quot;: &quot;nickrunning&quot;, &quot;stars&quot;: 3099, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u628a\u5b98\u65b9\u5fae\u4fe1\u3001QQ \u7684 Linux \u5ba2\u6237\u7aef\u5c01\u88c5\u8fdb Docker \u5bb9\u5668\u7684\u5f00\u6e90\u9879\u76ee\uff0c\u501f\u52a9 Selkies WebRTC \u6280\u672f\uff0c\u8ba9\u4f60\u76f4\u63a5\u5728\u6d4f\u89c8\u5668\u91cc\u6253\u5f00\u5e76\u4f7f\u7528\u5fae\u4fe1\u548c QQ\uff0c\u65e0\u9700\u5728\u7535\u8111\u6216\u624b\u673a\u4e0a\u5b89\u88c5\u5ba2\u6237\u7aef\u3002\u5b83\u652f\u6301\u4e2d\u6587\u672c\u5730\u8f93\u5165\u6cd5\u3001\u804a\u5929\u8bb0\u5f55\u6301\u4e45\u5316\u3001\u6587\u4ef6\u4f20\u8f93\u3001GPU \u786c\u4ef6\u52a0\u901f\uff0c\u517c\u5bb9 AMD64 \u548c ARM64 \u67b6\u6784\uff0c\u8fd8\u80fd\u901a\u8fc7 proot-apps \u5b89\u88c5 Telegram \u7b49\u7b2c\u4e09\u65b9\u5e94\u7528\u3002\u9002\u5408\u628a\u5fae\u4fe1\u90e8\u7f72\u5728\u670d\u52a1\u5668\u4e0a\u8fdc\u7a0b\u529e\u516c\uff0c\u6216\u7528\u6d4f\u89c8\u5668\u5feb\u901f\u8bbf\u95ee\u7684\u573a\u666f\u3002&quot;, &quot;site&quot;: &quot;https://hub.docker.com/r/nickrunning/wechat-selkies&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个把官方微信、QQ 的 Linux 客户端封装进 Docker 容器的开源项目，借助 Selkies WebRTC 技术，让你直接在浏览器里打开并使用微信和 QQ，无需在电脑或手机上安装客户端。它支持中文本地输入法、聊天记录持久化、文件传输、GPU 硬件加速，兼容 AMD64 和 ARM64 架构，还能通过 proot-apps 安装 Telegram 等第三方应用。适合把微信部署在服务器上远程办公，或用浏览器快速访问的场景。</p>
+          
+          <div class="byline">
+            <span>nickrunning</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://hub.docker.com/r/nickrunning/wechat-selkies" target="_blank">https://hub.docker.com/r/nickrunning/wechat-selkies</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/nickrunning/wechat-selkies.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/nickrunning/wechat-selkies">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-7">
+        <div class="sec-kicker"><span class="sec-no">SECTION 07</span><span class="sec-name">学习资源</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-7-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/xuanli199/weekly" target="_blank">xuanli199/weekly</a></h3>
+            <span class="stars">★ 3,829</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;xuanli199/weekly&quot;, &quot;url&quot;: &quot;https://github.com/xuanli199/weekly&quot;, &quot;owner&quot;: &quot;xuanli199&quot;, &quot;stars&quot;: 3829, &quot;desc&quot;: &quot;\u8fd9\u662fB\u7ad9UP\u4e3b\u7384\u79bb199\u300c\u6bcf\u5468\u79d1\u6280\u8865\u5168\u300d\u89c6\u9891\u7684\u914d\u5957\u6587\u6863\u5e93\uff0c\u628a\u6bcf\u671f\u89c6\u9891\u91cc\u63d0\u5230\u7684\u8f6f\u4ef6\u548c\u5f00\u6e90\u9879\u76ee\u6309\u5468\u6574\u7406\u6210 Markdown \u6587\u6863\uff0c\u5e76\u540c\u6b65\u53d1\u5e03\u4e3a\u9759\u6001\u535a\u5ba2\u548c\u98de\u4e66\u6587\u6863\u3002\u89c2\u4f17\u770b\u5b8c\u89c6\u9891\u540e\u5e38\u8bb0\u4e0d\u4f4f\u9879\u76ee\u540d\u5b57\uff0c\u8fd9\u4e2a\u4ed3\u5e93\u5c31\u50cf\u4e00\u4e2a\u53ef\u641c\u7d22\u7684\u7d22\u5f15\u76ee\u5f55\uff0c\u6bd4\u5982\u60f3\u627e\u7b2c50\u671f\u63d0\u5230\u7684\u67d0\u4e2a\u6548\u7387\u5de5\u5177\uff0c\u76f4\u63a5\u7ffb\u5bf9\u5e94\u6587\u6863\u5373\u53ef\uff0c\u65b9\u4fbf\u6536\u85cf\u3001\u56de\u987e\u548c\u5206\u4eab\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是B站UP主玄离199「每周科技补全」视频的配套文档库，把每期视频里提到的软件和开源项目按周整理成 Markdown 文档，并同步发布为静态博客和飞书文档。观众看完视频后常记不住项目名字，这个仓库就像一个可搜索的索引目录，比如想找第50期提到的某个效率工具，直接翻对应文档即可，方便收藏、回顾和分享。</p>
+          
+          <div class="byline">
+            <span>xuanli199</span><i>·</i>
+            <span>更新于 2026-11-04</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/xuanli199/weekly.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/xuanli199/weekly">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-7-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/joeseesun/aicodinghunt" target="_blank">joeseesun/aicodinghunt</a></h3>
+            <span class="stars">★ 0</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;joeseesun/aicodinghunt&quot;, &quot;url&quot;: &quot;https://github.com/joeseesun/aicodinghunt&quot;, &quot;owner&quot;: &quot;joeseesun&quot;, &quot;stars&quot;: 0, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u628a\u793e\u533a\u91cc\u5927\u5bb6\u81ea\u8350\u7684 AI \u5de5\u5177\u3001Agent\u3001\u63d2\u4ef6\u548c\u5f00\u6e90\u9879\u76ee\u6574\u7406\u6210\u56fe\u6587\u76ee\u5f55\u7684\u7f51\u7ad9\uff0c\u7c7b\u4f3c Product Hunt \u7684 AI \u5de5\u5177\u7248\u3002\u7528\u6237\u53ef\u4ee5\u6309\u70b9\u8d5e\u548c\u6d4f\u89c8\u91cf\u6392\u5e8f\u68c0\u7d22\uff0c\u8fd8\u80fd\u76f4\u63a5\u6295\u7a3f\u63a8\u8350\u81ea\u5df1\u7684\u5de5\u5177\uff0c\u89e3\u51b3\u4e86 AI \u5de5\u5177\u4fe1\u606f\u5206\u6563\u3001\u96be\u4ee5\u53d1\u73b0\u548c\u6bd4\u8f83\u7684\u95ee\u9898\u3002\u6bd4\u5982\u4f60\u60f3\u627e\u4e00\u4e2a\u597d\u7528\u7684 AI \u7f16\u7a0b\u63d2\u4ef6\uff0c\u6253\u5f00\u8fd9\u4e2a\u730e\u573a\u5c31\u80fd\u6d4f\u89c8\u3001\u70b9\u8d5e\u5e76\u8df3\u8f6c\u5230\u539f\u5e16\u4e86\u89e3\u8be6\u60c5\u3002&quot;, &quot;site&quot;: &quot;https://aicodinghunt.qiaomu.ai&quot;, &quot;category&quot;: &quot;\u5b66\u4e60\u8d44\u6e90&quot;, &quot;emoji&quot;: &quot;\ud83d\udcda&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个把社区里大家自荐的 AI 工具、Agent、插件和开源项目整理成图文目录的网站，类似 Product Hunt 的 AI 工具版。用户可以按点赞和浏览量排序检索，还能直接投稿推荐自己的工具，解决了 AI 工具信息分散、难以发现和比较的问题。比如你想找一个好用的 AI 编程插件，打开这个猎场就能浏览、点赞并跳转到原帖了解详情。</p>
+          
+          <div class="byline">
+            <span>joeseesun</span><i>·</i>
+            <span>更新于 2026-11-02</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://aicodinghunt.qiaomu.ai" target="_blank">https://aicodinghunt.qiaomu.ai</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/joeseesun/aicodinghunt.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/joeseesun/aicodinghunt">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
+    btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = meta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>
