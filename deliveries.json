@@ -15545,7 +15545,7 @@
   ]
  },
  "weekly:2026-11-09": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-09",
    "new_count": 39,
@@ -16065,6 +16065,840 @@
    "kind": "weekly",
    "period_start": "2026-11-02",
    "period_end": "2026-11-09"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 精选周报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-09 ｜ 精选 39 个项目 ｜ 收藏范围 2026-11-02 至 2026-11-09（不含结束日）"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-09-weekly/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 8 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 7 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [microsoft/markitdown](https://github.com/microsoft/markitdown)**　⭐ 193,701\nMarkItDown 是微软开源的 Python 工具，能把 PDF、Word、Excel、PPT、图片、音频、HTML、ZIP 等多种文件统一转换成 Markdown 文本，保留标题、列表、表格、链接等结构。它主要服务于大模型和文本分析场景，因为 Markdown 接近纯文本、token 效率高，且主流 LLM 天然理解。例如把一份 PDF 报告转成 Markdown 后，可直接喂给 GPT 做摘要或问答。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 microsoft ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling)**　⭐ 92,884\nScrapling 是一个 Python 网页抓取框架，把快速 HTTP 请求、隐身浏览器、JavaScript 渲染、CSS/XPath 解析和并发爬虫整合到一个库里。它能绕过 Cloudflare 等反爬机制，支持代理轮换、自动重试、断点续爬和数据导出，还能通过 MCP 服务器让 AI 代理直接抓取网页。例如几行代码就能抓取名言网站的作者和内容并保存为 JSON，适合从单页采集到整站爬取的各种场景。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 D4Vinci ｜ 📅 更新 2026-11-03 ｜ 🏷 榜 ｜ 🔗 [https://scrapling.readthedocs.io/en/latest/](https://scrapling.readthedocs.io/en/latest/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [remotion-dev/remotion](https://github.com/remotion-dev/remotion)**　⭐ 70,955\nRemotion 是一个用 React 编写视频的开源框架，让你像写网页一样用代码生成视频。它把动画、字幕、音效等做成可复用的 React 组件，支持在浏览器里实时预览和编辑，也能通过 Node.js 或云端批量渲染。适合需要自动化生产视频的场景，比如为成千上万个商品各生成一段带价格和图片的短视频，或搭建自己的视频编辑器。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 remotion-dev ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://remotion.dev](https://remotion.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**4. [9001/copyparty](https://github.com/9001/copyparty)**　⭐ 47,250\ncopyparty 是一个用 Python 写的便携文件服务器，把几乎任何设备变成支持断点续传的文件共享中心。它只需 Python 就能跑，同时提供网页、WebDAV、FTP、SFTP、TFTP 等多种访问方式，还带媒体索引、缩略图、去重和搜索功能。比如你可以把旧笔记本或树莓派变成家庭 NAS，用浏览器拖拽上传下载，也能用手机 App 一键传文件。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 9001 ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**5. [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)**　⭐ 6,417\njsDelivr 是一个免费、快速、可靠的开源 CDN，专门为 npm、GitHub 和 JavaScript 生态提供文件加速分发。它解决的是开源库加载慢、不稳定、甚至因作者删包导致网站挂掉的问题：只要文件被访问过一次，就会永久缓存，即使 npm 包被删除也能继续提供。比如你在网页里引用 jQuery，只需写 /npm/jquery@3/dist/jquery.min.js，就能从全球节点高速加载，还支持自动压缩、ES 模块和版本回退。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 jsdelivr ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://www.jsdelivr.com](https://www.jsdelivr.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**6. [AmintaCCCP/GithubStarsManager](https://github.com/AmintaCCCP/GithubStarsManager)**　⭐ 3,800\n这是一个帮你管理 GitHub 星标仓库的桌面工具：它自动同步你点过星的项目，用 AI 生成摘要、标签和分类，还能用自然语言语义搜索，比如搜「做视频剪辑的库」就能找到相关仓库。此外还支持版本发布追踪、一键下载、仓库问答助手和 MCP 接口，数据全部保存在本地，解决「星标一堆却找不到」的痛点。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 AmintaCCCP ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://gsm.aminta.top](https://gsm.aminta.top)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**7. [14790897/handwriting-web](https://github.com/14790897/handwriting-web)**　⭐ 1,474\n这是一个把普通文本转换成逼真手写图片的网页工具。你只需粘贴或上传文字（支持 PDF、Word 等文件提取），再调一调边距、字符随机抖动、笔画旋转、墨水深浅和涂改痕迹等参数，就能生成看起来像真人手写的图片，还能上传自定义字体和背景纸。适合需要交手写作业、写感谢信或制作个性化手写素材的场景，例如把一篇论文一键变成手写稿并导出 PDF。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 14790897 ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://handwrite.sixiangjia.de](https://handwrite.sixiangjia.de)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 5 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [stablyai/orca](https://github.com/stablyai/orca)**　⭐ 116,319\nOrca 是一个面向 AI 编程 Agent 的编排工作台，让你同时运行 Claude Code、Codex、OpenCode 等多个命令行 Agent，每个 Agent 在独立的 git worktree 中互不干扰。它解决了多 Agent 并行时混乱、难以对比和追踪的问题：比如把同一个需求分发给五个 Agent 各写一版，再比较结果合并最优的。还提供终端分屏、手机端监控、SSH 远程运行、GitHub/Linear 集成和 CLI 脚本化等能力，适合希望规模化使用编程 Agent 的开发者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 stablyai ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://orca.dev](https://orca.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)**　⭐ 109,068\nAgent Reach 是一个给 AI Agent 补上「上网能力」的命令行工具。Claude Code、Cursor 这类 Agent 自带搜索，却读不到需要登录或中文平台的内容。它把 B站、小红书、X、Reddit、YouTube、GitHub、V2EX 等平台的抓取工具统一装好，Agent 一条命令就能搜索和阅读，比如 agent-reach bilibili search「大模型」直接拿到视频信息与字幕，全程零 API 费用，且只读不写、不碰你的密码。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Panniantong ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [koala73/worldmonitor](https://github.com/koala73/worldmonitor)**　⭐ 90,094\nWorld Monitor 是一个实时全球情报仪表盘，把新闻聚合、地缘政治监控和基础设施追踪整合到一个界面里。它用 AI 自动汇总多源新闻生成简报，还能把军事、经济、灾害等信号交叉关联，帮助用户快速判断局势。比如想了解某国是否动荡，它能给出国家不稳定指数和 24 小时变化。项目还提供 MCP 服务器、CLI 和多种语言 SDK，方便 AI 代理和脚本直接调用这些情报数据。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 koala73 ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://worldmonitor.app](https://worldmonitor.app)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**4. [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser)**　⭐ 12,138\n这是一个专为 AI 智能体打造的隐身无头浏览器服务，基于 Camoufox（在 C++ 层伪装指纹的 Firefox 分支），能绕过 Cloudflare 等反爬和机器人检测。它把浏览器封装成 REST API，用无障碍快照代替臃肿 HTML，元素用 e1、e2 稳定引用，方便智能体点击操作，还支持 Cookie 导入、代理、截图和 YouTube 字幕提取。例如让智能体抓取被 Cloudflare 保护的网站时，普通 Playwright 会被拦截，而它能正常访问。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 jo-inc ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://github.com/jo-inc/camofox-browser#readme](https://github.com/jo-inc/camofox-browser#readme)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**5. [storytold/craft-anything](https://github.com/storytold/craft-anything)**　⭐ 5,092\nCraft Anything 是一个纯 Rust 编写的开源逆向工程与重建引擎：你指定一个网站、应用或游戏，它先用真实检测工具分析原作的页面、代码和运行方式，再让 Claude Code 等编程智能体按你指定的技术栈生成一个新项目，并自动对比原作反复修正。它提供 314 个工具，每个都是 CLI 命令和 MCP 工具，可被任意智能体调用；例如输入网址并说「重建这个网站」，就能得到可运行的新版本。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 storytold ｜ 📅 更新 2026-11-03 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 7 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ollama/ollama](https://github.com/ollama/ollama)**　⭐ 185,729\nOllama 是一个让你在自己电脑上轻松运行开源大模型的工具，解决了本地部署大模型门槛高、配置麻烦的问题。只需一条命令（如 ollama run gemma4），就能下载并对话 Gemma、DeepSeek、Qwen 等模型，数据完全留在本地，保护隐私。它还提供 REST API 和 Python、JavaScript 库，方便开发者把本地模型接入自己的应用或 Claude Code、Copilot 等编程工具。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ollama ｜ 📅 更新 2026-11-03 ｜ 🏷 榜 ｜ 🔗 [https://ollama.com](https://ollama.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [datalab-to/marker](https://github.com/datalab-to/marker)**　⭐ 40,785\nMarker 是一个高精度的文档转换工具，能把 PDF、图片、PPTX、DOCX 等文件快速转成 Markdown、JSON、HTML 或分块文本。它擅长处理表格、公式、多栏排版和扫描件，还能自动去掉页眉页脚、提取图片。比如把一篇 arXiv 论文 PDF 转成结构清晰的 Markdown，方便后续检索或喂给大模型。可选接入 LLM 进一步提升准确率，支持 GPU、CPU 和 MPS 运行。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 datalab-to ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://www.datalab.to](https://www.datalab.to)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [decolua/9router](https://github.com/decolua/9router)**　⭐ 31,901\n9Router 是一个本地运行的 AI 路由网关，把 Claude Code、Cursor、Cline、Codex 等编程工具统一接到 40 多家 AI 服务商的 100 多个模型上。它解决订阅额度用不完、限流中断、API 太贵的问题：当某个渠道额度耗尽时自动切换到更便宜或免费的模型，还能压缩工具输出内容节省 20-40% token。例如在 Claude Code 里把接口地址改成 localhost:20128 就能免费用上 Claude、GPT、Gemini 等模型。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 decolua ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://9router.com](https://9router.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**4. [yetone/magpie](https://github.com/yetone/magpie)**　⭐ 30,258\nmagpie 是一个本地 AI 模型网关，把 Claude Code、Codex、Gemini CLI 等各类 AI 编程助手统一接入同一个入口。它解决的是每个助手各自配置模型、订阅互不通用、额度用完就报错的问题：你可以在菜单栏里一键把 Claude Code 切到 Kimi、把 Codex 切到 DeepSeek，额度耗尽时自动切换到下一个账号或模型，还能在请求发出前对密钥、密码等敏感信息做本地脱敏。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 yetone ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://usemagpie.ai](https://usemagpie.ai)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**5. [wangrongding/wechat-bot](https://github.com/wangrongding/wechat-bot)**　⭐ 11,521\n这是一个基于 Wechaty 的多平台 IM 智能体，能把微信、飞书、Telegram、WhatsApp 收到的消息转发给 ChatGPT、Claude、DeepSeek、Kimi、Ollama 等大模型自动回复。它支持白名单和群聊 @ 触发，还能读取本地微信聊天记录、群成员和朋友圈缓存，做群聊统计或 AI 深度分析，比如分析某个群最近聊了什么、谁最活跃。适合想给 IM 加 AI 助手或做社群运营分析的人。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 wangrongding ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**6. [KKKKhazix/AIHOT](https://github.com/KKKKhazix/AIHOT)**　⭐ 9,622\nAIHOT 是一个开源的行业热点站框架：它从 RSS、网页、X、微信公众号等信源自动采集内容，用大模型预筛、两次独立评分，挑出值得看的消息并写成中文标题和摘要，再把同一事件的报道聚成簇、按独立来源数算热度，每天自动生成日报。你只需替换行业信源和精选提示词，就能搭出法律、HR、金融等垂直领域的热点站，适合想低成本自建内容聚合站的人。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 KKKKhazix ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://aihot.news](https://aihot.news)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**7. [dimthink/PriceAI](https://github.com/dimthink/PriceAI)**　⭐ 5,027\nPriceAI 是一个 AI 订阅与 API 的比价雷达，把 ChatGPT、Claude、Gemini 等官方订阅、200 多个卡网发卡渠道、官方 API 和中转 API 的价格、库存、倍率集中展示，帮你判断哪个渠道真有货、价格是否靠谱。比如想买 ChatGPT Plus，可以一次看到官网地区价、代充价和卡密价，再回原站核验下单。它不卖货不担保，只做购买前的成本参考。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 dimthink ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://priceai.cc](https://priceai.cc)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "turquoise",
+       "title": {
+        "tag": "plain_text",
+        "content": "📱 移动 / 桌面应用 · 10 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [komi-store/komi-store](https://github.com/komi-store/komi-store)**　⭐ 20,307\nKomi Store 是一个免费开源的跨平台应用商店，专门用来浏览、发现并一键安装开发者发布在 GitHub、Codeberg 等平台上的软件。它解决了开源软件分散在各仓库、普通用户难以找到和安装的问题，支持 Android、Windows、macOS 和 Linux。例如你想装某个 GitHub 上的开源小工具，不用手动找安装包，在 Komi Store 里搜索后点一下即可完成下载安装。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 komi-store ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://www.komistore.app](https://www.komistore.app)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [AnInsomniacy/rayburst](https://github.com/AnInsomniacy/rayburst)**　⭐ 11,365\nRayburst 是一款开源跨平台下载管理器，用 TypeScript 和 Rust（Tauri 2）开发，底层采用 Aria2 Next 引擎。它支持 HTTP、BitTorrent、磁力链接、ED2K、HLS/DASH 等多种协议，并提供浏览器扩展接管下载、限速调度、托盘常驻、通知与自动关机等功能。例如，你可以把浏览器里的下载任务一键交给它，并让它自动按时间段限速，适合需要管理大量下载任务的用户。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 AnInsomniacy ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://rayburst.pages.dev](https://rayburst.pages.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [nexmoe/VidBee](https://github.com/nexmoe/VidBee)**　⭐ 11,062\nVidBee 是一款免费开源的跨平台桌面应用，把视频和音频变成可搜索的个人媒体库。它能从 1000 多个网站下载视频、音频、播放列表和频道，也能导入本地文件；随后在电脑本地用 Whisper 等模型转写，自动区分说话人并生成带时间戳的字幕，再调用你选择的 AI（OpenAI、Ollama 等）做摘要、翻译或问答。比如下载一期访谈播客后，它能标出每位说话人，你搜索一句话就能跳回对应时间点，并一键导出文字稿。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 nexmoe ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://vidbee.org](https://vidbee.org)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**4. [niedev/RTranslator](https://github.com/niedev/RTranslator)**　⭐ 10,607\nRTranslator 是一款安卓端的开源离线实时翻译应用，把 Meta 的 NLLB 翻译模型和 OpenAI 的 Whisper 语音识别模型直接跑在手机上，不依赖服务器，保护隐私且断网也能用。它提供对话模式、对讲机模式和文本翻译三种用法：两人各装一个 App 并连上蓝牙耳机，就能像对方说母语一样自然交谈；对讲机模式只需一部手机，适合问路、购物等简短交流。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 niedev ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**5. [abue-ammar/tinycast](https://github.com/abue-ammar/tinycast)**　⭐ 9,078\nTinycast 是一款用 Swift 原生开发的 macOS 启动器，用一个全局快捷键就能呼出命令面板，快速启动应用、搜索文件、管理剪贴板历史、做计算和单位换算、运行快捷指令与自定义命令，还支持窗口管理、便签、AI 聊天和 Raycast 扩展。它解决的是 macOS 上启动器要么臃肿、要么功能分散的问题，比如按一个键就能找到并打开任意应用，或把刚复制的文字从剪贴板历史里粘回来，内存占用不到 100MB，免费开源。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 abue-ammar ｜ 📅 更新 2026-11-03 ｜ 🏷 榜 ｜ 🔗 [https://tinycast.dev](https://tinycast.dev)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**6. [qingjian-team/qingjian](https://github.com/qingjian-team/qingjian)**　⭐ 7,532\n青简是一款用 Rust 编写的跨平台拼音输入法，支持整句输入、双拼、五笔和拼写纠错，最大特色是在候选词旁显示正在学习语言的译词，让背单词自然融入日常打字。比如输入「kaifa」选「开发」时，旁边会显示 development，覆盖英语、日语、西班牙语、越南语和德语。所有转换和统计都在本地完成，无需账号，适合想边打字边积累词汇的人。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 qingjian-team ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://qingjian.app](https://qingjian.app)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**7. [TNTcraftHIM/Piik](https://github.com/TNTcraftHIM/Piik)**　⭐ 4,088\nPiik 是一个免费开源的私密屏幕共享工具，让你和最多 20 位朋友在浏览器里一起看游戏直播、看电影或分享照片，无需对方安装任何软件。它优先通过 P2P 直连传输画面，也支持自部署服务器作为中转，还提供语音聊天、文字消息和远程控制功能，比如让朋友接手玩你的游戏。适合小圈子聚会或远程观影，兼顾隐私与低延迟。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 TNTcraftHIM ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://piik.tv](https://piik.tv)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**8. [tianma-if/edgeever](https://github.com/tianma-if/edgeever)**　⭐ 3,126\nEdgeEver 是一款开源的 AI 原生笔记与个人知识库工具，可以看作 Evernote 或 Obsidian 的替代品。它保留经典三栏布局，支持富文本与 Markdown 双向切换、毫秒级全文搜索、多端即时同步，并内置 MCP 协议让 AI 助手直接读写笔记。最大亮点是能零成本跑在 Cloudflare 免费额度上，也可用 Docker 自托管，适合想摆脱订阅费、又需要 AI 辅助整理知识的用户。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 tianma-if ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://edgeever.org](https://edgeever.org)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**9. [wzh4869/AppPorts](https://github.com/wzh4869/AppPorts)**　⭐ 2,197\nAppPorts 是一款 macOS 桌面工具，专门解决 Mac 内置硬盘空间不足的问题。它能把体积大的应用、聊天记录、照片视频等数据迁移到外接硬盘，同时在本地保留一个轻量启动入口，图标不变、没有快捷方式小箭头，插上硬盘后照常从访达或程序坞打开。例如把几十 GB 的微信聊天记录搬到移动硬盘，Mac 本地立刻腾出空间，使用体验几乎不受影响，还支持随时恢复回本地。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 wzh4869 ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://appports.shimoko.com](https://appports.shimoko.com)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**10. [wquguru/cicada](https://github.com/wquguru/cicada)**　⭐ 1,039\n知了 Cicada 是一款 macOS 菜单栏应用，能实时读取 Mac 系统声音，为任意会议或直播（如 Zoom、飞书、YouTube）生成双语字幕和同声传译，并在本机自动整理结构化会议纪要。它解决了跨语言开会听不懂、记不全的痛点：对方说英文，几秒内就能看到中文字幕；按住右 Option 键说话，对方能直接听到翻译后的语音；会后还能导出 Markdown、Word 和 SRT。声音识别全在本机完成，隐私性好。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 wquguru ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [cicada.indaloop.app](cicada.indaloop.app)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 6 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [hypit-ai/hypit](https://github.com/hypit-ai/hypit)**　⭐ 28,124\nHypit 是给 Claude Code、Codex 等 AI 编程代理使用的视频创作技能与系统。你丢进一个爆款视频，代理就能克隆整套制作流程——素材、字幕、B-roll 和特效，并生成可编辑、可重复运行的视频工程，一条命令产出上百个变体。它用基于文字的 SVML 语言描述视频，让改台词、换人物、换语言都不影响整体结构，适合批量做广告、短视频和播客切片。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 hypit-ai ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 [https://hypit.ai](https://hypit.ai)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [xpzouying/xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp)**　⭐ 16,777\n这是一个让 AI 助手直接操作小红书的 MCP 服务，用 Go 编写。它把登录、发布图文或视频、搜索内容、查看推荐流、获取帖子详情与评论、发表或回复评论、点赞收藏、查看用户主页等能力封装成标准 MCP 工具，接入 Claude Code 等客户端后，AI 就能自动完成小红书运营。例如让 AI 按关键词搜索笔记、读取互动数据，再自动发布带标签的图文内容。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 xpzouying ｜ 📅 更新 2026-11-03 ｜ 🏷 榜 ｜ 🔗 [https://www.haha.ai/xiaohongshu-mcp](https://www.haha.ai/xiaohongshu-mcp)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [dreammis/social-auto-upload](https://github.com/dreammis/social-auto-upload)**　⭐ 16,088\n这是一个面向内容创作者的多平台自动发布工具，用一条命令或一个 Agent 技能，就能把视频、图文或文章同时发到抖音、小红书、B站、快手、视频号、TikTok、YouTube 等十几个平台。它解决了手动逐个平台上传、填写标题标签的重复劳动，还支持多账号管理和定时发布。比如你剪好一条视频，运行 sau douyin upload-video 就能自动登录并发布到抖音，也可以交给 Claude Code 等 Agent 按技能说明自动完成。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 dreammis ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://sap-doc.nasdaddy.com/](https://sap-doc.nasdaddy.com/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**4. [Vincentwei1021/anything2explainer](https://github.com/Vincentwei1021/anything2explainer)**　⭐ 3,064\n这是一个给 Claude Code 和 Codex 用的技能插件：你只要给一个主题（比如「讲讲向量数据库」），它就能自动调研、写旁白、生成配音和字幕，再用 Remotion 以代码逐帧画出黑底动效讲解视频，输出带章节进度条的 MP4。它解决的是「想快速做一条有讲解、有画面、有字幕的科普视频」的问题，全程由多个 AI 智能体分工并行完成，约 1-3 小时出片，中途只在四个关键节点找你确认。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Vincentwei1021 ｜ 📅 更新 2026-11-05 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**5. [JuneYaooo/rea-video](https://github.com/JuneYaooo/rea-video)**　⭐ 2,385\nrea-video 是一个给 AI Agent 用的视频逆向分析技能：输入任意视频，它逐镜头判断画面是实拍、AI 生成还是代码制作，并分析字幕样式、剪辑节奏、配音配乐和素材来源，最后给出可执行的复刻方案。例如一条 TikTok 带货视频，它会告诉你用了几个机位、几组打光，哪些镜头是 AI 生成、该怎么写提示词，哪些界面要用 Remotion 代码重建。适合想拆解爆款视频、学习制作方法或批量复刻内容的人。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 JuneYaooo ｜ 📅 更新 2026-11-06 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**6. [vesaias/JobNavigator](https://github.com/vesaias/JobNavigator)**　⭐ 181\nJobNavigator 是一个可自托管的求职自动化工具，用 Docker 一键部署。它会自动抓取招聘网站和公司招聘页的职位，用 AI 按你的简历打分筛选，还能针对具体岗位改写简历和求职信、自动填写申请表，并跟踪每份申请的进度，通过 Telegram 提醒。比如你设定好简历后，它每天自动收集新职位、标出匹配度高的岗位，你只需审核并投递，省去大量重复筛选和填表的时间。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 vesaias ｜ 📅 更新 2026-11-06 ｜ 🏷 榜 ｜ 🔗 [https://vesaias.github.io/JobNavigator-demo](https://vesaias.github.io/JobNavigator-demo)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "grey",
+       "title": {
+        "tag": "plain_text",
+        "content": "📦 其他 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Gloridust/WechatOnCloud](https://github.com/Gloridust/WechatOnCloud)**　⭐ 3,951\n云微是一个可自托管的「云端微信」平台：在自己的 NAS 或服务器上用 Docker 跑起服务端微信、QQ 或 Chromium 浏览器实例，再用任意设备的浏览器远程访问，多端共享同一会话。它解决的是手机微信无法多设备同时在线、网页版功能受限的问题，比如你在公司电脑打开浏览器就能收发家里 NAS 上登录的微信消息，聊天记录始终留在自己设备上。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Gloridust ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [nickrunning/wechat-selkies](https://github.com/nickrunning/wechat-selkies)**　⭐ 3,099\n这是一个把官方微信、QQ 的 Linux 客户端封装进 Docker 容器的开源项目，借助 Selkies WebRTC 技术，让你直接在浏览器里打开并使用微信和 QQ，无需在电脑或手机上安装客户端。它支持中文本地输入法、聊天记录持久化、文件传输、GPU 硬件加速，兼容 AMD64 和 ARM64 架构，还能通过 proot-apps 安装 Telegram 等第三方应用。适合把微信部署在服务器上远程办公，或用浏览器快速访问的场景。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 nickrunning ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 [https://hub.docker.com/r/nickrunning/wechat-selkies](https://hub.docker.com/r/nickrunning/wechat-selkies)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "orange",
+       "title": {
+        "tag": "plain_text",
+        "content": "📚 学习资源 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [xuanli199/weekly](https://github.com/xuanli199/weekly)**　⭐ 3,829\n这是B站UP主玄离199「每周科技补全」视频的配套文档库，把每期视频里提到的软件和开源项目按周整理成 Markdown 文档，并同步发布为静态博客和飞书文档。观众看完视频后常记不住项目名字，这个仓库就像一个可搜索的索引目录，比如想找第50期提到的某个效率工具，直接翻对应文档即可，方便收藏、回顾和分享。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 xuanli199 ｜ 📅 更新 2026-11-04 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [joeseesun/aicodinghunt](https://github.com/joeseesun/aicodinghunt)**　⭐ 0\n这是一个把社区里大家自荐的 AI 工具、Agent、插件和开源项目整理成图文目录的网站，类似 Product Hunt 的 AI 工具版。用户可以按点赞和浏览量排序检索，还能直接投稿推荐自己的工具，解决了 AI 工具信息分散、难以发现和比较的问题。比如你想找一个好用的 AI 编程插件，打开这个猎场就能浏览、点赞并跳转到原帖了解详情。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 joeseesun ｜ 📅 更新 2026-11-02 ｜ 🏷 榜 ｜ 🔗 [https://aicodinghunt.qiaomu.ai](https://aicodinghunt.qiaomu.ai)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
