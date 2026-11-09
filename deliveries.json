@@ -15278,5 +15278,83 @@
     }
    }
   ]
+ },
+ "daily:2026-11-09": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-09",
+   "new_count": 4,
+   "skipped": 197,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "blader/humanizer",
+       "url": "https://github.com/blader/humanizer",
+       "owner": "blader",
+       "stars": 66315,
+       "updated": "2026-10-28",
+       "lists": [
+        "weekly"
+       ],
+       "desc": "这是一个给 AI 写作助手用的技能插件，专门把文本里那些一眼就能看出是 AI 写的痕迹去掉，比如套话开头、机械排比、过度总结等。把它装进 Claude Code、Cursor 或 Codex 等工具后，AI 生成的文案会更像真人写的，适合需要发布博客、邮件或社交内容时使用。",
+       "site": "https://skills.sh/blader/humanizer"
+      },
+      {
+       "repo": "twostraws/SwiftUI-Agent-Skill",
+       "url": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+       "owner": "twostraws",
+       "stars": 6058,
+       "updated": "2026-10-07",
+       "lists": [
+        "daily",
+        "weekly"
+       ],
+       "desc": "这是给 Claude Code、Codex 等 AI 编程工具用的 SwiftUI 技能包，相当于给 AI 装上一本苹果界面开发的“参考手册”。它让 AI 在写 SwiftUI 代码时更懂布局、状态管理和常见坑，减少瞎编 API 的情况。比如你让 AI 做一个带列表和导航的 iOS 页面，它会按 SwiftUI 的正确写法生成，而不是套用 React 或 UIKit 的思路。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "google-deepmind/mujoco",
+       "url": "https://github.com/google-deepmind/mujoco",
+       "owner": "google-deepmind",
+       "stars": 16282,
+       "updated": "2026-11-07",
+       "lists": [
+        "daily"
+       ],
+       "desc": "MuJoCo 是一个通用的物理仿真引擎，专门模拟多关节机器人和物体之间的接触与运动。它解决了在真实世界中测试机器人成本高、风险大的问题，让研究人员能在电脑里快速搭建虚拟环境，比如训练四足机器人行走、测试机械臂抓取物体，或验证控制算法是否稳定。它计算精准、速度快，广泛用于机器人学、强化学习和生物力学研究。",
+       "site": "https://mujoco.org"
+      }
+     ]
+    },
+    {
+     "name": "学习资源",
+     "emoji": "📚",
+     "items": [
+      {
+       "repo": "anthropics/claude-quickstarts",
+       "url": "https://github.com/anthropics/claude-quickstarts",
+       "owner": "anthropics",
+       "stars": 19298,
+       "updated": "2026-11-06",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是 Anthropic 官方提供的 Claude API 入门示例合集，包含多个可直接运行的小项目，帮助开发者快速上手并搭建可部署的 AI 应用。它解决了新手不知从何入手的问题，比如通过客服机器人、文档问答等示例，演示如何调用模型、处理流式输出和集成工具，让开发者照着改就能做出自己的产品。",
+       "site": "无"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
