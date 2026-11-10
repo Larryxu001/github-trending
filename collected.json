@@ -94,7 +94,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-10T17:00:53.136395+08:00"
+   "last_seen": "2026-11-10T20:00:43.506926+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -127,7 +127,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-10T17:00:53.136343+08:00"
+   "last_seen": "2026-11-10T20:00:43.506915+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -322,7 +322,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-10T17:00:53.136371+08:00"
+   "last_seen": "2026-11-10T20:00:43.506933+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -407,7 +407,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-10T17:00:53.136349+08:00"
+   "last_seen": "2026-11-10T20:00:42.571847+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -537,7 +537,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-10T17:00:53.136307+08:00"
+   "last_seen": "2026-11-10T20:00:41.731308+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -954,32 +954,32 @@
     "monthly",
     "weekly"
    ],
-   "stars": 34969,
+   "stars": 35301,
    "owner": "anthropics",
    "homepage": "",
    "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
    "language": "Python",
    "topics": [],
-   "updated": "2026-11-06",
-   "metadata_date": "2026-11-07",
+   "updated": "2026-11-10",
+   "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-07T17:46:02.974633+08:00"
+   "last_seen": "2026-11-10T20:00:46.542676+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
    "lists": [
     "monthly"
    ],
-   "stars": 46909,
+   "stars": 49939,
    "owner": "tashfeenahmed",
    "homepage": "https://freellmapi.co",
    "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-11-02",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-10",
+   "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:35.278398+08:00",
-   "last_seen": "2026-11-04T17:00:39.748284+08:00"
+   "last_seen": "2026-11-10T20:00:47.395630+08:00"
   },
   "JustVugg/colibri": {
    "repo": "JustVugg/colibri",
@@ -1021,7 +1021,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:36.652938+08:00",
-   "last_seen": "2026-11-10T17:00:53.136331+08:00"
+   "last_seen": "2026-11-10T20:00:42.571845+08:00"
   },
   "NationalSecurityAgency/ghidra": {
    "repo": "NationalSecurityAgency/ghidra",
@@ -1043,7 +1043,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-07T10:00:37.360907+08:00",
-   "last_seen": "2026-11-10T17:00:53.136386+08:00"
+   "last_seen": "2026-11-10T20:00:45.270895+08:00"
   },
   "addyosmani/agent-skills": {
    "repo": "addyosmani/agent-skills",
@@ -1051,7 +1051,7 @@
     "daily",
     "monthly"
    ],
-   "stars": 107740,
+   "stars": 114785,
    "owner": "addyosmani",
    "homepage": "https://skills.addy.ie",
    "description": "Production-grade engineering skills for AI coding agents.",
@@ -1064,10 +1064,10 @@
     "cursor",
     "skills"
    ],
-   "updated": "2026-10-13",
-   "metadata_date": "2026-10-18",
+   "updated": "2026-11-01",
+   "metadata_date": "2026-11-10",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-10-18T18:38:52.835592+08:00"
+   "last_seen": "2026-11-10T20:00:42.071742+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
@@ -1170,7 +1170,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-10T17:00:53.136324+08:00"
+   "last_seen": "2026-11-10T20:00:42.571825+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1224,7 +1224,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-10T17:00:53.136359+08:00"
+   "last_seen": "2026-11-10T20:00:43.506928+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1315,7 +1315,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-10T17:00:53.136334+08:00"
+   "last_seen": "2026-11-10T20:00:42.571840+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1509,7 +1509,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 5017,
+   "stars": 5950,
    "owner": "ranxianglei",
    "homepage": "",
    "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
@@ -1517,10 +1517,10 @@
    "topics": [
     "dsh-plugin"
    ],
-   "updated": "2026-11-08",
-   "metadata_date": "2026-11-09",
+   "updated": "2026-11-10",
+   "metadata_date": "2026-11-10",
    "first_seen": "2026-10-10T21:02:40.409296+08:00",
-   "last_seen": "2026-11-09T19:06:23.332226+08:00"
+   "last_seen": "2026-11-10T20:00:44.770796+08:00"
   },
   "multica-ai/andrej-karpathy-skills": {
    "repo": "multica-ai/andrej-karpathy-skills",
@@ -2076,7 +2076,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-10T17:00:53.136392+08:00"
+   "last_seen": "2026-11-10T20:00:44.425874+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -3104,7 +3104,7 @@
    "updated": "2026-11-05",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-10T17:00:53.136318+08:00"
+   "last_seen": "2026-11-10T20:00:41.731314+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3443,7 +3443,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-11-10T17:00:53.136365+08:00"
+   "last_seen": "2026-11-10T20:00:43.506923+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3654,7 +3654,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-10T17:00:53.136340+08:00"
+   "last_seen": "2026-11-10T20:00:42.571838+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
@@ -3708,7 +3708,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-29T20:00:47.647693+08:00",
-   "last_seen": "2026-11-10T17:00:53.136356+08:00"
+   "last_seen": "2026-11-10T20:00:43.506921+08:00"
   },
   "anthropics/skills": {
    "repo": "anthropics/skills",
@@ -3727,7 +3727,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-10T17:00:53.136285+08:00"
+   "last_seen": "2026-11-10T20:00:41.731310+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4029,9 +4029,10 @@
   "anomalyco/hex": {
    "repo": "anomalyco/hex",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 4401,
+   "stars": 6052,
    "owner": "anomalyco",
    "homepage": "https://anoma.ly/hex",
    "description": "Local voice dictation for mac, windows and linux",
@@ -4046,10 +4047,10 @@
     "speech-to-text",
     "voice-control"
    ],
-   "updated": "2026-11-03",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-10",
+   "metadata_date": "2026-11-10",
    "first_seen": "2026-11-01T20:00:44.151485+08:00",
-   "last_seen": "2026-11-04T17:00:39.748246+08:00"
+   "last_seen": "2026-11-10T20:00:45.661446+08:00"
   },
   "patchy631/ai-engineering-hub": {
    "repo": "patchy631/ai-engineering-hub",
@@ -4165,7 +4166,7 @@
    "updated": "2026-11-08",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-02T20:00:44.952120+08:00",
-   "last_seen": "2026-11-10T17:00:53.136315+08:00"
+   "last_seen": "2026-11-10T20:00:41.731312+08:00"
   },
   "D4Vinci/Scrapling": {
    "repo": "D4Vinci/Scrapling",
@@ -4203,7 +4204,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-10T17:00:53.136377+08:00"
+   "last_seen": "2026-11-10T20:00:45.270914+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4317,7 +4318,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-04T20:00:44.703514+08:00",
-   "last_seen": "2026-11-10T17:00:53.136302+08:00"
+   "last_seen": "2026-11-10T20:00:41.731304+08:00"
   },
   "github/spec-kit": {
    "repo": "github/spec-kit",
@@ -4369,7 +4370,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-04T20:00:47.285699+08:00",
-   "last_seen": "2026-11-10T17:00:53.136383+08:00"
+   "last_seen": "2026-11-10T20:00:44.425848+08:00"
   },
   "harry0703/MoneyPrinterTurbo": {
    "repo": "harry0703/MoneyPrinterTurbo",
@@ -4649,7 +4650,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-10T17:00:53.136352+08:00"
+   "last_seen": "2026-11-10T20:00:43.506906+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -4988,7 +4989,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-07T20:00:44.426081+08:00",
-   "last_seen": "2026-11-10T17:00:53.136311+08:00"
+   "last_seen": "2026-11-10T20:00:41.731292+08:00"
   },
   "sherlock-project/sherlock": {
    "repo": "sherlock-project/sherlock",
@@ -5021,7 +5022,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-07T20:00:45.236343+08:00",
-   "last_seen": "2026-11-10T17:00:53.136321+08:00"
+   "last_seen": "2026-11-10T20:00:43.506931+08:00"
   },
   "tailwindlabs/tailwindcss": {
    "repo": "tailwindlabs/tailwindcss",
@@ -5110,7 +5111,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-08T20:01:13.167759+08:00",
-   "last_seen": "2026-11-10T17:00:53.136337+08:00"
+   "last_seen": "2026-11-10T20:00:42.571835+08:00"
   },
   "google-deepmind/mujoco": {
    "repo": "google-deepmind/mujoco",
@@ -5130,7 +5131,7 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-08T20:01:13.922998+08:00",
-   "last_seen": "2026-11-10T17:00:53.136327+08:00"
+   "last_seen": "2026-11-10T20:00:42.571843+08:00"
   },
   "blader/humanizer": {
    "repo": "blader/humanizer",
@@ -5225,13 +5226,45 @@
    "updated": "2026-11-09",
    "metadata_date": "2026-11-10",
    "first_seen": "2026-11-09T20:00:49.200509+08:00",
-   "last_seen": "2026-11-10T17:00:53.136374+08:00"
+   "last_seen": "2026-11-10T20:00:43.506918+08:00"
+  },
+  "we-promise/sure": {
+   "repo": "we-promise/sure",
+   "lists": [
+    "daily"
+   ],
+   "stars": 11411,
+   "owner": "we-promise",
+   "homepage": "https://sure.am",
+   "description": "The personal finance app for everyone (by everyone)",
+   "language": "Ruby",
+   "topics": [],
+   "updated": "2026-11-10",
+   "metadata_date": "2026-11-10",
+   "first_seen": "2026-11-10T20:00:43.006819+08:00",
+   "last_seen": "2026-11-10T20:00:43.006824+08:00"
+  },
+  "tokio-rs/topcoat": {
+   "repo": "tokio-rs/topcoat",
+   "lists": [
+    "daily"
+   ],
+   "stars": 6589,
+   "owner": "tokio-rs",
+   "homepage": "",
+   "description": "A batteries-included framework for building web apps",
+   "language": "Rust",
+   "topics": [],
+   "updated": "2026-11-09",
+   "metadata_date": "2026-11-10",
+   "first_seen": "2026-11-10T20:00:43.925723+08:00",
+   "last_seen": "2026-11-10T20:00:43.925737+08:00"
   }
  },
- "last_collected": "2026-11-10T17:00:53.136398+08:00",
+ "last_collected": "2026-11-10T20:00:47.895749+08:00",
  "list_counts": {
-  "daily": 11,
+  "daily": 12,
   "weekly": 14,
-  "monthly": 13
+  "monthly": 14
  }
 }
