@@ -16934,7 +16934,7 @@
   ]
  },
  "daily:2026-11-10": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-10",
    "new_count": 6,
@@ -17042,6 +17042,228 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-10 ｜ 今日新项目 6 个 ｜ 4 个分类 ｜ 30 天去重跳过 198 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-10/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 3 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)**　⭐ 230,188\n这是一个给 Claude Code 用的单文件配置（CLAUDE.md），内容来自 Andrej Karpathy 对 LLM 写代码常见毛病的观察总结。把它放进项目里，Claude Code 就会按这些经验来干活，少犯低级错误。比如它可能提醒模型别乱猜 API、别写没用的抽象、改完代码要验证。适合想让 AI 编程助手更靠谱的开发者，直接复制文件即可，不用装任何东西。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 multica-ai ｜ 📅 更新 2026-04-20 ｜ 🏷 日/周榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)**　⭐ 70,818\nppt-master 是一个 AI 驱动的 PPT 生成工具，能把文档或主题直接变成真正的原生 PowerPoint 文件，而不是图片拼凑。它支持原生形状、转场动画、数据图表和表格，还能根据演讲者备注生成语音旁白，并兼容你自己的 .pptx 模板。比如你丢给它一份产品需求文档，它就能自动产出一套带图表和动画的汇报幻灯片，省去手动排版的时间。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 hugohe3 ｜ 📅 更新 2026-10-29 ｜ 🏷 日/周榜 ｜ 🔗 [https://hugohe3.github.io/ppt-master-examples/](https://hugohe3.github.io/ppt-master-examples/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp)**　⭐ 5,744\n这是一个让 Claude、ChatGPT 等 AI 助手直接操控 Home Assistant 的 MCP 插件。它把智能家居的设备、场景和自动化能力暴露给大模型，用户用自然语言就能配置和触发自动化，比如对 AI 说「晚上十点关灯并锁门」，AI 便会调用 Home Assistant 完成设置，省去手动编写 YAML 的麻烦。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 homeassistant-ai ｜ 📅 更新 2026-11-09 ｜ 🏷 日榜 ｜ 🔗 [https://homeassistant-ai.github.io/ha-mcp/](https://homeassistant-ai.github.io/ha-mcp/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [garrytan/gbrain](https://github.com/garrytan/gbrain)**　⭐ 32,012\n这是一个为 OpenClaw/Hermes 智能体打造的「大脑」模块，用 TypeScript 编写，带有作者 Garry 强烈个人风格的预设逻辑。它解决的是智能体缺乏统一决策与记忆中枢的问题，让 Agent 能按既定偏好处理任务。例如在自动化助理场景中，它可集中管理意图判断与行为选择，减少重复配置，适合想快速搭建个性化 Agent 的开发者参考使用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 garrytan ｜ 📅 更新 2026-11-09 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "yellow",
+       "title": {
+        "tag": "plain_text",
+        "content": "⚡ Agent 效率优化 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context)**　⭐ 5,017\nbillion-context 是一个上下文压缩插件，专门解决 AI 对话中上下文窗口太小、token 消耗太快、会话无法长期持续的问题。它能把上下文压缩到原来的五分之一，让 100K 窗口就够用，并支持单次会话持续数月、累计处理几十亿 token。比如你每天和 AI 助手聊工作，几个月后历史记录依然连贯，而费用和内存占用都大幅降低。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ranxianglei ｜ 📅 更新 2026-11-08 ｜ 🏷 日/月/周榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)**　⭐ 68,667\n这是一个由大语言模型驱动的多市场股票智能分析系统，能自动抓取多个来源的行情数据和实时新闻，用 AI 生成分析结论，并通过决策看板展示、自动推送到你的手机或邮箱。它解决了普通投资者信息分散、盯盘耗时的问题，还支持零成本定时运行，比如每天收盘后自动汇总 A 股持仓异动和新闻要点，推送到微信，让你不用手动查资料也能快速掌握市场动态。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ZhuLinsen ｜ 📅 更新 2026-11-09 ｜ 🏷 日榜 ｜ 🔗 [https://dsa.zhulinsen.tech](https://dsa.zhulinsen.tech)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
