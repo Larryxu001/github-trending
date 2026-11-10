@@ -1324,5 +1324,23 @@
   "emoji": "🧩",
   "desc": "这是一个给 AI 写作助手用的技能插件，专门把文本里那些一眼就能看出是 AI 写的痕迹去掉，比如套话开头、机械排比、过度总结等。把它装进 Claude Code、Cursor 或 Codex 等工具后，AI 生成的文案会更像真人写的，适合需要发布博客、邮件或社交内容时使用。",
   "site": "https://skills.sh/blader/humanizer"
+ },
+ "garrytan/gbrain": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "这是一个为 OpenClaw/Hermes 智能体打造的「大脑」模块，用 TypeScript 编写，带有作者 Garry 强烈个人风格的预设逻辑。它解决的是智能体缺乏统一决策与记忆中枢的问题，让 Agent 能按既定偏好处理任务。例如在自动化助理场景中，它可集中管理意图判断与行为选择，减少重复配置，适合想快速搭建个性化 Agent 的开发者参考使用。",
+  "site": "无"
+ },
+ "ZhuLinsen/daily_stock_analysis": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "这是一个由大语言模型驱动的多市场股票智能分析系统，能自动抓取多个来源的行情数据和实时新闻，用 AI 生成分析结论，并通过决策看板展示、自动推送到你的手机或邮箱。它解决了普通投资者信息分散、盯盘耗时的问题，还支持零成本定时运行，比如每天收盘后自动汇总 A 股持仓异动和新闻要点，推送到微信，让你不用手动查资料也能快速掌握市场动态。",
+  "site": "https://dsa.zhulinsen.tech"
+ },
+ "homeassistant-ai/ha-mcp": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个让 Claude、ChatGPT 等 AI 助手直接操控 Home Assistant 的 MCP 插件。它把智能家居的设备、场景和自动化能力暴露给大模型，用户用自然语言就能配置和触发自动化，比如对 AI 说「晚上十点关灯并锁门」，AI 便会调用 Home Assistant 完成设置，省去手动编写 YAML 的麻烦。",
+  "site": "https://homeassistant-ai.github.io/ha-mcp/"
  }
 }

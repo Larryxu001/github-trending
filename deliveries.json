@@ -16932,5 +16932,116 @@
     }
    }
   ]
+ },
+ "daily:2026-11-10": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-10",
+   "new_count": 6,
+   "skipped": 198,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "multica-ai/andrej-karpathy-skills",
+       "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+       "owner": "multica-ai",
+       "stars": 230188,
+       "updated": "2026-04-20",
+       "lists": [
+        "daily",
+        "weekly"
+       ],
+       "desc": "这是一个给 Claude Code 用的单文件配置（CLAUDE.md），内容来自 Andrej Karpathy 对 LLM 写代码常见毛病的观察总结。把它放进项目里，Claude Code 就会按这些经验来干活，少犯低级错误。比如它可能提醒模型别乱猜 API、别写没用的抽象、改完代码要验证。适合想让 AI 编程助手更靠谱的开发者，直接复制文件即可，不用装任何东西。",
+       "site": "无"
+      },
+      {
+       "repo": "hugohe3/ppt-master",
+       "url": "https://github.com/hugohe3/ppt-master",
+       "owner": "hugohe3",
+       "stars": 70818,
+       "updated": "2026-10-29",
+       "lists": [
+        "daily",
+        "weekly"
+       ],
+       "desc": "ppt-master 是一个 AI 驱动的 PPT 生成工具，能把文档或主题直接变成真正的原生 PowerPoint 文件，而不是图片拼凑。它支持原生形状、转场动画、数据图表和表格，还能根据演讲者备注生成语音旁白，并兼容你自己的 .pptx 模板。比如你丢给它一份产品需求文档，它就能自动产出一套带图表和动画的汇报幻灯片，省去手动排版的时间。",
+       "site": "https://hugohe3.github.io/ppt-master-examples/"
+      },
+      {
+       "repo": "homeassistant-ai/ha-mcp",
+       "url": "https://github.com/homeassistant-ai/ha-mcp",
+       "owner": "homeassistant-ai",
+       "stars": 5744,
+       "updated": "2026-11-09",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个让 Claude、ChatGPT 等 AI 助手直接操控 Home Assistant 的 MCP 插件。它把智能家居的设备、场景和自动化能力暴露给大模型，用户用自然语言就能配置和触发自动化，比如对 AI 说「晚上十点关灯并锁门」，AI 便会调用 Home Assistant 完成设置，省去手动编写 YAML 的麻烦。",
+       "site": "https://homeassistant-ai.github.io/ha-mcp/"
+      }
+     ]
+    },
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "garrytan/gbrain",
+       "url": "https://github.com/garrytan/gbrain",
+       "owner": "garrytan",
+       "stars": 32012,
+       "updated": "2026-11-09",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个为 OpenClaw/Hermes 智能体打造的「大脑」模块，用 TypeScript 编写，带有作者 Garry 强烈个人风格的预设逻辑。它解决的是智能体缺乏统一决策与记忆中枢的问题，让 Agent 能按既定偏好处理任务。例如在自动化助理场景中，它可集中管理意图判断与行为选择，减少重复配置，适合想快速搭建个性化 Agent 的开发者参考使用。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "Agent 效率优化",
+     "emoji": "⚡",
+     "items": [
+      {
+       "repo": "ranxianglei/billion-context",
+       "url": "https://github.com/ranxianglei/billion-context",
+       "owner": "ranxianglei",
+       "stars": 5017,
+       "updated": "2026-11-08",
+       "lists": [
+        "daily",
+        "monthly",
+        "weekly"
+       ],
+       "desc": "billion-context 是一个上下文压缩插件，专门解决 AI 对话中上下文窗口太小、token 消耗太快、会话无法长期持续的问题。它能把上下文压缩到原来的五分之一，让 100K 窗口就够用，并支持单次会话持续数月、累计处理几十亿 token。比如你每天和 AI 助手聊工作，几个月后历史记录依然连贯，而费用和内存占用都大幅降低。",
+       "site": "无"
+      }
+     ]
+    },
+    {
+     "name": "AI / 大模型",
+     "emoji": "🧠",
+     "items": [
+      {
+       "repo": "ZhuLinsen/daily_stock_analysis",
+       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+       "owner": "ZhuLinsen",
+       "stars": 68667,
+       "updated": "2026-11-09",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这是一个由大语言模型驱动的多市场股票智能分析系统，能自动抓取多个来源的行情数据和实时新闻，用 AI 生成分析结论，并通过决策看板展示、自动推送到你的手机或邮箱。它解决了普通投资者信息分散、盯盘耗时的问题，还支持零成本定时运行，比如每天收盘后自动汇总 A 股持仓异动和新闻要点，推送到微信，让你不用手动查资料也能快速掌握市场动态。",
+       "site": "https://dsa.zhulinsen.tech"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
