@@ -1317,6 +1317,20 @@
    "tags": [],
    "saved_at": "2026-11-10",
    "source": "pages"
+  },
+  {
+   "repo": "ion-design/ditto.site",
+   "url": "https://github.com/ion-design/ditto.site",
+   "owner": "ion-design",
+   "stars": 1738,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "ditto.site 能把任意公开网页在浏览器里实际渲染的效果，自动转换成一个可运行的 TypeScript 项目，默认生成 Next.js App Router 应用，也支持 Vite React。它解决的是「照着网页手写前端代码」的重复劳动：输入一个网址，就输出包含页面、样式、图片字体等资源的完整代码库，还附带 AGENTS.md 等交接文档。例如输入 example.com，就能得到一个可直接 npm install 并启动的克隆站点项目。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-10",
+   "source": "pages"
   }
  ]
 }
