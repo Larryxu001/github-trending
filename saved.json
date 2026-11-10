@@ -1303,6 +1303,20 @@
    "tags": [],
    "saved_at": "2026-11-06",
    "source": "pages"
+  },
+  {
+   "repo": "JCodesMore/ai-website-cloner-template",
+   "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+   "owner": "JCodesMore",
+   "stars": 38925,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "这是一个面向 AI 编程代理的网站克隆模板：给代理一个网址，它就能自动抓取页面结构、素材和字体，并用 Next.js + Tailwind 重建出可编辑的网站代码。适合把旧站迁移到现代技术栈、找回丢失源码，或学习优秀网站的实现方式。例如输入 /clone-website https://example.com，代理会先梳理路由、观察桌面与移动端状态，再生成组件并对比修正差异。",
+   "site": "https://dsc.gg/jcodesmore",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-10",
+   "source": "pages"
   }
  ]
 }
