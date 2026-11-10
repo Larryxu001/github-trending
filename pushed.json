@@ -87,9 +87,9 @@
  "twostraws/SwiftUI-Agent-Skill": "2026-11-09",
  "BerriAI/litellm": "2026-10-10",
  "Robbyant/lingbot-map": "2026-10-10",
- "multica-ai/andrej-karpathy-skills": "2026-10-11",
- "hugohe3/ppt-master": "2026-10-11",
- "ranxianglei/billion-context": "2026-10-11",
+ "multica-ai/andrej-karpathy-skills": "2026-11-10",
+ "hugohe3/ppt-master": "2026-11-10",
+ "ranxianglei/billion-context": "2026-11-10",
  "huggingface/transformers": "2026-10-11",
  "tensorflow/tensorflow": "2026-10-11",
  "danyuchn/asd-ste100-skill": "2026-10-12",
@@ -219,5 +219,8 @@
  "sherlock-project/sherlock": "2026-11-08",
  "blader/humanizer": "2026-11-09",
  "google-deepmind/mujoco": "2026-11-09",
- "anthropics/claude-quickstarts": "2026-11-09"
+ "anthropics/claude-quickstarts": "2026-11-09",
+ "homeassistant-ai/ha-mcp": "2026-11-10",
+ "garrytan/gbrain": "2026-11-10",
+ "ZhuLinsen/daily_stock_analysis": "2026-11-10"
 }
