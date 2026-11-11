@@ -17287,7 +17287,7 @@
   ]
  },
  "daily:2026-11-11": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-11",
    "new_count": 3,
@@ -17349,6 +17349,160 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-11 ｜ 今日新项目 3 个 ｜ 3 个分类 ｜ 30 天去重跳过 203 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-11/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 4 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [lyogavin/airllm](https://github.com/lyogavin/airllm)**　⭐ 38,107\nAirLLM 是一个让大语言模型在低显存设备上运行的开源项目。它通过分层加载和推理优化，让原本需要几十 GB 显存的 70B 模型，仅用单张 4GB 显卡就能跑起来。比如你只有一张普通游戏显卡，也能本地体验 Llama 等大模型，无需昂贵硬件。适合想低成本部署、研究大模型推理的开发者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 lyogavin ｜ 📅 更新 2026-10-13 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [tokio-rs/topcoat](https://github.com/tokio-rs/topcoat)**　⭐ 6,674\nTopcoat 是一个基于 Rust 的 Web 应用开发框架，主打「开箱即用」，把路由、模板渲染、表单处理等常用功能都打包好了，让开发者不用自己东拼西凑各种库就能快速搭建网站。它适合想用 Rust 写后端但不想折腾基础设施的人，比如你可以用它几行代码就做出一个带表单提交和页面渲染的小型博客或管理后台。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 tokio-rs ｜ 📅 更新 2026-11-09 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "grey",
+       "title": {
+        "tag": "plain_text",
+        "content": "📦 其他 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [we-promise/sure](https://github.com/we-promise/sure)**　⭐ 11,638\nSure 是一款面向所有人的个人财务管理应用，用 Ruby 开发。它帮你集中记录收支、追踪账户余额和消费习惯，解决手动记账繁琐、财务数据分散的问题。比如你可以把日常开销录入后，直观看到每月钱花在哪里，从而更好地做预算和储蓄规划。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 we-promise ｜ 📅 更新 2026-11-10 ｜ 🏷 日榜 ｜ 🔗 [https://sure.am](https://sure.am)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
