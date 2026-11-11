@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-11",
+ "new_count": 3,
+ "skipped": 203,
+ "categories": [
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "lyogavin/airllm",
+     "url": "https://github.com/lyogavin/airllm",
+     "owner": "lyogavin",
+     "stars": 38107,
+     "updated": "2026-10-13",
+     "lists": [
+      "daily"
+     ],
+     "desc": "AirLLM 是一个让大语言模型在低显存设备上运行的开源项目。它通过分层加载和推理优化，让原本需要几十 GB 显存的 70B 模型，仅用单张 4GB 显卡就能跑起来。比如你只有一张普通游戏显卡，也能本地体验 Llama 等大模型，无需昂贵硬件。适合想低成本部署、研究大模型推理的开发者。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "tokio-rs/topcoat",
+     "url": "https://github.com/tokio-rs/topcoat",
+     "owner": "tokio-rs",
+     "stars": 6674,
+     "updated": "2026-11-09",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Topcoat 是一个基于 Rust 的 Web 应用开发框架，主打「开箱即用」，把路由、模板渲染、表单处理等常用功能都打包好了，让开发者不用自己东拼西凑各种库就能快速搭建网站。它适合想用 Rust 写后端但不想折腾基础设施的人，比如你可以用它几行代码就做出一个带表单提交和页面渲染的小型博客或管理后台。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "其他",
+   "emoji": "📦",
+   "items": [
+    {
+     "repo": "we-promise/sure",
+     "url": "https://github.com/we-promise/sure",
+     "owner": "we-promise",
+     "stars": 11638,
+     "updated": "2026-11-10",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Sure 是一款面向所有人的个人财务管理应用，用 Ruby 开发。它帮你集中记录收支、追踪账户余额和消费习惯，解决手动记账繁琐、财务数据分散的问题。比如你可以把日常开销录入后，直观看到每月钱花在哪里，从而更好地做预算和储蓄规划。",
+     "site": "https://sure.am"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
