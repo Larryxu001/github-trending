@@ -1331,6 +1331,20 @@
    "tags": [],
    "saved_at": "2026-11-10",
    "source": "pages"
+  },
+  {
+   "repo": "OpenSelena/omniget",
+   "url": "https://github.com/OpenSelena/omniget",
+   "owner": "OpenSelena",
+   "stars": 5380,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "OmniGet 是一款免费开源的跨平台桌面下载管理器，用 Rust、Tauri 和 Svelte 打造。它把 yt-dlp 和 FFmpeg 封装进图形界面，粘贴链接就能下载 YouTube、Instagram、B站、Telegram、磁力链接等 1800 多个站点的视频、音乐和课程，还支持 Udemy/Hotmart 课程下载。下载后可直接在应用内播放、转写、转换格式，并附带 158 个实用小工具，无需打开终端。",
+   "site": "https://t.me/OpenSelena",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-11",
+   "source": "feishu"
   }
  ]
 }
