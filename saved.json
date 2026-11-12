@@ -1345,6 +1345,20 @@
    "tags": [],
    "saved_at": "2026-11-11",
    "source": "feishu"
+  },
+  {
+   "repo": "zxsos/HGhubX",
+   "url": "https://github.com/zxsos/HGhubX",
+   "owner": "zxsos",
+   "stars": 1092,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "HGhubX 是一个用 Rust + Tauri 2 开发的第三方短剧客户端，支持 Windows、macOS 和 Android 三端，采用 Fluent 设计风格和沉浸式竖屏播放体验。它本身不存储任何视频内容，而是像浏览器一样从第三方站点获取剧集信息供用户浏览观看，适合想跨平台追短剧的用户。例如在安卓手机上安装后，可以像刷短视频一样竖屏连续观看短剧，但项目明确禁止商业使用和批量抓取。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-13",
+   "source": "pages"
   }
  ]
 }
