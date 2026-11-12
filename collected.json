@@ -94,7 +94,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-12T17:00:43.889685+08:00"
+   "last_seen": "2026-11-12T20:00:47.640016+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -127,7 +127,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-12T17:00:43.889680+08:00"
+   "last_seen": "2026-11-12T20:00:47.640050+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -322,7 +322,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-12T17:00:43.889689+08:00"
+   "last_seen": "2026-11-12T20:00:46.651237+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -407,7 +407,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-12T17:00:43.889667+08:00"
+   "last_seen": "2026-11-12T20:00:45.744228+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -537,7 +537,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-12T17:00:43.889638+08:00"
+   "last_seen": "2026-11-12T20:00:43.840457+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -963,7 +963,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-12T17:00:43.889739+08:00"
+   "last_seen": "2026-11-12T20:00:51.337798+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -1067,7 +1067,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-11-12T17:00:43.889670+08:00"
+   "last_seen": "2026-11-12T20:00:48.550075+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
@@ -1170,7 +1170,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-12T17:00:43.889658+08:00"
+   "last_seen": "2026-11-12T20:00:44.831456+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1224,7 +1224,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-12T17:00:43.889706+08:00"
+   "last_seen": "2026-11-12T20:00:48.550090+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1315,7 +1315,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-12T17:00:43.889677+08:00"
+   "last_seen": "2026-11-12T20:00:45.744237+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -1680,16 +1680,16 @@
    "lists": [
     "daily"
    ],
-   "stars": 58583,
+   "stars": 68853,
    "owner": "Alishahryar1",
    "homepage": "",
-   "description": "Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+   "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
    "language": "Python",
    "topics": [],
-   "updated": "2026-10-12",
-   "metadata_date": "2026-10-13",
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
    "first_seen": "2026-10-12T21:01:44.096961+08:00",
-   "last_seen": "2026-10-13T18:02:00.996821+08:00"
+   "last_seen": "2026-11-12T20:00:49.920025+08:00"
   },
   "rohitg00/ai-engineering-from-scratch": {
    "repo": "rohitg00/ai-engineering-from-scratch",
@@ -1833,7 +1833,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 95398,
+   "stars": 95921,
    "owner": "nvm-sh",
    "homepage": "",
    "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
@@ -1853,10 +1853,10 @@
     "version-manager",
     "zsh"
    ],
-   "updated": "2026-10-10",
-   "metadata_date": "2026-10-15",
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
    "first_seen": "2026-10-14T20:38:18.912420+08:00",
-   "last_seen": "2026-10-15T17:00:43.015022+08:00"
+   "last_seen": "2026-11-12T20:00:44.331319+08:00"
   },
   "K-Dense-AI/scientific-agent-skills": {
    "repo": "K-Dense-AI/scientific-agent-skills",
@@ -2076,7 +2076,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-12T17:00:43.889714+08:00"
+   "last_seen": "2026-11-12T20:00:49.476313+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -3025,7 +3025,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 122694,
+   "stars": 123493,
    "owner": "nodejs",
    "homepage": "https://nodejs.org",
    "description": "Node.js JavaScript runtime ✨🐢🚀✨",
@@ -3041,10 +3041,10 @@
     "runtime",
     "windows"
    ],
-   "updated": "2026-10-23",
-   "metadata_date": "2026-10-24",
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
    "first_seen": "2026-10-23T19:15:34.686195+08:00",
-   "last_seen": "2026-10-24T18:34:32.617013+08:00"
+   "last_seen": "2026-11-12T20:00:48.049884+08:00"
   },
   "elie222/rakazo": {
    "repo": "elie222/rakazo",
@@ -3104,7 +3104,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-12T17:00:43.889648+08:00"
+   "last_seen": "2026-11-12T20:00:43.840463+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3307,7 +3307,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-12T17:00:43.889742+08:00"
+   "last_seen": "2026-11-12T20:00:51.337765+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3443,7 +3443,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-11-12T17:00:43.889697+08:00"
+   "last_seen": "2026-11-12T20:00:48.550069+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3625,7 +3625,7 @@
    "updated": "2026-11-08",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-12T17:00:43.889736+08:00"
+   "last_seen": "2026-11-12T20:00:50.420174+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3654,16 +3654,16 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-12T17:00:43.889664+08:00"
+   "last_seen": "2026-11-12T20:00:43.840461+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
    "lists": [
     "daily"
    ],
-   "stars": 9383,
+   "stars": 11210,
    "owner": "CopilotKit",
-   "homepage": "https://www.copilotkit.ai/openbot",
+   "homepage": "open.bot",
    "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
    "language": "TypeScript",
    "topics": [
@@ -3675,10 +3675,10 @@
     "generative-ui",
     "mcp"
    ],
-   "updated": "2026-10-31",
-   "metadata_date": "2026-11-02",
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
    "first_seen": "2026-10-29T20:00:46.716762+08:00",
-   "last_seen": "2026-11-02T18:42:55.532094+08:00"
+   "last_seen": "2026-11-12T20:00:48.976150+08:00"
   },
   "Donchitos/Claude-Code-Game-Studios": {
    "repo": "Donchitos/Claude-Code-Game-Studios",
@@ -3728,7 +3728,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-12T17:00:43.889645+08:00"
+   "last_seen": "2026-11-12T20:00:43.840453+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4167,7 +4167,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-02T20:00:44.952120+08:00",
-   "last_seen": "2026-11-12T17:00:43.889654+08:00"
+   "last_seen": "2026-11-12T20:00:46.651202+08:00"
   },
   "D4Vinci/Scrapling": {
    "repo": "D4Vinci/Scrapling",
@@ -4205,7 +4205,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-02T20:00:46.792008+08:00",
-   "last_seen": "2026-11-12T17:00:43.889694+08:00"
+   "last_seen": "2026-11-12T20:00:49.476281+08:00"
   },
   "karpathy/nanochat": {
    "repo": "karpathy/nanochat",
@@ -4319,7 +4319,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-04T20:00:44.703514+08:00",
-   "last_seen": "2026-11-12T17:00:43.889632+08:00"
+   "last_seen": "2026-11-12T20:00:45.744199+08:00"
   },
   "github/spec-kit": {
    "repo": "github/spec-kit",
@@ -4635,7 +4635,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-05T20:00:46.683725+08:00",
-   "last_seen": "2026-11-12T17:00:43.889717+08:00"
+   "last_seen": "2026-11-12T20:00:48.550086+08:00"
   },
   "vercel-labs/agent-browser": {
    "repo": "vercel-labs/agent-browser",
@@ -4652,7 +4652,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-12T17:00:43.889673+08:00"
+   "last_seen": "2026-11-12T20:00:44.831427+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -4713,7 +4713,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-06T20:00:42.527157+08:00",
-   "last_seen": "2026-11-12T17:00:43.889703+08:00"
+   "last_seen": "2026-11-12T20:00:48.550035+08:00"
   },
   "rails/rails": {
    "repo": "rails/rails",
@@ -4992,7 +4992,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-07T20:00:44.426081+08:00",
-   "last_seen": "2026-11-12T17:00:43.889617+08:00"
+   "last_seen": "2026-11-12T20:00:48.550082+08:00"
   },
   "sherlock-project/sherlock": {
    "repo": "sherlock-project/sherlock",
@@ -5136,7 +5136,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-08T20:01:13.922998+08:00",
-   "last_seen": "2026-11-12T17:00:43.889720+08:00"
+   "last_seen": "2026-11-12T20:00:48.550079+08:00"
   },
   "blader/humanizer": {
    "repo": "blader/humanizer",
@@ -5247,7 +5247,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-10T20:00:43.006819+08:00",
-   "last_seen": "2026-11-12T17:00:43.889683+08:00"
+   "last_seen": "2026-11-12T20:00:45.744233+08:00"
   },
   "tokio-rs/topcoat": {
    "repo": "tokio-rs/topcoat",
@@ -5279,7 +5279,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-11T20:00:44.991036+08:00",
-   "last_seen": "2026-11-12T17:00:43.889651+08:00"
+   "last_seen": "2026-11-12T20:00:43.840436+08:00"
   },
   "shadcn/improve": {
    "repo": "shadcn/improve",
@@ -5327,7 +5327,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-11T20:00:46.919818+08:00",
-   "last_seen": "2026-11-12T17:00:43.889700+08:00"
+   "last_seen": "2026-11-12T20:00:43.840459+08:00"
   },
   "TheAlgorithms/Java": {
    "repo": "TheAlgorithms/Java",
@@ -5390,12 +5390,97 @@
    "metadata_date": "2026-11-12",
    "first_seen": "2026-11-11T20:00:50.746347+08:00",
    "last_seen": "2026-11-12T17:00:43.889733+08:00"
+  },
+  "pookjw/HermesEnabler": {
+   "repo": "pookjw/HermesEnabler",
+   "lists": [
+    "daily"
+   ],
+   "stars": 1333,
+   "owner": "pookjw",
+   "homepage": "",
+   "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+   "language": "Objective-C",
+   "topics": [],
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
+   "first_seen": "2026-11-12T20:00:45.244041+08:00",
+   "last_seen": "2026-11-12T20:00:45.244055+08:00"
+  },
+  "QwenLM/qwen-code": {
+   "repo": "QwenLM/qwen-code",
+   "lists": [
+    "daily"
+   ],
+   "stars": 29543,
+   "owner": "QwenLM",
+   "homepage": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+   "description": "An open-source AI coding agent that lives in your terminal.",
+   "language": "TypeScript",
+   "topics": [
+    "agentic",
+    "ai",
+    "ai-agent",
+    "ai-coding",
+    "cli",
+    "coding-agent",
+    "developer-tools",
+    "llm",
+    "mcp",
+    "qwen",
+    "terminal",
+    "typescript"
+   ],
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
+   "first_seen": "2026-11-12T20:00:46.151021+08:00",
+   "last_seen": "2026-11-12T20:00:46.151035+08:00"
+  },
+  "ashhart/TensorFold": {
+   "repo": "ashhart/TensorFold",
+   "lists": [
+    "daily"
+   ],
+   "stars": 1821,
+   "owner": "ashhart",
+   "homepage": "https://tensorfold.dev",
+   "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+   "language": "Zig",
+   "topics": [
+    "ai",
+    "ai-tools",
+    "llm",
+    "llm-inference",
+    "llm-tools"
+   ],
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
+   "first_seen": "2026-11-12T20:00:47.139862+08:00",
+   "last_seen": "2026-11-12T20:00:47.139877+08:00"
+  },
+  "ggml-org/llama.cpp": {
+   "repo": "ggml-org/llama.cpp",
+   "lists": [
+    "daily"
+   ],
+   "stars": 134237,
+   "owner": "ggml-org",
+   "homepage": "https://llama.app",
+   "description": "LLM inference in C/C++",
+   "language": "C++",
+   "topics": [
+    "ggml"
+   ],
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-12",
+   "first_seen": "2026-11-12T20:00:50.837626+08:00",
+   "last_seen": "2026-11-12T20:00:50.837640+08:00"
   }
  },
- "last_collected": "2026-11-12T17:00:43.889748+08:00",
+ "last_collected": "2026-11-12T20:00:51.337806+08:00",
  "list_counts": {
-  "daily": 10,
-  "weekly": 13,
-  "monthly": 16
+  "daily": 13,
+  "weekly": 11,
+  "monthly": 14
  }
 }
