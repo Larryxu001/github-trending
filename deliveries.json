@@ -17840,5 +17840,131 @@
     }
    }
   ]
+ },
+ "daily:2026-11-13": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-13",
+   "new_count": 7,
+   "skipped": 208,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "vercel-labs/skills",
+       "url": "https://github.com/vercel-labs/skills",
+       "owner": "vercel-labs",
+       "stars": 37550,
+       "updated": "2026-10-30",
+       "lists": [
+        "daily",
+        "monthly"
+       ],
+       "desc": "这是 Vercel 推出的开源 Agent 技能工具，通过 npx skills 命令即可为 AI 编程助手安装和管理可复用的技能包。它解决的问题是：不同 AI Agent 各自为战，能力无法共享。有了它，开发者可以把常用能力（如生成组件、写测试）打包成技能，一条命令装到 Claude Code、Cursor 等工具里，让 Agent 快速获得新本领，无需重复配置。",
+       "site": "https://skills.sh"
+      }
+     ]
+    },
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "QwenLM/qwen-code",
+       "url": "https://github.com/QwenLM/qwen-code",
+       "owner": "QwenLM",
+       "stars": 29675,
+       "updated": "2026-11-12",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Qwen Code 是一个运行在终端里的开源 AI 编程助手，由通义千问团队打造。它把大模型直接接入你的命令行，能读懂当前项目代码、按自然语言指令修改文件、执行命令、排查报错，相当于把一位会写代码的搭档放进终端。比如你说「给这个函数补上单元测试」，它就会自动定位文件、生成测试并运行验证，省去在编辑器和聊天窗口间来回切换的麻烦。",
+       "site": "https://qwenlm.github.io/qwen-code-docs/en/users/overview"
+      }
+     ]
+    },
+    {
+     "name": "AI / 大模型",
+     "emoji": "🧠",
+     "items": [
+      {
+       "repo": "ggml-org/llama.cpp",
+       "url": "https://github.com/ggml-org/llama.cpp",
+       "owner": "ggml-org",
+       "stars": 134398,
+       "updated": "2026-11-12",
+       "lists": [
+        "daily"
+       ],
+       "desc": "llama.cpp 是一个用 C/C++ 编写的大语言模型推理引擎，核心目标是让各种 LLM 能在普通电脑、笔记本甚至手机上高效运行，而不依赖昂贵的 GPU 集群。它通过 ggml 张量库和量化技术大幅降低内存占用，例如可以把 7B 模型压缩到几 GB 内存里，在 MacBook 或树莓派上流畅对话。它解决了大模型部署门槛高、依赖复杂的问题，被大量本地 AI 工具和框架作为底层推理后端使用。",
+       "site": "https://llama.app"
+      },
+      {
+       "repo": "Alishahryar1/free-claude-code",
+       "url": "https://github.com/Alishahryar1/free-claude-code",
+       "owner": "Alishahryar1",
+       "stars": 69054,
+       "updated": "2026-11-12",
+       "lists": [
+        "daily"
+       ],
+       "desc": "这个项目让你免费使用 Claude Code、Codex、VSCode、Pi、OpenCode 等十多个 AI 编程工具，累计提供超过 13 亿免费 token。它解决的是 AI 编程助手价格贵、额度少的问题，支持在终端、App、IDE、手机甚至浏览器里直接调用，还能多工具、多模型混用并支持语音。比如你写代码时想用 Claude Code 但没订阅，就可以通过它免费接入，在浏览器里直接对话写代码。",
+       "site": "无"
+      },
+      {
+       "repo": "ashhart/TensorFold",
+       "url": "https://github.com/ashhart/TensorFold",
+       "owner": "ashhart",
+       "stars": 1879,
+       "updated": "2026-11-12",
+       "lists": [
+        "daily"
+       ],
+       "desc": "TensorFold 是一个用 Zig 编写的轻量级大语言模型推理引擎，支持 Metal、CUDA 和 Vulkan 三种图形接口。它解决的是在不同硬件上运行 LLM 时缺乏统一、高效推理方案的问题，让开发者无需为每种 GPU 单独适配就能部署模型。比如你有一台 Mac 和一台 N 卡 Linux 主机，可以用同一套代码在两者上跑本地大模型推理，省去重复移植的麻烦。",
+       "site": "https://tensorfold.dev"
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "xtool-org/xtool",
+       "url": "https://github.com/xtool-org/xtool",
+       "owner": "xtool-org",
+       "stars": 10309,
+       "updated": "2026-10-14",
+       "lists": [
+        "daily"
+       ],
+       "desc": "xtool 是一个跨平台的 Xcode 替代工具，让你不用 Mac 也能开发和部署 iOS 应用。它基于 Swift Package Manager，支持在 Linux、Windows 和 macOS 上构建 iOS 项目，解决了传统 iOS 开发必须依赖 Xcode 和苹果电脑的痛点。比如你在 Linux 服务器上想编译一个 Swift 写的 iOS 应用，用 xtool 就能直接完成构建和部署，无需再买一台 Mac。",
+       "site": "https://xtool.sh"
+      }
+     ]
+    },
+    {
+     "name": "移动 / 桌面应用",
+     "emoji": "📱",
+     "items": [
+      {
+       "repo": "pookjw/HermesEnabler",
+       "url": "https://github.com/pookjw/HermesEnabler",
+       "owner": "pookjw",
+       "stars": 1442,
+       "updated": "2026-11-12",
+       "lists": [
+        "daily"
+       ],
+       "desc": "HermesEnabler 是一个用 Objective-C 编写的越狱插件，目的是让非爱马仕版 Apple Watch 也能用上爱马仕专属表盘。它通过修改系统限制，把原本只对爱马仕联名款开放的表盘解锁给普通手表用户。比如你戴的是普通 Series 8，装上后就能在表盘库里看到并选用爱马仕的经典表盘，省去购买高价联名款的开销。",
+       "site": "无"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
