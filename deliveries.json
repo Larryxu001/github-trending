@@ -17842,7 +17842,7 @@
   ]
  },
  "daily:2026-11-13": {
-  "status": "sending",
+  "status": "prepared",
   "report": {
    "date": "2026-11-13",
    "new_count": 7,
@@ -18239,7 +18239,11 @@
       ]
      }
     },
-    "status": "sending"
+    "status": "sent",
+    "receipt": {
+     "code": 0,
+     "confirmed_at": "2026-11-13T08:01:52.267577+08:00"
+    }
    }
   ]
  }
