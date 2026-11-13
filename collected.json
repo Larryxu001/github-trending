@@ -61,7 +61,7 @@
     "daily",
     "monthly"
    ],
-   "stars": 47337,
+   "stars": 50155,
    "owner": "alibaba",
    "homepage": "https://open-codereview.ai",
    "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
@@ -74,10 +74,10 @@
     "harness",
     "repository-level-context"
    ],
-   "updated": "2026-10-15",
-   "metadata_date": "2026-10-16",
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
    "first_seen": "2026-10-07T10:00:10.164331+08:00",
-   "last_seen": "2026-10-16T17:00:42.495444+08:00"
+   "last_seen": "2026-11-13T20:00:43.022365+08:00"
   },
   "mattpocock/skills": {
    "repo": "mattpocock/skills",
@@ -94,7 +94,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-07T10:00:10.890893+08:00",
-   "last_seen": "2026-11-13T17:00:43.175522+08:00"
+   "last_seen": "2026-11-13T20:00:48.250767+08:00"
   },
   "heygen-com/hyperframes": {
    "repo": "heygen-com/hyperframes",
@@ -127,7 +127,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-13T17:00:43.175525+08:00"
+   "last_seen": "2026-11-13T20:00:47.171829+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -322,7 +322,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-13T17:00:43.175516+08:00"
+   "last_seen": "2026-11-13T20:00:46.271024+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -407,7 +407,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-13T17:00:43.175501+08:00"
+   "last_seen": "2026-11-13T20:00:45.391832+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -537,7 +537,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-13T17:00:43.175473+08:00"
+   "last_seen": "2026-11-13T20:00:44.504427+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -963,7 +963,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-13T17:00:43.175585+08:00"
+   "last_seen": "2026-11-13T20:00:52.940966+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -1049,7 +1049,8 @@
    "repo": "addyosmani/agent-skills",
    "lists": [
     "daily",
-    "monthly"
+    "monthly",
+    "weekly"
    ],
    "stars": 116506,
    "owner": "addyosmani",
@@ -1067,7 +1068,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-11-13T17:00:43.175537+08:00"
+   "last_seen": "2026-11-13T20:00:49.178828+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
@@ -1170,7 +1171,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-13T17:00:43.175492+08:00"
+   "last_seen": "2026-11-13T20:00:44.504437+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1224,7 +1225,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-13T17:00:43.175548+08:00"
+   "last_seen": "2026-11-13T20:00:51.010076+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1324,7 +1325,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-13T17:00:43.175507+08:00"
+   "last_seen": "2026-11-13T20:00:45.391841+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -2085,7 +2086,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-15T20:00:41.773044+08:00",
-   "last_seen": "2026-11-13T17:00:43.175557+08:00"
+   "last_seen": "2026-11-13T20:00:53.899354+08:00"
   },
   "JuliusBrussee/caveman": {
    "repo": "JuliusBrussee/caveman",
@@ -3113,7 +3114,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-13T17:00:43.175483+08:00"
+   "last_seen": "2026-11-13T20:00:44.504406+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3316,7 +3317,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-13T17:00:43.175581+08:00"
+   "last_seen": "2026-11-13T20:00:50.113066+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3452,7 +3453,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-11-13T17:00:43.175534+08:00"
+   "last_seen": "2026-11-13T20:00:48.250801+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3634,7 +3635,7 @@
    "updated": "2026-11-08",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-13T17:00:43.175562+08:00"
+   "last_seen": "2026-11-13T20:00:52.940936+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3663,7 +3664,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-13T17:00:43.175480+08:00"
+   "last_seen": "2026-11-13T20:00:44.504434+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
@@ -3737,7 +3738,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-13T17:00:43.175466+08:00"
+   "last_seen": "2026-11-13T20:00:44.504422+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4176,7 +4177,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-02T20:00:44.952120+08:00",
-   "last_seen": "2026-11-13T17:00:43.175513+08:00"
+   "last_seen": "2026-11-13T20:00:52.940960+08:00"
   },
   "D4Vinci/Scrapling": {
    "repo": "D4Vinci/Scrapling",
@@ -4328,7 +4329,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-04T20:00:44.703514+08:00",
-   "last_seen": "2026-11-13T17:00:43.175498+08:00"
+   "last_seen": "2026-11-13T20:00:46.271011+08:00"
   },
   "github/spec-kit": {
    "repo": "github/spec-kit",
@@ -4650,6 +4651,7 @@
    "repo": "vercel-labs/agent-browser",
    "lists": [
     "daily",
+    "monthly",
     "weekly"
    ],
    "stars": 50246,
@@ -4661,7 +4663,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-13T17:00:43.175489+08:00"
+   "last_seen": "2026-11-13T20:00:45.391798+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -4722,7 +4724,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-06T20:00:42.527157+08:00",
-   "last_seen": "2026-11-13T17:00:43.175531+08:00"
+   "last_seen": "2026-11-13T20:00:51.010052+08:00"
   },
   "rails/rails": {
    "repo": "rails/rails",
@@ -5007,9 +5009,10 @@
    "repo": "sherlock-project/sherlock",
    "lists": [
     "daily",
-    "monthly"
+    "monthly",
+    "weekly"
    ],
-   "stars": 109934,
+   "stars": 110811,
    "owner": "sherlock-project",
    "homepage": "https://sherlockproject.xyz",
    "description": "Hunt down social media accounts by username across social networks",
@@ -5032,10 +5035,10 @@
     "sherlock",
     "tools"
    ],
-   "updated": "2026-11-11",
-   "metadata_date": "2026-11-12",
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
    "first_seen": "2026-11-07T20:00:45.236343+08:00",
-   "last_seen": "2026-11-12T17:00:43.889730+08:00"
+   "last_seen": "2026-11-13T20:00:44.004313+08:00"
   },
   "tailwindlabs/tailwindcss": {
    "repo": "tailwindlabs/tailwindcss",
@@ -5113,18 +5116,19 @@
   "anthropics/claude-quickstarts": {
    "repo": "anthropics/claude-quickstarts",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 20353,
+   "stars": 20823,
    "owner": "anthropics",
    "homepage": "",
    "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
    "language": "Python",
    "topics": [],
    "updated": "2026-11-06",
-   "metadata_date": "2026-11-11",
+   "metadata_date": "2026-11-13",
    "first_seen": "2026-11-08T20:01:13.167759+08:00",
-   "last_seen": "2026-11-11T17:00:41.127838+08:00"
+   "last_seen": "2026-11-13T20:00:52.440821+08:00"
   },
   "google-deepmind/mujoco": {
    "repo": "google-deepmind/mujoco",
@@ -5145,7 +5149,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-08T20:01:13.922998+08:00",
-   "last_seen": "2026-11-13T17:00:43.175540+08:00"
+   "last_seen": "2026-11-13T20:00:47.171816+08:00"
   },
   "blader/humanizer": {
    "repo": "blader/humanizer",
@@ -5196,9 +5200,10 @@
   "ZhuLinsen/daily_stock_analysis": {
    "repo": "ZhuLinsen/daily_stock_analysis",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 70028,
+   "stars": 71228,
    "owner": "ZhuLinsen",
    "homepage": "https://dsa.zhulinsen.tech",
    "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
@@ -5212,10 +5217,10 @@
     "quantitative-finance",
     "quantitative-trading"
    ],
-   "updated": "2026-11-10",
-   "metadata_date": "2026-11-12",
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
    "first_seen": "2026-11-09T20:00:48.299793+08:00",
-   "last_seen": "2026-11-12T17:00:43.889642+08:00"
+   "last_seen": "2026-11-13T20:00:44.891679+08:00"
   },
   "homeassistant-ai/ha-mcp": {
    "repo": "homeassistant-ai/ha-mcp",
@@ -5256,7 +5261,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-10T20:00:43.006819+08:00",
-   "last_seen": "2026-11-13T17:00:43.175504+08:00"
+   "last_seen": "2026-11-13T20:00:45.391837+08:00"
   },
   "tokio-rs/topcoat": {
    "repo": "tokio-rs/topcoat",
@@ -5288,7 +5293,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-11T20:00:44.991036+08:00",
-   "last_seen": "2026-11-13T17:00:43.175444+08:00"
+   "last_seen": "2026-11-13T20:00:44.504417+08:00"
   },
   "shadcn/improve": {
    "repo": "shadcn/improve",
@@ -5336,7 +5341,7 @@
    "updated": "2026-11-12",
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-11T20:00:46.919818+08:00",
-   "last_seen": "2026-11-13T17:00:43.175476+08:00"
+   "last_seen": "2026-11-13T20:00:44.504430+08:00"
   },
   "TheAlgorithms/Java": {
    "repo": "TheAlgorithms/Java",
@@ -5484,12 +5489,183 @@
    "metadata_date": "2026-11-13",
    "first_seen": "2026-11-12T20:00:50.837626+08:00",
    "last_seen": "2026-11-13T17:00:43.175565+08:00"
+  },
+  "backnotprop/plannotator": {
+   "repo": "backnotprop/plannotator",
+   "lists": [
+    "daily"
+   ],
+   "stars": 10253,
+   "owner": "backnotprop",
+   "homepage": "https://plannotator.ai",
+   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+   "language": "TypeScript",
+   "topics": [
+    "agents",
+    "claude-code",
+    "code-review",
+    "codex",
+    "obsidian",
+    "opencode",
+    "pi-mono",
+    "plan-mode",
+    "skills"
+   ],
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:45.770901+08:00",
+   "last_seen": "2026-11-13T20:00:45.770913+08:00"
+  },
+  "louislam/uptime-kuma": {
+   "repo": "louislam/uptime-kuma",
+   "lists": [
+    "daily"
+   ],
+   "stars": 93627,
+   "owner": "louislam",
+   "homepage": "https://uptime.kuma.pet",
+   "description": "A fancy self-hosted monitoring tool",
+   "language": "JavaScript",
+   "topics": [
+    "docker",
+    "monitor",
+    "monitoring",
+    "responsive",
+    "self-hosted",
+    "selfhosted",
+    "single-page-app",
+    "socket-io",
+    "uptime",
+    "uptime-monitoring",
+    "webapp",
+    "websocket"
+   ],
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:46.671718+08:00",
+   "last_seen": "2026-11-13T20:00:46.671728+08:00"
+  },
+  "block/buzz": {
+   "repo": "block/buzz",
+   "lists": [
+    "daily"
+   ],
+   "stars": 37152,
+   "owner": "block",
+   "homepage": "",
+   "description": "A hive mind communication platform",
+   "language": "Rust",
+   "topics": [],
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:47.750640+08:00",
+   "last_seen": "2026-11-13T20:00:47.750653+08:00"
+  },
+  "tradermonty/claude-trading-skills": {
+   "repo": "tradermonty/claude-trading-skills",
+   "lists": [
+    "daily"
+   ],
+   "stars": 3866,
+   "owner": "tradermonty",
+   "homepage": "https://tradermonty.github.io/claude-trading-skills/",
+   "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+   "language": "Python",
+   "topics": [],
+   "updated": "2026-11-12",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:48.678708+08:00",
+   "last_seen": "2026-11-13T20:00:48.678721+08:00"
+  },
+  "tailscale/tailcat": {
+   "repo": "tailscale/tailcat",
+   "lists": [
+    "daily"
+   ],
+   "stars": 9185,
+   "owner": "tailscale",
+   "homepage": "https://tailscale.com/tailcat",
+   "description": "like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+   "language": "Go",
+   "topics": [],
+   "updated": "2026-11-05",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:49.612934+08:00",
+   "last_seen": "2026-11-13T20:00:49.612946+08:00"
+  },
+  "Likely7/Veyra-NRVideo": {
+   "repo": "Likely7/Veyra-NRVideo",
+   "lists": [
+    "daily"
+   ],
+   "stars": 1405,
+   "owner": "Likely7",
+   "homepage": "",
+   "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+   "language": "C++",
+   "topics": [],
+   "updated": "2026-11-11",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:50.509935+08:00",
+   "last_seen": "2026-11-13T20:00:50.509945+08:00"
+  },
+  "ChromeDevTools/chrome-devtools-mcp": {
+   "repo": "ChromeDevTools/chrome-devtools-mcp",
+   "lists": [
+    "daily"
+   ],
+   "stars": 55219,
+   "owner": "ChromeDevTools",
+   "homepage": "https://developer.chrome.com/docs/devtools/agents",
+   "description": "Chrome DevTools for coding agents",
+   "language": "TypeScript",
+   "topics": [
+    "browser",
+    "chrome",
+    "chrome-devtools",
+    "debugging",
+    "devtools",
+    "mcp",
+    "mcp-server",
+    "puppeteer"
+   ],
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:51.468208+08:00",
+   "last_seen": "2026-11-13T20:00:51.468220+08:00"
+  },
+  "lobehub/lobehub": {
+   "repo": "lobehub/lobehub",
+   "lists": [
+    "weekly"
+   ],
+   "stars": 85250,
+   "owner": "lobehub",
+   "homepage": "https://lobehub.com",
+   "description": "🤯 LobeHub - Super-Agents on Your Team. Add super-agents to the chats your team already uses.They take on work by themselves and get better every week.",
+   "language": "TypeScript",
+   "topics": [
+    "agent",
+    "agent-collaboration",
+    "agent-harness",
+    "loop-engineering",
+    "mcp",
+    "personal-assistant",
+    "proactive-agent",
+    "skills",
+    "super-agent",
+    "task-management"
+   ],
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-13",
+   "first_seen": "2026-11-13T20:00:53.399219+08:00",
+   "last_seen": "2026-11-13T20:00:53.399231+08:00"
   }
  },
- "last_collected": "2026-11-13T17:00:43.175588+08:00",
+ "last_collected": "2026-11-13T20:00:53.899386+08:00",
  "list_counts": {
-  "daily": 13,
-  "weekly": 11,
-  "monthly": 14
+  "daily": 12,
+  "weekly": 14,
+  "monthly": 15
  }
 }
