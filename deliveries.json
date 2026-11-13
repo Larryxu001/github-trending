@@ -17842,7 +17842,7 @@
   ]
  },
  "daily:2026-11-13": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-13",
    "new_count": 7,
@@ -17965,6 +17965,262 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-13 ｜ 今日新项目 7 个 ｜ 5 个分类 ｜ 30 天去重跳过 208 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-13/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 6 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [vercel-labs/skills](https://github.com/vercel-labs/skills)**　⭐ 37,550\n这是 Vercel 推出的开源 Agent 技能工具，通过 npx skills 命令即可为 AI 编程助手安装和管理可复用的技能包。它解决的问题是：不同 AI Agent 各自为战，能力无法共享。有了它，开发者可以把常用能力（如生成组件、写测试）打包成技能，一条命令装到 Claude Code、Cursor 等工具里，让 Agent 快速获得新本领，无需重复配置。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 vercel-labs ｜ 📅 更新 2026-10-30 ｜ 🏷 日/月榜 ｜ 🔗 [https://skills.sh](https://skills.sh)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)**　⭐ 29,675\nQwen Code 是一个运行在终端里的开源 AI 编程助手，由通义千问团队打造。它把大模型直接接入你的命令行，能读懂当前项目代码、按自然语言指令修改文件、执行命令、排查报错，相当于把一位会写代码的搭档放进终端。比如你说「给这个函数补上单元测试」，它就会自动定位文件、生成测试并运行验证，省去在编辑器和聊天窗口间来回切换的麻烦。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 QwenLM ｜ 📅 更新 2026-11-12 ｜ 🏷 日榜 ｜ 🔗 [https://qwenlm.github.io/qwen-code-docs/en/users/overview](https://qwenlm.github.io/qwen-code-docs/en/users/overview)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 3 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)**　⭐ 134,398\nllama.cpp 是一个用 C/C++ 编写的大语言模型推理引擎，核心目标是让各种 LLM 能在普通电脑、笔记本甚至手机上高效运行，而不依赖昂贵的 GPU 集群。它通过 ggml 张量库和量化技术大幅降低内存占用，例如可以把 7B 模型压缩到几 GB 内存里，在 MacBook 或树莓派上流畅对话。它解决了大模型部署门槛高、依赖复杂的问题，被大量本地 AI 工具和框架作为底层推理后端使用。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ggml-org ｜ 📅 更新 2026-11-12 ｜ 🏷 日榜 ｜ 🔗 [https://llama.app](https://llama.app)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [Alishahryar1/free-claude-code](https://github.com/Alishahryar1/free-claude-code)**　⭐ 69,054\n这个项目让你免费使用 Claude Code、Codex、VSCode、Pi、OpenCode 等十多个 AI 编程工具，累计提供超过 13 亿免费 token。它解决的是 AI 编程助手价格贵、额度少的问题，支持在终端、App、IDE、手机甚至浏览器里直接调用，还能多工具、多模型混用并支持语音。比如你写代码时想用 Claude Code 但没订阅，就可以通过它免费接入，在浏览器里直接对话写代码。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Alishahryar1 ｜ 📅 更新 2026-11-12 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [ashhart/TensorFold](https://github.com/ashhart/TensorFold)**　⭐ 1,879\nTensorFold 是一个用 Zig 编写的轻量级大语言模型推理引擎，支持 Metal、CUDA 和 Vulkan 三种图形接口。它解决的是在不同硬件上运行 LLM 时缺乏统一、高效推理方案的问题，让开发者无需为每种 GPU 单独适配就能部署模型。比如你有一台 Mac 和一台 N 卡 Linux 主机，可以用同一套代码在两者上跑本地大模型推理，省去重复移植的麻烦。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ashhart ｜ 📅 更新 2026-11-12 ｜ 🏷 日榜 ｜ 🔗 [https://tensorfold.dev](https://tensorfold.dev)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [xtool-org/xtool](https://github.com/xtool-org/xtool)**　⭐ 10,309\nxtool 是一个跨平台的 Xcode 替代工具，让你不用 Mac 也能开发和部署 iOS 应用。它基于 Swift Package Manager，支持在 Linux、Windows 和 macOS 上构建 iOS 项目，解决了传统 iOS 开发必须依赖 Xcode 和苹果电脑的痛点。比如你在 Linux 服务器上想编译一个 Swift 写的 iOS 应用，用 xtool 就能直接完成构建和部署，无需再买一台 Mac。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 xtool-org ｜ 📅 更新 2026-10-14 ｜ 🏷 日榜 ｜ 🔗 [https://xtool.sh](https://xtool.sh)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "turquoise",
+       "title": {
+        "tag": "plain_text",
+        "content": "📱 移动 / 桌面应用 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [pookjw/HermesEnabler](https://github.com/pookjw/HermesEnabler)**　⭐ 1,442\nHermesEnabler 是一个用 Objective-C 编写的越狱插件，目的是让非爱马仕版 Apple Watch 也能用上爱马仕专属表盘。它通过修改系统限制，把原本只对爱马仕联名款开放的表盘解锁给普通手表用户。比如你戴的是普通 Series 8，装上后就能在表盘库里看到并选用爱马仕的经典表盘，省去购买高价联名款的开销。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 pookjw ｜ 📅 更新 2026-11-12 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
