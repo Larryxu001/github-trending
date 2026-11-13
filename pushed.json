@@ -96,11 +96,11 @@
  "lyogavin/airllm": "2026-11-11",
  "chrislgarry/Apollo-11": "2026-10-12",
  "open-webui/open-webui": "2026-10-13",
- "Alishahryar1/free-claude-code": "2026-10-13",
+ "Alishahryar1/free-claude-code": "2026-11-13",
  "microsoft/BitNet": "2026-10-13",
- "vercel-labs/skills": "2026-10-14",
+ "vercel-labs/skills": "2026-11-13",
  "google/artemis": "2026-10-14",
- "xtool-org/xtool": "2026-10-14",
+ "xtool-org/xtool": "2026-11-13",
  "HKUDS/CLI-Anything": "2026-10-15",
  "K-Dense-AI/scientific-agent-skills": "2026-10-15",
  "vxcontrol/pentagi": "2026-10-15",
@@ -229,5 +229,9 @@
  "shadcn/improve": "2026-11-12",
  "openai/codex-security": "2026-11-12",
  "TheAlgorithms/Java": "2026-11-12",
- "GoogleChrome/modern-web-guidance-src": "2026-11-12"
+ "GoogleChrome/modern-web-guidance-src": "2026-11-12",
+ "QwenLM/qwen-code": "2026-11-13",
+ "ggml-org/llama.cpp": "2026-11-13",
+ "ashhart/TensorFold": "2026-11-13",
+ "pookjw/HermesEnabler": "2026-11-13"
 }
