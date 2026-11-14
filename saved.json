@@ -1373,6 +1373,20 @@
    "tags": [],
    "saved_at": "2026-11-14",
    "source": "pages"
+  },
+  {
+   "repo": "DeanChensj/jiangshan-map",
+   "url": "https://github.com/DeanChensj/jiangshan-map",
+   "owner": "DeanChensj",
+   "stars": 5744,
+   "category": "学习资源",
+   "emoji": "📚",
+   "desc": "这是一个可交互的中国历史地图时间轴，覆盖公元前403年战国至当代共18个历史时期、198张疆域快照。拖动时间轴即可看各朝代疆域、政权对峙、黄河改道与长城运河的演变；点击任意古城或关隘，能查看它两千多年来的名称与行政区划变迁，比如长安历代叫什么、发生过哪些大事；还能搜索秦始皇、张骞、李白、苏轼等人物，把其生平足迹按年份标在地图上，适合历史爱好者、学生和数字人文研究者直观理解中国历史地理。",
+   "site": "https://deanchen.me/jiangshan-map/",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-14",
+   "source": "pages"
   }
  ]
 }
