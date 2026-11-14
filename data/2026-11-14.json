@@ -1,0 +1,197 @@
+{
+ "date": "2026-11-14",
+ "new_count": 13,
+ "skipped": 211,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "ChromeDevTools/chrome-devtools-mcp",
+     "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+     "owner": "ChromeDevTools",
+     "stars": 55345,
+     "updated": "2026-11-13",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是 Chrome 官方推出的 MCP 服务器，让 AI 编程助手能直接操控 Chrome 开发者工具。它把浏览器调试能力（如查看网络请求、分析性能、检查页面元素）封装成 AI 可调用的工具，解决 AI 写前端代码时「看不见浏览器」的问题。例如 AI 改完页面后，可自动打开 DevTools 抓取控制台报错或性能数据，据此继续修复，无需人工复制粘贴。",
+     "site": "https://developer.chrome.com/docs/devtools/agents"
+    },
+    {
+     "repo": "google/elephant-goldfish-model",
+     "url": "https://github.com/google/elephant-goldfish-model",
+     "owner": "google",
+     "stars": 18498,
+     "updated": "2026-11-13",
+     "lists": [
+      "weekly"
+     ],
+     "desc": "这是一个开源插件，用来让 AI 编程助手（如 Claude Code、Codex、Gemini）更规范地设计和评审软件。它把软件设计、代码审查等流程做成可复用的“技能”，让智能体按固定步骤工作，减少随意发挥。比如你要加新功能，它能引导智能体先出设计方案再写代码，并自动做代码评审，适合团队提升 AI 辅助开发的可靠性和一致性。",
+     "site": "https://egm.dev"
+    },
+    {
+     "repo": "tradermonty/claude-trading-skills",
+     "url": "https://github.com/tradermonty/claude-trading-skills",
+     "owner": "tradermonty",
+     "stars": 4026,
+     "updated": "2026-11-13",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个为 Claude Code 打造的技能包，专门服务股票投资者和交易员。它把市场分析、技术图表绘制、经济日历、选股筛选和交易策略开发等能力封装成可调用的技能，让用户直接通过对话完成原本需要多个工具切换的投研工作。例如你可以让它分析某只股票的技术形态、生成图表，或根据经济日历提醒重要数据发布，从而提升交易研究与决策效率。",
+     "site": "https://tradermonty.github.io/claude-trading-skills/"
+    }
+   ]
+  },
+  {
+   "name": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "items": [
+    {
+     "repo": "lobehub/lobehub",
+     "url": "https://github.com/lobehub/lobehub",
+     "owner": "lobehub",
+     "stars": 85342,
+     "updated": "2026-11-13",
+     "lists": [
+      "weekly"
+     ],
+     "desc": "LobeHub 是一个面向团队的开源超级智能体平台，你可以把多个 AI 智能体加入团队日常使用的聊天工具中，让它们自主认领并完成任务，而且每周都在变强。它解决了团队协作中重复性工作没人干、AI 工具与现有聊天流程割裂的问题。比如产品团队在群里提需求，智能体可自动拆解任务、跟进进度并持续学习团队习惯。",
+     "site": "https://lobehub.com"
+    },
+    {
+     "repo": "HKUDS/CLI-Anything",
+     "url": "https://github.com/HKUDS/CLI-Anything",
+     "owner": "HKUDS",
+     "stars": 57383,
+     "updated": "2026-09-22",
+     "lists": [
+      "daily",
+      "monthly",
+      "weekly"
+     ],
+     "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+     "site": "https://clianything.cc/"
+    },
+    {
+     "repo": "K-Dense-AI/scientific-agent-skills",
+     "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+     "owner": "K-Dense-AI",
+     "stars": 54145,
+     "updated": "2026-10-19",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "一个面向 AI Agent 的基础设施/框架类项目，简介：Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. …",
+     "site": "https://arxiv.org/abs/2609.00065"
+    },
+    {
+     "repo": "backnotprop/plannotator",
+     "url": "https://github.com/backnotprop/plannotator",
+     "owner": "backnotprop",
+     "stars": 10360,
+     "updated": "2026-11-13",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Plannotator 是一个面向 AI 编程代理的协作工作台，解决代理自动改代码时人难以参与和把关的问题。它让你在代理执行任务的过程中随时规划、批注、审查代码，并把反馈一键发回给代理，形成人机来回协作的闭环。例如 Claude Code 改完一批文件后，你可以直接在界面上圈出问题、写下意见，点一下就把这些反馈交给代理继续修改，同时还能分享给团队一起看。",
+     "site": "https://plannotator.ai"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "rust-lang/rust",
+     "url": "https://github.com/rust-lang/rust",
+     "owner": "rust-lang",
+     "stars": 121295,
+     "updated": "2026-11-06",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个开发工具/框架类项目，简介：Empowering everyone to build reliable and efficient software",
+     "site": "https://www.rust-lang.org"
+    },
+    {
+     "repo": "louislam/uptime-kuma",
+     "url": "https://github.com/louislam/uptime-kuma",
+     "owner": "louislam",
+     "stars": 93748,
+     "updated": "2026-11-13",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Uptime Kuma 是一个可自托管的网站与服务监控工具，界面美观、响应式，支持 HTTP、TCP、Ping、DNS 等多种监控类型，能定时检测目标是否在线，并在异常时通过通知提醒你。它解决了依赖第三方监控服务成本高、数据不透明的问题，适合个人或团队部署在自己的服务器上，比如监控公司官网、API 接口或家庭 NAS 是否宕机。",
+     "site": "https://uptime.kuma.pet"
+    },
+    {
+     "repo": "tailscale/tailcat",
+     "url": "https://github.com/tailscale/tailcat",
+     "owner": "tailscale",
+     "stars": 9331,
+     "updated": "2026-11-05",
+     "lists": [
+      "daily"
+     ],
+     "desc": "tailcat 是 Tailscale 推出的网络调试小工具，用法类似经典的 netcat，但它只在 Tailscale 的数据通道上收发数据，不经过 Tailscale 的控制面。这样你可以像用 nc 一样在机器之间临时开端口、传文件或做连通性测试，却不必依赖登录、密钥分发等控制服务。比如两台已加入同一 Tailscale 网络的机器，可用它快速验证数据面是否互通，或临时搭一个只在内网可见的调试服务。",
+     "site": "https://tailscale.com/tailcat"
+    }
+   ]
+  },
+  {
+   "name": "移动 / 桌面应用",
+   "emoji": "📱",
+   "items": [
+    {
+     "repo": "Likely7/Veyra-NRVideo",
+     "url": "https://github.com/Likely7/Veyra-NRVideo",
+     "owner": "Likely7",
+     "stars": 1526,
+     "updated": "2026-11-11",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Veyra-NRVideo 是一款 Windows 视频播放与采集增强工具，主打实时预览视频、图片和采集卡画面，并叠加 AI 超分辨率、DLSS5 画质增强和帧生成技术，让低分辨率或低帧率内容看起来更清晰流畅。比如把 PS5 上的 GTA6 采集到电脑后，它能通过补帧和画质提升，模拟出接近 120FPS 的观感，适合游戏直播、录屏和影音爱好者。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "其他",
+   "emoji": "📦",
+   "items": [
+    {
+     "repo": "nvm-sh/nvm",
+     "url": "https://github.com/nvm-sh/nvm",
+     "owner": "nvm-sh",
+     "stars": 95962,
+     "updated": "2026-11-12",
+     "lists": [
+      "daily"
+     ],
+     "desc": "一个开源项目，简介：Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
+     "site": "无"
+    },
+    {
+     "repo": "block/buzz",
+     "url": "https://github.com/block/buzz",
+     "owner": "block",
+     "stars": 37243,
+     "updated": "2026-11-13",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Buzz 是一个用 Rust 编写的“蜂巢思维”通信平台，旨在让一群人像共享一个大脑那样协作交流。它解决的是团队信息分散、讨论难以汇聚成集体判断的问题：成员可以发布想法、互相补充，系统把零散观点整合成统一的知识脉络。例如在开源社区讨论新功能时，大家各抒己见，Buzz 能把这些发言组织成清晰的共识视图，方便新人快速了解全貌。",
+     "site": "无"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}

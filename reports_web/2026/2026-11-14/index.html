@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 日报 · 2026-11-14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.043</span></div>
+    <h1>Github开源趋势日报</h1>
+    <div class="standfirst">每 3 小时采集日 / 周 / 月三榜，每天汇总新收录项目</div>
+    <div class="dateline"><b>2026 年 11 月 14 日</b>　·　第 43 期　·　本期共收录 <b>13</b> 个项目　·　30 天去重跳过 211 个</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>Agent 技能与插件<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>chrome-devtools-mcp</a><a class="toc-proj" href="#sec-1-2"><span class="toc-no">02</span>elephant-goldfish-model</a><a class="toc-proj" href="#sec-1-3"><span class="toc-no">03</span>claude-trading-skills</a></details><details><summary><span class="toc-no">02</span>Agent 基础设施与框架<span class="toc-n">4</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>lobehub</a><a class="toc-proj" href="#sec-2-2"><span class="toc-no">02</span>CLI-Anything</a><a class="toc-proj" href="#sec-2-3"><span class="toc-no">03</span>scientific-agent-skills</a><a class="toc-proj" href="#sec-2-4"><span class="toc-no">04</span>plannotator</a></details><details><summary><span class="toc-no">03</span>开发工具与框架<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>rust</a><a class="toc-proj" href="#sec-3-2"><span class="toc-no">02</span>uptime-kuma</a><a class="toc-proj" href="#sec-3-3"><span class="toc-no">03</span>tailcat</a></details><details><summary><span class="toc-no">04</span>移动 / 桌面应用<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>Veyra-NRVideo</a></details><details><summary><span class="toc-no">05</span>其他<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-5-1"><span class="toc-no">01</span>nvm</a><a class="toc-proj" href="#sec-5-2"><span class="toc-no">02</span>buzz</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank">ChromeDevTools/chrome-devtools-mcp</a></h3>
+            <span class="stars">★ 55,345</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;ChromeDevTools/chrome-devtools-mcp&quot;, &quot;url&quot;: &quot;https://github.com/ChromeDevTools/chrome-devtools-mcp&quot;, &quot;owner&quot;: &quot;ChromeDevTools&quot;, &quot;stars&quot;: 55345, &quot;desc&quot;: &quot;\u8fd9\u662f Chrome \u5b98\u65b9\u63a8\u51fa\u7684 MCP \u670d\u52a1\u5668\uff0c\u8ba9 AI \u7f16\u7a0b\u52a9\u624b\u80fd\u76f4\u63a5\u64cd\u63a7 Chrome \u5f00\u53d1\u8005\u5de5\u5177\u3002\u5b83\u628a\u6d4f\u89c8\u5668\u8c03\u8bd5\u80fd\u529b\uff08\u5982\u67e5\u770b\u7f51\u7edc\u8bf7\u6c42\u3001\u5206\u6790\u6027\u80fd\u3001\u68c0\u67e5\u9875\u9762\u5143\u7d20\uff09\u5c01\u88c5\u6210 AI \u53ef\u8c03\u7528\u7684\u5de5\u5177\uff0c\u89e3\u51b3 AI \u5199\u524d\u7aef\u4ee3\u7801\u65f6\u300c\u770b\u4e0d\u89c1\u6d4f\u89c8\u5668\u300d\u7684\u95ee\u9898\u3002\u4f8b\u5982 AI \u6539\u5b8c\u9875\u9762\u540e\uff0c\u53ef\u81ea\u52a8\u6253\u5f00 DevTools \u6293\u53d6\u63a7\u5236\u53f0\u62a5\u9519\u6216\u6027\u80fd\u6570\u636e\uff0c\u636e\u6b64\u7ee7\u7eed\u4fee\u590d\uff0c\u65e0\u9700\u4eba\u5de5\u590d\u5236\u7c98\u8d34\u3002&quot;, &quot;site&quot;: &quot;https://developer.chrome.com/docs/devtools/agents&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是 Chrome 官方推出的 MCP 服务器，让 AI 编程助手能直接操控 Chrome 开发者工具。它把浏览器调试能力（如查看网络请求、分析性能、检查页面元素）封装成 AI 可调用的工具，解决 AI 写前端代码时「看不见浏览器」的问题。例如 AI 改完页面后，可自动打开 DevTools 抓取控制台报错或性能数据，据此继续修复，无需人工复制粘贴。</p>
+          
+          <div class="byline">
+            <span>ChromeDevTools</span><i>·</i>
+            <span>更新于 2026-11-13</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://developer.chrome.com/docs/devtools/agents" target="_blank">https://developer.chrome.com/docs/devtools/agents</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/ChromeDevTools/chrome-devtools-mcp.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/ChromeDevTools/chrome-devtools-mcp">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/google/elephant-goldfish-model" target="_blank">google/elephant-goldfish-model</a></h3>
+            <span class="stars">★ 18,498</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;google/elephant-goldfish-model&quot;, &quot;url&quot;: &quot;https://github.com/google/elephant-goldfish-model&quot;, &quot;owner&quot;: &quot;google&quot;, &quot;stars&quot;: 18498, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u5f00\u6e90\u63d2\u4ef6\uff0c\u7528\u6765\u8ba9 AI \u7f16\u7a0b\u52a9\u624b\uff08\u5982 Claude Code\u3001Codex\u3001Gemini\uff09\u66f4\u89c4\u8303\u5730\u8bbe\u8ba1\u548c\u8bc4\u5ba1\u8f6f\u4ef6\u3002\u5b83\u628a\u8f6f\u4ef6\u8bbe\u8ba1\u3001\u4ee3\u7801\u5ba1\u67e5\u7b49\u6d41\u7a0b\u505a\u6210\u53ef\u590d\u7528\u7684\u201c\u6280\u80fd\u201d\uff0c\u8ba9\u667a\u80fd\u4f53\u6309\u56fa\u5b9a\u6b65\u9aa4\u5de5\u4f5c\uff0c\u51cf\u5c11\u968f\u610f\u53d1\u6325\u3002\u6bd4\u5982\u4f60\u8981\u52a0\u65b0\u529f\u80fd\uff0c\u5b83\u80fd\u5f15\u5bfc\u667a\u80fd\u4f53\u5148\u51fa\u8bbe\u8ba1\u65b9\u6848\u518d\u5199\u4ee3\u7801\uff0c\u5e76\u81ea\u52a8\u505a\u4ee3\u7801\u8bc4\u5ba1\uff0c\u9002\u5408\u56e2\u961f\u63d0\u5347 AI \u8f85\u52a9\u5f00\u53d1\u7684\u53ef\u9760\u6027\u548c\u4e00\u81f4\u6027\u3002&quot;, &quot;site&quot;: &quot;https://egm.dev&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个开源插件，用来让 AI 编程助手（如 Claude Code、Codex、Gemini）更规范地设计和评审软件。它把软件设计、代码审查等流程做成可复用的“技能”，让智能体按固定步骤工作，减少随意发挥。比如你要加新功能，它能引导智能体先出设计方案再写代码，并自动做代码评审，适合团队提升 AI 辅助开发的可靠性和一致性。</p>
+          
+          <div class="byline">
+            <span>google</span><i>·</i>
+            <span>更新于 2026-11-13</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            <a class="site" href="https://egm.dev" target="_blank">https://egm.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/google/elephant-goldfish-model.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/google/elephant-goldfish-model">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-1-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/tradermonty/claude-trading-skills" target="_blank">tradermonty/claude-trading-skills</a></h3>
+            <span class="stars">★ 4,026</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tradermonty/claude-trading-skills&quot;, &quot;url&quot;: &quot;https://github.com/tradermonty/claude-trading-skills&quot;, &quot;owner&quot;: &quot;tradermonty&quot;, &quot;stars&quot;: 4026, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u4e3a Claude Code \u6253\u9020\u7684\u6280\u80fd\u5305\uff0c\u4e13\u95e8\u670d\u52a1\u80a1\u7968\u6295\u8d44\u8005\u548c\u4ea4\u6613\u5458\u3002\u5b83\u628a\u5e02\u573a\u5206\u6790\u3001\u6280\u672f\u56fe\u8868\u7ed8\u5236\u3001\u7ecf\u6d4e\u65e5\u5386\u3001\u9009\u80a1\u7b5b\u9009\u548c\u4ea4\u6613\u7b56\u7565\u5f00\u53d1\u7b49\u80fd\u529b\u5c01\u88c5\u6210\u53ef\u8c03\u7528\u7684\u6280\u80fd\uff0c\u8ba9\u7528\u6237\u76f4\u63a5\u901a\u8fc7\u5bf9\u8bdd\u5b8c\u6210\u539f\u672c\u9700\u8981\u591a\u4e2a\u5de5\u5177\u5207\u6362\u7684\u6295\u7814\u5de5\u4f5c\u3002\u4f8b\u5982\u4f60\u53ef\u4ee5\u8ba9\u5b83\u5206\u6790\u67d0\u53ea\u80a1\u7968\u7684\u6280\u672f\u5f62\u6001\u3001\u751f\u6210\u56fe\u8868\uff0c\u6216\u6839\u636e\u7ecf\u6d4e\u65e5\u5386\u63d0\u9192\u91cd\u8981\u6570\u636e\u53d1\u5e03\uff0c\u4ece\u800c\u63d0\u5347\u4ea4\u6613\u7814\u7a76\u4e0e\u51b3\u7b56\u6548\u7387\u3002&quot;, &quot;site&quot;: &quot;https://tradermonty.github.io/claude-trading-skills/&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个为 Claude Code 打造的技能包，专门服务股票投资者和交易员。它把市场分析、技术图表绘制、经济日历、选股筛选和交易策略开发等能力封装成可调用的技能，让用户直接通过对话完成原本需要多个工具切换的投研工作。例如你可以让它分析某只股票的技术形态、生成图表，或根据经济日历提醒重要数据发布，从而提升交易研究与决策效率。</p>
+          
+          <div class="byline">
+            <span>tradermonty</span><i>·</i>
+            <span>更新于 2026-11-13</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://tradermonty.github.io/claude-trading-skills/" target="_blank">https://tradermonty.github.io/claude-trading-skills/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/tradermonty/claude-trading-skills.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/tradermonty/claude-trading-skills">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">Agent 基础设施与框架</span><span class="sec-count">4 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/lobehub/lobehub" target="_blank">lobehub/lobehub</a></h3>
+            <span class="stars">★ 85,342</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;lobehub/lobehub&quot;, &quot;url&quot;: &quot;https://github.com/lobehub/lobehub&quot;, &quot;owner&quot;: &quot;lobehub&quot;, &quot;stars&quot;: 85342, &quot;desc&quot;: &quot;LobeHub \u662f\u4e00\u4e2a\u9762\u5411\u56e2\u961f\u7684\u5f00\u6e90\u8d85\u7ea7\u667a\u80fd\u4f53\u5e73\u53f0\uff0c\u4f60\u53ef\u4ee5\u628a\u591a\u4e2a AI \u667a\u80fd\u4f53\u52a0\u5165\u56e2\u961f\u65e5\u5e38\u4f7f\u7528\u7684\u804a\u5929\u5de5\u5177\u4e2d\uff0c\u8ba9\u5b83\u4eec\u81ea\u4e3b\u8ba4\u9886\u5e76\u5b8c\u6210\u4efb\u52a1\uff0c\u800c\u4e14\u6bcf\u5468\u90fd\u5728\u53d8\u5f3a\u3002\u5b83\u89e3\u51b3\u4e86\u56e2\u961f\u534f\u4f5c\u4e2d\u91cd\u590d\u6027\u5de5\u4f5c\u6ca1\u4eba\u5e72\u3001AI \u5de5\u5177\u4e0e\u73b0\u6709\u804a\u5929\u6d41\u7a0b\u5272\u88c2\u7684\u95ee\u9898\u3002\u6bd4\u5982\u4ea7\u54c1\u56e2\u961f\u5728\u7fa4\u91cc\u63d0\u9700\u6c42\uff0c\u667a\u80fd\u4f53\u53ef\u81ea\u52a8\u62c6\u89e3\u4efb\u52a1\u3001\u8ddf\u8fdb\u8fdb\u5ea6\u5e76\u6301\u7eed\u5b66\u4e60\u56e2\u961f\u4e60\u60ef\u3002&quot;, &quot;site&quot;: &quot;https://lobehub.com&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">LobeHub 是一个面向团队的开源超级智能体平台，你可以把多个 AI 智能体加入团队日常使用的聊天工具中，让它们自主认领并完成任务，而且每周都在变强。它解决了团队协作中重复性工作没人干、AI 工具与现有聊天流程割裂的问题。比如产品团队在群里提需求，智能体可自动拆解任务、跟进进度并持续学习团队习惯。</p>
+          
+          <div class="byline">
+            <span>lobehub</span><i>·</i>
+            <span>更新于 2026-11-13</span><i>·</i>
+            <span class="">周榜</span><i>·</i>
+            <a class="site" href="https://lobehub.com" target="_blank">https://lobehub.com</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/lobehub/lobehub.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/lobehub/lobehub">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/HKUDS/CLI-Anything" target="_blank">HKUDS/CLI-Anything</a></h3>
+            <span class="stars">★ 57,383</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;HKUDS/CLI-Anything&quot;, &quot;url&quot;: &quot;https://github.com/HKUDS/CLI-Anything&quot;, &quot;owner&quot;: &quot;HKUDS&quot;, &quot;stars&quot;: 57383, &quot;desc&quot;: &quot;\u4e00\u4e2a\u9762\u5411 AI Agent \u7684\u57fa\u7840\u8bbe\u65bd/\u6846\u67b6\u7c7b\u9879\u76ee\uff0c\u7b80\u4ecb\uff1a\&quot;CLI-Anything: Making ALL Software Agent-Native\&quot; -- CLI-Hub: https://clianything.cc/&quot;, &quot;site&quot;: &quot;https://clianything.cc/&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一个面向 AI Agent 的基础设施/框架类项目，简介：&quot;CLI-Anything: Making ALL Software Agent-Native&quot; -- CLI-Hub: https://clianything.cc/</p>
+          
+          <div class="byline">
+            <span>HKUDS</span><i>·</i>
+            <span>更新于 2026-09-22</span><i>·</i>
+            <span class="hot">日榜 · 月榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://clianything.cc/" target="_blank">https://clianything.cc/</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/HKUDS/CLI-Anything.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/HKUDS/CLI-Anything">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank">K-Dense-AI/scientific-agent-skills</a></h3>
+            <span class="stars">★ 54,145</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;K-Dense-AI/scientific-agent-skills&quot;, &quot;url&quot;: &quot;https://github.com/K-Dense-AI/scientific-agent-skills&quot;, &quot;owner&quot;: &quot;K-Dense-AI&quot;, &quot;stars&quot;: 54145, &quot;desc&quot;: &quot;\u4e00\u4e2a\u9762\u5411 AI Agent \u7684\u57fa\u7840\u8bbe\u65bd/\u6846\u67b6\u7c7b\u9879\u76ee\uff0c\u7b80\u4ecb\uff1aTurn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. \u2026&quot;, &quot;site&quot;: &quot;https://arxiv.org/abs/2609.00065&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一个面向 AI Agent 的基础设施/框架类项目，简介：Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. …</p>
+          
+          <div class="byline">
+            <span>K-Dense-AI</span><i>·</i>
+            <span>更新于 2026-10-19</span><i>·</i>
+            <span class="hot">日榜 · 周榜</span><i>·</i>
+            <a class="site" href="https://arxiv.org/abs/2609.00065" target="_blank">https://arxiv.org/abs/2609.00065</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/K-Dense-AI/scientific-agent-skills.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/K-Dense-AI/scientific-agent-skills">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-4">
+          <div class="item-head">
+            <span class="no">04</span>
+            <h3 class="title"><a href="https://github.com/backnotprop/plannotator" target="_blank">backnotprop/plannotator</a></h3>
+            <span class="stars">★ 10,360</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;backnotprop/plannotator&quot;, &quot;url&quot;: &quot;https://github.com/backnotprop/plannotator&quot;, &quot;owner&quot;: &quot;backnotprop&quot;, &quot;stars&quot;: 10360, &quot;desc&quot;: &quot;Plannotator \u662f\u4e00\u4e2a\u9762\u5411 AI \u7f16\u7a0b\u4ee3\u7406\u7684\u534f\u4f5c\u5de5\u4f5c\u53f0\uff0c\u89e3\u51b3\u4ee3\u7406\u81ea\u52a8\u6539\u4ee3\u7801\u65f6\u4eba\u96be\u4ee5\u53c2\u4e0e\u548c\u628a\u5173\u7684\u95ee\u9898\u3002\u5b83\u8ba9\u4f60\u5728\u4ee3\u7406\u6267\u884c\u4efb\u52a1\u7684\u8fc7\u7a0b\u4e2d\u968f\u65f6\u89c4\u5212\u3001\u6279\u6ce8\u3001\u5ba1\u67e5\u4ee3\u7801\uff0c\u5e76\u628a\u53cd\u9988\u4e00\u952e\u53d1\u56de\u7ed9\u4ee3\u7406\uff0c\u5f62\u6210\u4eba\u673a\u6765\u56de\u534f\u4f5c\u7684\u95ed\u73af\u3002\u4f8b\u5982 Claude Code \u6539\u5b8c\u4e00\u6279\u6587\u4ef6\u540e\uff0c\u4f60\u53ef\u4ee5\u76f4\u63a5\u5728\u754c\u9762\u4e0a\u5708\u51fa\u95ee\u9898\u3001\u5199\u4e0b\u610f\u89c1\uff0c\u70b9\u4e00\u4e0b\u5c31\u628a\u8fd9\u4e9b\u53cd\u9988\u4ea4\u7ed9\u4ee3\u7406\u7ee7\u7eed\u4fee\u6539\uff0c\u540c\u65f6\u8fd8\u80fd\u5206\u4eab\u7ed9\u56e2\u961f\u4e00\u8d77\u770b\u3002&quot;, &quot;site&quot;: &quot;https://plannotator.ai&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Plannotator 是一个面向 AI 编程代理的协作工作台，解决代理自动改代码时人难以参与和把关的问题。它让你在代理执行任务的过程中随时规划、批注、审查代码，并把反馈一键发回给代理，形成人机来回协作的闭环。例如 Claude Code 改完一批文件后，你可以直接在界面上圈出问题、写下意见，点一下就把这些反馈交给代理继续修改，同时还能分享给团队一起看。</p>
+          
+          <div class="byline">
+            <span>backnotprop</span><i>·</i>
+            <span>更新于 2026-11-13</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://plannotator.ai" target="_blank">https://plannotator.ai</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/backnotprop/plannotator.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/backnotprop/plannotator">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">开发工具与框架</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/rust-lang/rust" target="_blank">rust-lang/rust</a></h3>
+            <span class="stars">★ 121,295</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;rust-lang/rust&quot;, &quot;url&quot;: &quot;https://github.com/rust-lang/rust&quot;, &quot;owner&quot;: &quot;rust-lang&quot;, &quot;stars&quot;: 121295, &quot;desc&quot;: &quot;\u4e00\u4e2a\u5f00\u53d1\u5de5\u5177/\u6846\u67b6\u7c7b\u9879\u76ee\uff0c\u7b80\u4ecb\uff1aEmpowering everyone to build reliable and efficient software&quot;, &quot;site&quot;: &quot;https://www.rust-lang.org&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一个开发工具/框架类项目，简介：Empowering everyone to build reliable and efficient software</p>
+          
+          <div class="byline">
+            <span>rust-lang</span><i>·</i>
+            <span>更新于 2026-11-06</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://www.rust-lang.org" target="_blank">https://www.rust-lang.org</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/rust-lang/rust.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/rust-lang/rust">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/louislam/uptime-kuma" target="_blank">louislam/uptime-kuma</a></h3>
+            <span class="stars">★ 93,748</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;louislam/uptime-kuma&quot;, &quot;url&quot;: &quot;https://github.com/louislam/uptime-kuma&quot;, &quot;owner&quot;: &quot;louislam&quot;, &quot;stars&quot;: 93748, &quot;desc&quot;: &quot;Uptime Kuma \u662f\u4e00\u4e2a\u53ef\u81ea\u6258\u7ba1\u7684\u7f51\u7ad9\u4e0e\u670d\u52a1\u76d1\u63a7\u5de5\u5177\uff0c\u754c\u9762\u7f8e\u89c2\u3001\u54cd\u5e94\u5f0f\uff0c\u652f\u6301 HTTP\u3001TCP\u3001Ping\u3001DNS \u7b49\u591a\u79cd\u76d1\u63a7\u7c7b\u578b\uff0c\u80fd\u5b9a\u65f6\u68c0\u6d4b\u76ee\u6807\u662f\u5426\u5728\u7ebf\uff0c\u5e76\u5728\u5f02\u5e38\u65f6\u901a\u8fc7\u901a\u77e5\u63d0\u9192\u4f60\u3002\u5b83\u89e3\u51b3\u4e86\u4f9d\u8d56\u7b2c\u4e09\u65b9\u76d1\u63a7\u670d\u52a1\u6210\u672c\u9ad8\u3001\u6570\u636e\u4e0d\u900f\u660e\u7684\u95ee\u9898\uff0c\u9002\u5408\u4e2a\u4eba\u6216\u56e2\u961f\u90e8\u7f72\u5728\u81ea\u5df1\u7684\u670d\u52a1\u5668\u4e0a\uff0c\u6bd4\u5982\u76d1\u63a7\u516c\u53f8\u5b98\u7f51\u3001API \u63a5\u53e3\u6216\u5bb6\u5ead NAS \u662f\u5426\u5b95\u673a\u3002&quot;, &quot;site&quot;: &quot;https://uptime.kuma.pet&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Uptime Kuma 是一个可自托管的网站与服务监控工具，界面美观、响应式，支持 HTTP、TCP、Ping、DNS 等多种监控类型，能定时检测目标是否在线，并在异常时通过通知提醒你。它解决了依赖第三方监控服务成本高、数据不透明的问题，适合个人或团队部署在自己的服务器上，比如监控公司官网、API 接口或家庭 NAS 是否宕机。</p>
+          
+          <div class="byline">
+            <span>louislam</span><i>·</i>
+            <span>更新于 2026-11-13</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://uptime.kuma.pet" target="_blank">https://uptime.kuma.pet</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/louislam/uptime-kuma.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/louislam/uptime-kuma">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-3-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/tailscale/tailcat" target="_blank">tailscale/tailcat</a></h3>
+            <span class="stars">★ 9,331</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;tailscale/tailcat&quot;, &quot;url&quot;: &quot;https://github.com/tailscale/tailcat&quot;, &quot;owner&quot;: &quot;tailscale&quot;, &quot;stars&quot;: 9331, &quot;desc&quot;: &quot;tailcat \u662f Tailscale \u63a8\u51fa\u7684\u7f51\u7edc\u8c03\u8bd5\u5c0f\u5de5\u5177\uff0c\u7528\u6cd5\u7c7b\u4f3c\u7ecf\u5178\u7684 netcat\uff0c\u4f46\u5b83\u53ea\u5728 Tailscale \u7684\u6570\u636e\u901a\u9053\u4e0a\u6536\u53d1\u6570\u636e\uff0c\u4e0d\u7ecf\u8fc7 Tailscale \u7684\u63a7\u5236\u9762\u3002\u8fd9\u6837\u4f60\u53ef\u4ee5\u50cf\u7528 nc \u4e00\u6837\u5728\u673a\u5668\u4e4b\u95f4\u4e34\u65f6\u5f00\u7aef\u53e3\u3001\u4f20\u6587\u4ef6\u6216\u505a\u8fde\u901a\u6027\u6d4b\u8bd5\uff0c\u5374\u4e0d\u5fc5\u4f9d\u8d56\u767b\u5f55\u3001\u5bc6\u94a5\u5206\u53d1\u7b49\u63a7\u5236\u670d\u52a1\u3002\u6bd4\u5982\u4e24\u53f0\u5df2\u52a0\u5165\u540c\u4e00 Tailscale \u7f51\u7edc\u7684\u673a\u5668\uff0c\u53ef\u7528\u5b83\u5feb\u901f\u9a8c\u8bc1\u6570\u636e\u9762\u662f\u5426\u4e92\u901a\uff0c\u6216\u4e34\u65f6\u642d\u4e00\u4e2a\u53ea\u5728\u5185\u7f51\u53ef\u89c1\u7684\u8c03\u8bd5\u670d\u52a1\u3002&quot;, &quot;site&quot;: &quot;https://tailscale.com/tailcat&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">tailcat 是 Tailscale 推出的网络调试小工具，用法类似经典的 netcat，但它只在 Tailscale 的数据通道上收发数据，不经过 Tailscale 的控制面。这样你可以像用 nc 一样在机器之间临时开端口、传文件或做连通性测试，却不必依赖登录、密钥分发等控制服务。比如两台已加入同一 Tailscale 网络的机器，可用它快速验证数据面是否互通，或临时搭一个只在内网可见的调试服务。</p>
+          
+          <div class="byline">
+            <span>tailscale</span><i>·</i>
+            <span>更新于 2026-11-05</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            <a class="site" href="https://tailscale.com/tailcat" target="_blank">https://tailscale.com/tailcat</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/tailscale/tailcat.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/tailscale/tailcat">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">移动 / 桌面应用</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/Likely7/Veyra-NRVideo" target="_blank">Likely7/Veyra-NRVideo</a></h3>
+            <span class="stars">★ 1,526</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Likely7/Veyra-NRVideo&quot;, &quot;url&quot;: &quot;https://github.com/Likely7/Veyra-NRVideo&quot;, &quot;owner&quot;: &quot;Likely7&quot;, &quot;stars&quot;: 1526, &quot;desc&quot;: &quot;Veyra-NRVideo \u662f\u4e00\u6b3e Windows \u89c6\u9891\u64ad\u653e\u4e0e\u91c7\u96c6\u589e\u5f3a\u5de5\u5177\uff0c\u4e3b\u6253\u5b9e\u65f6\u9884\u89c8\u89c6\u9891\u3001\u56fe\u7247\u548c\u91c7\u96c6\u5361\u753b\u9762\uff0c\u5e76\u53e0\u52a0 AI \u8d85\u5206\u8fa8\u7387\u3001DLSS5 \u753b\u8d28\u589e\u5f3a\u548c\u5e27\u751f\u6210\u6280\u672f\uff0c\u8ba9\u4f4e\u5206\u8fa8\u7387\u6216\u4f4e\u5e27\u7387\u5185\u5bb9\u770b\u8d77\u6765\u66f4\u6e05\u6670\u6d41\u7545\u3002\u6bd4\u5982\u628a PS5 \u4e0a\u7684 GTA6 \u91c7\u96c6\u5230\u7535\u8111\u540e\uff0c\u5b83\u80fd\u901a\u8fc7\u8865\u5e27\u548c\u753b\u8d28\u63d0\u5347\uff0c\u6a21\u62df\u51fa\u63a5\u8fd1 120FPS \u7684\u89c2\u611f\uff0c\u9002\u5408\u6e38\u620f\u76f4\u64ad\u3001\u5f55\u5c4f\u548c\u5f71\u97f3\u7231\u597d\u8005\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Veyra-NRVideo 是一款 Windows 视频播放与采集增强工具，主打实时预览视频、图片和采集卡画面，并叠加 AI 超分辨率、DLSS5 画质增强和帧生成技术，让低分辨率或低帧率内容看起来更清晰流畅。比如把 PS5 上的 GTA6 采集到电脑后，它能通过补帧和画质提升，模拟出接近 120FPS 的观感，适合游戏直播、录屏和影音爱好者。</p>
+          
+          <div class="byline">
+            <span>Likely7</span><i>·</i>
+            <span>更新于 2026-11-11</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Likely7/Veyra-NRVideo.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Likely7/Veyra-NRVideo">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-5">
+        <div class="sec-kicker"><span class="sec-no">SECTION 05</span><span class="sec-name">其他</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-5-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/nvm-sh/nvm" target="_blank">nvm-sh/nvm</a></h3>
+            <span class="stars">★ 95,962</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;nvm-sh/nvm&quot;, &quot;url&quot;: &quot;https://github.com/nvm-sh/nvm&quot;, &quot;owner&quot;: &quot;nvm-sh&quot;, &quot;stars&quot;: 95962, &quot;desc&quot;: &quot;\u4e00\u4e2a\u5f00\u6e90\u9879\u76ee\uff0c\u7b80\u4ecb\uff1aNode Version Manager - POSIX-compliant bash script to manage multiple active node.js versions&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">一个开源项目，简介：Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</p>
+          
+          <div class="byline">
+            <span>nvm-sh</span><i>·</i>
+            <span>更新于 2026-11-12</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/nvm-sh/nvm.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/nvm-sh/nvm">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/block/buzz" target="_blank">block/buzz</a></h3>
+            <span class="stars">★ 37,243</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;block/buzz&quot;, &quot;url&quot;: &quot;https://github.com/block/buzz&quot;, &quot;owner&quot;: &quot;block&quot;, &quot;stars&quot;: 37243, &quot;desc&quot;: &quot;Buzz \u662f\u4e00\u4e2a\u7528 Rust \u7f16\u5199\u7684\u201c\u8702\u5de2\u601d\u7ef4\u201d\u901a\u4fe1\u5e73\u53f0\uff0c\u65e8\u5728\u8ba9\u4e00\u7fa4\u4eba\u50cf\u5171\u4eab\u4e00\u4e2a\u5927\u8111\u90a3\u6837\u534f\u4f5c\u4ea4\u6d41\u3002\u5b83\u89e3\u51b3\u7684\u662f\u56e2\u961f\u4fe1\u606f\u5206\u6563\u3001\u8ba8\u8bba\u96be\u4ee5\u6c47\u805a\u6210\u96c6\u4f53\u5224\u65ad\u7684\u95ee\u9898\uff1a\u6210\u5458\u53ef\u4ee5\u53d1\u5e03\u60f3\u6cd5\u3001\u4e92\u76f8\u8865\u5145\uff0c\u7cfb\u7edf\u628a\u96f6\u6563\u89c2\u70b9\u6574\u5408\u6210\u7edf\u4e00\u7684\u77e5\u8bc6\u8109\u7edc\u3002\u4f8b\u5982\u5728\u5f00\u6e90\u793e\u533a\u8ba8\u8bba\u65b0\u529f\u80fd\u65f6\uff0c\u5927\u5bb6\u5404\u6292\u5df1\u89c1\uff0cBuzz \u80fd\u628a\u8fd9\u4e9b\u53d1\u8a00\u7ec4\u7ec7\u6210\u6e05\u6670\u7684\u5171\u8bc6\u89c6\u56fe\uff0c\u65b9\u4fbf\u65b0\u4eba\u5feb\u901f\u4e86\u89e3\u5168\u8c8c\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5176\u4ed6&quot;, &quot;emoji&quot;: &quot;\ud83d\udce6&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Buzz 是一个用 Rust 编写的“蜂巢思维”通信平台，旨在让一群人像共享一个大脑那样协作交流。它解决的是团队信息分散、讨论难以汇聚成集体判断的问题：成员可以发布想法、互相补充，系统把零散观点整合成统一的知识脉络。例如在开源社区讨论新功能时，大家各抒己见，Buzz 能把这些发言组织成清晰的共识视图，方便新人快速了解全貌。</p>
+          
+          <div class="byline">
+            <span>block</span><i>·</i>
+            <span>更新于 2026-11-13</span><i>·</i>
+            <span class="hot">日榜</span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/block/buzz.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/block/buzz">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
+    btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = meta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>
