@@ -1359,6 +1359,20 @@
    "tags": [],
    "saved_at": "2026-11-13",
    "source": "pages"
+  },
+  {
+   "repo": "Ebullioscopic/Atoll",
+   "url": "https://github.com/Ebullioscopic/Atoll",
+   "owner": "Ebullioscopic",
+   "stars": 5264,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Atoll 是一款把 MacBook 屏幕顶部刘海变成交互控制中心的 macOS 应用。它平时隐藏，鼠标悬停或手势滑动时展开，提供音乐控制、系统监控（CPU/GPU/内存/网络）、计时器、剪贴板历史、锁屏小组件等功能。例如你听歌时可直接在刘海上切歌、看歌词预览，无需切换窗口，让刘海从占用空间的硬件缺陷变成实用快捷入口。",
+   "site": "https://getatoll.app",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-14",
+   "source": "pages"
   }
  ]
 }
