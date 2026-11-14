@@ -1387,6 +1387,20 @@
    "tags": [],
    "saved_at": "2026-11-14",
    "source": "pages"
+  },
+  {
+   "repo": "cwuom/NeriPlayer",
+   "url": "https://github.com/cwuom/NeriPlayer",
+   "owner": "cwuom",
+   "stars": 4189,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "NeriPlayer 是一款原生 Android 音乐播放器，把网易云、Bilibili、YouTube Music、自建 Navidrome 服务器和本地音乐整合进同一个播放队列，解决多平台听歌来回切换的麻烦。它还提供逐字歌词、10 段均衡器、USB 独占输出，以及把歌单和播放统计同步到自己 GitHub 或 WebDAV 的隐私友好方案。例如你可以用网易云账号听歌，遇到无法播放时自动匹配 B 站音源兜底。",
+   "site": "https://neri.kano.kim",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-14",
+   "source": "pages"
   }
  ]
 }
