@@ -77,7 +77,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-07T10:00:10.164331+08:00",
-   "last_seen": "2026-11-14T20:00:40.284708+08:00"
+   "last_seen": "2026-11-14T21:13:28.370138+08:00"
   },
   "mattpocock/skills": {
    "repo": "mattpocock/skills",
@@ -127,7 +127,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-14T20:00:40.284774+08:00"
+   "last_seen": "2026-11-14T21:13:30.765208+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -322,7 +322,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-14T20:00:40.284767+08:00"
+   "last_seen": "2026-11-14T21:13:29.175235+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -407,7 +407,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-14T20:00:40.284754+08:00"
+   "last_seen": "2026-11-14T21:13:28.370160+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -537,7 +537,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-07T10:00:22.823782+08:00",
-   "last_seen": "2026-11-14T20:00:40.284739+08:00"
+   "last_seen": "2026-11-14T21:13:28.370118+08:00"
   },
   "HunxByts/GhostTrack": {
    "repo": "HunxByts/GhostTrack",
@@ -963,7 +963,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-14T20:00:40.284811+08:00"
+   "last_seen": "2026-11-14T21:13:32.393256+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -1068,7 +1068,7 @@
    "updated": "2026-11-01",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-11-14T20:00:40.284793+08:00"
+   "last_seen": "2026-11-14T21:13:32.393205+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
@@ -1171,7 +1171,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-14T20:00:40.284747+08:00"
+   "last_seen": "2026-11-14T21:13:28.370103+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1225,7 +1225,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-08T19:08:02.537479+08:00",
-   "last_seen": "2026-11-14T20:00:40.284799+08:00"
+   "last_seen": "2026-11-14T21:13:33.236242+08:00"
   },
   "storytold/artcraft": {
    "repo": "storytold/artcraft",
@@ -1325,7 +1325,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-14T20:00:40.284762+08:00"
+   "last_seen": "2026-11-14T21:13:28.370133+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -2093,7 +2093,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 112343,
+   "stars": 119803,
    "owner": "JuliusBrussee",
    "homepage": "https://docs.caveman.so/caveman",
    "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
@@ -2110,10 +2110,10 @@
     "skill",
     "tokens"
    ],
-   "updated": "2026-10-15",
-   "metadata_date": "2026-10-16",
+   "updated": "2026-11-14",
+   "metadata_date": "2026-11-14",
    "first_seen": "2026-10-15T20:00:42.549919+08:00",
-   "last_seen": "2026-10-16T17:00:42.495391+08:00"
+   "last_seen": "2026-11-14T21:13:31.893078+08:00"
   },
   "obra/superpowers": {
    "repo": "obra/superpowers",
@@ -3114,7 +3114,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-14T20:00:40.284730+08:00"
+   "last_seen": "2026-11-14T21:13:28.370055+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3317,7 +3317,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-14T20:00:40.284795+08:00"
+   "last_seen": "2026-11-14T21:13:32.393247+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3453,7 +3453,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-11-14T20:00:40.284783+08:00"
+   "last_seen": "2026-11-14T21:13:31.578096+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3635,7 +3635,7 @@
    "updated": "2026-11-08",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-14T20:00:40.284806+08:00"
+   "last_seen": "2026-11-14T21:13:32.393231+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3664,7 +3664,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-14T20:00:40.284744+08:00"
+   "last_seen": "2026-11-14T21:13:29.175206+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
@@ -3738,7 +3738,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-14T20:00:40.284737+08:00"
+   "last_seen": "2026-11-14T21:13:28.370113+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4663,7 +4663,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-14T20:00:40.284752+08:00"
+   "last_seen": "2026-11-14T21:13:28.370128+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -4992,18 +4992,19 @@
   "meta/astryx": {
    "repo": "meta/astryx",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
-   "stars": 26246,
+   "stars": 27705,
    "owner": "meta",
    "homepage": "http://astryx.atmeta.com",
    "description": "An open source design system that's fully customizable and agent ready",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-11-12",
-   "metadata_date": "2026-11-13",
+   "updated": "2026-11-14",
+   "metadata_date": "2026-11-14",
    "first_seen": "2026-11-07T20:00:44.426081+08:00",
-   "last_seen": "2026-11-13T17:00:43.175542+08:00"
+   "last_seen": "2026-11-14T21:13:27.869933+08:00"
   },
   "sherlock-project/sherlock": {
    "repo": "sherlock-project/sherlock",
@@ -5038,7 +5039,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-07T20:00:45.236343+08:00",
-   "last_seen": "2026-11-14T20:00:40.284726+08:00"
+   "last_seen": "2026-11-14T21:13:28.370097+08:00"
   },
   "tailwindlabs/tailwindcss": {
    "repo": "tailwindlabs/tailwindcss",
@@ -5128,7 +5129,7 @@
    "updated": "2026-11-06",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-08T20:01:13.167759+08:00",
-   "last_seen": "2026-11-14T20:00:40.284809+08:00"
+   "last_seen": "2026-11-14T21:13:32.393242+08:00"
   },
   "google-deepmind/mujoco": {
    "repo": "google-deepmind/mujoco",
@@ -5149,7 +5150,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-08T20:01:13.922998+08:00",
-   "last_seen": "2026-11-14T20:00:40.284781+08:00"
+   "last_seen": "2026-11-14T21:13:30.765180+08:00"
   },
   "blader/humanizer": {
    "repo": "blader/humanizer",
@@ -5220,7 +5221,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-09T20:00:48.299793+08:00",
-   "last_seen": "2026-11-14T20:00:40.284749+08:00"
+   "last_seen": "2026-11-14T21:13:29.973804+08:00"
   },
   "homeassistant-ai/ha-mcp": {
    "repo": "homeassistant-ai/ha-mcp",
@@ -5261,7 +5262,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-10T20:00:43.006819+08:00",
-   "last_seen": "2026-11-14T20:00:40.284757+08:00"
+   "last_seen": "2026-11-14T21:13:32.393252+08:00"
   },
   "tokio-rs/topcoat": {
    "repo": "tokio-rs/topcoat",
@@ -5293,7 +5294,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-11T20:00:44.991036+08:00",
-   "last_seen": "2026-11-14T20:00:40.284734+08:00"
+   "last_seen": "2026-11-14T21:13:28.370089+08:00"
   },
   "shadcn/improve": {
    "repo": "shadcn/improve",
@@ -5426,7 +5427,7 @@
    "lists": [
     "daily"
    ],
-   "stars": 29675,
+   "stars": 30147,
    "owner": "QwenLM",
    "homepage": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
    "description": "An open-source AI coding agent that lives in your terminal.",
@@ -5445,17 +5446,17 @@
     "terminal",
     "typescript"
    ],
-   "updated": "2026-11-12",
-   "metadata_date": "2026-11-13",
+   "updated": "2026-11-14",
+   "metadata_date": "2026-11-14",
    "first_seen": "2026-11-12T20:00:46.151021+08:00",
-   "last_seen": "2026-11-13T17:00:43.175510+08:00"
+   "last_seen": "2026-11-14T21:13:28.675068+08:00"
   },
   "ashhart/TensorFold": {
    "repo": "ashhart/TensorFold",
    "lists": [
     "daily"
    ],
-   "stars": 1879,
+   "stars": 2086,
    "owner": "ashhart",
    "homepage": "https://tensorfold.dev",
    "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
@@ -5467,10 +5468,10 @@
     "llm-inference",
     "llm-tools"
    ],
-   "updated": "2026-11-12",
-   "metadata_date": "2026-11-13",
+   "updated": "2026-11-14",
+   "metadata_date": "2026-11-14",
    "first_seen": "2026-11-12T20:00:47.139862+08:00",
-   "last_seen": "2026-11-13T17:00:43.175519+08:00"
+   "last_seen": "2026-11-14T21:13:31.077960+08:00"
   },
   "ggml-org/llama.cpp": {
    "repo": "ggml-org/llama.cpp",
@@ -5493,7 +5494,8 @@
   "backnotprop/plannotator": {
    "repo": "backnotprop/plannotator",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 10360,
    "owner": "backnotprop",
@@ -5514,7 +5516,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-13T20:00:45.770901+08:00",
-   "last_seen": "2026-11-14T20:00:40.284764+08:00"
+   "last_seen": "2026-11-14T21:13:27.535252+08:00"
   },
   "louislam/uptime-kuma": {
    "repo": "louislam/uptime-kuma",
@@ -5543,7 +5545,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-13T20:00:46.671718+08:00",
-   "last_seen": "2026-11-14T20:00:40.284769+08:00"
+   "last_seen": "2026-11-14T21:13:32.393237+08:00"
   },
   "block/buzz": {
    "repo": "block/buzz",
@@ -5575,7 +5577,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-13T20:00:48.678708+08:00",
-   "last_seen": "2026-11-14T20:00:40.284786+08:00"
+   "last_seen": "2026-11-14T21:13:28.370107+08:00"
   },
   "tailscale/tailcat": {
    "repo": "tailscale/tailcat",
@@ -5607,7 +5609,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-13T20:00:50.509935+08:00",
-   "last_seen": "2026-11-14T20:00:40.284797+08:00"
+   "last_seen": "2026-11-14T21:13:33.236268+08:00"
   },
   "ChromeDevTools/chrome-devtools-mcp": {
    "repo": "ChromeDevTools/chrome-devtools-mcp",
@@ -5632,7 +5634,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-13T20:00:51.468208+08:00",
-   "last_seen": "2026-11-14T20:00:40.284802+08:00"
+   "last_seen": "2026-11-14T21:13:28.370123+08:00"
   },
   "lobehub/lobehub": {
    "repo": "lobehub/lobehub",
@@ -5692,7 +5694,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-14T02:00:55.118606+08:00",
-   "last_seen": "2026-11-14T20:00:40.284759+08:00"
+   "last_seen": "2026-11-14T21:13:28.370144+08:00"
   },
   "Vincentwei1021/video-shotcraft": {
    "repo": "Vincentwei1021/video-shotcraft",
@@ -5723,13 +5725,134 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-14",
    "first_seen": "2026-11-14T17:00:42.001187+08:00",
-   "last_seen": "2026-11-14T20:00:40.284820+08:00"
+   "last_seen": "2026-11-14T21:13:33.236274+08:00"
+  },
+  "dream-num/univer": {
+   "repo": "dream-num/univer",
+   "lists": [
+    "daily"
+   ],
+   "stars": 24221,
+   "owner": "dream-num",
+   "homepage": "https://univer.ai",
+   "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+   "language": "TypeScript",
+   "topics": [
+    "board",
+    "collaboration",
+    "doc",
+    "docx",
+    "excel",
+    "offce365",
+    "office",
+    "pdf",
+    "ppt",
+    "pptx",
+    "presentation",
+    "sdk",
+    "sheet",
+    "slides",
+    "spreadsheet",
+    "univer",
+    "word",
+    "wordprocessor",
+    "workspace",
+    "xlsx"
+   ],
+   "updated": "2026-11-14",
+   "metadata_date": "2026-11-14",
+   "first_seen": "2026-11-14T21:13:29.473667+08:00",
+   "last_seen": "2026-11-14T21:13:29.473679+08:00"
+  },
+  "ag-ui-protocol/ag-ui": {
+   "repo": "ag-ui-protocol/ag-ui",
+   "lists": [
+    "daily"
+   ],
+   "stars": 17179,
+   "owner": "ag-ui-protocol",
+   "homepage": "https://ag-ui.com",
+   "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+   "language": "TypeScript",
+   "topics": [
+    "ag-ui-protocol",
+    "agent-frontend",
+    "agent-ui",
+    "agentic-workflow",
+    "ai-agents"
+   ],
+   "updated": "2026-11-14",
+   "metadata_date": "2026-11-14",
+   "first_seen": "2026-11-14T21:13:30.265028+08:00",
+   "last_seen": "2026-11-14T21:13:30.265040+08:00"
+  },
+  "Tencent/LoopForge": {
+   "repo": "Tencent/LoopForge",
+   "lists": [
+    "daily"
+   ],
+   "stars": 696,
+   "owner": "Tencent",
+   "homepage": "https://loopforge.cn",
+   "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+   "language": "Go",
+   "topics": [
+    "agent-orchestration",
+    "agentic-workflow",
+    "ai-agents",
+    "ai-coding",
+    "claude-code",
+    "code-review",
+    "codebuddy",
+    "codex",
+    "coding-agents",
+    "cursor",
+    "developer-tools",
+    "human-on-the-loop",
+    "llm",
+    "mcp",
+    "multi-agent",
+    "sdlc",
+    "self-hosted",
+    "sop",
+    "workflow-automation",
+    "workflow-engine"
+   ],
+   "updated": "2026-11-14",
+   "metadata_date": "2026-11-14",
+   "first_seen": "2026-11-14T21:13:32.736105+08:00",
+   "last_seen": "2026-11-14T21:13:32.736117+08:00"
+  },
+  "martin-olivier/airgorah": {
+   "repo": "martin-olivier/airgorah",
+   "lists": [
+    "daily"
+   ],
+   "stars": 5478,
+   "owner": "martin-olivier",
+   "homepage": "https://crates.io/crates/airgorah",
+   "description": "A WiFi security auditing software",
+   "language": "Rust",
+   "topics": [
+    "gui",
+    "kali",
+    "linux-app",
+    "security",
+    "security-audit",
+    "wifi",
+    "wifi-security",
+    "wireless"
+   ],
+   "updated": "2026-11-06",
+   "metadata_date": "2026-11-14",
+   "first_seen": "2026-11-14T21:13:33.556676+08:00",
+   "last_seen": "2026-11-14T21:13:33.556685+08:00"
   }
  },
- "last_collected": "2026-11-14T20:00:40.284823+08:00",
+ "last_collected": "2026-11-14T21:13:34.056811+08:00",
  "list_counts": {
-  "daily": 12,
-  "weekly": 15,
-  "monthly": 16
+  "daily": 15,
+  "weekly": 11,
+  "monthly": 15
  }
 }
