@@ -18830,7 +18830,7 @@
   ]
  },
  "daily:2026-11-15": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-15",
    "new_count": 8,
@@ -19193,7 +19193,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    },
    {
     "message": {
