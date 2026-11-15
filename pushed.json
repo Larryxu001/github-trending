@@ -108,9 +108,9 @@
  "rust-lang/rust": "2026-11-14",
  "nvm-sh/nvm": "2026-11-14",
  "ntdevlabs/tiny11builder": "2026-10-15",
- "anthropics/claude-plugins-official": "2026-10-16",
- "ruvnet/ruflo": "2026-10-16",
- "xerj-org/xerj": "2026-10-16",
+ "anthropics/claude-plugins-official": "2026-11-15",
+ "ruvnet/ruflo": "2026-11-15",
+ "xerj-org/xerj": "2026-11-15",
  "lightseekorg/tokenspeed": "2026-10-16",
  "MadsLorentzen/ai-job-search": "2026-10-17",
  "hmjz100/LinkSwift": "2026-10-17",
@@ -242,5 +242,10 @@
  "louislam/uptime-kuma": "2026-11-14",
  "tailscale/tailcat": "2026-11-14",
  "Likely7/Veyra-NRVideo": "2026-11-14",
- "block/buzz": "2026-11-14"
+ "block/buzz": "2026-11-14",
+ "Vincentwei1021/video-shotcraft": "2026-11-15",
+ "ag-ui-protocol/ag-ui": "2026-11-15",
+ "Tencent/LoopForge": "2026-11-15",
+ "dream-num/univer": "2026-11-15",
+ "martin-olivier/airgorah": "2026-11-15"
 }
