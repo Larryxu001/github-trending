@@ -1462,5 +1462,35 @@
   "emoji": "🧩",
   "desc": "这是一个开源插件，用来让 AI 编程助手（如 Claude Code、Codex、Gemini）更规范地设计和评审软件。它把软件设计、代码审查等流程做成可复用的“技能”，让智能体按固定步骤工作，减少随意发挥。比如你要加新功能，它能引导智能体先出设计方案再写代码，并自动做代码评审，适合团队提升 AI 辅助开发的可靠性和一致性。",
   "site": "https://egm.dev"
+ },
+ "Vincentwei1021/video-shotcraft": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个给 Claude Code 和 Codex 用的 AI 视频技能插件，专门帮人快速做出电影感、可编辑的产品宣传片。它内置 124 张镜头配方卡和 150 个动效预览，能自动卡音乐节拍、设计音效，还提供 Motion Workbench 工作台，并支持导出到剪映。比如你想给新 App 做一条 30 秒推广视频，只需描述需求，它就能按镜头配方生成 Remotion 工程，你还能继续改细节。",
+  "site": "https://vincentwei1021.github.io/video-shotcraft/"
+ },
+ "dream-num/univer": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "Univer 是一个开源的办公套件 SDK，用 TypeScript 编写，让开发者能把类似 Excel、Word、PPT 的编辑、计算、协作和文件处理能力嵌入自己的产品，还支持 AI 智能体参与操作。它解决了企业自建在线文档系统门槛高的问题，比如你可以在自己的项目管理工具里直接嵌入可多人实时编辑的表格，而不用从零开发。",
+  "site": "https://univer.ai"
+ },
+ "ag-ui-protocol/ag-ui": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "AG-UI 是一套让 AI 智能体接入前端应用的交互协议，用 TypeScript 实现。它解决的是智能体与界面之间如何实时传递消息、状态和操作的问题，让开发者不必自己设计通信格式。比如在聊天应用里，智能体可以边思考边把进度、工具调用结果和最终回答推送到页面上，用户还能随时打断或补充指令。",
+  "site": "https://ag-ui.com"
+ },
+ "Tencent/LoopForge": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "LoopForge 是腾讯开源的编码智能体编排平台，用脚本把 CodeBuddy、Codex、Claude Code 等编码助手串成自动化工作流，并在关键步骤插入人工审批关卡，避免 AI 改代码失控。它可自托管，适合团队把 AI 写代码、审代码的流程标准化，例如让智能体自动生成补丁后先由人确认再合并。",
+  "site": "https://loopforge.cn"
+ },
+ "martin-olivier/airgorah": {
+  "cat": "安全",
+  "emoji": "🔐",
+  "desc": "Airgorah 是一款用 Rust 编写的 WiFi 安全审计工具，提供图形界面，可在 Kali 等 Linux 系统上运行。它能扫描周边无线网络、抓取握手包、测试密码强度，帮助安全人员检查自家 WiFi 是否存在弱口令或配置漏洞。例如在授权测试中，你可以用它发现使用默认密码的路由器，并及时加固，避免被蹭网或攻击。",
+  "site": "https://crates.io/crates/airgorah"
  }
 }

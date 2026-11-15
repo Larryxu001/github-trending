@@ -1,0 +1,131 @@
+{
+ "date": "2026-11-15",
+ "new_count": 8,
+ "skipped": 221,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "anthropics/claude-plugins-official",
+     "url": "https://github.com/anthropics/claude-plugins-official",
+     "owner": "anthropics",
+     "stars": 47150,
+     "updated": "2026-11-13",
+     "lists": [
+      "daily",
+      "monthly",
+      "weekly"
+     ],
+     "desc": "这是 Anthropic 官方维护的 Claude Code 插件目录，汇集了一批经过筛选的高质量插件，涵盖 MCP 连接器和技能扩展。它解决的是用户不知道去哪找可靠插件、以及插件质量参差不齐的问题。比如你想让 Claude Code 直接操作数据库或调用外部 API，就可以在这里找到对应的 MCP 插件，按文档安装后即可使用，省去自己摸索和踩坑的时间。",
+     "site": "https://code.claude.com/docs/en/plugins"
+    },
+    {
+     "repo": "Vincentwei1021/video-shotcraft",
+     "url": "https://github.com/Vincentwei1021/video-shotcraft",
+     "owner": "Vincentwei1021",
+     "stars": 19484,
+     "updated": "2026-11-11",
+     "lists": [
+      "monthly"
+     ],
+     "desc": "这是一个给 Claude Code 和 Codex 用的 AI 视频技能插件，专门帮人快速做出电影感、可编辑的产品宣传片。它内置 124 张镜头配方卡和 150 个动效预览，能自动卡音乐节拍、设计音效，还提供 Motion Workbench 工作台，并支持导出到剪映。比如你想给新 App 做一条 30 秒推广视频，只需描述需求，它就能按镜头配方生成 Remotion 工程，你还能继续改细节。",
+     "site": "https://vincentwei1021.github.io/video-shotcraft/"
+    }
+   ]
+  },
+  {
+   "name": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "items": [
+    {
+     "repo": "ruvnet/ruflo",
+     "url": "https://github.com/ruvnet/ruflo",
+     "owner": "ruvnet",
+     "stars": 80265,
+     "updated": "2026-10-30",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "ruflo 是一个用于构建和运行 AI 智能体（Agent）的底层框架，主打多智能体协作与自主工作流编排。它让开发者能部署多个 AI 智能体像团队一样分工合作，并内置自适应记忆、自我学习和向量检索能力，方便搭建对话式 AI 系统。例如，你可以用它让一组智能体自动完成代码审查、资料检索和报告生成，而无需自己处理调度与记忆管理。",
+     "site": "https://Cognitum.One"
+    },
+    {
+     "repo": "ag-ui-protocol/ag-ui",
+     "url": "https://github.com/ag-ui-protocol/ag-ui",
+     "owner": "ag-ui-protocol",
+     "stars": 17260,
+     "updated": "2026-11-14",
+     "lists": [
+      "daily"
+     ],
+     "desc": "AG-UI 是一套让 AI 智能体接入前端应用的交互协议，用 TypeScript 实现。它解决的是智能体与界面之间如何实时传递消息、状态和操作的问题，让开发者不必自己设计通信格式。比如在聊天应用里，智能体可以边思考边把进度、工具调用结果和最终回答推送到页面上，用户还能随时打断或补充指令。",
+     "site": "https://ag-ui.com"
+    },
+    {
+     "repo": "xerj-org/xerj",
+     "url": "https://github.com/xerj-org/xerj",
+     "owner": "xerj-org",
+     "stars": 7599,
+     "updated": "2026-10-17",
+     "lists": [
+      "daily"
+     ],
+     "desc": "XERJ 是一个用 Rust 编写的 AI 搜索基础设施，让 AI 代理无需用 grep、sed 逐行扫描就能直接“知道”你的数据。它一条命令即可索引代码、文档、日志和 PDF，支持搜索、RAG、安全审计和代理记忆，且比 grep 节省约 40 倍 token。由于兼容 Elasticsearch，现有客户端可直接使用。例如代理要查某个函数定义时，直接查询索引即可，不必反复读取整个代码库。",
+     "site": "https://xerj.org"
+    },
+    {
+     "repo": "Tencent/LoopForge",
+     "url": "https://github.com/Tencent/LoopForge",
+     "owner": "Tencent",
+     "stars": 797,
+     "updated": "2026-11-14",
+     "lists": [
+      "daily"
+     ],
+     "desc": "LoopForge 是腾讯开源的编码智能体编排平台，用脚本把 CodeBuddy、Codex、Claude Code 等编码助手串成自动化工作流，并在关键步骤插入人工审批关卡，避免 AI 改代码失控。它可自托管，适合团队把 AI 写代码、审代码的流程标准化，例如让智能体自动生成补丁后先由人确认再合并。",
+     "site": "https://loopforge.cn"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "dream-num/univer",
+     "url": "https://github.com/dream-num/univer",
+     "owner": "dream-num",
+     "stars": 24355,
+     "updated": "2026-11-14",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Univer 是一个开源的办公套件 SDK，用 TypeScript 编写，让开发者能把类似 Excel、Word、PPT 的编辑、计算、协作和文件处理能力嵌入自己的产品，还支持 AI 智能体参与操作。它解决了企业自建在线文档系统门槛高的问题，比如你可以在自己的项目管理工具里直接嵌入可多人实时编辑的表格，而不用从零开发。",
+     "site": "https://univer.ai"
+    }
+   ]
+  },
+  {
+   "name": "安全",
+   "emoji": "🔐",
+   "items": [
+    {
+     "repo": "martin-olivier/airgorah",
+     "url": "https://github.com/martin-olivier/airgorah",
+     "owner": "martin-olivier",
+     "stars": 5665,
+     "updated": "2026-11-06",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Airgorah 是一款用 Rust 编写的 WiFi 安全审计工具，提供图形界面，可在 Kali 等 Linux 系统上运行。它能扫描周边无线网络、抓取握手包、测试密码强度，帮助安全人员检查自家 WiFi 是否存在弱口令或配置漏洞。例如在授权测试中，你可以用它发现使用默认密码的路由器，并及时加固，避免被蹭网或攻击。",
+     "site": "https://crates.io/crates/airgorah"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
