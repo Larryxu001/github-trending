@@ -77,7 +77,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-07T10:00:10.164331+08:00",
-   "last_seen": "2026-11-15T20:00:41.136193+08:00"
+   "last_seen": "2026-11-15T23:00:45.513391+08:00"
   },
   "mattpocock/skills": {
    "repo": "mattpocock/skills",
@@ -127,7 +127,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-15T20:00:41.136210+08:00"
+   "last_seen": "2026-11-15T23:00:46.297918+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -322,7 +322,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-15T20:00:41.136202+08:00"
+   "last_seen": "2026-11-15T23:00:45.513386+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -407,7 +407,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-15T20:00:41.136197+08:00"
+   "last_seen": "2026-11-15T23:00:45.513374+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -963,7 +963,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-15T20:00:41.136226+08:00"
+   "last_seen": "2026-11-15T23:00:47.825347+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -1068,7 +1068,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-11-15T20:00:41.136217+08:00"
+   "last_seen": "2026-11-15T23:00:47.042597+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
@@ -1171,7 +1171,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-15T20:00:41.136179+08:00"
+   "last_seen": "2026-11-15T23:00:44.758696+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1325,7 +1325,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-15T20:00:41.136192+08:00"
+   "last_seen": "2026-11-15T23:00:45.513362+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -3114,7 +3114,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-15T20:00:41.136173+08:00"
+   "last_seen": "2026-11-15T23:00:44.758687+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3317,7 +3317,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-15T20:00:41.136223+08:00"
+   "last_seen": "2026-11-15T23:00:47.042588+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3453,7 +3453,7 @@
    "updated": "2026-11-07",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-11-15T20:00:41.136213+08:00"
+   "last_seen": "2026-11-15T23:00:45.513421+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3635,7 +3635,7 @@
    "updated": "2026-11-08",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-15T20:00:41.136218+08:00"
+   "last_seen": "2026-11-15T23:00:47.042601+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3664,7 +3664,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-29T20:00:45.775167+08:00",
-   "last_seen": "2026-11-15T20:00:41.136200+08:00"
+   "last_seen": "2026-11-15T23:00:46.297888+08:00"
   },
   "CopilotKit/OpenBot": {
    "repo": "CopilotKit/OpenBot",
@@ -3738,7 +3738,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-15T20:00:41.136185+08:00"
+   "last_seen": "2026-11-15T23:00:44.758693+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4663,7 +4663,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-15T20:00:41.136190+08:00"
+   "last_seen": "2026-11-15T23:00:45.513383+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -5004,7 +5004,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-07T20:00:44.426081+08:00",
-   "last_seen": "2026-11-15T20:00:41.136169+08:00"
+   "last_seen": "2026-11-15T23:00:44.758682+08:00"
   },
   "sherlock-project/sherlock": {
    "repo": "sherlock-project/sherlock",
@@ -5039,7 +5039,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-07T20:00:45.236343+08:00",
-   "last_seen": "2026-11-15T20:00:41.136177+08:00"
+   "last_seen": "2026-11-15T23:00:45.513334+08:00"
   },
   "tailwindlabs/tailwindcss": {
    "repo": "tailwindlabs/tailwindcss",
@@ -5150,7 +5150,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-08T20:01:13.922998+08:00",
-   "last_seen": "2026-11-15T20:00:41.136208+08:00"
+   "last_seen": "2026-11-15T23:00:47.042582+08:00"
   },
   "blader/humanizer": {
    "repo": "blader/humanizer",
@@ -5221,7 +5221,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-09T20:00:48.299793+08:00",
-   "last_seen": "2026-11-15T20:00:41.136205+08:00"
+   "last_seen": "2026-11-15T23:00:45.513395+08:00"
   },
   "homeassistant-ai/ha-mcp": {
    "repo": "homeassistant-ai/ha-mcp",
@@ -5251,7 +5251,8 @@
   "we-promise/sure": {
    "repo": "we-promise/sure",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 15156,
    "owner": "we-promise",
@@ -5262,7 +5263,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-10T20:00:43.006819+08:00",
-   "last_seen": "2026-11-15T20:00:41.136225+08:00"
+   "last_seen": "2026-11-15T23:00:45.513403+08:00"
   },
   "tokio-rs/topcoat": {
    "repo": "tokio-rs/topcoat",
@@ -5294,7 +5295,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-11T20:00:44.991036+08:00",
-   "last_seen": "2026-11-15T20:00:41.136175+08:00"
+   "last_seen": "2026-11-15T23:00:47.042576+08:00"
   },
   "shadcn/improve": {
    "repo": "shadcn/improve",
@@ -5516,7 +5517,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-13T20:00:45.770901+08:00",
-   "last_seen": "2026-11-15T20:00:41.136153+08:00"
+   "last_seen": "2026-11-15T23:00:45.513369+08:00"
   },
   "louislam/uptime-kuma": {
    "repo": "louislam/uptime-kuma",
@@ -5577,7 +5578,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-13T20:00:48.678708+08:00",
-   "last_seen": "2026-11-15T20:00:41.136181+08:00"
+   "last_seen": "2026-11-15T23:00:47.042593+08:00"
   },
   "tailscale/tailcat": {
    "repo": "tailscale/tailcat",
@@ -5634,7 +5635,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-13T20:00:51.468208+08:00",
-   "last_seen": "2026-11-15T20:00:41.136188+08:00"
+   "last_seen": "2026-11-15T23:00:45.513378+08:00"
   },
   "lobehub/lobehub": {
    "repo": "lobehub/lobehub",
@@ -5694,7 +5695,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-14T02:00:55.118606+08:00",
-   "last_seen": "2026-11-15T20:00:41.136195+08:00"
+   "last_seen": "2026-11-15T23:00:47.042546+08:00"
   },
   "Vincentwei1021/video-shotcraft": {
    "repo": "Vincentwei1021/video-shotcraft",
@@ -5725,7 +5726,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-14T17:00:42.001187+08:00",
-   "last_seen": "2026-11-15T20:00:41.136233+08:00"
+   "last_seen": "2026-11-15T23:00:47.825377+08:00"
   },
   "dream-num/univer": {
    "repo": "dream-num/univer",
@@ -5762,7 +5763,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-14T21:13:29.473667+08:00",
-   "last_seen": "2026-11-15T20:00:41.136204+08:00"
+   "last_seen": "2026-11-15T23:00:44.758665+08:00"
   },
   "ag-ui-protocol/ag-ui": {
    "repo": "ag-ui-protocol/ag-ui",
@@ -5784,7 +5785,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-14T21:13:30.265028+08:00",
-   "last_seen": "2026-11-15T20:00:41.136207+08:00"
+   "last_seen": "2026-11-15T23:00:44.758690+08:00"
   },
   "Tencent/LoopForge": {
    "repo": "Tencent/LoopForge",
@@ -5821,7 +5822,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-14T21:13:32.736105+08:00",
-   "last_seen": "2026-11-15T20:00:41.136228+08:00"
+   "last_seen": "2026-11-15T23:00:45.513399+08:00"
   },
   "martin-olivier/airgorah": {
    "repo": "martin-olivier/airgorah",
@@ -5847,12 +5848,114 @@
    "metadata_date": "2026-11-15",
    "first_seen": "2026-11-14T21:13:33.556676+08:00",
    "last_seen": "2026-11-15T20:00:41.136234+08:00"
+  },
+  "google-labs-code/stitch-skills": {
+   "repo": "google-labs-code/stitch-skills",
+   "lists": [
+    "daily"
+   ],
+   "stars": 9094,
+   "owner": "google-labs-code",
+   "homepage": "https://stitch.withgoogle.com/docs/mcp/setup",
+   "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+   "language": "TypeScript",
+   "topics": [],
+   "updated": "2026-08-17",
+   "metadata_date": "2026-11-15",
+   "first_seen": "2026-11-15T23:00:45.013188+08:00",
+   "last_seen": "2026-11-15T23:00:45.013200+08:00"
+  },
+  "ggml-org/ggml": {
+   "repo": "ggml-org/ggml",
+   "lists": [
+    "daily"
+   ],
+   "stars": 15812,
+   "owner": "ggml-org",
+   "homepage": "https://github.com/ggml-org",
+   "description": "Tensor library for machine learning",
+   "language": "C++",
+   "topics": [
+    "machine-learning"
+   ],
+   "updated": "2026-11-13",
+   "metadata_date": "2026-11-15",
+   "first_seen": "2026-11-15T23:00:45.797766+08:00",
+   "last_seen": "2026-11-15T23:00:45.797778+08:00"
+  },
+  "elementalsouls/Claude-BugHunter": {
+   "repo": "elementalsouls/Claude-BugHunter",
+   "lists": [
+    "daily"
+   ],
+   "stars": 5977,
+   "owner": "elementalsouls",
+   "homepage": "https://elementalsouls.github.io/Claude-BugHunter",
+   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+   "language": "Python",
+   "topics": [
+    "ai-security",
+    "anthropic",
+    "application-security",
+    "bug-bounty",
+    "bugbounty",
+    "bugcrowd",
+    "claude",
+    "claude-code",
+    "claude-skills",
+    "ethical-hacking",
+    "hackerone",
+    "offensive-security",
+    "pentesting",
+    "red-team",
+    "security-tools",
+    "web-security"
+   ],
+   "updated": "2026-11-15",
+   "metadata_date": "2026-11-15",
+   "first_seen": "2026-11-15T23:00:46.542393+08:00",
+   "last_seen": "2026-11-15T23:00:46.542405+08:00"
+  },
+  "NVIDIA/SkillEvaluator": {
+   "repo": "NVIDIA/SkillEvaluator",
+   "lists": [
+    "daily"
+   ],
+   "stars": 1363,
+   "owner": "NVIDIA",
+   "homepage": "https://docs.nvidia.com/skills/skillevaluator/",
+   "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+   "language": "Python",
+   "topics": [
+    "agent-evaluation",
+    "agent-plugins",
+    "agent-security",
+    "agent-skills",
+    "agentic-ai",
+    "benchmark",
+    "claude-code",
+    "codex",
+    "evaluate",
+    "evaluation",
+    "plugin",
+    "plugin-evaluation",
+    "security-scanner",
+    "skill-eval",
+    "skill-evals",
+    "skill-evaluation",
+    "skill-evaluator",
+    "skills"
+   ],
+   "updated": "2026-11-15",
+   "metadata_date": "2026-11-15",
+   "first_seen": "2026-11-15T23:00:47.325204+08:00",
+   "last_seen": "2026-11-15T23:00:47.325215+08:00"
   }
  },
- "last_collected": "2026-11-15T20:00:41.136236+08:00",
+ "last_collected": "2026-11-15T23:00:47.825385+08:00",
  "list_counts": {
-  "daily": 15,
+  "daily": 12,
   "weekly": 11,
-  "monthly": 15
+  "monthly": 14
  }
 }
