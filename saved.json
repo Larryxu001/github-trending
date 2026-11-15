@@ -1401,6 +1401,20 @@
    "tags": [],
    "saved_at": "2026-11-14",
    "source": "pages"
+  },
+  {
+   "repo": "mem0ai/mem0",
+   "url": "https://github.com/mem0ai/mem0",
+   "owner": "mem0ai",
+   "stars": 68995,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "Mem0 是为 AI 助手和智能体打造的“记忆层”，解决大模型对话后即忘、无法长期记住用户偏好的问题。它把对话中的关键信息自动提取、存储，并在下次对话时检索出来注入上下文，让 AI 越用越懂你。例如客服机器人能记住用户上次的投诉和偏好，直接给出个性化回复。支持 Python/JS SDK、自托管和云服务，适合构建有长期记忆的生产级 AI 应用。",
+   "site": "https://mem0.ai",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-15",
+   "source": "pages"
   }
  ]
 }
