@@ -1415,6 +1415,20 @@
    "tags": [],
    "saved_at": "2026-11-15",
    "source": "pages"
+  },
+  {
+   "repo": "Larryxu001/cloud-mail",
+   "url": "https://github.com/Larryxu001/cloud-mail",
+   "owner": "Larryxu001",
+   "stars": 0,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "这是一个基于 Cloudflare Workers 的自建邮件服务，让你用一个域名创建多个邮箱地址，像使用大邮箱平台一样收发邮件。它把后端部署在 Cloudflare 上以降低服务器成本，支持附件、邮件转发到 Telegram、验证码自动识别和管理后台。例如，你可以给自己搭建一个带自定义域名的邮箱，用来接收注册验证码或转发重要邮件。",
+   "site": "https://skymail.ink",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-16",
+   "source": "pages"
   }
  ]
 }
