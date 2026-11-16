@@ -19240,7 +19240,7 @@
   ]
  },
  "daily:2026-11-16": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-16",
    "new_count": 7,
@@ -19360,6 +19360,245 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-16 ｜ 今日新项目 7 个 ｜ 4 个分类 ｜ 30 天去重跳过 226 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-16/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 5 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 4 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search)**　⭐ 62,683\n这是一个基于 Claude Code 的求职辅助框架，把 AI 代理用在找工作全流程上。你只需提供职位描述，它就能帮你评估岗位匹配度、按岗位定制简历、生成求职信，甚至准备面试问答。所有内容都在本地运行，数据自己掌控。比如投递一个后端岗位时，它会分析你的经历与 JD 的差距，自动调整 LaTeX 简历并写出一封针对性求职信，适合想高效海投又不想泄露隐私的求职者。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 MadsLorentzen ｜ 📅 更新 2026-10-21 ｜ 🏷 日/月/周榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills)**　⭐ 9,158\n这是 Google Labs 为 Stitch MCP 服务器打造的一套 Agent 技能库，用 TypeScript 编写。它遵循 Agent Skills 开放标准，让 Antigravity、Gemini CLI、Claude Code、Cursor 等编码智能体能够直接调用这些技能，从而完成与 Stitch 相关的任务。简单说，它解决的是智能体缺少标准化、可复用能力的问题，开发者无需为每个工具重复造轮子，装上技能即可让 AI 助手具备特定操作能力。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 google-labs-code ｜ 📅 更新 2026-08-17 ｜ 🏷 日榜 ｜ 🔗 [https://stitch.withgoogle.com/docs/mcp/setup](https://stitch.withgoogle.com/docs/mcp/setup)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter)**　⭐ 6,126\n这是一个给 Claude Code 用的技能包，专门辅助漏洞挖掘和外部红队测试。它内置 82 个技能、15 个斜杠命令，整理了 681 条已公开漏洞报告的模式，覆盖 24 类核心漏洞，还附带企业身份与基础设施攻击矩阵。安全人员可以让 Claude 按这些技能自动分析目标、对照历史案例找思路，比如在 HackerOne 或 Bugcrowd 打赏金时快速生成测试方向，减少手动翻报告和查资料的时间。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 elementalsouls ｜ 📅 更新 2026-11-15 ｜ 🏷 日榜 ｜ 🔗 [https://elementalsouls.github.io/Claude-BugHunter](https://elementalsouls.github.io/Claude-BugHunter)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**4. [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator)**　⭐ 1,472\n这是 NVIDIA 推出的多层级评估框架，专门用来检验 AI Agent 技能的质量。它通过质量门禁、语义重叠检测和自动生成评测数据集，还能在真实 Agent 运行中观察技能对行为的影响。比如你写了一个 Claude Code 插件，想知道它是否可靠、会不会和别的技能冲突，用它能自动打分并给出改进依据，帮助开发者放心上线 Agent 技能。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 NVIDIA ｜ 📅 更新 2026-11-15 ｜ 🏷 日榜 ｜ 🔗 [https://docs.nvidia.com/skills/skillevaluator/](https://docs.nvidia.com/skills/skillevaluator/)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ggml-org/ggml](https://github.com/ggml-org/ggml)**　⭐ 15,847\nggml 是一个用 C++ 编写的张量库，专门为机器学习推理提供底层计算支持。它通过轻量级设计让大模型能在普通电脑甚至手机上高效运行，解决了传统框架依赖重、部署难的问题。比如著名的 llama.cpp 就是基于 ggml 实现的，让用户能在本地笔记本上流畅运行 LLaMA 等大语言模型，无需昂贵的 GPU 集群。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ggml-org ｜ 📅 更新 2026-11-13 ｜ 🏷 日榜 ｜ 🔗 [https://github.com/ggml-org](https://github.com/ggml-org)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)**　⭐ 34,151\nLinkSwift 是一个基于 JavaScript 的网盘直链下载工具，能帮你把百度网盘、阿里云盘、夸克网盘等八大网盘的文件，解析出可直接下载的直链地址，再配合 Aria2、Motrix 等下载器使用，从而绕过官方客户端的限速。比如你想下载百度网盘里的大文件，用它获取直链后就能用下载工具高速下载，不用再忍受几十 KB/s 的龟速。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 hmjz100 ｜ 📅 更新 2026-10-27 ｜ 🏷 日榜 ｜ 🔗 [https://github.com/hmjz100/LinkSwift](https://github.com/hmjz100/LinkSwift)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "turquoise",
+       "title": {
+        "tag": "plain_text",
+        "content": "📱 移动 / 桌面应用 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [android/skills](https://github.com/android/skills)**　⭐ 10,208\n这是一个面向 Android 平台的技能示例项目，使用 Kotlin 编写，主要用来演示如何在 Android 应用中集成和调用 AI 技能（skills）。它解决的是开发者在移动端快速接入技能能力时缺少参考代码的问题，可以直接参考其中的结构、调用方式和界面实现。例如，想给 App 加一个“翻译”或“总结”按钮，就能照着它把技能接进来。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 android ｜ 📅 更新 2026-10-29 ｜ 🏷 日/月/周榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
