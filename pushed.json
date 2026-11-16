@@ -112,9 +112,9 @@
  "ruvnet/ruflo": "2026-11-15",
  "xerj-org/xerj": "2026-11-15",
  "lightseekorg/tokenspeed": "2026-10-16",
- "MadsLorentzen/ai-job-search": "2026-10-17",
- "hmjz100/LinkSwift": "2026-10-17",
- "android/skills": "2026-10-17",
+ "MadsLorentzen/ai-job-search": "2026-11-16",
+ "hmjz100/LinkSwift": "2026-11-16",
+ "android/skills": "2026-11-16",
  "LibreSpark/LibreTV": "2026-10-17",
  "stablyai/orca": "2026-10-18",
  "akitaonrails/ai-memory": "2026-10-18",
@@ -247,5 +247,9 @@
  "ag-ui-protocol/ag-ui": "2026-11-15",
  "Tencent/LoopForge": "2026-11-15",
  "dream-num/univer": "2026-11-15",
- "martin-olivier/airgorah": "2026-11-15"
+ "martin-olivier/airgorah": "2026-11-15",
+ "google-labs-code/stitch-skills": "2026-11-16",
+ "elementalsouls/Claude-BugHunter": "2026-11-16",
+ "NVIDIA/SkillEvaluator": "2026-11-16",
+ "ggml-org/ggml": "2026-11-16"
 }
