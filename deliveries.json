@@ -19620,5 +19620,144 @@
     }
    }
   ]
+ },
+ "weekly:2026-11-16": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-16",
+   "new_count": 8,
+   "skipped": 0,
+   "categories": [
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "mem0ai/mem0",
+       "url": "https://github.com/mem0ai/mem0",
+       "owner": "mem0ai",
+       "stars": 68995,
+       "updated": "2026-11-15",
+       "lists": [],
+       "desc": "Mem0 是为 AI 助手和智能体打造的“记忆层”，解决大模型对话后即忘、无法长期记住用户偏好的问题。它把对话中的关键信息自动提取、存储，并在下次对话时检索出来注入上下文，让 AI 越用越懂你。例如客服机器人能记住用户上次的投诉和偏好，直接给出个性化回复。支持 Python/JS SDK、自托管和云服务，适合构建有长期记忆的生产级 AI 应用。",
+       "site": "https://mem0.ai",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "JCodesMore/ai-website-cloner-template",
+       "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+       "owner": "JCodesMore",
+       "stars": 38925,
+       "updated": "2026-11-10",
+       "lists": [],
+       "desc": "这是一个面向 AI 编程代理的网站克隆模板：给代理一个网址，它就能自动抓取页面结构、素材和字体，并用 Next.js + Tailwind 重建出可编辑的网站代码。适合把旧站迁移到现代技术栈、找回丢失源码，或学习优秀网站的实现方式。例如输入 /clone-website https://example.com，代理会先梳理路由、观察桌面与移动端状态，再生成组件并对比修正差异。",
+       "site": "https://dsc.gg/jcodesmore",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "移动 / 桌面应用",
+     "emoji": "📱",
+     "items": [
+      {
+       "repo": "OpenSelena/omniget",
+       "url": "https://github.com/OpenSelena/omniget",
+       "owner": "OpenSelena",
+       "stars": 5380,
+       "updated": "2026-11-11",
+       "lists": [],
+       "desc": "OmniGet 是一款免费开源的跨平台桌面下载管理器，用 Rust、Tauri 和 Svelte 打造。它把 yt-dlp 和 FFmpeg 封装进图形界面，粘贴链接就能下载 YouTube、Instagram、B站、Telegram、磁力链接等 1800 多个站点的视频、音乐和课程，还支持 Udemy/Hotmart 课程下载。下载后可直接在应用内播放、转写、转换格式，并附带 158 个实用小工具，无需打开终端。",
+       "site": "https://t.me/OpenSelena",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "Ebullioscopic/Atoll",
+       "url": "https://github.com/Ebullioscopic/Atoll",
+       "owner": "Ebullioscopic",
+       "stars": 5264,
+       "updated": "2026-11-14",
+       "lists": [],
+       "desc": "Atoll 是一款把 MacBook 屏幕顶部刘海变成交互控制中心的 macOS 应用。它平时隐藏，鼠标悬停或手势滑动时展开，提供音乐控制、系统监控（CPU/GPU/内存/网络）、计时器、剪贴板历史、锁屏小组件等功能。例如你听歌时可直接在刘海上切歌、看歌词预览，无需切换窗口，让刘海从占用空间的硬件缺陷变成实用快捷入口。",
+       "site": "https://getatoll.app",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "cwuom/NeriPlayer",
+       "url": "https://github.com/cwuom/NeriPlayer",
+       "owner": "cwuom",
+       "stars": 4189,
+       "updated": "2026-11-14",
+       "lists": [],
+       "desc": "NeriPlayer 是一款原生 Android 音乐播放器，把网易云、Bilibili、YouTube Music、自建 Navidrome 服务器和本地音乐整合进同一个播放队列，解决多平台听歌来回切换的麻烦。它还提供逐字歌词、10 段均衡器、USB 独占输出，以及把歌单和播放统计同步到自己 GitHub 或 WebDAV 的隐私友好方案。例如你可以用网易云账号听歌，遇到无法播放时自动匹配 B 站音源兜底。",
+       "site": "https://neri.kano.kim",
+       "note": "",
+       "tags": []
+      },
+      {
+       "repo": "zxsos/HGhubX",
+       "url": "https://github.com/zxsos/HGhubX",
+       "owner": "zxsos",
+       "stars": 1092,
+       "updated": "2026-11-13",
+       "lists": [],
+       "desc": "HGhubX 是一个用 Rust + Tauri 2 开发的第三方短剧客户端，支持 Windows、macOS 和 Android 三端，采用 Fluent 设计风格和沉浸式竖屏播放体验。它本身不存储任何视频内容，而是像浏览器一样从第三方站点获取剧集信息供用户浏览观看，适合想跨平台追短剧的用户。例如在安卓手机上安装后，可以像刷短视频一样竖屏连续观看短剧，但项目明确禁止商业使用和批量抓取。",
+       "site": "无",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "学习资源",
+     "emoji": "📚",
+     "items": [
+      {
+       "repo": "DeanChensj/jiangshan-map",
+       "url": "https://github.com/DeanChensj/jiangshan-map",
+       "owner": "DeanChensj",
+       "stars": 5744,
+       "updated": "2026-11-14",
+       "lists": [],
+       "desc": "这是一个可交互的中国历史地图时间轴，覆盖公元前403年战国至当代共18个历史时期、198张疆域快照。拖动时间轴即可看各朝代疆域、政权对峙、黄河改道与长城运河的演变；点击任意古城或关隘，能查看它两千多年来的名称与行政区划变迁，比如长安历代叫什么、发生过哪些大事；还能搜索秦始皇、张骞、李白、苏轼等人物，把其生平足迹按年份标在地图上，适合历史爱好者、学生和数字人文研究者直观理解中国历史地理。",
+       "site": "https://deanchen.me/jiangshan-map/",
+       "note": "",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "ion-design/ditto.site",
+       "url": "https://github.com/ion-design/ditto.site",
+       "owner": "ion-design",
+       "stars": 1738,
+       "updated": "2026-11-10",
+       "lists": [],
+       "desc": "ditto.site 能把任意公开网页在浏览器里实际渲染的效果，自动转换成一个可运行的 TypeScript 项目，默认生成 Next.js App Router 应用，也支持 Vite React。它解决的是「照着网页手写前端代码」的重复劳动：输入一个网址，就输出包含页面、样式、图片字体等资源的完整代码库，还附带 AGENTS.md 等交接文档。例如输入 example.com，就能得到一个可直接 npm install 并启动的克隆站点项目。",
+       "site": "无",
+       "note": "",
+       "tags": []
+      }
+     ]
+    }
+   ],
+   "kind": "weekly",
+   "period_start": "2026-11-09",
+   "period_end": "2026-11-16"
+  }
  }
 }
