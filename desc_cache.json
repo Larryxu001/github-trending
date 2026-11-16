@@ -1492,5 +1492,29 @@
   "emoji": "🔐",
   "desc": "Airgorah 是一款用 Rust 编写的 WiFi 安全审计工具，提供图形界面，可在 Kali 等 Linux 系统上运行。它能扫描周边无线网络、抓取握手包、测试密码强度，帮助安全人员检查自家 WiFi 是否存在弱口令或配置漏洞。例如在授权测试中，你可以用它发现使用默认密码的路由器，并及时加固，避免被蹭网或攻击。",
   "site": "https://crates.io/crates/airgorah"
+ },
+ "google-labs-code/stitch-skills": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是 Google Labs 为 Stitch MCP 服务器打造的一套 Agent 技能库，用 TypeScript 编写。它遵循 Agent Skills 开放标准，让 Antigravity、Gemini CLI、Claude Code、Cursor 等编码智能体能够直接调用这些技能，从而完成与 Stitch 相关的任务。简单说，它解决的是智能体缺少标准化、可复用能力的问题，开发者无需为每个工具重复造轮子，装上技能即可让 AI 助手具备特定操作能力。",
+  "site": "https://stitch.withgoogle.com/docs/mcp/setup"
+ },
+ "ggml-org/ggml": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "ggml 是一个用 C++ 编写的张量库，专门为机器学习推理提供底层计算支持。它通过轻量级设计让大模型能在普通电脑甚至手机上高效运行，解决了传统框架依赖重、部署难的问题。比如著名的 llama.cpp 就是基于 ggml 实现的，让用户能在本地笔记本上流畅运行 LLaMA 等大语言模型，无需昂贵的 GPU 集群。",
+  "site": "https://github.com/ggml-org"
+ },
+ "elementalsouls/Claude-BugHunter": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个给 Claude Code 用的技能包，专门辅助漏洞挖掘和外部红队测试。它内置 82 个技能、15 个斜杠命令，整理了 681 条已公开漏洞报告的模式，覆盖 24 类核心漏洞，还附带企业身份与基础设施攻击矩阵。安全人员可以让 Claude 按这些技能自动分析目标、对照历史案例找思路，比如在 HackerOne 或 Bugcrowd 打赏金时快速生成测试方向，减少手动翻报告和查资料的时间。",
+  "site": "https://elementalsouls.github.io/Claude-BugHunter"
+ },
+ "NVIDIA/SkillEvaluator": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是 NVIDIA 推出的多层级评估框架，专门用来检验 AI Agent 技能的质量。它通过质量门禁、语义重叠检测和自动生成评测数据集，还能在真实 Agent 运行中观察技能对行为的影响。比如你写了一个 Claude Code 插件，想知道它是否可靠、会不会和别的技能冲突，用它能自动打分并给出改进依据，帮助开发者放心上线 Agent 技能。",
+  "site": "https://docs.nvidia.com/skills/skillevaluator/"
  }
 }
