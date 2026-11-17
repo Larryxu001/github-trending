@@ -78,7 +78,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-07T10:00:10.164331+08:00",
-   "last_seen": "2026-11-17T17:00:41.653014+08:00"
+   "last_seen": "2026-11-17T20:00:41.513962+08:00"
   },
   "mattpocock/skills": {
    "repo": "mattpocock/skills",
@@ -128,7 +128,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-07T10:00:11.640333+08:00",
-   "last_seen": "2026-11-17T17:00:41.653001+08:00"
+   "last_seen": "2026-11-17T20:00:44.280686+08:00"
   },
   "bilawalsidhu/gods-eye-view": {
    "repo": "bilawalsidhu/gods-eye-view",
@@ -195,16 +195,16 @@
     "monthly",
     "weekly"
    ],
-   "stars": 14980,
+   "stars": 16737,
    "owner": "cursor",
    "homepage": "",
    "description": "Cursor plugin specification and official plugins",
    "language": "TypeScript",
    "topics": [],
-   "updated": "2026-11-01",
-   "metadata_date": "2026-11-02",
+   "updated": "2026-11-17",
+   "metadata_date": "2026-11-17",
    "first_seen": "2026-10-07T10:00:13.945480+08:00",
-   "last_seen": "2026-11-02T18:42:55.532112+08:00"
+   "last_seen": "2026-11-17T20:00:42.914096+08:00"
   },
   "affaan-m/ECC": {
    "repo": "affaan-m/ECC",
@@ -213,7 +213,7 @@
     "monthly",
     "weekly"
    ],
-   "stars": 296341,
+   "stars": 304975,
    "owner": "affaan-m",
    "homepage": "https://ecc.tools",
    "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
@@ -228,10 +228,10 @@
     "mcp",
     "productivity"
    ],
-   "updated": "2026-11-02",
-   "metadata_date": "2026-11-04",
+   "updated": "2026-11-17",
+   "metadata_date": "2026-11-17",
    "first_seen": "2026-10-07T10:00:14.676963+08:00",
-   "last_seen": "2026-11-04T17:00:39.748281+08:00"
+   "last_seen": "2026-11-17T20:00:44.608770+08:00"
   },
   "boykopovar/AnyPS5": {
    "repo": "boykopovar/AnyPS5",
@@ -323,7 +323,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-07T10:00:17.640758+08:00",
-   "last_seen": "2026-11-17T17:00:41.652987+08:00"
+   "last_seen": "2026-11-17T20:00:42.403891+08:00"
   },
   "VectifyAI/PageIndex": {
    "repo": "VectifyAI/PageIndex",
@@ -408,7 +408,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-07T10:00:19.909326+08:00",
-   "last_seen": "2026-11-17T17:00:41.652976+08:00"
+   "last_seen": "2026-11-17T20:00:42.403883+08:00"
   },
   "paperclipai/paperclip": {
    "repo": "paperclipai/paperclip",
@@ -964,7 +964,7 @@
    "updated": "2026-11-13",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-07T10:00:34.604441+08:00",
-   "last_seen": "2026-11-17T17:00:41.653023+08:00"
+   "last_seen": "2026-11-17T20:00:45.964253+08:00"
   },
   "tashfeenahmed/freellmapi": {
    "repo": "tashfeenahmed/freellmapi",
@@ -1069,7 +1069,7 @@
    "updated": "2026-11-14",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-08T03:12:23.918915+08:00",
-   "last_seen": "2026-11-17T17:00:41.653021+08:00"
+   "last_seen": "2026-11-17T20:00:45.964223+08:00"
   },
   "EpicGames/raddebugger": {
    "repo": "EpicGames/raddebugger",
@@ -1172,7 +1172,7 @@
    "updated": "2026-09-14",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-08T03:12:33.922537+08:00",
-   "last_seen": "2026-11-17T17:00:41.652964+08:00"
+   "last_seen": "2026-11-17T20:00:41.513960+08:00"
   },
   "Friedrich-M/UniMate": {
    "repo": "Friedrich-M/UniMate",
@@ -1326,7 +1326,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-09T19:07:07.458382+08:00",
-   "last_seen": "2026-11-17T17:00:41.652969+08:00"
+   "last_seen": "2026-11-17T20:00:41.513966+08:00"
   },
   "Robbyant/lingbot-map": {
    "repo": "Robbyant/lingbot-map",
@@ -2122,7 +2122,7 @@
     "daily",
     "weekly"
    ],
-   "stars": 313987,
+   "stars": 318940,
    "owner": "obra",
    "homepage": "",
    "description": "An agentic skills framework & software development methodology that works.",
@@ -2138,9 +2138,9 @@
     "superpowers"
    ],
    "updated": "2026-11-03",
-   "metadata_date": "2026-11-08",
+   "metadata_date": "2026-11-17",
    "first_seen": "2026-10-15T20:00:43.272751+08:00",
-   "last_seen": "2026-11-08T14:00:40.284266+08:00"
+   "last_seen": "2026-11-17T20:00:43.780483+08:00"
   },
   "ruvnet/ruflo": {
    "repo": "ruvnet/ruflo",
@@ -3115,7 +3115,7 @@
    "updated": "2026-11-11",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-24T20:00:43.329883+08:00",
-   "last_seen": "2026-11-17T17:00:41.652955+08:00"
+   "last_seen": "2026-11-17T20:00:41.513953+08:00"
   },
   "pollen-robotics/microduck": {
    "repo": "pollen-robotics/microduck",
@@ -3318,7 +3318,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-25T18:59:17.688315+08:00",
-   "last_seen": "2026-11-17T17:00:41.653016+08:00"
+   "last_seen": "2026-11-17T20:00:44.280701+08:00"
   },
   "NVIDIA/SkillSpector": {
    "repo": "NVIDIA/SkillSpector",
@@ -3454,7 +3454,7 @@
    "updated": "2026-11-15",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-27T20:01:15.999982+08:00",
-   "last_seen": "2026-11-17T17:00:41.652994+08:00"
+   "last_seen": "2026-11-17T20:00:42.403898+08:00"
   },
   "togg53192-cmd/jailbreaks": {
    "repo": "togg53192-cmd/jailbreaks",
@@ -3636,7 +3636,7 @@
    "updated": "2026-11-08",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-29T02:00:57.811671+08:00",
-   "last_seen": "2026-11-17T17:00:41.653012+08:00"
+   "last_seen": "2026-11-17T20:00:44.280694+08:00"
   },
   "milind-soni/OpenMausBot": {
    "repo": "milind-soni/OpenMausBot",
@@ -3739,7 +3739,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-10-30T20:00:43.316395+08:00",
-   "last_seen": "2026-11-17T17:00:41.652974+08:00"
+   "last_seen": "2026-11-17T20:00:42.403870+08:00"
   },
   "lightpanda-io/browser": {
    "repo": "lightpanda-io/browser",
@@ -4664,7 +4664,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-05T20:00:47.463938+08:00",
-   "last_seen": "2026-11-17T17:00:41.652980+08:00"
+   "last_seen": "2026-11-17T20:00:44.280637+08:00"
   },
   "ConardLi/garden-skills": {
    "repo": "ConardLi/garden-skills",
@@ -5005,7 +5005,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-07T20:00:44.426081+08:00",
-   "last_seen": "2026-11-17T17:00:41.652962+08:00"
+   "last_seen": "2026-11-17T20:00:41.513964+08:00"
   },
   "sherlock-project/sherlock": {
    "repo": "sherlock-project/sherlock",
@@ -5040,7 +5040,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-07T20:00:45.236343+08:00",
-   "last_seen": "2026-11-17T17:00:41.652998+08:00"
+   "last_seen": "2026-11-17T20:00:44.280670+08:00"
   },
   "tailwindlabs/tailwindcss": {
    "repo": "tailwindlabs/tailwindcss",
@@ -5222,7 +5222,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-09T20:00:48.299793+08:00",
-   "last_seen": "2026-11-17T17:00:41.652992+08:00"
+   "last_seen": "2026-11-17T20:00:42.403879+08:00"
   },
   "homeassistant-ai/ha-mcp": {
    "repo": "homeassistant-ai/ha-mcp",
@@ -5264,7 +5264,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-10T20:00:43.006819+08:00",
-   "last_seen": "2026-11-17T17:00:41.652985+08:00"
+   "last_seen": "2026-11-17T20:00:42.403835+08:00"
   },
   "tokio-rs/topcoat": {
    "repo": "tokio-rs/topcoat",
@@ -5297,7 +5297,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-11T20:00:44.991036+08:00",
-   "last_seen": "2026-11-17T17:00:41.652951+08:00"
+   "last_seen": "2026-11-17T20:00:41.513949+08:00"
   },
   "shadcn/improve": {
    "repo": "shadcn/improve",
@@ -5346,7 +5346,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-11T20:00:46.919818+08:00",
-   "last_seen": "2026-11-17T17:00:41.653028+08:00"
+   "last_seen": "2026-11-17T20:00:45.108899+08:00"
   },
   "TheAlgorithms/Java": {
    "repo": "TheAlgorithms/Java",
@@ -5522,7 +5522,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-13T20:00:45.770901+08:00",
-   "last_seen": "2026-11-17T17:00:41.652959+08:00"
+   "last_seen": "2026-11-17T20:00:41.513958+08:00"
   },
   "louislam/uptime-kuma": {
    "repo": "louislam/uptime-kuma",
@@ -5572,7 +5572,8 @@
   "tradermonty/claude-trading-skills": {
    "repo": "tradermonty/claude-trading-skills",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 6153,
    "owner": "tradermonty",
@@ -5583,7 +5584,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-13T20:00:48.678708+08:00",
-   "last_seen": "2026-11-17T17:00:41.652971+08:00"
+   "last_seen": "2026-11-17T20:00:44.280690+08:00"
   },
   "tailscale/tailcat": {
    "repo": "tailscale/tailcat",
@@ -5620,7 +5621,8 @@
   "ChromeDevTools/chrome-devtools-mcp": {
    "repo": "ChromeDevTools/chrome-devtools-mcp",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 57565,
    "owner": "ChromeDevTools",
@@ -5640,7 +5642,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-13T20:00:51.468208+08:00",
-   "last_seen": "2026-11-17T17:00:41.653025+08:00"
+   "last_seen": "2026-11-17T20:00:44.280681+08:00"
   },
   "lobehub/lobehub": {
    "repo": "lobehub/lobehub",
@@ -5768,7 +5770,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-14T21:13:29.473667+08:00",
-   "last_seen": "2026-11-17T17:00:41.652967+08:00"
+   "last_seen": "2026-11-17T20:00:42.403875+08:00"
   },
   "ag-ui-protocol/ag-ui": {
    "repo": "ag-ui-protocol/ag-ui",
@@ -5790,14 +5792,14 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-14T21:13:30.265028+08:00",
-   "last_seen": "2026-11-17T17:00:41.652935+08:00"
+   "last_seen": "2026-11-17T20:00:44.280676+08:00"
   },
   "Tencent/LoopForge": {
    "repo": "Tencent/LoopForge",
    "lists": [
     "daily"
    ],
-   "stars": 1334,
+   "stars": 2766,
    "owner": "Tencent",
    "homepage": "https://loopforge.cn",
    "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
@@ -5824,10 +5826,10 @@
     "workflow-automation",
     "workflow-engine"
    ],
-   "updated": "2026-11-15",
-   "metadata_date": "2026-11-16",
+   "updated": "2026-11-17",
+   "metadata_date": "2026-11-17",
    "first_seen": "2026-11-14T21:13:32.736105+08:00",
-   "last_seen": "2026-11-16T20:00:53.095017+08:00"
+   "last_seen": "2026-11-17T20:00:41.903664+08:00"
   },
   "martin-olivier/airgorah": {
    "repo": "martin-olivier/airgorah",
@@ -5857,7 +5859,8 @@
   "google-labs-code/stitch-skills": {
    "repo": "google-labs-code/stitch-skills",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 9663,
    "owner": "google-labs-code",
@@ -5868,7 +5871,7 @@
    "updated": "2026-08-17",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-15T23:00:45.013188+08:00",
-   "last_seen": "2026-11-17T17:00:41.652996+08:00"
+   "last_seen": "2026-11-17T20:00:42.403895+08:00"
   },
   "ggml-org/ggml": {
    "repo": "ggml-org/ggml",
@@ -5891,7 +5894,8 @@
   "elementalsouls/Claude-BugHunter": {
    "repo": "elementalsouls/Claude-BugHunter",
    "lists": [
-    "daily"
+    "daily",
+    "weekly"
    ],
    "stars": 7299,
    "owner": "elementalsouls",
@@ -5919,7 +5923,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-15T23:00:46.542393+08:00",
-   "last_seen": "2026-11-17T17:00:41.652978+08:00"
+   "last_seen": "2026-11-17T20:00:41.513931+08:00"
   },
   "NVIDIA/SkillEvaluator": {
    "repo": "NVIDIA/SkillEvaluator",
@@ -5982,7 +5986,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-16T23:00:43.606373+08:00",
-   "last_seen": "2026-11-17T17:00:41.652983+08:00"
+   "last_seen": "2026-11-17T20:00:42.403887+08:00"
   },
   "DeanChensj/jiangshan-map": {
    "repo": "DeanChensj/jiangshan-map",
@@ -6046,7 +6050,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-16T23:00:45.388370+08:00",
-   "last_seen": "2026-11-17T17:00:41.653003+08:00"
+   "last_seen": "2026-11-17T20:00:41.513956+08:00"
   },
   "google-research/paper-orchestra": {
    "repo": "google-research/paper-orchestra",
@@ -6065,7 +6069,7 @@
    "updated": "2026-11-15",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-16T23:00:46.361971+08:00",
-   "last_seen": "2026-11-17T17:00:41.653019+08:00"
+   "last_seen": "2026-11-17T20:00:45.964258+08:00"
   },
   "sveltejs/svelte": {
    "repo": "sveltejs/svelte",
@@ -6085,7 +6089,7 @@
    "updated": "2026-11-16",
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-16T23:00:47.266397+08:00",
-   "last_seen": "2026-11-17T17:00:41.653030+08:00"
+   "last_seen": "2026-11-17T20:00:44.280698+08:00"
   },
   "kajisho5/ffmpeg-skill": {
    "repo": "kajisho5/ffmpeg-skill",
@@ -6123,12 +6127,31 @@
    "metadata_date": "2026-11-17",
    "first_seen": "2026-11-16T23:00:49.023924+08:00",
    "last_seen": "2026-11-17T17:00:41.653037+08:00"
+  },
+  "jingyaogong/minimind": {
+   "repo": "jingyaogong/minimind",
+   "lists": [
+    "daily"
+   ],
+   "stars": 65646,
+   "owner": "jingyaogong",
+   "homepage": "https://jingyaogong.github.io/minimind",
+   "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+   "language": "Python",
+   "topics": [
+    "artificial-intelligence",
+    "large-language-model"
+   ],
+   "updated": "2026-10-27",
+   "metadata_date": "2026-11-17",
+   "first_seen": "2026-11-17T20:00:45.464089+08:00",
+   "last_seen": "2026-11-17T20:00:45.464102+08:00"
   }
  },
- "last_collected": "2026-11-17T17:00:41.653039+08:00",
+ "last_collected": "2026-11-17T20:00:45.964265+08:00",
  "list_counts": {
   "daily": 15,
   "weekly": 14,
-  "monthly": 15
+  "monthly": 14
  }
 }
