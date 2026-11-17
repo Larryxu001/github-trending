@@ -116,9 +116,9 @@
  "hmjz100/LinkSwift": "2026-11-16",
  "android/skills": "2026-11-16",
  "LibreSpark/LibreTV": "2026-10-17",
- "stablyai/orca": "2026-10-18",
- "akitaonrails/ai-memory": "2026-10-18",
- "anomalyco/opencode": "2026-10-18",
+ "stablyai/orca": "2026-11-17",
+ "akitaonrails/ai-memory": "2026-11-17",
+ "anomalyco/opencode": "2026-11-17",
  "Comfy-Org/ComfyUI": "2026-10-19",
  "mlabonne/llm-course": "2026-10-19",
  "Kruk2/jasna": "2026-10-19",
@@ -251,5 +251,11 @@
  "google-labs-code/stitch-skills": "2026-11-16",
  "elementalsouls/Claude-BugHunter": "2026-11-16",
  "NVIDIA/SkillEvaluator": "2026-11-16",
- "ggml-org/ggml": "2026-11-16"
+ "ggml-org/ggml": "2026-11-16",
+ "mvanhorn/last30days-skill": "2026-11-17",
+ "kajisho5/ffmpeg-skill": "2026-11-17",
+ "google-research/paper-orchestra": "2026-11-17",
+ "sveltejs/svelte": "2026-11-17",
+ "getarcaneapp/arcane": "2026-11-17",
+ "DeanChensj/jiangshan-map": "2026-11-17"
 }
