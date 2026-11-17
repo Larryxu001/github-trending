@@ -1429,6 +1429,20 @@
    "tags": [],
    "saved_at": "2026-11-16",
    "source": "pages"
+  },
+  {
+   "repo": "Devolutions/jiffshot",
+   "url": "https://github.com/Devolutions/jiffshot",
+   "owner": "Devolutions",
+   "stars": 58,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "Jiffshot 是一款用纯 Rust 编写的跨平台截图、录屏与标注工具，支持 Windows、macOS 和 Linux。它能快速截取窗口、区域或全屏，并直接在编辑器中添加箭头、编号、模糊等标注；还能录制 MP4 视频、裁剪合并片段、OCR 提取文字。例如，你可以按 Print Screen 截取一个窗口，画上箭头后一键复制到剪贴板或导出图片，适合写文档、做教程和日常沟通。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-17",
+   "source": "pages"
   }
  ]
 }
