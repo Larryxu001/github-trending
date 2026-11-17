@@ -1516,5 +1516,41 @@
   "emoji": "🧩",
   "desc": "这是 NVIDIA 推出的多层级评估框架，专门用来检验 AI Agent 技能的质量。它通过质量门禁、语义重叠检测和自动生成评测数据集，还能在真实 Agent 运行中观察技能对行为的影响。比如你写了一个 Claude Code 插件，想知道它是否可靠、会不会和别的技能冲突，用它能自动打分并给出改进依据，帮助开发者放心上线 Agent 技能。",
   "site": "https://docs.nvidia.com/skills/skillevaluator/"
+ },
+ "getarcaneapp/arcane": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "Arcane 是一个用 Go 编写的现代化 Docker 管理工具，自带基于 SvelteKit 的网页界面，让你不用敲命令行就能管理容器和 docker-compose 服务。它解决了 Docker 原生操作门槛高、第三方面板复杂或收费的问题，适合自建服务器用户日常查看容器状态、启停服务、编辑 compose 配置。比如你想重启某个跑挂了的服务，打开网页点一下即可，无需记住 docker restart 命令。",
+  "site": "https://getarcane.app"
+ },
+ "DeanChensj/jiangshan-map": {
+  "cat": "学习资源",
+  "emoji": "📚",
+  "desc": "这是一个中国历史交互地图时间轴，把公元前403年至今18个朝代、198个疆域快照串成可拖动的时间轴，点哪年就显示当时的中国版图，还附有古今地名对照和古诗词路线。它解决了历史地图分散、难对照的问题，适合历史爱好者、学生和数字人文研究者直观感受疆域变迁，比如拖动到唐朝就能看到当时版图与今日地名的对应关系。",
+  "site": "https://deanchen.me/jiangshan-map/"
+ },
+ "mvanhorn/last30days-skill": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个给 AI 智能体用的技能插件，能围绕任意话题去 Reddit、X、YouTube、Hacker News、Polymarket 和网页上搜集最新信息，再整合成一份有据可查的摘要。它解决的是 AI 回答缺乏时效性和来源的问题，适合做热点追踪、舆情调研或投资参考。比如想了解某款新产品的真实口碑，它会汇总各平台近30天的讨论并给出结论。",
+  "site": "无"
+ },
+ "google-research/paper-orchestra": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "PaperOrchestra 是一个多智能体框架，专门用来自动撰写 AI 研究论文。它把写论文拆成多个环节，由不同智能体分工完成，比如查资料、设计实验、组织论证和润色文字，从而降低人工写作负担。适合研究者快速产出论文初稿，或辅助学生梳理研究思路。例如，你给出一个研究方向，它就能协作生成结构完整的论文草稿。",
+  "site": "https://yiwen-song.github.io/paper_orchestra/"
+ },
+ "sveltejs/svelte": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "Svelte 是一个前端开发框架，核心思路是把大量工作提前到编译阶段完成，而不是像 React 那样在浏览器里运行庞大的运行时。开发者用类似 HTML 的模板写界面，编译后直接生成高效的原生 JavaScript，代码量小、启动快。它适合构建网页应用和交互界面，比如做一个待办清单或数据看板，写起来直观，打包体积也小。",
+  "site": "https://svelte.dev"
+ },
+ "kajisho5/ffmpeg-skill": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个给 AI 编程助手（如 Claude Code、Cursor、Codex）用的本地视频编辑技能包，把 42 个 FFmpeg 功能封装成机器可读的接口和 MCP 服务。它解决的是 AI 助手不会直接剪视频的问题：你只要用自然语言让助手剪片、加字幕、改画幅、调音量或导出各平台格式，它就能在本地完成，无需云端和 API 密钥。比如让助手把一段横屏视频裁成竖屏并加字幕，它会自动调用对应工具处理。",
+  "site": "https://www.npmjs.com/package/ffmpeg-skill"
  }
 }
