@@ -119,9 +119,9 @@
  "stablyai/orca": "2026-11-17",
  "akitaonrails/ai-memory": "2026-11-17",
  "anomalyco/opencode": "2026-11-17",
- "Comfy-Org/ComfyUI": "2026-10-19",
+ "Comfy-Org/ComfyUI": "2026-11-18",
  "mlabonne/llm-course": "2026-10-19",
- "Kruk2/jasna": "2026-10-19",
+ "Kruk2/jasna": "2026-11-18",
  "headroomlabs-ai/headroom": "2026-10-20",
  "shiyu-coder/Kronos": "2026-10-20",
  "withmarbleapp/os-taxonomy": "2026-10-20",
@@ -257,5 +257,6 @@
  "google-research/paper-orchestra": "2026-11-17",
  "sveltejs/svelte": "2026-11-17",
  "getarcaneapp/arcane": "2026-11-17",
- "DeanChensj/jiangshan-map": "2026-11-17"
+ "DeanChensj/jiangshan-map": "2026-11-17",
+ "jingyaogong/minimind": "2026-11-18"
 }
