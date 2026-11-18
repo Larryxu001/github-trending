@@ -1,0 +1,57 @@
+{
+ "date": "2026-11-18",
+ "new_count": 3,
+ "skipped": 237,
+ "categories": [
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "Comfy-Org/ComfyUI",
+     "url": "https://github.com/Comfy-Org/ComfyUI",
+     "owner": "Comfy-Org",
+     "stars": 143200,
+     "updated": "2026-10-26",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "ComfyUI 是一个基于节点图界面的扩散模型（如 Stable Diffusion）本地运行工具，用户通过拖拽连接节点来搭建图像生成流程，比如把提示词、采样器、模型加载等模块自由组合，从而精确控制出图效果。它解决了传统界面灵活性不足的问题，既提供可视化操作，也开放 API 和后端，方便开发者集成和自动化，适合从新手到研究者的各类用户快速实验和部署。",
+     "site": "https://www.comfy.org/"
+    },
+    {
+     "repo": "jingyaogong/minimind",
+     "url": "https://github.com/jingyaogong/minimind",
+     "owner": "jingyaogong",
+     "stars": 65796,
+     "updated": "2026-10-27",
+     "lists": [
+      "daily"
+     ],
+     "desc": "MiniMind 是一个极简的大语言模型训练项目，用 Python 从零开始训练一个仅 6400 万参数的小型 LLM，全程只需约 2 小时。它解决了普通人难以亲手训练大模型的问题，把数据准备、模型结构、训练流程都压缩到可读的代码里。适合想理解 LLM 原理的学生和开发者，比如在单张消费级显卡上跑完整个训练，亲眼看到模型从随机权重学会对话。",
+     "site": "https://jingyaogong.github.io/minimind"
+    }
+   ]
+  },
+  {
+   "name": "其他",
+   "emoji": "📦",
+   "items": [
+    {
+     "repo": "Kruk2/jasna",
+     "url": "https://github.com/Kruk2/jasna",
+     "owner": "Kruk2",
+     "stars": 2808,
+     "updated": "2026-10-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "jasna 是一个用 Python 编写的视频修复工具，专门用来清理视频中的瑕疵，比如去除噪点、划痕、闪烁或压缩失真。它适合处理老片翻新或低质量素材，让画面更干净稳定。例如，你可以用它修复一段充满噪点的家庭录像，输出更清晰的版本。",
+     "site": "无"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}

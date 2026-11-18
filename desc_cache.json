@@ -1552,5 +1552,11 @@
   "emoji": "🧩",
   "desc": "这是一个给 AI 编程助手（如 Claude Code、Cursor、Codex）用的本地视频编辑技能包，把 42 个 FFmpeg 功能封装成机器可读的接口和 MCP 服务。它解决的是 AI 助手不会直接剪视频的问题：你只要用自然语言让助手剪片、加字幕、改画幅、调音量或导出各平台格式，它就能在本地完成，无需云端和 API 密钥。比如让助手把一段横屏视频裁成竖屏并加字幕，它会自动调用对应工具处理。",
   "site": "https://www.npmjs.com/package/ffmpeg-skill"
+ },
+ "jingyaogong/minimind": {
+  "cat": "AI / 大模型",
+  "emoji": "🧠",
+  "desc": "MiniMind 是一个极简的大语言模型训练项目，用 Python 从零开始训练一个仅 6400 万参数的小型 LLM，全程只需约 2 小时。它解决了普通人难以亲手训练大模型的问题，把数据准备、模型结构、训练流程都压缩到可读的代码里。适合想理解 LLM 原理的学生和开发者，比如在单张消费级显卡上跑完整个训练，亲眼看到模型从随机权重学会对话。",
+  "site": "https://jingyaogong.github.io/minimind"
  }
 }
