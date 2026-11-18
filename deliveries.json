@@ -20497,7 +20497,7 @@
   ]
  },
  "daily:2026-11-18": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-18",
    "new_count": 3,
@@ -20554,6 +20554,143 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-18 ｜ 今日新项目 3 个 ｜ 2 个分类 ｜ 30 天去重跳过 237 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-18/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)**　⭐ 143,200\nComfyUI 是一个基于节点图界面的扩散模型（如 Stable Diffusion）本地运行工具，用户通过拖拽连接节点来搭建图像生成流程，比如把提示词、采样器、模型加载等模块自由组合，从而精确控制出图效果。它解决了传统界面灵活性不足的问题，既提供可视化操作，也开放 API 和后端，方便开发者集成和自动化，适合从新手到研究者的各类用户快速实验和部署。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Comfy-Org ｜ 📅 更新 2026-10-26 ｜ 🏷 日/周榜 ｜ 🔗 [https://www.comfy.org/](https://www.comfy.org/)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [jingyaogong/minimind](https://github.com/jingyaogong/minimind)**　⭐ 65,796\nMiniMind 是一个极简的大语言模型训练项目，用 Python 从零开始训练一个仅 6400 万参数的小型 LLM，全程只需约 2 小时。它解决了普通人难以亲手训练大模型的问题，把数据准备、模型结构、训练流程都压缩到可读的代码里。适合想理解 LLM 原理的学生和开发者，比如在单张消费级显卡上跑完整个训练，亲眼看到模型从随机权重学会对话。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 jingyaogong ｜ 📅 更新 2026-10-27 ｜ 🏷 日榜 ｜ 🔗 [https://jingyaogong.github.io/minimind](https://jingyaogong.github.io/minimind)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "grey",
+       "title": {
+        "tag": "plain_text",
+        "content": "📦 其他 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [Kruk2/jasna](https://github.com/Kruk2/jasna)**　⭐ 2,808\njasna 是一个用 Python 编写的视频修复工具，专门用来清理视频中的瑕疵，比如去除噪点、划痕、闪烁或压缩失真。它适合处理老片翻新或低质量素材，让画面更干净稳定。例如，你可以用它修复一段充满噪点的家庭录像，输出更清晰的版本。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Kruk2 ｜ 📅 更新 2026-10-18 ｜ 🏷 日榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
