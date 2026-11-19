@@ -1443,6 +1443,20 @@
    "tags": [],
    "saved_at": "2026-11-17",
    "source": "pages"
+  },
+  {
+   "repo": "mg-chao/snow-shot",
+   "url": "https://github.com/mg-chao/snow-shot",
+   "owner": "mg-chao",
+   "stars": 7213,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "Snow Shot 是一款免费开源的截图与录屏工具，支持 Windows 和 macOS。它能选区截图、截取窗口或滚动长截图，并在图上加箭头、文字、马赛克等标注；还能把截图钉在屏幕最上层方便对照，用本地离线 OCR 把图片里的文字提取出来，以及录制带声音的屏幕视频并导出为 GIF 或动画。比如写文档时截一张图，直接标注重点、提取文字、贴到旁边参考，一个工具就能完成。",
+   "site": "https://snowshot.top",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-19",
+   "source": "pages"
   }
  ]
 }
