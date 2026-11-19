@@ -122,10 +122,10 @@
  "Comfy-Org/ComfyUI": "2026-11-18",
  "mlabonne/llm-course": "2026-10-19",
  "Kruk2/jasna": "2026-11-18",
- "headroomlabs-ai/headroom": "2026-10-20",
- "shiyu-coder/Kronos": "2026-10-20",
+ "headroomlabs-ai/headroom": "2026-11-19",
+ "shiyu-coder/Kronos": "2026-11-19",
  "withmarbleapp/os-taxonomy": "2026-10-20",
- "YuJunZhiXue/dsh-purge": "2026-10-20",
+ "YuJunZhiXue/dsh-purge": "2026-11-19",
  "Graphify-Labs/graphify": "2026-10-21",
  "sickn33/agentic-awesome-skills": "2026-10-21",
  "vllm-project/vllm": "2026-10-21",
@@ -258,5 +258,12 @@
  "sveltejs/svelte": "2026-11-17",
  "getarcaneapp/arcane": "2026-11-17",
  "DeanChensj/jiangshan-map": "2026-11-17",
- "jingyaogong/minimind": "2026-11-18"
+ "jingyaogong/minimind": "2026-11-18",
+ "punkpeye/awesome-mcp-servers": "2026-11-19",
+ "openvinotoolkit/openvino": "2026-11-19",
+ "n8n-io/n8n": "2026-11-19",
+ "astral-sh/uv": "2026-11-19",
+ "jquery/jquery": "2026-11-19",
+ "appwrite/appwrite": "2026-11-19",
+ "solidjs/solid": "2026-11-19"
 }
