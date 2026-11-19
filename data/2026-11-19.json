@@ -1,0 +1,154 @@
+{
+ "date": "2026-11-19",
+ "new_count": 10,
+ "skipped": 237,
+ "categories": [
+  {
+   "name": "Agent 效率优化",
+   "emoji": "⚡",
+   "items": [
+    {
+     "repo": "headroomlabs-ai/headroom",
+     "url": "https://github.com/headroomlabs-ai/headroom",
+     "owner": "headroomlabs-ai",
+     "stars": 77104,
+     "updated": "2026-10-21",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Headroom 是一个在内容送入大模型之前先做压缩的工具，专门处理工具输出、日志、文件和 RAG 片段，能在答案基本不变的前提下大幅减少 token 消耗——编码智能体省约 20%，JSON 数据可省 60% 到 95%。它提供库、代理和 MCP 服务器三种用法，适合接入 Claude Code、Cursor、LangChain 等场景，帮助开发者降低调用成本、缓解上下文窗口压力。",
+     "site": "https://docs.headroomlabs.ai/docs"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "punkpeye/awesome-mcp-servers",
+     "url": "https://github.com/punkpeye/awesome-mcp-servers",
+     "owner": "punkpeye",
+     "stars": 97952,
+     "updated": "2026-11-17",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个 MCP 服务器资源合集，专门收集和整理各种 MCP（模型上下文协议）服务器。MCP 是让 AI 模型安全连接外部工具和数据源的开放协议，这个项目就像一本目录，帮开发者快速找到现成的服务器实现。比如你想让 AI 助手读取本地文件或查询数据库，不用自己从头写，直接在这里找对应的 MCP 服务器即可，省时省力。",
+     "site": "https://glama.ai/mcp/servers"
+    },
+    {
+     "repo": "shiyu-coder/Kronos",
+     "url": "https://github.com/shiyu-coder/Kronos",
+     "owner": "shiyu-coder",
+     "stars": 47192,
+     "updated": "2026-04-13",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "Kronos 是一个专门面向金融市场的基座大模型，把行情、财报、新闻等金融数据当作一种「语言」来理解和生成。它解决的是通用大模型缺乏金融领域知识、难以直接用于量化分析和投研的问题。比如输入一段历史价格走势和财报文本，模型可辅助预测趋势或生成分析摘要，供研究员和量化团队参考。",
+     "site": "无"
+    },
+    {
+     "repo": "openvinotoolkit/openvino",
+     "url": "https://github.com/openvinotoolkit/openvino",
+     "owner": "openvinotoolkit",
+     "stars": 11274,
+     "updated": "2026-11-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "OpenVINO 是英特尔开源的一套 AI 推理优化与部署工具包，主要解决训练好的模型在真实设备上跑得慢、部署难的问题。它能把 PyTorch、TensorFlow 等框架的模型转换并优化，让它们在英特尔 CPU、集成显卡、NPU 等硬件上高效运行，还支持大语言模型和扩散模型。比如开发者可以用它把 Llama 模型部署到普通笔记本上做本地推理，无需昂贵 GPU。",
+     "site": "https://docs.openvino.ai"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "n8n-io/n8n",
+     "url": "https://github.com/n8n-io/n8n",
+     "owner": "n8n-io",
+     "stars": 210942,
+     "updated": "2026-11-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "n8n 是一个开源的工作流自动化平台，让你用拖拽节点的方式把各种应用和服务串起来，同时还能插入自定义代码。它内置 AI 能力，支持 400 多个集成，可自托管或使用云版。比如你可以设置「收到新邮件时自动提取内容、调用 AI 总结后发到 Slack」，无需从零写代码，适合想快速搭建自动化流程的开发者或团队。",
+     "site": "https://n8n.io"
+    },
+    {
+     "repo": "astral-sh/uv",
+     "url": "https://github.com/astral-sh/uv",
+     "owner": "astral-sh",
+     "stars": 92170,
+     "updated": "2026-11-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "uv 是用 Rust 编写的超快 Python 包与项目管理器，用来替代 pip、virtualenv、pip-tools 等工具。它解决 Python 依赖安装慢、环境管理繁琐的问题，能快速创建虚拟环境、安装依赖、锁定版本并运行脚本。例如，原本用 pip 安装几十个包要几分钟，uv 通常几秒完成，还支持类似 npm 的项目管理体验。",
+     "site": "https://docs.astral.sh/uv"
+    },
+    {
+     "repo": "jquery/jquery",
+     "url": "https://github.com/jquery/jquery",
+     "owner": "jquery",
+     "stars": 59987,
+     "updated": "2026-11-17",
+     "lists": [
+      "daily"
+     ],
+     "desc": "jQuery 是一个轻量级的 JavaScript 库，主要用来简化网页开发中的常见操作，比如选择页面元素、修改内容、处理点击事件和发送网络请求。它解决了早期浏览器兼容性差、原生代码繁琐的问题，让开发者用更短的代码实现动态效果和交互。例如，用一行 $(‘#btn’).click() 就能绑定按钮点击事件，而不用写多行原生 JavaScript。",
+     "site": "https://jquery.com"
+    },
+    {
+     "repo": "appwrite/appwrite",
+     "url": "https://github.com/appwrite/appwrite",
+     "owner": "appwrite",
+     "stars": 58170,
+     "updated": "2026-11-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Appwrite 是一个开源的后端云平台，把用户认证、数据库、文件存储、云函数、消息推送、实时订阅和网站托管等常用后端能力打包好，开发者不用自己搭服务器就能直接调用。它相当于开源的 Firebase 替代品，支持 Web、Flutter、Android、iOS 等多种客户端。比如你想快速做一个带登录、图片上传和实时聊天的 App，接入 Appwrite 后只需写前端代码，后端基础设施它全包了。",
+     "site": "https://appwrite.io"
+    },
+    {
+     "repo": "solidjs/solid",
+     "url": "https://github.com/solidjs/solid",
+     "owner": "solidjs",
+     "stars": 36473,
+     "updated": "2026-11-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Solid 是一个用 TypeScript 编写的声明式 JavaScript 前端框架，专门用来构建用户界面。它最大的特点是采用细粒度响应式更新：通过代理追踪数据依赖，数据一变就只更新对应的那一小块 DOM，而不像 React 那样重新渲染整个组件。因此它性能很高、包体小，同时写法接近 React 的 JSX，上手容易。适合想兼顾开发体验和运行效率的 Web 项目，比如做数据看板或交互复杂的单页应用。",
+     "site": "https://solidjs.com"
+    }
+   ]
+  },
+  {
+   "name": "安全",
+   "emoji": "🔐",
+   "items": [
+    {
+     "repo": "YuJunZhiXue/dsh-purge",
+     "url": "https://github.com/YuJunZhiXue/dsh-purge",
+     "owner": "YuJunZhiXue",
+     "stars": 15270,
+     "updated": "2026-11-01",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "这是一个面向 DeepSeek Harness 的越狱（破甲）插件，用 JavaScript 编写。它通过可替换的提示词绕过模型的安全限制，让用户能对不同模型使用不同的越狱提示词，默认提示词针对国产模型「小码酱」。简单说，就是给大模型「松绑」，让原本被拒绝回答的问题能答出来，适合研究模型安全边界或做红队测试的人使用，但需注意合规风险。",
+     "site": "无"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}
