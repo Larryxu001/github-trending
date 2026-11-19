@@ -1457,6 +1457,20 @@
    "tags": [],
    "saved_at": "2026-11-19",
    "source": "pages"
+  },
+  {
+   "repo": "ZXEB/dsh-purge",
+   "url": "https://github.com/ZXEB/dsh-purge",
+   "owner": "ZXEB",
+   "stars": 525,
+   "category": "安全",
+   "emoji": "🔐",
+   "desc": "这是一个给本机已安装的 DeepSeek Harness 用的红队评测插件，通过可回滚的补丁表统一修改提示词、审批策略、沙箱默认值等宿主层默认配置，并提供侧栏面板查看状态、一键应用或还原。它主要用于安全研究和提示词注入测试，比如研究人员可以快速切换提示词规则、清点本机资产，验证模型在特定配置下的行为，而不必手动改源码。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-19",
+   "source": "pages"
   }
  ]
 }
