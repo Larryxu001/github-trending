@@ -1471,6 +1471,19 @@
    "tags": [],
    "saved_at": "2026-11-19",
    "source": "pages"
+  },
+  {
+   "repo": "firecrawl/firecrawl",
+   "url": "https://github.com/firecrawl/firecrawl",
+   "owner": "firecrawl",
+   "stars": 203900,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "Firecrawl 是给 AI 智能体提供网页知识的工具：它能抓取、搜索、解析网页，把杂乱的 HTML 转成干净的 Markdown，还能接入 550+ 数据源，统一用一个 API 调用。它解决了大模型和 Agent 拿不到实时、结构化网页数据的问题，比如让 Agent 自动抓取竞品官网并整理成摘要，或把文档站转成可检索的知识库。",
+   "site": "https://firecrawl.dev",
+   "note": "网页数据抓取",
+   "tags": [],
+   "saved_at": "2026-11-20"
   }
  ]
 }
