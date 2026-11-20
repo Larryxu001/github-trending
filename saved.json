@@ -1498,6 +1498,20 @@
    "tags": [],
    "saved_at": "2026-11-20",
    "source": "pages"
+  },
+  {
+   "repo": "voyager-crew/voyager",
+   "url": "https://github.com/voyager-crew/voyager",
+   "owner": "voyager-crew",
+   "stars": 20680,
+   "category": "AI / 大模型",
+   "emoji": "🧠",
+   "desc": "Voyager 是一款浏览器扩展，为 Gemini、AI Studio、ChatGPT、Claude、DeepSeek、Kimi 等 AI 聊天网站增加文件夹整理、对话时间线、导出、公式复制、引用回复、提示词库等功能，解决聊天记录杂乱、难以管理和复用的问题。它采用插件化设计，每个网站只需一份 JSON 描述页面结构，用户甚至可以用一句话让 AI 生成自己的插件，比如给侧边栏加模糊效果，且插件不执行代码、关闭即还原。",
+   "site": "https://voyager.nagi.fun/en",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-20",
+   "source": "pages"
   }
  ]
 }
