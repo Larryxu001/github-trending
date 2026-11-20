@@ -1,0 +1,160 @@
+{
+ "date": "2026-11-20",
+ "new_count": 10,
+ "skipped": 245,
+ "categories": [
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "Graphify-Labs/graphify",
+     "url": "https://github.com/Graphify-Labs/graphify",
+     "owner": "Graphify-Labs",
+     "stars": 137617,
+     "updated": "2026-10-27",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "Graphify 能把任意代码库连同文档、SQL 表结构、配置和 PDF 一起，转成可查询的知识图谱。它作为 Claude Code、Cursor、Codex 和 Gemini CLI 的 /graphify 技能使用，靠本地确定性的 AST 解析建图，每条边都有解释，不需要向量数据库。比如你接手一个陌生项目，可以直接问「哪些函数会写这张表」，它顺着图谱给出答案和依据，适合代码理解、检索和 AI 编程助手增强。",
+     "site": "https://www.graphify.com"
+    },
+    {
+     "repo": "Jakeschincariol/instagram-agent-skill",
+     "url": "https://github.com/Jakeschincariol/instagram-agent-skill",
+     "owner": "Jakeschincariol",
+     "stars": 7276,
+     "updated": "2026-09-13",
+     "lists": [
+      "monthly"
+     ],
+     "desc": "这是一个面向 Claude 的 Instagram 运营技能包，包含 13 个可调用的技能：用 26 个打分过的钩子公式生成 Reels 脚本、做爆款选题调研、检查文案合规性，以及把 AI 味浓的文字改得更像真人写的。它解决的是运营者从选题、写脚本到润色文案反复切换工具、凭感觉判断的问题，比如写 Reels 前先用钩子公式打分挑出最抓人的开头，再用 linter 检查文案有没有踩雷。免费且 MIT 开源。",
+     "site": "无"
+    }
+   ]
+  },
+  {
+   "name": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "items": [
+    {
+     "repo": "firecrawl/firecrawl",
+     "url": "https://github.com/firecrawl/firecrawl",
+     "owner": "firecrawl",
+     "stars": 203900,
+     "updated": "2026-11-19",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Firecrawl 是给 AI 智能体提供网页知识的工具：它能抓取、搜索、解析网页，把杂乱的 HTML 转成干净的 Markdown，还能接入 550+ 数据源，统一用一个 API 调用。它解决了大模型和 Agent 拿不到实时、结构化网页数据的问题，比如让 Agent 自动抓取竞品官网并整理成摘要，或把文档站转成可检索的知识库。",
+     "site": "https://firecrawl.dev"
+    },
+    {
+     "repo": "Tracer-Cloud/opensre",
+     "url": "https://github.com/Tracer-Cloud/opensre",
+     "owner": "Tracer-Cloud",
+     "stars": 13009,
+     "updated": "2026-11-19",
+     "lists": [
+      "daily"
+     ],
+     "desc": "OpenSRE 是一个面向 CI/CD 可靠性的开源 AI 代理，能自动监控流水线、告警和可观测性数据，帮助定位构建失败或部署异常。它接入 Datadog、Grafana、GitLab CI 等工具，用 LLM 分析日志并给出修复建议，甚至自动执行补救操作。例如流水线突然失败时，它能快速判断是配置错误还是资源问题，减少人工排查时间。",
+     "site": "https://opensre.com"
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "vllm-project/vllm",
+     "url": "https://github.com/vllm-project/vllm",
+     "owner": "vllm-project",
+     "stars": 95463,
+     "updated": "2026-10-25",
+     "lists": [
+      "daily",
+      "weekly"
+     ],
+     "desc": "vLLM 是一个专为大语言模型设计的高吞吐、省显存的推理与服务引擎。它解决了部署 LLM 时速度慢、显存浪费严重的问题，通过 PagedAttention 等优化技术让同一块 GPU 能同时服务更多请求。开发者可以用它快速搭建类似 ChatGPT 的在线服务，例如把 Llama、DeepSeek 等模型部署成 API，支撑大量用户并发访问而不卡顿。",
+     "site": "https://vllm.ai"
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "nginx/nginx",
+     "url": "https://github.com/nginx/nginx",
+     "owner": "nginx",
+     "stars": 32272,
+     "updated": "2026-11-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "NGINX 是一款高性能的开源 Web 服务器和反向代理服务器，主要解决高并发访问下的稳定性和效率问题。它可以托管网站、做负载均衡把流量分给多台服务器、缓存内容加速访问，还支持 HTTPS、HTTP/2、HTTP/3 等现代协议。比如一个电商网站在大促时用 NGINX 把用户请求分发到多台后端服务器，避免单点崩溃。",
+     "site": "https://nginx.org/"
+    },
+    {
+     "repo": "XiaoYouChR/Ghost-Downloader-3",
+     "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+     "owner": "XiaoYouChR",
+     "stars": 12507,
+     "updated": "2026-11-19",
+     "lists": [
+      "daily"
+     ],
+     "desc": "Ghost Downloader 3 是一款用 Python 编写的跨平台下载管理器，支持 HTTP、FTP、BitTorrent、磁力链接甚至 HTTP/3 等多种协议，把各种下载需求集中到一个工具里。它采用异步架构和 Fluent Design 界面，适合需要同时管理普通文件下载和 BT 任务的用户，比如你可以用它一边从网页下载大文件，一边挂着磁力链接做种，不用再装好几个下载软件。",
+     "site": "https://gd.xychr.com/"
+    },
+    {
+     "repo": "mjmirza/app-store-compliance",
+     "url": "https://github.com/mjmirza/app-store-compliance",
+     "owner": "mjmirza",
+     "stars": 1671,
+     "updated": "2026-11-15",
+     "lists": [
+      "daily"
+     ],
+     "desc": "这是一个帮助开发者避免 App Store 和 Google Play 审核被拒的开源工具包。它整理了 117 种常见拒审原因及修复方法，检查隐私清单与数据安全声明，还跟踪欧盟 AI 法案、COPPA 等 95 个合规截止日期，并附带供 AI 编程助手使用的技能。比如提交前跑一遍，就能提前发现隐私声明缺失等问题，减少反复被拒的麻烦。",
+     "site": "https://mjmirza.github.io/app-store-compliance/"
+    }
+   ]
+  },
+  {
+   "name": "移动 / 桌面应用",
+   "emoji": "📱",
+   "items": [
+    {
+     "repo": "toeverything/AFFiNE",
+     "url": "https://github.com/toeverything/AFFiNE",
+     "owner": "toeverything",
+     "stars": 74986,
+     "updated": "2026-11-18",
+     "lists": [
+      "daily"
+     ],
+     "desc": "AFFiNE 是一个开源的下一代知识库工具，把笔记、文档、白板和任务管理整合在一起，目标是替代 Notion 和 Miro 的组合。它支持 Markdown 编辑、无限画布和实时协作，数据默认本地存储、隐私优先，还提供桌面客户端。比如你可以一边在文档里写项目计划，一边把任务卡片拖到白板上做可视化排期，所有内容互相关联。",
+     "site": "https://affine.pro"
+    },
+    {
+     "repo": "zhouxiaoka/autoclip",
+     "url": "https://github.com/zhouxiaoka/autoclip",
+     "owner": "zhouxiaoka",
+     "stars": 11096,
+     "updated": "2026-11-19",
+     "lists": [
+      "daily"
+     ],
+     "desc": "AutoClip 是一款开源的 AI 视频剪辑桌面工具，专治长视频剪成短视频的麻烦。你只需丢进一个播客、访谈或课程链接，它就能自动挑出精彩片段，剪成适合抖音、小红书、TikTok、Reels 和 YouTube Shorts 的竖屏短视频，同时生成字幕、封面和发布文案。比如一期两小时的播客，它能快速产出多条带字幕的短视频，省去手动找亮点、切片段、加字幕的繁琐流程，适合内容创作者做二次分发。",
+     "site": "https://zhouxiaoka.github.io/autoclip_intro/"
+    }
+   ]
+  }
+ ],
+ "kind": "daily"
+}

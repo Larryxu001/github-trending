@@ -1600,5 +1600,53 @@
   "emoji": "🧠",
   "desc": "这是一个 MCP 服务器资源合集，专门收集和整理各种 MCP（模型上下文协议）服务器。MCP 是让 AI 模型安全连接外部工具和数据源的开放协议，这个项目就像一本目录，帮开发者快速找到现成的服务器实现。比如你想让 AI 助手读取本地文件或查询数据库，不用自己从头写，直接在这里找对应的 MCP 服务器即可，省时省力。",
   "site": "https://glama.ai/mcp/servers"
+ },
+ "firecrawl/firecrawl": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "Firecrawl 是给 AI 智能体提供网页知识的工具：它能抓取、搜索、解析网页，把杂乱的 HTML 转成干净的 Markdown，还能接入 550+ 数据源，统一用一个 API 调用。它解决了大模型和 Agent 拿不到实时、结构化网页数据的问题，比如让 Agent 自动抓取竞品官网并整理成摘要，或把文档站转成可检索的知识库。",
+  "site": "https://firecrawl.dev"
+ },
+ "nginx/nginx": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "NGINX 是一款高性能的开源 Web 服务器和反向代理服务器，主要解决高并发访问下的稳定性和效率问题。它可以托管网站、做负载均衡把流量分给多台服务器、缓存内容加速访问，还支持 HTTPS、HTTP/2、HTTP/3 等现代协议。比如一个电商网站在大促时用 NGINX 把用户请求分发到多台后端服务器，避免单点崩溃。",
+  "site": "https://nginx.org/"
+ },
+ "Jakeschincariol/instagram-agent-skill": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个面向 Claude 的 Instagram 运营技能包，包含 13 个可调用的技能：用 26 个打分过的钩子公式生成 Reels 脚本、做爆款选题调研、检查文案合规性，以及把 AI 味浓的文字改得更像真人写的。它解决的是运营者从选题、写脚本到润色文案反复切换工具、凭感觉判断的问题，比如写 Reels 前先用钩子公式打分挑出最抓人的开头，再用 linter 检查文案有没有踩雷。免费且 MIT 开源。",
+  "site": "无"
+ },
+ "mjmirza/app-store-compliance": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "这是一个帮助开发者避免 App Store 和 Google Play 审核被拒的开源工具包。它整理了 117 种常见拒审原因及修复方法，检查隐私清单与数据安全声明，还跟踪欧盟 AI 法案、COPPA 等 95 个合规截止日期，并附带供 AI 编程助手使用的技能。比如提交前跑一遍，就能提前发现隐私声明缺失等问题，减少反复被拒的麻烦。",
+  "site": "https://mjmirza.github.io/app-store-compliance/"
+ },
+ "Tracer-Cloud/opensre": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "OpenSRE 是一个面向 CI/CD 可靠性的开源 AI 代理，能自动监控流水线、告警和可观测性数据，帮助定位构建失败或部署异常。它接入 Datadog、Grafana、GitLab CI 等工具，用 LLM 分析日志并给出修复建议，甚至自动执行补救操作。例如流水线突然失败时，它能快速判断是配置错误还是资源问题，减少人工排查时间。",
+  "site": "https://opensre.com"
+ },
+ "toeverything/AFFiNE": {
+  "cat": "移动 / 桌面应用",
+  "emoji": "📱",
+  "desc": "AFFiNE 是一个开源的下一代知识库工具，把笔记、文档、白板和任务管理整合在一起，目标是替代 Notion 和 Miro 的组合。它支持 Markdown 编辑、无限画布和实时协作，数据默认本地存储、隐私优先，还提供桌面客户端。比如你可以一边在文档里写项目计划，一边把任务卡片拖到白板上做可视化排期，所有内容互相关联。",
+  "site": "https://affine.pro"
+ },
+ "XiaoYouChR/Ghost-Downloader-3": {
+  "cat": "开发工具与框架",
+  "emoji": "🛠",
+  "desc": "Ghost Downloader 3 是一款用 Python 编写的跨平台下载管理器，支持 HTTP、FTP、BitTorrent、磁力链接甚至 HTTP/3 等多种协议，把各种下载需求集中到一个工具里。它采用异步架构和 Fluent Design 界面，适合需要同时管理普通文件下载和 BT 任务的用户，比如你可以用它一边从网页下载大文件，一边挂着磁力链接做种，不用再装好几个下载软件。",
+  "site": "https://gd.xychr.com/"
+ },
+ "zhouxiaoka/autoclip": {
+  "cat": "移动 / 桌面应用",
+  "emoji": "📱",
+  "desc": "AutoClip 是一款开源的 AI 视频剪辑桌面工具，专治长视频剪成短视频的麻烦。你只需丢进一个播客、访谈或课程链接，它就能自动挑出精彩片段，剪成适合抖音、小红书、TikTok、Reels 和 YouTube Shorts 的竖屏短视频，同时生成字幕、封面和发布文案。比如一期两小时的播客，它能快速产出多条带字幕的短视频，省去手动找亮点、切片段、加字幕的繁琐流程，适合内容创作者做二次分发。",
+  "site": "https://zhouxiaoka.github.io/autoclip_intro/"
  }
 }
