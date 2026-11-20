@@ -1499,6 +1499,20 @@
    "tags": [],
    "saved_at": "2026-11-20",
    "source": "pages"
+  },
+  {
+   "repo": "mmparko/dsh-purge",
+   "url": "https://github.com/mmparko/dsh-purge",
+   "owner": "mmparko",
+   "stars": 5598,
+   "category": "安全",
+   "emoji": "🔐",
+   "desc": "这是一个针对官方 DeepSeek Harness 的本地红队测试插件，用于区分“模型拒绝回答”和“宿主层策略拦截”两种情况。它通过侧边栏按钮对本地已安装的 Harness 打补丁，替换提示词与权限策略，方便安全研究者在自己的机器上做受控评估。例如，当模型看似“拒答”时，可用它排查是否是 Harness 的审批或沙箱策略过紧所致。项目为上游仓库的全量镜像，含全部分支、73 个 tag 和完整提交历史。",
+   "site": "https://github.com/YuJunZhiXue/dsh-purge",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-20",
+   "source": "pages"
   }
  ]
 }
