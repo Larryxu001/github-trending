@@ -1513,6 +1513,20 @@
    "tags": [],
    "saved_at": "2026-11-20",
    "source": "pages"
+  },
+  {
+   "repo": "kingcharleslzy-ai/dsh-purge",
+   "url": "https://github.com/kingcharleslzy-ai/dsh-purge",
+   "owner": "kingcharleslzy-ai",
+   "stars": 10808,
+   "category": "Agent 技能与插件",
+   "emoji": "🧩",
+   "desc": "这是给 DeepSeek Harness 用的社区维护插件，俗称「破甲」或「无限制模式」。它把宿主补丁、提示词注入、状态自检、备份回滚和更新管理集中到一个左侧栏面板里，让 AI 助手能连续执行任务，而不是每步都停下来确认。比如做本机学习实验时，它能把反复出现的确认收敛成一次设置，改坏了还能一键回滚到之前的快照。它只降低交互摩擦，不改模型本身。",
+   "site": "https://github.com/kingcharleslzy-ai/dsh-purge/releases",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-20",
+   "source": "pages"
   }
  ]
 }
