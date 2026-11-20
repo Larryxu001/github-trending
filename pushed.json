@@ -126,9 +126,9 @@
  "shiyu-coder/Kronos": "2026-11-19",
  "withmarbleapp/os-taxonomy": "2026-10-20",
  "YuJunZhiXue/dsh-purge": "2026-11-19",
- "Graphify-Labs/graphify": "2026-10-21",
+ "Graphify-Labs/graphify": "2026-11-20",
  "sickn33/agentic-awesome-skills": "2026-10-21",
- "vllm-project/vllm": "2026-10-21",
+ "vllm-project/vllm": "2026-11-20",
  "wshobson/agents": "2026-10-22",
  "twentyhq/twenty": "2026-10-22",
  "strelov1/freehire": "2026-10-22",
@@ -265,5 +265,13 @@
  "astral-sh/uv": "2026-11-19",
  "jquery/jquery": "2026-11-19",
  "appwrite/appwrite": "2026-11-19",
- "solidjs/solid": "2026-11-19"
+ "solidjs/solid": "2026-11-19",
+ "Jakeschincariol/instagram-agent-skill": "2026-11-20",
+ "firecrawl/firecrawl": "2026-11-20",
+ "Tracer-Cloud/opensre": "2026-11-20",
+ "nginx/nginx": "2026-11-20",
+ "XiaoYouChR/Ghost-Downloader-3": "2026-11-20",
+ "mjmirza/app-store-compliance": "2026-11-20",
+ "toeverything/AFFiNE": "2026-11-20",
+ "zhouxiaoka/autoclip": "2026-11-20"
 }
