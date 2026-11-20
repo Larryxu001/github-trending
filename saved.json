@@ -1484,6 +1484,20 @@
    "note": "网页数据抓取",
    "tags": [],
    "saved_at": "2026-11-20"
+  },
+  {
+   "repo": "ccch1mneyyy/dsh-Go",
+   "url": "https://github.com/ccch1mneyyy/dsh-Go",
+   "owner": "ccch1mneyyy",
+   "stars": 28193,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "DSH Go 是一个把 DeepSeek Harness 装进手机的开源 Android 应用，用 Flutter 开发。它让手机本地运行 Linux + Node.js 环境，无需 Root 或 Termux 就能跑 AI 编程助手，也能通过 SSH 遥控电脑上的 DSH。比如你在通勤路上用手机让 AI 改代码、审批工具调用，回家切到电脑继续同一段对话，还支持桌宠、主题、对话分享和手机屏幕操控。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-20",
+   "source": "pages"
   }
  ]
 }
