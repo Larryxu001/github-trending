@@ -1527,6 +1527,20 @@
    "tags": [],
    "saved_at": "2026-11-20",
    "source": "pages"
+  },
+  {
+   "repo": "erkamyaman/rust-anything",
+   "url": "https://github.com/erkamyaman/rust-anything",
+   "owner": "erkamyaman",
+   "stars": 5890,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "rust-anything 是一个把现有应用逐步改写成 Rust 的工具。它先录制原程序（支持 TypeScript、Python、C、Go、Ruby、Java 等）在各种输入下的真实行为，再让 AI 编码助手或你编写 Rust 版本，并逐条回放对比，确保输出完全一致后才放行。它还能找出性能热点、生成桥接层让旧代码无感调用 Rust。例如 Prettier 移植后快了 19 倍，且 1.7 万条用例逐字节一致。",
+   "site": "https://www.npmjs.com/package/rust-anything",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-20",
+   "source": "feishu"
   }
  ]
 }
