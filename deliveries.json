@@ -21667,7 +21667,7 @@
   ]
  },
  "daily:2026-11-21": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-21",
    "new_count": 2,
@@ -21713,6 +21713,126 @@
     }
    ],
    "kind": "daily"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 日报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-21 ｜ 今日新项目 2 个 ｜ 2 个分类 ｜ 30 天去重跳过 253 个"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-21/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 3 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [wshobson/agents](https://github.com/wshobson/agents)**　⭐ 41,779\n这是一个面向 AI 编程代理的插件市场，让 Claude Code、Codex、Cursor、GitHub Copilot 等不同工具共享同一套技能插件。它解决了各家代理生态割裂、插件无法互通的问题：开发者只需在这里挑选或发布插件，就能跨多个编程助手复用，比如给 Claude Code 装一个代码审查技能，Codex 和 Cursor 也能直接调用，省去重复适配的麻烦。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 wshobson ｜ 📅 更新 2026-10-26 ｜ 🏷 日/周榜 ｜ 🔗 [https://sethhobson.com](https://sethhobson.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "wathet",
+       "title": {
+        "tag": "plain_text",
+        "content": "💾 数据 / 数据库 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [supabase/supabase](https://github.com/supabase/supabase)**　⭐ 114,149\nSupabase 是一个基于 PostgreSQL 的开源后端开发平台，相当于开源的 Firebase 替代品。它提供专用 Postgres 数据库，并内置用户认证、文件存储、实时订阅和向量检索等能力，让开发者不用自己搭建后端就能快速开发网站、移动应用和 AI 应用。比如做一个带登录和实时聊天的小程序，可以直接用它的认证和实时功能，省去大量服务器配置工作。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 supabase ｜ 📅 更新 2026-10-27 ｜ 🏷 日/月榜 ｜ 🔗 [https://supabase.com](https://supabase.com)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
