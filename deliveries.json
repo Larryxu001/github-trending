@@ -21667,7 +21667,7 @@
   ]
  },
  "daily:2026-11-21": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-21",
    "new_count": 2,
@@ -21839,7 +21839,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    }
   ]
  }
