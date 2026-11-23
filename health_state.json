@@ -1,5 +1,8 @@
 {
- "errors": [],
- "checked_at": "2026-11-09T19:35:26.766159+08:00",
- "notification": "sent"
+ "errors": [
+  "存在未完成的报告，需要查看日志或核对飞书后恢复",
+  "工作流失败：Collect Trending"
+ ],
+ "checked_at": "2026-11-23T08:01:15.175234+08:00",
+ "notification": "sending"
 }
