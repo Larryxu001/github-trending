@@ -22239,7 +22239,7 @@
   ]
  },
  "weekly:2026-11-23": {
-  "status": "sending",
+  "status": "prepared",
   "report": {
    "date": "2026-11-23",
    "new_count": 10,
@@ -22555,7 +22555,11 @@
       ]
      }
     },
-    "status": "sending"
+    "status": "sent",
+    "receipt": {
+     "code": 0,
+     "confirmed_at": "2026-11-23T09:29:44.356515+08:00"
+    }
    },
    {
     "message": {
