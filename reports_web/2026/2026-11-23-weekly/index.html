@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending 精选周报 · 2026-11-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#2B2419; --sub:#7A7263; --red:#C02B1F;
+    --paper:#FBF7EC; --soft:#F4EEDD; --hair:#E6DDC6;
+    --serif:"Noto Serif SC","Songti SC","STSong",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif);
+         font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+  /* ---------- masthead ---------- */
+  .masthead { max-width:800px; margin:0 auto; padding:28px 24px 0; text-align:center; }
+  .topline { font-family:var(--sans); font-size:11px; letter-spacing:.22em;
+              color:var(--sub); display:flex; justify-content:space-between;
+              padding-bottom:12px; border-bottom:1px solid var(--ink); }
+  h1 { font-weight:900; font-size:clamp(34px,7vw,52px); letter-spacing:.02em;
+        padding:26px 0 10px; }
+  .standfirst { font-style:italic; color:var(--sub); font-size:16px; }
+  .dateline { font-family:var(--sans); font-size:12px; color:var(--sub);
+               letter-spacing:.06em; margin:18px 0 14px; }
+  .dateline b { color:var(--ink); font-weight:600; }
+  .doublerule { border-top:1px solid var(--ink); border-bottom:3px double var(--ink);
+                 height:5px; }
+
+  /* ---------- top nav ---------- */
+  .topnav { max-width:800px; margin:0 auto; padding:14px 24px 0;
+             font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+             display:flex; gap:18px; color:var(--sub); }
+  .topnav a { color:var(--ink); text-decoration:none; }
+  .topnav a:hover { color:var(--red); }
+  .topnav .back { color:var(--sub); }
+  .topnav .back::before { content:"← "; color:var(--red); }
+
+  /* ---------- sections ---------- */
+  .layout { max-width:1180px; margin:0 auto; display:flex; align-items:flex-start; }
+  main { flex:1; min-width:0; max-width:800px; margin:0 auto; }
+  section { padding:44px 24px 8px; scroll-margin-top:20px; }
+
+  /* ---------- table of contents ---------- */
+  .toc { width:260px; flex-shrink:0; position:sticky; top:24px;
+          max-height:calc(100vh - 48px); overflow-y:auto;
+          padding:44px 8px 24px 8px; font-family:var(--sans); scrollbar-width:thin; }
+  .toc-title { font-size:11px; letter-spacing:.2em; color:var(--sub);
+                padding-bottom:10px; border-bottom:1px solid var(--ink); margin-bottom:4px; }
+  .toc a { display:flex; align-items:baseline; gap:10px;
+            color:var(--ink); text-decoration:none; transition:color .15s; }
+  .toc a:hover { color:var(--red); }
+  .toc details { border-bottom:1px solid var(--hair); padding:2px 0; }
+  .toc summary { display:flex; align-items:baseline; gap:10px;
+                  padding:10px 0 8px; font-size:13.5px; font-weight:600;
+                  cursor:pointer; list-style:none; user-select:none; transition:color .15s; }
+  .toc summary::-webkit-details-marker { display:none; }
+  .toc summary::after { content:"▾"; margin-left:auto; font-size:11px; color:var(--sub);
+                         transition:transform .2s; }
+  .toc details:not([open]) > summary::after { transform:rotate(-90deg); }
+  .toc summary:hover { color:var(--red); }
+  .toc summary .toc-n { margin-left:0; }
+  .toc summary::after { margin-left:auto; }
+  .toc-proj { padding:5px 0 5px 26px; font-size:12.5px; color:#6B6355;
+               border-bottom:1px dashed var(--hair); }
+  .toc-proj:hover { color:var(--red); }
+  .toc-no { font-family:var(--serif); font-style:italic; color:#C9BB93; font-weight:700;
+             font-size:12px; min-width:18px; }
+  .toc-n { margin-left:auto; font-size:11px; color:var(--sub); }
+  @media (max-width:1020px) {
+    .layout { display:block; }
+    .toc { position:static; width:auto; max-width:720px; margin:0 auto;
+            max-height:none; overflow:visible; padding:20px 24px 0; }
+  }
+  .sec-kicker { display:flex; align-items:baseline; gap:12px; font-family:var(--sans); }
+  .sec-no { font-size:11px; letter-spacing:.18em; color:var(--red); font-weight:600; }
+  .sec-name { font-family:var(--serif); font-weight:700; font-size:22px; }
+  .sec-count { margin-left:auto; font-size:11px; letter-spacing:.12em; color:var(--sub); }
+  .rule { border:none; border-top:1px solid var(--ink); margin:8px 0 4px; }
+
+  /* ---------- items ---------- */
+  .item { padding:26px 0 22px; border-bottom:1px solid var(--hair); }
+  .item:last-child { border-bottom:none; }
+  .item-head { display:flex; align-items:baseline; gap:14px; }
+  .no { font-family:var(--serif); font-style:italic; color:#D6C9A8;
+         font-size:26px; font-weight:700; min-width:36px; }
+  .title { font-size:20px; font-weight:700; line-height:1.4; }
+  .title a { text-decoration:none; border-bottom:2px solid transparent; transition:border-color .15s; }
+  .title a:hover { border-bottom-color:var(--red); color:var(--red); }
+  .stars { margin-left:auto; font-family:var(--serif); font-weight:700;
+            font-size:16px; white-space:nowrap; padding-left:16px; }
+  .save-btn { margin-left:12px; font-family:var(--sans); font-size:12px; font-weight:600;
+               color:var(--sub); background:transparent; border:1px solid var(--hair);
+               border-radius:4px; padding:3px 10px; cursor:pointer; white-space:nowrap;
+               transition:all .15s; }
+  .save-btn:hover { color:var(--red); border-color:var(--red); }
+  .save-btn.saved { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .desc { margin:10px 0 14px 50px; color:#4A4234; text-wrap:pretty; }
+  .byline { margin-left:50px; font-family:var(--sans); font-size:12px;
+             color:var(--sub); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .byline i { font-style:normal; color:var(--hair); }
+  .byline .hot { color:var(--red); font-weight:600; }
+  .site { color:var(--ink); font-weight:600; text-decoration:none;
+           border-bottom:1px solid var(--ink); }
+  .site:hover { color:var(--red); border-bottom-color:var(--red); }
+
+  /* ---------- footer ---------- */
+  footer { max-width:800px; margin:40px auto 0; padding:20px 24px 44px;
+            border-top:1px solid var(--ink); font-family:var(--sans);
+            font-size:11px; letter-spacing:.08em; color:var(--sub);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  /* ---------- save toast ---------- */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:var(--ink); color:var(--paper); padding:10px 20px; border-radius:20px;
+            font-family:var(--sans); font-size:13px; opacity:0; transition:all .25s;
+            z-index:1100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- save dialog ---------- */
+  .dlg-mask { display:none; position:fixed; inset:0; background:rgba(43,36,25,.45);
+               z-index:1000; justify-content:center; align-items:center; padding:24px; }
+  .dlg-mask.open { display:flex; }
+  .dlg { background:var(--paper); max-width:460px; width:100%; border-radius:10px;
+          padding:26px 24px 22px; box-shadow:0 20px 60px rgba(0,0,0,.28);
+          font-family:var(--sans); position:relative; }
+  .dlg h2 { font-family:var(--serif); font-size:20px; margin:0 0 2px; }
+  .dlg .repo-name { font-size:13px; color:var(--sub); margin-bottom:18px;
+                      font-family:var(--sans); word-break:break-all; }
+  .dlg label { display:block; font-size:12px; color:var(--sub); margin:14px 0 5px; }
+  .dlg textarea { width:100%; min-height:72px; padding:10px 12px; font-size:14px;
+                   border:1px solid var(--hair); border-radius:6px; background:#fff;
+                   color:var(--ink); resize:vertical; font-family:var(--sans); }
+  .dlg input[type=text] { width:100%; padding:9px 12px; font-size:14px;
+                           border:1px solid var(--hair); border-radius:6px; background:#fff;
+                           color:var(--ink); }
+  .dlg textarea:focus, .dlg input:focus { outline:none; border-color:var(--red); }
+  .dlg .tag-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .dlg .tag-chip { font-size:12px; padding:4px 12px; border:1px solid var(--hair);
+                    border-radius:14px; cursor:pointer; user-select:none; color:var(--ink); }
+  .dlg .tag-chip.on { color:var(--red); border-color:var(--red); background:#FBE7E4; }
+  .dlg .btn-row { display:flex; gap:10px; margin-top:20px; }
+  .dlg .btn-row button { flex:1; padding:10px; font-size:14px; font-weight:600;
+                          border-radius:6px; cursor:pointer; border:1px solid var(--hair);
+                          background:transparent; color:var(--ink); }
+  .dlg .btn-row button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  .dlg .btn-row button.primary:disabled { opacity:.5; cursor:not-allowed; }
+  .dlg .hint { font-size:11px; color:#C9BB93; margin-top:4px; }
+
+  @media (max-width:600px) {
+    .desc,.byline { margin-left:0; }
+    .item-head { flex-wrap:wrap; }
+    .stars { padding-left:0; }
+  }
+</style>
+<style>
+#page-content[hidden],#page-access[hidden]{display:none!important}
+#page-access{min-height:100vh;box-sizing:border-box;display:grid;place-items:center;padding:32px 24px;background:#FBF7EC;color:#2B2419;font-family:-apple-system,"PingFang SC",sans-serif}
+#page-access form{width:100%;max-width:360px;border-top:3px double #2B2419;padding-top:28px}
+#page-access h1{font:700 28px Georgia,"Songti SC",serif;margin:0 0 12px}
+#page-access p{font-size:14px;line-height:1.6;margin:0 0 28px;color:#7A7263}
+#page-access label{display:block;font-size:14px;margin-bottom:10px}
+#page-access input{box-sizing:border-box;width:100%;padding:13px 12px;font:16px inherit;border:1px solid #8A7F66;background:#fff;color:#2B2419;border-radius:3px}
+#page-access button{margin-top:16px;width:100%;padding:13px;font:inherit;border:0;border-radius:3px;background:#2B2419;color:#fff;cursor:pointer}
+#page-access button:disabled{opacity:.6;cursor:wait}
+#page-access input:focus-visible,#page-access button:focus-visible{outline:3px solid #C02B1F;outline-offset:3px}
+#page-access #access-error{min-height:24px;margin:12px 0 0;color:#A92319}
+</style></head>
+<body><section id="page-access" aria-label="页面访问验证">
+<form id="access-form"><h1>GitHub 开源趋势</h1><p>输入访问密码，查看日报与精选项目。</p>
+<label for="access-password">访问密码</label><input id="access-password" type="password" required autocomplete="current-password" autofocus aria-describedby="access-error">
+<button id="access-submit" type="submit">进入页面</button><p id="access-error" role="status" aria-live="polite"></p>
+<noscript>请启用 JavaScript 后输入密码。</noscript></form></section><div id="page-content" hidden inert>
+  <nav class="topnav">
+    <a class="back" href="https://larryxu001.github.io/github-trending/index.html">返回归档</a>
+    <a href="https://larryxu001.github.io/github-trending/saved.html">★ 我的精选</a>
+  </nav>
+  <header class="masthead">
+    <div class="topline"><span>GITHUB TRENDING DAILY</span><span>VOL.052</span></div>
+    <h1>Github开源趋势精选周报</h1>
+    <div class="standfirst">本期收藏精选，保留备注与标签</div>
+    <div class="dateline"><b>2026 年 11 月 23 日</b>　·　第 52 期　·　本期共收录 <b>10</b> 个项目</div>
+    <div class="doublerule"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">目录 · CONTENTS</div>
+      <details><summary><span class="toc-no">01</span>Agent 基础设施与框架<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-1-1"><span class="toc-no">01</span>firecrawl</a></details><details><summary><span class="toc-no">02</span>移动 / 桌面应用<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-2-1"><span class="toc-no">01</span>dsh-Go</a><a class="toc-proj" href="#sec-2-2"><span class="toc-no">02</span>snow-shot</a></details><details><summary><span class="toc-no">03</span>AI / 大模型<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-3-1"><span class="toc-no">01</span>voyager</a></details><details><summary><span class="toc-no">04</span>Agent 技能与插件<span class="toc-n">1</span></summary><a class="toc-proj" href="#sec-4-1"><span class="toc-no">01</span>dsh-purge</a></details><details><summary><span class="toc-no">05</span>安全<span class="toc-n">2</span></summary><a class="toc-proj" href="#sec-5-1"><span class="toc-no">01</span>dsh-purge</a><a class="toc-proj" href="#sec-5-2"><span class="toc-no">02</span>dsh-purge</a></details><details><summary><span class="toc-no">06</span>开发工具与框架<span class="toc-n">3</span></summary><a class="toc-proj" href="#sec-6-1"><span class="toc-no">01</span>rust-anything</a><a class="toc-proj" href="#sec-6-2"><span class="toc-no">02</span>jiffshot</a><a class="toc-proj" href="#sec-6-3"><span class="toc-no">03</span>cloud-mail</a></details>
+    </aside>
+    <main>
+    
+      <section id="sec-1">
+        <div class="sec-kicker"><span class="sec-no">SECTION 01</span><span class="sec-name">Agent 基础设施与框架</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-1-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/firecrawl/firecrawl" target="_blank">firecrawl/firecrawl</a></h3>
+            <span class="stars">★ 203,900</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;firecrawl/firecrawl&quot;, &quot;url&quot;: &quot;https://github.com/firecrawl/firecrawl&quot;, &quot;owner&quot;: &quot;firecrawl&quot;, &quot;stars&quot;: 203900, &quot;desc&quot;: &quot;Firecrawl \u662f\u7ed9 AI \u667a\u80fd\u4f53\u63d0\u4f9b\u7f51\u9875\u77e5\u8bc6\u7684\u5de5\u5177\uff1a\u5b83\u80fd\u6293\u53d6\u3001\u641c\u7d22\u3001\u89e3\u6790\u7f51\u9875\uff0c\u628a\u6742\u4e71\u7684 HTML \u8f6c\u6210\u5e72\u51c0\u7684 Markdown\uff0c\u8fd8\u80fd\u63a5\u5165 550+ \u6570\u636e\u6e90\uff0c\u7edf\u4e00\u7528\u4e00\u4e2a API \u8c03\u7528\u3002\u5b83\u89e3\u51b3\u4e86\u5927\u6a21\u578b\u548c Agent \u62ff\u4e0d\u5230\u5b9e\u65f6\u3001\u7ed3\u6784\u5316\u7f51\u9875\u6570\u636e\u7684\u95ee\u9898\uff0c\u6bd4\u5982\u8ba9 Agent \u81ea\u52a8\u6293\u53d6\u7ade\u54c1\u5b98\u7f51\u5e76\u6574\u7406\u6210\u6458\u8981\uff0c\u6216\u628a\u6587\u6863\u7ad9\u8f6c\u6210\u53ef\u68c0\u7d22\u7684\u77e5\u8bc6\u5e93\u3002&quot;, &quot;site&quot;: &quot;https://firecrawl.dev&quot;, &quot;category&quot;: &quot;Agent \u57fa\u7840\u8bbe\u65bd\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83e\udd16&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Firecrawl 是给 AI 智能体提供网页知识的工具：它能抓取、搜索、解析网页，把杂乱的 HTML 转成干净的 Markdown，还能接入 550+ 数据源，统一用一个 API 调用。它解决了大模型和 Agent 拿不到实时、结构化网页数据的问题，比如让 Agent 自动抓取竞品官网并整理成摘要，或把文档站转成可检索的知识库。</p>
+          <p class="desc"><b>我的备注：</b>网页数据抓取</p>
+          <div class="byline">
+            <span>firecrawl</span><i>·</i>
+            <span>更新于 2026-11-20</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://firecrawl.dev" target="_blank">https://firecrawl.dev</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/firecrawl/firecrawl.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/firecrawl/firecrawl">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-2">
+        <div class="sec-kicker"><span class="sec-no">SECTION 02</span><span class="sec-name">移动 / 桌面应用</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-2-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/ccch1mneyyy/dsh-Go" target="_blank">ccch1mneyyy/dsh-Go</a></h3>
+            <span class="stars">★ 28,193</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;ccch1mneyyy/dsh-Go&quot;, &quot;url&quot;: &quot;https://github.com/ccch1mneyyy/dsh-Go&quot;, &quot;owner&quot;: &quot;ccch1mneyyy&quot;, &quot;stars&quot;: 28193, &quot;desc&quot;: &quot;DSH Go \u662f\u4e00\u4e2a\u628a DeepSeek Harness \u88c5\u8fdb\u624b\u673a\u7684\u5f00\u6e90 Android \u5e94\u7528\uff0c\u7528 Flutter \u5f00\u53d1\u3002\u5b83\u8ba9\u624b\u673a\u672c\u5730\u8fd0\u884c Linux + Node.js \u73af\u5883\uff0c\u65e0\u9700 Root \u6216 Termux \u5c31\u80fd\u8dd1 AI \u7f16\u7a0b\u52a9\u624b\uff0c\u4e5f\u80fd\u901a\u8fc7 SSH \u9065\u63a7\u7535\u8111\u4e0a\u7684 DSH\u3002\u6bd4\u5982\u4f60\u5728\u901a\u52e4\u8def\u4e0a\u7528\u624b\u673a\u8ba9 AI \u6539\u4ee3\u7801\u3001\u5ba1\u6279\u5de5\u5177\u8c03\u7528\uff0c\u56de\u5bb6\u5207\u5230\u7535\u8111\u7ee7\u7eed\u540c\u4e00\u6bb5\u5bf9\u8bdd\uff0c\u8fd8\u652f\u6301\u684c\u5ba0\u3001\u4e3b\u9898\u3001\u5bf9\u8bdd\u5206\u4eab\u548c\u624b\u673a\u5c4f\u5e55\u64cd\u63a7\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">DSH Go 是一个把 DeepSeek Harness 装进手机的开源 Android 应用，用 Flutter 开发。它让手机本地运行 Linux + Node.js 环境，无需 Root 或 Termux 就能跑 AI 编程助手，也能通过 SSH 遥控电脑上的 DSH。比如你在通勤路上用手机让 AI 改代码、审批工具调用，回家切到电脑继续同一段对话，还支持桌宠、主题、对话分享和手机屏幕操控。</p>
+          
+          <div class="byline">
+            <span>ccch1mneyyy</span><i>·</i>
+            <span>更新于 2026-11-20</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/ccch1mneyyy/dsh-Go.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/ccch1mneyyy/dsh-Go">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-2-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/mg-chao/snow-shot" target="_blank">mg-chao/snow-shot</a></h3>
+            <span class="stars">★ 7,213</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;mg-chao/snow-shot&quot;, &quot;url&quot;: &quot;https://github.com/mg-chao/snow-shot&quot;, &quot;owner&quot;: &quot;mg-chao&quot;, &quot;stars&quot;: 7213, &quot;desc&quot;: &quot;Snow Shot \u662f\u4e00\u6b3e\u514d\u8d39\u5f00\u6e90\u7684\u622a\u56fe\u4e0e\u5f55\u5c4f\u5de5\u5177\uff0c\u652f\u6301 Windows \u548c macOS\u3002\u5b83\u80fd\u9009\u533a\u622a\u56fe\u3001\u622a\u53d6\u7a97\u53e3\u6216\u6eda\u52a8\u957f\u622a\u56fe\uff0c\u5e76\u5728\u56fe\u4e0a\u52a0\u7bad\u5934\u3001\u6587\u5b57\u3001\u9a6c\u8d5b\u514b\u7b49\u6807\u6ce8\uff1b\u8fd8\u80fd\u628a\u622a\u56fe\u9489\u5728\u5c4f\u5e55\u6700\u4e0a\u5c42\u65b9\u4fbf\u5bf9\u7167\uff0c\u7528\u672c\u5730\u79bb\u7ebf OCR \u628a\u56fe\u7247\u91cc\u7684\u6587\u5b57\u63d0\u53d6\u51fa\u6765\uff0c\u4ee5\u53ca\u5f55\u5236\u5e26\u58f0\u97f3\u7684\u5c4f\u5e55\u89c6\u9891\u5e76\u5bfc\u51fa\u4e3a GIF \u6216\u52a8\u753b\u3002\u6bd4\u5982\u5199\u6587\u6863\u65f6\u622a\u4e00\u5f20\u56fe\uff0c\u76f4\u63a5\u6807\u6ce8\u91cd\u70b9\u3001\u63d0\u53d6\u6587\u5b57\u3001\u8d34\u5230\u65c1\u8fb9\u53c2\u8003\uff0c\u4e00\u4e2a\u5de5\u5177\u5c31\u80fd\u5b8c\u6210\u3002&quot;, &quot;site&quot;: &quot;https://snowshot.top&quot;, &quot;category&quot;: &quot;\u79fb\u52a8 / \u684c\u9762\u5e94\u7528&quot;, &quot;emoji&quot;: &quot;\ud83d\udcf1&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Snow Shot 是一款免费开源的截图与录屏工具，支持 Windows 和 macOS。它能选区截图、截取窗口或滚动长截图，并在图上加箭头、文字、马赛克等标注；还能把截图钉在屏幕最上层方便对照，用本地离线 OCR 把图片里的文字提取出来，以及录制带声音的屏幕视频并导出为 GIF 或动画。比如写文档时截一张图，直接标注重点、提取文字、贴到旁边参考，一个工具就能完成。</p>
+          
+          <div class="byline">
+            <span>mg-chao</span><i>·</i>
+            <span>更新于 2026-11-19</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://snowshot.top" target="_blank">https://snowshot.top</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/mg-chao/snow-shot.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/mg-chao/snow-shot">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-3">
+        <div class="sec-kicker"><span class="sec-no">SECTION 03</span><span class="sec-name">AI / 大模型</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-3-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/voyager-crew/voyager" target="_blank">voyager-crew/voyager</a></h3>
+            <span class="stars">★ 20,680</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;voyager-crew/voyager&quot;, &quot;url&quot;: &quot;https://github.com/voyager-crew/voyager&quot;, &quot;owner&quot;: &quot;voyager-crew&quot;, &quot;stars&quot;: 20680, &quot;desc&quot;: &quot;Voyager \u662f\u4e00\u6b3e\u6d4f\u89c8\u5668\u6269\u5c55\uff0c\u4e3a Gemini\u3001AI Studio\u3001ChatGPT\u3001Claude\u3001DeepSeek\u3001Kimi \u7b49 AI \u804a\u5929\u7f51\u7ad9\u589e\u52a0\u6587\u4ef6\u5939\u6574\u7406\u3001\u5bf9\u8bdd\u65f6\u95f4\u7ebf\u3001\u5bfc\u51fa\u3001\u516c\u5f0f\u590d\u5236\u3001\u5f15\u7528\u56de\u590d\u3001\u63d0\u793a\u8bcd\u5e93\u7b49\u529f\u80fd\uff0c\u89e3\u51b3\u804a\u5929\u8bb0\u5f55\u6742\u4e71\u3001\u96be\u4ee5\u7ba1\u7406\u548c\u590d\u7528\u7684\u95ee\u9898\u3002\u5b83\u91c7\u7528\u63d2\u4ef6\u5316\u8bbe\u8ba1\uff0c\u6bcf\u4e2a\u7f51\u7ad9\u53ea\u9700\u4e00\u4efd JSON \u63cf\u8ff0\u9875\u9762\u7ed3\u6784\uff0c\u7528\u6237\u751a\u81f3\u53ef\u4ee5\u7528\u4e00\u53e5\u8bdd\u8ba9 AI \u751f\u6210\u81ea\u5df1\u7684\u63d2\u4ef6\uff0c\u6bd4\u5982\u7ed9\u4fa7\u8fb9\u680f\u52a0\u6a21\u7cca\u6548\u679c\uff0c\u4e14\u63d2\u4ef6\u4e0d\u6267\u884c\u4ee3\u7801\u3001\u5173\u95ed\u5373\u8fd8\u539f\u3002&quot;, &quot;site&quot;: &quot;https://voyager.nagi.fun/en&quot;, &quot;category&quot;: &quot;AI / \u5927\u6a21\u578b&quot;, &quot;emoji&quot;: &quot;\ud83e\udde0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Voyager 是一款浏览器扩展，为 Gemini、AI Studio、ChatGPT、Claude、DeepSeek、Kimi 等 AI 聊天网站增加文件夹整理、对话时间线、导出、公式复制、引用回复、提示词库等功能，解决聊天记录杂乱、难以管理和复用的问题。它采用插件化设计，每个网站只需一份 JSON 描述页面结构，用户甚至可以用一句话让 AI 生成自己的插件，比如给侧边栏加模糊效果，且插件不执行代码、关闭即还原。</p>
+          
+          <div class="byline">
+            <span>voyager-crew</span><i>·</i>
+            <span>更新于 2026-11-20</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://voyager.nagi.fun/en" target="_blank">https://voyager.nagi.fun/en</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/voyager-crew/voyager.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/voyager-crew/voyager">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-4">
+        <div class="sec-kicker"><span class="sec-no">SECTION 04</span><span class="sec-name">Agent 技能与插件</span><span class="sec-count">1 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-4-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/kingcharleslzy-ai/dsh-purge" target="_blank">kingcharleslzy-ai/dsh-purge</a></h3>
+            <span class="stars">★ 10,808</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;kingcharleslzy-ai/dsh-purge&quot;, &quot;url&quot;: &quot;https://github.com/kingcharleslzy-ai/dsh-purge&quot;, &quot;owner&quot;: &quot;kingcharleslzy-ai&quot;, &quot;stars&quot;: 10808, &quot;desc&quot;: &quot;\u8fd9\u662f\u7ed9 DeepSeek Harness \u7528\u7684\u793e\u533a\u7ef4\u62a4\u63d2\u4ef6\uff0c\u4fd7\u79f0\u300c\u7834\u7532\u300d\u6216\u300c\u65e0\u9650\u5236\u6a21\u5f0f\u300d\u3002\u5b83\u628a\u5bbf\u4e3b\u8865\u4e01\u3001\u63d0\u793a\u8bcd\u6ce8\u5165\u3001\u72b6\u6001\u81ea\u68c0\u3001\u5907\u4efd\u56de\u6eda\u548c\u66f4\u65b0\u7ba1\u7406\u96c6\u4e2d\u5230\u4e00\u4e2a\u5de6\u4fa7\u680f\u9762\u677f\u91cc\uff0c\u8ba9 AI \u52a9\u624b\u80fd\u8fde\u7eed\u6267\u884c\u4efb\u52a1\uff0c\u800c\u4e0d\u662f\u6bcf\u6b65\u90fd\u505c\u4e0b\u6765\u786e\u8ba4\u3002\u6bd4\u5982\u505a\u672c\u673a\u5b66\u4e60\u5b9e\u9a8c\u65f6\uff0c\u5b83\u80fd\u628a\u53cd\u590d\u51fa\u73b0\u7684\u786e\u8ba4\u6536\u655b\u6210\u4e00\u6b21\u8bbe\u7f6e\uff0c\u6539\u574f\u4e86\u8fd8\u80fd\u4e00\u952e\u56de\u6eda\u5230\u4e4b\u524d\u7684\u5feb\u7167\u3002\u5b83\u53ea\u964d\u4f4e\u4ea4\u4e92\u6469\u64e6\uff0c\u4e0d\u6539\u6a21\u578b\u672c\u8eab\u3002&quot;, &quot;site&quot;: &quot;https://github.com/kingcharleslzy-ai/dsh-purge/releases&quot;, &quot;category&quot;: &quot;Agent \u6280\u80fd\u4e0e\u63d2\u4ef6&quot;, &quot;emoji&quot;: &quot;\ud83e\udde9&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是给 DeepSeek Harness 用的社区维护插件，俗称「破甲」或「无限制模式」。它把宿主补丁、提示词注入、状态自检、备份回滚和更新管理集中到一个左侧栏面板里，让 AI 助手能连续执行任务，而不是每步都停下来确认。比如做本机学习实验时，它能把反复出现的确认收敛成一次设置，改坏了还能一键回滚到之前的快照。它只降低交互摩擦，不改模型本身。</p>
+          
+          <div class="byline">
+            <span>kingcharleslzy-ai</span><i>·</i>
+            <span>更新于 2026-11-20</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://github.com/kingcharleslzy-ai/dsh-purge/releases" target="_blank">https://github.com/kingcharleslzy-ai/dsh-purge/releases</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/kingcharleslzy-ai/dsh-purge.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/kingcharleslzy-ai/dsh-purge">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-5">
+        <div class="sec-kicker"><span class="sec-no">SECTION 05</span><span class="sec-name">安全</span><span class="sec-count">2 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-5-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/mmparko/dsh-purge" target="_blank">mmparko/dsh-purge</a></h3>
+            <span class="stars">★ 5,598</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;mmparko/dsh-purge&quot;, &quot;url&quot;: &quot;https://github.com/mmparko/dsh-purge&quot;, &quot;owner&quot;: &quot;mmparko&quot;, &quot;stars&quot;: 5598, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u9488\u5bf9\u5b98\u65b9 DeepSeek Harness \u7684\u672c\u5730\u7ea2\u961f\u6d4b\u8bd5\u63d2\u4ef6\uff0c\u7528\u4e8e\u533a\u5206\u201c\u6a21\u578b\u62d2\u7edd\u56de\u7b54\u201d\u548c\u201c\u5bbf\u4e3b\u5c42\u7b56\u7565\u62e6\u622a\u201d\u4e24\u79cd\u60c5\u51b5\u3002\u5b83\u901a\u8fc7\u4fa7\u8fb9\u680f\u6309\u94ae\u5bf9\u672c\u5730\u5df2\u5b89\u88c5\u7684 Harness \u6253\u8865\u4e01\uff0c\u66ff\u6362\u63d0\u793a\u8bcd\u4e0e\u6743\u9650\u7b56\u7565\uff0c\u65b9\u4fbf\u5b89\u5168\u7814\u7a76\u8005\u5728\u81ea\u5df1\u7684\u673a\u5668\u4e0a\u505a\u53d7\u63a7\u8bc4\u4f30\u3002\u4f8b\u5982\uff0c\u5f53\u6a21\u578b\u770b\u4f3c\u201c\u62d2\u7b54\u201d\u65f6\uff0c\u53ef\u7528\u5b83\u6392\u67e5\u662f\u5426\u662f Harness \u7684\u5ba1\u6279\u6216\u6c99\u7bb1\u7b56\u7565\u8fc7\u7d27\u6240\u81f4\u3002\u9879\u76ee\u4e3a\u4e0a\u6e38\u4ed3\u5e93\u7684\u5168\u91cf\u955c\u50cf\uff0c\u542b\u5168\u90e8\u5206\u652f\u300173 \u4e2a tag \u548c\u5b8c\u6574\u63d0\u4ea4\u5386\u53f2\u3002&quot;, &quot;site&quot;: &quot;https://github.com/YuJunZhiXue/dsh-purge&quot;, &quot;category&quot;: &quot;\u5b89\u5168&quot;, &quot;emoji&quot;: &quot;\ud83d\udd10&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个针对官方 DeepSeek Harness 的本地红队测试插件，用于区分“模型拒绝回答”和“宿主层策略拦截”两种情况。它通过侧边栏按钮对本地已安装的 Harness 打补丁，替换提示词与权限策略，方便安全研究者在自己的机器上做受控评估。例如，当模型看似“拒答”时，可用它排查是否是 Harness 的审批或沙箱策略过紧所致。项目为上游仓库的全量镜像，含全部分支、73 个 tag 和完整提交历史。</p>
+          
+          <div class="byline">
+            <span>mmparko</span><i>·</i>
+            <span>更新于 2026-11-20</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://github.com/YuJunZhiXue/dsh-purge" target="_blank">https://github.com/YuJunZhiXue/dsh-purge</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/mmparko/dsh-purge.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/mmparko/dsh-purge">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-5-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/ZXEB/dsh-purge" target="_blank">ZXEB/dsh-purge</a></h3>
+            <span class="stars">★ 525</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;ZXEB/dsh-purge&quot;, &quot;url&quot;: &quot;https://github.com/ZXEB/dsh-purge&quot;, &quot;owner&quot;: &quot;ZXEB&quot;, &quot;stars&quot;: 525, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u7ed9\u672c\u673a\u5df2\u5b89\u88c5\u7684 DeepSeek Harness \u7528\u7684\u7ea2\u961f\u8bc4\u6d4b\u63d2\u4ef6\uff0c\u901a\u8fc7\u53ef\u56de\u6eda\u7684\u8865\u4e01\u8868\u7edf\u4e00\u4fee\u6539\u63d0\u793a\u8bcd\u3001\u5ba1\u6279\u7b56\u7565\u3001\u6c99\u7bb1\u9ed8\u8ba4\u503c\u7b49\u5bbf\u4e3b\u5c42\u9ed8\u8ba4\u914d\u7f6e\uff0c\u5e76\u63d0\u4f9b\u4fa7\u680f\u9762\u677f\u67e5\u770b\u72b6\u6001\u3001\u4e00\u952e\u5e94\u7528\u6216\u8fd8\u539f\u3002\u5b83\u4e3b\u8981\u7528\u4e8e\u5b89\u5168\u7814\u7a76\u548c\u63d0\u793a\u8bcd\u6ce8\u5165\u6d4b\u8bd5\uff0c\u6bd4\u5982\u7814\u7a76\u4eba\u5458\u53ef\u4ee5\u5feb\u901f\u5207\u6362\u63d0\u793a\u8bcd\u89c4\u5219\u3001\u6e05\u70b9\u672c\u673a\u8d44\u4ea7\uff0c\u9a8c\u8bc1\u6a21\u578b\u5728\u7279\u5b9a\u914d\u7f6e\u4e0b\u7684\u884c\u4e3a\uff0c\u800c\u4e0d\u5fc5\u624b\u52a8\u6539\u6e90\u7801\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5b89\u5168&quot;, &quot;emoji&quot;: &quot;\ud83d\udd10&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个给本机已安装的 DeepSeek Harness 用的红队评测插件，通过可回滚的补丁表统一修改提示词、审批策略、沙箱默认值等宿主层默认配置，并提供侧栏面板查看状态、一键应用或还原。它主要用于安全研究和提示词注入测试，比如研究人员可以快速切换提示词规则、清点本机资产，验证模型在特定配置下的行为，而不必手动改源码。</p>
+          
+          <div class="byline">
+            <span>ZXEB</span><i>·</i>
+            <span>更新于 2026-11-19</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/ZXEB/dsh-purge.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/ZXEB/dsh-purge">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+      <section id="sec-6">
+        <div class="sec-kicker"><span class="sec-no">SECTION 06</span><span class="sec-name">开发工具与框架</span><span class="sec-count">3 个项目</span></div>
+        <hr class="rule">
+        
+        <article class="item" id="sec-6-1">
+          <div class="item-head">
+            <span class="no">01</span>
+            <h3 class="title"><a href="https://github.com/erkamyaman/rust-anything" target="_blank">erkamyaman/rust-anything</a></h3>
+            <span class="stars">★ 5,890</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;erkamyaman/rust-anything&quot;, &quot;url&quot;: &quot;https://github.com/erkamyaman/rust-anything&quot;, &quot;owner&quot;: &quot;erkamyaman&quot;, &quot;stars&quot;: 5890, &quot;desc&quot;: &quot;rust-anything \u662f\u4e00\u4e2a\u628a\u73b0\u6709\u5e94\u7528\u9010\u6b65\u6539\u5199\u6210 Rust \u7684\u5de5\u5177\u3002\u5b83\u5148\u5f55\u5236\u539f\u7a0b\u5e8f\uff08\u652f\u6301 TypeScript\u3001Python\u3001C\u3001Go\u3001Ruby\u3001Java \u7b49\uff09\u5728\u5404\u79cd\u8f93\u5165\u4e0b\u7684\u771f\u5b9e\u884c\u4e3a\uff0c\u518d\u8ba9 AI \u7f16\u7801\u52a9\u624b\u6216\u4f60\u7f16\u5199 Rust \u7248\u672c\uff0c\u5e76\u9010\u6761\u56de\u653e\u5bf9\u6bd4\uff0c\u786e\u4fdd\u8f93\u51fa\u5b8c\u5168\u4e00\u81f4\u540e\u624d\u653e\u884c\u3002\u5b83\u8fd8\u80fd\u627e\u51fa\u6027\u80fd\u70ed\u70b9\u3001\u751f\u6210\u6865\u63a5\u5c42\u8ba9\u65e7\u4ee3\u7801\u65e0\u611f\u8c03\u7528 Rust\u3002\u4f8b\u5982 Prettier \u79fb\u690d\u540e\u5feb\u4e86 19 \u500d\uff0c\u4e14 1.7 \u4e07\u6761\u7528\u4f8b\u9010\u5b57\u8282\u4e00\u81f4\u3002&quot;, &quot;site&quot;: &quot;https://www.npmjs.com/package/rust-anything&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">rust-anything 是一个把现有应用逐步改写成 Rust 的工具。它先录制原程序（支持 TypeScript、Python、C、Go、Ruby、Java 等）在各种输入下的真实行为，再让 AI 编码助手或你编写 Rust 版本，并逐条回放对比，确保输出完全一致后才放行。它还能找出性能热点、生成桥接层让旧代码无感调用 Rust。例如 Prettier 移植后快了 19 倍，且 1.7 万条用例逐字节一致。</p>
+          
+          <div class="byline">
+            <span>erkamyaman</span><i>·</i>
+            <span>更新于 2026-11-20</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://www.npmjs.com/package/rust-anything" target="_blank">https://www.npmjs.com/package/rust-anything</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/erkamyaman/rust-anything.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/erkamyaman/rust-anything">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-6-2">
+          <div class="item-head">
+            <span class="no">02</span>
+            <h3 class="title"><a href="https://github.com/Devolutions/jiffshot" target="_blank">Devolutions/jiffshot</a></h3>
+            <span class="stars">★ 58</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Devolutions/jiffshot&quot;, &quot;url&quot;: &quot;https://github.com/Devolutions/jiffshot&quot;, &quot;owner&quot;: &quot;Devolutions&quot;, &quot;stars&quot;: 58, &quot;desc&quot;: &quot;Jiffshot \u662f\u4e00\u6b3e\u7528\u7eaf Rust \u7f16\u5199\u7684\u8de8\u5e73\u53f0\u622a\u56fe\u3001\u5f55\u5c4f\u4e0e\u6807\u6ce8\u5de5\u5177\uff0c\u652f\u6301 Windows\u3001macOS \u548c Linux\u3002\u5b83\u80fd\u5feb\u901f\u622a\u53d6\u7a97\u53e3\u3001\u533a\u57df\u6216\u5168\u5c4f\uff0c\u5e76\u76f4\u63a5\u5728\u7f16\u8f91\u5668\u4e2d\u6dfb\u52a0\u7bad\u5934\u3001\u7f16\u53f7\u3001\u6a21\u7cca\u7b49\u6807\u6ce8\uff1b\u8fd8\u80fd\u5f55\u5236 MP4 \u89c6\u9891\u3001\u88c1\u526a\u5408\u5e76\u7247\u6bb5\u3001OCR \u63d0\u53d6\u6587\u5b57\u3002\u4f8b\u5982\uff0c\u4f60\u53ef\u4ee5\u6309 Print Screen \u622a\u53d6\u4e00\u4e2a\u7a97\u53e3\uff0c\u753b\u4e0a\u7bad\u5934\u540e\u4e00\u952e\u590d\u5236\u5230\u526a\u8d34\u677f\u6216\u5bfc\u51fa\u56fe\u7247\uff0c\u9002\u5408\u5199\u6587\u6863\u3001\u505a\u6559\u7a0b\u548c\u65e5\u5e38\u6c9f\u901a\u3002&quot;, &quot;site&quot;: &quot;\u65e0&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">Jiffshot 是一款用纯 Rust 编写的跨平台截图、录屏与标注工具，支持 Windows、macOS 和 Linux。它能快速截取窗口、区域或全屏，并直接在编辑器中添加箭头、编号、模糊等标注；还能录制 MP4 视频、裁剪合并片段、OCR 提取文字。例如，你可以按 Print Screen 截取一个窗口，画上箭头后一键复制到剪贴板或导出图片，适合写文档、做教程和日常沟通。</p>
+          
+          <div class="byline">
+            <span>Devolutions</span><i>·</i>
+            <span>更新于 2026-11-17</span><i>·</i>
+            <span class=""></span><i>·</i>
+            无官网<i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Devolutions/jiffshot.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Devolutions/jiffshot">最新 Release 下载</a>
+          </div>
+        </article>
+        <article class="item" id="sec-6-3">
+          <div class="item-head">
+            <span class="no">03</span>
+            <h3 class="title"><a href="https://github.com/Larryxu001/cloud-mail" target="_blank">Larryxu001/cloud-mail</a></h3>
+            <span class="stars">★ 0</span>
+            <button class="save-btn" data-meta="{&quot;repo&quot;: &quot;Larryxu001/cloud-mail&quot;, &quot;url&quot;: &quot;https://github.com/Larryxu001/cloud-mail&quot;, &quot;owner&quot;: &quot;Larryxu001&quot;, &quot;stars&quot;: 0, &quot;desc&quot;: &quot;\u8fd9\u662f\u4e00\u4e2a\u57fa\u4e8e Cloudflare Workers \u7684\u81ea\u5efa\u90ae\u4ef6\u670d\u52a1\uff0c\u8ba9\u4f60\u7528\u4e00\u4e2a\u57df\u540d\u521b\u5efa\u591a\u4e2a\u90ae\u7bb1\u5730\u5740\uff0c\u50cf\u4f7f\u7528\u5927\u90ae\u7bb1\u5e73\u53f0\u4e00\u6837\u6536\u53d1\u90ae\u4ef6\u3002\u5b83\u628a\u540e\u7aef\u90e8\u7f72\u5728 Cloudflare \u4e0a\u4ee5\u964d\u4f4e\u670d\u52a1\u5668\u6210\u672c\uff0c\u652f\u6301\u9644\u4ef6\u3001\u90ae\u4ef6\u8f6c\u53d1\u5230 Telegram\u3001\u9a8c\u8bc1\u7801\u81ea\u52a8\u8bc6\u522b\u548c\u7ba1\u7406\u540e\u53f0\u3002\u4f8b\u5982\uff0c\u4f60\u53ef\u4ee5\u7ed9\u81ea\u5df1\u642d\u5efa\u4e00\u4e2a\u5e26\u81ea\u5b9a\u4e49\u57df\u540d\u7684\u90ae\u7bb1\uff0c\u7528\u6765\u63a5\u6536\u6ce8\u518c\u9a8c\u8bc1\u7801\u6216\u8f6c\u53d1\u91cd\u8981\u90ae\u4ef6\u3002&quot;, &quot;site&quot;: &quot;https://skymail.ink&quot;, &quot;category&quot;: &quot;\u5f00\u53d1\u5de5\u5177\u4e0e\u6846\u67b6&quot;, &quot;emoji&quot;: &quot;\ud83d\udee0&quot;}" aria-label="收藏项目">☆ 收藏</button>
+          </div>
+          <p class="desc">这是一个基于 Cloudflare Workers 的自建邮件服务，让你用一个域名创建多个邮箱地址，像使用大邮箱平台一样收发邮件。它把后端部署在 Cloudflare 上以降低服务器成本，支持附件、邮件转发到 Telegram、验证码自动识别和管理后台。例如，你可以给自己搭建一个带自定义域名的邮箱，用来接收注册验证码或转发重要邮件。</p>
+          
+          <div class="byline">
+            <span>Larryxu001</span><i>·</i>
+            <span>更新于 2026-11-16</span><i>·</i>
+            <span class=""></span><i>·</i>
+            <a class="site" href="https://skymail.ink" target="_blank">https://skymail.ink</a><i>·</i>
+            <a class="site source-download" href="https://github.51vipai.com/download/Larryxu001/cloud-mail.zip" title="默认分支最新源码，不含安装依赖">下载源码 ZIP</a><i>·</i>
+            <a class="site release-download" href="https://github.51vipai.com/release/Larryxu001/cloud-mail">最新 Release 下载</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>GITHUB TRENDING DAILY · 自动生成</span>
+    <span><a href="https://larryxu001.github.io/github-trending/saved.html" style="color:var(--red);text-decoration:none;">★ 我的精选</a> · <a href="https://larryxu001.github.io/github-trending/index.html" style="color:var(--ink);text-decoration:none;">往期归档</a> · 数据来源 github.com/trending</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="dlg-mask" id="dlgMask">
+    <div class="dlg" id="dlg">
+      <h2>收藏到「我的精选」</h2>
+      <div class="repo-name" id="dlgRepo"></div>
+      <label>为什么觉得有用？（备注，可选）</label>
+      <textarea id="dlgNote" placeholder="例如：用来做视频剪辑、学习 RAG 落地、给团队搭 Agent…"></textarea>
+      <label>打标签（可选，可多选或自定义）</label>
+      <div class="tag-chips" id="dlgTags"></div>
+      <input type="text" id="dlgNewTag" placeholder="输入新标签后回车添加" style="margin-top:8px;">
+      <div class="hint">标签会自动沉淀，之后可在「我的精选」里筛选</div>
+      <div class="btn-row">
+        <button onclick="closeDlg()">取消</button>
+        <button class="primary" id="dlgOk" onclick="confirmSave()">确认收藏</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const saveApi = "https://github-trending-save.larryxu-4e5.workers.dev";
+  const rawSavedUrl = 'https://raw.githubusercontent.com/Larryxu001/github-trending/main/saved.json';
+  const PRESET_TAGS = ['学习','做视频','做 Agent','做工具','RAG','前端','后端','效率','安全','有趣'];
+
+
+function saveHeaders() {
+  const key = sessionStorage.getItem('trending-save-key');
+  if (!key) { location.reload(); return null; }
+  return {'Content-Type':'application/json', 'Authorization':'Bearer ' + key.trim()};
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; }
+  catch(_) { return ''; }
+}
+
+  let pendingMeta = null;      // 待收藏的项目 meta
+  let knownTags = [];          // 已存在的所有标签（来自 saved.json，用于联想）
+  let savedSet = new Set();    // 已收藏 repo 集合
+
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // 读 saved.json：优先走 Worker GET（GitHub API，无 CDN 缓存）；失败才降级 raw
+  async function loadSavedData() {
+    let items = null;
+    if (saveApi) {
+      try {
+        const r = await fetch(saveApi, { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          if (d.ok && Array.isArray(d.items)) items = d.items;
+        }
+      } catch(_) {}
+    }
+    // 关键：只有 Worker 完全失败（items 仍为 null）才降级 raw。
+    // 不能用 items.length===0 判断，否则「取消最后一个收藏」后 Worker 正确返回 []，
+    // 会被误判为失败而读 raw 的缓存旧数据，导致按钮错误显示「已收藏」。
+    if (items === null) {
+      try {
+        const sep = rawSavedUrl.indexOf('?') >= 0 ? '&' : '?';
+        const r = await fetch(rawSavedUrl + sep + 'cb=' + Date.now(), { cache: 'no-store' });
+        if (r.ok) {
+          const d = await r.json();
+          items = (d.items || []);
+        }
+      } catch(_) {}
+    }
+    if (items === null) items = [];
+    savedSet = new Set(items.map(x => x.repo));
+    const allTags = new Set(PRESET_TAGS);
+    items.forEach(x => (x.tags || []).forEach(t => allTags.add(t)));
+    knownTags = [...allTags];
+  }
+
+  async function refreshSavedStates() {
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+      const saved = savedSet.has(meta.repo);
+      btn.classList.toggle('saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    });
+  }
+
+  function renderTagChips() {
+    const box = document.getElementById('dlgTags');
+    const chips = knownTags.map(t => {
+      const on = pendingMeta && (pendingMeta.tags || []).includes(t);
+      return '<span class="tag-chip' + (on ? ' on' : '') + '" data-tag="' + escAttr(t) + '" onclick="toggleTag(this)">' + escHtml(t) + '</span>';
+    });
+    box.innerHTML = chips.join('');
+  }
+
+  function escHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function escAttr(s) { return String(s).replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+  window.toggleTag = function(chip) {
+    const t = chip.dataset.tag;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    const i = pendingMeta.tags.indexOf(t);
+    if (i >= 0) pendingMeta.tags.splice(i, 1); else pendingMeta.tags.push(t);
+    chip.classList.toggle('on');
+  };
+
+  window.closeDlg = function() {
+    document.getElementById('dlgMask').classList.remove('open');
+    pendingMeta = null;
+  };
+
+  window.openSaveDlg = function(meta) {
+    pendingMeta = { ...meta, tags: [], note: '' };
+    document.getElementById('dlgRepo').textContent = meta.repo;
+    document.getElementById('dlgNote').value = '';
+    document.getElementById('dlgNewTag').value = '';
+    renderTagChips();
+    document.getElementById('dlgMask').classList.add('open');
+  };
+
+  window.confirmSave = async function() {
+    if (!pendingMeta) return;
+    if (!saveApi) { toast('收藏服务未配置，请联系维护者'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    pendingMeta.note = document.getElementById('dlgNote').value.trim();
+    const btn = document.getElementById('dlgOk');
+    if (btn.disabled) return;
+    const meta = {...pendingMeta};
+    btn.disabled = true;
+    btn.textContent = '保存中…';
+    btn.setAttribute('aria-busy', 'true');
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(meta),
+        signal: AbortSignal.timeout(60000),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) {
+        toast(result.error || '收藏失败，请重试');
+        return;
+      }
+      // 关键：closeDlg() 会把 pendingMeta 置 null，必须先把 repo / removed 取出来，
+      // 否则下面读 pendingMeta.repo 会抛 TypeError（之前误报为「网络错误」的根因）
+      const repo = meta.repo;
+      const removed = !!result.removed;
+      toast(removed ? '已取消收藏' : '已收藏到「我的精选」');
+      closeDlg();
+      // 乐观更新：成功后立刻本地标记，按钮立即变红，不依赖 raw 回读（避免缓存延迟）
+      if (removed) savedSet.delete(repo); else savedSet.add(repo);
+      refreshSavedStates();
+    } catch(err) {
+      // 区分真实网络错误和前端程序错误，避免误导排查方向
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，收藏失败：' + msg);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '确认收藏';
+      btn.removeAttribute('aria-busy');
+    }
+  };
+
+  // 新标签输入：回车添加
+  document.getElementById('dlgNewTag').addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    const v = this.value.trim();
+    if (!v) return;
+    if (!pendingMeta.tags) pendingMeta.tags = [];
+    if (!pendingMeta.tags.includes(v)) pendingMeta.tags.push(v);
+    if (!knownTags.includes(v)) knownTags.push(v);
+    this.value = '';
+    renderTagChips();
+  });
+
+  // 已收藏时直接取消（走 Worker toggle）
+  async function removeSave(meta) {
+    if (!saveApi) { toast('收藏服务未配置'); return; }
+    const authHeaders = saveHeaders();
+    if (!authHeaders) return;
+    try {
+      const resp = await fetch(saveApi, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({ repo: meta.repo, _remove: true }),
+      });
+      const result = await resp.json();
+      if (resp.status === 401) sessionStorage.removeItem('trending-save-key');
+      if (!resp.ok || result.error) { toast(result.error || '取消失败'); return; }
+      toast('已取消收藏');
+      // 乐观更新：立刻本地移除，按钮立即还原
+      savedSet.delete(meta.repo);
+      refreshSavedStates();
+    } catch(err) {
+      const msg = (err && err.message) ? err.message : '请检查网络';
+      const isNet = /fetch|network/i.test(msg);
+      toast((isNet ? '网络错误' : '程序错误') + '，取消失败：' + msg);
+    }
+  }
+
+  // 绑定收藏按钮：点击弹出对话框
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.save-btn');
+    if (!btn) return;
+    let meta; try { meta = JSON.parse(btn.dataset.meta); } catch(_) { return; }
+    if (savedSet.has(meta.repo)) {
+      if (confirm('已收藏「' + meta.repo + '」，确定取消收藏？')) removeSave(meta);
+      return;
+    }
+    openSaveDlg(meta);
+  });
+
+  // 点击遮罩关闭
+  document.getElementById('dlgMask').addEventListener('click', function(e) {
+    if (e.target === this) closeDlg();
+  });
+
+  window.addEventListener('trending-unlocked', async function() {
+    await loadSavedData();
+    refreshSavedStates();
+  });
+})();
+</script>
+</div><script>
+(() => {
+const api = "https://github-trending-save.larryxu-4e5.workers.dev";
+const storageKey = 'trending-save-key';
+const gate = document.getElementById('page-access');
+const content = document.getElementById('page-content');
+const form = document.getElementById('access-form');
+const password = document.getElementById('access-password');
+const button = document.getElementById('access-submit');
+const error = document.getElementById('access-error');
+async function unlock(key) {
+  button.disabled = true;
+  button.textContent = '验证中…';
+  error.textContent = '';
+  try {
+    if (!api) throw new Error('访问验证尚未配置，请联系维护者。');
+    const response = await fetch(api.replace(/\/$/, '') + '/auth', {
+      headers: {Authorization: 'Bearer ' + key}, cache: 'no-store', signal: AbortSignal.timeout(15000)
+    });
+    if (response.status === 401) {
+      sessionStorage.removeItem(storageKey);
+      throw new Error('密码不正确，请重新输入。');
+    }
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error('验证服务暂时不可用，请稍后重试。');
+    sessionStorage.setItem(storageKey, key);
+    password.value = '';
+    content.hidden = false;
+    content.inert = false;
+    gate.hidden = true;
+    window.dispatchEvent(new Event('trending-unlocked'));
+  } catch (failure) {
+    error.textContent = failure.message === 'Failed to fetch' || failure.name === 'TimeoutError'
+      ? '网络连接失败，请检查网络后重试。' : failure.message;
+    password.focus();
+  } finally {
+    button.disabled = false;
+    button.textContent = '进入页面';
+  }
+}
+form.addEventListener('submit', event => {event.preventDefault(); unlock(password.value.trim());});
+const saved = sessionStorage.getItem(storageKey);
+if (saved) unlock(saved);
+})();
+</script></body>
+</html>

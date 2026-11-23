@@ -1,0 +1,166 @@
+{
+ "date": "2026-11-23",
+ "new_count": 10,
+ "skipped": 0,
+ "categories": [
+  {
+   "name": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "items": [
+    {
+     "repo": "firecrawl/firecrawl",
+     "url": "https://github.com/firecrawl/firecrawl",
+     "owner": "firecrawl",
+     "stars": 203900,
+     "updated": "2026-11-20",
+     "lists": [],
+     "desc": "Firecrawl 是给 AI 智能体提供网页知识的工具：它能抓取、搜索、解析网页，把杂乱的 HTML 转成干净的 Markdown，还能接入 550+ 数据源，统一用一个 API 调用。它解决了大模型和 Agent 拿不到实时、结构化网页数据的问题，比如让 Agent 自动抓取竞品官网并整理成摘要，或把文档站转成可检索的知识库。",
+     "site": "https://firecrawl.dev",
+     "note": "网页数据抓取",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "移动 / 桌面应用",
+   "emoji": "📱",
+   "items": [
+    {
+     "repo": "ccch1mneyyy/dsh-Go",
+     "url": "https://github.com/ccch1mneyyy/dsh-Go",
+     "owner": "ccch1mneyyy",
+     "stars": 28193,
+     "updated": "2026-11-20",
+     "lists": [],
+     "desc": "DSH Go 是一个把 DeepSeek Harness 装进手机的开源 Android 应用，用 Flutter 开发。它让手机本地运行 Linux + Node.js 环境，无需 Root 或 Termux 就能跑 AI 编程助手，也能通过 SSH 遥控电脑上的 DSH。比如你在通勤路上用手机让 AI 改代码、审批工具调用，回家切到电脑继续同一段对话，还支持桌宠、主题、对话分享和手机屏幕操控。",
+     "site": "无",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "mg-chao/snow-shot",
+     "url": "https://github.com/mg-chao/snow-shot",
+     "owner": "mg-chao",
+     "stars": 7213,
+     "updated": "2026-11-19",
+     "lists": [],
+     "desc": "Snow Shot 是一款免费开源的截图与录屏工具，支持 Windows 和 macOS。它能选区截图、截取窗口或滚动长截图，并在图上加箭头、文字、马赛克等标注；还能把截图钉在屏幕最上层方便对照，用本地离线 OCR 把图片里的文字提取出来，以及录制带声音的屏幕视频并导出为 GIF 或动画。比如写文档时截一张图，直接标注重点、提取文字、贴到旁边参考，一个工具就能完成。",
+     "site": "https://snowshot.top",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "AI / 大模型",
+   "emoji": "🧠",
+   "items": [
+    {
+     "repo": "voyager-crew/voyager",
+     "url": "https://github.com/voyager-crew/voyager",
+     "owner": "voyager-crew",
+     "stars": 20680,
+     "updated": "2026-11-20",
+     "lists": [],
+     "desc": "Voyager 是一款浏览器扩展，为 Gemini、AI Studio、ChatGPT、Claude、DeepSeek、Kimi 等 AI 聊天网站增加文件夹整理、对话时间线、导出、公式复制、引用回复、提示词库等功能，解决聊天记录杂乱、难以管理和复用的问题。它采用插件化设计，每个网站只需一份 JSON 描述页面结构，用户甚至可以用一句话让 AI 生成自己的插件，比如给侧边栏加模糊效果，且插件不执行代码、关闭即还原。",
+     "site": "https://voyager.nagi.fun/en",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "Agent 技能与插件",
+   "emoji": "🧩",
+   "items": [
+    {
+     "repo": "kingcharleslzy-ai/dsh-purge",
+     "url": "https://github.com/kingcharleslzy-ai/dsh-purge",
+     "owner": "kingcharleslzy-ai",
+     "stars": 10808,
+     "updated": "2026-11-20",
+     "lists": [],
+     "desc": "这是给 DeepSeek Harness 用的社区维护插件，俗称「破甲」或「无限制模式」。它把宿主补丁、提示词注入、状态自检、备份回滚和更新管理集中到一个左侧栏面板里，让 AI 助手能连续执行任务，而不是每步都停下来确认。比如做本机学习实验时，它能把反复出现的确认收敛成一次设置，改坏了还能一键回滚到之前的快照。它只降低交互摩擦，不改模型本身。",
+     "site": "https://github.com/kingcharleslzy-ai/dsh-purge/releases",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "安全",
+   "emoji": "🔐",
+   "items": [
+    {
+     "repo": "mmparko/dsh-purge",
+     "url": "https://github.com/mmparko/dsh-purge",
+     "owner": "mmparko",
+     "stars": 5598,
+     "updated": "2026-11-20",
+     "lists": [],
+     "desc": "这是一个针对官方 DeepSeek Harness 的本地红队测试插件，用于区分“模型拒绝回答”和“宿主层策略拦截”两种情况。它通过侧边栏按钮对本地已安装的 Harness 打补丁，替换提示词与权限策略，方便安全研究者在自己的机器上做受控评估。例如，当模型看似“拒答”时，可用它排查是否是 Harness 的审批或沙箱策略过紧所致。项目为上游仓库的全量镜像，含全部分支、73 个 tag 和完整提交历史。",
+     "site": "https://github.com/YuJunZhiXue/dsh-purge",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "ZXEB/dsh-purge",
+     "url": "https://github.com/ZXEB/dsh-purge",
+     "owner": "ZXEB",
+     "stars": 525,
+     "updated": "2026-11-19",
+     "lists": [],
+     "desc": "这是一个给本机已安装的 DeepSeek Harness 用的红队评测插件，通过可回滚的补丁表统一修改提示词、审批策略、沙箱默认值等宿主层默认配置，并提供侧栏面板查看状态、一键应用或还原。它主要用于安全研究和提示词注入测试，比如研究人员可以快速切换提示词规则、清点本机资产，验证模型在特定配置下的行为，而不必手动改源码。",
+     "site": "无",
+     "note": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "name": "开发工具与框架",
+   "emoji": "🛠",
+   "items": [
+    {
+     "repo": "erkamyaman/rust-anything",
+     "url": "https://github.com/erkamyaman/rust-anything",
+     "owner": "erkamyaman",
+     "stars": 5890,
+     "updated": "2026-11-20",
+     "lists": [],
+     "desc": "rust-anything 是一个把现有应用逐步改写成 Rust 的工具。它先录制原程序（支持 TypeScript、Python、C、Go、Ruby、Java 等）在各种输入下的真实行为，再让 AI 编码助手或你编写 Rust 版本，并逐条回放对比，确保输出完全一致后才放行。它还能找出性能热点、生成桥接层让旧代码无感调用 Rust。例如 Prettier 移植后快了 19 倍，且 1.7 万条用例逐字节一致。",
+     "site": "https://www.npmjs.com/package/rust-anything",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "Devolutions/jiffshot",
+     "url": "https://github.com/Devolutions/jiffshot",
+     "owner": "Devolutions",
+     "stars": 58,
+     "updated": "2026-11-17",
+     "lists": [],
+     "desc": "Jiffshot 是一款用纯 Rust 编写的跨平台截图、录屏与标注工具，支持 Windows、macOS 和 Linux。它能快速截取窗口、区域或全屏，并直接在编辑器中添加箭头、编号、模糊等标注；还能录制 MP4 视频、裁剪合并片段、OCR 提取文字。例如，你可以按 Print Screen 截取一个窗口，画上箭头后一键复制到剪贴板或导出图片，适合写文档、做教程和日常沟通。",
+     "site": "无",
+     "note": "",
+     "tags": []
+    },
+    {
+     "repo": "Larryxu001/cloud-mail",
+     "url": "https://github.com/Larryxu001/cloud-mail",
+     "owner": "Larryxu001",
+     "stars": 0,
+     "updated": "2026-11-16",
+     "lists": [],
+     "desc": "这是一个基于 Cloudflare Workers 的自建邮件服务，让你用一个域名创建多个邮箱地址，像使用大邮箱平台一样收发邮件。它把后端部署在 Cloudflare 上以降低服务器成本，支持附件、邮件转发到 Telegram、验证码自动识别和管理后台。例如，你可以给自己搭建一个带自定义域名的邮箱，用来接收注册验证码或转发重要邮件。",
+     "site": "https://skymail.ink",
+     "note": "",
+     "tags": []
+    }
+   ]
+  }
+ ],
+ "kind": "weekly",
+ "period_start": "2026-11-16",
+ "period_end": "2026-11-23"
+}
