@@ -22239,7 +22239,7 @@
   ]
  },
  "weekly:2026-11-23": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-23",
    "new_count": 10,
@@ -22405,6 +22405,337 @@
    "kind": "weekly",
    "period_start": "2026-11-16",
    "period_end": "2026-11-23"
-  }
+  },
+  "cards": [
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "📊 GitHub Trending 精选周报"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "2026-11-23 ｜ 精选 10 个项目 ｜ 收藏范围 2026-11-16 至 2026-11-23（不含结束日）"
+        }
+       },
+       {
+        "tag": "action",
+        "actions": [
+         {
+          "tag": "button",
+          "text": {
+           "tag": "plain_text",
+           "content": "🎨 查看完整精美网页版报告"
+          },
+          "type": "primary",
+          "url": "https://larryxu001.github.io/github-trending/2026/2026-11-23-weekly/index.html"
+         }
+        ]
+       },
+       {
+        "tag": "note",
+        "elements": [
+         {
+          "tag": "plain_text",
+          "content": "共 7 张卡片，按分类浏览"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "status": "sending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "blue",
+       "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 基础设施与框架 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)**　⭐ 203,900\nFirecrawl 是给 AI 智能体提供网页知识的工具：它能抓取、搜索、解析网页，把杂乱的 HTML 转成干净的 Markdown，还能接入 550+ 数据源，统一用一个 API 调用。它解决了大模型和 Agent 拿不到实时、结构化网页数据的问题，比如让 Agent 自动抓取竞品官网并整理成摘要，或把文档站转成可检索的知识库。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "📝 **我的备注**：网页数据抓取"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 firecrawl ｜ 📅 更新 2026-11-20 ｜ 🏷 榜 ｜ 🔗 [https://firecrawl.dev](https://firecrawl.dev)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "turquoise",
+       "title": {
+        "tag": "plain_text",
+        "content": "📱 移动 / 桌面应用 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [ccch1mneyyy/dsh-Go](https://github.com/ccch1mneyyy/dsh-Go)**　⭐ 28,193\nDSH Go 是一个把 DeepSeek Harness 装进手机的开源 Android 应用，用 Flutter 开发。它让手机本地运行 Linux + Node.js 环境，无需 Root 或 Termux 就能跑 AI 编程助手，也能通过 SSH 遥控电脑上的 DSH。比如你在通勤路上用手机让 AI 改代码、审批工具调用，回家切到电脑继续同一段对话，还支持桌宠、主题、对话分享和手机屏幕操控。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ccch1mneyyy ｜ 📅 更新 2026-11-20 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [mg-chao/snow-shot](https://github.com/mg-chao/snow-shot)**　⭐ 7,213\nSnow Shot 是一款免费开源的截图与录屏工具，支持 Windows 和 macOS。它能选区截图、截取窗口或滚动长截图，并在图上加箭头、文字、马赛克等标注；还能把截图钉在屏幕最上层方便对照，用本地离线 OCR 把图片里的文字提取出来，以及录制带声音的屏幕视频并导出为 GIF 或动画。比如写文档时截一张图，直接标注重点、提取文字、贴到旁边参考，一个工具就能完成。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 mg-chao ｜ 📅 更新 2026-11-19 ｜ 🏷 榜 ｜ 🔗 [https://snowshot.top](https://snowshot.top)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "carmine",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧠 AI / 大模型 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [voyager-crew/voyager](https://github.com/voyager-crew/voyager)**　⭐ 20,680\nVoyager 是一款浏览器扩展，为 Gemini、AI Studio、ChatGPT、Claude、DeepSeek、Kimi 等 AI 聊天网站增加文件夹整理、对话时间线、导出、公式复制、引用回复、提示词库等功能，解决聊天记录杂乱、难以管理和复用的问题。它采用插件化设计，每个网站只需一份 JSON 描述页面结构，用户甚至可以用一句话让 AI 生成自己的插件，比如给侧边栏加模糊效果，且插件不执行代码、关闭即还原。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 voyager-crew ｜ 📅 更新 2026-11-20 ｜ 🏷 榜 ｜ 🔗 [https://voyager.nagi.fun/en](https://voyager.nagi.fun/en)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "violet",
+       "title": {
+        "tag": "plain_text",
+        "content": "🧩 Agent 技能与插件 · 1 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [kingcharleslzy-ai/dsh-purge](https://github.com/kingcharleslzy-ai/dsh-purge)**　⭐ 10,808\n这是给 DeepSeek Harness 用的社区维护插件，俗称「破甲」或「无限制模式」。它把宿主补丁、提示词注入、状态自检、备份回滚和更新管理集中到一个左侧栏面板里，让 AI 助手能连续执行任务，而不是每步都停下来确认。比如做本机学习实验时，它能把反复出现的确认收敛成一次设置，改坏了还能一键回滚到之前的快照。它只降低交互摩擦，不改模型本身。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 kingcharleslzy-ai ｜ 📅 更新 2026-11-20 ｜ 🏷 榜 ｜ 🔗 [https://github.com/kingcharleslzy-ai/dsh-purge/releases](https://github.com/kingcharleslzy-ai/dsh-purge/releases)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "red",
+       "title": {
+        "tag": "plain_text",
+        "content": "🔐 安全 · 2 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [mmparko/dsh-purge](https://github.com/mmparko/dsh-purge)**　⭐ 5,598\n这是一个针对官方 DeepSeek Harness 的本地红队测试插件，用于区分“模型拒绝回答”和“宿主层策略拦截”两种情况。它通过侧边栏按钮对本地已安装的 Harness 打补丁，替换提示词与权限策略，方便安全研究者在自己的机器上做受控评估。例如，当模型看似“拒答”时，可用它排查是否是 Harness 的审批或沙箱策略过紧所致。项目为上游仓库的全量镜像，含全部分支、73 个 tag 和完整提交历史。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 mmparko ｜ 📅 更新 2026-11-20 ｜ 🏷 榜 ｜ 🔗 [https://github.com/YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [ZXEB/dsh-purge](https://github.com/ZXEB/dsh-purge)**　⭐ 525\n这是一个给本机已安装的 DeepSeek Harness 用的红队评测插件，通过可回滚的补丁表统一修改提示词、审批策略、沙箱默认值等宿主层默认配置，并提供侧栏面板查看状态、一键应用或还原。它主要用于安全研究和提示词注入测试，比如研究人员可以快速切换提示词规则、清点本机资产，验证模型在特定配置下的行为，而不必手动改源码。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 ZXEB ｜ 📅 更新 2026-11-19 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   },
+   {
+    "message": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "wide_screen_mode": true
+      },
+      "header": {
+       "template": "indigo",
+       "title": {
+        "tag": "plain_text",
+        "content": "🛠 开发工具与框架 · 3 个项目"
+       }
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**1. [erkamyaman/rust-anything](https://github.com/erkamyaman/rust-anything)**　⭐ 5,890\nrust-anything 是一个把现有应用逐步改写成 Rust 的工具。它先录制原程序（支持 TypeScript、Python、C、Go、Ruby、Java 等）在各种输入下的真实行为，再让 AI 编码助手或你编写 Rust 版本，并逐条回放对比，确保输出完全一致后才放行。它还能找出性能热点、生成桥接层让旧代码无感调用 Rust。例如 Prettier 移植后快了 19 倍，且 1.7 万条用例逐字节一致。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 erkamyaman ｜ 📅 更新 2026-11-20 ｜ 🏷 榜 ｜ 🔗 [https://www.npmjs.com/package/rust-anything](https://www.npmjs.com/package/rust-anything)"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**2. [Devolutions/jiffshot](https://github.com/Devolutions/jiffshot)**　⭐ 58\nJiffshot 是一款用纯 Rust 编写的跨平台截图、录屏与标注工具，支持 Windows、macOS 和 Linux。它能快速截取窗口、区域或全屏，并直接在编辑器中添加箭头、编号、模糊等标注；还能录制 MP4 视频、裁剪合并片段、OCR 提取文字。例如，你可以按 Print Screen 截取一个窗口，画上箭头后一键复制到剪贴板或导出图片，适合写文档、做教程和日常沟通。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Devolutions ｜ 📅 更新 2026-11-17 ｜ 🏷 榜 ｜ 🔗 无"
+        }
+       },
+       {
+        "tag": "hr"
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**3. [Larryxu001/cloud-mail](https://github.com/Larryxu001/cloud-mail)**　⭐ 0\n这是一个基于 Cloudflare Workers 的自建邮件服务，让你用一个域名创建多个邮箱地址，像使用大邮箱平台一样收发邮件。它把后端部署在 Cloudflare 上以降低服务器成本，支持附件、邮件转发到 Telegram、验证码自动识别和管理后台。例如，你可以给自己搭建一个带自定义域名的邮箱，用来接收注册验证码或转发重要邮件。"
+        }
+       },
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "👤 Larryxu001 ｜ 📅 更新 2026-11-16 ｜ 🏷 榜 ｜ 🔗 [https://skymail.ink](https://skymail.ink)"
+        }
+       }
+      ]
+     }
+    },
+    "status": "pending"
+   }
+  ]
  }
 }
