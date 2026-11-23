@@ -22239,7 +22239,7 @@
   ]
  },
  "weekly:2026-11-23": {
-  "status": "prepared",
+  "status": "sending",
   "report": {
    "date": "2026-11-23",
    "new_count": 10,
@@ -22500,7 +22500,7 @@
       ]
      }
     },
-    "status": "pending"
+    "status": "sending"
    },
    {
     "message": {
