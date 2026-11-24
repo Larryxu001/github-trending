@@ -1648,5 +1648,11 @@
   "emoji": "📱",
   "desc": "AutoClip 是一款开源的 AI 视频剪辑桌面工具，专治长视频剪成短视频的麻烦。你只需丢进一个播客、访谈或课程链接，它就能自动挑出精彩片段，剪成适合抖音、小红书、TikTok、Reels 和 YouTube Shorts 的竖屏短视频，同时生成字幕、封面和发布文案。比如一期两小时的播客，它能快速产出多条带字幕的短视频，省去手动找亮点、切片段、加字幕的繁琐流程，适合内容创作者做二次分发。",
   "site": "https://zhouxiaoka.github.io/autoclip_intro/"
+ },
+ "yetone/magpie": {
+  "cat": "Agent 基础设施与框架",
+  "emoji": "🤖",
+  "desc": "Magpie 是一个 macOS 菜单栏小工具，让你把不同 AI 编程助手接到任意大模型上。比如可以让 Codex 跑在 DeepSeek 上、Claude Code 跑在 Kimi 上，统一在一处切换和管理，不用改代码或折腾配置。它解决的是各家 Agent 绑定自家模型、想换模型很麻烦的问题，适合想灵活搭配、控制成本的开发者。",
+  "site": "https://usemagpie.ai"
  }
 }
