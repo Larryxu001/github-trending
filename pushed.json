@@ -142,12 +142,12 @@
  "nodejs/node": "2026-11-23",
  "SnailSploit/Claude-Red": "2026-10-24",
  "Renhuai123/ziwei-doushu": "2026-11-23",
- "Nutlope/hallmark": "2026-10-25",
+ "Nutlope/hallmark": "2026-11-24",
  "aws/agent-toolkit-for-aws": "2026-10-25",
  "google-gemini/gemini-cli": "2026-10-25",
- "makecindy/cindy": "2026-10-25",
+ "makecindy/cindy": "2026-11-24",
  "jbiaojerry/ebook-treasure-chest": "2026-10-25",
- "pollen-robotics/microduck": "2026-10-25",
+ "pollen-robotics/microduck": "2026-11-24",
  "AgriciDaniel/claude-seo": "2026-10-26",
  "TauricResearch/TradingAgents": "2026-10-26",
  "coollabsio/coolify": "2026-10-26",
@@ -273,5 +273,6 @@
  "XiaoYouChR/Ghost-Downloader-3": "2026-11-20",
  "mjmirza/app-store-compliance": "2026-11-20",
  "toeverything/AFFiNE": "2026-11-20",
- "zhouxiaoka/autoclip": "2026-11-20"
+ "zhouxiaoka/autoclip": "2026-11-20",
+ "yetone/magpie": "2026-11-24"
 }
