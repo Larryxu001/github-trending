@@ -1555,6 +1555,20 @@
    "tags": [],
    "saved_at": "2026-11-25",
    "source": "pages"
+  },
+  {
+   "repo": "CopilotKit/OpenBot",
+   "url": "https://github.com/CopilotKit/OpenBot",
+   "owner": "CopilotKit",
+   "stars": 13476,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "OpenBot 是一个可自托管的开源 AI 同事工作台，用来替代封闭的 AI 机器人。它让你自由选择模型（OpenAI、Claude、Gemini 或本地模型），通过 AG-UI 接入自己已有的 Agent，用 MCP 连接工具，并支持浏览器操作、交互式结果和人工审批。企业还能统一管理登录、权限和审计。比如团队可以把基于 LangChain 的 Agent 接入同一工作区，让它在受控权限下自动处理任务。",
+   "site": "https://open.bot",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-25",
+   "source": "pages"
   }
  ]
 }
