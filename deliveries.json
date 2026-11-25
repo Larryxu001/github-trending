@@ -23031,5 +23031,86 @@
     }
    }
   ]
+ },
+ "daily:2026-11-25": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-25",
+   "new_count": 4,
+   "skipped": 253,
+   "categories": [
+    {
+     "name": "Agent 技能与插件",
+     "emoji": "🧩",
+     "items": [
+      {
+       "repo": "Ebony-Vinyl/dsh-our-free-model",
+       "url": "https://github.com/Ebony-Vinyl/dsh-our-free-model",
+       "owner": "Ebony-Vinyl",
+       "stars": 85903,
+       "updated": "2026-11-24",
+       "lists": [
+        "monthly"
+       ],
+       "desc": "这是一个 dsh 插件，安装后无需登录、注册或填写 API Key，就能直接调用 DeepSeek V4.1 Flash、Kimi K3 等前沿大模型，而且完全免费、不限用量。它解决的是使用 AI 模型时门槛高、配置繁琐、费用贵的问题，让开发者或普通用户开箱即用。比如你在 dsh 里做 AI 助手开发，装上它就能立刻调用模型测试，省去申请密钥和付费的麻烦。",
+       "site": "无"
+      },
+      {
+       "repo": "AgriciDaniel/claude-seo",
+       "url": "https://github.com/AgriciDaniel/claude-seo",
+       "owner": "AgriciDaniel",
+       "stars": 32117,
+       "updated": "2026-11-16",
+       "lists": [
+        "daily",
+        "monthly",
+        "weekly"
+       ],
+       "desc": "这是一个给 Claude Code 用的 SEO 技能包，内置 26 个子技能和 19 个子代理，覆盖技术 SEO、E-E-A-T、结构化数据、GEO/AEO、外链、本地 SEO、电商和国际 SEO 等场景，还能生成 PDF/Excel 报告。它解决的是营销人员做 SEO 时工具分散、流程繁琐的问题，比如输入网站地址就能自动检查 Lighthouse 代理浏览、llms.txt 等 AI 时代新指标并输出优化建议。",
+       "site": "https://skool.com/ai-marketing-hub-pro"
+      }
+     ]
+    },
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "TauricResearch/TradingAgents",
+       "url": "https://github.com/TauricResearch/TradingAgents",
+       "owner": "TauricResearch",
+       "stars": 120249,
+       "updated": "2026-10-27",
+       "lists": [
+        "daily",
+        "weekly"
+       ],
+       "desc": "TradingAgents 是一个基于大语言模型的多智能体金融交易框架，把分析师、研究员、交易员和风控等角色拆成不同 AI 智能体，让它们像真实交易团队一样分工讨论、互相质疑，最终给出交易决策。它解决的是单一模型难以兼顾多角度分析的问题，可用于研究多智能体协作在量化交易中的效果，例如让看多和看空的智能体辩论后再下单。",
+       "site": "https://arxiv.org/pdf/2412.20138"
+      }
+     ]
+    },
+    {
+     "name": "开发工具与框架",
+     "emoji": "🛠",
+     "items": [
+      {
+       "repo": "JetBrains/thinkrail",
+       "url": "https://github.com/JetBrains/thinkrail",
+       "owner": "JetBrains",
+       "stars": 7571,
+       "updated": "2026-11-04",
+       "lists": [
+        "daily",
+        "weekly"
+       ],
+       "desc": "ThinkRail 是 JetBrains 推出的轻量级真实 IDE，专为「氛围编程」（vibe coding）设计，能根据你的工作习惯自我定制。它内置 pi 智能体，支持规格驱动开发，让你用自然语言描述需求就能生成和修改代码，解决传统 IDE 配置繁琐、AI 辅助割裂的问题。比如你可以直接说「给这个页面加个暗色模式」，它就会自动改代码并适配你的项目结构。",
+       "site": "https://thinkrail.ai/"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }

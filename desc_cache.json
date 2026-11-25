@@ -1654,5 +1654,11 @@
   "emoji": "🤖",
   "desc": "Magpie 是一个 macOS 菜单栏小工具，让你把不同 AI 编程助手接到任意大模型上。比如可以让 Codex 跑在 DeepSeek 上、Claude Code 跑在 Kimi 上，统一在一处切换和管理，不用改代码或折腾配置。它解决的是各家 Agent 绑定自家模型、想换模型很麻烦的问题，适合想灵活搭配、控制成本的开发者。",
   "site": "https://usemagpie.ai"
+ },
+ "Ebony-Vinyl/dsh-our-free-model": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个 dsh 插件，安装后无需登录、注册或填写 API Key，就能直接调用 DeepSeek V4.1 Flash、Kimi K3 等前沿大模型，而且完全免费、不限用量。它解决的是使用 AI 模型时门槛高、配置繁琐、费用贵的问题，让开发者或普通用户开箱即用。比如你在 dsh 里做 AI 助手开发，装上它就能立刻调用模型测试，省去申请密钥和付费的麻烦。",
+  "site": "无"
  }
 }
