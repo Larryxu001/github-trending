@@ -1541,6 +1541,20 @@
    "tags": [],
    "saved_at": "2026-11-20",
    "source": "feishu"
+  },
+  {
+   "repo": "CopilotKit/openfuse",
+   "url": "https://github.com/CopilotKit/openfuse",
+   "owner": "CopilotKit",
+   "stars": 6586,
+   "category": "Agent 基础设施与框架",
+   "emoji": "🤖",
+   "desc": "OpenFuse 是一个可自托管的个人 AI 助手应用，给智能体配上浏览器、终端和文件系统，让它能真正动手干活。你只需说出目标，比如「查收学校旅行邮件并研究水族馆展品」，它就会制定计划、浏览网页、读写文件、处理 PDF，并实时展示每一步，你还能随时接管它的浏览器或终端。它解决了普通聊天机器人只能动嘴、无法持续执行多步任务的问题，适合想搭建或定制私人智能体的开发者。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-25",
+   "source": "pages"
   }
  ]
 }
