@@ -1569,6 +1569,20 @@
    "tags": [],
    "saved_at": "2026-11-25",
    "source": "pages"
+  },
+  {
+   "repo": "joeseesun/subcast",
+   "url": "https://github.com/joeseesun/subcast",
+   "owner": "joeseesun",
+   "stars": 333,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "SubCast（声渡）是一款跨平台桌面应用，专为听不懂海外播客和 YouTube 的用户设计。它能订阅频道或 RSS，自动获取或在本机识别音频并翻译成双语字幕，逐句对照播放；还提供 AI 导读、带时间戳的问答和精读长文。比如听一期两小时的英文播客，你可以直接问 AI「这期讲了什么」，点回答里的时间戳就能跳回原话，省去反复拖进度条的麻烦。",
+   "site": "https://subcast.qiaomu.ai",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-26",
+   "source": "pages"
   }
  ]
 }
