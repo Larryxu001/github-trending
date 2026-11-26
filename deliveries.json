@@ -23299,5 +23299,59 @@
     }
    }
   ]
+ },
+ "daily:2026-11-26": {
+  "status": "prepared",
+  "report": {
+   "date": "2026-11-26",
+   "new_count": 3,
+   "skipped": 255,
+   "categories": [
+    {
+     "name": "Agent 基础设施与框架",
+     "emoji": "🤖",
+     "items": [
+      {
+       "repo": "gitroomhq/postiz-app",
+       "url": "https://github.com/gitroomhq/postiz-app",
+       "owner": "gitroomhq",
+       "stars": 39123,
+       "updated": "2026-10-24",
+       "lists": [
+        "daily"
+       ],
+       "desc": "Postiz 是一个开源的社交媒体排期工具，核心亮点是引入 AI 智能体来自动化内容发布流程。它帮你把多个社交平台（如 X、LinkedIn、Mastodon 等）的帖子统一管理、定时发布，解决手动逐个平台发帖的繁琐问题。比如你可以让 AI 代理根据主题自动生成并安排一周的推文，再一键分发到各平台，省时省力。",
+       "site": "https://postiz.com"
+      },
+      {
+       "repo": "nightly-labs/openbot",
+       "url": "https://github.com/nightly-labs/openbot",
+       "owner": "nightly-labs",
+       "stars": 5994,
+       "updated": "2026-11-06",
+       "lists": [
+        "daily",
+        "weekly"
+       ],
+       "desc": "OpenBot 是一个本地优先的桌面工作台，让多个 AI 助手像团队成员一样长期协作。你可以在独立工作区里同时运行 Codex、Claude、Grok，给它们分配任务队列、共享文件、控制浏览器，还能让智能体之间互相沟通。比如让它自动完成调研、写代码、整理资料等连续任务，数据留在本地更安全，适合需要多 AI 协同办公的个人或小团队。",
+       "site": "https://openbot.run/"
+      },
+      {
+       "repo": "n8n-io/nod",
+       "url": "https://github.com/n8n-io/nod",
+       "owner": "n8n-io",
+       "stars": 3481,
+       "updated": "2026-11-25",
+       "lists": [
+        "weekly"
+       ],
+       "desc": "Nod 是 n8n 推出的开源个人 AI 代理，自带一台可操作的电脑。它能在真实网站上替你办事，比如追讨发票、准备通话资料、取消试用订阅，而且动手前会先征求你的同意。它运行在你自己的机器上，模型由你选择，适合想用 AI 自动化日常琐事又注重隐私和可控性的用户。",
+       "site": "https://nod.n8n.io/"
+      }
+     ]
+    }
+   ],
+   "kind": "daily"
+  }
  }
 }
