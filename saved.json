@@ -1583,6 +1583,20 @@
    "tags": [],
    "saved_at": "2026-11-26",
    "source": "pages"
+  },
+  {
+   "repo": "Open-Dev-Society/OpenStock",
+   "url": "https://github.com/Open-Dev-Society/OpenStock",
+   "owner": "Open-Dev-Society",
+   "stars": 22263,
+   "category": "开发工具与框架",
+   "emoji": "🛠",
+   "desc": "OpenStock 是一个开源免费的股票行情平台，用来替代收费昂贵的市场数据工具。它可以实时追踪股价、设置个性化价格提醒、查看公司财报和技术指标，还支持自选股列表和多市场行情（美股、印度、加密货币等）。比如你想盯住某只股票突破均线时收到邮件通知，或者用 K 线图分析走势，它都能做到，而且代码开放、可自行部署。",
+   "site": "https://openstock-ods.vercel.app",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-27",
+   "source": "feishu"
   }
  ]
 }
