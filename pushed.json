@@ -155,9 +155,9 @@
  "alchaincyf/huashu-design": "2026-10-27",
  "gitroomhq/postiz-app": "2026-11-26",
  "nightly-labs/openbot": "2026-11-26",
- "elayadesign/ai-design-skills": "2026-10-28",
- "HKUDS/DeepTutor": "2026-10-28",
- "togg53192-cmd/jailbreaks": "2026-10-28",
+ "elayadesign/ai-design-skills": "2026-11-27",
+ "HKUDS/DeepTutor": "2026-11-27",
+ "togg53192-cmd/jailbreaks": "2026-11-27",
  "Leonxlnx/taste-skill": "2026-10-29",
  "jakubkrehel/skills": "2026-10-29",
  "expo/skills": "2026-10-29",
@@ -276,5 +276,6 @@
  "zhouxiaoka/autoclip": "2026-11-20",
  "yetone/magpie": "2026-11-24",
  "Ebony-Vinyl/dsh-our-free-model": "2026-11-25",
- "n8n-io/nod": "2026-11-26"
+ "n8n-io/nod": "2026-11-26",
+ "obsidianmd/obsidian-skills": "2026-11-27"
 }
