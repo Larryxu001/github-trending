@@ -1597,6 +1597,20 @@
    "tags": [],
    "saved_at": "2026-11-27",
    "source": "feishu"
+  },
+  {
+   "repo": "ultrazg/horizon",
+   "url": "https://github.com/ultrazg/horizon",
+   "owner": "ultrazg",
+   "stars": 70,
+   "category": "移动 / 桌面应用",
+   "emoji": "📱",
+   "desc": "horizon 是一个第三方小宇宙播客桌面客户端，用 wails（Go）加 React 构建，支持 Windows 和 macOS。它把手机上的小宇宙搬到了电脑桌面，方便在办公或学习时直接收听、浏览播客内容，无需频繁切换手机。项目还内置本地 API 服务，启动后可通过 localhost 访问接口文档。适合喜欢在电脑上听播客的用户，但需注意第三方登录可能触发账号风控。",
+   "site": "无",
+   "note": "",
+   "tags": [],
+   "saved_at": "2026-11-27",
+   "source": "pages"
   }
  ]
 }
