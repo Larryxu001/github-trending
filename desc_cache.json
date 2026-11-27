@@ -1666,5 +1666,11 @@
   "emoji": "🤖",
   "desc": "Nod 是 n8n 推出的开源个人 AI 代理，自带一台可操作的电脑。它能在真实网站上替你办事，比如追讨发票、准备通话资料、取消试用订阅，而且动手前会先征求你的同意。它运行在你自己的机器上，模型由你选择，适合想用 AI 自动化日常琐事又注重隐私和可控性的用户。",
   "site": "https://nod.n8n.io/"
+ },
+ "obsidianmd/obsidian-skills": {
+  "cat": "Agent 技能与插件",
+  "emoji": "🧩",
+  "desc": "这是一个教 AI 代理使用 Obsidian 及开放格式的技能包，让 Claude、ChatGPT 等助手能直接读写 Markdown 笔记、Bases 数据库和 JSON Canvas 画布。它解决了代理不懂 Obsidian 文件结构、无法操作知识库的问题。例如你可以让 Claude Code 自动整理笔记、生成画布或批量修改 Bases 表格，无需手动转换格式。",
+  "site": "无"
  }
 }
